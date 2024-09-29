@@ -1,0 +1,95 @@
+@import "webx-brighten/partials/variables";
+
+.wx__slider {
+  .img-main-section {
+    position: relative;
+  }
+  .left-icon {
+    position: absolute;
+    left: 0;
+    padding: 8px;
+    padding-right: 0 !important;
+    padding-bottom: 2px !important;
+    background: rgba(255, 255, 255, 0.218);
+    top: calc(50% - 9px);
+    z-index: 11;
+    .wx__icon {
+      margin-bottom: -5px;
+      color: #fff;
+    }
+  }
+
+  .img-section {
+    img {
+      height: 265px;
+      width: 100%;
+      object-fit: cover;
+      animation: myAnime 0.3s linear;
+    }
+  }
+  @keyframes myAnime {
+    0% {
+      -webkit-filter: blur(6px);
+      filter: blur(10px);
+    }
+    25% {
+      -webkit-filter: blur(4px);
+      filter: blur(3px);
+    }
+    50% {
+      -webkit-filter: blur(2px);
+      filter: blur(3px);
+    }
+    100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+    }
+  }
+
+  .right-icon {
+    padding: 8px;
+    padding-right: 0 !important;
+    padding-bottom: 2px !important;
+    background: rgba(255, 255, 255, 0.218);
+    position: absolute;
+    right: 0;
+    top: calc(50% - 9px);
+    z-index: 11;
+    .wx__icon {
+      margin-bottom: -5px;
+      color: #fff;
+    }
+  }
+}
+.slider-img-list {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px 0;
+  border: 1px solid black;
+  width: 100%;
+  overflow-x: auto;
+}
+.slider-img-list .single-image {
+  // display: flex;
+  // width: 150px;
+  // height: 80px;
+  // margin-right: 20px;
+}
+.slider-img-list .single-image img {
+  margin-right: 20px;
+  width: 120px;
+  height: 80px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+
+.slider-img-list .single-image:last-child img {
+  margin-right: 0px !important;
+}
+.slider-img-list .active-image img {
+  border: 1px solid red;
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+}

@@ -1,0 +1,80 @@
+@import "webx-brighten/partials/variables";
+
+.tlibrary_name {
+  p {
+    color: $neutral__800;
+    font-weight: 600;
+  }
+}
+.tlibrary_update {
+  font-weight: 400;
+  p {
+    color: $neutral__700;
+  }
+}
+.tlibrary {
+  width: 100%;
+  margin: auto;
+  .right {
+    text-align: right;
+  }
+  .tcolor {
+    color: $neutral__800;
+  }
+  .tlButton {
+    width: 130px;
+    height: 40px;
+  }
+  .left {
+    text-align: left;
+  }
+  .tbTitle {
+    padding-left: 15px;
+  }
+}
+.tlibrary-pad {
+  padding-bottom: 10px;
+  h5 {
+    letter-spacing: -0.25px;
+    text-transform: capitalize;
+    font-feature-settings: "salt" on;
+    color: #000000;
+  }
+  p {
+    letter-spacing: -0.154px;
+    font-feature-settings: "salt" on;
+    color: $neutral__800;
+  }
+}
+
+.tlibrary {
+  .single__theme {
+    border-bottom: 1px solid $neutral__300;
+    padding: 10px 6px;
+    &:last-child {
+      border-bottom: none;
+    }
+    .wx__text_semibold {
+      color: $neutral__800;
+    }
+    .wx__text_regular {
+      color: $neutral__700;
+    }
+    .left {
+      img {
+        width: 72px;
+        height: 45px;
+      }
+    }
+    .right {
+      .preview {
+        color: $neutral__700 !important;
+      }
+    }
+    &:hover {
+      background: $neutral__200;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}

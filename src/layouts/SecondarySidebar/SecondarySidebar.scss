@@ -1,0 +1,225 @@
+@import "webx-brighten/partials/variables";
+
+.customizer-menu-section {
+  z-index: 10;
+  width: 15em;
+  background: $neutral__900;
+  position: fixed;
+  left: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in;
+  top: 52px;
+  height: calc(100vh - 52px);
+  .customizer-menu {
+    display: block;
+    padding: 1em;
+    list-style: none;
+    margin: 0;
+    max-height: calc(100vh - 170px);
+    height: 100%;
+    overflow-y: auto;
+
+    .switch-package {
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em 1em;
+        margin-bottom: 0.5em;
+        color: $neutral__800;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      margin-bottom: 20px;
+    }
+
+    li {
+      list-style: none;
+      position: relative;
+      .right-icon {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 2;
+        .wx__text-danger {
+          &::before {
+            z-index: -1;
+            position: absolute;
+            left: 6px;
+            top: 7px;
+            content: "";
+            background: #fff;
+            height: 6px;
+            width: 4px;
+          }
+        }
+      }
+      a {
+        display: flex;
+        align-items: center;
+        padding: 0.5em 1em;
+        margin-bottom: 0.5em;
+        background-color: lighten($color: $neutral__900, $amount: 5%);
+        color: $neutral__400;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 4px;
+        :hover {
+          color: $neutral__100;
+        }
+        .wx__icon {
+          font-size: $icon_sm;
+        }
+        &.selected {
+          background-color: $neutral__900;
+          border: 2px solid lighten($color: $neutral__700, $amount: 5%);
+        }
+        .menu__text {
+          margin-left: 0.5em;
+        }
+      }
+    }
+    
+  @media(max-width: 672px){
+    max-height: calc(100vh - 116px);
+  }
+  }
+  .menu-top {
+    height: 64px;
+    background-color: $neutral__800;
+    padding: 1rem 0;
+    li {
+      padding: 0 1rem;
+      list-style: none;
+      a {
+        font-size: 14px;
+        color: $neutral__400;
+        font-weight: 600;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 0.45rem 1rem;
+        transition: 0.3s ease-in-out;
+        border-radius: 4px;
+
+        &:hover {
+          color: $neutral__100;
+        }
+        .wx__icon {
+          font-size: $icon_md;
+          font-weight: 500;
+          margin-right: 0.5em;
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .bottom-nav-item {
+    padding: 0.5rem 1rem;
+    border-top: 1px solid $neutral__400;
+
+    @media(max-width:672px){
+      border: none;
+      margin-top: 20px;
+    }
+  }
+}
+@media(max-width:1087px){
+  .s-layout .customize-menu-wrapper {
+    position: fixed;
+    width: calc(100vw - 15em);
+    right: -100%;
+    top: 52px;
+    bottom: 0;
+    z-index: 11;
+    background: rgba(0, 0, 0, 0.166);
+    // background: red !important;
+    transition: all 0.45s ease-in-out;
+  }
+  .show__full_nav .customize-menu-wrapper {
+    right: 0;
+  }
+  .bottom-nav-item,
+  .right-icon{
+    display: none;
+  }
+}
+@media (max-width: 68em) {
+  .customizer-menu-section {
+    width: 4em;
+    .customizer-menu {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      li {
+        a {
+          height: 37px;
+          padding: 0 10px;
+          img,
+          .wx__icon {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .menu__text {
+      display: none;
+    }
+    .menu-top {
+      a {
+        padding-left: 0 !important;
+      }
+    }
+  }
+
+  .show__full_nav {
+    .customizer-menu-section {
+      width: 15em;
+      .customizer-menu {
+        padding: 1em;
+        li {
+          margin: 0;
+          a {
+            padding: 0.5em 1em;
+            img,
+            .wx__icon {
+              margin-right: 0.5rem !important;
+            }
+          }
+        }
+      }
+      .menu__text {
+        display: block;
+      }
+      .menu-top {
+        a {
+          padding-left: 1rem !important;
+        }
+      }
+    }
+    .right-icon{
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 42em) {
+  .customizer-menu-section {
+    left: -15em;
+  }
+  .show__full_nav {
+    .customizer-menu-section {
+      left: 0;
+    }
+  }
+  .right-icon{
+    display: block;
+  }
+}
+

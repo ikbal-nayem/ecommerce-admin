@@ -1,0 +1,32 @@
+@import "webx-brighten/partials/variables";
+.setting_general_sec {
+  .setting_content {
+    .wx__hr {
+      margin: 0.75rem 0 !important;
+    }
+    .address_form,
+    .contact_form {
+      .wx__icon {
+        font-size: 20px;
+        margin-right: 5px;
+      }
+    }
+    .currency_sec {
+      .text__small {
+        .wx__icon {
+          color: $neutral__600;
+          font-size: 20px;
+          font-weight: 400;
+        }
+        p {
+          color: $neutral__600;
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+    }
+    .cancel__btn {
+      color: $neutral__900 !important;
+    }
+  }
+}

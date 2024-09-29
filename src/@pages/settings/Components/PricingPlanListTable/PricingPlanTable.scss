@@ -1,0 +1,59 @@
+@import "webx-brighten/partials/variables";
+
+.pricing_plan_table {
+  td,
+  tr,
+  th {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: none !important;
+    padding: 14px 16px !important;
+  }
+  td,
+  th {
+    text-align: center;
+  }
+  .wx__th:not(:first-child) {
+    width: 22%;
+  }
+  tr:nth-child(even) {
+    background-color: $neutral__200;
+  }
+  .wx__tbody {
+    .wx__text_strong {
+      text-align: left !important;
+      min-width: 150px;
+    }
+    .pricing_table_cell {
+      min-width: 190px;
+    }
+  }
+  .th__active {
+    border: 2px solid $primary__500;
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 4px;
+    padding: 0 !important;
+    background: $primary__100;
+    .wx__text_caption {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      padding: 3px 0;
+      color: $neutral__100;
+      background: $primary__500;
+    }
+  }
+
+  .per_m {
+    font-size: .7rem;
+    color: $neutral__600;
+  }
+
+  .td_active {
+    border-left: 2px solid $primary__500 !important;
+    border-right: 2px solid $primary__500 !important;
+  }
+  .wx__tr:last-child .td_active {
+    border-bottom: 2px solid $primary__500 !important;
+    border-radius: 4px !important;
+  }
+}

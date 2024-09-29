@@ -1,0 +1,75 @@
+@import "webx-brighten/partials/variables";
+
+.wx__review {
+  .wx__review_top {
+    border-bottom: 1px solid $neutral__300;
+    .wx__review_progress {
+      .small_icon {
+        color: $neutral__700;
+        font-size: 14px;
+      }
+      .progress_left {
+        width: 45px;
+        margin-right: 5px;
+      }
+      .progress_right {
+        width: 100px;
+        margin-left: 5px;
+      }
+      .wx__bar_bg {
+        width: 100%;
+        height: 4px;
+        background: $neutral__200;
+        position: relative;
+        border-radius: 10px;
+        .wx__progress {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          background: $orange__500;
+          // width: 78%;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  .wx__user_review {
+    .wx__single_review {
+      padding: 10px 0;
+      border-bottom: 1px solid $neutral__400;
+      .helpful {
+        margin-right: 3rem;
+        .icon {
+          font-size: 18px;
+          color: $primary__500;
+          margin-right: 5px;
+        }
+      }
+      .not-helpful {
+        .icon {
+          font-size: 18px;
+          margin-right: 5px;
+        }
+      }
+      .wx__review_replay {
+        background: $neutral__200;
+        padding: 10px;
+      }
+      .user_review_hide_msg {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 1.5em;
+        max-height: 3em;
+      }
+    }
+  }
+  .small_icon {
+    font-size: 13px;
+    color: $orange__600;
+    margin-right: 2px;
+  }
+}

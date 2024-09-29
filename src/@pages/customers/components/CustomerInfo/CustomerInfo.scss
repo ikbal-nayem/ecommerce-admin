@@ -1,0 +1,40 @@
+@import "webx-brighten/partials/classes";
+@import "webx-brighten/partials/variables";
+@import "webx-brighten/partials/mixins";
+
+.wx__customer_info {
+  width: 100%;
+  background: $neutral__100;
+  @extend .wx__rounded;
+  .wx__name {
+    display: flex;
+    align-items: center;
+  }
+  .customer__name {
+    .wx__thumbnail {
+      margin-right: 1em;
+    }
+    .wx__btn_tags {
+      margin-left: 0.7em;
+    }
+    h6 {
+      margin-bottom: 0.3em;
+    }
+    .customer_activity {
+      margin-bottom: 0;
+    }
+  }
+  .customer__activity {
+    .item {
+      margin: 0.5em 0;
+      h6 {
+        font-size: 0.9em;
+        margin-bottom: 0.3em;
+      }
+      .sub-text {
+        color: $neutral__900;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.wx__card {
+  .pagination_div {
+    padding: 23px;
+  }
+}
+.wx__product_name {
+  // min-width: 200px;
+  display: flex;
+  align-items: center;
+  a {
+    white-space: break-spaces !important;
+  }
+}
+
+.prod-table-dropdown-text {
+  font-size: 15px !important;
+}

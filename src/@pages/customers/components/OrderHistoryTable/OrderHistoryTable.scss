@@ -1,0 +1,55 @@
+@import "webx-brighten/partials/classes";
+@import "webx-brighten/partials/variables";
+@import "webx-brighten/partials/mixins";
+
+.wx__table {
+  border-collapse: collapse;
+  width: 100%;
+  tr {
+    border-top: 1px solid $neutral__300;
+    td {
+      &:first-child {
+        border-left: 24px solid transparent;
+      }
+      &:last-child {
+        border-right: 24px solid transparent;
+      }
+    }
+  }
+  .wx__thead {
+    tr {
+      border-top: none;
+      .wx__th {
+        div {
+          cursor: pointer !important;
+        }
+      }
+      th {
+        &:first-child {
+          div {
+            border-left: 24px solid transparent;
+          }
+        }
+        &:last-child {
+          div {
+            border-right: 24px solid transparent;
+          }
+        }
+      }
+    }
+  }
+  .wx__tbody {
+    tr {
+      // border-top: 1px solid $neutral__300;
+      // border-bottom: 1px solid none;
+      td {
+        .wx__table_cell_icon,
+        .wx__table_cell_more-icon {
+          span {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

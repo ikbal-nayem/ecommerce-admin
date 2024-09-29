@@ -1,0 +1,14 @@
+@import "webx-brighten/partials/variables";
+@import "webx-brighten/custom/typography.scss";
+
+.wx__label {
+  margin-bottom: 0.7em;
+  label {
+    color: $neutral__900 !important;
+    @extend .wx__text_subtitle;
+    @extend .wx__text_semibold;
+    span {
+      color: $red__500;
+    }
+  }
+}

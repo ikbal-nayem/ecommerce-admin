@@ -1,0 +1,172 @@
+import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import { WxFormHeader } from "@components/WxFormLayout";
+import WxIcon from "@components/WxIcon/WxIcon";
+import { IPortalOverview } from "@interfaces/portal.interface";
+import { PORTAL_PARTNERS } from "routes/path-name.route";
+import { ProfileService } from "services/api/settings/Profile.service";
+import Preloader from "services/utils/preloader.service";
+import { ToastService } from "services/utils/toastr.service";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import RequestWithdraw from "../components/RequestWithdraw";
+import "./Overview.scss";
+
+export default function Overview() {
+	const [overviewData, setOverviewData] = useState<IPortalOverview>();
+	const [isLoading, setIsLoading] = useState<boolean>(true);
+
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		ProfileService.getOverview()
+			.then((res) => setOverviewData(res.body))
+			.catch((err) => ToastService.error(err.message))
+			.finally(() => setIsLoading(false));
+	}, []);
+
+	return (
+		<WxMainFull>
+			<WxFormHeader title="Overview" noBack />
+			<div className="portal_overview">
+				<h6>Referred users</h6>
+				<div className="wx__card wx__p-4">
+					{isLoading ? (
+						<Preloader />
+					) : (
+						<div className="row card_info">
+							<div className="col-md-4">
+								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+									<WxIcon icon="groups" className="groups" />
+									<p>
+										Total partner
+										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+											{overviewData?.user?.totalUser || 0}
+										</h5>
+									</p>
+								</div>
+							</div>
+							<div className="col-md-4">
+								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+									<WxIcon
+										icon="group"
+										className="group"
+										onClick={() => navigate(PORTAL_PARTNERS + "?tabIndex=1")}
+									/>
+									<p>
+										Paid partners
+										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+											{overviewData?.user?.paidUser || 0}
+										</h5>
+									</p>
+								</div>
+							</div>
+							<div className="col-md-4">
+								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+									<WxIcon
+										icon="group"
+										className="group"
+										onClick={() => navigate(PORTAL_PARTNERS + "?tabIndex=0")}
+									/>
+									<p>
+										Free partners
+										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+											{overviewData?.user?.freeUser || 0}
+										</h5>
+									</p>
+								</div>
+							</div>
+						</div>
+					)}
+				</div>
+			</div>
+
+			<div className="wx__mt-5 portal_overview">
+				<div className="wx__d-flex wx__justify-content-between wx__align-items-end wx__mb-2">
+					<h6>Payment information</h6>
+					{/* <RequestWithdraw /> */}
+				</div>
+				{isLoading ? (
+					<Preloader />
+				) : (
+					<div className="wx__card wx__p-4">
+						<div className="row card_info">
+							<div className="col-md-4">
+								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+									<WxIcon
+										icon="analytics"
+										className="bank_total"
+										variants="outlined"
+									/>
+									<p>
+										Total payment method
+										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+											{overviewData?.paymentMethod?.totalCount}
+										</h5>
+									</p>
+								</div>
+							</div>
+							<div className="col-md-4">
+								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+									<WxIcon icon="account_balance" className="bank_info" />
+									<p>
+										Bank
+										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+											{overviewData?.paymentMethod?.bankCount}
+										</h5>
+									</p>
+								</div>
+							</div>
+							<div className="col-md-4">
+								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+									<WxIcon icon="account_balance_wallet" className="bank_info" />
+									<p>
+										Mobile (MFS)
+										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+											{overviewData?.paymentMethod?.mfsCount}
+										</h5>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div className="row card_info wx__mt-5">
+							<div className="col-md-4">
+								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+									<WxIcon icon="payments" className="payments" />
+									<p>
+										Total Income
+										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+											BDT 0
+										</h5>
+									</p>
+								</div>
+							</div>
+							<div className="col-md-4">
+								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+									<WxIcon icon="money" className="money" />
+									<p>
+										Last Withdraw
+										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+											BDT 0
+										</h5>
+									</p>
+								</div>
+							</div>
+							<div className="col-md-4">
+								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+									<WxIcon icon="event_available" className="event_available" />
+									<p>
+										Available Withdraw
+										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+											BDT 0
+										</h5>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				)}
+			</div>
+		</WxMainFull>
+	);
+}

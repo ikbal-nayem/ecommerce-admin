@@ -1,0 +1,125 @@
+@import "webx-brighten/partials/classes";
+@import "webx-brighten/partials/mixins";
+@import "webx-brighten/partials/variables";
+
+.wx__total_sales,
+.wx__online_session,
+.wx__total_orders,
+.wx__avg_order_value,
+.wx__online-conversion-rate,
+.wx__top_landing_page {
+  min-height: 412px;
+}
+.wx__analytics-date {
+  input {
+    padding: 0 20px;
+  }
+}
+
+.wx__total_sales {
+  .total_sales_info {
+    .total_sales_icon {
+      font-size: 21px;
+      padding: 10px;
+      border-radius: 50%;
+      color: $magenta__600;
+      background: $magenta__200;
+    }
+  }
+  .total_sales_chart {
+  }
+}
+
+.wx__online_session {
+  .online_session_info {
+    .online_session_icon {
+      font-size: 21px;
+      padding: 10px;
+      border-radius: 50%;
+      color: $blue__600;
+      background: $blue__200;
+    }
+  }
+}
+
+.wx__top_products {
+  .top_products_list {
+    ul {
+      margin-top: 10px;
+      padding: 0;
+      li {
+        display: flex;
+        margin: 0 0 10px 0;
+        list-style: none;
+        .product_img {
+          width: 70px;
+          height: 50px;
+          margin-right: 10px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.onlinestore_conversion_icon {
+  font-size: 21px;
+  padding: 10px;
+  color: $purple__600;
+  background: $purple__200;
+  border-radius: 50%;
+}
+
+.wx__top_landing_page {
+  .landing_page_list {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: flex;
+        justify-content: space-between;
+        line-height: 30px;
+        a {
+          width: 80%;
+        }
+        span {
+          min-width: 8%;
+        }
+      }
+    }
+  }
+}
+
+.wx__total_orders {
+  .total_orders_icon {
+    font-size: 21px;
+    padding: 10px;
+    border-radius: 50%;
+    color: $primary__600;
+    background: $primary__200;
+  }
+}
+
+.wx__avg_order_value {
+  .avg_order_icon {
+    font-size: 21px;
+    padding: 10px;
+    border-radius: 50%;
+    color: $yellow__600;
+    background: $yellow__200;
+  }
+}
+
+.wx__avg_order_count {
+  .avg_count_icon {
+    font-size: 21px;
+    padding: 10px;
+    border-radius: 50%;
+    color: $cyan__600;
+    background: $cyan__200;
+  }
+}

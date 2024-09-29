@@ -1,0 +1,135 @@
+@import "webx-brighten/partials/mixins";
+@import "webx-brighten/partials/variables";
+@import "webx-brighten/partials/classes";
+
+.wx__table_pagination_main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .wx__perpage_data {
+    display: inline-flex;
+    align-items: center;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    select {
+      // font-family: inter;
+      height: $input_text_height;
+      min-width: 60px;
+      border: 1px solid $neutral__400;
+      margin-left: 1em;
+      font-size: $input_font_size;
+      @extend .wx__rounded;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .wx__table_pagination {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    .wx__pagination_text {
+      color: $neutral__600;
+      margin-right: 16px;
+    }
+    .wx__pagination_div {
+      .wx__ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        li {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $neutral__200;
+          margin: 0 2px;
+          width: 40px;
+          height: 36px;
+          cursor: pointer;
+          @extend .wx__rounded;
+          transition: all 0.5s;
+          &:hover {
+            background-color: $primary__500;
+            background-color: $neutral__300;
+          }
+          &:active {
+            background-color: $primary__500;
+            border: 1.5px solid $neutral__400;
+          }
+          user-select: none; /* supported by Chrome and Opera */
+          -webkit-user-select: none; /* Safari */
+          -khtml-user-select: none; /* Konqueror HTML */
+          -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+        }
+        .page_number {
+          display: flex;
+        }
+        .active-page {
+          background-color: $primary__600;
+          color: #fff;
+          &:hover,
+          &:active {
+            background-color: $primary__600;
+            border: none;
+            color: #fff;
+          }
+        }
+        .disable-page {
+          // span {
+          color: $neutral__400;
+          pointer-events: none;
+          // }
+          &:hover,
+          &:active {
+            background-color: $neutral__200;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+// 576
+
+@media (max-width: 767px) {
+  .wx__table_pagination_main {
+    justify-content: center;
+    .wx__perpage_data {
+      margin-bottom: 15px;
+    }
+    .wx__table_pagination {
+      margin-bottom: 15px;
+    }
+  }
+}
+@media (max-width: 617px) {
+  .wx__table_pagination_main {
+    .wx__perpage_data {
+      margin-right: 0px !important;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .wx__perpage_data {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 411px) {
+  .wx__pagination_text {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 402px) {
+  .wx__pagination_div {
+    margin-top: 10px;
+  }
+}

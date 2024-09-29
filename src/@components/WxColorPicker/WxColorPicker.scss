@@ -1,0 +1,37 @@
+@import "webx-brighten/partials/variables";
+
+.color-picker {
+  .color-bg-wrapper {
+    position: relative;
+    display: block;
+    width: 135px;
+    height: 34px;
+    top: 0;
+    background: $neutral__200;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    input {
+      border: none;
+      padding: 0;
+      position: absolute;
+      outline: none;
+      left: 0;
+      top: 0;
+      height: 34px;
+      width: 32px;
+      border-radius: 4px !important;
+      &::-webkit-color-swatch {
+        border: none;
+        border-radius: 2px;
+      }
+    }
+    .color-text {
+      position: absolute;
+      padding-left: 45px;
+      color: $neutral__700;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+}

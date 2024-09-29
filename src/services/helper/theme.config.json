@@ -1,0 +1,51 @@
+{
+	"themeName": "mars",
+	"sections": [
+		{
+			"id": "123",
+			"key": "banner",
+			"label": "Banner",
+			"icon": "web_stories",
+			"endPoint": "/banner",
+			"numberOfInputs": 4,
+			"template": {
+				"image": {
+					"label": "Banner",
+					"inputType": "link",
+					"mediaType": "image"
+				},
+				"title": {
+					"label": "Title",
+					"inputType": "text"
+				},
+				"description": {
+					"label": "Description",
+					"inputType": "textarea"
+				}
+			}
+		},
+		{
+			"id": "456",
+			"key": "service",
+			"label": "Service",
+			"icon": "support_agent",
+			"endPoint": "/service",
+			"numberOfInputs": 3,
+			"template": {
+				"svgIcon": {
+					"label": "Icon",
+					"inputType": "link",
+					"mediaType": "image"
+				},
+				"title": {
+					"label": "Title",
+					"inputType": "text"
+				},
+				"description": {
+					"label": "Short description",
+					"inputType": "textarea"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,149 @@
+#invoiceDIV {
+  display: none;
+}
+
+.main-page {
+  min-height: 297mm;
+  // margin: 10mm auto;
+  background: white;
+  .sub-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // padding: 2cm;
+    background: white;
+    height: 297mm;
+    p {
+      margin-bottom: 0 !important;
+    }
+
+    .topper,
+    .topper-space {
+      height: 150px;
+    }
+    .footer,
+    .footer-space {
+      height: 120px;
+    }
+
+    .topper {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      div {
+        img {
+          width: 145px;
+          height: 115px;
+          object-fit: contain;
+        }
+      }
+      hr {
+        background: #595959;
+      }
+      .invoice_address {
+        div {
+          p {
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+
+    .footer {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      hr {
+        height: 1;
+        margin: 5px 0;
+        background: #bbbcbf;
+      }
+    }
+
+    #orderListTable {
+      border-collapse: collapse;
+      width: 100%;
+      border-spacing: 1;
+      border-collapse: collapse;
+      tr {
+        border-bottom: 1px solid#BBBCBF;
+      }
+      th {
+        padding: 20px 16px;
+        &:nth-child(2),
+        &:nth-child(3) {
+          text-align: center;
+        }
+      }
+      td {
+        padding: 7px 16px;
+      }
+      thead {
+        tr {
+          padding: 0 10px;
+          color: white;
+          background: #434343;
+        }
+      }
+      tbody {
+        .table_img {
+          width: 50px;
+          height: 50px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        .invoice_text {
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    .wx__invoice_notes {
+      padding: 12px;
+      border: 4px solid #f5f6f7;
+      color: #8c8c8c;
+      border-radius: 4px;
+      margin-top: 15px;
+      p {
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .order_summery {
+      background: #f5f6f7;
+      padding: 7px;
+      border-radius: 4px;
+      margin-top: 15px;
+      .total {
+        margin: 7px 0;
+        padding: 7px 0;
+        border-top: 1px solid #bbbcbf;
+        border-bottom: 1px solid #bbbcbf;
+      }
+    }
+  }
+}
+
+@page {
+  size: A4;
+  margin: 10mm auto;
+}
+@media print {
+  html,
+  body {
+    width: 210mm;
+    background: white;
+    height: 297mm;
+  }
+}
+.item_img {
+  width: 40px;
+  height: 40px;
+}

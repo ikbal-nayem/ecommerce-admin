@@ -1,0 +1,31 @@
+.table_skelton{
+    .has-image{
+        max-width: 50px;
+        height: 50px;
+        width: 100%;
+        margin-right: 10px;
+    }
+    .placeholder{
+        border-radius: 4px !important;
+        background-color: rgb(120, 120, 120) !important;
+        cursor: progress !important;
+    }
+    .row-with-image{
+        max-width: calc(100% - 60px);
+    }
+    .wx__tbody{
+        .wx__tr{
+            .wx__td{
+                .placeholder{
+                    min-width: 150px;
+                }
+                .has-image{
+                    min-width: 50px;
+                }
+                .row-with-image{
+                    min-width: 90px;
+                }
+            }
+        }
+    }
+}

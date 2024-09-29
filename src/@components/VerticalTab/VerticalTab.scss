@@ -1,0 +1,85 @@
+@import "webx-brighten/partials/classes";
+@import "webx-brighten/partials/mixins";
+@import "webx-brighten/partials/variables";
+
+.vertical_tab_main {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  height: 100%;
+  .tabs_list {
+    min-width: 25%;
+    max-width: 35%;
+    ul {
+      li {
+        list-style: none;
+        padding: 25px 18px;
+        border-bottom: 1px solid $neutral__400;
+        border-right: 1px solid $neutral__400;
+        cursor: pointer;
+        background: $neutral__200;
+        h6 {
+          color: $neutral__700;
+        }
+        .tick_icon {
+          font-size: 20px;
+          color: $neutral__500;
+        }
+        &:hover {
+          background: $neutral__100;
+          transition: 0.3s;
+          // border-right: none;
+          h6 {
+            color: $neutral__900;
+          }
+        }
+
+        @media (max-width: 767px) {
+          padding: 15px 10px;
+          h6 {
+            font-size: 14px;
+          }
+        }
+      }
+      .disabled {
+        cursor: not-allowed;
+        conte span {
+          cursor: not-allowed !important;
+        }
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+        &:hover {
+          background: $neutral__200;
+          transition: 0.3s;
+          border-right: 1px solid $neutral__400;
+          h6 {
+            color: $neutral__700;
+          }
+        }
+      }
+      .active_tab {
+        background: $neutral__100;
+        transition: 0.3s;
+        border-right: none;
+        h6 {
+          color: $neutral__900;
+        }
+      }
+    }
+  }
+  .tabs_content {
+    position: relative;
+    flex: 1;
+    background: $neutral__100;
+    padding: 46px 41px;
+
+    @media (max-width: 767px) {
+      padding: 15px;
+    }
+  }
+}

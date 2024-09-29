@@ -1,0 +1,19 @@
+@import "webx-brighten/partials/variables";
+.setting_patment_page {
+  .wx__btn {
+    height: auto !important;
+  }
+  .payment_btn {
+    border: 1px solid $neutral__400;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition: 0.3s ease-in-out;
+    .wx__btn_tags {
+      margin-left: 10px;
+    }
+  }
+  .payment_btn:hover {
+    background-color: $neutral__200;
+  }
+}

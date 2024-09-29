@@ -1,0 +1,23 @@
+@import "webx-brighten/partials/classes";
+@import "webx-brighten/partials/mixins";
+@import "webx-brighten/partials/variables";
+
+.wx__demo_file,
+.wx__warn_alert,
+.wx__file_present {
+  background: #f4f8fe;
+  padding: 16px 15px;
+  .wx__icon {
+    font-size: 1.5rem !important;
+    margin-right: 10px;
+  }
+  a {
+    color: #0065db;
+  }
+}
+.wx__warn_alert {
+  background: $yellow__200;
+}
+.wx__file_present {
+  background: $primary__200;
+}

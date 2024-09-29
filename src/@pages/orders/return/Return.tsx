@@ -1,0 +1,170 @@
+import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxButton from "@components/WxButton";
+import { WxFormHeader } from "@components/WxFormLayout";
+import WxInput from "@components/WxInput";
+import { IProductVariant } from "@interfaces/product.interface";
+import { ORDER_DETAILS } from "routes/path-name.route";
+import { OrderService } from "services/api/Order.service";
+import Preloader from "services/utils/preloader.service";
+import { ToastService } from "services/utils/toastr.service";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
+import ProductRefundCart from "../components/product-cart/ProductRefundCart";
+
+interface IRefandableInfo {
+  amount?: number;
+  quantity?: number;
+}
+
+const defaultRefandableInfo: IRefandableInfo = {
+  amount: 0,
+  quantity: 0,
+};
+
+const OrderReturn = () => {
+  const { order_id } = useParams();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [productList, setProductList] = useState<IProductVariant[]>([]);
+  const [returnItems, setReturnItems] = useState<IProductVariant[]>([]);
+  const [returnableInfo, setReturnInfo] = useState<IRefandableInfo>(
+    defaultRefandableInfo
+  );
+  const [isSubmiting, setIsSubmiting] = useState(false);
+  const [customerId, setCustomerId] = useState<string>("");
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm<any>();
+
+  useEffect(() => {
+    if (returnItems.length) {
+      let amount = 0.0;
+      let quantity = 0;
+      returnItems.map((item: IProductVariant) => {
+        amount = amount + item.sellingPrice * item.quantity;
+        quantity = quantity + item.quantity;
+      });
+      setReturnInfo({
+        amount,
+        quantity,
+      });
+    }
+  }, [returnItems]);
+
+  useEffect(() => {
+    if (!order_id) return;
+    OrderService.getDetails({ body: { id: order_id } })
+      .then((res) => {
+        setProductList(res.body?.orderLineList);
+        const refundList = res.body?.orderLineList?.map((item) => ({
+          ...item,
+          quantity: 0,
+        }));
+        setCustomerId(res.body.customerId);
+        setReturnItems(refundList);
+      })
+      .catch((err) => ToastService.error(err.message))
+      .finally(() => setLoading(false));
+  }, [order_id]);
+
+  const onIncrease = (index: number) => {
+    const newRefundItems = [...returnItems];
+    if (newRefundItems[index].quantity < productList[index].quantity)
+      newRefundItems[index].quantity += 1;
+    setReturnItems(newRefundItems);
+  };
+  const onDecrease = (index: number) => {
+    const newRefundItems = [...returnItems];
+    if (newRefundItems[index].quantity > 0) newRefundItems[index].quantity -= 1;
+    setReturnItems(newRefundItems);
+  };
+
+  const onSubmit = (data: any) => {
+    if (returnableInfo.quantity <= 0) {
+      ToastService.info("Return quantity must be greater then 0!");
+      return;
+    }
+    setIsSubmiting(true);
+    const items = returnItems.map((item: any) => ({
+      id: item.id,
+      productId: item.productId,
+      productVariantCombinationId: item.productVariantCombinationId,
+      quantity: item.quantity,
+      orderDescription: null,
+      productLotId: null,
+      orderStatusId: null,
+      paymentStatusId: null,
+    }));
+    const requestData = {
+      customerId: customerId,
+      id: order_id,
+      customerSessionId: null,
+      orderLineList: items,
+      refundReason: data.reason,
+    };
+
+    OrderService.returnStore(requestData)
+      .then((res) => {
+        ToastService.success(res.message);
+        navigate(ORDER_DETAILS({ order_id }));
+      })
+      .catch((err) => ToastService.error(err.message))
+      .finally(() => setIsSubmiting(false));
+  };
+
+  return (
+    <WxMainLg>
+      <WxFormHeader
+        title="Return Order"
+        backNavigationLink={ORDER_DETAILS({ order_id })}
+      />
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <div className="wx__row">
+          <div className="wx__col-lg-8 wx__col-md-7 wx__col-sm-12">
+            <div className="wx__card wx__p-3 wx__mt-3">
+              {loading ? (
+                <Preloader />
+              ) : (
+                <ProductRefundCart
+                  products={productList}
+                  refundItems={returnItems}
+                  handleIncrease={onIncrease}
+                  handleDecrease={onDecrease}
+                />
+              )}
+              <p className="wx__m-3 wx__text_small wx_text_regular wx__text-muted">
+                Returned items will be removed from the order
+              </p>
+            </div>
+            <div className="wx__card wx__mt-3 wx__p-3">
+              <h6 className="wx__text_h6 wx__text_semibold">Return Reason</h6>
+              <WxInput
+                helpText="Only you and your staff can see ths reason"
+                noMargin
+                registerProperty={{ ...register("reason") }}
+              />
+            </div>
+          </div>
+          <div className="wx__col-lg-4 wx__col-md-5 wx__col-sm-12">
+            <div className="wx__card wx__p-3 wx__mt-3">
+              <h6 className="wx__text_h6 wx__text_semibold">Summary</h6>
+              <span className="wx__text_body wx__text_italic">
+                {returnableInfo.quantity} Items will be returned.
+              </span>
+              <hr />
+              <WxButton
+                color="primary"
+                variant="fill"
+                type="submit"
+                disabled={isSubmiting || returnableInfo.quantity <= 0}
+              >
+                Return {isSubmiting && <Preloader />}
+              </WxButton>
+            </div>
+          </div>
+        </div>
+      </form>
+    </WxMainLg>
+  );
+};
+
+export default OrderReturn;

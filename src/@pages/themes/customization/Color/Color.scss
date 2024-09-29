@@ -1,0 +1,20 @@
+@import "webx-brighten/partials/variables";
+.color-sec {
+  .wx__card {
+    .text__small {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 120% !important;
+      margin-top: 5px;
+      color: $neutral__600;
+    }
+    .primary-color {
+      margin-bottom: 10px;
+    }
+  }
+  .top-section {
+    .text__small {
+      margin-bottom: 0 !important;
+    }
+  }
+}

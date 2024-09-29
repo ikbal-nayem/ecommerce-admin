@@ -1,0 +1,8 @@
+@import "webx-brighten/partials/classes";
+@import "webx-brighten/partials/variables";
+@import "webx-brighten/partials/mixins";
+
+.wx__customer_history {
+  background-color: $neutral__100;
+  @extend .wx__rounded;
+}

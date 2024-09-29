@@ -1,0 +1,551 @@
+import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxSelect from "@components/Select/WxSelect";
+import WxButton from "@components/WxButton";
+import { WxFormHeader } from "@components/WxFormLayout";
+import WxHr from "@components/WxHr";
+import WxIcon from "@components/WxIcon/WxIcon";
+import WxInput from "@components/WxInput";
+import AddressNcontactSkelton from "@components/WxSkelton/Setting/General/AddressNcontactSkelton";
+import BasicInfoSkelton from "@components/WxSkelton/Setting/General/BasicInfoSkelton";
+import { SETTINGS } from "routes/path-name.route";
+import { LocationService } from "services/api/Location.service";
+import { GeneralSettingService } from "services/api/settings/General.service";
+import { LocalStorageService } from "services/utils/localStorage.service";
+import Preloader from "services/utils/preloader.service";
+import { ToastService } from "services/utils/toastr.service";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+// import { useAppDispatch, useAppSelector } from "store/hooks";
+import { setUserInfo } from "store/reducers/userReducer";
+import skeltonLoader from "utils/skeltonLoader";
+import "./General.scss";
+
+const General = () => {
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const {
+    register: addressRegister,
+    handleSubmit: addressHandleSubmit,
+    setValue: addressSetValue,
+    watch: addressWatch,
+    reset: addressReset,
+    formState: { errors: addressErrors },
+  } = useForm();
+
+  const [basicInfoFlag, setBasicInfoFlag] = useState<boolean>(false);
+  const [basicInfo, setBasicInfo] = useState<any>();
+  const [storeTypes, setSToreTypes] = useState<any[]>([]);
+  const [addressFlag, setAddressFlag] = useState<boolean>(false);
+  const [storeAddress, setStoreAddress] = useState<any>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [divisions, setDivision] = useState<any[]>([]);
+  const [districts, setDistricts] = useState<any[]>([]);
+  const dispatch = useDispatch();
+  const { user_data } = useSelector((data: any) => data?.user);
+
+  // loader states
+
+  const [basicInfoLoader, setBasicInfoLoader] = useState<boolean>(true);
+  const [addressNContactLoader, setAddressNContactLoader] =
+    useState<boolean>(true);
+
+  useEffect(() => {
+    getInfo();
+    getStoreAddresses();
+    GeneralSettingService.getStoreType({}).then((res) => {
+      setSToreTypes(res?.body);
+    });
+  }, []);
+
+  useEffect(() => {
+    getDivisions();
+  }, []);
+
+  useEffect(() => {
+    addressWatch("state") && divisions && getDistricts(divisions);
+  }, [addressWatch("state"), divisions]);
+
+  const getStoreAddresses = () => {
+    GeneralSettingService.getStoreAddress()
+      .then((res) => {
+        addressReset({ ...res?.body[0], city: res.body[0]?.city });
+        setStoreAddress(res?.body[0] || {});
+      })
+      .finally(() => {
+        skeltonLoader(setAddressNContactLoader);
+      });
+  };
+
+  const getInfo = () => {
+    GeneralSettingService.getStoreInfo()
+      .then((res) => {
+        setBasicInfo(res.body);
+        setValue("name", res.body.name);
+        setValue("legalName", res.body.legalName);
+        setValue("businessName", res.body.businessName);
+        setValue("storeTypes.id", res.body?.storeTypes?.id);
+      })
+      .finally(() => {
+        setIsLoading(false);
+        skeltonLoader(setBasicInfoLoader);
+      });
+  };
+
+  const onSubmitBasicInfo = (requestData: any) => {
+    setIsLoading(true);
+    GeneralSettingService.update(requestData)
+      .then((res) => {
+        ToastService.success(res.message);
+        getInfo();
+        setBasicInfoFlag(false);
+        const resData = {
+          ...user_data,
+          store_name: res?.body?.businessName,
+        };
+
+        LocalStorageService.set("user_data", resData);
+
+        dispatch(
+          setUserInfo({
+            user_data: resData,
+          })
+        );
+      })
+      .catch((err) => {
+        ToastService.error(err.message);
+      })
+      .finally(() => setIsLoading(false));
+  };
+
+  const getDivisions = () => {
+    LocationService.getDivision("19").then((res) => {
+      setDivision(res?.body);
+    });
+  };
+
+  const onChangeDivision = (divisionInfo: any) => {
+    addressSetValue("state", divisionInfo);
+    addressSetValue("city", null);
+    setDistricts([]);
+  };
+
+  const getDistricts = (states: any) => {
+    const findDivision = states.find(
+      (item) => item?.division_name_eng === addressWatch("state")
+    );
+
+    LocationService.getDistrict(
+      "19",
+      findDivision?.division_id ? findDivision?.division_id : "30"
+    ).then((res) => {
+      setDistricts(res?.body);
+      addressSetValue("city", storeAddress?.city);
+    });
+  };
+
+  const onSubmitAddress = (requestData: any) => {
+    setIsLoading(true);
+
+    requestData.id = storeAddress?.id;
+    delete requestData.storeTypes;
+    GeneralSettingService.storeAddressUpdate(requestData)
+      .then((res) => {
+        getStoreAddresses();
+        ToastService.success(res.message);
+        setAddressFlag(false);
+      })
+      .catch((err) => {
+        ToastService.error(err.message);
+      })
+      .finally(() => setIsLoading(false));
+  };
+
+  const onSubmitContactInfo = (requestData: any) => {
+    ToastService.success("Form submited successfully");
+    const timer = setTimeout(() => {
+      setAddressFlag(false);
+    }, 1000);
+  };
+
+  return (
+    <WxMainLg className="setting_general_sec">
+      <WxFormHeader title="General" backNavigationLink={SETTINGS} />
+
+      {isLoading ? <Preloader /> : null}
+
+      <form onSubmit={handleSubmit(onSubmitBasicInfo)}>
+        {!basicInfoLoader ? (
+          <div className="wx__card wx__p-3 wx__mt-3">
+            <div className="wx__row">
+              <div className="wx__col-md-12 wx__col-sm-12 wx__d-flex wx__justify-content-between wx__align-items-center">
+                <h5 className="wx__mb-0">Basic Information</h5>
+                {basicInfoFlag ? (
+                  <div className="wx__d-flex">
+                    <WxButton
+                      variant="none"
+                      className="cancel__btn"
+                      onClick={() => setBasicInfoFlag(false)}
+                    >
+                      Cancel
+                    </WxButton>
+                    <WxButton type="submit" variant="none">
+                      Save Changes
+                    </WxButton>
+                  </div>
+                ) : (
+                  <WxButton
+                    variant="none"
+                    onClick={() => setBasicInfoFlag(true)}
+                  >
+                    Edit
+                  </WxButton>
+                )}
+              </div>
+              <WxHr />
+            </div>
+            {basicInfoFlag ? (
+              <div className="wx__row">
+                <div className="wx__col-md-6 wx__col-sm-12 wx__mt-2">
+                  <WxInput
+                    label="Store name"
+                    noMargin
+                    registerProperty={{
+                      ...register("businessName", { required: true }),
+                    }}
+                    color={errors.businessName ? "danger" : "primary"}
+                    errorMessage={
+                      errors.businessName && "Store name is Required"
+                    }
+                  />
+                </div>
+                <div className="wx__col-md-6 wx__col-sm-12 wx__mt-2">
+                  <WxInput
+                    label="Legal Name Of Company"
+                    noMargin
+                    registerProperty={{ ...register("legalName") }}
+                  />
+                </div>
+                <div className="wx__col-md-6 wx__col-sm-12 wx__mt-2">
+                  <WxSelect
+                    label="Store Industry"
+                    noMargin
+                    options={storeTypes}
+                    placeholder="Select Store Industry"
+                    valuesKey="id"
+                    textKey="name"
+                    registerProperty={{
+                      ...register("storeTypes.id", { required: true }),
+                    }}
+                    onChange={(e) => {}}
+                    color={errors?.storeTypes ? "danger" : "secondary"}
+                    errorMessage={
+                      errors?.storeTypes && "Store Types is required!"
+                    }
+                  />
+                </div>
+              </div>
+            ) : (
+              <div className="wx__row">
+                <p className="wx__text_body wx__text_strong">
+                  {basicInfo?.businessName}
+                </p>
+                <p className="wx__text_small wx__text_regular">
+                  {basicInfo?.legalName} | {basicInfo?.storeTypes?.name || ""}
+                </p>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="wx__bg-white wx__rounded">
+            <BasicInfoSkelton viewBox="0 0 595 100" />
+          </div>
+        )}
+      </form>
+
+      <form onSubmit={addressHandleSubmit(onSubmitAddress)}>
+        {!addressNContactLoader ? (
+          <div className="wx__card wx__p-3 wx__mt-3 address_form">
+            <div className="wx__row">
+              <div className="wx__col-md-12 wx__col-sm-12 wx__d-flex wx__justify-content-between wx__align-items-center">
+                <h5 className="wx__mb-0">Address & Contact</h5>
+                {addressFlag ? (
+                  <div className="wx__d-flex">
+                    <WxButton
+                      variant="none"
+                      className="cancel__btn"
+                      onClick={() => setAddressFlag(false)}
+                    >
+                      Cancel
+                    </WxButton>
+                    <WxButton type="submit" variant="none" disabled={isLoading}>
+                      Save Changes
+                    </WxButton>
+                  </div>
+                ) : (
+                  <WxButton variant="none" onClick={() => setAddressFlag(true)}>
+                    Edit
+                  </WxButton>
+                )}
+              </div>
+              <p className="wx__text_body wx__body_regular wx__mb-1">
+                Used on customer order confirmations and your WebX bill.
+              </p>
+              <WxHr />
+            </div>
+            {addressFlag ? (
+              <div className="wx__row">
+                <div className="wx__col-md-12 wx__col-sm-12 wx__mt-2">
+                  <WxInput
+                    registerProperty={{
+                      ...addressRegister("country", { required: false }),
+                    }}
+                    label="Country"
+                    defaultValue="Bangladesh"
+                    className=""
+                    isDisabled
+                  />
+                </div>
+                <div className="wx__col-md-12 wx__col-sm-12 wx__mt-2">
+                  <WxInput
+                    isRequired
+                    label="Address"
+                    noMargin
+                    registerProperty={{
+                      ...addressRegister("addressLine1", { required: true }),
+                    }}
+                    color={addressErrors.addressLine1 ? "danger" : "primary"}
+                    errorMessage={
+                      addressErrors.addressLine1 && "Address is Required"
+                    }
+                  />
+                </div>
+                <div className="wx__col-md-12 wx__col-sm-12 wx__mt-2">
+                  <WxInput
+                    label="Appartment,  suits, etc"
+                    noMargin
+                    registerProperty={{ ...addressRegister("addressLine2") }}
+                  />
+                </div>
+                <div className="wx__col-md-4 wx__col-sm-12 wx__mt-2">
+                  <WxSelect
+                    label="Division/State"
+                    noMargin
+                    options={divisions}
+                    placeholder="Select Division"
+                    valuesKey="division_name_eng"
+                    textKey="division_name_eng"
+                    registerProperty={{
+                      ...addressRegister("state", {
+                        required: true,
+                        onChange: (e) => onChangeDivision(e.target.value),
+                      }),
+                    }}
+                    color={
+                      addressErrors?.address?.state ? "danger" : "secondary"
+                    }
+                    errorMessage={
+                      addressErrors?.address?.state &&
+                      "Division/State is required!"
+                    }
+                  />
+                </div>
+                <div className="wx__col-md-4 wx__col-sm-12 wx__mt-2">
+                  {/* {getValues("city")} */}
+                  <WxSelect
+                    label="District/City"
+                    options={districts}
+                    placeholder="Select District/City"
+                    valuesKey="zilla_name_eng"
+                    textKey="zilla_name_eng"
+                    defaultValue={addressWatch("city")}
+                    registerProperty={{
+                      ...addressRegister("city", { required: true }),
+                    }}
+                    isDisabled={!districts?.length}
+                    color={
+                      addressErrors?.address?.city ? "danger" : "secondary"
+                    }
+                    errorMessage={
+                      addressErrors?.address?.city &&
+                      "District/City is required!"
+                    }
+                  />
+                </div>
+                <div className="wx__col-md-4 wx__col-sm-12 wx__mt-2">
+                  <WxInput
+                    registerProperty={{
+                      ...addressRegister("zip", { required: true }),
+                    }}
+                    label="Post code"
+                    color={addressErrors?.address?.zip ? "danger" : "secondary"}
+                    errorMessage={
+                      addressErrors?.address?.zip && "Post Code is required!"
+                    }
+                  />
+                </div>
+                <div className="wx__col-md-6 wx__col-sm-12 wx__mt-2">
+                  <WxInput
+                    label="Email Address"
+                    type="email"
+                    registerProperty={{ ...addressRegister("email") }}
+                  />
+                </div>
+                <div className="wx__col-md-6 wx__col-sm-12 wx__mt-2">
+                  <WxInput
+                    label="Phone Number."
+                    registerProperty={{ ...addressRegister("phone") }}
+                  />
+                </div>
+              </div>
+            ) : (
+              <>
+                {storeAddress && Object.keys(storeAddress).length !== 0 ? (
+                  <>
+                    <div className="wx__d-flex wx__justify-content-between">
+                      <div>
+                        <div className="wx__row">
+                          <div className="wx__text_body wx__text_strong d-flex align-items-center">
+                            <WxIcon icon="location_on" />
+                            <span>
+                              {storeAddress?.addressLine1
+                                ? storeAddress?.addressLine1 + ", "
+                                : ""}
+                              {storeAddress?.addressLine2
+                                ? storeAddress?.addressLine2 + ", "
+                                : ""}
+                              {storeAddress?.city ? storeAddress?.city : ""}
+                              {storeAddress?.zip
+                                ? "-" + storeAddress?.zip + ", "
+                                : ", "}
+                              {storeAddress?.state
+                                ? storeAddress?.state + ", "
+                                : ""}
+                              {storeAddress?.country
+                                ? storeAddress?.country
+                                : ""}
+                            </span>
+                          </div>
+                        </div>
+                        {/* <div className="wx__row"> */}
+                        <div className="wx__d-flex">
+                          {storeAddress?.email && (
+                            <div className="wx__text_body wx__text_strong d-flex align-items-center  wx__my-2">
+                              <WxIcon icon="email" />
+                              <div className="wx__d-flex wx__flex-column">
+                                <span> {storeAddress?.email || ""}</span>
+                              </div>
+                            </div>
+                          )}
+                          {storeAddress?.phone && (
+                            <div className=" wx__text_body wx__text_strong d-flex align-items-center wx__ms-3">
+                              <WxIcon icon="phone" />
+                              <span> {storeAddress?.phone || ""}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <WxIcon
+                        onClick={() => setAddressFlag(true)}
+                        icon="edit"
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <span>No address available</span>
+                )}
+              </>
+            )}
+          </div>
+        ) : (
+          <div className="wx__bg-white wx__rounded wx__mt-3">
+            <AddressNcontactSkelton viewBox="0 0 595 110" />
+          </div>
+        )}
+      </form>
+
+      {/* <form onSubmit={handleSubmit(onSubmitContactInfo)}>
+        <div className="wx__card wx__p-3 wx__mt-3 contact_form">
+          <div className="wx__row">
+            <div className="wx__col-md-12 wx__col-sm-12 wx__d-flex wx__justify-content-between wx__align-items-center">
+              <h5 className="wx__mb-0">Contact Information</h5>
+            </div>
+            <WxHr />
+          </div>
+
+          <div className="wx__row">
+            <div className="wx__text_body wx__text_strong d-flex align-items-center wx__mb-3">
+              <WxIcon icon="phone" />
+              <span> {storeAddress?.phone || ""}</span>
+            </div>
+            <div className="wx__text_body wx__text_strong d-flex align-items-center wx__mb-3">
+              <WxIcon icon="email" />
+              <div className="wx__d-flex wx__flex-column">
+                <span> {storeAddress?.email || ""}</span>
+                <span className="wx__text_small wx__text_regular">
+                  Webx will communicated via this email
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form> */}
+
+      <div className="wx__card wx__p-3 wx__mt-3 currency_sec">
+        <div className="wx__row">
+          <div className="wx__col-md-12 wx__col-sm-12 wx__d-flex wx__justify-content-between wx__align-items-center text__small">
+            <h5 className="wx__mb-0">Store currency</h5>
+            <div className="wx__d-flex wx__align-items-center">
+              <WxIcon icon="info" variants="outlined" />
+              <p className="wx__ms-1 wx__mb-0">
+                More currencies are coming soon
+              </p>
+            </div>
+          </div>
+          <WxHr />
+        </div>
+        <div className="wx__row">
+          <p className="wx__text_body wx__text_strong">
+            Bangladeshi takas (BDT)
+          </p>
+        </div>
+      </div>
+
+      <form onSubmit={handleSubmit(onSubmitAddress)}>
+        <div className="wx__card wx__p-3 wx__mt-3 address_form">
+          <div className="wx__row">
+            <div className="wx__col-md-12 wx__col-sm-12 wx__d-flex wx__justify-content-between wx__align-items-center">
+              <h5 className="wx__mb-0">Time Zone</h5>
+              <div className="wx__d-flex wx__align-items-center wx__text-secondary">
+                <WxIcon
+                  icon="info"
+                  variants="outlined"
+                  className="wx__mt-auto"
+                />
+                <p className="wx__ms-1 wx__mb-0">
+                  More timezone are coming soon
+                </p>
+              </div>
+            </div>
+            <WxHr />
+          </div>
+
+          <div className="wx__row">
+            <p className="wx__text_body wx__text_strong d-flex align-items-center">
+              (GMT +6:00) Astana, Dhaka
+            </p>
+          </div>
+        </div>
+      </form>
+    </WxMainLg>
+  );
+};
+
+export default General;

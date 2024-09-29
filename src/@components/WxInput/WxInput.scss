@@ -1,0 +1,81 @@
+@import "webx-brighten/partials/variables";
+@import "webx-brighten/custom/typography.scss";
+
+.wx__form_group {
+  .note_text {
+    color: $neutral__600;
+    display: block;
+  }
+  .input-start-image {
+    position: absolute;
+    left: 0.5em;
+    height: 15px;
+  }
+}
+
+.wx__table_cell_input_number_number {
+  position: relative;
+  width: 109.25px;
+  min-height: 56px;
+  // border: 1px solid black;
+  padding: 8px;
+  input[type="number"] {
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    // border: 1.5px solid $neutral__600;
+    @extend .wx__rounded;
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    // -moz-appearance: textfield;
+  }
+  span {
+    background: transparent !important;
+  }
+  .wx__plus_minus_btn {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 15px;
+    right: 18px;
+    height: 25px;
+    .plus,
+    .minus {
+      width: 22.5px;
+      height: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 2px;
+      background-color: $neutral__200;
+      &:hover {
+        background-color: $neutral__400;
+      }
+      &:active {
+        background-color: $neutral__500;
+      }
+    }
+    .plus {
+      margin-bottom: 0.5px;
+    }
+    .minus {
+      margin-top: 0.5px;
+    }
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+  }
+  /* Chrome, Safari, Edge, Opera */
+}
+
+.wx__icon {
+  background: transparent;
+}

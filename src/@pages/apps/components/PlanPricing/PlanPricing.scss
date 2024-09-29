@@ -1,0 +1,26 @@
+@import "webx-brighten/partials/variables";
+
+.wx__pricing {
+  .wx__single_pricing {
+    .wx__icon {
+      color: $primary__500;
+      font-size: 22px;
+    }
+    .wx__text_heading {
+      font-weight: 600 !important;
+    }
+    .wx__card {
+      height: 100%;
+      h4 {
+        margin-bottom: 15px;
+      }
+      ul {
+        li {
+          color: $neutral__800;
+          font-size: clamp(8px, 14px, 20px);
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}

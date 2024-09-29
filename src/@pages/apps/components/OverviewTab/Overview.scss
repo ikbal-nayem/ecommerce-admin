@@ -1,0 +1,13 @@
+@import "webx-brighten/partials/variables";
+.wx__overview {
+  p {
+    color: $neutral__700;
+  }
+  ul {
+    padding-top: 20px;
+    li {
+      color: $neutral__800;
+      margin-bottom: 15px;
+    }
+  }
+}

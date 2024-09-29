@@ -1,0 +1,53 @@
+@import "webx-brighten/partials/variables";
+
+.theme-group {
+  .single-theme {
+    a {
+      text-decoration: none;
+    }
+    .theme-card {
+      border: 1px solid $neutral__400;
+      background: $neutral__100;
+      border-radius: 4px;
+      padding: 10px;
+      position: relative;
+      h6 {
+        color: $neutral__900;
+        letter-spacing: -0.5px;
+        text-transform: capitalize;
+      }
+      .installed {
+        padding: 10px;
+        color: $primary__500;
+        align-items: center;
+        display: flex;
+        column-gap: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .theme_price {
+        p {
+          font-weight: 600;
+          color: $neutral__900;
+        }
+      }
+      .theme-rating {
+        display: flex;
+        align-items: center;
+        p {
+          color: $neutral__600;
+          font-weight: 500;
+        }
+        .star-color {
+          color: $orange__600;
+          font-size: 0.75rem;
+          margin-right: 5px;
+        }
+      }
+      &:hover {
+        background-color: $neutral__200;
+      }
+    }
+  }
+}

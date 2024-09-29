@@ -1,0 +1,188 @@
+import WxButton from "@components/WxButton";
+import WxDrawer from "@components/WxDrawer";
+import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
+import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import WxInput from "@components/WxInput";
+import WxSwitch from "@components/WxSwitch";
+import { useState } from "react";
+import "./ConfigureDrawer.scss";
+
+interface IConfigureDrawer {
+  isOpen: boolean;
+  handleFormClose: any;
+  isSaving: boolean;
+  setIsSaving: Function;
+  configureFrom: any;
+  makeCourierConfigure: Function;
+  editDrawer: boolean;
+  setEditDrawer: Function;
+  onDelete;
+  configuredCourierData;
+}
+
+const ConfigureDrawer = ({
+  isOpen,
+  handleFormClose,
+  configureFrom,
+  makeCourierConfigure,
+  editDrawer,
+  isSaving,
+  setIsSaving,
+  setEditDrawer,
+  configuredCourierData,
+  onDelete,
+}: IConfigureDrawer) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    setValue,
+    getValues,
+    formState: { errors },
+  } = configureFrom;
+
+  const [confirmationModal, setConfirmationModal] = useState<boolean>(false);
+
+  return (
+    <>
+      <WxDrawer show={isOpen} handleClose={handleFormClose}>
+        <div className="delivery_create_sec">
+          <WxDrawerHeader
+            title={`${editDrawer ? "Edit" : "Configure"} Delivery Zone`}
+            closeIconAction={handleFormClose}
+          />
+          <form onSubmit={handleSubmit(makeCourierConfigure)} noValidate>
+            <WxDrawerBody>
+              {getValues("courierProvider") === "COURIER_TYPE_ECOURIER" && (
+                <div className="wx__row">
+                  <div className="wx__col-md-12 wx__col-sm-12">
+                    <WxInput
+                      label="API Key"
+                      isRequired
+                      placeholder="Type api key"
+                      registerProperty={{
+                        ...register("apiKey", {
+                          required: true,
+                        }),
+                      }}
+                      color={errors?.apiKey ? "danger" : "secondary"}
+                      errorMessage={
+                        errors?.apiKey ? "This field is required!" : ""
+                      }
+                    />
+                  </div>
+                  <div className="wx__col-md-12 wx__col-sm-12">
+                    <WxInput
+                      isRequired
+                      label="API Secret"
+                      placeholder="Type api secret"
+                      registerProperty={{
+                        ...register("apiSecret", { required: true }),
+                      }}
+                      color={errors?.apiSecret ? "danger" : "secondary"}
+                      errorMessage={
+                        errors?.apiSecret ? "This field is required!" : ""
+                      }
+                    />
+                  </div>
+                  <div className="wx__col-md-12 wx__col-sm-12">
+                    <WxInput
+                      label="User Id"
+                      isRequired
+                      placeholder="Type user id"
+                      registerProperty={{
+                        ...register("userId", {
+                          required: true,
+                        }),
+                      }}
+                      color={errors?.userId ? "danger" : "secondary"}
+                      errorMessage={
+                        errors?.userId ? "This field is required!" : ""
+                      }
+                    />
+                  </div>
+                  <div className="wx__mt-4" style={{ maxWidth: "90%" }}>
+                    <WxSwitch
+                      label="Activity of service"
+                      checkedTitle="Active"
+                      unCheckedTitle="Inactive"
+                      registerProperty={{
+                        ...register("isActive"),
+                      }}
+                      defaultChecked={!editDrawer}
+                    />
+                  </div>
+                </div>
+              )}
+              {getValues("courierProvider") === "COURIER_TYPE_REDX" && (
+                <div className="wx__row">
+                  <div className="wx__col-md-12 wx__col-sm-12">
+                    <WxInput
+                      label="Token"
+                      isRequired
+                      placeholder="Enter Token"
+                      registerProperty={{
+                        ...register("token", {
+                          required: true,
+                        }),
+                      }}
+                      color={errors?.token ? "danger" : "secondary"}
+                      errorMessage={
+                        errors?.token ? "This field is required!" : ""
+                      }
+                    />
+                  </div>
+                  <div className="wx__mt-4" style={{ maxWidth: "90%" }}>
+                    <WxSwitch
+                      label="Activity of service"
+                      checkedTitle="Active"
+                      unCheckedTitle="Inactive"
+                      registerProperty={{
+                        ...register("isActive"),
+                      }}
+                      defaultChecked={!editDrawer}
+                    />
+                  </div>
+                </div>
+              )}
+            </WxDrawerBody>
+            <WxDrawerFooter>
+              <div className="delivery_create_sec__footer">
+                {editDrawer ? (
+                  <WxButton
+                    color="danger"
+                    variant="fill"
+                    onClick={() => {
+                      onDelete(configuredCourierData);
+                    }}
+                    disabled={isSaving}
+                  >
+                    Delete
+                  </WxButton>
+                ) : null}
+                <div className="wx__ms-auto wx__d-flex">
+                  <WxButton
+                    color="secondary"
+                    type="button"
+                    variant="outline"
+                    className="wx__me-2"
+                    onClick={handleFormClose}
+                    disabled={isSaving}
+                  >
+                    Cancel
+                  </WxButton>
+                  <WxButton variant="fill" type="submit" disabled={isSaving}>
+                    {editDrawer ? "Update" : "Save"}
+                  </WxButton>
+                </div>
+              </div>
+            </WxDrawerFooter>
+          </form>
+        </div>
+      </WxDrawer>
+    </>
+  );
+};
+export default ConfigureDrawer;

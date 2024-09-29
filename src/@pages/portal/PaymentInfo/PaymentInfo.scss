@@ -1,0 +1,30 @@
+@import "webx-brighten/partials/_variables.scss";
+
+.payment_info_card {
+  padding: 1.5rem;
+  margin-bottom: 20px;
+  .icon {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    font-size: 30px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__bank{
+      background-color: $primary__200;
+    }
+    &__mobile{
+      background-color: $yellow__200;
+    }
+  }
+}
+
+.portal_payment_info {
+  width: 500px;
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+}

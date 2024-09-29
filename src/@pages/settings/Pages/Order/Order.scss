@@ -1,0 +1,56 @@
+@import "webx-brighten/partials/variables";
+.setting_order_page {
+  .setting_content {
+    .order_btn_group {
+      .order_btn_single {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        padding: 16px 18px;
+        border-radius: 4px;
+        border: 1px solid $neutral__600;
+        position: relative;
+        cursor: pointer;
+        .read__more {
+          color: #0065db;
+        }
+      }
+      .active {
+        border: 1px solid $green__700;
+        background-color: #eef4ed;
+      }
+      .showcase_order_btn::before {
+        content: "coming soon!";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        font-size: 35px;
+        backdrop-filter: blur(2px);
+        padding-top: 32px;
+        cursor: not-allowed;
+        border-radius: 4px;
+        // pointer-events: none;
+      }
+    }
+    .disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  .wx__card {
+    .wx__hr {
+      margin: 14px 0 !important;
+    }
+    .wx__form_group {
+      margin-bottom: 0 !important;
+      max-width: 215px;
+      width: 100%;
+    }
+    .wx__form-check-inline {
+      margin-right: 0.4rem !important;
+    }
+  }
+}

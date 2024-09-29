@@ -1,0 +1,70 @@
+@import "webx-brighten/partials/classes";
+@import "webx-brighten/partials/mixins";
+@import "webx-brighten/partials/variables";
+
+#exampleChart {
+  svg {
+    text-align: center;
+  }
+
+  text {
+    font-family: "Inter";
+    font-size: 10px;
+    fill: $neutral__700;
+  }
+
+  text.title {
+    font-size: 20px;
+    fill: rgb(255, 234, 0);
+  }
+
+  .subtitle text {
+    font-size: 12px;
+    text-decoration: underline;
+    fill: gray;
+  }
+
+  path.line {
+    fill: none;
+    // stroke: rgb(0, 255, 13);
+    filter: url(#glow);
+    stroke-width: 3px;
+  }
+
+  path.area {
+    opacity: 0.2;
+  }
+
+  .axis path {
+    stroke: none !important;
+  }
+
+  .axis line {
+  }
+
+  .y.axis {
+    .tick {
+      &:first-child,
+      &:last-child {
+        line {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: $neutral__500;
+    stroke-dasharray: 4, 3;
+    shape-rendering: crispEdges;
+  }
+
+  line.x,
+  line.y,
+  circle.y {
+    // stroke: green;
+    opacity: 1;
+  }
+}

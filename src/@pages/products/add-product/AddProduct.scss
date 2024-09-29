@@ -1,0 +1,27 @@
+.wx__add_product_form {
+  .wx__product_form{
+    display: inline-flex;
+    .wx__form_left {
+      margin-right: 16px;
+      width: 656px;
+    }
+    .wx__form_right {
+      width: 272px;
+      height: fit-content;
+    }
+  }
+  .wx__card {
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.wx__card{
+  &.product_dimension{
+    .wx__form_group{
+      input{
+        margin-right: 1em;
+      }
+    }
+  }
+}

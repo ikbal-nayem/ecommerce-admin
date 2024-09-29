@@ -1,0 +1,42 @@
+@import "webx-brighten/partials/variables";
+
+.wx__slider {
+  .img-main-section {
+    position: relative;
+  }
+  .left-icon {
+    position: absolute;
+    left: 0;
+    padding: 8px;
+    padding-right: 0 !important;
+    padding-bottom: 2px !important;
+    background: rgba(255, 255, 255, 0.218);
+    top: calc(50% - 9px);
+    .wx__icon {
+      margin-bottom: -5px;
+      color: #fff;
+    }
+  }
+
+  .img-section {
+    img {
+      height: 265px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .right-icon {
+    padding: 8px;
+    padding-right: 0 !important;
+    padding-bottom: 2px !important;
+    background: rgba(255, 255, 255, 0.218);
+    position: absolute;
+    right: 0;
+    top: calc(50% - 9px);
+    .wx__icon {
+      margin-bottom: -5px;
+      color: #fff;
+    }
+  }
+}

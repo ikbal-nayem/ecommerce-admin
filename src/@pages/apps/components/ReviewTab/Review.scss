@@ -1,0 +1,45 @@
+@import "webx-brighten/partials/variables";
+
+.wx__review {
+  .wx__review_top {
+    border-bottom: 1px solid $neutral__300;
+  }
+  .wx__user_review {
+    .wx__single_review {
+      padding: 10px 0;
+      border-bottom: 1px solid $neutral__400;
+      .helpful {
+        margin-right: 3rem;
+        .icon {
+          font-size: 18px;
+          color: $primary__500;
+          margin-right: 5px;
+        }
+      }
+      .not-helpful {
+        .icon {
+          font-size: 18px;
+          margin-right: 5px;
+        }
+      }
+      .wx__review_replay {
+        background: $neutral__200;
+        padding: 10px;
+      }
+      .user_review_hide_msg {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 1.5em;
+        max-height: 3em;
+      }
+    }
+  }
+  .small_icon {
+    font-size: 13px;
+    color: $orange__600;
+    margin-right: 2px;
+  }
+}

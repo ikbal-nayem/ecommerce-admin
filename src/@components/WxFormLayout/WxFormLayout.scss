@@ -1,0 +1,31 @@
+@import "webx-brighten/partials/variables";
+
+.wx__form_container {
+  &_content {
+    display: inline-flex;
+    .content_left {
+      margin-right: 16px;
+      width: 656px;
+    }
+    .content_right {
+      width: 272px;
+      height: fit-content;
+    }
+  }
+  .wx__form_footer {
+    border-top: 1px solid $neutral__400;
+    padding-top: 12px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      color: $neutral__900;
+      font-weight: 600;
+    }
+  }
+  .wx__card {
+    padding: 1.5rem;
+    margin-bottom: 16px;
+  }
+}

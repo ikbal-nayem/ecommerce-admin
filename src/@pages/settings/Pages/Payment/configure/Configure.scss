@@ -1,0 +1,25 @@
+@import "webx-brighten/partials/variables";
+
+.payment_create_sec {
+  // width: 486px;
+  .status_msg {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    p {
+      margin-left: 5px;
+      margin-bottom: 0;
+    }
+    background: $neutral__200;
+    color: $neutral__700;
+  }
+  // .status_mxg_warning{
+  //     background: $orange__100;
+  //     color: $orange__900;
+  // }
+  // .status_mxg_default{
+  //     background: $neutral__200;
+  //     color: $neutral__700;
+  // }
+}

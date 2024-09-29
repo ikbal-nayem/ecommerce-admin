@@ -1,0 +1,33 @@
+@import "webx-brighten/partials/variables";
+.setting_page_section {
+  a {
+    text-decoration: none;
+    margin: 25px 10px;
+    transition: 0.3s ease-in-out;
+    .setting_single_item {
+      width: 284px;
+      .right-sec {
+        width: 160px;
+      }
+      .setting_link_icon {
+        color: $primary__900;
+        margin-right: 15px;
+        margin-top: 5px;
+        font-size: 22px;
+      }
+      .wx__text_semibold {
+        color: $neutral__900;
+      }
+      .wx__text_small {
+        line-height: 1.6 !important;
+        color: $neutral__700;
+      }
+    }
+    :hover {
+      .setting_link_icon,
+      .wx__text_semibold {
+        color: $primary__600;
+      }
+    }
+  }
+}

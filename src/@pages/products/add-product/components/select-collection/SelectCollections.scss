@@ -1,0 +1,17 @@
+.wx__collection_select {
+  .collections {
+    margin-top: 26px;
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul, li {
+      margin-top: 18px;
+    }
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+}

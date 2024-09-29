@@ -1,0 +1,36 @@
+@import "webx-brighten/partials/variables";
+
+.downgrade-list-page {
+  .wx__responsive_table {
+    .wx__td-title {
+      width: fit-content;
+      margin: 0 !important;
+      max-width: 400px !important;
+      white-space: nowrap !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .thumb-imgs {
+      .wx__table_cell_avatar {
+        position: relative;
+        cursor: pointer;
+        &.selected {
+          .wx__thumbnail {
+            background-color: $primary__200;
+            img {
+              opacity: 50%;
+            }
+          }
+          span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 3px;
+            transition: 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

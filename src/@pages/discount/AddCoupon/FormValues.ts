@@ -1,0 +1,33 @@
+export default interface FormValues {
+  couponCode: string;
+  percentage: number;
+  fixedAmount: number;
+  maximumDiscount: number;
+  minimumOrderAmount: number;
+  minimumQuantityOfItem: number;
+  maximumUseLimit: number;
+  maximumUserUseLimit: number;
+  couponDiscountAmount: number;
+  products: any[];
+  categories: any[];
+  customers: any[];
+  customerGroups: any[];
+  startDate: any;
+  endDate: any;
+  startTime: any;
+  endTime: any;
+  publishDate: any;
+  closeDate: any;
+  type_radio: string;
+  maximumDiscountCheck: boolean;
+  minimum_requirement_radio: string | number | boolean;
+  isContinued: boolean;
+  applicableForRadio: string | number | boolean;
+  customerEligibilityRadio: string | number | boolean;
+  isOnlyForProduct: boolean;
+  isOnlyForProductCategory: boolean;
+  isOnlyForCustomerGroup: boolean;
+  isOnlyForCustomer: boolean;
+  useLimit_radio: string | number | boolean;
+  userLimit_radio: string | number | boolean;
+}

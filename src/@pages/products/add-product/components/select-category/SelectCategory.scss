@@ -1,0 +1,28 @@
+.wx__category_select {
+  // width: 480px;
+  .nested_categories {
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul, li {
+      margin-top: 18px;
+    }
+    ul.child {
+      padding-left: 36px;
+    }
+    ul.parent > li > .wx__form-check label {
+      font-weight: 600;
+    }
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+}
+// @media(max-width:768px){
+//   .wx__category_select {
+//     width: 100%;
+//   }
+// }

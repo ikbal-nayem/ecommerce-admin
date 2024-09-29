@@ -1,0 +1,70 @@
+// @import "webx-brighten/custom/typography.scss";
+// @import "webx-brighten/partials/variables";
+// @import "webx-brighten/partials/classes";
+
+// .wx__category {
+//     &_container {
+//       max-width: 944px;
+//     }
+// }
+// .wx__category {
+//   &_container {
+//     max-width: 944px;
+//   }
+//   &_table_content {
+//     @extend .wx__rounded;
+//     margin-top: 20px;
+//     // padding-top: 5px;
+//     background-color: #fff;
+//     overflow: hidden;
+//   }
+//   &_table {
+//     width: 100%;
+//     margin-bottom: 1rem;
+//     background-color: transparent;
+//     border-collapse: collapse;
+//     th, td {
+//       padding: 11px 5px;
+//       vertical-align: middle;
+//       border-top: 1px solid $neutral__300;
+//     }
+//     th {
+//       @extend .wx__text_semibold;
+//       color: $neutral__900;
+//     }
+//     thead {
+//       th {
+//         font-size: 13px;
+//         padding-top: 20px;
+//       }
+//     }
+//     tbody {
+//       th {
+//         font-size: 14px;
+//       }
+//     }
+//     .more {
+//       width: 70px;
+//     }
+//     .products {
+//       width: 123px;
+//     }
+//     .visibility {
+//       width: 118px;
+//       .inactive {
+//         color: $neutral__600;
+//       }
+//     }
+//     .category_name {
+//       padding-left: 32px;
+//       div {
+//         display: flex;
+//         align-items: center;
+//         span:first-of-type {
+//           font-size: 15px;
+//           margin-right: 16px;
+//         }
+//       }
+//     }
+//   }
+// }

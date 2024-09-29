@@ -1,0 +1,14 @@
+@import "webx-brighten/partials/variables";
+
+.wx__form_group {
+  textarea {
+    height: auto;
+    min-height: 75px;
+    &.wx__input_danger {
+      border-color: #ff4d4f;
+    }
+  }
+  .note_text {
+    color: $neutral__600;
+  }
+}

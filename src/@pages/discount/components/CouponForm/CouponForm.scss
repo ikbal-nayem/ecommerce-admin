@@ -1,0 +1,35 @@
+@import "webx-brighten/partials/classes";
+@import "webx-brighten/partials/mixins";
+@import "webx-brighten/partials/variables";
+
+.wx__order_form {
+  .wx__input-group {
+    width: unset;
+  }
+  .wx__order_product {
+    .wx__form_group {
+      margin-bottom: 0;
+    }
+  }
+  .wx__order_payment {
+    .payment_list {
+      div {
+        color: $neutral__900;
+        padding: 0.6em 0;
+        span {
+          &.subtotal {
+            font-weight: 500;
+          }
+          &.total {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .wx__order_note {
+    .wx__form_group {
+      margin-bottom: 0;
+    }
+  }
+}

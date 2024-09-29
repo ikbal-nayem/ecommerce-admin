@@ -1,0 +1,47 @@
+@import "webx-brighten/partials/variables";
+
+.wx__suggested_app_conponent {
+  a {
+    text-decoration: none;
+  }
+  .single-app {
+    &:hover {
+      background-color: $neutral__200;
+    }
+    padding: 20px 20px 0 20px;
+    // margin-bottom: 20px;
+    border: 1px solid $neutral__400;
+    border-radius: 4px;
+    position: relative;
+    .installed {
+      padding: 10px;
+      color: $primary__500;
+      align-items: center;
+      display: flex;
+      column-gap: 5px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .wx__subtitle {
+      color: $neutral__600;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    .wx__text_medium {
+      color: $neutral__900 !important;
+      font-size: 14px;
+    }
+    .wx__icon_star {
+      width: 15px;
+      margin-right: 5px;
+    }
+    .card__bottom {
+      p {
+        color: $neutral__600;
+        font-weight: 400;
+        font-size: 12px;
+      }
+    }
+  }
+}

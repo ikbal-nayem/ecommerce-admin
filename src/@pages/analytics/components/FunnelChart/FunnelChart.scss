@@ -1,0 +1,29 @@
+@import "../../../../assets//webx-sass/partials/classes";
+@import "../../../../assets//webx-sass/partials/mixins";
+@import "../../../../assets//webx-sass/partials/variables";
+
+svg {
+}
+
+.line {
+  color: #ffffff33;
+  fill: none;
+  stroke: $purple__600;
+  stroke-width: 1.5;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+/* Style the dots by assigning a fill and stroke */
+.dot {
+  fill: rgb(0, 223, 0);
+  stroke: #fff;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}

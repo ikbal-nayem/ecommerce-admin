@@ -1,0 +1,32 @@
+{
+	"123": [
+		{
+			"svgIcon": {
+				"value": "<image-link>",
+				"inputType": "media"
+			},
+			"title": {
+				"value": "<image-link>",
+				"inputType": "text"
+			},
+			"description": {
+				"value": "<image-link>",
+				"inputType": "text"
+			}
+		},
+		{
+			"svgIcon": {
+				"value": "<image-link>",
+				"inputType": "media"
+			},
+			"title": {
+				"value": "<image-link>",
+				"inputType": "text"
+			},
+			"description": {
+				"value": "<image-link>",
+				"inputType": "text"
+			}
+		}
+	]
+}

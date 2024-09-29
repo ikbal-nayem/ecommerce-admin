@@ -1,0 +1,11 @@
+@import "webx-brighten/partials/variables";
+.order_confirmation_sec {
+  .notification_left {
+    .body_label {
+      margin-bottom: 9px !important;
+      span {
+        color: $red__600;
+      }
+    }
+  }
+}

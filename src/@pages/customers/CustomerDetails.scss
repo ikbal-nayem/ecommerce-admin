@@ -1,0 +1,12 @@
+
+.show-mobile-view{
+    display: none;
+  }
+  @media (max-width: 767px) {
+    .show-mobile-view{
+      display: block;
+    }
+    .hide-mobile-view{
+      display: none;
+    }
+  }

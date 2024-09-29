@@ -1,0 +1,36 @@
+@import "webx-brighten/partials/variables";
+
+.notification_sec {
+  margin: auto;
+  max-width: 944px;
+  .setting_content {
+    .notification_left {
+      .single_notification {
+        .wx__hr {
+          margin: 20px 0 !important;
+        }
+        .notification_title {
+          color: $primary__700;
+        }
+      }
+    }
+    .notification_right {
+      .icon_megenta {
+        background: $neutral__300;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        .wx__icon {
+          font-size: 22px;
+          color: $magenta__900;
+        }
+      }
+      .wx__hr {
+        margin: 20px 0 15px 0 !important;
+      }
+    }
+  }
+}

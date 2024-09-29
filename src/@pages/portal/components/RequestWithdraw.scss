@@ -1,0 +1,8 @@
+.withdraw_request {
+  width: 480px;
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+}

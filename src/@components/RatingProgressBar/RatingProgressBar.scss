@@ -1,0 +1,32 @@
+@import "webx-brighten/partials/variables";
+
+.wx__rating_progress {
+  .small_icon {
+    color: $neutral__700;
+    font-size: 14px;
+  }
+  .progress_left {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+  }
+  .progress_right {
+    margin-left: 8px;
+    min-width: 80px;
+  }
+  .wx__bar_bg {
+    width: 100%;
+    height: 4px;
+    background: $neutral__200;
+    position: relative;
+    border-radius: 10px;
+    .wx__progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: $orange__500;
+      border-radius: 10px;
+    }
+  }
+}

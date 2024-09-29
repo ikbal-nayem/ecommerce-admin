@@ -1,0 +1,110 @@
+@import "webx-brighten/partials/variables";
+@import "webx-brighten/custom/typography.scss";
+
+.wx__theme_details_page {
+  .theme_details_header {
+    h4,
+    span {
+      font-weight: 600 !important;
+    }
+  }
+  .wx__details_top {
+    .wx__details_top_left {
+      h2 {
+        @extend .wx__text_medium;
+        margin-bottom: 0px;
+      }
+      .wx__tag_line {
+        @extend .wx__text_medium;
+        @extend .wx__text_subtitle;
+        color: $neutral__700;
+      }
+      .wx__user_review {
+        @extend .wx__text_medium;
+        .wx__icon_star {
+          margin-bottom: 5px;
+          margin-right: 5px;
+        }
+        span {
+          color: $primary__500;
+        }
+      }
+      .wx__validity_period {
+        color: $neutral__800;
+        @extend .wx__text_subtitle;
+        @extend .wx__text_regular;
+      }
+    }
+    .wx__details_top_right {
+      .video_sec {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-top: 60%;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+      }
+    }
+  }
+  .wx__h4__medium {
+    span {
+      margin-right: 10px;
+      margin-bottom: -10px;
+      cursor: pointer;
+    }
+  }
+  .wx__details_mid {
+    .wx__details_mid_right {
+      h5 {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid $neutral__400;
+      }
+      ul {
+        padding-left: 0px !important;
+      }
+      a {
+        text-decoration: none;
+        margin-bottom: 10px;
+        span:last-child {
+          color: $neutral__800;
+        }
+      }
+      .privacy_policy {
+        span:last-child {
+          color: $blue__500;
+          text-decoration: underline;
+        }
+      }
+      .info_value {
+        @extend .wx__text_body;
+        @extend .wx__text_medium;
+        color: $neutral__900;
+        font-weight: 500;
+        button {
+          margin-right: 5px;
+          margin-bottom: 5px;
+        }
+      }
+      .info_label {
+        @extend .wx__text_body;
+        @extend .wx__text_regular;
+        color: $neutral__800;
+      }
+      .email__icon {
+        margin-bottom: -5px;
+      }
+    }
+  }
+  .wx__plan_pricing {
+    background: $primary__200;
+  }
+}

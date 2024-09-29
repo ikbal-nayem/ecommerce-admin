@@ -1,0 +1,57 @@
+.wx__accordion {
+	.wx__accordion_title {
+		cursor: pointer;
+	}
+	.wx__accordion_description {
+		padding-left: 38px;
+		padding-bottom: 10px;
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: transform 0.3s ease;
+	}
+	.wx__accordion_description.active {
+		transform: scaleY(1);
+	}
+}
+
+.fqa_plus {
+	height: 2px;
+	width: 10px;
+	background: #888;
+	display: inline-block;
+	position: relative;
+	// margin-left: 12px;
+	transition: all 0.3s ease-in-out;
+
+	&::before {
+		content: "";
+		height: 2px;
+		width: 10px;
+		background: #888;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: rotate(90deg);
+		transition: all 0.3s ease-in-out;
+	}
+}
+.fqa_minus {
+	height: 2px;
+	width: 10px;
+	background: #888;
+	display: inline-block;
+	position: relative;
+	// margin-left: 12px;
+	transition: all 0.3s ease-in-out;
+
+	&::before {
+		content: "";
+		height: 2px;
+		width: 10px;
+		background: #888;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all 0.3s ease-in-out;
+	}
+}

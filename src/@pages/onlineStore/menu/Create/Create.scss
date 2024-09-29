@@ -1,0 +1,134 @@
+@import "webx-brighten/partials/variables";
+
+.create_menu_sec {
+  .right {
+    .menu_help_icon {
+      color: $neutral__700;
+      .wx__icon {
+        margin-left: 10px;
+        margin-bottom: -5px;
+      }
+    }
+  }
+  .left {
+    .menu-item-sec {
+      padding: 32px 0;
+      background-color: $neutral__200;
+      border-radius: 4px;
+      text-align: center;
+      p {
+        color: $neutral__700;
+      }
+    }
+    .add-menu-btn {
+      border: 1px solid $neutral__500;
+      background: none;
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+      padding: 8px;
+      color: $primary__500;
+      .wx__icon {
+        margin-right: 10px;
+        border-radius: 50%;
+        color: $primary__500;
+      }
+    }
+  }
+  .menu-item-list {
+    .wx__ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border: 1px solid $neutral__400;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      .wx__li {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .wx__ul-btn {
+      cursor: pointer;
+      span {
+        color: $primary__600;
+      }
+    }
+  }
+  .add-menu {
+    .wx__icon {
+      font-size: 1.5rem;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        color: $primary__500;
+      }
+    }
+  }
+}
+
+.menu_create_sec {
+  .set-menu-dropdown {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid $neutral__400;
+    border-radius: 4px;
+
+    .category-btn {
+      border: none;
+      padding: 10px;
+      padding-top: 10px;
+      padding-bottom: 6px;
+      background: none;
+      border-bottom: 1px solid $neutral__300;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .sub-category {
+      padding-top: 10px;
+      div {
+        cursor: pointer;
+      }
+    }
+    .sub-dropdown {
+      max-height: 416px;
+      height: 100%;
+      overflow-y: auto;
+      button {
+        text-align: left;
+        font-weight: 400 !important;
+      }
+    }
+  }
+  .count-submenu {
+    span {
+      margin-left: 10px;
+    }
+  }
+  .status_switch {
+    padding-right: 3.5rem;
+  }
+  .link-field {
+    position: relative;
+
+    .custom-close {
+      position: absolute;
+      top: 2.65rem;
+      right: 1.5rem;
+      .wx__icon {
+        transition: 0.3s ease-in-out;
+        &:hover {
+          color: $red__700;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 991px){
+  .create_menu_sec{
+    .cards-sec{
+      padding: 0 !important;
+    }
+  }
+}

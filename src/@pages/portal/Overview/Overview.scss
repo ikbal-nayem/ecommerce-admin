@@ -1,0 +1,41 @@
+@import "webx-brighten/partials/_variables.scss";
+
+.portal_overview {
+  .card_info {
+    p {
+      text-transform: uppercase;
+      color: $neutral__700;
+      margin-bottom: 0;
+    }
+    span {
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+      font-size: 30px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.payments{
+        background-color: $yellow__200;
+      }
+      &.money{
+        background-color: $cyan__200;
+      }
+      &.event_available{
+        background-color: $orange__200;
+      }
+      &.groups{
+        background-color: $green__200;
+      }
+      &.group{
+        background-color: $red__200;
+      }
+      &.bank_info{
+        background-color: $blue__200;
+      }
+      &.bank_total{
+        background-color: $green__200;
+      }
+    }
+  }
+}

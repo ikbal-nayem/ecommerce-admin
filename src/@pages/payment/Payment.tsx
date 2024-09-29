@@ -1,0 +1,306 @@
+import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxNotFound from "@components/NotFound/WxNotFound";
+import WxSelect from "@components/Select/WxSelect";
+import WxButton from "@components/WxButton";
+import { WxFormHeader } from "@components/WxFormLayout";
+import WxHr from "@components/WxHr";
+import WxInput from "@components/WxInput";
+import WxRadio from "@components/WxRadio/WxRadio";
+import { PAYMENT_SERVICE } from "config/api-constant";
+import { MASTER_META_KEY } from "config/constants";
+import { ENV } from "config/ENV.config";
+import {
+	IDistrict,
+	IDivision,
+	IPaymentSupported,
+} from "@interfaces/common.interface";
+import { IAddressesPayload } from "@interfaces/Customer.interface";
+import { InvoiceService } from "services/api/Invoice.service";
+import { LocationService } from "services/api/Location.service";
+import { PaymentService } from "services/api/Payment.service";
+import { ProfileService } from "services/api/settings/Profile.service";
+import Preloader, { ButtonLoader } from "services/utils/preloader.service";
+import { ToastService } from "services/utils/toastr.service";
+import { useAuth } from "context/auth";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useSearchParams } from "react-router-dom";
+
+const getWayUrl = {
+	[MASTER_META_KEY.PAYMENT_GATEWAY_TYPE_AAMAR_PAY]:
+		PAYMENT_SERVICE + "public/payNow/aamarpay/merchantInvoice/",
+	[MASTER_META_KEY.PAYMENT_GATEWAY_TYPE_SSL_COMMERZ]:
+		PAYMENT_SERVICE + "public/payNow/sslcomrz/merchantInvoice/",
+	[MASTER_META_KEY.PAYMENT_GATEWAY_TYPE_PAY_WITH_WALLET]:
+		PAYMENT_SERVICE + "public/payNow/sslcomrz/merchantInvoice/",
+	[MASTER_META_KEY.PAYMENT_GATEWAY_TYPE_BANK_TRANSFER]:
+		PAYMENT_SERVICE + "public/payNow/sslcomrz/merchantInvoice/",
+};
+
+const Payment = () => {
+	const [loading, setIsLoading] = useState<boolean>(false);
+	const [openingGetway, setOpeningGetway] = useState<boolean>(false);
+	const [isError, setIsError] = useState<boolean>(false);
+	const [getWayList, setGetWayList] = useState<IPaymentSupported[]>([]);
+	const [invoiceInfo, setInvoiceInfo] = useState<any>();
+	const [districts, setDistricts] = useState<IDistrict[]>([]);
+	const [divisions, setDivisions] = useState<IDivision[]>([]);
+	const [userAddressList, setUserAddressList] = useState<any[]>([]);
+	const [selectedAddress, setSelectedAddress] = useState<string>();
+	const {
+		handleSubmit,
+		setValue,
+		getValues,
+		register,
+		formState: { errors },
+		reset,
+	} = useForm<any>();
+	const { logout } = useAuth();
+
+	let [searchParams] = useSearchParams();
+
+	const invoiceId = searchParams.get("invoiceId");
+
+	useEffect(() => {
+		setIsLoading(true);
+		const getWayListReq = PaymentService.getWebXGateways();
+		const invoiceInfoReq = InvoiceService.getInvoiceInfo(invoiceId);
+		const divisionReq = LocationService.getDivision("19");
+		const userAddressReq = ProfileService.getAllUserAddress();
+		Promise.all([getWayListReq, invoiceInfoReq, divisionReq, userAddressReq])
+			.then(([getWayListRes, invoiceInfoRes, divisionRes, userAddressRes]) => {
+				setGetWayList(getWayListRes.body);
+				setDivisions(divisionRes.body);
+				setInvoiceInfo(invoiceInfoRes.body);
+				setUserAddressList(userAddressRes.body);
+				const preSelectedId =
+					invoiceInfoRes?.body?.merchantPurchases?.billingAddress?.id;
+				const address = preSelectedId
+					? userAddressRes.body?.find(
+							(item: IAddressesPayload) => item.id === preSelectedId
+					  )
+					: userAddressRes.body?.[0];
+				const divisionId = divisionRes.body?.find(
+					(val: IDivision) => val.division_name_eng === address?.state
+				)?.division_id;
+				getDistricts(divisionId);
+				setSelectedAddress(address?.id);
+				const gatewayProvider = getWayListRes.body?.length
+					? getWayListRes.body?.[0]?.gatewayProvider
+					: "";
+				reset({ gatewayProvider, address });
+			})
+			.catch((err) => {
+				ToastService.error(err.message);
+				setIsError(true);
+			})
+			.finally(() => setIsLoading(false));
+	}, []);
+
+	const onDivisionSelect = (division: string) => {
+		const divisionId = divisions?.find(
+			(val: IDivision) => val.division_name_eng === division
+		)?.division_id;
+		setValue("address.cityName", null);
+		getDistricts(divisionId);
+	};
+
+	const getDistricts = (divisionId: string) => {
+		divisionId
+			? LocationService.getDistrict("19", divisionId).then((res) =>
+					setDistricts(res.body)
+			  )
+			: setDistricts([]);
+	};
+
+	const onPaymentMethodChange = (e: any, getway: IPaymentSupported) => {
+		setValue("gatewayProvider", e.target.checked ? getway.gatewayProvider : "");
+	};
+
+	const onAddressChange = (e) => {
+		setSelectedAddress(e.target.value);
+		const values = getValues();
+		const newSelectedAddress = userAddressList.find(
+			(val) => val?.id === e.target.value
+		);
+		onDivisionSelect(newSelectedAddress.state);
+		reset({
+			...values,
+			address: {
+				...newSelectedAddress,
+			},
+		});
+	};
+
+	const onSubmit = (data) => {
+		if (invoiceInfo?.merchantPurchases?.totalPayableAmount === 0) {
+			setOpeningGetway(true);
+			PaymentService.payFree(invoiceId)
+				.then((resp) => {
+					ToastService.success(resp?.message);
+					resp?.body?.logout && logout();
+				})
+				.catch((err) => ToastService.error(err?.message))
+				.finally(() => setOpeningGetway(false));
+			return;
+		}
+		if (!data?.gatewayProvider) {
+			ToastService.error("Please select payment method");
+			return;
+		}
+		setOpeningGetway(true);
+		InvoiceService.merchantPurchaseInvoice({
+			invoiceId: invoiceId,
+			address: data?.address,
+		})
+			.then((resp) => {
+				window.open(
+					ENV.ApiEndpoint + getWayUrl[data?.gatewayProvider] + invoiceId,
+					"_self"
+				);
+			})
+			.catch((err) => ToastService.error(err.message));
+	};
+
+	if (loading) return <Preloader />;
+
+	return (
+		<WxMainLg>
+			<WxFormHeader title="Payment" />
+			{isError ? (
+				<WxNotFound
+					title="Oops!"
+					description="Something went wrong, please try again later."
+				/>
+			) : (
+				<form onSubmit={handleSubmit(onSubmit)} noValidate>
+					<div className="wx__row">
+						<div className="wx__col-lg-8 wx__col-md-12 wx__col-sm-12">
+							<div className="wx__card wx__p-3 wx__mb-3">
+								<h6>Payment Method</h6>
+								{getWayList?.map((getway) => (
+									<div key={getway.id}>
+										<WxRadio
+											singleUse
+											id={getway?.id}
+											isChecked={
+												getValues("gatewayProvider") === getway.gatewayProvider
+											}
+											onChange={(e) => onPaymentMethodChange(e, getway)}
+											label={getway.title}
+										/>
+									</div>
+								))}
+							</div>
+							<div className="card border-0 p-3">
+								<div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+									<h6 className="wx__m-0">Billing address</h6>
+									<WxSelect
+										id="address-selector"
+										options={userAddressList}
+										textKey="title"
+										valuesKey="id"
+										value={selectedAddress}
+										onChange={onAddressChange}
+										noMargin
+									/>
+								</div>
+								<WxHr />
+								<WxInput
+									label="Address line 1"
+									isRequired
+									registerProperty={{
+										...register("address.addressLine1", {
+											required: "Address is required",
+										}),
+									}}
+									color={errors?.address?.addressLine1 ? "danger" : "secondary"}
+									errorMessage={errors?.address?.addressLine1?.message}
+								/>
+								<div className="wx__row">
+									<div className="wx__col-sm-6 wx__col-12">
+										<WxSelect
+											label="Division"
+											isRequired
+											options={divisions}
+											placeholder="Select Division"
+											textKey="division_name_eng"
+											valuesKey="division_name_eng"
+											registerProperty={{
+												...register("address.state", {
+													required: "Please select a division",
+													onChange: (e) => onDivisionSelect(e.target.value),
+												}),
+											}}
+											color={errors?.address?.state ? "danger" : "secondary"}
+											errorMessage={errors?.address?.state?.message}
+										/>
+									</div>
+									<div className="wx__col-6">
+										<WxSelect
+											key={districts?.length}
+											label="District"
+											isRequired
+											options={districts}
+											placeholder="Select District"
+											valuesKey="zilla_name_eng"
+											textKey="zilla_name_eng"
+											registerProperty={{
+												...register("address.cityName", {
+													required: "Please select a division",
+												}),
+											}}
+											color={errors?.address?.cityName ? "danger" : "secondary"}
+											errorMessage={errors?.address?.cityName?.message}
+										/>
+									</div>
+									<div className="wx__col-6">
+										<WxInput
+											label="Post code"
+											registerProperty={{ ...register("address.postCode") }}
+										/>
+									</div>
+									<div className="wx__col-sm-6 wx__col-12">
+										<WxInput
+											label="Email address"
+											type="email"
+											isRequired
+											registerProperty={{
+												...register("address.email", {
+													required: "Phone or Email is required",
+												}),
+											}}
+											color={errors?.email ? "danger" : "secondary"}
+											errorMessage={errors?.email?.message}
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className="wx__col-lg-4 wx__col-md-12 wx__col-sm-12">
+							<div className="wx__card wx__p-3">
+								<h6>Summary</h6>
+								<div className="wx__d-flex wx__align-items-center wx__justify-content-between">
+									<span className="wx__text_h6 wx__text_subtitle wx__text_strong">
+										Total
+									</span>
+									<strong className="wx__text_subtitle wx__text_strong">
+										{invoiceInfo?.merchantPurchases?.totalPayableAmount?.toLocaleString()}
+										&nbsp;
+										{invoiceInfo?.merchantPurchases?.currencyCode}
+									</strong>
+								</div>
+								<WxHr />
+								<WxButton type="submit" variant="fill" disabled={openingGetway}>
+									{openingGetway ? <ButtonLoader /> : "Continue"}
+								</WxButton>
+							</div>
+						</div>
+					</div>
+				</form>
+			)}
+		</WxMainLg>
+	);
+};
+
+export default Payment;

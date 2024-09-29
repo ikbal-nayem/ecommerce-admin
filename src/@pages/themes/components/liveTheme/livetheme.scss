@@ -1,0 +1,35 @@
+@import "webx-brighten/partials/classes";
+@import "webx-brighten/partials/variables";
+
+.live-theme {
+  width: 100%;
+  margin: auto;
+
+  .livetheme-pad {
+    .version {
+      font-weight: 600;
+      font-size: 12px;
+      color: $neutral__600;
+      margin-top: 4px;
+    }
+    .wx__text_regular {
+      color: $neutral__800;
+      font-size: 14px;
+      margin-top: 8px;
+      span {
+        font-weight: 500;
+      }
+    }
+    img {
+      width: 100%;
+    }
+    .wx__text_semibold {
+      color: #000000 !important;
+    }
+    .live-theme-drawer {
+      ul {
+        background-color: #fff;
+      }
+    }
+  }
+}

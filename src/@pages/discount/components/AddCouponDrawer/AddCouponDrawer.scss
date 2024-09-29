@@ -1,0 +1,32 @@
+@import "webx-brighten/partials/variables";
+
+.wx__coupon_drawer {
+  #testDiv {
+    .wx__form_group {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      z-index: 100;
+      .wx__input_group_secondary {
+        .wx__input_secondary {
+          border: 1px solid green;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+  }
+  .wx__product_list_in_select_product_drawer {
+    border-bottom: 1px solid $neutral__400;
+  }
+  .no-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

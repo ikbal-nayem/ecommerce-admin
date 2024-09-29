@@ -1,0 +1,24 @@
+@import "webx-brighten/partials/variables";
+.wx__apps_list_page {
+  .app_details_header {
+    span,
+    h4 {
+      font-weight: 600 !important;
+    }
+  }
+  .app-list-top {
+    .wx__h4__medium {
+      span {
+        margin-right: 10px;
+        margin-bottom: -10px;
+        cursor: pointer;
+      }
+    }
+    .wx__text_subtitle {
+      font-size: 13px;
+      font-weight: 400;
+      color: $neutral__700;
+      margin-bottom: -10px;
+    }
+  }
+}
