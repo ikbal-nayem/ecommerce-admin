@@ -1,2 +1,3 @@
-# WebX merchant panel
-Node version ```16.14.0```
+# Omuk Dokan panel
+
+Node v^18.20
