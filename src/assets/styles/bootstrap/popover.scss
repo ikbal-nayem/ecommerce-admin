@@ -1,0 +1,26 @@
+// partials
+@import "../partials/variables";
+@import "../partials/mixins";
+@import "../partials/classes";
+
+.popover {
+  background-color: $neutral__100;
+  border-radius: 4px !important;
+}
+
+.bs-popover-bottom {
+  > .popover-arrow {
+    &::after {
+      border-bottom-color: #f0f0f0 !important;
+    }
+  }
+}
+// Offset the popover to account for the popover arrow
+.popover-header {
+  padding: 6px 16px;
+}
+
+.popover-body {
+  padding: 12px 16px;
+  color: $neutral__900;
+}

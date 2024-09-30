@@ -224,7 +224,7 @@ const AddressManage = ({
                             <div style={{ width: "100%" }}>
                               <div className="wx__d-flex wx__align-items-center wx__mt-2 customer-location">
                                 <WxIcon variants="round" icon="location_on" />
-                                <span className="text wx__ms-2">
+                                <span className="text ms_2">
                                   {address?.title || "---"}
                                 </span>
                               </div>

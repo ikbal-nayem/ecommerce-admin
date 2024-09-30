@@ -278,7 +278,7 @@ const CustomerDetails = () => {
                       <WxTag
                         label={lastOrder?.orderStatus}
                         color={statusColorMapping(lastOrder?.orderStatus)}
-                        className="wx__ms-2"
+                        className="ms_2"
                       />
                     ) : null}
                   </div>
@@ -367,7 +367,7 @@ const CustomerDetails = () => {
                 {customer?.customer?.email && (
                   <div className="wx__d-flex wx__align-items-center contact-email wx__mt-3">
                     <WxIcon icon="email" />
-                    <span className="text wx__ms-2">
+                    <span className="text ms_2">
                       {customer?.customer?.email || ""}
                     </span>
                   </div>
@@ -375,7 +375,7 @@ const CustomerDetails = () => {
                 {customer?.customer?.phoneNumber && (
                   <div className="wx__d-flex wx__align-items-center customer-phone wx__mt-1">
                     <WxIcon icon="phone" />
-                    <span className="text wx__ms-2">
+                    <span className="text ms_2">
                       {customer?.customer?.phoneNumber || ""}
                     </span>
                   </div>
@@ -400,7 +400,7 @@ const CustomerDetails = () => {
                 {!!customer?.groups.length && (
                   <div className="wx__d-flex wx__align-items-center customer-group wx__mt-3">
                     <WxIcon icon="groups" />
-                    <span className="text wx__ms-2">
+                    <span className="text ms_2">
                       {customer?.groups
                         ?.map((group) => group?.title)
                         .join(", ") || ""}
@@ -465,7 +465,7 @@ const CustomerDetails = () => {
                     <div className="wx__mb-4" key={address.id}>
                       <div className="wx__d-flex customer-location wx__mt-3">
                         <WxIcon icon="location_on" />
-                        <span className="text wx__ms-2">
+                        <span className="text ms_2">
                           {address?.title || ""}
                         </span>
                       </div>

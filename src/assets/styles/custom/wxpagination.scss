@@ -1,0 +1,101 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/classes";
+@import "./typography.scss";
+
+.wx__table_pagination_main {
+  .wx__perpage_data {
+    display: inline-flex;
+    align-items: center;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    select {
+      // font-family: inter;
+      padding: 6px 8px;
+      margin: 0 10px;
+      border: 2px solid $neutral__600;
+      background-color: White;
+      @extend .wx__rounded;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .wx__table_pagination {
+    display: inline-flex;
+    align-items: center;
+    .wx__pagination_text {
+      color: $neutral__600;
+      @extend .wx__text_subtitle;
+      @extend .wx__text_regular;
+      margin-right: 16px;
+    }
+    .wx__pagination_div {
+      .wx__ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        li {
+          list-style: none;
+          @extend .wx__text_body;
+          @extend .wx__text_medium;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $neutral__200;
+          margin: 0 2px;
+          width: 40px;
+          height: 36px;
+          cursor: pointer;
+          @extend .wx__rounded;
+          transition: all 0.5s;
+          &:hover {
+            background-color: $primary__500;
+            background-color: $neutral__300;
+          }
+          &:active {
+            background-color: $primary__500;
+            border: 1.5px solid $neutral__400;
+          }
+          span {
+          }
+          user-select: none; /* supported by Chrome and Opera */
+          -webkit-user-select: none; /* Safari */
+          -khtml-user-select: none; /* Konqueror HTML */
+          -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+        }
+        .page_number {
+          display: flex;
+          .wx__table_single_li{
+            &.active{
+              color: #fff;
+            }
+          }
+        }
+        .active-page {
+          background-color: $primary__500;
+          color: #fff !important;
+          &:hover,
+          &:active {
+            background-color: $primary__500;
+            border: none;
+          }
+        }
+        .disable-page {
+          // span {
+          color: $neutral__400;
+          pointer-events: none;
+          // }
+          &:hover,
+          &:active {
+            background-color: $neutral__200;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

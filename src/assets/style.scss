@@ -1,5 +1,5 @@
 @import 'webx-brighten/style.scss';
-@import '_variables.scss';
+@import '_custom-variables.scss';
 
 .wx__f-lora {
 	font-family: 'Lora', serif !important;
@@ -12,10 +12,7 @@
 		text-decoration: underline;
 	}
 }
-#tidio-chat-iframe {
-	right: 0 !important;
-	bottom: 70px !important;
-}
+
 .show-mobile-view,
 .show-mobile-view-sm {
 	display: none;

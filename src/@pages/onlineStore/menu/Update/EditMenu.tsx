@@ -202,7 +202,7 @@ const Create = ({
                             onClick={() => setShowSubItem("-1")}
                           >
                             <WxIcon icon="chevron_left" />
-                            <p className="wx__text_body wx__text_medium wx__mb-1 wx__ms-2">
+                            <p className="wx__text_body wx__text_medium wx__mb-1 ms_2">
                               {subDropdownList.title}
                             </p>
                           </div>

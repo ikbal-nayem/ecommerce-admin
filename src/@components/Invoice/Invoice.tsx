@@ -234,7 +234,7 @@ const Invoice = ({ invoiceData }) => {
                         <div className="wx__invoice_notes">
                           <p>
                             <WxIcon icon="info" />
-                            <span className="wx__text_semibold wx__ms-2">
+                            <span className="wx__text_semibold ms_2">
                               NOTES
                             </span>
                           </p>

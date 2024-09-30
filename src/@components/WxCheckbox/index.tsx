@@ -44,7 +44,7 @@ const WxCheckbox = ({
 				{...registerProperty}
 			/>
 			<label
-				className="wx__ms-2 wx__form-check-label wx__text_body"
+				className="ms_2 wx__form-check-label wx__text_body"
 				htmlFor={id}
 			>
 				{label}

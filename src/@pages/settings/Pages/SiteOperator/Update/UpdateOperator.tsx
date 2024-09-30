@@ -160,7 +160,7 @@ const SiteOperatorUpdate = () => {
 							</div>
 							<div className="wx__d-flex wx__align-items-center status_mxg_warning">
 								<WxIcon icon="info" />
-								<p className="wx__text_small wx__text_regular wx__ms-2 wx__mb-0">
+								<p className="wx__text_small wx__text_regular ms_2 wx__mb-0">
 									Operator will get password through email
 								</p>
 							</div>

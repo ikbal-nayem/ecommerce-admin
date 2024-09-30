@@ -45,7 +45,7 @@ const CollectionTable = ({
                   >
                     edit
                   </span>
-                  <div className="wx__d-flex wx__align-items-center wx__ms-2">
+                  <div className="wx__d-flex wx__align-items-center ms_2">
                     <span
                       className="material-icons"
                       role="button"

@@ -103,7 +103,7 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
                 </WxButton>
                 {/* <WxButton
 								variant="none"
-								className="wx_text_regular wx__ms-2 wx__me-2"
+								className="wx_text_regular ms_2 wx__me-2"
 							>
 								Customize
 							</WxButton> */}

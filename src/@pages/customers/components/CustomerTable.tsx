@@ -83,7 +83,7 @@ const CustomerTable = ({
 									</div>
 								</td>
 								<td className="wx__td text-center">
-									<div className="wx__table_cell_more-icon wx__ms-2">
+									<div className="wx__table_cell_more-icon ms_2">
 										<WxIcon
 											icon="more_vert"
 											onClick={() => onShowPopup(index)}

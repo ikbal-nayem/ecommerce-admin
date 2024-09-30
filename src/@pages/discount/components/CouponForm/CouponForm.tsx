@@ -325,7 +325,7 @@ const CouponForm = ({
                     >
                       <div className="wx__d-flex">
                         <WxThumbnail src={imageURLGenerate(pd.image)} />
-                        <div className="wx__ms-2">
+                        <div className="ms_2">
                           <p className="wx__m-0">{pd.name}</p>
                           <span className="wx__text_subtitle wx__text-secondary"></span>
                         </div>
@@ -389,7 +389,7 @@ const CouponForm = ({
                           <WxThumbnail
                             src={imageURLGenerate(categories.image)}
                           />
-                          <div className="wx__ms-2">
+                          <div className="ms_2">
                             <p className="wx__m-0">{categories.name}</p>
                             <span className="wx__text_subtitle wx__text-secondary">
                               {/* (5 of 8 variant selected) */}
@@ -469,7 +469,7 @@ const CouponForm = ({
                     >
                       <div className="wx__d-flex">
                         <WxThumbnail />
-                        <div className="wx__ms-2">
+                        <div className="ms_2">
                           <p className="wx__m-0">{group.name}</p>
                           <span className="wx__text_subtitle wx__text-secondary">
                             {/* (5 of 8 variant selected) */}
@@ -532,7 +532,7 @@ const CouponForm = ({
                     >
                       <div className="wx__d-flex">
                         <WxThumbnail />
-                        <div className="wx__ms-2">
+                        <div className="ms_2">
                           <p className="wx__m-0">{customer?.name || ""}</p>
                           <span className="wx__text_subtitle wx__text-secondary">
                             {/* (5 of 8 variant selected) */}

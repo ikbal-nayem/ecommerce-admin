@@ -529,7 +529,7 @@ const OrderDetails = () => {
 									variant="fill"
 								>
 									Mark as Delivered
-									<WxIcon icon="expand_more" className="wx__ms-2" />
+									<WxIcon icon="expand_more" className="ms_2" />
 								</WxButton>
 								<WxDropdown
 									id="triggerPlace"

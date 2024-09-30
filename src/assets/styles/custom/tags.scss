@@ -1,0 +1,59 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/classes";
+
+@import "./typography.scss";
+
+.wx__btn_tags {
+  min-width: 57px;
+  min-height: 25px;
+  color: $neutral__900;
+  padding: 4px 8px;
+  border: none;
+  background-color: $neutral__300;
+  @extend .wx__text_small;
+  @extend .wx__text_regular;
+  @extend .wx__rounded;
+  font-weight: 500 !important;
+  text-transform: capitalize;
+  &.primary{
+    background-color: $blue__300;
+  }
+  &.secondary{
+    background-color: $neutral__700;
+    color: $neutral__100;
+  }
+  &.success{
+    background-color: $green__300;
+  }
+  &.warning{
+    background-color: $yellow__300;
+  }
+  &.info{
+    background-color: $cyan__200;
+  }
+  &.danger{
+    background-color: $red__300;
+  }
+  &.active{
+    background-color: $green__300;
+  }
+  &.published{
+    background-color: $green__300;
+  }
+  &.draft{
+    background-color: $blue__400;
+  }
+  &.pending{
+    background-color: $blue__300;
+  }
+  &.unfulfilled{
+    background-color: $yellow__300;
+  }
+  &.default{
+    background-color: $neutral__300;
+  }
+}
+.wx__fixed_tags {
+  width: 84px;
+}

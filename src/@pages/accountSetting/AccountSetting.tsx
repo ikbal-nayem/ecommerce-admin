@@ -548,7 +548,7 @@ const AccountSetting = () => {
                       alt=""
                     />
                   </div>
-                  <div className="wx__d-flex wx__flex-column wx__ms-2">
+                  <div className="wx__d-flex wx__flex-column ms_2">
                     <p className="wx__text_body wx__text_strong wx__m-0">
                       {userBasicInfo?.firstName
                         ? userBasicInfo?.firstName +
@@ -574,7 +574,7 @@ const AccountSetting = () => {
               <div className="verify_alert wx__d-flex wx__justify-content-between  wx__p-3 ">
                 <div className="wx__d-flex wx__align-items-center">
                   <WxIcon icon="info" variants="outlined" />
-                  <p className="wx__my-0 wx__ms-2 wx__text_body wx__text_medium">
+                  <p className="wx__my-0 ms_2 wx__text_body wx__text_medium">
                     Please verify your Phone Number to enjoy the complete WebX
                     experience .
                   </p>
@@ -623,7 +623,7 @@ const AccountSetting = () => {
                     )}
                     {userBasicInfo?.partnerUrl ? (
                       <WxIcon
-                        className="wx__ms-2 material-icons wx__text-dark"
+                        className="ms_2 material-icons wx__text-dark"
                         icon="content_copy"
                         onClick={() => {
                           navigator.clipboard.writeText(
@@ -831,7 +831,7 @@ const AccountSetting = () => {
                           <div className="wx__row">
                             <div className="wx__text_body d-flex align-items-center wx__mb-2">
                               <WxIcon icon="location_on" />
-                              <span className="wx__text-secondary wx__ms-2">
+                              <span className="wx__text-secondary ms_2">
                                 {user?.addressLine1
                                   ? user?.addressLine1 + ", "
                                   : ""}
@@ -852,7 +852,7 @@ const AccountSetting = () => {
                               <div className="wx__text_body d-flex align-items-center wx__my-1">
                                 <WxIcon icon="email" />
                                 <div className="wx__d-flex wx__flex-column">
-                                  <span className="wx__text-secondary wx__ms-2">
+                                  <span className="wx__text-secondary ms_2">
                                     {" "}
                                     {user?.email || ""}
                                   </span>
@@ -862,7 +862,7 @@ const AccountSetting = () => {
                             {user?.phone && (
                               <div className=" wx__text_body d-flex align-items-center wx__ms-3">
                                 <WxIcon icon="phone" />
-                                <span className="wx__text-secondary wx__ms-2">
+                                <span className="wx__text-secondary ms_2">
                                   {" "}
                                   {user?.phone || ""}
                                 </span>

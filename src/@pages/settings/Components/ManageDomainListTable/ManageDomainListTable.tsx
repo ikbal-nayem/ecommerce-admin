@@ -53,14 +53,14 @@ const RoleListTable = ({
                     <WxIcon
                       icon="lock"
                       color="success"
-                      className="wx__ms-2"
+                      className="ms_2"
                       hoverTitle="Secured"
                     />
                   ) : (
                     <WxIcon
                       icon="lock_open"
                       color="danger"
-                      className="wx__ms-2"
+                      className="ms_2"
                       hoverTitle={domain.sslRemarks}
                     />
                   )}

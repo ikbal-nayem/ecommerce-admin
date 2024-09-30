@@ -1,0 +1,17 @@
+@import "mixins";
+@import "variables";
+
+// border-radius
+
+.wx__rounded {
+  border-radius: 4px;
+}
+
+.icon_cursor_pointer {
+  cursor: pointer !important;
+}
+@media (max-width: 767px) {
+.d-none-tab{
+  display: none !important;
+}
+}

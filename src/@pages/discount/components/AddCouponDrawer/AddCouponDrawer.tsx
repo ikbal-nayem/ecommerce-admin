@@ -433,7 +433,7 @@ const AddCouponDrawer = forwardRef(
                                   <WxThumbnail
                                     src={imageURLGenerate(item?.image)}
                                   />
-                                  <span className="wx__ms-2">{item?.name}</span>
+                                  <span className="ms_2">{item?.name}</span>
                                 </div>
                               }
                             />

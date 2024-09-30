@@ -202,7 +202,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                                 <WxIcon
                                   style={{ fontSize: "8px" }}
                                   icon="info"
-                                  className="wx__ms-2"
+                                  className="ms_2"
                                 />
                                 <span className="">
                                   if you upload any invalid number then it will
