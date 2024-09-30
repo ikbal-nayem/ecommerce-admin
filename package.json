@@ -3,19 +3,21 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"start": "env-cmd -f environments/.env.local react-scripts start",
-		"start:dev": "env-cmd -f environments/.env.dev react-scripts start",
-		"start:prod": "env-cmd -f environments/.env.prod react-scripts start",
-		"build": "react-scripts build",
-		"eject": "react-scripts eject",
-		"serve": "serve -s build",
-		"build:prod": "env-cmd -f environments/.env.prod react-scripts build",
-		"build:dev": "env-cmd -f environments/.env.dev react-scripts build"
+		"start": "vite",
+		"start:dev": "vite --mode dev",
+		"start:prod": "vite --mode prod",
+		"serve": "vite preview",
+		"lint": "prettier --check .",
+		"format": "prettier --write .",
+		"build": "tsc && vite build",
+		"build:dev": "tsc && vite build --mode dev",
+		"build:prod": "tsc && vite build --mode prod"
 	},
 	"dependencies": {
 		"@ckeditor/ckeditor5-react": "^5.0.2",
 		"@david.kucsai/react-pdf-table": "^0.4.1",
 		"@hookform/resolvers": "^2.8.10",
+		"@million/lint": "^1.0.0-rc.84",
 		"@react-pdf/renderer": "^3.0.0",
 		"@reduxjs/toolkit": "^1.8.1",
 		"@tinymce/tinymce-react": "^4.0.0",
@@ -25,7 +27,6 @@
 		"buffer": "^6.0.3",
 		"clsx": "^2.1.1",
 		"d3": "^7.5.0",
-		"env-cmd": "^10.1.0",
 		"eslint-plugin-react-hooks": "^4.4.0",
 		"file-saver": "^2.0.5",
 		"i": "^0.3.7",
@@ -41,7 +42,6 @@
 		"react-phone-number-input": "^3.2.2",
 		"react-redux": "^7.2.8",
 		"react-router-dom": "^6.3.0",
-		"react-scripts": "5.0.0",
 		"react-select": "^5.3.2",
 		"react-spinners-kit": "^1.9.1",
 		"react-toastify": "^10.0.5",
@@ -62,14 +62,13 @@
 		"@types/node": "^22.7.3",
 		"@types/react": "^18.3.9",
 		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.2",
 		"node-sass": "^9.0.0",
-		"typescript": "^5.6.2"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
+		"typescript": "^5.6.2",
+		"vite": "^5.4.8",
+		"vite-plugin-commonjs": "^0.10.3",
+		"vite-plugin-svgr": "^4.2.0",
+		"vite-tsconfig-paths": "^5.0.1"
 	},
 	"browserslist": {
 		"production": [
@@ -82,5 +81,8 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	}
+	},
+	"engines": {
+    "node": ">=18.20.X"
+  }
 }

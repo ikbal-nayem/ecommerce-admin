@@ -69,7 +69,7 @@ const ProductPricing = () => {
 					/>
 				</div>
 				<WxHr />
-				<div className="wx__col-md-6">
+				<div className="col-md-6">
 					<WxInput
 						label="Compare at price"
 						endIcon={<TakaSign />}

@@ -3,7 +3,6 @@ import WxHr from '@components/WxHr';
 import WxIcon from '@components/WxIcon/WxIcon';
 import WxImg from '@components/WxImg/WxImg';
 import WxTag from '@components/WxTag';
-// import { ReactComponent as HeaderLogo } from 'assets/svg/header-logo.svg';
 import { ENV } from 'config/ENV.config';
 import { useAuth } from 'context/auth';
 import { useEffect, useState } from 'react';
