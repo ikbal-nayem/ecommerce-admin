@@ -1,6 +1,6 @@
 import { SESSION_STORAGE_KEY } from '@constants/common.constant';
 import { ROUTES } from '@constants/route.constant';
-import { LocalStorageService } from 'services/utils/localStorage.service';
+import { LocalStorageService } from 'services/utils/local-storage.service';
 import { SessionStorageService } from 'services/utils/session-storage.service';
 import axios from 'axios';
 import { toast } from 'react-toastify';

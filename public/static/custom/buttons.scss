@@ -1,0 +1,248 @@
+// button group mixins
+
+@mixin wx__button_group(
+  $border_width: 1px,
+  $border_style: solid,
+  $border_color: $primary__500,
+  $color: $neutral__100,
+  $btn_border_radius: 0,
+  $btn_border: none,
+  $btn_border_right_width: 1px,
+  $btn_border_right_style: solid,
+  $btn_border_right_color: $primary__500,
+  $btn_hover_background: $primary__500,
+  $btn_hover_color: $neutral__100
+) {
+  display: inline-flex;
+  border: $border_width $border_style $border_color;
+  overflow: hidden;
+  @extend .wx__rounded;
+  .wx__btn_primary_outline,
+  .wx__btn_secondary_outline,
+  .wx__btn_danger_outline {
+    border-radius: $btn_border_radius !important;
+    border: $btn_border !important;
+    &:not(:last-child) {
+      border-right: $btn_border_right_width $btn_border_right_style
+        $btn_border_right_color !important;
+    }
+    &:hover {
+      background-color: $btn_hover_background !important;
+      color: $btn_hover_color !important;
+    }
+  }
+}
+
+.wx__btn_sm {
+  @include buttons(
+    $background: none,
+    $hoverBackground: $primary__300,
+    $border: null,
+    $color: $primary__500,
+    $hoverColor: $primary__100,
+    $padding: 7px 12px,
+  );
+  font-size: .75rem;
+  min-height: 32px;
+  @extend .wx__text_btn_small;
+  @extend .wx__text_medium;
+}
+
+.wx__btn {
+  @include buttons(
+    $background: none,
+    $hoverBackground: $primary__300,
+    $border: null,
+    $color: $primary__500,
+    $hoverColor: $primary__100
+  );
+  height:$button-height;
+  @extend .wx__text_btn_regular;
+  @extend .wx__text_semibold;
+}
+.wx__btn_lg {
+  @include buttons(
+    $background: none,
+    $hoverBackground: $primary__300,
+    $border: null,
+    $color: $primary__500,
+    $hoverColor: $primary__100,
+    $padding: 7px 24px
+  );
+  min-height: 48px;
+  @extend .wx__text_btn_big;
+  @extend .wx__text_semibold;
+}
+
+// disable button
+
+// normal
+.wx__disable_btn_normal {
+  &[disabled] {
+    background: $neutral__500 !important;
+    border-color: $neutral__500 !important;
+    &:hover {
+      background-color: $neutral__500 !important;
+      color: $neutral__100 !important;
+    }
+  }
+}
+
+// outline
+.wx__disable_btn_outline {
+  &[disabled] {
+    border-color: $neutral__500 !important;
+    color: $neutral__500 !important;
+    &:hover {
+      background: none !important;
+      color: $neutral__500 !important;
+    }
+  }
+}
+
+// outline-none
+.wx__disable_btn_outline_none {
+  &[disabled] {
+    color: $neutral__500 !important;
+    &:hover {
+      background: none !important;
+      color: $neutral__500 !important;
+    }
+  }
+}
+
+.wx__btn_primary {
+  background-color: $primary__600 !important;
+  border: 1px solid $primary__600 !important;
+  color: $neutral__100 !important;
+  border-radius: 4px;
+  &:hover {
+    // color: $primary__500 !important;
+    background-color: $primary__700 !important;
+  }
+  @extend .wx__disable_btn_normal !optional;
+}
+
+.wx__btn_primary_outline {
+  color: $primary__600 !important;
+  background-color: transparent !important;
+  border: 1px solid $primary__600 !important;
+  &:hover {
+    color: $primary__700 !important;
+    background-color: transparent !important;
+  }
+  @extend .wx__disable_btn_outline !optional;
+}
+
+.wx__btn_primary_outline_none {
+  @extend .wx__btn_primary_outline;
+  border: none !important;
+  @extend .wx__disable_btn_outline_none !optional;
+  padding:0;
+}
+
+.wx__btn_secondary {
+  color: $primary__100;
+  background-color: $neutral__500 !important;
+  border: 1px solid $neutral__500 !important;
+  &:hover {
+    background-color: $neutral__600 !important;
+  }
+  @extend .wx__disable_btn_normal !optional;
+}
+
+.wx__btn_secondary_outline {
+  background-color: transparent !important;
+  border: 1px solid $neutral__900 !important;
+  color: $neutral__900 !important;
+  &:hover {
+    color: $neutral__900 !important;
+    background-color: $neutral__200 !important;
+  }
+  @extend .wx__disable_btn_outline !optional;
+}
+
+.wx__btn_secondary_outline_none {
+  @extend .wx__btn_secondary_outline;
+  border: none !important;
+  @extend .wx__disable_btn_outline_none !optional;
+}
+
+.wx__btn_danger {
+  color: $neutral__100 !important;
+  background-color: $red__600 !important;
+  &:hover {
+    background-color: $red__700 !important;
+  }
+  @extend .wx__disable_btn_normal !optional;
+}
+
+.wx__btn_danger_outline {
+  color: $red__600 !important;
+  background-color: none !important;
+  border: 1px solid $red__600 !important;
+  &:hover {
+    color: $red__600 !important;
+    background-color: $red__200 !important;
+  }
+  @extend .wx__disable_btn_outline !optional;
+}
+
+.wx__btn_danger_outline_none {
+  @extend .wx__btn_danger_outline;
+  border: none !important;
+  @extend .wx__disable_btn_outline_none !optional;
+}
+
+/// button group style
+
+.wx__btn_group_primary {
+  @include wx__button_group();
+}
+
+.wx__btn_group_secondary {
+  @include wx__button_group(
+    $border_color: $neutral__700,
+    $btn_border_right_color: $neutral__700,
+    $btn_hover_background: $neutral__900,
+    $btn_hover_color: $neutral__100
+  );
+}
+
+.wx__btn_group_danger {
+  @include wx__button_group(
+    $border_color: $red__600,
+    $btn_border_right_color: $red__600,
+    $btn_hover_background: $red__600,
+    $btn_hover_color: $neutral__100
+  );
+}
+
+.wx__btn_link{
+  color: $primary__600;
+  padding:0 !important;
+  margin:0 !important;
+  text-transform: capitalize;
+  background-color:transparent;
+  &:hover{
+    background-color:transparent;
+  }
+}
+
+.btn-disabled {
+  cursor: not-allowed !important;
+  background-color: #e4eaec !important;
+  color: #999 !important;
+  border-color: #e4eaec !important;
+  box-shadow: none !important
+}
+
+.btn-disabled:after,
+.btn-disabled:before {
+  content: none !important
+}
+.btn-disabled:hover{
+  background-color: #e4eaec !important;
+  color: #999 !important;
+  border-color: #e4eaec !important;
+}

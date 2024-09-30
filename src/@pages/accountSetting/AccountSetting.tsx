@@ -5,7 +5,7 @@ import WxInput from "@components/WxInput";
 import { ENV } from "config/ENV.config";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { AccountSettingService } from "services/api/AccountSetting.service";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 import Preloader from "services/utils/preloader.service";
 import { ToastService } from "services/utils/toastr.service";
 import { useEffect, useState } from "react";

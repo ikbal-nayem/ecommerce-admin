@@ -6,7 +6,7 @@ import {
 	PRODUCT_CREATE,
 	THEME_CUSTOMIZATION_SLIDER,
 } from "routes/path-name.route";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EnterOTPModal from "../../../../@components/EnterOTPModal/EnterOTPModal";

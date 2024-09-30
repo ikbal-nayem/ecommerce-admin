@@ -10,7 +10,7 @@ import BasicInfoSkelton from "@components/WxSkelton/Setting/General/BasicInfoSke
 import { SETTINGS } from "routes/path-name.route";
 import { LocationService } from "services/api/Location.service";
 import { GeneralSettingService } from "services/api/settings/General.service";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 import Preloader from "services/utils/preloader.service";
 import { ToastService } from "services/utils/toastr.service";
 import { useEffect, useState } from "react";

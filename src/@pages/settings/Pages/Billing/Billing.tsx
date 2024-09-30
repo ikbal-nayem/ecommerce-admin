@@ -7,7 +7,7 @@ import UserPlanNInfoSkelton from "@components/WxSkelton/Setting/Billing/UserPlan
 import { ACCOUNT_SETTING, SETTINGS } from "routes/path-name.route";
 import { AccountSettingService } from "services/api/AccountSetting.service";
 import { AdminService } from "services/api/admin/Admin.service";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

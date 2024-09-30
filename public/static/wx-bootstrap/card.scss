@@ -1,0 +1,40 @@
+.wx__card{
+  border: none;
+  @extend .card;
+}
+.wx__card-group{
+  @extend .card-group;
+}
+.wx__card-body{
+  @extend .card-body;
+}
+.wx__card-title{
+  @extend .card-title;
+}
+.wx__card-subtitle{
+  @extend .card-subtitle;
+}
+.wx__card-text{
+  @extend .card-text;
+}
+.wx__card-link{
+  @extend .card-link;
+}
+.wx__card-header{
+  @extend .card-header;
+}
+.wx__card-footer{
+  @extend .card-footer;
+}
+.wx__card-header-tabs{
+  @extend .card-header-tabs;
+}
+.wx__card-img-top{
+  @extend .card-img-top;
+}
+.wx__card-img-bottom{
+  @extend .card-img-bottom;
+}
+.wx__card-img-overlay{
+  @extend .card-img-overlay;
+}

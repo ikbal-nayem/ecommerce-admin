@@ -11,7 +11,7 @@ import DeliveryZoneListTable from "@pages/settings/Components/DeliveryZoneListTa
 import { SETTINGS } from "routes/path-name.route";
 import { CourierService } from "services/api/settings/Courier.service";
 import { DeliverySettingService } from "services/api/settings/Delivery.service";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 import Preloader from "services/utils/preloader.service";
 import { ToastService } from "services/utils/toastr.service";
 import { useEffect, useRef, useState } from "react";

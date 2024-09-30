@@ -3,9 +3,8 @@ import App from 'App';
 import 'material-icons/iconfont/material-icons.css';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import 'react-toastify/dist/ReactToastify.css';
 import store from 'store/store';
-import 'webx-brighten/bootstrap/custom.scss';
+// import 'webx-brighten/bootstrap/custom.scss';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

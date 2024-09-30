@@ -1,0 +1,75 @@
+.wx__user-select-all{
+  @extend .user-select-all;
+}
+.wx__user-select-auto{
+  @extend .user-select-auto;
+}
+.wx__user-select-none{
+  @extend .user-select-none;
+}
+//                          overflow
+.wx__overflow-auto{
+  @extend .overflow-auto;
+}
+.wx__overflow-hidden{
+  @extend .overflow-hidden;
+}
+.wx__overflow-visible{
+  @extend .overflow-visible;
+}
+.wx__overflow-scroll{
+  @extend .overflow-scroll;
+}
+//                             shadow
+.wx__shadow{
+  @extend .shadow;
+}
+.wx__shadow-none{
+  @extend .shadow-none;
+}
+.wx__shadow-sm{
+  @extend .shadow-sm;
+}
+.wx__shadow-lg{
+  @extend .shadow-lg;
+}
+//                          height and width
+.wx__w-25{
+  @extend .w-25;
+}
+.wx__w-50{
+  @extend .w-50;
+}
+.wx__w-75{
+  @extend .w-75;
+}
+.wx__w-100{
+  @extend .w-100;
+}
+.wx__w-auto{
+  @extend .w-auto;
+}
+.wx__h-25{
+  @extend .h-25;
+}
+.wx__h-50{
+  @extend .h-50;
+}
+.wx__h-75{
+  @extend .h-75;
+}
+.wx__h-100{
+  @extend .h-100;
+}
+.wx__h-auto{
+  @extend .h-auto;
+}
+.wx__mh-100{
+  @extend .mh-100;
+}
+.wx__mw-100{
+  @extend .mw-100;
+}
+.wx__invisible{
+  @extend .invisible;
+}

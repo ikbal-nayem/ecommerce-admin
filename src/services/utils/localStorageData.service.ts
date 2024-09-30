@@ -1,4 +1,4 @@
-import { LocalStorageService } from "./localStorage.service";
+import { LocalStorageService } from "./local-storage.service";
 
 export const userData: any = LocalStorageService.get("user_data");
 // export const storeId = userData?.store_id;

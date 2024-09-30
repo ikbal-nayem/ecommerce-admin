@@ -1,0 +1,413 @@
+input {
+  &[type="text"],
+  &[type="password"],
+  &[type="number"] {
+    &:disabled {
+      background: $neutral__200;
+    }
+  }
+}
+
+.wx__form_input {
+  margin-bottom: 15px;
+  label {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 30px;
+    color: #2b2b2b;
+  }
+}
+
+.wx__input {
+  @extend .wx__text_body;
+  @extend .wx__text_regular;
+}
+
+.wx__user_select_none {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.wx__input_primary {
+  @include input__style($border_color: $primary__500);
+  //   @include input__style($border: none);
+  @extend .wx__input;
+  &:disabled {
+    border-color: $primary__300;
+  }
+}
+
+.wx__input_secondary {
+  @include input__style($border_color: $neutral__600);
+  @extend .wx__input;
+  height: auto;
+  &:disabled {
+    border-color: $neutral__500;
+  }
+}
+
+.wx__input_warning {
+  @include input__style($border_color: $orange__600);
+  @extend .wx__input;
+  &:disabled {
+    border-color: $orange__300;
+  }
+}
+
+.wx__input_success {
+  @include input__style($border_color: $green__500);
+  @extend .wx__input;
+  &:disabled {
+    border-color: $green__300;
+  }
+}
+
+.wx__input_danger {
+  @include input__style($border_color: $red__500);
+  @extend .wx__input;
+  &:disabled {
+    border-color: $red__300;
+  }
+}
+
+// input group class
+
+.wx__input_group {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  // margin: 8px 0;
+  padding: 0 1em;
+  background-color: $neutral__100;
+  @extend .wx__rounded;
+  input {
+    @include input__style(
+      $border: none,
+      $width: 100%,
+      $margin: 0
+    );
+    color: $neutral__900;
+  }
+  span {
+    color: $neutral__700;
+  }
+  .material-symbols-outlined{
+    font-size: $icon_md;
+  }
+}
+
+.wx__input_group_primary {
+  @extend .wx__input_group;
+  @include wx__border($border_color: $primary__500);
+  input {
+    background: transparent;
+  }
+  &[aria-disabled="true"] {
+    background: $neutral__200;
+    pointer-events: none;
+    border-color: $primary__300 !important;
+    input {
+      color: $neutral__300;
+    }
+    span {
+      color: $neutral__500;
+    }
+    @extend .wx__user_select_none;
+  }
+}
+
+.wx__input_group_secondary {
+  @extend .wx__input_group;
+  padding-left:0;
+  padding-right:0;
+  .material-symbols-outlined{
+    position: absolute;
+    left: 1.5em;
+  }
+  input {
+    background: transparent;
+    @include wx__border($border_color: $neutral__400);
+  }
+  input[type=search]{
+    padding-left:3.3em !important;
+  }
+  &[aria-disabled="true"] {
+    background: $neutral__200;
+    pointer-events: none;
+    border-color: $neutral__500 !important;
+    input {
+      color: $neutral__300;
+    }
+    span {
+      color: $neutral__500;
+    }
+    @extend .wx__user_select_none;
+  }
+}
+
+.wx__input_group_warning {
+  @extend .wx__input_group;
+  @include wx__border($border_color: $orange__600);
+  input {
+    background: transparent;
+  }
+  &[aria-disabled="true"] {
+    background: $neutral__200;
+    pointer-events: none;
+    border-color: $orange__300 !important;
+    input {
+      color: $neutral__300;
+    }
+    span {
+      color: $neutral__500;
+    }
+    @extend .wx__user_select_none;
+  }
+}
+
+.wx__input_group_success {
+  @extend .wx__input_group;
+  @include wx__border($border_color: $green__500);
+  input {
+    background: transparent;
+  }
+  &[aria-disabled="true"] {
+    background: $neutral__200;
+    pointer-events: none;
+    border-color: $green__300 !important;
+    input {
+      color: red !important;
+    }
+    span {
+      color: red;
+    }
+    @extend .wx__user_select_none;
+  }
+}
+
+.wx__form_group {
+  &[aria-disabled="true"] {
+    input{
+      color:  $neutral__500 !important;
+    }
+  }
+}
+
+.wx__input_group_danger {
+  @extend .wx__input_group;
+  @include wx__border($border_color: $red__500);
+  input {
+    background: transparent;
+  }
+
+  &[aria-disabled="true"] {
+    background: $neutral__200;
+    pointer-events: none;
+    border-color: $red__300 !important;
+    input {
+      color: $neutral__300;
+    }
+    span {
+      color: $neutral__500;
+    }
+    @extend .wx__user_select_none;
+  }
+}
+
+// input, label, span group class
+
+.wx__form_group {
+  margin-bottom: 1em;
+  label {
+    margin-bottom: 0.7em;
+    font-weight: 600 !important;
+    @extend .wx__text_subtitle;
+    @extend .wx__text_semibold;
+    display: inline-block !important;
+    color: $neutral__900;
+    span {
+      color: $red__500;
+    }
+  }
+  input, select, textarea{
+    border-color: $neutral__400;
+    font-size:$input_font_size;
+    color: $neutral__900;
+    font-weight: 400;
+  }
+  input, select{
+    height: $input_text_height;
+  }
+  .note_text {
+    color: $neutral__600;
+    @extend .wx__text_subtitle;
+    @extend .wx__text_regular;
+  }
+  &[aria-disabled="true"] {
+    label {
+      color: #9a9a9a;
+      span {
+        color: $red__300;
+      }
+    }
+
+    .note_text {
+      color: $neutral__500;
+    }
+
+    .wx__input_primary {
+      pointer-events: none;
+      border-color: $primary__300 !important;
+      background: $neutral__200;
+    }
+
+    .wx__input_secondary {
+      pointer-events: none;
+      border-color: $neutral__500 !important;
+      background: $neutral__200;
+    }
+
+    .wx__input_warning {
+      pointer-events: none;
+      border-color: $orange__300 !important;
+      background: $neutral__200;
+    }
+
+    .wx__input_success {
+      pointer-events: none;
+      border-color: $green__300 !important;
+      background: $neutral__200;
+    }
+
+    .wx__input_danger {
+      pointer-events: none;
+      border-color: $red__300 !important;
+      background: $neutral__200;
+    }
+
+    .wx__input_group_primary {
+      pointer-events: none;
+      border-color: $primary__300 !important;
+      background: $neutral__200;
+      input {
+        color: $neutral__300;
+      }
+      span {
+        color: $neutral__500;
+      }
+    }
+    .wx__input_group_secondary {
+      pointer-events: none;
+      border-color: $neutral__500 !important;
+      background: $neutral__200;
+      input {
+        color: $neutral__300;
+      }
+      span {
+        color: $neutral__500;
+      }
+      .wx__input_secondary{
+        // margin-right:1em;
+        color: $neutral__700;
+      }
+    }
+    .wx__input_group_warning {
+      pointer-events: none;
+      border-color: $orange__300 !important;
+      background: $neutral__200;
+      input {
+        color: $neutral__300;
+      }
+      span {
+        color: $neutral__500;
+      }
+    }
+    .wx__input_group_success {
+      pointer-events: none;
+      border-color: $green__300 !important;
+      background: $neutral__200;
+      input {
+        color: $neutral__300;
+      }
+      span {
+        color: $neutral__500;
+      }
+    }
+    .wx__input_group_danger {
+      pointer-events: none;
+      border-color: $red__300 !important;
+      background: $neutral__200;
+      input {
+        color: $neutral__300;
+      }
+      span {
+        color: $neutral__500;
+      }
+    }
+    @extend .wx__user_select_none;
+  }
+}
+.select__placeholder{
+  font-size: $input_font_size;
+}
+.select__value-container{
+  font-size: $input_font_size;
+  margin:0 !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+}
+.select__input-container{
+  margin:0 !important;
+  padding:0 !important;
+}
+.PhoneInput{
+  position: relative;
+  .PhoneInputCountry{
+      position: absolute;
+      left:0.5em;
+      top:50%;
+      transform: translateY(-50%);
+  }
+  .PhoneInputInput{
+    padding-left:4em;
+  }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.wx__input_group_secondary{
+  &.icon-left, &.icon-right{
+    position: relative; 
+    svg, .wx__icon, .material-symbols-outlined{
+        background-color: #fff;
+        position: absolute;
+        z-index: 5;
+    }
+  }
+  &.icon-left{
+    svg, .wx__icon, .material-symbols-outlined{
+      left:0.5em;
+    }
+    input{
+      padding-left:35px;
+    }
+  }
+  &.icon-right{
+    svg, .wx__icon, .material-symbols-outlined{
+      right:0.5em;
+    }
+  }
+}

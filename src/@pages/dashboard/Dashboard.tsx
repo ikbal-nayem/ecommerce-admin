@@ -13,7 +13,7 @@ import { ENV } from "config/ENV.config";
 import { ORDER } from "routes/path-name.route";
 import { AppsService } from "services/api/Apps.service";
 import { DashboardService } from "services/api/Dashboard.service";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 import { ToastService } from "services/utils/toastr.service";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";

@@ -1,6 +1,6 @@
 import { IUserInfo } from "@interfaces/user.interface";
 import { createSlice } from "@reduxjs/toolkit";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 
 const userData: any = LocalStorageService.get("user_data");
 

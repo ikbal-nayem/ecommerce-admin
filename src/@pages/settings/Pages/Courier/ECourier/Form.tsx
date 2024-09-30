@@ -10,7 +10,7 @@ import WxInput from "@components/WxInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SETTINGS_DELIVERY } from "routes/path-name.route";
 import { ECourierService } from "services/api/courier/ECourier.service";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 import { ToastService } from "services/utils/toastr.service";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";

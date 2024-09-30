@@ -7,7 +7,7 @@ import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
 import WxModalHeader from "@components/WxModal/WxModalHeader";
 import { AccountSettingService } from "services/api/AccountSetting.service";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 import { ToastService } from "services/utils/toastr.service";
 import { useState } from "react";
 import { useForm } from "react-hook-form";

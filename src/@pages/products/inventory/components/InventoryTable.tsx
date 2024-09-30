@@ -4,7 +4,7 @@ import WxIcon from "@components/WxIcon/WxIcon";
 import WxInput from "@components/WxInput";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { ProductService } from "services/api/products/Product.services";
-import { LocalStorageService } from "services/utils/localStorage.service";
+import { LocalStorageService } from "services/utils/local-storage.service";
 import Preloader from "services/utils/preloader.service";
 import { ToastService } from "services/utils/toastr.service";
 import { memo, useState } from "react";
