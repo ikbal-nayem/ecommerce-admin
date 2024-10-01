@@ -6,32 +6,11 @@
 @import 'partials/classes';
 
 // typography class
-@import './custom/typography.scss';
-
-// custom bootstrap file custom.scss
 @import './bootstrap/variable-customize.scss';
+@import './custom/index.scss';
 
 // Custom bootstrap classes
 @import './bootstrap/custom/index.scss';
-
-// overriding bootstrap class
-@import './bootstrap/forms/forms_class.scss';
-
-// buttons class
-@import './custom/buttons.scss';
-@import './custom/tags.scss';
-
-// inputs class
-
-@import './custom/inputs.scss';
-
-// table cell class
-
-@import './custom/table.scss';
-
-// tags class
-@import './custom/tags.scss';
-
 
 .animate_child {
 	transform: scale(0.9);

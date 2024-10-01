@@ -20,7 +20,6 @@
     // margin-left: -60px;
     transition: opacity 0.3s;
     @extend .text_subtitle;
-    @extend .text_400;
     &::after {
       content: "";
       position: absolute;

@@ -75,7 +75,7 @@ const WxRadio = ({
           />
           {label ? (
             <label
-              className="form-check-label text_small wx__radio_btn_label text_medium "
+              className="form-check-label text_small radio_btn_label text_medium "
               htmlFor={id}
               style={{ cursor: "pointer" }}
             >
@@ -92,7 +92,7 @@ const WxRadio = ({
         <div>
           {label ? (
             <label
-              className="form-check-label wx__radio_btn_label   text_semibold"
+              className="form-check-label radio_btn_label   text_semibold"
               style={{
                 marginBottom: "4px",
                 marginRight: "0px",
@@ -132,7 +132,7 @@ const WxRadio = ({
                     style={{ cursor: "pointer" }}
                   />
                   <label
-                    className="form-check-label text_body text_medium wx__radio_btn_label my-auto"
+                    className="form-check-label text_body text_medium radio_btn_label my-auto"
                     htmlFor={id + index}
                     style={{ cursor: "pointer" }}
                   >

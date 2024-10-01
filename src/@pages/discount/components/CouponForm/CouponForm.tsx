@@ -572,7 +572,7 @@ const CouponForm = ({
         <div className="card p-4 wx__order_payment">
           <h5 className="mb-4">Usage Limit</h5>
           <div>
-            <p className="wx__subtitle_form">
+            <p className="subtitle_form">
               How many times this coupon can be used?
             </p>
             <WxRadio
@@ -619,7 +619,7 @@ const CouponForm = ({
             </WxRadio>
           </div>
           <div className="my-3">
-            <p className="wx__subtitle_form">
+            <p className="subtitle_form">
               How many times a single person can purchase this?
             </p>
             <WxRadio
