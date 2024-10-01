@@ -2,7 +2,6 @@ import WxIcon from "@components/WxIcon/WxIcon";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { IAppDetails, IInstalledApp } from "@interfaces/app.interface";
 import { APP_OVERVIEW } from "routes/path-name.route";
-import starIcon from "assets/images/apps_img/star.png";
 import { Link } from "react-router-dom";
 import { imageURLGenerate } from "utils/utils";
 import "./Suggested.scss";
@@ -54,7 +53,7 @@ const SuggestedApp = ({ appListData, installedApps }: ISuggestedAppsProps) => {
                     <p className="text_small text_regular d-flex justify-content-center align-items-center">
                       <img
                         className="wx__icon_star"
-                        src={starIcon}
+                        src="/media/icons/star.png"
                         alt="icon"
                       />
                       <span>

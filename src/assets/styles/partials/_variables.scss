@@ -1,39 +1,40 @@
 // fonts
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-$primary__font__family: "Inter", sans-serif !default;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$primary__font__family: 'Inter', sans-serif !default;
 
 // body codes font
-$secondary__font__family: "IBM Plex Mono", monospace !default;
-
-$disable__bg: #fafafa !default;
+$secondary__font__family: 'IBM Plex Mono', monospace !default;
 
 // colors
 $color__blue: #0070f4 !default;
-$color__green: #10c600 !default;
 $color__gray: #e5e5e5 !default;
 $color__darkGray: #747b7f !default;
-$color__light: #ebeef2 !default;
-$color__skyblue: #d4e2f1 !default;
 $color__black: #212529 !default;
 
-// $wx__primary: $green__dark__500!default;
-// $secondary: $neutral__500!default;
-
-$green__dark__500: #26a11c !default;
-
 // primary color shades
-$primary__100: #eef4ed !default;
-$primary__200: #d9ecd8 !default;
-$primary__300: #a8d8a4 !default;
-$primary__400: #7cc178 !default;
-$primary__500: #0d810a !default;
-$primary__600: #1e6d00 !default;
-$primary__700: #0b5306 !default;
-$primary__800: #054700 !default;
-$primary__900: #032900 !default;
+$primary__100: #f2d9f9 !default;
+$primary__200: #e5b5f1 !default;
+$primary__300: #d88fe8 !default;
+$primary__400: #cb69e0 !default;
+$primary__500: #be43d8 !default;
+$primary__600: #a938cf !default;
+$primary__700: #842ca6 !default;
+$primary__800: #68227e !default;
+$primary__900: #4d1957 !default;
+
+// secondary color shades
+$secondary__100: #f3efd1 !default;
+$secondary__200: #e2dba0 !default;
+$secondary__300: #d0c86e !default;
+$secondary__400: #c0b34f !default;
+$secondary__500: #b09f30 !default;
+$secondary__600: #918627 !default;
+$secondary__700: #736a1f !default;
+$secondary__800: #5c5419 !default;
+$secondary__900: #453f13 !default;
 
 // neutral color shades
-$neutral__100: #ffffff !default;
+$neutral__100: #fdfdfd !default;
 $neutral__200: #f5f6f7 !default;
 $neutral__300: #f0f1f2 !default;
 $neutral__400: #dfe2e5 !default;
@@ -44,15 +45,15 @@ $neutral__800: #434343 !default;
 $neutral__900: #1f1f1f !default;
 
 // primary color shades
-$blue__100: #f4f8fe !default;
-$blue__200: #e1eeff !default;
-$blue__300: #c5e0ff !default;
-$blue__400: #66aaf9 !default;
-$blue__500: #0573f5 !default;
-$blue__600: #0065db !default;
-$blue__700: #0059c2 !default;
-$blue__800: #1d518f !default;
-$blue__900: #002a5c !default;
+$blue__100: #d6e9fb !default;
+$blue__200: #a8d2f7 !default;
+$blue__300: #7bbbf3 !default;
+$blue__400: #4ea5ee !default;
+$blue__500: #2a8ae4 !default;
+$blue__600: #2a74d4 !default;
+$blue__700: #235cb0 !default;
+$blue__800: #1c4790 !default;
+$blue__900: #153270 !default;
 
 // green color shades
 $green__100: #f6ffed !default;
@@ -143,19 +144,15 @@ $gold__800: #ad6800 !default;
 $gold__900: #874d00 !default;
 
 $primary: $primary__600 !default;
-$secondary: $color__darkGray !default;
-$success: $color__green !default;
-$info: $color__skyblue !default;
-$light: $color__light !default;
+$secondary: $secondary__600 !default;
+$success: $green__600 !default;
+$info: $blue__200 !default;
+$light: $blue__100 !default;
 $dark: $color__black !default;
 
 $header_height: 52px !default;
 $sidenav_width: 240px !default;
 $inner_padding: 2em !default;
-
-// hr
-$hr_background: #e2e2e2 !default;
-$hr_height: 2px !default;
 
 //Icon size
 $icon_xs: 0.7em !default;

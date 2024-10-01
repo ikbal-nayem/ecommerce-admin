@@ -1,8 +1,3 @@
-@import "../partials/mixins";
-@import "../partials/variables";
-@import "../partials/classes";
-@import "./typography.scss";
-
 .wx__table_pagination_main {
   .wx__perpage_data {
     display: inline-flex;
@@ -58,8 +53,6 @@
           &:active {
             background-color: $primary__500;
             border: 1.5px solid $neutral__400;
-          }
-          span {
           }
           user-select: none; /* supported by Chrome and Opera */
           -webkit-user-select: none; /* Safari */

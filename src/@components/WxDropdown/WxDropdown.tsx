@@ -33,14 +33,14 @@ const WxDropdown = ({
 
     if (backdrop) {
       const mainWrapper = document.querySelector(".wx__dropdown_wrapper");
-      const wxRoot = document.getElementById("dropdown__wrapper__sec");
+      const root = document.getElementById("dropdown__wrapper__sec");
 
       const dropdown = document.querySelector(".dropdown_wrapper");
 
       if (!mainWrapper && isOpen) {
         const div = document.createElement("div");
         div.classList.add("wx__dropdown_wrapper");
-        wxRoot.appendChild(div);
+        root.appendChild(div);
         setMenu(true);
       }
 

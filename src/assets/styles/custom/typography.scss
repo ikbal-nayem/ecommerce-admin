@@ -1,155 +1,109 @@
-@import "../partials/mixins";
-@import "../partials/variables";
-@import "../partials/classes";
-
-body {
-  color: $neutral__900;
-}
-
 // fonts class
 .text_display_1 {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-weight: 400,
-    $display: block,
-    $font-size: 5rem,
-    $line-height: 110%,
-    $text-transform: none,
-    $letter-spacing: -0.078rem
-  );
+	font-family: $primary__font__family;
+	@include font__style(
+		$font-weight: 400,
+		$display: block,
+		$font-size: 5rem,
+		$line-height: 110%,
+		$text-transform: none,
+		$letter-spacing: -0.078rem
+	);
 }
 
 .text_display_2 {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-weight: 400,
-    $display: block,
-    $font-size: 4.5rem,
-    $line-height: 110%,
-    $letter-spacing: -0.063rem,
-    $text-transform: none
-  );
+	font-family: $primary__font__family;
+	@include font__style(
+		$font-weight: 400,
+		$display: block,
+		$font-size: 4.5rem,
+		$line-height: 110%,
+		$letter-spacing: -0.063rem,
+		$text-transform: none
+	);
 }
 
 .text_display_3 {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-weight: 400,
-    $display: block,
-    $font-size: 4rem,
-    $line-height: 110%,
-    $letter-spacing: -0.063rem,
-    $text-transform: none
-  );
+	font-family: $primary__font__family;
+	@include font__style(
+		$font-weight: 400,
+		$display: block,
+		$font-size: 4rem,
+		$line-height: 110%,
+		$letter-spacing: -0.063rem,
+		$text-transform: none
+	);
 }
 
 // font weight
 .text_regular {
-  font-weight: 400 !important;
+	font-weight: 400 !important;
 }
 
 .text_medium {
-  font-weight: 500 !important;
+	font-weight: 500 !important;
 }
 
 .text_strong {
-  font-weight: 600 !important;
+	font-weight: 600 !important;
 }
 
 .text_semibold {
-  font-weight: 600 !important;
+	font-weight: 600 !important;
 }
 
 // text decoration
 .text_underline {
-  text-decoration: underline !important;
+	text-decoration: underline !important;
 }
 
 .text_strikethrough {
-  text-decoration: line-through !important;
+	text-decoration: line-through !important;
 }
 
 // font-style
 .text_italic {
-  font-style: italic !important;
+	font-style: italic !important;
 }
 
 .text_h1 {
-  font-family: $primary__font__family;
-  @include font__style(
-    $display: block,
-    $font-size: 2.5rem,
-    $line-height: 125%,
-    $letter-spacing: -0.047rem
-  );
+	font-family: $primary__font__family;
+	@include font__style($display: block, $font-size: 2.5rem, $line-height: 125%, $letter-spacing: -0.047rem);
 }
 
 .text_h2 {
-  font-family: $primary__font__family;
-  @include font__style(
-    $display: block,
-    $font-size: 2rem,
-    $line-height: 120%,
-    $letter-spacing: -0.016rem
-  );
+	font-family: $primary__font__family;
+	@include font__style($display: block, $font-size: 2rem, $line-height: 120%, $letter-spacing: -0.016rem);
 }
 
 .text_h3 {
-  font-family: $primary__font__family;
-  @include font__style(
-    $display: block,
-    $font-size: 1.75rem,
-    $line-height: 120%,
-    $letter-spacing: -0.016rem
-  );
+	font-family: $primary__font__family;
+	@include font__style($display: block, $font-size: 1.75rem, $line-height: 120%, $letter-spacing: -0.016rem);
 }
 
 .text_h4 {
-  font-family: $primary__font__family;
-  @include font__style(
-    $display: block,
-    $font-size: 1.5rem,
-    $line-height: 130%,
-    $letter-spacing: -0.016rem
-  );
+	font-family: $primary__font__family;
+	@include font__style($display: block, $font-size: 1.5rem, $line-height: 130%, $letter-spacing: -0.016rem);
 }
 
 .text_h5 {
-  font-family: $primary__font__family;
-  @include font__style(
-    $display: block,
-    $font-size: 1.25rem,
-    $line-height: 130%,
-    $letter-spacing: -0.016rem
-  );
+	font-family: $primary__font__family;
+	@include font__style($display: block, $font-size: 1.25rem, $line-height: 130%, $letter-spacing: -0.016rem);
 }
 
 .text_h6 {
-  font-family: $primary__font__family;
-  @include font__style(
-    $display: block,
-    $font-size: 1rem,
-    $line-height: 140%,
-    $letter-spacing: -0.031rem
-  );
+	font-family: $primary__font__family;
+	@include font__style($display: block, $font-size: 1rem, $line-height: 140%, $letter-spacing: -0.031rem);
 }
 
 .text_subtitle {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-size: 0.813rem,
-    $line-height: 140%,
-    $letter-spacing: -0.01rem
-  );
+	font-family: $primary__font__family;
+	@include font__style($font-size: 0.813rem, $line-height: 140%, $letter-spacing: -0.01rem);
 }
 
 .text_body {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-size: 0.875rem,
-    $line-height: 140%,
-    $letter-spacing: -0.01rem
-  );
+	font-family: $primary__font__family;
+	@include font__style($font-size: 0.875rem, $line-height: 140%, $letter-spacing: -0.01rem);
 }
 
 // .wx__body_regular {
@@ -206,27 +160,23 @@ body {
 // }
 
 .text_body_code {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-family: $secondary__font__family,
-    $font-size: 0.875rem,
-    $line-height: 150%,
-    $letter-spacing: -0.047rem
-  );
+	font-family: $primary__font__family;
+	@include font__style(
+		$font-family: $secondary__font__family,
+		$font-size: 0.875rem,
+		$line-height: 150%,
+		$letter-spacing: -0.047rem
+	);
 }
 
 .wx__footnote_desc {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-size: 0.75rem,
-    $line-height: 140%,
-    $letter-spacing: -0.01rem
-  );
+	font-family: $primary__font__family;
+	@include font__style($font-size: 0.75rem, $line-height: 140%, $letter-spacing: -0.01rem);
 }
 
 .text_small {
-  font-family: $primary__font__family;
-  @include font__style($font-size: 0.75rem, $line-height: 120%);
+	font-family: $primary__font__family;
+	@include font__style($font-size: 0.75rem, $line-height: 120%);
 }
 
 // .text_small {
@@ -234,43 +184,43 @@ body {
 // }
 
 .text_caption {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-size: 0.75rem,
-    $line-height: 140%,
-    $text-transform: uppercase,
-    $font-weight: 600
-  );
+	font-family: $primary__font__family;
+	@include font__style(
+		$font-size: 0.75rem,
+		$line-height: 140%,
+		$text-transform: uppercase,
+		$font-weight: 600
+	);
 }
 
 .text_btn_big {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-size: 1rem,
-    $line-height: 150%,
-    $letter-spacing: 0.016rem,
-    $text-transform: capitalize
-  );
+	font-family: $primary__font__family;
+	@include font__style(
+		$font-size: 1rem,
+		$line-height: 150%,
+		$letter-spacing: 0.016rem,
+		$text-transform: capitalize
+	);
 }
 
 .text_btn_regular {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-size: 0.875rem,
-    $line-height: 150%,
-    $letter-spacing: 0.015rem,
-    $text-transform: capitalize
-  );
+	font-family: $primary__font__family;
+	@include font__style(
+		$font-size: 0.875rem,
+		$line-height: 150%,
+		$letter-spacing: 0.015rem,
+		$text-transform: capitalize
+	);
 }
 
 .text_btn_small {
-  font-family: $primary__font__family;
-  @include font__style(
-    $font-size: 0.813rem,
-    $line-height: 140%,
-    $letter-spacing: 0.013rem,
-    $text-transform: capitalize
-  );
+	font-family: $primary__font__family;
+	@include font__style(
+		$font-size: 0.813rem,
+		$line-height: 140%,
+		$letter-spacing: 0.013rem,
+		$text-transform: capitalize
+	);
 }
 
 h1,
@@ -279,16 +229,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $primary__font__family;
-  font-weight: 600;
-  margin-bottom: 0.75em;
+	font-family: $primary__font__family;
+	font-weight: 600;
+	margin-bottom: 0.75em;
 }
 
 p {
-  font-family: $primary__font__family;
-  font-size: $body_font_size;
+	font-family: $primary__font__family;
+	font-size: $body_font_size;
 }
 
 .material-icons {
-  font-size: $icon_sm;
+	font-size: $icon_sm;
 }

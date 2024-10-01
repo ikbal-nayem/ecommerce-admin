@@ -49,7 +49,7 @@ const Dashboard = () => {
 	};
 
 	return (
-		<WxMainLg className='wx__dashboard'>
+		<WxMainLg className='dashboard'>
 			{!summeryLoader ? (
 				<div className='row dashboard_summery g-3'>
 					<div className='col-md-9'>

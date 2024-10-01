@@ -170,7 +170,7 @@ const Preferences = () => {
                 />
               </div>
             </div>
-            <div className="col-lg-3 col-md-4 col-sm-12 d-none-tab">
+            <div className="col-lg-3 col-md-4 col-sm-12">
               <div className="card wx__form_right">
                 <WxButton type="submit" variant="fill" disabled={isSaving}>
                   {isSaving ? <ButtonLoader /> : "Save"}
