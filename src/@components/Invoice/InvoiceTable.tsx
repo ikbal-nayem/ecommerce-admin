@@ -19,7 +19,7 @@ const InvoiceTable = ({ data }) => {
                     <img src={item.thumbnail} alt="" className="item_img" />
                   </div> */}
                       <div>
-                        <p className="wx__mb-0">{item?.title + "\n"}</p>
+                        <p className="mb-0">{item?.title + "\n"}</p>
                         <br />
                         {item?.options && item?.options?.length
                           ? item?.options.map((variant, indx) => {

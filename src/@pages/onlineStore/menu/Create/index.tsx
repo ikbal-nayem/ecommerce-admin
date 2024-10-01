@@ -196,9 +196,9 @@ const CreateMenu = () => {
 		<WxMainLg className="create_menu_sec">
 			<WxFormHeader title="Create Menu" backNavigationLink={MENU} />
 			<form onSubmit={handleSubmit(onSubmitting)} noValidate>
-				<div className="row wx__m-auto w-100">
+				<div className="row m-auto w-100">
 					<div className="col-lg-8 cards-sec col-md-12 col-sm-12 left">
-						<div className="card wx__p-4 wx__mt-3">
+						<div className="card p-4 mt-3">
 							<WxInput
 								isRequired
 								label="Menu set name"
@@ -212,11 +212,11 @@ const CreateMenu = () => {
 							/>
 						</div>
 
-						<div className="card wx__p-4 wx__mt-3">
-							<h6 className="wx__text_heading wx__text_semibold">Menu Items</h6>
+						<div className="card p-4 mt-3">
+							<h6 className="text_heading text_semibold">Menu Items</h6>
 
 							{menuList?.length ? (
-								<div className="menu-item-list wx__mb-3">
+								<div className="menu-item-list mb-3">
 									<MenuItemTable
 										level={level}
 										data={menuList}
@@ -236,18 +236,18 @@ const CreateMenu = () => {
 							</button>
 						</div>
 					</div>
-					<div className="right cards-sec col-lg-4 col-md-12 col-sm-12 wx__mt-3">
-						<div className="card wx__p-3">
+					<div className="right cards-sec col-lg-4 col-md-12 col-sm-12 mt-3">
+						<div className="card p-3">
 							<WxButton type="submit" variant="fill" disabled={saving}>
 								Save{saving ? <Preloader /> : null}
 							</WxButton>
 
 							<WxHr />
 
-							<div className="wx__pe-5">
+							<div className="pe-5">
 								<WxSwitch
 									label={
-										<div className="d-flex menu_help_icon wx__align-items-center">
+										<div className="d-flex menu_help_icon align-items-center">
 											<span className="">Status</span>
 										</div>
 									}

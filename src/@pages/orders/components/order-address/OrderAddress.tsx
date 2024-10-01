@@ -115,7 +115,7 @@ const OrderAddress = ({
 						<div className="wx__order_address__footer">
 							<WxButton
 								type="button"
-								className="wx__me-3"
+								className="me-3"
 								variant="outline"
 								color="secondary"
 								onClick={handleClose}

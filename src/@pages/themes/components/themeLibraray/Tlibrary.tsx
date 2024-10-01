@@ -35,14 +35,14 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
 
   return (
     <div className="tlibrary">
-      <div className="tlibrary-pad d-flex wx__justify-content-between wx__align-items-center wx__mb-2">
+      <div className="tlibrary-pad d-flex justify-content-between align-items-center mb-2">
         <div className="w-100">
-          <h5 className="wx__text_semibold wx__mb-1">Theme Library</h5>
-          <p className="wx__text_body">
+          <h5 className="text_semibold mb-1">Theme Library</h5>
+          <p className="text_body">
             This is the theme customers see when they visit your store.
           </p>
         </div>
-        <div className="w-100 d-flex wx__justify-content-end">
+        <div className="w-100 d-flex justify-content-end">
           <WxButton variant="outline" onClick={() => navigate(THEMES_LIST)}>
             Explore Themes
           </WxButton>
@@ -56,54 +56,54 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
           <div className="single__theme" key={item.id}>
             <div
               key={item?.id}
-              className="d-flex wx__justify-content-between"
+              className="d-flex justify-content-between"
             >
               <div
-                className="left d-flex wx__align-items-center"
+                className="left d-flex align-items-center"
                 onClick={() => navigate(THEMES_OVERVIEW({ theme_id: item.id }))}
               >
                 <WxThumbnail src={imageURLGenerate(item?.themeIcon)} noBorder />
                 <div className="tbTitle">
                   <div>
-                    <span className="wx__text_subtitle wx__text_semibold">
+                    <span className="text_subtitle text_semibold">
                       {item?.title}
                     </span>
                     {isInstalled && (
                       <div className="d-inline">
                         <WxTag
                           label="Installed"
-                          className="wx__mx-2 wx__mb-2"
+                          className="mx-2 mb-2"
                         />
                         {isInstalled?.isActive && (
                           <WxTag
                             label="Published"
                             color="success"
-                            className="wx__mx-2 wx__mb-2"
+                            className="mx-2 mb-2"
                           />
                         )}
                       </div>
                     )}
                   </div>
-                  <span className="wx__text_subtitle wx__text_regular">
+                  <span className="text_subtitle text_regular">
                     {item?.shortDesc}
                   </span>
                 </div>
               </div>
-              <div className="right d-flex wx__justify-content-end wx__align-items-center">
+              <div className="right d-flex justify-content-end align-items-center">
                 <WxButton
                   variant="none"
                   color="secondary"
-                  className="wx_text_regular preview wx__me-2"
+                  className="wx_text_regular preview me-2"
                   onClick={() =>
                     navigate(THEMES_OVERVIEW({ theme_id: item.id }))
                   }
                 >
-                  <WxIcon icon="visibility" className="wx__me-2 wx__mt-auto" />
+                  <WxIcon icon="visibility" className="me-2 mt-auto" />
                   <span>Preview</span>
                 </WxButton>
                 {/* <WxButton
 								variant="none"
-								className="wx_text_regular ms_2 wx__me-2"
+								className="wx_text_regular ms_2 me-2"
 							>
 								Customize
 							</WxButton> */}
@@ -121,38 +121,38 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
 											className="live-theme-drawer"
 										>
 											<ul>
-												<li className="wx__text_subtitle">
-													<Link to="" className="wx__text_body">
+												<li className="text_subtitle">
+													<Link to="" className="text_body">
 														<WxIcon icon="visibility" />
 														View
 													</Link>
 												</li>
-												<li className="wx__text_subtitle">
-													<Link to="" className="wx__text_body">
+												<li className="text_subtitle">
+													<Link to="" className="text_body">
 														<WxIcon icon="title" />
 														Rename
 													</Link>
 												</li>
-												<li className="wx__text_subtitle">
-													<Link to="" className="wx__text_body">
+												<li className="text_subtitle">
+													<Link to="" className="text_body">
 														<WxIcon icon="language" />
 														Duplicate Site
 													</Link>
 												</li>
-												<li className="wx__text_subtitle">
-													<Link to="" className="wx__text_body">
+												<li className="text_subtitle">
+													<Link to="" className="text_body">
 														<WxIcon icon="download" />
 														Download Theme
 													</Link>
 												</li>
-												<li className="wx__text_subtitle">
-													<Link to="" className="wx__text_body">
+												<li className="text_subtitle">
+													<Link to="" className="text_body">
 														<WxIcon icon="code" />
 														Edit Code
 													</Link>
 												</li>
-												<li className="wx__text_subtitle">
-													<Link to="" className="wx__text_body">
+												<li className="text_subtitle">
+													<Link to="" className="text_body">
 														<WxIcon icon="translate" />
 														Edit Language
 													</Link>

@@ -44,7 +44,7 @@ export const EditNotes = ({
 	return (
 		<>
 			<span
-				className="wx__text-primary wx__text_small"
+				className="text-primary text_small"
 				role="button"
 				onClick={() => setOpen(true)}
 			>
@@ -70,7 +70,7 @@ export const EditNotes = ({
 					<WxModalFooter>
 						<div className="d-flex justify-content-end">
 							<WxButton
-								className="wx__me-3"
+								className="me-3"
 								variant="outline"
 								color="secondary"
 								onClick={() => setOpen(false)}

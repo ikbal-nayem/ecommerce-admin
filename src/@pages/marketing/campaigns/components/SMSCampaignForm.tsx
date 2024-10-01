@@ -150,10 +150,10 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
   // console.log(campaign);
 
   return (
-    <form className="wx__mt-3" onSubmit={handleSubmit(onSubmitting)} noValidate>
+    <form className="mt-3" onSubmit={handleSubmit(onSubmitting)} noValidate>
       <div className="row ">
         <div className="col-md-12 col-lg-8 col-sm-12">
-          <div className="card wx__p-4 wx__mb-3">
+          <div className="card p-4 mb-3">
             <div className="row">
               <div className="col-md-12 col-lg-12">
                 <WxInput
@@ -212,15 +212,15 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
               </div>
             </div>
           </div>
-          <div className="card wx__p-4 wx__mb-3">
+          <div className="card p-4 mb-3">
             <div className="row">
-              <h6 className="wx__text_h6 wx__text_semibold">Address</h6>
+              <h6 className="text_h6 text_semibold">Address</h6>
               <div className="col-md-12 col-lg-12">
                 <WxLabel
                   isRequired
                   children="SMS BODY"
                   labelRight={
-                    <span className="wx__text_subtitle wx__text_semibold">
+                    <span className="text_subtitle text_semibold">
                       TOTAL SMS 3
                     </span>
                   }
@@ -241,13 +241,13 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
           </div>
         </div>
         <div className="col-lg-4 col-md-12 col-sm-12">
-          <div className="card wx__p-4 wx__mb-3">
+          <div className="card p-4 mb-3">
             <WxButton disabled={isSaving} type="submit" variant="fill">
               Launch Campaign
             </WxButton>
             <WxHr />
             {!watch("audienceIds") && errors.audienceIds ? (
-              <span className="wx__text-danger wx__my-2">
+              <span className="text-danger my-2">
                 {errors?.audienceIds?.message}
               </span>
             ) : null}
@@ -265,7 +265,7 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
                       <span
                         className={`${
                           !watch("audienceIds") && errors?.audienceIds
-                            ? "wx__text-danger"
+                            ? "text-danger"
                             : null
                         }`}
                       >
@@ -279,8 +279,8 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
 
             <WxHr />
             <div>
-              <h6 className=" wx__mb-0 wx__text_strong">250</h6>
-              <span className="wx__text_small ">Total Audience Size</span>
+              <h6 className=" mb-0 text_strong">250</h6>
+              <span className="text_small ">Total Audience Size</span>
             </div>
           </div>
         </div>

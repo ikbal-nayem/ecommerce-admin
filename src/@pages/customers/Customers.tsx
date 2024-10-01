@@ -197,12 +197,12 @@ export default function Customer() {
 				}
 			/>
 			{isLoading ? (
-				<div className="rounded w-100 wx__bg-white wx__mt-3">
+				<div className="rounded w-100 bg-white mt-3">
 					<ProductTableSkelton viewBox="0 0 600 230" />
 				</div>
 			) : (
 				<div className="card">
-					<div className="row wx__p-4 wx__pb-0">
+					<div className="row p-4 pb-0">
 						<div className="col-lg-8 col-md-6 col-sm-12">
 							<WxInput
 								type="search"
@@ -246,7 +246,7 @@ export default function Customer() {
 								onChangeStatus={onCustomerStatusUpdate}
 								onDelete={onDelete}
 							/>
-							<div className="wx__p-4">
+							<div className="p-4">
 								<WxPagination
 									meta={customerMeta}
 									setCurrentPage={setCurrentPage}

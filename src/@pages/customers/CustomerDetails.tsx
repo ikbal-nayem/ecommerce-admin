@@ -228,7 +228,7 @@ const CustomerDetails = () => {
 
   return (
     <WxMainLg className="wx__customer_details">
-      <div className="wx__customer_header d-flex wx__align-items-center wx__justify-content-between">
+      <div className="wx__customer_header d-flex align-items-center justify-content-between">
         {!isLoading && (
           <WxFormHeader
             noMargin
@@ -250,28 +250,28 @@ const CustomerDetails = () => {
       {isLoading && <Preloader absolutePosition />}
       {!isLoading && customer?.customer ? (
         <div className="row">
-          <div className="col-lg-8 col-md-7 col-sm-12 wx__mt-3">
+          <div className="col-lg-8 col-md-7 col-sm-12 mt-3">
             {customerDetailsLoader ? (
-              <div className="card wx__customer-info wx__mb-3">
+              <div className="card wx__customer-info mb-3">
                 <CustomerDtlInfoSkelton viewBox="0 0 650 200" />
                 {/* <CustomerHistory /> */}
               </div>
             ) : (
-              <div className="card wx__p-4 wx__customer-info wx__mb-3">
+              <div className="card p-4 wx__customer-info mb-3">
                 <CustomerInfo customer={customer} statistics={statistics} />
                 {/* <CustomerHistory /> */}
               </div>
             )}
             {lastOrderLoader ? (
-              <div className="wx__bg-white rounded wx__mb-2">
+              <div className="bg-white rounded mb-2">
                 <CustomerLastOrdrSkelton viewBox="0 0 600 245" />
               </div>
             ) : (
-              <div className="order_history wx__bg-white wx__p-3 rounded wx__mb-3">
-                <p className="wx__text_body wx__text_medium">LAST ORDER</p>
-                <div className="d-flex wx__justify-content-between">
-                  <div className="d-flex wx__justify-content-between wx__align-items-center">
-                    <p className="m-0 wx__text_body wx__text_strong order-number">
+              <div className="order_history bg-white p-3 rounded mb-3">
+                <p className="text_body text_medium">LAST ORDER</p>
+                <div className="d-flex justify-content-between">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p className="m-0 text_body text_strong order-number">
                       Order {lastOrder?.orderNo || "#0000"}
                     </p>
                     {lastOrder?.orderStatus ? (
@@ -282,7 +282,7 @@ const CustomerDetails = () => {
                       />
                     ) : null}
                   </div>
-                  <span className="wx__text_subtitle">
+                  <span className="text_subtitle">
                     {lastOrder?.orderDate
                       ? generateDateFormat(
                           lastOrder?.orderDate,
@@ -293,10 +293,10 @@ const CustomerDetails = () => {
                 </div>
                 {lastOrder?.orderLineList?.map((lineItem, index) => (
                   <div
-                    className="d-flex wx__justify-content-between wx__align-items-center mt-4"
+                    className="d-flex justify-content-between align-items-center mt-4"
                     key={index}
                   >
-                    <div className="d-flex wx__justify-content-between  wx__align-items-center">
+                    <div className="d-flex justify-content-between  align-items-center">
                       <WxThumbnail
                         name={lineItem?.productName}
                         src={
@@ -307,10 +307,10 @@ const CustomerDetails = () => {
                         }
                       />
                       <div className="ms-3 ">
-                        <p className="m-0 wx__text_h6 wx__text_medium text-overflow-hidden">
+                        <p className="m-0 text_h6 text_medium text-overflow-hidden">
                           {lineItem?.productName || ""}
                         </p>
-                        <span className="wx__text_subtitle">
+                        <span className="text_subtitle">
                           {lineItem?.quantity || ""} Piece -{" "}
                           {lineItem?.variant
                             ?.map((variant) => variant.value)
@@ -318,7 +318,7 @@ const CustomerDetails = () => {
                         </span>
                       </div>
                     </div>
-                    <h5 className="wx__text_h6 wx__text_medium">
+                    <h5 className="text_h6 text_medium">
                       {lineItem?.subTotal?.toFixed().toLocaleString() || "0.00"}{" "}
                       BDT
                     </h5>
@@ -326,7 +326,7 @@ const CustomerDetails = () => {
                 ))}
 
                 <WxHr />
-                <div className="d-flex wx__justify-content-end">
+                <div className="d-flex justify-content-end">
                   <WxButton
                     variant="fill"
                     onClick={() => navigate(ORDER + "?customerId=" + id)}
@@ -348,15 +348,15 @@ const CustomerDetails = () => {
               </div>
             )}
           </div>
-          <div className="col-lg-4 col-md-5 col-sm-12 wx__mt-3">
+          <div className="col-lg-4 col-md-5 col-sm-12 mt-3">
             {customerDetailsLoader ? (
-              <div className="wx__bg-white rounded wx__mb-3">
+              <div className="bg-white rounded mb-3">
                 <CustomerContactDtls viewBox="0 0 380 170" />
               </div>
             ) : (
-              <div className="card wx__p-4 wx__customer-contact-info">
-                <div className="d-flex wx__justify-content-between">
-                  <div className="wx__text_body wx__text_medium">
+              <div className="card p-4 wx__customer-contact-info">
+                <div className="d-flex justify-content-between">
+                  <div className="text_body text_medium">
                     CONTACT DETAILS
                   </div>
                   <WxIcon
@@ -365,7 +365,7 @@ const CustomerDetails = () => {
                   />
                 </div>
                 {customer?.customer?.email && (
-                  <div className="d-flex wx__align-items-center contact-email wx__mt-3">
+                  <div className="d-flex align-items-center contact-email mt-3">
                     <WxIcon icon="email" />
                     <span className="text ms_2">
                       {customer?.customer?.email || ""}
@@ -373,7 +373,7 @@ const CustomerDetails = () => {
                   </div>
                 )}
                 {customer?.customer?.phoneNumber && (
-                  <div className="d-flex wx__align-items-center customer-phone wx__mt-1">
+                  <div className="d-flex align-items-center customer-phone mt-1">
                     <WxIcon icon="phone" />
                     <span className="text ms_2">
                       {customer?.customer?.phoneNumber || ""}
@@ -383,13 +383,13 @@ const CustomerDetails = () => {
               </div>
             )}
             {customerDetailsLoader ? (
-              <div className="wx__bg-white rounded wx__my-3">
+              <div className="bg-white rounded my-3">
                 <CustomerContactDtls viewBox="0 0 380 170" />
               </div>
             ) : (
-              <div className="card wx__p-4 wx__customer-contact-info wx__mt-3">
-                <div className="d-flex wx__justify-content-between">
-                  <div className="wx__text_body wx__text_medium">
+              <div className="card p-4 wx__customer-contact-info mt-3">
+                <div className="d-flex justify-content-between">
+                  <div className="text_body text_medium">
                     CUSTOMER GROUP
                   </div>
                   <WxIcon
@@ -398,7 +398,7 @@ const CustomerDetails = () => {
                   />
                 </div>
                 {!!customer?.groups.length && (
-                  <div className="d-flex wx__align-items-center customer-group wx__mt-3">
+                  <div className="d-flex align-items-center customer-group mt-3">
                     <WxIcon icon="groups" />
                     <span className="text ms_2">
                       {customer?.groups
@@ -408,11 +408,11 @@ const CustomerDetails = () => {
                   </div>
                 )}
                 {isEditGroup && (
-                  <div className={`form_group wx__m-0`}>
+                  <div className={`form_group m-0`}>
                     <label htmlFor="">Customer Group</label>
-                    <div className="wx__float-end">
+                    <div className="float-end">
                       <span
-                        className="wx__text_btn_small wx__text-primary wx__text_medium"
+                        className="text_btn_small text-primary text_medium"
                         role="button"
                         onClick={() => setIsGroupDrawerOpen(true)}
                       >
@@ -432,7 +432,7 @@ const CustomerDetails = () => {
                               setSelectedGroups(values)
                             }
                           />
-                          <div className="d-flex wx__justify-content-end wx__mt-3">
+                          <div className="d-flex justify-content-end mt-3">
                             <WxButton
                               variant="outline"
                               color="primary"
@@ -449,21 +449,21 @@ const CustomerDetails = () => {
               </div>
             )}
             {customerAddressLoader ? (
-              <div className="wx__bg-white wx__my-3 rounded">
+              <div className="bg-white my-3 rounded">
                 <CustomerAdresSkelton viewBox="0 0 380 590" />
               </div>
             ) : (
-              <div className="card wx__p-4 wx__customer-contact-info wx__mt-3">
-                <div className="d-flex wx__justify-content-between">
-                  <div className="wx__text_body wx__text_medium">
+              <div className="card p-4 wx__customer-contact-info mt-3">
+                <div className="d-flex justify-content-between">
+                  <div className="text_body text_medium">
                     CUSTOMER ADDRESS
                   </div>
                   <WxIcon onClick={() => onAddressManage()} icon="edit" />
                 </div>
                 <div>
                   {customerAddresses.map((address) => (
-                    <div className="wx__mb-4" key={address.id}>
-                      <div className="d-flex customer-location wx__mt-3">
+                    <div className="mb-4" key={address.id}>
+                      <div className="d-flex customer-location mt-3">
                         <WxIcon icon="location_on" />
                         <span className="text ms_2">
                           {address?.title || ""}
@@ -488,7 +488,7 @@ const CustomerDetails = () => {
                 </div>
               </div>
             )}
-            <div className="show-mobile-view w-100 wx__mt-4">
+            <div className="show-mobile-view w-100 mt-4">
               <WxButton
                 variant="outline"
                 color="danger"

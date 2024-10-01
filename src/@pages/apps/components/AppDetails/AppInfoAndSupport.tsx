@@ -4,7 +4,7 @@ import { generateDateFormat } from "utils/splitDate";
 
 const AppInfoAndSupport = ({ appInfo }) => (
   <>
-    <div className="card wx__details_mid_right wx__mt-3 wx__p-4">
+    <div className="card wx__details_mid_right mt-3 p-4">
       <h5>Info</h5>
       {appInfo ? (
         <ul>
@@ -35,20 +35,20 @@ const AppInfoAndSupport = ({ appInfo }) => (
                   )}
             </p>
           </li>
-          <li className="d-flex wx__justify-content-between wx__align-items-center">
+          <li className="d-flex justify-content-between align-items-center">
             <p className="info_label ">Total User</p>
             <p className="info_value ">{appInfo.totalUsers || 0}</p>
           </li>
-          <li className="d-flex wx__justify-content-between wx__align-items-center">
+          <li className="d-flex justify-content-between align-items-center">
             <p className="info_label ">Total Install</p>
             <p className="info_value ">{appInfo.totalInstalledUser || 0}</p>
           </li>
-          <li className="d-flex wx__justify-content-between">
+          <li className="d-flex justify-content-between">
             <p className="info_label ">Tags</p>
-            <div className="info_value d-flex wx__flex-wrap wx__justify-content-end gap-1">
+            <div className="info_value d-flex flex-wrap justify-content-end gap-1">
               {appInfo?.tags?.split(",")?.map((tag: string) => (
                 <div key={tag}>
-                  <WxTag label={tag} className="wx__m-0" />
+                  <WxTag label={tag} className="m-0" />
                 </div>
               ))}
             </div>
@@ -56,11 +56,11 @@ const AppInfoAndSupport = ({ appInfo }) => (
         </ul>
       ) : null}
     </div>
-    <div className="card wx__details_mid_right wx__p-4 wx__mt-3">
+    <div className="card wx__details_mid_right p-4 mt-3">
       <h5>Support</h5>
       {appInfo ? (
         <>
-          <div className="d-flex wx__align-items-center wx__mb-3">
+          <div className="d-flex align-items-center mb-3">
             <WxIcon
               icon="apartment"
               variants="filled"
@@ -71,7 +71,7 @@ const AppInfoAndSupport = ({ appInfo }) => (
           </div>
           <a
             href={"tel:" + appInfo?.developer?.supportPhone}
-            className="phone d-flex wx__align-items-center"
+            className="phone d-flex align-items-center"
           >
             <WxIcon icon="phone" variants="filled" />
             &nbsp;
@@ -80,7 +80,7 @@ const AppInfoAndSupport = ({ appInfo }) => (
           <a
             href="https://webx.xyz/privacy-policy/"
             target="_blank"
-            className="privacy_policy d-flex wx__align-items-center"
+            className="privacy_policy d-flex align-items-center"
           >
             <WxIcon icon="privacy_tip" variants="filled" />
             &nbsp;
@@ -88,7 +88,7 @@ const AppInfoAndSupport = ({ appInfo }) => (
           </a>
           <a
             href={"mailto:" + appInfo?.developer?.supportEmail}
-            className="mail d-flex wx__align-items-center"
+            className="mail d-flex align-items-center"
           >
             <WxIcon
               icon="markunread"

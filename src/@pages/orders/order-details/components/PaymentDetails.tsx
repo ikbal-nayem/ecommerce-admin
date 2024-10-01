@@ -17,8 +17,8 @@ const PaymentDetailsInfo = ({
 }: PaymentDetailsInfoProps) => {
 	return (
 		<>
-			<div className="d-flex wx__align-items-center gap-4 wx__mb-3">
-				<h6 className="wx__text_h6 wx__text_semibold wx__m-0">Payment</h6>
+			<div className="d-flex align-items-center gap-4 mb-3">
+				<h6 className="text_h6 text_semibold m-0">Payment</h6>
 				<div>
 					<WxTag
 						label={orderDetails?.paymentStatus}
@@ -26,17 +26,17 @@ const PaymentDetailsInfo = ({
 					/>
 				</div>
 			</div>
-			<div className="wx__text_body border-1 border-bottom wx__mb-3">
-				<div className="d-flex wx__justify-content-between wx__mb-3">
+			<div className="text_body border-1 border-bottom mb-3">
+				<div className="d-flex justify-content-between mb-3">
 					<span className="subtotal">Subtotal</span>
 					<span className="subtotal">
 						BDT {orderDetails?.orderSubTotal?.toLocaleString()}
 					</span>
 				</div>
-				<div className="d-flex wx__justify-content-between wx__mb-3">
+				<div className="d-flex justify-content-between mb-3">
 					<div className="d-flex gap-5">
 						<span
-							className="wx__text-primary"
+							className="text-primary"
 							role="button"
 							onClick={() =>
 								orderDetails?.paymentStatus !== STATUS_CONSTANT.paid
@@ -63,26 +63,26 @@ const PaymentDetailsInfo = ({
 						) : null}
 					</div>
 					{orderDetails?.directDiscountAmount ? (
-						<span className="wx__text-muted">
+						<span className="text-muted">
 							- BDT {orderDetails?.directDiscountAmount?.toLocaleString()}
 						</span>
 					) : (
-						<span className="wx__text-muted">BDT 0.00</span>
+						<span className="text-muted">BDT 0.00</span>
 					)}
 				</div>
-				<div className="d-flex wx__justify-content-between wx__mb-3">
+				<div className="d-flex justify-content-between mb-3">
 					<span>Coupon amount</span>
-					<span className="wx__text-muted">
+					<span className="text-muted">
 						BDT{" "}
 						{orderDetails?.couponAmount
 							? `- ${orderDetails?.couponAmount}`
 							: "0.00"}
 					</span>
 				</div>
-				<div className="d-flex wx__justify-content-between wx__mb-3">
+				<div className="d-flex justify-content-between mb-3">
 					<div className="d-flex gap-5">
 						<span
-							className="wx__text-primary"
+							className="text-primary"
 							role="button"
 							onClick={() =>
 								orderDetails?.paymentStatus !== STATUS_CONSTANT.paid
@@ -100,28 +100,28 @@ const PaymentDetailsInfo = ({
 							<span>{orderDetails?.deliveryZoneName}</span>
 						) : null}
 					</div>
-					<span className="wx__text-muted">
+					<span className="text-muted">
 						BDT &nbsp;
 						{orderDetails?.deliveryChargeAmount?.toLocaleString() || "0.00"}
 					</span>
 				</div>
-				<div className="d-flex wx__justify-content-between wx__mb-3">
-					<span className="wx__text_strong">Total</span>
-					<span className="wx__text_strong">
+				<div className="d-flex justify-content-between mb-3">
+					<span className="text_strong">Total</span>
+					<span className="text_strong">
 						BDT {orderDetails?.totalPayableAmount?.toLocaleString()}
 					</span>
 				</div>
 			</div>
 
 			{orderDetails?.invoice?.paidAmount ? (
-				<div className="wx__text_body border-1 border-bottom wx__mb-3">
-					<div className="d-flex wx__justify-content-between wx__mb-3">
+				<div className="text_body border-1 border-bottom mb-3">
+					<div className="d-flex justify-content-between mb-3">
 						<span>Paid amount</span>
 						<span>
 							BDT {orderDetails?.invoice?.paidAmount?.toLocaleString()}
 						</span>
 					</div>
-					<div className="d-flex wx__justify-content-between wx__mb-3">
+					<div className="d-flex justify-content-between mb-3">
 						<span>Due amount</span>
 						<span>
 							BTD {orderDetails?.invoice?.dueAmount?.toLocaleString()}

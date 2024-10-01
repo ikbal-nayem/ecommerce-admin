@@ -140,10 +140,10 @@ const OrderListTable = ({ ordersData, onDelete }: IOrdersTable) => {
                       drop
                     >
                       <ul>
-                        <li className="wx__text_subtitle">
+                        <li className="text_subtitle">
                           <Link
                             to={ORDER_DETAILS({ order_id: ord?.orderId })}
-                            className="wx__text_body"
+                            className="text_body"
                           >
                             <WxIcon style={{ top: "0" }} icon="edit" /> Edit
                           </Link>
@@ -153,10 +153,10 @@ const OrderListTable = ({ ordersData, onDelete }: IOrdersTable) => {
                         ) ? (
                           <li
                             onClick={() => invoicePrint(ord?.orderId)}
-                            className="wx__text_subtitle"
+                            className="text_subtitle"
                             style={{ cursor: "pointer" }}
                           >
-                            <span className="wx__text_body">
+                            <span className="text_body">
                               <WxIcon
                                 style={{ top: "0" }}
                                 icon="print"
@@ -170,10 +170,10 @@ const OrderListTable = ({ ordersData, onDelete }: IOrdersTable) => {
                           ord?.orderStatus?.toLowerCase()
                         ) ? (
                           <li
-                            className="wx__text_subtitle delete"
+                            className="text_subtitle delete"
                             onClick={() => onDelete(ord)}
                           >
-                            <a className="wx__text_body">
+                            <a className="text_body">
                               <WxIcon
                                 style={{ top: "0" }}
                                 icon="delete"

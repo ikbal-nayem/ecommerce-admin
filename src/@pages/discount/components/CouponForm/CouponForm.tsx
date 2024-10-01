@@ -71,13 +71,13 @@ const CouponForm = ({
   return (
     <>
       <div className="wx__order_form">
-        <div className="card wx__p-4 wx__order_product">
-          <h5 className="wx__mb-0">Discount Code</h5>
+        <div className="card p-4 wx__order_product">
+          <h5 className="mb-0">Discount Code</h5>
           <div className="row">
-            <div className="col-lg-6 col-md-12 col-sm-6 wx__mt-4">
+            <div className="col-lg-6 col-md-12 col-sm-6 mt-4">
               <div className="input-group">
                 <WxInput
-                  className="wx__mb-0"
+                  className="mb-0"
                   placeholder="For example : Summer Offer 01"
                   label="Discount Name"
                   isRequired
@@ -87,15 +87,15 @@ const CouponForm = ({
                   errorMessage={errors.couponTitle?.message}
                   color={errors.couponTitle ? "danger" : "secondary"}
                 />
-                <span className="wx__text_subtitle wx__text-secondary wx__mt-2">
+                <span className="text_subtitle text-secondary mt-2">
                   Customers want see this name
                 </span>
               </div>
             </div>
-            <div className="col-lg-6 col-md-12 col-sm-6 wx__mt-4">
+            <div className="col-lg-6 col-md-12 col-sm-6 mt-4">
               <div className="input-group">
                 <WxInput
-                  className="wx__mb-0"
+                  className="mb-0"
                   placeholder="Type Code"
                   label="Discount Code"
                   isRequired
@@ -105,7 +105,7 @@ const CouponForm = ({
                   errorMessage={errors.couponCode?.message}
                   color={errors.couponCode ? "danger" : "secondary"}
                 />
-                <span className="wx__text_subtitle wx__text-secondary wx__mt-2">
+                <span className="text_subtitle text-secondary mt-2">
                   Customers will enter this discount code during checkout
                 </span>
               </div>
@@ -113,7 +113,7 @@ const CouponForm = ({
           </div>
         </div>
         <div className="card wx__order_payment">
-          <h5 className="wx__mb-4">Type</h5>
+          <h5 className="mb-4">Type</h5>
           <WxRadio
             id="typeRadio1"
             name="typeRadioButton"
@@ -126,7 +126,7 @@ const CouponForm = ({
             }}
           >
             {watch("type_radio") === "COUPON_TYPE_PERCENT" && (
-              <div className="wx__w-md-50 wx__my-3">
+              <div className="w-md-50 my-3">
                 <WxInput
                   placeholder="Type value here"
                   endIcon={<WxIcon variants="round" icon="percent" />}
@@ -181,7 +181,7 @@ const CouponForm = ({
             }}
           >
             {watch("type_radio") === "COUPON_TYPE_FIXED_AMOUNT" && (
-              <div className="wx__w-md-50  wx__my-3">
+              <div className="w-md-50  my-3">
                 <WxInput
                   placeholder="Type value here"
                   endIcon={<TakaSign />}
@@ -210,8 +210,8 @@ const CouponForm = ({
             }}
           />
         </div>
-        <div className="card wx__p-4 wx__order_payment">
-          <h5 className="wx__mb-3">Minimum Requirement</h5>
+        <div className="card p-4 wx__order_payment">
+          <h5 className="mb-3">Minimum Requirement</h5>
           <WxRadio
             id="requireRadio1"
             name="minimumRequirement"
@@ -235,7 +235,7 @@ const CouponForm = ({
             }}
           >
             {watch("minimum_requirement_radio") === "2" && (
-              <div className="wx__w-md-50 wx__my-3">
+              <div className="w-md-50 my-3">
                 <WxInput
                   placeholder="Type value here"
                   endIcon={<TakaSign />}
@@ -264,7 +264,7 @@ const CouponForm = ({
             }}
           >
             {watch("minimum_requirement_radio") === "3" && (
-              <div className="wx__w-md-50 wx__my-3">
+              <div className="w-md-50 my-3">
                 <WxInput
                   placeholder="Type value here"
                   registerProperty={{
@@ -279,8 +279,8 @@ const CouponForm = ({
             )}
           </WxRadio>
         </div>
-        <div className="card wx__p-4 wx__order_payment">
-          <h5 className="wx__mb-4">Applicable For</h5>
+        <div className="card p-4 wx__order_payment">
+          <h5 className="mb-4">Applicable For</h5>
           <WxRadio
             id="applicableForRadio1"
             name="applicableFor"
@@ -306,7 +306,7 @@ const CouponForm = ({
           >
             {/* {J} */}
             {watch("applicableForRadio") === "2" && (
-              <div className="wx__my-3">
+              <div className="my-3">
                 <WxButton
                   onClick={() => {
                     setDrawer(true);
@@ -321,13 +321,13 @@ const CouponForm = ({
                   return (
                     <div
                       key={pd.id}
-                      className="w-100 wx__my-3 d-flex wx__align-items-center wx__justify-content-between"
+                      className="w-100 my-3 d-flex align-items-center justify-content-between"
                     >
                       <div className="d-flex">
                         <WxThumbnail src={imageURLGenerate(pd.image)} />
                         <div className="ms_2">
-                          <p className="wx__m-0">{pd.name}</p>
-                          <span className="wx__text_subtitle wx__text-secondary"></span>
+                          <p className="m-0">{pd.name}</p>
+                          <span className="text_subtitle text-secondary"></span>
                         </div>
                       </div>
                       <div>
@@ -338,7 +338,7 @@ const CouponForm = ({
                           }}
                           variants="round"
                           icon="edit"
-                          className="wx__text-primary"
+                          className="text-primary"
                         /> */}
                         <WxIcon
                           onClick={() => {
@@ -346,7 +346,7 @@ const CouponForm = ({
                           }}
                           variants="round"
                           icon="delete"
-                          className="wx__text-danger"
+                          className="text-danger"
                         />
                       </div>
                     </div>
@@ -367,7 +367,7 @@ const CouponForm = ({
             }}
           >
             {watch("applicableForRadio") === "3" && (
-              <div className="wx__my-3">
+              <div className="my-3">
                 <WxButton
                   onClick={() => {
                     setDrawer(true);
@@ -383,15 +383,15 @@ const CouponForm = ({
                     return (
                       <div
                         key={categories.id}
-                        className="w-100 wx__my-3 d-flex wx__align-items-center wx__justify-content-between"
+                        className="w-100 my-3 d-flex align-items-center justify-content-between"
                       >
                         <div className="d-flex">
                           <WxThumbnail
                             src={imageURLGenerate(categories.image)}
                           />
                           <div className="ms_2">
-                            <p className="wx__m-0">{categories.name}</p>
-                            <span className="wx__text_subtitle wx__text-secondary">
+                            <p className="m-0">{categories.name}</p>
+                            <span className="text_subtitle text-secondary">
                               {/* (5 of 8 variant selected) */}
                             </span>
                           </div>
@@ -404,7 +404,7 @@ const CouponForm = ({
                             }}
                             variants="round"
                             icon="edit"
-                            className="wx__text-primary"
+                            className="text-primary"
                           /> */}
                           <WxIcon
                             onClick={() => {
@@ -412,7 +412,7 @@ const CouponForm = ({
                             }}
                             variants="round"
                             icon="delete"
-                            className="wx__text-danger"
+                            className="text-danger"
                           />
                         </div>
                       </div>
@@ -424,8 +424,8 @@ const CouponForm = ({
             )}
           </WxRadio>
         </div>
-        <div className="card wx__p-4 wx__order_payment">
-          <h5 className="wx__mb-4">Customer Eligibility</h5>
+        <div className="card p-4 wx__order_payment">
+          <h5 className="mb-4">Customer Eligibility</h5>
           <WxRadio
             id="customerEligibilityRadio1"
             name="customerEligibility"
@@ -449,7 +449,7 @@ const CouponForm = ({
             }}
           >
             {watch("customerEligibilityRadio") === "2" && (
-              <div className="wx__my-3">
+              <div className="my-3">
                 <WxButton
                   onClick={() => {
                     setDrawer(true);
@@ -465,13 +465,13 @@ const CouponForm = ({
                   return (
                     <div
                       key={group.id}
-                      className="w-100 wx__my-3 d-flex wx__align-items-center wx__justify-content-between"
+                      className="w-100 my-3 d-flex align-items-center justify-content-between"
                     >
                       <div className="d-flex">
                         <WxThumbnail />
                         <div className="ms_2">
-                          <p className="wx__m-0">{group.name}</p>
-                          <span className="wx__text_subtitle wx__text-secondary">
+                          <p className="m-0">{group.name}</p>
+                          <span className="text_subtitle text-secondary">
                             {/* (5 of 8 variant selected) */}
                           </span>
                         </div>
@@ -484,7 +484,7 @@ const CouponForm = ({
                           }}
                           variants="round"
                           icon="edit"
-                          className="wx__text-primary"
+                          className="text-primary"
                         /> */}
                         <WxIcon
                           onClick={() => {
@@ -492,7 +492,7 @@ const CouponForm = ({
                           }}
                           variants="round"
                           icon="delete"
-                          className="wx__text-danger"
+                          className="text-danger"
                         />
                       </div>
                     </div>
@@ -513,7 +513,7 @@ const CouponForm = ({
             }}
           >
             {watch("customerEligibilityRadio") === "3" && (
-              <div className="wx__my-3">
+              <div className="my-3">
                 <WxButton
                   onClick={() => {
                     setDrawer(true);
@@ -528,13 +528,13 @@ const CouponForm = ({
                   return (
                     <div
                       key={customer.id}
-                      className="w-100 wx__my-3 d-flex wx__align-items-center wx__justify-content-between"
+                      className="w-100 my-3 d-flex align-items-center justify-content-between"
                     >
                       <div className="d-flex">
                         <WxThumbnail />
                         <div className="ms_2">
-                          <p className="wx__m-0">{customer?.name || ""}</p>
-                          <span className="wx__text_subtitle wx__text-secondary">
+                          <p className="m-0">{customer?.name || ""}</p>
+                          <span className="text_subtitle text-secondary">
                             {/* (5 of 8 variant selected) */}
                           </span>
                         </div>
@@ -547,7 +547,7 @@ const CouponForm = ({
                           }}
                           icon="edit"
                           variants="round"
-                          className="wx__text-primary"
+                          className="text-primary"
                         /> */}
                         <WxIcon
                           onClick={() => {
@@ -559,7 +559,7 @@ const CouponForm = ({
                           }}
                           variants="round"
                           icon="delete"
-                          className="wx__text-danger"
+                          className="text-danger"
                         />
                       </div>
                     </div>
@@ -569,8 +569,8 @@ const CouponForm = ({
             )}
           </WxRadio>
         </div>
-        <div className="card wx__p-4 wx__order_payment">
-          <h5 className="wx__mb-4">Usage Limit</h5>
+        <div className="card p-4 wx__order_payment">
+          <h5 className="mb-4">Usage Limit</h5>
           <div>
             <p className="wx__subtitle_form">
               How many times this coupon can be used?
@@ -598,12 +598,12 @@ const CouponForm = ({
               }}
             >
               {watch("useLimit_radio") === "2" && (
-                <div className="wx__w-md-50 wx__my-3">
+                <div className="w-md-50 my-3">
                   <WxInput
                     placeholder="Type value here"
                     isRequired
                     helpText={
-                      <span className="wx__text_subtitle wx__text-secondary">
+                      <span className="text_subtitle text-secondary">
                         Limit number of times discount can be used in total
                       </span>
                     }
@@ -618,7 +618,7 @@ const CouponForm = ({
               )}
             </WxRadio>
           </div>
-          <div className="wx__my-3">
+          <div className="my-3">
             <p className="wx__subtitle_form">
               How many times a single person can purchase this?
             </p>
@@ -645,11 +645,11 @@ const CouponForm = ({
               }}
             >
               {watch("userLimit_radio") === "2" && (
-                <div className="wx__w-md-50 wx__my-3">
+                <div className="w-md-50 my-3">
                   <WxInput
                     placeholder="Type value here"
                     helpText={
-                      <span className="wx__text_subtitle wx__text-secondary">
+                      <span className="text_subtitle text-secondary">
                         Limit number of times discount can be used in total
                       </span>
                     }
@@ -666,8 +666,8 @@ const CouponForm = ({
             </WxRadio>
           </div>
         </div>
-        <div className="card wx__p-4 wx__order_payment">
-          <h5 className="wx__mb-0">Date & Time</h5>
+        <div className="card p-4 wx__order_payment">
+          <h5 className="mb-0">Date & Time</h5>
           <div>
             <div className="row">
               <div className="col-lg-9 col-md-12">

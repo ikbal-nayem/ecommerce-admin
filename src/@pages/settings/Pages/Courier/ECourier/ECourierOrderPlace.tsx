@@ -196,7 +196,7 @@ const ECourierOrderPlace = () => {
           {isSearching && <Preloader absolutePosition={true} />}
           <div className="row">
             <div className="col-lg-8 col-md-12 col-sm-12">
-              <div className="card wx__p-4 wx__mb-3">
+              <div className="card p-4 mb-3">
                 <div className="row">
                   <div className="col-lg-12 col-md-12 col-sm-12">
                     <WxInput
@@ -387,47 +387,47 @@ const ECourierOrderPlace = () => {
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12">
               <div className="card">
-                <div className="wx__mb-3">
-                  <p className="wx__my-0">{watch("recipient_address")}</p>
+                <div className="mb-3">
+                  <p className="my-0">{watch("recipient_address")}</p>
                   {watch("recipient_city") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">City: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">City: </span>
                       {watch("recipient_city")}
                     </p>
                   )}
                   {watch("recipient_thana") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Thana: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Thana: </span>
                       {watch("recipient_thana")}
                     </p>
                   )}
                   {watch("recipient_zip") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Zip/Post Code: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Zip/Post Code: </span>
                       {watch("recipient_zip")}
                     </p>
                   )}
                   {watch("recipient_area") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Area: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Area: </span>
                       {watch("recipient_area")}
                     </p>
                   )}
                   {watch("package") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Package: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Package: </span>
                       {JSON.parse(watch("package"))?.package_name}
                     </p>
                   )}
                   {watch("product_price") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Package Price: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Package Price: </span>
                       {watch("product_price")}
                     </p>
                   )}
                   {watch("requested_delivery_time") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Delivery Time: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Delivery Time: </span>
                       {generateDateFormat(
                         watch("requested_delivery_time"),
                         "%MM% %date%, %yyyy%"
@@ -435,8 +435,8 @@ const ECourierOrderPlace = () => {
                     </p>
                   )}
                   {watch("comment") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Comment: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Comment: </span>
                       {watch("comment")}
                     </p>
                   )}

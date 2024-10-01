@@ -43,7 +43,7 @@ export const CustomerFrom = ({
 
   return (
 		<div>
-			<div className="card wx__p-4 wx__mb-3">
+			<div className="card p-4 mb-3">
 				<div className="row">
 					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
@@ -99,20 +99,20 @@ export const CustomerFrom = ({
 						/>
 					</div>
 
-					<div className="col-lg-6 col-md-12 col-sm-6 wx__mb-3 show-mobile-view d-md-none">
+					<div className="col-lg-6 col-md-12 col-sm-6 mb-3 show-mobile-view d-md-none">
 						<label htmlFor="" style={{ fontWeight: "600" }}>
 							Customer Group
 						</label>
-						<div className="wx__float-end">
+						<div className="float-end">
 							<span
-								className="wx__text_btn_small wx__text-primary wx__text_medium"
+								className="text_btn_small text-primary text_medium"
 								role="button"
 								onClick={customerGroupDrawer}
 							>
 								Manage
 							</span>
 						</div>
-						<div className={`wx__input_group_secondary wx__mt-2`}>
+						<div className={`wx__input_group_secondary mt-2`}>
 							{groups.length ? (
 								<div style={{ width: "100%" }}>
 									<SelectOption
@@ -124,10 +124,10 @@ export const CustomerFrom = ({
 							) : null}
 						</div>
 					</div>
-					<div className="col-lg-6 col-md-12 col-sm-6 wx__pe-5 show-mobile-view d-md-none">
+					<div className="col-lg-6 col-md-12 col-sm-6 pe-5 show-mobile-view d-md-none">
 						<WxSwitch
 							label={
-								<div className="d-flex wx__align-items-center">
+								<div className="d-flex align-items-center">
 									<span>Status</span>
 								</div>
 							}
@@ -141,8 +141,8 @@ export const CustomerFrom = ({
 					</div>
 				</div>
 			</div>
-			<div className="card wx__p-4">
-				<h5 className="wx__mb-3">Customer Address</h5>
+			<div className="card p-4">
+				<h5 className="mb-3">Customer Address</h5>
 				<div className="row">
 					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput

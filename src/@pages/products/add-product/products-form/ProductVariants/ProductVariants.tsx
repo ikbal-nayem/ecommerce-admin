@@ -81,7 +81,7 @@ const VariantRow = ({
 				</div>
 			</td>
 			<td className="wx__td variant-name">
-				<p className="wx__mb-0 d-flex wx__align-items-center">
+				<p className="mb-0 d-flex align-items-center">
 					{variant?.options?.map((val: any) => val?.value)?.join(" / ") ||
 						"N/A"}
 				</p>
@@ -217,8 +217,8 @@ const ProductVariants = ({ isEditForm }: { isEditForm?: boolean }) => {
 	if (!hasVariant || variantList?.length === 0) return null;
 
 	return (
-		<div className="card product_variants wx__p-3 wx__mt-4">
-			<h6 className="wx__text_semibold wx__text_h6">
+		<div className="card product_variants p-3 mt-4">
+			<h6 className="text_semibold text_h6">
 				Variants <WxIcon icon="help" />
 			</h6>
 			<div className="variants_body wx__responsive_table">

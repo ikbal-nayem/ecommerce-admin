@@ -82,22 +82,22 @@ const MenuListTable = ({
 									<WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
 										<ul>
 											{/* TODO:: li margin and padding is not set yet */}
-											<li className="wx__text_subtitle">
+											<li className="text_subtitle">
 												<Link
 													to={MENU_EDIT({
 														id: menuItem.id,
 													})}
-													className="wx__text_body"
+													className="text_body"
 												>
 													<WxIcon icon="edit" />
 													Edit
 												</Link>
 											</li>
 											{menuItem?.isDefault ? null : (
-												<li className="wx__text_subtitle delete">
+												<li className="text_subtitle delete">
 													<Link
 														to=""
-														className="wx__text_body"
+														className="text_body"
 														onClick={() => deleteFun(menuItem)}
 													>
 														<WxIcon icon="delete" />

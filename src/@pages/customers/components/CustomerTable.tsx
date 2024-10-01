@@ -96,28 +96,28 @@ const CustomerTable = ({
 												drop
 											>
 												<ul>
-													<li className="wx__text_subtitle">
+													<li className="text_subtitle">
 														<Link
 															to={`${CUSTOMERS}/${customer.customerId}`}
-															className="wx__text_body"
+															className="text_body"
 														>
 															<WxIcon icon="info" />
 															Details
 														</Link>
 													</li>
-													<li className="wx__text_subtitle">
+													<li className="text_subtitle">
 														<Link
 															to={`${CUSTOMERS}/${customer.customerId}`}
-															className="wx__text_body"
+															className="text_body"
 														>
 															<WxIcon icon="edit" />
 															Edit
 														</Link>
 													</li>
-													<li className="wx__text_subtitle delete">
+													<li className="text_subtitle delete">
 														<Link
 															to=""
-															className="wx__text_body"
+															className="text_body"
 															onClick={() => onDelete(customer)}
 														>
 															<WxIcon icon="delete" />

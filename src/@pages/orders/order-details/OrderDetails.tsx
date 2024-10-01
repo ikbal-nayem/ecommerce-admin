@@ -415,10 +415,10 @@ const OrderDetails = () => {
 								<WxDropdown isOpen={isMoreOpen} setIsOpen={setIsMoreOpen}>
 									<ul>
 										<li
-											className="wx__text_subtitle"
+											className="text_subtitle"
 											onClick={() => invoicePrint(order_id)}
 										>
-											<a className="wx__text_body">
+											<a className="text_body">
 												<WxIcon icon="print" /> Print invoice
 											</a>
 										</li>
@@ -428,14 +428,14 @@ const OrderDetails = () => {
 										) &&
 										orderDetails?.paymentStatus !== STATUS_CONSTANT.paid ? (
 											<li
-												className="wx__text_subtitle"
+												className="text_subtitle"
 												onClick={() =>
 													handleOrderStatus(
 														MASTER_META_KEY.ORDER_STATUS_TYPE_CANCEL
 													)
 												}
 											>
-												<a className="wx__text_body wx__text-danger">
+												<a className="text_body text-danger">
 													<WxIcon icon="close" /> Cancel Order
 												</a>
 											</li>
@@ -453,9 +453,9 @@ const OrderDetails = () => {
 			<div className="row">
 				<div className="col-md-8">
 					<div className="card">
-						<div className="d-flex wx__align-items-center wx__p-3">
-							<h6 className="wx__text_h6 wx__text_semibold wx__m-0">Product</h6>
-							<div className="wx__ms-3">
+						<div className="d-flex align-items-center p-3">
+							<h6 className="text_h6 text_semibold m-0">Product</h6>
+							<div className="ms-3">
 								<WxTag
 									label={orderDetails?.orderStatus}
 									color={statusColorMapping(orderDetails?.orderStatus)}
@@ -465,7 +465,7 @@ const OrderDetails = () => {
 								orderDetails?.orderStatus,
 								MASTER_META_KEY.ORDER_STATUS_TYPE_DELIVERED
 							) ? (
-								<div className="wx__ms-auto">
+								<div className="ms-auto">
 									<WxIcon
 										variants="round"
 										role="button"
@@ -479,9 +479,9 @@ const OrderDetails = () => {
 										<ul>
 											<li
 												onClick={() => invoicePrint(order_id)}
-												className="wx__text_subtitle"
+												className="text_subtitle"
 											>
-												<a className="wx__text_body">
+												<a className="text_body">
 													<WxIcon icon="print" /> Print invoice
 												</a>
 											</li>
@@ -492,7 +492,7 @@ const OrderDetails = () => {
 													MASTER_META_KEY.ORDER_STATUS_TYPE_DELIVERED
 											)?.title ? (
 												<li
-													className="wx__text_subtitle"
+													className="text_subtitle"
 													onClick={() => {
 														handleOrderStatus(
 															MASTER_META_KEY.ORDER_STATUS_TYPE_PENDING
@@ -501,7 +501,7 @@ const OrderDetails = () => {
 														setOrderTrackStatus([]);
 													}}
 												>
-													<a className="wx__text_body wx__text-danger">
+													<a className="text_body text-danger">
 														<WxIcon icon="close" /> Cancel Delivered
 													</a>
 												</li>
@@ -522,7 +522,7 @@ const OrderDetails = () => {
 						) ||
 						orderDetails?.orderStatus === STATUS_CONSTANT.cancel ||
 						orderDetails.orderStatus === STATUS_CONSTANT.return ? null : (
-							<div className="wx__p-3 wx__ms-auto">
+							<div className="p-3 ms-auto">
 								<WxButton
 									onClick={() => setMenu(!menu)}
 									color="primary"
@@ -550,10 +550,10 @@ const OrderDetails = () => {
 													className="d-flex"
 												>
 													<WxThumbnail
-														className="wx__bg-white"
+														className="bg-white"
 														src={selfDeliveryImg}
 													/>
-													<span className="wx__text_body">Self Delivery</span>
+													<span className="text_body">Self Delivery</span>
 												</li>
 												{configuredCourierList.map((item) => {
 													if (item?.isActive)
@@ -570,14 +570,14 @@ const OrderDetails = () => {
 																		  )
 																		: null
 																}
-																className="d-flex wx__my-1"
+																className="d-flex my-1"
 																key={item?.id}
 															>
 																<WxThumbnail
-																	className="wx__bg-white"
+																	className="bg-white"
 																	src={imageURLGenerate(item?.banner)}
 																/>
-																<span className="wx__text_body">
+																<span className="text_body">
 																	{item?.title || "No name"}
 																</span>
 															</li>
@@ -590,14 +590,14 @@ const OrderDetails = () => {
 							</div>
 						)}
 					</div>
-					<div className="card wx__order_payment wx__mt-3 wx__p-3">
+					<div className="card wx__order_payment mt-3 p-3">
 						{isUpdating ? <Preloader absolutePosition /> : null}
 						<PaymentDetailsInfo
 							orderDetails={orderDetails}
 							setIsDiscountOpen={setIsDiscountOpen}
 							setIsShippingOpen={setIsShippingOpen}
 						/>
-						<div className="d-flex wx__ms-auto gap-3">
+						<div className="d-flex ms-auto gap-3">
 							{orderDetails?.orderStatus !== STATUS_CONSTANT.cancel ? (
 								<WxButton color="secondary">Send Invoice</WxButton>
 							) : null}
@@ -629,7 +629,7 @@ const OrderDetails = () => {
 				</div>
 				<div className="col-md-4">
 					<OrderPlacedInfo orderDetails={orderDetails} />
-					<div className="card wx__mt-3 wx__p-3">
+					<div className="card mt-3 p-3">
 						<WxLabel
 							labelRight={
 								<EditNotes
@@ -641,7 +641,7 @@ const OrderDetails = () => {
 						>
 							Notes
 						</WxLabel>
-						<span className="wx__text_body wx__text_regular">
+						<span className="text_body text_regular">
 							{orderDetails?.orderNote || "No notes from customer"}
 						</span>
 					</div>

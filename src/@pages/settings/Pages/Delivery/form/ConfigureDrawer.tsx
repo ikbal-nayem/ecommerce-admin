@@ -103,7 +103,7 @@ const ConfigureDrawer = ({
                       }
                     />
                   </div>
-                  <div className="wx__mt-4" style={{ maxWidth: "90%" }}>
+                  <div className="mt-4" style={{ maxWidth: "90%" }}>
                     <WxSwitch
                       label="Activity of service"
                       checkedTitle="Active"
@@ -134,7 +134,7 @@ const ConfigureDrawer = ({
                       }
                     />
                   </div>
-                  <div className="wx__mt-4" style={{ maxWidth: "90%" }}>
+                  <div className="mt-4" style={{ maxWidth: "90%" }}>
                     <WxSwitch
                       label="Activity of service"
                       checkedTitle="Active"
@@ -162,12 +162,12 @@ const ConfigureDrawer = ({
                     Delete
                   </WxButton>
                 ) : null}
-                <div className="wx__ms-auto d-flex">
+                <div className="ms-auto d-flex">
                   <WxButton
                     color="secondary"
                     type="button"
                     variant="outline"
-                    className="wx__me-2"
+                    className="me-2"
                     onClick={handleFormClose}
                     disabled={isSaving}
                   >

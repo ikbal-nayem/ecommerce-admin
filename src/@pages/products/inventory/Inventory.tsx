@@ -81,19 +81,19 @@ const Inventory = () => {
 
   return (
     <WxMainFull>
-      <div className="d-flex wx__justify-content-between wx__align-items-center">
+      <div className="d-flex justify-content-between align-items-center">
         <h4 className="mb-0">Inventory List</h4>
       </div>
       {isLoader ? (
-        <div className="wx__bg-white rounded wx__mt-3">
+        <div className="bg-white rounded mt-3">
           <ProductTableSkelton thumb={false} viewBox="0 0 600 230" />
         </div>
       ) : (
-        <div className="card wx__mt-3">
-          <div className="row wx__p-4">
+        <div className="card mt-3">
+          <div className="row p-4">
             <div className="col-md-12 col-sm-12">
               <WxInput
-                className="wx__mb-0"
+                className="mb-0"
                 type="search"
                 placeholder="Search by products, SKU"
                 startIcon={<WxIcon icon="search" />}
@@ -110,7 +110,7 @@ const Inventory = () => {
                 setInventoryData={setInventoryData}
               />
 
-              <div className="wx__p-3">
+              <div className="p-3">
                 <WxPagination
                   meta={productMeta}
                   currentPage={currentPage}

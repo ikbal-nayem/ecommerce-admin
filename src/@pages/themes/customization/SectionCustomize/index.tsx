@@ -43,7 +43,7 @@ const SectionCustomize = () => {
         <div className="card p-4">
           {[...Array(section?.numberOfInputs || 0).fill(0)]?.map((_, i) => (
             <div
-              className="border rounded wx__px-4 wx__py-2 wx__my-2"
+              className="border rounded px-4 py-2 my-2"
               key={`sec-${i}`}
             >
               <h5>

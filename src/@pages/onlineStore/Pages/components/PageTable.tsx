@@ -43,7 +43,7 @@ const PageTable = ({ pages, onDelete }: IPageTableProps) => {
 						pages?.map((p: IPagesSettings, index) => (
 							<tr className='wx__tr' key={index}>
 								<td className='wx__td'>
-									<Link to={PAGES_EDIT({ id: p?.id })} className='wx__text_body hover-underline'>
+									<Link to={PAGES_EDIT({ id: p?.id })} className='text_body hover-underline'>
 										<strong>{p?.title}</strong>
 									</Link>
 								</td>
@@ -67,14 +67,14 @@ const PageTable = ({ pages, onDelete }: IPageTableProps) => {
 										{selectedIndex === index && (
 											<WxDropdown isOpen={showPopup} setIsOpen={setShowPopup} drop>
 												<ul>
-													<li className='wx__text_subtitle'>
-														<Link to={PAGES_EDIT({ id: p?.id })} className='wx__text_body'>
+													<li className='text_subtitle'>
+														<Link to={PAGES_EDIT({ id: p?.id })} className='text_body'>
 															<WxIcon icon='edit' />
 															Edit
 														</Link>
 													</li>
-													<li className='wx__text_subtitle delete'>
-														<a className='wx__text_body' onClick={() => onDelete(p)}>
+													<li className='text_subtitle delete'>
+														<a className='text_body' onClick={() => onDelete(p)}>
 															<WxIcon icon='delete' />
 															Delete
 														</a>

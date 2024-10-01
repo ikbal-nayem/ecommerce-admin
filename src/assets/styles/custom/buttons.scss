@@ -44,8 +44,8 @@
   );
   font-size: .75rem;
   min-height: 32px;
-  @extend .wx__text_btn_small;
-  @extend .wx__text_medium;
+  @extend .text_btn_small;
+  @extend .text_medium;
 }
 
 .wx__btn {
@@ -57,8 +57,8 @@
     $hoverColor: $primary__100
   );
   height:$button-height;
-  @extend .wx__text_btn_regular;
-  @extend .wx__text_semibold;
+  @extend .text_btn_regular;
+  font-weight: bold;
 }
 .wx__btn_lg {
   @include buttons(
@@ -70,8 +70,8 @@
     $padding: 7px 24px
   );
   min-height: 48px;
-  @extend .wx__text_btn_big;
-  @extend .wx__text_semibold;
+  @extend .text_btn_big;
+  font-weight: bold;
 }
 
 // disable button

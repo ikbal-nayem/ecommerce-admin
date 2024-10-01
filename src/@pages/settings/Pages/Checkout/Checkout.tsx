@@ -149,7 +149,7 @@ const Checkout = () => {
 		<WxMainMd className="checkout_sec">
 			{(isLoadding || isSubmitting) && <Preloader />}
 			<form onSubmit={handleSubmit(onSubmitFun)}>
-				<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+				<div className="d-flex justify-content-between align-items-center mb-3">
 					<WxFormHeader title="Checkout" backNavigationLink={SETTINGS} />
 					{/* TODO::currently not working */}
 					{/* <WxButton
@@ -160,12 +160,12 @@ const Checkout = () => {
           </WxButton> */}
 				</div>
 
-				<div className="card wx__p-3 wx__mt-3">
+				<div className="card p-3 mt-3">
 					<h5>Customer Account</h5>
 					{/*          
           <div className="radio_btn_option">
             <label
-              className="wx__text_body d-flex wx__text_medium wx__mb-0 w-100 h-100"
+              className="text_body d-flex text_medium mb-0 w-100 h-100"
               htmlFor="typeRadio1"
             >
               <WxRadio
@@ -181,7 +181,7 @@ const Checkout = () => {
           </div> */}
 					<div className="radio_btn_option">
 						<label
-							className="wx__text_body d-flex wx__text_medium wx__mb-0 w-100 h-100"
+							className="text_body d-flex text_medium mb-0 w-100 h-100"
 							htmlFor="typeRadio2"
 						>
 							<WxRadio
@@ -197,7 +197,7 @@ const Checkout = () => {
 					</div>
 					<div className="radio_btn_option">
 						<label
-							className="wx__text_body d-flex wx__text_medium wx__mb-0 w-100 h-100"
+							className="text_body d-flex text_medium mb-0 w-100 h-100"
 							htmlFor="typeRadio3"
 						>
 							<WxRadio
@@ -213,28 +213,28 @@ const Checkout = () => {
 						</label>
 					</div>
 				</div>
-				<div className="card wx__p-3 wx__mt-3">
+				<div className="card p-3 mt-3">
 					<h5>Contact Info</h5>
-					<p className="wx__text_body wx__text_regular">
+					<p className="text_body text_regular">
 						This will be your business location and not visible to your website
 						visitors.
 					</p>
 					<div className="radio_btn_option_disable">
-						<p className="wx__text_body wx__text_medium wx__mb-0">
+						<p className="text_body text_medium mb-0">
 							Phone Number <span className="color_red">*</span>
 						</p>
-						<p className="wx__text_small wx__text_regular wx__mb-0">
+						<p className="text_small text_regular mb-0">
 							This cant be unselected.
 						</p>
 					</div>
 				</div>
-				<div className="shipping_card card wx__p-3 wx__mt-3">
+				<div className="shipping_card card p-3 mt-3">
 					<h5>Shipping Address</h5>
-					<p className="wx__text_body wx__text_regular">
+					<p className="text_body text_regular">
 						This will be your business location and not visible to your website
 						visitors.
 					</p>
-					<p className="wx__text_caption wx__mt-3 wx__mb-2">
+					<p className="text_caption mt-3 mb-2">
 						Name Configuration
 					</p>
 					<div className="radio_btn_option">
@@ -251,11 +251,11 @@ const Checkout = () => {
 								singleUse={true}
 								registerProperty={{ ...register("fullName") }}
 							/>
-							<div className="d-flex wx__justify-content-center wx__flex-column">
-								<p className="wx__text_small wx__text_regular wx__mb-0">
+							<div className="d-flex justify-content-center flex-column">
+								<p className="text_small text_regular mb-0">
 									Pattern 1
 								</p>
-								<p className="wx__text_body wx__text_medium wx__mb-0">
+								<p className="text_body text_medium mb-0">
 									Full Name
 								</p>
 							</div>
@@ -275,11 +275,11 @@ const Checkout = () => {
 								singleUse={true}
 								registerProperty={{ ...register("fullName") }}
 							/>
-							<div className="d-flex wx__justify-content-center wx__flex-column">
-								<p className="wx__text_small wx__text_regular wx__mb-0">
+							<div className="d-flex justify-content-center flex-column">
+								<p className="text_small text_regular mb-0">
 									Pattern 2
 								</p>
-								<p className="wx__text_body wx__text_medium wx__mb-0">
+								<p className="text_body text_medium mb-0">
 									First Name, Last Name
 								</p>
 							</div>
@@ -287,8 +287,8 @@ const Checkout = () => {
 					</div>
 					{fullName === "0" ? (
 						<div className="w-100">
-							<div className=" radio_btn_sub_option wx__ms-5">
-								<p className="wx__text_body wx__text_medium wx__mb-0">
+							<div className=" radio_btn_sub_option ms-5">
+								<p className="text_body text_medium mb-0">
 									First Name<span className="color_red">*</span>
 								</p>
 								<WxSwitch
@@ -298,8 +298,8 @@ const Checkout = () => {
 									registerProperty={{ ...register("firstName") }}
 								/>
 							</div>
-							<div className=" radio_btn_sub_option wx__ms-5">
-								<p className="wx__text_body wx__text_medium wx__mb-0">
+							<div className=" radio_btn_sub_option ms-5">
+								<p className="text_body text_medium mb-0">
 									Last Name
 								</p>
 								<WxSwitch
@@ -311,7 +311,7 @@ const Checkout = () => {
 						</div>
 					) : null}
 
-					<p className="wx__text_caption wx__mt-3 wx__mb-2">
+					<p className="text_caption mt-3 mb-2">
 						Address Configuration
 					</p>
 					<div className="radio_btn_option">
@@ -328,11 +328,11 @@ const Checkout = () => {
 								// isChecked={!getValues("fullAddress")}
 								registerProperty={{ ...register("fullAddress") }}
 							/>
-							<div className="d-flex wx__justify-content-center wx__flex-column">
-								<p className="wx__text_small wx__text_regular wx__mb-0">
+							<div className="d-flex justify-content-center flex-column">
+								<p className="text_small text_regular mb-0">
 									Pattern 1
 								</p>
-								<p className="wx__text_body wx__text_medium wx__mb-0">
+								<p className="text_body text_medium mb-0">
 									Full Address
 								</p>
 							</div>
@@ -340,14 +340,14 @@ const Checkout = () => {
 					</div>
 					{fullAddress === "2" ? (
 						<div className="w-100">
-							<div className="radio_btn_field d-flex wx__align-items-center wx__justify-content-between wx__ms-5">
-								<div className="d-flex wx__align-items-center">
+							<div className="radio_btn_field d-flex align-items-center justify-content-between ms-5">
+								<div className="d-flex align-items-center">
 									<WxCheckbox checked disabled />
-									<div className="d-flex wx__flex-column">
-										<p className="wx__text_body wx__text_medium wx__mb-0">
+									<div className="d-flex flex-column">
+										<p className="text_body text_medium mb-0">
 											Full Address <span className="color_red">*</span>
 										</p>
-										<p className="wx__text_small wx__text_regular wx__mb-0">
+										<p className="text_small text_regular mb-0">
 											This cant be unselected.
 										</p>
 									</div>
@@ -375,11 +375,11 @@ const Checkout = () => {
 								singleUse={true}
 								registerProperty={{ ...register("fullAddress") }}
 							/>
-							<div className="d-flex wx__justify-content-center wx__flex-column">
-								<p className="wx__text_small wx__text_regular wx__mb-0">
+							<div className="d-flex justify-content-center flex-column">
+								<p className="text_small text_regular mb-0">
 									Pattern 2
 								</p>
-								<p className="wx__text_body wx__text_medium wx__mb-0">
+								<p className="text_body text_medium mb-0">
 									Details Address
 								</p>
 							</div>
@@ -387,18 +387,18 @@ const Checkout = () => {
 					</div>
 					{fullAddress === "0" ? (
 						<div className="w-100">
-							<div className="radio_btn_field d-flex wx__align-items-center wx__justify-content-between wx__ms-5">
-								<div className="d-flex wx__align-items-center">
+							<div className="radio_btn_field d-flex align-items-center justify-content-between ms-5">
+								<div className="d-flex align-items-center">
 									<WxCheckbox
 										checked
 										disabled
 										registerProperty={{ ...register("addressLine1") }}
 									/>
-									<div className="d-flex wx__flex-column">
-										<p className="wx__text_body wx__text_medium wx__mb-0">
+									<div className="d-flex flex-column">
+										<p className="text_body text_medium mb-0">
 											Address Line 01 <span className="color_red">*</span>
 										</p>
-										<p className="wx__text_small wx__text_regular wx__mb-0">
+										<p className="text_small text_regular mb-0">
 											This cant be unselected.
 										</p>
 									</div>
@@ -410,7 +410,7 @@ const Checkout = () => {
 									disabled
 								/>
 							</div>
-							<div className="radio_btn_sub radio_btn_sub_option wx__justify-content-between wx__ms-5">
+							<div className="radio_btn_sub radio_btn_sub_option justify-content-between ms-5">
 								<label
 									htmlFor="addressLine2"
 									className="w-100 h-100 d-flex"
@@ -432,7 +432,7 @@ const Checkout = () => {
 								) : null}
 							</div>
 
-							<div className="radio_btn_sub radio_btn_sub_option wx__justify-content-between wx__ms-5">
+							<div className="radio_btn_sub radio_btn_sub_option justify-content-between ms-5">
 								<label
 									htmlFor="city"
 									className="w-100 h-100 d-flex"
@@ -454,7 +454,7 @@ const Checkout = () => {
 								) : null}
 							</div>
 
-							<div className="radio_btn_sub radio_btn_sub_option wx__justify-content-between wx__ms-5">
+							<div className="radio_btn_sub radio_btn_sub_option justify-content-between ms-5">
 								<label
 									htmlFor="postCode"
 									className="w-100 h-100 d-flex"
@@ -477,7 +477,7 @@ const Checkout = () => {
 								) : null}
 							</div>
 
-							<div className="radio_btn_sub radio_btn_sub_option wx__justify-content-between wx__ms-5">
+							<div className="radio_btn_sub radio_btn_sub_option justify-content-between ms-5">
 								<label
 									htmlFor="state"
 									className="w-100 h-100 d-flex"
@@ -499,7 +499,7 @@ const Checkout = () => {
 								) : null}
 							</div>
 
-							<div className="radio_btn_sub radio_btn_sub_option wx__justify-content-between wx__ms-5">
+							<div className="radio_btn_sub radio_btn_sub_option justify-content-between ms-5">
 								<label
 									htmlFor="country"
 									className="w-100 h-100 d-flex"
@@ -527,13 +527,13 @@ const Checkout = () => {
 
 				<div className="submit_button submit_btn_enable">
 					<WxHr />
-					<div className="d-flex wx__justify-content-between wx__align-items-center">
-						<p className="wx__mb-0">No changes yet</p>
+					<div className="d-flex justify-content-between align-items-center">
+						<p className="mb-0">No changes yet</p>
 						<div className="d-flex">
 							<WxButton
 								variant="outline"
 								color="secondary"
-								className="wx__me-3"
+								className="me-3"
 								onClick={() => navigate(SETTINGS_CHECKOUT)}
 							>
 								Cancel

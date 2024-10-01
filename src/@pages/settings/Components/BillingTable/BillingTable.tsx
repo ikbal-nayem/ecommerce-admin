@@ -64,7 +64,7 @@ export const BillingTable = ({ tableData }: IBillingTable) => {
                 {bill?.invoicePaymentStatus !== STATUS_CONSTANT.paid ? (
                   <div>
                     <WxButton
-                      className="wx__mx-3 btn-sm"
+                      className="mx-3 btn-sm"
                       variant="fill"
                       onClick={() =>
                         navigate(PAYMENT + "?invoiceId=" + bill?.invoiceId)

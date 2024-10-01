@@ -70,7 +70,7 @@ const Sidebar = ({ onClickFun }) => {
 												onClick={nav.link !== ONLINE_STORE ? () => onClickMenuItem(nav.link) : null}
 											>
 												<div
-													className='d-flex wx__justify-content-between wx__align-items-center'
+													className='d-flex justify-content-between align-items-center'
 													onClick={nav.link === ONLINE_STORE ? () => onClickMenuItem(nav.link) : null}
 												>
 													<WxIcon icon={nav.icon} />
@@ -147,7 +147,7 @@ const Sidebar = ({ onClickFun }) => {
 				) : (
 					<div
 						style={{ width: '15rem', height: '100vh', marginTop: '53px' }}
-						className='wx__bg-white sidebar-skelton'
+						className='bg-white sidebar-skelton'
 					>
 						<SidebarSkelton viewBox='0 0 240 900' />
 					</div>

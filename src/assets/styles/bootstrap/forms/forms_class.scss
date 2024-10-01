@@ -119,8 +119,8 @@
 			left: 33.33px+10px;
 			top: -1.3px;
 			color: $neutral__700;
-			@extend .wx__text_subtitle;
-			@extend .wx__text_regular;
+			@extend .text_subtitle;
+			@extend .text_regular;
 		}
 		&:checked {
 			background-color: $green__500 !important;
@@ -133,8 +133,8 @@
 				left: 33.33px+10px;
 				top: -1.3px;
 				color: $neutral__700 !important;
-				@extend .wx__text_subtitle;
-				@extend .wx__text_regular;
+				@extend .text_subtitle;
+				@extend .text_regular;
 			}
 		}
 	}
@@ -145,8 +145,8 @@
 		content: 'Hidden';
 		position: absolute;
 		color: $neutral__700;
-		@extend .wx__text_subtitle;
-		@extend .wx__text_regular;
+		@extend .text_subtitle;
+		@extend .text_regular;
 	}
 }
 

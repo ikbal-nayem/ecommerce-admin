@@ -153,7 +153,7 @@ const ManageVendor = ({ drawerOpen, handleClose }: ManageVendorProps) => {
 						<WxDrawerFooter>
 							<div className="wx__manage_vendor__footer">
 								{isEditForm ? (
-									<div className="wx__me-auto">
+									<div className="me-auto">
 										<WxButton
 											color="danger"
 											variant="fill"
@@ -165,7 +165,7 @@ const ManageVendor = ({ drawerOpen, handleClose }: ManageVendorProps) => {
 									</div>
 								) : null}
 								<WxButton
-									className="wx__me-3"
+									className="me-3"
 									variant="outline"
 									color="secondary"
 									disabled={saving}

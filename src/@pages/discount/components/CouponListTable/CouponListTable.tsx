@@ -55,7 +55,7 @@ const CouponListTable = ({
               <td className="wx__td td-overflow-hidden">
                 <Link
                   to={DISCOUNT_EDIT({ id: coupon.id })}
-                  className="wx__text_body hover-underline"
+                  className="text_body hover-underline"
                 >
                   {coupon?.couponTitle}
                 </Link>
@@ -80,7 +80,7 @@ const CouponListTable = ({
                 -
                 <span
                   className={
-                    coupon?.closeDate ? "wx__text-danger" : "wx__text-success"
+                    coupon?.closeDate ? "text-danger" : "text-success"
                   }
                 >
                   {coupon?.closeDate
@@ -101,19 +101,19 @@ const CouponListTable = ({
                     <WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
                       <ul>
                         {/* TODO:: li margin and padding is not set yet */}
-                        <li className="wx__text_subtitle">
+                        <li className="text_subtitle">
                           <Link
                             to={DISCOUNT_EDIT({ id: coupon.id })}
-                            className="wx__text_body"
+                            className="text_body"
                           >
                             <WxIcon icon="edit" />
                             Edit
                           </Link>
                         </li>
-                        <li className="wx__text_subtitle delete">
+                        <li className="text_subtitle delete">
                           <Link
                             to=""
-                            className="wx__text_body"
+                            className="text_body"
                             onClick={() => deleteFun(coupon)}
                           >
                             <WxIcon icon="delete" />

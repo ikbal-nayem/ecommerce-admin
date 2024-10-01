@@ -128,13 +128,13 @@ export default function CustomizationHome() {
 		<WxMainLg className="homeSection">
 			<WxFormHeader title="Homepage" />
 			{isLoading && <Preloader />}
-			<div className="card wx__p-3">
+			<div className="card p-3">
 				<div className="row">
-					<div className="page-title d-flex wx__justify-content-between wx__align-items-center">
-						<h6 className="wx__text_semibold wx__mb-0">Home Slider</h6>
-						<div className="right d-flex wx__flex-row wx__align-items-center">
+					<div className="page-title d-flex justify-content-between align-items-center">
+						<h6 className="text_semibold mb-0">Home Slider</h6>
+						<div className="right d-flex flex-row align-items-center">
 							{/* TODO:: need to responsive */}
-							<div style={{ width: "200px" }} className="wx__me-3">
+							<div style={{ width: "200px" }} className="me-3">
 								<SelectOption
 									options={sliders}
 									onChange={onChangeSlider}
@@ -146,7 +146,7 @@ export default function CustomizationHome() {
 							<WxButton
 								onClick={onSaveFun}
 								variant="fill"
-								className="wx__me-3 wx__btn_sm"
+								className="me-3 wx__btn_sm"
 								disabled={
 									JSON.stringify(selectedPreviusSlider) ===
 									JSON.stringify(selectedSlider)
@@ -172,7 +172,7 @@ export default function CustomizationHome() {
 					</div>
 				</div>
 				{previewFlag && !!sliderItems?.length && (
-					<div className="preview-slider wx__mt-4">
+					<div className="preview-slider mt-4">
 						<WxSlider
 							imageList={sliderItems}
 							timeInterval={3500}

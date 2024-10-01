@@ -47,13 +47,13 @@ const Apps = () => {
 
 	return (
 		<WxMainXl className="wx__apps-page">
-			<div className="d-flex wx__justify-content-between wx__align-items-center">
-				<h4 className="wx__text_heading  mb-0">Apps</h4>
+			<div className="d-flex justify-content-between align-items-center">
+				<h4 className="text_heading  mb-0">Apps</h4>
 				<WxButton variant="fill">Visit Store</WxButton>
 			</div>
 
-			<div className="card wx__p-4 wx__mt-3 wx__install-app">
-				<h6 className="wx__text_body wx__text_medium wx__subtitle-1 wx__mb-2">
+			<div className="card p-4 mt-3 wx__install-app">
+				<h6 className="text_body text_medium wx__subtitle-1 mb-2">
 					Installed Apps
 				</h6>
 				{isInstalledLoading ? (
@@ -61,15 +61,15 @@ const Apps = () => {
 				) : installedApp?.length ? (
 					<InstallApp installAppsData={installedApp} />
 				) : (
-					<h6 className="wx__text-center wx__text-muted">
+					<h6 className="text-center text-muted">
 						No installed app found
 					</h6>
 				)}
 			</div>
 
-			<div className="card wx__p-4 wx__mt-3 wx__suggested_app">
-				<div className="d-flex wx__justify-content-between wx__align-items-center">
-					<h6 className="wx__text_body wx__text_medium wx__mb-2 wx__subtitle-1">
+			<div className="card p-4 mt-3 wx__suggested_app">
+				<div className="d-flex justify-content-between align-items-center">
+					<h6 className="text_body text_medium mb-2 wx__subtitle-1">
 						Recommended For You
 					</h6>
 					<WxButton
@@ -91,7 +91,7 @@ const Apps = () => {
 							installedApps={installedApp}
 						/>
 					) : (
-						<h6 className="wx__text-center wx__text-muted">Nothing to show</h6>
+						<h6 className="text-center text-muted">Nothing to show</h6>
 					)}
 				</div>
 			</div>

@@ -75,7 +75,7 @@ const WxRadio = ({
           />
           {label ? (
             <label
-              className="form-check-label wx__text_small wx__radio_btn_label wx__text_medium "
+              className="form-check-label text_small wx__radio_btn_label text_medium "
               htmlFor={id}
               style={{ cursor: "pointer" }}
             >
@@ -92,7 +92,7 @@ const WxRadio = ({
         <div>
           {label ? (
             <label
-              className="form-check-label wx__radio_btn_label   wx__text_semibold"
+              className="form-check-label wx__radio_btn_label   text_semibold"
               style={{
                 marginBottom: "4px",
                 marginRight: "0px",
@@ -106,12 +106,12 @@ const WxRadio = ({
               ) : null}
             </label>
           ) : null}
-          <div className={`d-flex wx__flex-${radioStyle}`}>
+          <div className={`d-flex flex-${radioStyle}`}>
             {options?.map((item: any, index: number) => {
               return (
                 <div
                   key={id + index}
-                  className="form-check form-check-inline d-flex wx__align-item-center"
+                  className="form-check form-check-inline d-flex align-item-center"
                 >
                   <input
                     className="form-check-input"
@@ -132,7 +132,7 @@ const WxRadio = ({
                     style={{ cursor: "pointer" }}
                   />
                   <label
-                    className="form-check-label wx__text_body wx__text_medium wx__radio_btn_label wx__my-auto"
+                    className="form-check-label text_body text_medium wx__radio_btn_label my-auto"
                     htmlFor={id + index}
                     style={{ cursor: "pointer" }}
                   >

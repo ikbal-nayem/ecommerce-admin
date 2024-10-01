@@ -92,8 +92,8 @@ const SiteOperatorUpdate = () => {
 
 			<form onSubmit={handleSubmit(onSubmitting)}>
 				<div className="row">
-					<div className="col-md-8 col-sm-12 wx__mt-3">
-						<div className="card wx__p-4">
+					<div className="col-md-8 col-sm-12 mt-3">
+						<div className="card p-4">
 							<div className="row">
 								<div className="col-md-12 col-sm-12">
 									<WxInput
@@ -110,7 +110,7 @@ const SiteOperatorUpdate = () => {
 										}
 									/>
 								</div>
-								<div className="col-md-12 col-sm-12 wx__mt-3">
+								<div className="col-md-12 col-sm-12 mt-3">
 									<WxInput
 										label="Operator Name"
 										noMargin
@@ -124,8 +124,8 @@ const SiteOperatorUpdate = () => {
 							</div>
 						</div>
 					</div>
-					<div className="col-md-4 col-sm-12 wx__mt-3">
-						<div className="card wx__form_right wx__p-4">
+					<div className="col-md-4 col-sm-12 mt-3">
+						<div className="card wx__form_right p-4">
 							<WxButton type="submit" variant="fill" disabled={isSubmitting}>
 								Save Operator {isSubmitting && <Preloader />}
 							</WxButton>
@@ -142,11 +142,11 @@ const SiteOperatorUpdate = () => {
 								/>
 							</div>
 							<WxHr />
-							<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+							<div className="d-flex justify-content-between align-items-center mb-3">
 								<div className="d-flex">
 									<WxSwitch
 										label={
-											<div className="d-flex wx__text_medium wx__me-1">
+											<div className="d-flex text_medium me-1">
 												<span>Operator Status</span>
 											</div>
 										}
@@ -158,9 +158,9 @@ const SiteOperatorUpdate = () => {
 									/>
 								</div>
 							</div>
-							<div className="d-flex wx__align-items-center status_mxg_warning">
+							<div className="d-flex align-items-center status_mxg_warning">
 								<WxIcon icon="info" />
-								<p className="wx__text_small wx__text_regular ms_2 wx__mb-0">
+								<p className="text_small text_regular ms_2 mb-0">
 									Operator will get password through email
 								</p>
 							</div>

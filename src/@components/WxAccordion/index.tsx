@@ -27,25 +27,25 @@ const WxAccordion = ({ data, labelKey, descriptionKey }: IWxAccordion) => {
 					<div className="wx__accordion w-100 mb-3" key={index}>
 						<div className="wx__single_accordion">
 							<div
-								className="wx__accordion_title d-flex wx__align-items-center"
+								className="wx__accordion_title d-flex align-items-center"
 								onClick={() => setShowFun(index)}
 							>
 								<div
 									className={show === index ? "fqa_minus" : "fqa_plus"}
 								></div>
 								&nbsp; &nbsp;
-								<p className="wx__text_body wx__text_medium  wx__mb-0">
+								<p className="text_body text_medium  mb-0">
 									{item[labelKey]}
 								</p>
 							</div>
 							<div
 								className={
 									show === index
-										? "wx__pt-2 wx__accordion_description active wx_d-block"
+										? "pt-2 wx__accordion_description active wx_d-block"
 										: "wx_d-none wx__accordion_description"
 								}
 							>
-								<p className="wx__text_body wx__text_regular wx__mb-0">
+								<p className="text_body text_regular mb-0">
 									{item[descriptionKey]}
 								</p>
 							</div>

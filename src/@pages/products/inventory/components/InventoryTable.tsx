@@ -172,17 +172,17 @@ const InventoryTable = ({
           {inventoryData?.map((pd, index) => (
             <tr className="wx__tr" key={index}>
               <td className="wx__td">
-                <div className="wx__table_cell_avatar d-flex wx__align-items-center">
+                <div className="wx__table_cell_avatar d-flex align-items-center">
                   <WxThumbnail
                     name={pd?.title.toUpperCase()}
                     src={imageURLGenerate(pd?.thumbnail || pd?.images)}
                   />
-                  <div className="wx__table_cell_focus_text wx__flex-column ">
+                  <div className="wx__table_cell_focus_text flex-column ">
                     <div className="text-overflow-hidden">{pd?.title}</div>
                     <div className="text-overflow-hidden">
                       {pd?.options?.map((item: any, indx: number) => (
                         <span
-                          className="wx__text_small wx__text-secondary"
+                          className="text_small text-secondary"
                           key={item?.key}
                         >
                           {item?.key} - {item?.value} {indx <= 0 ? "/ " : ""}
@@ -199,7 +199,7 @@ const InventoryTable = ({
                 {store_currency_code} {pd?.sellingPrice?.toLocaleString()}
               </td>
               <td className="wx__td">
-                <div className="wx__text_body">{pd?.sku || "---"}</div>
+                <div className="text_body">{pd?.sku || "---"}</div>
               </td>
               <td className="wx__td">
                 <div className="wx__table_cell_icon  d-flex ">
@@ -233,8 +233,8 @@ const InventoryTable = ({
                     >
                       <div className="wx__availability_popup">
                         <div>
-                          <div className="wx__mb-2">
-                            <p className="wx__text_subtitle wx__text_semibold d-block">
+                          <div className="mb-2">
+                            <p className="text_subtitle text_semibold d-block">
                               Adjust By
                             </p>
                             <WxInput
@@ -250,7 +250,7 @@ const InventoryTable = ({
                               onFocus={(e) => e.target.select()}
                             />
                           </div>
-                          <p className="wx__my-3 wx__text_small quantity_text">
+                          <p className="my-3 text_small quantity_text">
                             Original Quantity: {pd?.initialQuantity}
                           </p>
                           <WxSelect
@@ -267,7 +267,7 @@ const InventoryTable = ({
                     </WxDropdown>
                   )}
                   <div className="action-section">
-                    <div className="inventory-action d-flex wx__align-items-center">
+                    <div className="inventory-action d-flex align-items-center">
                       <WxIcon
                         icon="tune"
                         variants="round"

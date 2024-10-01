@@ -76,21 +76,21 @@ const TableSubItem = ({
 
 						<WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
 							<ul>
-								<li className="wx__text_subtitle">
-									<a className="wx__text_body" onClick={onEdit}>
+								<li className="text_subtitle">
+									<a className="text_body" onClick={onEdit}>
 										<WxIcon icon="edit" />
 										Edit
 									</a>
 								</li>
-								<li className="wx__text_subtitle">
-									<a className="wx__text_body" onClick={onAddSubcategory}>
+								<li className="text_subtitle">
+									<a className="text_body" onClick={onAddSubcategory}>
 										<WxIcon icon="add" />
 										Add Subcategory
 									</a>
 								</li>
-								<li className="wx__text_subtitle">
+								<li className="text_subtitle">
 									<a
-										className="wx__text_body wx__text-danger"
+										className="text_body text-danger"
 										onClick={onDelete}
 									>
 										<WxIcon icon="delete" color="danger" />
@@ -147,20 +147,20 @@ const TableSubItem = ({
 				/>
 				<WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
 					<ul>
-						<li className="wx__text_subtitle">
-							<a className="wx__text_body" onClick={onEdit}>
+						<li className="text_subtitle">
+							<a className="text_body" onClick={onEdit}>
 								<WxIcon icon="edit" />
 								<small>Edit</small>
 							</a>
 						</li>
-						<li className="wx__text_subtitle">
-							<a className="wx__text_body" onClick={onAddSubcategory}>
+						<li className="text_subtitle">
+							<a className="text_body" onClick={onAddSubcategory}>
 								<WxIcon icon="add" />
 								<small>Add Sub-category</small>
 							</a>
 						</li>
-						<li className="wx__text_subtitle">
-							<a className="wx__text_body wx__text-danger" onClick={onDelete}>
+						<li className="text_subtitle">
+							<a className="text_body text-danger" onClick={onDelete}>
 								<WxIcon icon="delete" color="danger" />
 								<small>Delete</small>
 							</a>

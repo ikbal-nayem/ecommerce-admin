@@ -149,8 +149,8 @@ const Collection = () => {
 
 	return (
 		<WxMainLg className="collection_container">
-			<div className="d-flex wx__justify-content-between wx__align-items-center">
-				<h4 className="wx__text_h4 wx__text_semibold wx__mb-0">Collection</h4>
+			<div className="d-flex justify-content-between align-items-center">
+				<h4 className="text_h4 text_semibold mb-0">Collection</h4>
 				<WxButton
 					disabled={isLoader}
 					variant="fill"
@@ -169,12 +169,12 @@ const Collection = () => {
 				/>
 			</div>
 			{!isLoader && !isLoading && !collections?.length ? (
-				<div className="wx__mt-3">
+				<div className="mt-3">
 					<WxNotFound title="No collection found!" />
 				</div>
 			) : null}
 			{isLoader ? (
-				<div className="wx__bg-white wx__mt-3 rounded">
+				<div className="bg-white mt-3 rounded">
 					<CollectionTBSkelton viewBox="0 0 600 310" />
 				</div>
 			) : (
@@ -186,7 +186,7 @@ const Collection = () => {
 								handleEdit={handleEdit}
 								onDelete={handleDelete}
 							/>
-							<div className="wx__p-4">
+							<div className="p-4">
 								<WxPagination
 									meta={collectionMeta}
 									currentPage={currentPage}

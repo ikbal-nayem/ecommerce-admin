@@ -34,7 +34,7 @@ function RequestWithdraw() {
 					<WxDrawerFooter>
 						<div className="withdraw_request__footer">
 							<WxButton
-								className="wx__me-3"
+								className="me-3"
 								variant="outline"
 								color="secondary"
 								onClick={handleClose}

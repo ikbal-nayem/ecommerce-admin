@@ -174,7 +174,7 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
             <WxDrawerFooter>
               <div className="wx__manage_customer_group__footer">
                 {editData?.id ? (
-                  <div className="wx__me-auto">
+                  <div className="me-auto">
                     <WxButton
                       color="danger"
                       variant="fill"
@@ -185,7 +185,7 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
                   </div>
                 ) : null}
                 <WxButton
-                  className="wx__me-3"
+                  className="me-3"
                   variant="outline"
                   color="secondary"
                   onClick={() =>

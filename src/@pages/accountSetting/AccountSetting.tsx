@@ -428,15 +428,15 @@ const AccountSetting = () => {
   return (
     <WxMainMd>
       <div className="wx__account_setting">
-        <h4 className="wx__text_h4 wx__text_medium">Account Setting</h4>
+        <h4 className="text_h4 text_medium">Account Setting</h4>
         <div className="">
-          <div className="wx__bg-white rounded overflow-hidden">
+          <div className="bg-white rounded overflow-hidden">
             <form
               onSubmit={handleSubmit(updateBasicInfoSubmit)}
-              className="wx__p-3"
+              className="p-3"
             >
-              <div className="d-flex wx__justify-content-between wx__align-items-center">
-                <h5 className="wx__mb-0">Basic Information</h5>
+              <div className="d-flex justify-content-between align-items-center">
+                <h5 className="mb-0">Basic Information</h5>
                 {editBasicInfo ? (
                   <div className="d-flex">
                     <WxButton
@@ -457,7 +457,7 @@ const AccountSetting = () => {
                   </div>
                 ) : (
                   <WxButton
-                    className="wx__me-4"
+                    className="me-4"
                     onClick={() => setEditBasicInfo(true)}
                   >
                     Edit
@@ -468,7 +468,7 @@ const AccountSetting = () => {
               {editBasicInfo ? (
                 <div className="wx__userBasic_info row">
                   {infoLoading && <Preloader />}
-                  <div className="row wx__mb-3">
+                  <div className="row mb-3">
                     <div className="user_img col-md-12">
                       <div className="img_wrapper">
                         <img
@@ -499,7 +499,7 @@ const AccountSetting = () => {
                             setValue("file", null);
                             setValue("image", null);
                           }}
-                          className="remove_text wx__text-danger wx__mb-0"
+                          className="remove_text text-danger mb-0"
                         >
                           Remove Photo
                         </p>
@@ -537,7 +537,7 @@ const AccountSetting = () => {
                   />
                 </div>
               ) : (
-                <div className="d-flex wx__align-items-center ">
+                <div className="d-flex align-items-center ">
                   <div className="account_img">
                     <img
                       src={
@@ -548,8 +548,8 @@ const AccountSetting = () => {
                       alt=""
                     />
                   </div>
-                  <div className="d-flex wx__flex-column ms_2">
-                    <p className="wx__text_body wx__text_strong wx__m-0">
+                  <div className="d-flex flex-column ms_2">
+                    <p className="text_body text_strong m-0">
                       {userBasicInfo?.firstName
                         ? userBasicInfo?.firstName +
                           " " +
@@ -558,11 +558,11 @@ const AccountSetting = () => {
                       {/* {watch("firstName") || "No Name"} */}
                     </p>
                     {!isAccountVerified[0]?.active ? (
-                      <span className="wx__text-primary d-flex wx__align-items-center">
+                      <span className="text-primary d-flex align-items-center">
                         Verified <WxIcon icon="verified_user" />{" "}
                       </span>
                     ) : (
-                      <span className="wx__text-danger d-flex wx__align-items-center">
+                      <span className="text-danger d-flex align-items-center">
                         Unverified <WxIcon icon="gpp_maybe" />{" "}
                       </span>
                     )}
@@ -571,10 +571,10 @@ const AccountSetting = () => {
               )}
             </form>
             {!isAccountVerified[0]?.active || (
-              <div className="verify_alert d-flex wx__justify-content-between  wx__p-3 ">
-                <div className="d-flex wx__align-items-center">
+              <div className="verify_alert d-flex justify-content-between  p-3 ">
+                <div className="d-flex align-items-center">
                   <WxIcon icon="info" variants="outlined" />
-                  <p className="wx__my-0 ms_2 wx__text_body wx__text_medium">
+                  <p className="my-0 ms_2 text_body text_medium">
                     Please verify your Phone Number to enjoy the complete WebX
                     experience .
                   </p>
@@ -586,9 +586,9 @@ const AccountSetting = () => {
             )}
           </div>
           {key !== "PPB_TRIAL" ? (
-            <div className="wx__bg-white rounded wx__mt-3 wx__p-4">
-              <div className="d-flex wx__align-items-center wx__justify-content-between">
-                <h5 className="wx__mb-0">Affiliate Info</h5>
+            <div className="bg-white rounded mt-3 p-4">
+              <div className="d-flex align-items-center justify-content-between">
+                <h5 className="mb-0">Affiliate Info</h5>
                 <WxButton
                   disabled={
                     userBasicInfo?.isPartnerEnabled || isSubmittingEnablePartner
@@ -599,21 +599,21 @@ const AccountSetting = () => {
                   Enable Partner
                 </WxButton>
               </div>
-              <WxHr className="wx__mb-0" />
+              <WxHr className="mb-0" />
               <div className="row">
-                <div className="col-md-3 wx__mt-3">
-                  <p className="wx__mb-2 wx__text_h6 wx__text_strong">
+                <div className="col-md-3 mt-3">
+                  <p className="mb-2 text_h6 text_strong">
                     Referred By
                   </p>
-                  <span className="wx__text_h5 wx__text_normal">
+                  <span className="text_h5 text_normal">
                     {userBasicInfo?.referredPartner || "No Partner"}
                   </span>
                 </div>
-                <div className="col-md-9 wx__mt-3">
-                  <p className="wx__mb-2 wx__text_h6 wx__text_strong">
+                <div className="col-md-9 mt-3">
+                  <p className="mb-2 text_h6 text_strong">
                     Your Referral URL
                   </p>
-                  <span className="wx__text_h6 wx__text_normal wx__text-primary">
+                  <span className="text_h6 text_normal text-primary">
                     {userBasicInfo?.partnerUrl ? (
                       <a href={userBasicInfo?.partnerUrl}>
                         {userBasicInfo?.partnerUrl}
@@ -623,7 +623,7 @@ const AccountSetting = () => {
                     )}
                     {userBasicInfo?.partnerUrl ? (
                       <WxIcon
-                        className="ms_2 material-icons wx__text-dark"
+                        className="ms_2 material-icons text-dark"
                         icon="content_copy"
                         onClick={() => {
                           navigator.clipboard.writeText(
@@ -645,16 +645,16 @@ const AccountSetting = () => {
                 ? addressSubmit(createUserAddress)
                 : addressSubmit(updateUserAddress)
             }
-            className="card wx__bg-white wx__p-3 wx__mt-3"
+            className="card bg-white p-3 mt-3"
           >
             <div className="row">
-              <div className="col-md-12 col-sm-12 d-flex wx__justify-content-between wx__align-items-center">
-                <h5 className="wx__mb-0">Address & Contact</h5>
+              <div className="col-md-12 col-sm-12 d-flex justify-content-between align-items-center">
+                <h5 className="mb-0">Address & Contact</h5>
                 {addressFlag ? (
                   <div className="d-flex">
                     <WxButton
                       variant="none"
-                      className="wx__me-4 cancel__btn"
+                      className="me-4 cancel__btn"
                       onClick={() => {
                         setAddressFlag(false);
                         setUserAddressEdit(false);
@@ -678,14 +678,14 @@ const AccountSetting = () => {
                   </WxButton>
                 )}
               </div>
-              <p className="wx__text_body wx__body_regular wx__mb-0">
+              <p className="text_body wx__body_regular mb-0">
                 Used on customer order confirmations and your WebX bill.
               </p>
               <WxHr />
             </div>
             {addressFlag ? (
               <div className="row">
-                <div className="col-md-12 col-sm-12 wx__mt-2">
+                <div className="col-md-12 col-sm-12 mt-2">
                   <WxInput
                     registerProperty={{
                       ...addressRegister("title", { required: true }),
@@ -695,7 +695,7 @@ const AccountSetting = () => {
                     errorMessage={addressErrors.title && "Title is Required"}
                   />
                 </div>
-                <div className="col-md-12 col-sm-12 wx__mt-2">
+                <div className="col-md-12 col-sm-12 mt-2">
                   <WxInput
                     label="Address Details"
                     noMargin
@@ -708,14 +708,14 @@ const AccountSetting = () => {
                     }
                   />
                 </div>
-                <div className="col-md-12 col-sm-12 wx__mt-2">
+                <div className="col-md-12 col-sm-12 mt-2">
                   <WxInput
                     label="Appartment,  suits, etc"
                     noMargin
                     registerProperty={{ ...addressRegister("addressLine2") }}
                   />
                 </div>
-                <div className="col-md-4 col-sm-12 wx__mt-2">
+                <div className="col-md-4 col-sm-12 mt-2">
                   <WxSelect
                     label="Division/State"
                     noMargin
@@ -730,7 +730,7 @@ const AccountSetting = () => {
                     }}
                   />
                 </div>
-                <div className="col-md-4 col-sm-12 wx__mt-2">
+                <div className="col-md-4 col-sm-12 mt-2">
                   <WxSelect
                     label="District/City"
                     options={districts}
@@ -745,7 +745,7 @@ const AccountSetting = () => {
                     isDisabled={!districts?.length}
                   />
                 </div>
-                <div className="col-md-4 col-sm-12 wx__mt-2">
+                <div className="col-md-4 col-sm-12 mt-2">
                   <WxInput
                     registerProperty={{
                       ...addressRegister("postCode"),
@@ -757,7 +757,7 @@ const AccountSetting = () => {
                     }
                   />
                 </div>
-                <div className="col-md-12 col-sm-12 wx__mt-2">
+                <div className="col-md-12 col-sm-12 mt-2">
                   <WxInput
                     registerProperty={{
                       ...addressRegister("country"),
@@ -768,7 +768,7 @@ const AccountSetting = () => {
                     isDisabled
                   />
                 </div>
-                <div className="col-md-6 col-sm-12 wx__mt-2">
+                <div className="col-md-6 col-sm-12 mt-2">
                   <WxInput
                     label="Email Address"
                     type="email"
@@ -783,7 +783,7 @@ const AccountSetting = () => {
                     }
                   />
                 </div>
-                <div className="col-md-6 col-sm-12 wx__mt-2">
+                <div className="col-md-6 col-sm-12 mt-2">
                   <WxInput
                     label="Phone Number."
                     registerProperty={{
@@ -803,16 +803,16 @@ const AccountSetting = () => {
                 {userAddress.length !== 0 ? (
                   userAddress.map((user: any, i: number) => {
                     return (
-                      <div className="wx__mb-2" key={user?.id}>
+                      <div className="mb-2" key={user?.id}>
                         <div>
-                          <div className="d-flex wx__justify-content-between wx__align-items-center">
-                            <div className="d-flex wx__align-items-center wx__mb-2">
+                          <div className="d-flex justify-content-between align-items-center">
+                            <div className="d-flex align-items-center mb-2">
                               <WxIcon icon="contact_mail" />
-                              <p className="wx__mb-0 wx__ms-1 wx__text_h6 wx__text_strong">
+                              <p className="mb-0 ms-1 text_h6 text_strong">
                                 {user?.title}
                               </p>
                             </div>
-                            <div className="d-flex wx__justify-content-between">
+                            <div className="d-flex justify-content-between">
                               <WxIcon
                                 onClick={() => {
                                   getUserAddressById(user?.id);
@@ -823,15 +823,15 @@ const AccountSetting = () => {
                               <WxIcon
                                 onClick={() => deleteUserAddressById(user?.id)}
                                 icon="delete"
-                                className="wx__text-danger"
+                                className="text-danger"
                               />
                             </div>
                           </div>
 
                           <div className="row">
-                            <div className="wx__text_body d-flex align-items-center wx__mb-2">
+                            <div className="text_body d-flex align-items-center mb-2">
                               <WxIcon icon="location_on" />
-                              <span className="wx__text-secondary ms_2">
+                              <span className="text-secondary ms_2">
                                 {user?.addressLine1
                                   ? user?.addressLine1 + ", "
                                   : ""}
@@ -849,10 +849,10 @@ const AccountSetting = () => {
                           </div>
                           <div className="d-flex">
                             {user?.email && (
-                              <div className="wx__text_body d-flex align-items-center wx__my-1">
+                              <div className="text_body d-flex align-items-center my-1">
                                 <WxIcon icon="email" />
-                                <div className="d-flex wx__flex-column">
-                                  <span className="wx__text-secondary ms_2">
+                                <div className="d-flex flex-column">
+                                  <span className="text-secondary ms_2">
                                     {" "}
                                     {user?.email || ""}
                                   </span>
@@ -860,9 +860,9 @@ const AccountSetting = () => {
                               </div>
                             )}
                             {user?.phone && (
-                              <div className=" wx__text_body d-flex align-items-center wx__ms-3">
+                              <div className=" text_body d-flex align-items-center ms-3">
                                 <WxIcon icon="phone" />
-                                <span className="wx__text-secondary ms_2">
+                                <span className="text-secondary ms_2">
                                   {" "}
                                   {user?.phone || ""}
                                 </span>
@@ -874,24 +874,24 @@ const AccountSetting = () => {
                     );
                   })
                 ) : (
-                  <span className="wx__text-danger">No address available</span>
+                  <span className="text-danger">No address available</span>
                 )}
               </>
             )}
           </form>
           <form
             onSubmit={passHandleSubmit(passwordSubmit)}
-            className="wx__p-4 wx__bg-white wx__mt-3 rounded"
+            className="p-4 bg-white mt-3 rounded"
           >
-            <div className="d-flex wx__justify-content-between">
-              <h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+            <div className="d-flex justify-content-between">
+              <h5 className="text_h5 text_semibold m-0">
                 {changePassword ? "Change Password" : "Security"}
               </h5>
               {changePassword ? (
                 <div className="d-flex">
                   <WxButton
                     color="secondary"
-                    className="wx__me-2"
+                    className="me-2"
                     onClick={() => setChangePassword(false)}
                   >
                     cancel
@@ -920,7 +920,7 @@ const AccountSetting = () => {
                     label="Current Password"
                     type="password"
                     // helpText={
-                    //   <span className="wx__text-primary wx__text_medium wx__text_subtitle cursor-pointer">
+                    //   <span className="text-primary text_medium text_subtitle cursor-pointer">
                     //     Forgot Password?
                     //   </span>
                     // }
@@ -951,16 +951,16 @@ const AccountSetting = () => {
                 </div>
               )
             ) : (
-              <div className="d-flex wx__flex-column">
-                <p className="wx__text_body wx__text_strong">Password</p>
-                <span className="wx__text_small">********</span>
+              <div className="d-flex flex-column">
+                <p className="text_body text_strong">Password</p>
+                <span className="text_small">********</span>
               </div>
             )}
           </form>
-          {/* <div className="rounded wx__p-4 wx__bg-white wx__mt-3">
+          {/* <div className="rounded p-4 bg-white mt-3">
             <div>
-              <h5 className="wx__text_h5 wx__text_semibold">Stores</h5>
-              <span className="wx__text_body wx__text-secondary">
+              <h5 className="text_h5 text_semibold">Stores</h5>
+              <span className="text_body text-secondary">
                 Visit or manage the following stores and resources to your WebX
                 account
               </span>

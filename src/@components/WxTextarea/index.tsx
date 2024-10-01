@@ -39,7 +39,7 @@ const WxTextarea = ({
 	errorMessage,
 }: ITextareaProps) => {
 	return (
-		<div className={`form_group ${noMargin ? "wx__m-0" : ""}`}>
+		<div className={`form_group ${noMargin ? "m-0" : ""}`}>
 			{label ? (
 				typeof label === "string" ? (
 					<label htmlFor="">
@@ -49,9 +49,9 @@ const WxTextarea = ({
 					<>{label}</>
 				)
 			) : null}
-			{labelRight && <div className="wx__float-end">{labelRight}</div>}
+			{labelRight && <div className="float-end">{labelRight}</div>}
 			<textarea
-				className={`wx__m-0 wx__input_${color}`}
+				className={`m-0 wx__input_${color}`}
 				type={type}
 				required={isRequired}
 				autoFocus={isAutoFocus}
@@ -64,7 +64,7 @@ const WxTextarea = ({
 			/>
 			{errorMessage ? (
 				typeof errorMessage === "string" ? (
-					<span className={`note_text wx__text-danger`}>{errorMessage}</span>
+					<span className={`note_text text-danger`}>{errorMessage}</span>
 				) : (
 					<>{errorMessage}</>
 				)
@@ -73,7 +73,7 @@ const WxTextarea = ({
 				typeof helpText === "string" ? (
 					<span
 						className={`note_text ${
-							color === "danger" ? "wx__text-danger" : ""
+							color === "danger" ? "text-danger" : ""
 						}`}
 					>
 						{helpText}

@@ -15,7 +15,7 @@ const ProductInfo = () => {
 	const hasSummary = watch("hasSummary");
 
 	return (
-		<div className="card wx__p-3 wx__mt-4">
+		<div className="card p-3 mt-4">
 			<WxInput
 				label="Product Title"
 				isRequired
@@ -35,7 +35,7 @@ const ProductInfo = () => {
 				/>
 			</div>
 
-			<div className="wx__mt-3" style={{ maxWidth: "90%" }}>
+			<div className="mt-3" style={{ maxWidth: "90%" }}>
 				<WxSwitch
 					label="Add Product Summary"
 					checkedTitle="Yes"
@@ -45,7 +45,7 @@ const ProductInfo = () => {
 			</div>
 
 			{hasSummary ? (
-				<div className="form_group wx__mt-4">
+				<div className="form_group mt-4">
 					<label>Product Summary</label>
 					<Controller
 						control={control}

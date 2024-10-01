@@ -71,11 +71,11 @@ const Invoice = ({ invoiceData }) => {
         <div className="sub-page">
           {/* topper */}
           <div className="topper">
-            <div className="d-flex wx__justify-content-between">
+            <div className="d-flex justify-content-between">
               <img src={imageURLGenerate(siteLogoUrl)} alt="" />
-              <div className="d-flex wx__flex-column wx__align-items-end">
-                <h6 className="wx__mb-0 wx__text">INVOICE NO #{invoiceNo}</h6>
-                <span className="wx__text_body">
+              <div className="d-flex flex-column align-items-end">
+                <h6 className="mb-0 text">INVOICE NO #{invoiceNo}</h6>
+                <span className="text_body">
                   {generateDateFormat(
                     orderDate,
                     "%date% %MM%, %hour%.%minute%%ampm%"
@@ -89,7 +89,7 @@ const Invoice = ({ invoiceData }) => {
           {/* footer */}
           <div className="footer">
             <hr />
-            <div className="d-flex wx__align-items-center wx__justify-content-between">
+            <div className="d-flex align-items-center justify-content-between">
               <div>
                 <div>
                   <img src={webXLogo} alt="" />
@@ -113,67 +113,67 @@ const Invoice = ({ invoiceData }) => {
             <tbody>
               <tr>
                 <td>
-                  <div className="invoice_address d-flex  wx__justify-content-between">
+                  <div className="invoice_address d-flex  justify-content-between">
                     <div>
                       <h6>Bill Form</h6>
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {businessName}
                       </p>
                       <br />
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {WH1addressLine1} {WH1addressLine2}
                       </p>
                       <br />
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {WH1postCode && WH1postCode + "-"}
                         {WH1cityName && WH1cityName + ", "} {WH1country}
                       </p>
                       <br />
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {WH1phone}
                       </p>
                       <br />
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {WH1email}
                       </p>
                     </div>
                     <div>
                       <h6>Ship To</h6>
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {customerName || "no name found"}
                       </p>
                       <br />
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {addressLine1} {addressLine2}
                       </p>
                       <br />
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {postCode && postCode + "-"}
                         {cityName && cityName + ", "} {country}
                       </p>
                       <br />
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {phone}
                       </p>
                       <br />
-                      <p className="wx__text__semibold wx__text_body">
+                      <p className="text__semibold text_body">
                         {email}
                       </p>
                     </div>
                   </div>
 
-                  <table className="wx__mt-4" id="orderListTable">
+                  <table className="mt-4" id="orderListTable">
                     <thead>
                       <tr>
                         <th>
-                          <span className="wx__text_regular">Item</span>
+                          <span className="text_regular">Item</span>
                         </th>
                         <th>
                           {" "}
-                          <span className="wx__text_regular">Quantity</span>
+                          <span className="text_regular">Quantity</span>
                         </th>
                         <th>
-                          <span className="wx__text_regular">Amount</span>
+                          <span className="text_regular">Amount</span>
                         </th>
                       </tr>
                     </thead>
@@ -183,7 +183,7 @@ const Invoice = ({ invoiceData }) => {
                           <tr key={item.id}>
                             <td>
                               <div className="d-flex ">
-                                {/* <div className="table_img wx__me-2">
+                                {/* <div className="table_img me-2">
                                   <img
                                     src={item.thumbnail}
                                     alt=""
@@ -191,7 +191,7 @@ const Invoice = ({ invoiceData }) => {
                                   />
                                 </div> */}
                                 <div>
-                                  <p className="wx__mb-0 wx__text_semibold">
+                                  <p className="mb-0 text_semibold">
                                     {item?.title}
                                   </p>
                                   {item?.options && item?.options?.length
@@ -199,7 +199,7 @@ const Invoice = ({ invoiceData }) => {
                                         return (
                                           <span
                                             key={indx}
-                                            className="wx__text-secondary wx__text_small"
+                                            className="text-secondary text_small"
                                           >
                                             {indx > 0 ? ", " : ""}
                                             {variant?.key}-{variant?.value}
@@ -211,14 +211,14 @@ const Invoice = ({ invoiceData }) => {
                               </div>
                             </td>
                             <td>
-                              <div className="wx__text-center wx__text__semibold invoice_text">
+                              <div className="text-center text__semibold invoice_text">
                                 {+item?.quantity > 9
                                   ? item?.quantity
                                   : "0" + item?.quantity}
                               </div>
                             </td>
                             <td>
-                              <div className="wx__text-center wx__text__semibold invoice_text">
+                              <div className="text-center text__semibold invoice_text">
                                 {item?.subTotal || 0} BDT
                               </div>
                             </td>
@@ -228,13 +228,13 @@ const Invoice = ({ invoiceData }) => {
                     </tbody>
                   </table>
 
-                  <div className="row wx__mt-2">
+                  <div className="row mt-2">
                     <div className="col-5">
                       {orderNote && (
                         <div className="wx__invoice_notes">
                           <p>
                             <WxIcon icon="info" />
-                            <span className="wx__text_semibold ms_2">
+                            <span className="text_semibold ms_2">
                               NOTES
                             </span>
                           </p>
@@ -244,49 +244,49 @@ const Invoice = ({ invoiceData }) => {
                     </div>
                     <div className="col-7">
                       <div className="order_summery">
-                        <div className="d-flex wx__justify-content-between">
-                          <span className="wx__text__semibold wx__text_body">
+                        <div className="d-flex justify-content-between">
+                          <span className="text__semibold text_body">
                             Sub Total
                           </span>
-                          <span className="wx__text__semibold wx__text_body">
+                          <span className="text__semibold text_body">
                             {orderSubTotal || "0"} BDT
                           </span>
                         </div>
-                        <div className="d-flex wx__justify-content-between">
-                          <span className="wx__text__semibold wx__text_body">
+                        <div className="d-flex justify-content-between">
+                          <span className="text__semibold text_body">
                             Tax
                           </span>
-                          <span className="wx__text__semibold wx__text_body">
+                          <span className="text__semibold text_body">
                             {taxAmount || "0"} BDT
                           </span>
                         </div>
-                        <div className="d-flex wx__justify-content-between">
-                          <span className="wx__text__semibold wx__text_body">
+                        <div className="d-flex justify-content-between">
+                          <span className="text__semibold text_body">
                             Delivery Charge
                           </span>
-                          <span className="wx__text__semibold wx__text_body">
+                          <span className="text__semibold text_body">
                             {deliveryChargeAmount || "0"} BDT
                           </span>
                         </div>
-                        <div className="d-flex wx__justify-content-between total">
-                          <span className="wx__text_semibold">Total</span>
-                          <span className="wx__text_semibold">
+                        <div className="d-flex justify-content-between total">
+                          <span className="text_semibold">Total</span>
+                          <span className="text_semibold">
                             {totalPayableAmount || "0"} BDT
                           </span>
                         </div>
-                        <div className="d-flex wx__justify-content-between wx__my-2">
-                          <span className="wx__text__semibold wx__text_body">
+                        <div className="d-flex justify-content-between my-2">
+                          <span className="text__semibold text_body">
                             Paid
                           </span>
-                          <span className="wx__text__semibold wx__text_body">
+                          <span className="text__semibold text_body">
                             {totalPayableAmount || "0"} BDT
                           </span>
                         </div>
-                        <div className="d-flex wx__justify-content-between">
-                          <h5 className="wx__text-secondary wx__text_semibold">
+                        <div className="d-flex justify-content-between">
+                          <h5 className="text-secondary text_semibold">
                             Total Due
                           </h5>
-                          <h5 className="wx__text-secondary wx__text_semibold">
+                          <h5 className="text-secondary text_semibold">
                             {totalPayableAmount || "0"} BDT
                           </h5>
                         </div>

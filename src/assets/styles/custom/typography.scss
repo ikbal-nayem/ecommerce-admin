@@ -7,7 +7,7 @@ body {
 }
 
 // fonts class
-.wx__text_display_1 {
+.text_display_1 {
   font-family: $primary__font__family;
   @include font__style(
     $font-weight: 400,
@@ -19,7 +19,7 @@ body {
   );
 }
 
-.wx__text_display_2 {
+.text_display_2 {
   font-family: $primary__font__family;
   @include font__style(
     $font-weight: 400,
@@ -31,7 +31,7 @@ body {
   );
 }
 
-.wx__text_display_3 {
+.text_display_3 {
   font-family: $primary__font__family;
   @include font__style(
     $font-weight: 400,
@@ -44,37 +44,37 @@ body {
 }
 
 // font weight
-.wx__text_regular {
+.text_regular {
   font-weight: 400 !important;
 }
 
-.wx__text_medium {
+.text_medium {
   font-weight: 500 !important;
 }
 
-.wx__text_strong {
+.text_strong {
   font-weight: 600 !important;
 }
 
-.wx__text_semibold {
+.text_semibold {
   font-weight: 600 !important;
 }
 
 // text decoration
-.wx__text_underline {
+.text_underline {
   text-decoration: underline !important;
 }
 
-.wx__text_strikethrough {
+.text_strikethrough {
   text-decoration: line-through !important;
 }
 
 // font-style
-.wx__text_italic {
+.text_italic {
   font-style: italic !important;
 }
 
-.wx__text_h1 {
+.text_h1 {
   font-family: $primary__font__family;
   @include font__style(
     $display: block,
@@ -84,7 +84,7 @@ body {
   );
 }
 
-.wx__text_h2 {
+.text_h2 {
   font-family: $primary__font__family;
   @include font__style(
     $display: block,
@@ -94,7 +94,7 @@ body {
   );
 }
 
-.wx__text_h3 {
+.text_h3 {
   font-family: $primary__font__family;
   @include font__style(
     $display: block,
@@ -104,7 +104,7 @@ body {
   );
 }
 
-.wx__text_h4 {
+.text_h4 {
   font-family: $primary__font__family;
   @include font__style(
     $display: block,
@@ -114,7 +114,7 @@ body {
   );
 }
 
-.wx__text_h5 {
+.text_h5 {
   font-family: $primary__font__family;
   @include font__style(
     $display: block,
@@ -124,7 +124,7 @@ body {
   );
 }
 
-.wx__text_h6 {
+.text_h6 {
   font-family: $primary__font__family;
   @include font__style(
     $display: block,
@@ -134,7 +134,7 @@ body {
   );
 }
 
-.wx__text_subtitle {
+.text_subtitle {
   font-family: $primary__font__family;
   @include font__style(
     $font-size: 0.813rem,
@@ -143,7 +143,7 @@ body {
   );
 }
 
-.wx__text_body {
+.text_body {
   font-family: $primary__font__family;
   @include font__style(
     $font-size: 0.875rem,
@@ -160,7 +160,7 @@ body {
 //   );
 // }
 
-// .wx__text_body; @extend .wx__text_medium; {
+// .text_body; @extend .text_medium; {
 //   @include font__style(
 //     $font-weight: 500,
 //     $font-size: 0.875rem,
@@ -169,7 +169,7 @@ body {
 //   );
 // }
 
-// .wx__text_body; @extend .wx__text_strong; {
+// .text_body; @extend .text_strong; {
 //   @include font__style(
 //     $font-weight: 600,
 //     $font-size: 0.875rem,
@@ -205,7 +205,7 @@ body {
 //   font-style: italic;
 // }
 
-.wx__text_body_code {
+.text_body_code {
   font-family: $primary__font__family;
   @include font__style(
     $font-family: $secondary__font__family,
@@ -224,16 +224,16 @@ body {
   );
 }
 
-.wx__text_small {
+.text_small {
   font-family: $primary__font__family;
   @include font__style($font-size: 0.75rem, $line-height: 120%);
 }
 
-// .wx__text_small {
+// .text_small {
 //   @include font__style($font-size: 0.75rem, $line-height: 120%);
 // }
 
-.wx__text_caption {
+.text_caption {
   font-family: $primary__font__family;
   @include font__style(
     $font-size: 0.75rem,
@@ -243,7 +243,7 @@ body {
   );
 }
 
-.wx__text_btn_big {
+.text_btn_big {
   font-family: $primary__font__family;
   @include font__style(
     $font-size: 1rem,
@@ -253,7 +253,7 @@ body {
   );
 }
 
-.wx__text_btn_regular {
+.text_btn_regular {
   font-family: $primary__font__family;
   @include font__style(
     $font-size: 0.875rem,
@@ -263,7 +263,7 @@ body {
   );
 }
 
-.wx__text_btn_small {
+.text_btn_small {
   font-family: $primary__font__family;
   @include font__style(
     $font-size: 0.813rem,

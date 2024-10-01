@@ -115,7 +115,7 @@ const ProductVariant = () => {
 				<WxAlert>Products variant should remove</WxAlert>
 			)}
 			{isLoading ? (
-				<div className="rounded w-100 wx__bg-white">
+				<div className="rounded w-100 bg-white">
 					<ProductTableSkelton viewBox="0 0 600 230" />
 				</div>
 			) : !productList?.length ? (
@@ -128,18 +128,18 @@ const ProductVariant = () => {
 								<tr className="wx__tr">
 									<th className="wx__th" style={{ width: 20 }}>
 										<WxCheckbox
-											className="wx__m-0"
+											className="m-0"
 											checked={productList?.length === selectedProduct?.length}
 											onChange={onToggleAll}
 										/>
 									</th>
 									<th className="wx__th">
-										<div className="wx__text_subtitle wx__text_semibold">
+										<div className="text_subtitle text_semibold">
 											Name
 										</div>
 									</th>
 									<th className="wx__th">
-										<div className="wx__text_subtitle wx__text_semibold">
+										<div className="text_subtitle text_semibold">
 											Status
 										</div>
 									</th>
@@ -150,7 +150,7 @@ const ProductVariant = () => {
 									<tr className="wx__tr" key={pd?.id}>
 										<td className="wx__td" style={{ width: 20 }}>
 											<WxCheckbox
-												className="wx__m-0"
+												className="m-0"
 												checked={selectedProduct?.some(
 													(val) => val.id === pd.id
 												)}
@@ -181,7 +181,7 @@ const ProductVariant = () => {
 							</tbody>
 						</table>
 					</div>
-					<div className="pagination_div wx__p-4">
+					<div className="pagination_div p-4">
 						<WxPagination
 							meta={productMeta}
 							currentPage={currentPage}

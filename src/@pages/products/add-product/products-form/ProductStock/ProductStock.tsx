@@ -14,11 +14,11 @@ const ProductStock = () => {
   const isTrackQuantity = watch("isTrackQuantity");
 
   return (
-		<div className="card product_stock wx__p-3 wx__mt-4">
-			<h6 className="wx__text_semibold wx__text_h6">Stock</h6>
+		<div className="card product_stock p-3 mt-4">
+			<h6 className="text_semibold text_h6">Stock</h6>
 
 			<div style={{ maxWidth: "90%" }}>
-				<div className="wx__mb-4">
+				<div className="mb-4">
 					<WxSwitch
 						label="Do you want to track stock?"
 						checkedTitle="Yes"
@@ -27,7 +27,7 @@ const ProductStock = () => {
 					/>
 				</div>
 				{/* {isTrackQuantity ? (
-          <div className="wx__mb-4">
+          <div className="mb-4">
             <WxSwitch
               label="Do you want to oversell?"
               checkedTitle="Yes"
@@ -56,9 +56,9 @@ const ProductStock = () => {
 					</div>
 				</div>
 			) : null}
-			<WxHr className=" wx__mt-4 wx__mb-0" />
+			<WxHr className=" mt-4 mb-0" />
 			<div className="row">
-				<div className="col-md-6 col-sm-12 wx__mt-3">
+				<div className="col-md-6 col-sm-12 mt-3">
 					<WxInput
 						label="Product SKU"
 						noMargin
@@ -66,7 +66,7 @@ const ProductStock = () => {
 						onFocus={(e) => e.target.select()}
 					/>
 				</div>
-				<div className="col-md-6 col-sm-12 wx__mt-3">
+				<div className="col-md-6 col-sm-12 mt-3">
 					<WxInput
 						label="Barcode"
 						noMargin

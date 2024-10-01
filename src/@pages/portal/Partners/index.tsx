@@ -59,11 +59,11 @@ export default function Partners() {
     <WxMainFull>
       <WxFormHeader title="Partner" />
       {isLoading ? (
-        <div className="rounded w-100 wx__bg-white wx__mt-3">
+        <div className="rounded w-100 bg-white mt-3">
           <ProductTableSkelton viewBox="0 0 600 230" />
         </div>
       ) : (
-        <div className="card wx__pt-3">
+        <div className="card pt-3">
           <WxTabs
             option={tabOptions}
             renderTab={(item) => item?.title}
@@ -95,7 +95,7 @@ export default function Partners() {
                   <tbody className="wx__tbody">
                     {partners?.map((partner) => (
                       <tr className="wx__tr" key={partner?.storeId}>
-                        <td className="wx__td wx__pe-0" width={70}>
+                        <td className="wx__td pe-0" width={70}>
                           <WxThumbnail
                             src={imageURLGenerate(partner?.ownerImage)}
                           />
@@ -106,13 +106,13 @@ export default function Partners() {
                             <br />
                             {partner?.ownerPhone ? (
                               <>
-                                <small className="wx__text-muted">
+                                <small className="text-muted">
                                   {partner?.ownerPhone}
                                 </small>
                                 <br />
                               </>
                             ) : null}
-                            <small className="wx__text-muted">
+                            <small className="text-muted">
                               {partner?.ownerEmail}
                             </small>
                           </div>
@@ -160,7 +160,7 @@ export default function Partners() {
                   </tbody>
                 </table>
               </div>
-              <div className="wx__p-4">
+              <div className="p-4">
                 <WxPagination
                   meta={partnersMeta}
                   setCurrentPage={setCurrentPage}

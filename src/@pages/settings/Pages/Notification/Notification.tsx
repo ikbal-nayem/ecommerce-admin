@@ -144,21 +144,21 @@ const Notification = () => {
       <WxMainLg className="notification_sec">
         <WxFormHeader title="Notfication" backNavigationLink={SETTINGS} />
         <div className="row">
-          <div className="notification_left col-lg-8 col-md-12 col-sm-12 wx__mt-3">
-            <div className="card wx__p-4">
+          <div className="notification_left col-lg-8 col-md-12 col-sm-12 mt-3">
+            <div className="card p-4">
               <div className="row">
                 <div className="col-md-12 col-sm-12">
-                  <h6 className="wx__mb-4">Order Notifications</h6>
+                  <h6 className="mb-4">Order Notifications</h6>
                   {loading ? <Preloader /> : null}
                   {notificationData?.orderNotifications?.map((order, index) => {
                     return (
                       <div className="single_notification" key={order?.id}>
-                        <div className="d-flex wx__justify-content-between wx__align-items-center wx__text_body wx__text_medium ">
-                          <p className="wx__mb-0 wx__text_body wx__text_medium notification_title">
+                        <div className="d-flex justify-content-between align-items-center text_body text_medium ">
+                          <p className="mb-0 text_body text_medium notification_title">
                             {order?.description || order?.title}
                           </p>
                           <div className="d-flex ">
-                            <div className="d-flex wx__me-5">
+                            <div className="d-flex me-5">
                               <WxSwitch
                                 isChecked={order?.sms}
                                 onChange={(e) =>
@@ -200,21 +200,21 @@ const Notification = () => {
                 </div>
               </div>
             </div>
-            <div className="card wx__p-4 wx__mt-4">
+            <div className="card p-4 mt-4">
               <div className="row">
                 <div className="col-md-12 col-sm-12">
-                  <h6 className="wx__mb-4">Account Notifications</h6>
+                  <h6 className="mb-4">Account Notifications</h6>
                   {loading ? <Preloader /> : null}
                   {notificationData?.accountNotifications?.map(
                     (account, index) => {
                       return (
                         <div className="single_notification" key={account?.id}>
-                          <div className="d-flex wx__justify-content-between wx__align-items-center wx__text_body wx__text_medium">
-                            <p className="wx__mb-0 wx__text_body wx__text_medium notification_title">
+                          <div className="d-flex justify-content-between align-items-center text_body text_medium">
+                            <p className="mb-0 text_body text_medium notification_title">
                               {account.description || account.title}
                             </p>
                             <div className="d-flex ">
-                              <div className="d-flex wx__me-5">
+                              <div className="d-flex me-5">
                                 <WxSwitch
                                   isChecked={account?.sms}
                                   onChange={(e) =>
@@ -259,22 +259,22 @@ const Notification = () => {
               </div>
             </div>
           </div>
-          <div className="notification_right col-lg-4 col-md-12 col-sm-12 wx__mt-3">
-            <div className="card wx__p-4 d-flex wx__justify-content-center">
-              <div className="d-flex wx__justify-content-between wx__mb-3">
+          <div className="notification_right col-lg-4 col-md-12 col-sm-12 mt-3">
+            <div className="card p-4 d-flex justify-content-center">
+              <div className="d-flex justify-content-between mb-3">
                 <div>
-                  <h6 className="wx__text_heading wx__text_medium">
+                  <h6 className="text_heading text_medium">
                     SMS Balance
                   </h6>
-                  {/* <div className="wx__mb-2">
-										<span className="wx__text-muted">Masking</span>
-										<h2 className="wx__text_heading wx__text_strong wx__mb-0">
+                  {/* <div className="mb-2">
+										<span className="text-muted">Masking</span>
+										<h2 className="text_heading text_strong mb-0">
 											{balance?.maskingSms || "0"}
 										</h2>
 									</div> */}
                   <div>
-                    {/* <span className="wx__text-muted">Non Masking</span> */}
-                    <h2 className="wx__text_heading wx__text_strong wx__mb-0">
+                    {/* <span className="text-muted">Non Masking</span> */}
+                    <h2 className="text_heading text_strong mb-0">
                       {balance?.nonMaskingSms || "0"}
                     </h2>
                   </div>
@@ -299,17 +299,17 @@ const Notification = () => {
               >
                 Buy SMS
               </WxButton>
-              <p className="wx__text_small wx__text_regular wx__text-center wx__mt-2 wx__mb-0">
+              <p className="text_small text_regular text-center mt-2 mb-0">
                 Current SMS rate {rateInfo?.nonMaskingSmsRate} paisa/SMS
               </p>
             </div>
-            <div className="card wx__p-4 wx__mt-3 d-flex wx__justify-content-center">
-              <div className="d-flex wx__justify-content-between wx__mb-3">
+            <div className="card p-4 mt-3 d-flex justify-content-center">
+              <div className="d-flex justify-content-between mb-3">
                 <div>
-                  <h6 className="wx__text_heading wx__text_medium">
+                  <h6 className="text_heading text_medium">
                     Email Balance
                   </h6>
-                  <h2 className="wx__text_heading wx__text_strong wx__mb-0">
+                  <h2 className="text_heading text_strong mb-0">
                     {balance?.email || "0"}
                   </h2>
                 </div>
@@ -333,12 +333,12 @@ const Notification = () => {
               >
                 Buy Email
               </WxButton>
-              <p className="wx__text_small wx__text_regular wx__text-center wx__mt-2 wx__mb-0">
+              <p className="text_small text_regular text-center mt-2 mb-0">
                 Current SMS rate {rateInfo?.emailRate} paisa/SMS
               </p>
               <WxHr />
-              <div className="d-flex wx__align-items-center wx__justify-content-between">
-                <p className="wx__text_subtitle wx__text_semibold wx__mb-0">
+              <div className="d-flex align-items-center justify-content-between">
+                <p className="text_subtitle text_semibold mb-0">
                   Email to be used
                 </p>
                 <WxButton
@@ -349,7 +349,7 @@ const Notification = () => {
                   {senderEmail ? "Edit" : "Add"}
                 </WxButton>
               </div>
-              <p className="wx__text_body wx__text_regular wx__mb-0">
+              <p className="text_body text_regular mb-0">
                 {loading ? (
                   <Preloader />
                 ) : (

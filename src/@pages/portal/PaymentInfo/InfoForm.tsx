@@ -114,7 +114,7 @@ const PaymentInfoForm = ({
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<WxDrawerBody>
 							<WxLabel>Method</WxLabel>
-							<div className="d-flex wx__mb-3">
+							<div className="d-flex mb-3">
 								{paymentTypes?.map((pType) => (
 									<WxRadio
 										label={pType?.title}
@@ -230,7 +230,7 @@ const PaymentInfoForm = ({
 						<WxDrawerFooter>
 							<div className="portal_payment_info__footer">
 								<WxButton
-									className="wx__me-3"
+									className="me-3"
 									variant="outline"
 									color="secondary"
 									onClick={handleClose}

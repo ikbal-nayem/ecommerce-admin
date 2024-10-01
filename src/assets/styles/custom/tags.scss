@@ -11,8 +11,8 @@
   padding: 4px 8px;
   border: none;
   background-color: $neutral__300;
-  @extend .wx__text_small;
-  @extend .wx__text_regular;
+  @extend .text_small;
+  @extend .text_regular;
   
   font-weight: 500 !important;
   text-transform: capitalize;

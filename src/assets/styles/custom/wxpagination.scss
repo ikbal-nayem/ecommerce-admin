@@ -28,8 +28,8 @@
     align-items: center;
     .wx__pagination_text {
       color: $neutral__600;
-      @extend .wx__text_subtitle;
-      @extend .wx__text_regular;
+      @extend .text_subtitle;
+      @extend .text_regular;
       margin-right: 16px;
     }
     .wx__pagination_div {
@@ -39,8 +39,8 @@
         padding: 0;
         li {
           list-style: none;
-          @extend .wx__text_body;
-          @extend .wx__text_medium;
+          @extend .text_body;
+          @extend .text_medium;
           display: flex;
           align-items: center;
           justify-content: center;

@@ -105,7 +105,7 @@ const CourierForm = () => {
             title="Courier"
             backNavigationLink={SETTINGS_DELIVERY}
           />
-          <div className="card wx__p-4 wx__mb-3">
+          <div className="card p-4 mb-3">
             <div className="row">
               <div className="col-lg-6 col-md-12 col-sm-6">
                 <WxInput
@@ -234,8 +234,8 @@ const CourierForm = () => {
             </div>
           </div>
 
-          <div className="card wx__p-4">
-            <h5 className="wx__mb-3">Withdraw information</h5>
+          <div className="card p-4">
+            <h5 className="mb-3">Withdraw information</h5>
 
             <div className="row">
               <div className="col-md-6 col-12">

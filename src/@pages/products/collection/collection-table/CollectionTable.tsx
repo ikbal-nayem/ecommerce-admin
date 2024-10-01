@@ -37,7 +37,7 @@ const CollectionTable = ({
                 <span>{sub.name}</span>
               </th>
               <td className="more">
-                <div className="d-flex wx__align-items-center">
+                <div className="d-flex align-items-center">
                   <span
                     className="material-icons"
                     role="button"
@@ -45,7 +45,7 @@ const CollectionTable = ({
                   >
                     edit
                   </span>
-                  <div className="d-flex wx__align-items-center ms_2">
+                  <div className="d-flex align-items-center ms_2">
                     <span
                       className="material-icons"
                       role="button"

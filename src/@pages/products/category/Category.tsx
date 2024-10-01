@@ -147,8 +147,8 @@ const Category = () => {
 
 	return (
 		<WxMainLg>
-			<div className='d-flex wx__justify-content-between wx__align-items-center wx__mb-3'>
-				<h4 className='wx__text_h4 wx__text_semibold wx__mb-0'>Category</h4>
+			<div className='d-flex justify-content-between align-items-center mb-3'>
+				<h4 className='text_h4 text_semibold mb-0'>Category</h4>
 				<WxButton disabled={isLoader} variant='fill' onClick={() => setOpen(true)}>
 					Add Category
 				</WxButton>
@@ -174,11 +174,11 @@ const Category = () => {
 			) : null}
 
 			{isLoader ? (
-				<div className='wx__bg-white rounded'>
+				<div className='bg-white rounded'>
 					<CategoryTBSkelton viewBox='0 0 600 165' />
 				</div>
 			) : (
-				<div className='wx__category_table_content wx__mt-2'>
+				<div className='wx__category_table_content mt-2'>
 					{categories.length ? (
 						<CategoryTable
 							data={categories}

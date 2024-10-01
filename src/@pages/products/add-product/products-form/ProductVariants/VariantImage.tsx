@@ -83,7 +83,7 @@ const VariantImage = ({
 			<WxModalFooter>
 				<div className="d-flex justify-content-end">
 					<WxButton
-						className="wx__me-3"
+						className="me-3"
 						variant="outline"
 						color="secondary"
 						onClick={onClose}

@@ -10,11 +10,11 @@ interface IOverview {
 const Overview = ({ description, screenshot }: IOverview) => {
 	return (
 		<div className="wx__overview">
-			<p className="wx__text_body wx__text_regular">{description}</p>
+			<p className="text_body text_regular">{description}</p>
 
 			{screenshot ? (
 				<>
-					<h5 className="wx__text_semibold wx__my-4">App Screenshots</h5>
+					<h5 className="text_semibold my-4">App Screenshots</h5>
 					<WxImagePopup srcKey="previewUrl" imageList={screenshot} />
 				</>
 			) : null}

@@ -38,8 +38,8 @@ const ProductDimension = () => {
 	}, []);
 
 	return (
-		<div className="card product_dimension wx__p-3 wx__mt-4">
-			<h6 className="wx__text_semibold wx__text_h6">Product Dimension</h6>
+		<div className="card product_dimension p-3 mt-4">
+			<h6 className="text_semibold text_h6">Product Dimension</h6>
 			<div style={{ maxWidth: "90%" }}>
 				<WxSwitch
 					label="Add product dimension"
@@ -53,7 +53,7 @@ const ProductDimension = () => {
 				<>
 					<WxHr />
 					<div className="row">
-						<div className="col-lg-4 col-md-6 col-sm-12 d-flex wx__align-items-end">
+						<div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-end">
 							<WxInput
 								label="Weight"
 								noMargin
@@ -72,7 +72,7 @@ const ProductDimension = () => {
 								registerProperty={{ ...register("weightUnit") }}
 							/>
 						</div>
-						<div className="col-lg-4 col-md-6 col-sm-12 d-flex wx__align-items-end">
+						<div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-end">
 							<WxInput
 								label="Width"
 								noMargin
@@ -91,7 +91,7 @@ const ProductDimension = () => {
 								registerProperty={{ ...register("widthUnit") }}
 							/>
 						</div>
-						<div className="col-lg-4 col-md-6 col-sm-12 d-flex wx__align-items-end">
+						<div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-end">
 							<WxInput
 								label="Height"
 								noMargin

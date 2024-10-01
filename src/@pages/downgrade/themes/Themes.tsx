@@ -119,7 +119,7 @@ const Themes = () => {
 				</WxAlert>
 			)} */}
 			{/* {isLoading ? (
-				<div className="rounded w-100 wx__bg-white">
+				<div className="rounded w-100 bg-white">
 					<ProductTableSkelton viewBox="0 0 600 230" />
 				</div>
 			) : productList?.length ? (
@@ -129,12 +129,12 @@ const Themes = () => {
 							<thead className="wx__thead">
 								<tr className="wx__tr">
 									<th className="wx__th">
-										<div className="wx__text_subtitle wx__text_semibold">
+										<div className="text_subtitle text_semibold">
 											Name
 										</div>
 									</th>
 									<th className="wx__th">
-										<div className="wx__text_subtitle wx__text_semibold">
+										<div className="text_subtitle text_semibold">
 											Images
 										</div>
 									</th>
@@ -156,7 +156,7 @@ const Themes = () => {
 							</tbody>
 						</table>
 					</div>
-					<div className="pagination_div wx__p-4">
+					<div className="pagination_div p-4">
 						<WxPagination
 							meta={productMeta}
 							currentPage={currentPage}

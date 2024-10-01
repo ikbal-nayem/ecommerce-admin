@@ -31,23 +31,23 @@ const InstallApp = ({ installAppsData }: IIinstallAppsProps) => {
 			{installAppsData?.map((item, index) => (
 				<div key={index} className="wx__single-app">
 					<Link to={APP_STORE({ appId: item?.appId })}>
-						<div className="wx__left d-flex wx__align-items-center gap-3">
+						<div className="wx__left d-flex align-items-center gap-3">
 							<WxThumbnail
 								src={imageURLGenerate(item?.appRegisterDTO?.appIconPath)}
 								noBorder
 							/>
-							<span className="wx__text_subtitle wx__text_semibold">
+							<span className="text_subtitle text_semibold">
 								{item?.appRegisterDTO?.appTitle} <br />
-								<small className="wx__text-muted">
+								<small className="text-muted">
 									{item?.appRegisterDTO?.shortDesc}
 								</small>
 							</span>
 							{!item?.isActive ? (
-								<WxTag label="Inactive" className="wx__ms-3" />
+								<WxTag label="Inactive" className="ms-3" />
 							) : null}
 						</div>
 					</Link>
-					<div className="wx__ms-auto wx__me-2">
+					<div className="ms-auto me-2">
 						<WxIcon
 							onClick={() => onShowPopup(index)}
 							id="triggerId"
@@ -56,19 +56,19 @@ const InstallApp = ({ installAppsData }: IIinstallAppsProps) => {
 						{selectedIndex === index && (
 							<WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
 								<ul>
-									<li className="wx__text_subtitle">
+									<li className="text_subtitle">
 										<Link
 											to={APP_OVERVIEW({ id: item?.appId })}
-											className="wx__text_body"
+											className="text_body"
 										>
 											<WxIcon icon="preview" />
 											Preview
 										</Link>
 									</li>
-									<li className="wx__text_subtitle">
+									<li className="text_subtitle">
 										<Link
 											to={APP_STORE({ appId: item?.appId })}
-											className="wx__text_body"
+											className="text_body"
 										>
 											<WxIcon icon="settings" />
 											Configure

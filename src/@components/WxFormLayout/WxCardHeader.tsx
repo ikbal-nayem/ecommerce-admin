@@ -15,8 +15,8 @@ const  WxFormHeader = ({
   const navigate = useNavigate();
 
   return (
-    <div className="d-flex wx__align-items-center wx__mb-3 justify-content-between">
-      <div className="d-flex wx__align-items-center">
+    <div className="d-flex align-items-center mb-3 justify-content-between">
+      <div className="d-flex align-items-center">
         {navigationLink ? (
           <span
             className="material-icons-outlined"
@@ -26,7 +26,7 @@ const  WxFormHeader = ({
             arrow_back
           </span>
         ) : null}
-        <h4 className="wx__text_h4 wx__text_medium wx__mb-0 wx__ms-3">
+        <h4 className="text_h4 text_medium mb-0 ms-3">
           {title}
         </h4>
       </div>

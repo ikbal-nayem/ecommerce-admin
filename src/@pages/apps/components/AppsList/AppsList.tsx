@@ -60,18 +60,18 @@ const AppsList = () => {
 	return (
 		<WxMainXl className="wx__apps_list_page">
 			<WxFormHeader title="Browse All Apps" backNavigationLink={APPS} />
-			<div className="card wx__mt-3 wx__p-4">
-				<div className="row  wx__pb-0 app-list-top">
-					<div className="col-md-8 col-sm-12 wx__mb-3">
+			<div className="card mt-3 p-4">
+				<div className="row  pb-0 app-list-top">
+					<div className="col-md-8 col-sm-12 mb-3">
 						<WxInput
-							className="wx__mb-0"
+							className="mb-0"
 							type="search"
 							placeholder="Search apps"
 							startIcon={<WxIcon icon="search" />}
 							onChange={(e: any) => setSearchQuery(e.target.value)}
 						/>
 					</div>
-					<div className="col-md-4 col-sm-12 wx__mb-0">
+					<div className="col-md-4 col-sm-12 mb-0">
 						<WxSelect
 							placeholder="Select category"
 							valuesKey="id"

@@ -69,34 +69,34 @@ const Billing = () => {
     <WxMainXl className="billing_sec">
       <WxFormHeader title="Billing" backNavigationLink={SETTINGS} />
       {!userDataLoader ? (
-        <div className="card wx__p-3 wx__mb-4">
+        <div className="card p-3 mb-4">
           <div className="row">
             <div className="col-md-4 col-12">
-              <span className="wx__text_small">Subscribed to</span>
-              <h5 className="wx__m-0 wx__text_h5 wx__text_semibold">
+              <span className="text_small">Subscribed to</span>
+              <h5 className="m-0 text_h5 text_semibold">
                 {activePlan?.title} - {activePlan?.billingCycleName}
               </h5>
             </div>
-            <div className="col-md-4 col-12 wx__mt-md-0 wx__mt-3">
-              <span className="wx__text_small">Next invoice issue date</span>
-              <h5 className="wx__m-0 wx__text_h5 wx__text_semibold">
+            <div className="col-md-4 col-12 mt-md-0 mt-3">
+              <span className="text_small">Next invoice issue date</span>
+              <h5 className="m-0 text_h5 text_semibold">
                 {generateDateFormat(
                   user_data?.store_package_renewal_date,
                   "%date% %MM% %yyyy%"
                 )}
               </h5>
-              <span className="wx__text_body wx__text_secondary">
+              <span className="text_body text_secondary">
                 Amount: BDT {activePlan?.price}
               </span>
             </div>
-            <div className="col-md-4 col-12 wx__mt-md-0 wx__mt-3">
-              <span className="wx__text_small">Invoice sent to</span>
-              <h5 className="wx__m-0 wx__text_h5 wx__text_semibold">
+            <div className="col-md-4 col-12 mt-md-0 mt-3">
+              <span className="text_small">Invoice sent to</span>
+              <h5 className="m-0 text_h5 text_semibold">
                 {userData?.email || "No Email"}
               </h5>
               <span
                 style={{ cursor: "pointer" }}
-                className="wx__text_body wx__text_semibold wx__text-success"
+                className="text_body text_semibold text-success"
                 onClick={() =>
                   navigator(ACCOUNT_SETTING + "?basic-info-edit=true")
                 }
@@ -107,19 +107,19 @@ const Billing = () => {
           </div>
         </div>
       ) : (
-        <div className="wx__bg-white rounded wx__mb-3">
+        <div className="bg-white rounded mb-3">
           <UserPlanNInfoSkelton viewBox="0 0 595 80" />
         </div>
       )}
 
       {!tableLoader ? (
-        <div className="card wx__p-3 wx__mb-4">
+        <div className="card p-3 mb-4">
           {!billingData.length ? (
             <WxNotFound title="No Billing found!" />
           ) : (
             <>
               <BillingTable tableData={billingData} />
-              <div className="pagination_div wx__p-4">
+              <div className="pagination_div p-4">
                 <WxPagination
                   meta={metaData}
                   currentPage={currentPage}
@@ -132,7 +132,7 @@ const Billing = () => {
           )}
         </div>
       ) : (
-        <div className="wx__bg-white rounded ">
+        <div className="bg-white rounded ">
           <BillingTableSkelton viewBox="0 0 595 240" />
         </div>
       )}

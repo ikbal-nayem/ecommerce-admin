@@ -64,8 +64,8 @@ const Order = () => {
   return (
     <WxMainMd className="setting_order_page">
       <WxFormHeader title="Order" backNavigationLink={SETTINGS} />
-      <div className="card wx__p-3 wx__mt-4">
-        <h6 className="wx__text_heading wx__text_semibold">
+      <div className="card p-3 mt-4">
+        <h6 className="text_heading text_semibold">
           Online Store Nature
         </h6>
         <div className="order_btn_group row">
@@ -81,7 +81,7 @@ const Order = () => {
                 }))
               }
             >
-              <div className="wx__me-2">
+              <div className="me-2">
                 <input
                   className="form-check-input"
                   type="radio"
@@ -93,10 +93,10 @@ const Order = () => {
                 />
               </div>
               <div>
-                <h5 className="wx__text_heading wx__text_semibold wx__mb-3">
+                <h5 className="text_heading text_semibold mb-3">
                   Accept order
                 </h5>
-                <p className="wx__text_subtitle wx__text_regular">
+                <p className="text_subtitle text_regular">
                   Accept Order enabled means the eCommerce mechanism is active.
                 </p>
               </div>
@@ -114,7 +114,7 @@ const Order = () => {
               //   }))
               // }
             >
-              <div className="wx__me-2">
+              <div className="me-2">
                 <input
                   className="form-check-input"
                   type="radio"
@@ -126,10 +126,10 @@ const Order = () => {
                 />
               </div>
               <div className="showcase_order_btn">
-                <h5 className="wx__text_heading wx__text_semibold wx__mb-3">
+                <h5 className="text_heading text_semibold mb-3">
                   Only Product Showcase
                 </h5>
-                <p className="wx__text_subtitle wx__text_regular">
+                <p className="text_subtitle text_regular">
                   Only Product Showcase enabled means, the Cart, Checkout,
                   Payment scel
                   {readMoreFlag ? (
@@ -157,16 +157,16 @@ const Order = () => {
       </div>
       {orderSetting?.isAcceptOrder ? (
         <>
-          <div className="card wx__p-3 wx__mt-3">
-            <h6 className="wx__text_heading wx__text_semibold">
+          <div className="card p-3 mt-3">
+            <h6 className="text_heading text_semibold">
               Order status Type
             </h6>
-            <p className="wx__text_body wx__text_regular">
+            <p className="text_body text_regular">
               Some status can't be edited
             </p>
             {orderSetting?.orderStatusList?.map((orderStatus, index) => (
               <div key={orderStatus?.id}>
-                <div className="d-flex wx__align-items-start">
+                <div className="d-flex align-items-start">
                   <WxCheckbox
                     disabled={!orderStatus?.isEditable}
                     checked={orderStatus?.isChecked}
@@ -176,17 +176,17 @@ const Order = () => {
                   />
                   <div>
                     <p
-                      className={`wx__text_body wx__text_strong ${
+                      className={`text_body text_strong ${
                         !orderStatus?.isEditable ? "disabled" : ""
                       }`}
                     >
                       {orderStatus?.title}:{" "}
-                      <span className="wx__text_body wx__text_regular">
+                      <span className="text_body text_regular">
                         {orderStatus?.description}
                       </span>
                     </p>
                     {orderStatus?.isEditable && orderStatus?.isChecked ? (
-                      <div className="wx__mt-3">
+                      <div className="mt-3">
                         <WxInput
                           value={
                             orderStatus?.dayCount ? orderStatus?.dayCount : ""
@@ -209,7 +209,7 @@ const Order = () => {
                               : ""
                           }
                         />
-                        <p className="wx__text_subtitle wx__text_regular">
+                        <p className="text_subtitle text_regular">
                           Specify order completion days
                         </p>
                       </div>
@@ -221,16 +221,16 @@ const Order = () => {
             ))}
           </div>
 
-          <div className="card wx__p-3 wx__mt-3">
-            <h6 className="wx__text_heading wx__text_semibold">
+          <div className="card p-3 mt-3">
+            <h6 className="text_heading text_semibold">
               Payment Status Types
             </h6>
-            <p className="wx__text_body wx__text_regular">
+            <p className="text_body text_regular">
               Some status cant be edited
             </p>
             {orderSetting?.paymentStatusList?.map((paymentStatus, index) => (
               <div key={paymentStatus?.id}>
-                <div className="d-flex wx__align-items-start">
+                <div className="d-flex align-items-start">
                   <WxCheckbox
                     disabled={!paymentStatus?.isEditable}
                     checked={paymentStatus?.isChecked}
@@ -243,12 +243,12 @@ const Order = () => {
                     }
                   />
                   <p
-                    className={`wx__text_body wx__text_strong ${
+                    className={`text_body text_strong ${
                       !paymentStatus?.isEditable ? "disabled" : ""
                     }`}
                   >
                     {paymentStatus?.title}:{" "}
-                    <span className="wx__text_body wx__text_regular">
+                    <span className="text_body text_regular">
                       {paymentStatus?.description}
                     </span>
                   </p>
@@ -259,7 +259,7 @@ const Order = () => {
           </div>
         </>
       ) : null}
-      <div className="wx__mt-3">
+      <div className="mt-3">
         <WxFormFooter
           saveButtonText="Save Changes"
           onClickSave={handleSubmit}

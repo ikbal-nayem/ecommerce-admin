@@ -95,7 +95,7 @@ const AddPage = () => {
 			<form onSubmit={handleSubmit(onSubmitting)} noValidate>
 				<div className="row">
 					<div className="col-lg-8 col-md-7 col-sm-12 ">
-						<div className="card wx__p-3 wx__mt-4">
+						<div className="card p-3 mt-4">
 							<WxInput
 								label="Page title"
 								isRequired
@@ -148,7 +148,7 @@ const AddPage = () => {
 						</div>
 					</div>
 					<div className="col-lg-4 col-md-5 col-sm-12">
-						<div className="card wx__p-3 wx__mt-4 wx__form_right">
+						<div className="card p-3 mt-4 wx__form_right">
 							<WxButton
 								type="submit"
 								variant="fill"
@@ -161,7 +161,7 @@ const AddPage = () => {
 								<div>
 									<WxSwitch
 										label={
-											<div className="d-flex wx__align-items-center">
+											<div className="d-flex align-items-center">
 												&nbsp; <span>Publish</span>
 											</div>
 										}

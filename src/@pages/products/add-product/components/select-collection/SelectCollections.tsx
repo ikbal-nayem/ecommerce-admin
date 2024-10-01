@@ -64,7 +64,7 @@ const SelectCollection = ({
 			<WxButton
 				variant="outline"
 				onClick={() => setDrawerOpen(true)}
-				className="wx__mb-3"
+				className="mb-3"
 			>
 				Select Collections
 			</WxButton>
@@ -87,7 +87,7 @@ const SelectCollection = ({
 						{isLoading ? <Preloader absolutePosition /> : null}
 						<div className="collections">
 							{!collectionList?.length ? (
-								<div className="wx__text-center">No collections found!</div>
+								<div className="text-center">No collections found!</div>
 							) : null}
 							<ul>
 								{collectionList?.map((collection) => (
@@ -109,7 +109,7 @@ const SelectCollection = ({
 					<WxDrawerFooter>
 						<div className="wx__category_select__footer">
 							<WxButton
-								className="wx__me-3"
+								className="me-3"
 								variant="outline"
 								color="secondary"
 								onClick={handleClose}

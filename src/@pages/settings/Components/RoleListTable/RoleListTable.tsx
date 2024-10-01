@@ -60,18 +60,18 @@ const RoleListTable = ({ roleList, onDelete }: IRoleTable) => {
                   {selectedIndex === index && (
                     <WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
                       <ul>
-                        <li className="wx__text_subtitle">
+                        <li className="text_subtitle">
                           <Link
                             to={SETTINGS_ROLES_EDIT({ id: role?.id })}
-                            className="wx__text_body"
+                            className="text_body"
                           >
                             <WxIcon icon="edit" />
                             Edit
                           </Link>
                         </li>
-                        <li className="wx__text_subtitle delete">
+                        <li className="text_subtitle delete">
                           <a
-                            className="wx__text_body"
+                            className="text_body"
                             onClick={() => handleDelete(role)}
                           >
                             <WxIcon icon="delete" />

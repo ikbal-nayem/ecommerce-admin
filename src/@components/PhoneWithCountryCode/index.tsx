@@ -49,7 +49,7 @@ const PhoneNumberInput = ({
 }: IPhoneProps) => {
 	return (
 		<div
-			className={`form_group ${noMargin ? "wx__m-0" : ""}`}
+			className={`form_group ${noMargin ? "m-0" : ""}`}
 			aria-disabled={isDisabled}
 		>
 			{label ? (
@@ -61,10 +61,10 @@ const PhoneNumberInput = ({
 					<>{label}</>
 				)
 			) : null}
-			{labelRight && <div className="wx__float-end">{labelRight}</div>}
+			{labelRight && <div className="float-end">{labelRight}</div>}
 			<div
 				className={`wx__input_group_${color} ${
-					!startIcon && !endIcon ? "wx__p-0" : ""
+					!startIcon && !endIcon ? "p-0" : ""
 				}`}
 			>
 				{startIcon ? startIcon : null}
@@ -85,7 +85,7 @@ const PhoneNumberInput = ({
 			{helpText ? (
 				typeof helpText === "string" ? (
 					<span
-						className={`note_text ${color === "danger" && "wx__text-danger"}`}
+						className={`note_text ${color === "danger" && "text-danger"}`}
 					>
 						{helpText}
 					</span>
@@ -97,7 +97,7 @@ const PhoneNumberInput = ({
 			{errorMessage ? (
 				typeof errorMessage === "string" ? (
 					<span
-						className={`note_text ${color === "danger" && "wx__text-danger"}`}
+						className={`note_text ${color === "danger" && "text-danger"}`}
 					>
 						{errorMessage}
 					</span>

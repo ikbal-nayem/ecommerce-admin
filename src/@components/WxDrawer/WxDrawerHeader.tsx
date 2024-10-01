@@ -14,17 +14,17 @@ const WxDrawerHeader = ({
 }: DrawerHeaderProps) => {
   return (
     <div className="wx__side_drawer__header">
-      <div className="d-flex wx__align-items-center">
+      <div className="d-flex align-items-center">
         {backIconAction ? (
           <span
-            className="material-icons-outlined wx__me-2"
+            className="material-icons-outlined me-2"
             role="button"
             onClick={() => backIconAction()}
           >
             arrow_back
           </span>
         ) : null}
-        <h5 className="wx__text_h5 wx__text_semibold wx__mb-0">{title}</h5>
+        <h5 className="text_h5 text_semibold mb-0">{title}</h5>
       </div>
       {closeIconAction ? (
         <span

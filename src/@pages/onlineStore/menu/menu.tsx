@@ -121,7 +121,7 @@ const Menu = () => {
   return (
     <div>
       <WxMainXl>
-        <div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+        <div className="d-flex justify-content-between align-items-center mb-3">
           <WxFormHeader title="Menu Set" noBack />
           <WxButton variant="fill" onClick={() => navigate(MENU_CREATE)}>
             Add Menu Set
@@ -146,7 +146,7 @@ const Menu = () => {
                 menuSetData={menuSetData}
                 onChangeStatus={onConfirmStatusUpdate}
               />
-              <div className="wx__p-4">
+              <div className="p-4">
                 <WxPagination
                   meta={metaData}
                   currentPage={currentPage}

@@ -24,7 +24,7 @@ const TableLoader = ({ adjustTop, isLoading = true }: ITableLoader) => {
   return (
     <div className="wx__table_loader">
       <div className="custom-loader"></div>
-      <div className="custom-text wx__text_body">Loading...</div>
+      <div className="custom-text text_body">Loading...</div>
     </div>
   );
 };

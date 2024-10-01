@@ -136,7 +136,7 @@ export default function AddCustomer() {
 				{isLoading ? <Preloader absolutePosition /> : null}
 				<form onSubmit={handleSubmit(onSubmitting)}>
 					<div className="row">
-						<div className="col-lg-8 col-md-7 col-sm-12 wx__mt-3">
+						<div className="col-lg-8 col-md-7 col-sm-12 mt-3">
 							<CustomerFrom
 								customerGroupDrawer={customerGroupDrawer}
 								setSelectedGroups={setSelectedGroups}
@@ -149,7 +149,7 @@ export default function AddCustomer() {
 								districts={districts}
 							/>
 						</div>
-						<div className="col-lg-4 col-md-5 col-sm-12 hide-mobile-view wx__mt-3">
+						<div className="col-lg-4 col-md-5 col-sm-12 hide-mobile-view mt-3">
 							<div className="card wx__form_right">
 								<WxButton type="submit" variant="fill" disabled={isLoading}>
 									Save Customer
@@ -159,7 +159,7 @@ export default function AddCustomer() {
 									<div>
 										<WxSwitch
 											label={
-												<div className="d-flex wx__align-items-center">
+												<div className="d-flex align-items-center">
 													&nbsp; &nbsp;<span>Status</span>
 												</div>
 											}
@@ -178,7 +178,7 @@ export default function AddCustomer() {
                 label="Customer Group"
                 labelRight={
                   <span
-                    className="wx__text_btn_small wx__text-primary wx__text_medium"
+                    className="text_btn_small text-primary text_medium"
                     role="button"
                     onClick={() => customerGroupDrawer()}
                   >
@@ -190,11 +190,11 @@ export default function AddCustomer() {
                 }
                 placeholder="Search group"
               /> */}
-								<div className={`form_group wx__m-0`}>
+								<div className={`form_group m-0`}>
 									<label htmlFor="">Customer Group</label>
-									<div className="wx__float-end">
+									<div className="float-end">
 										<span
-											className="wx__text_btn_small wx__text-primary wx__text_medium"
+											className="text_btn_small text-primary text_medium"
 											role="button"
 											onClick={() => customerGroupDrawer()}
 										>

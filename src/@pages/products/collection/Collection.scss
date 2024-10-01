@@ -20,7 +20,7 @@
       border-top: 1px solid $neutral__300;
     }
     th {
-      @extend .wx__text_semibold;
+      font-weight: bold;
       color: $neutral__900;
     }
     thead {

@@ -72,7 +72,7 @@ const CustomerInfo = ({
 	const billingAddress = selectedAddress?.billing;
 
 	return (
-		<div className="card wx__mt-3 wx__p-3">
+		<div className="card mt-3 p-3">
 			<WxLabel
 				isRequired
 				labelRight={
@@ -90,14 +90,14 @@ const CustomerInfo = ({
 			</WxLabel>
 			{selectedCustomer ? (
 				<>
-					<p className="wx__text_body wx__text_strong wx__text-primary">
+					<p className="text_body text_strong text-primary">
 						{selectedCustomer?.customer?.name}
 					</p>
-					<div className="wx__mb-3">
+					<div className="mb-3">
 						<WxLabel
 							labelRight={
 								<span
-									className="wx__text-primary wx__text_small"
+									className="text-primary text_small"
 									role="button"
 									onClick={() => handleAddressEdit("shipping")}
 								>
@@ -108,7 +108,7 @@ const CustomerInfo = ({
 							Shipping Address
 						</WxLabel>
 						{shippingAddress ? (
-							<div className="wx__text_body wx__text_regular">
+							<div className="text_body text_regular">
 								{shippingAddress?.email ? (
 									<>
 										<span>{shippingAddress?.email}</span>
@@ -142,11 +142,11 @@ const CustomerInfo = ({
 							"No address found"
 						)}
 					</div>
-					<div className="wx__mb-3">
+					<div className="mb-3">
 						<WxLabel
 							labelRight={
 								<span
-									className="wx__text-primary wx__text_small"
+									className="text-primary text_small"
 									role="button"
 									onClick={() => handleAddressEdit("billing")}
 								>
@@ -157,7 +157,7 @@ const CustomerInfo = ({
 							Billing Address
 						</WxLabel>
 						{billingAddress ? (
-							<div className="wx__text_body wx__text_regular">
+							<div className="text_body text_regular">
 								{billingAddress?.email ? (
 									<>
 										<span>{billingAddress?.email}</span>

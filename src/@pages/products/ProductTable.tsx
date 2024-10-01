@@ -33,18 +33,18 @@ const TableComponent = ({ productsData, handleDelete }: IProductTableProps) => {
         <thead className="wx__thead">
           <tr className="wx__tr">
             <th className="wx__th">
-              <div className="wx__text_subtitle wx__text_semibold">Name</div>
+              <div className="text_subtitle text_semibold">Name</div>
             </th>
             <th className="wx__th">
-              <div className="wx__text_subtitle wx__text_semibold">Status</div>
+              <div className="text_subtitle text_semibold">Status</div>
             </th>
             <th className="wx__th">
-              <div className="wx__text_subtitle wx__text_semibold">
+              <div className="text_subtitle text_semibold">
                 Category
               </div>
             </th>
             <th className="wx__th">
-              <div className="wx__text_subtitle wx__text_semibold">Vendor</div>
+              <div className="text_subtitle text_semibold">Vendor</div>
             </th>
             <th className="wx__th" />
           </tr>
@@ -85,28 +85,28 @@ const TableComponent = ({ productsData, handleDelete }: IProductTableProps) => {
                   {selectedIndex === index && (
                     <WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
                       <ul>
-                        <li className="wx__text_subtitle">
+                        <li className="text_subtitle">
                           <Link
                             to={PRODUCT_DETAILS({ product_id: pd.id })}
-                            className="wx__text_body"
+                            className="text_body"
                           >
                             <WxIcon icon="edit" className="top-0" />
-                            <span className="wx__text_body prod-table-dropdown-text">
+                            <span className="text_body prod-table-dropdown-text">
                               Edit
                             </span>
                           </Link>
                         </li>
                         <li
-                          className="wx__text_subtitle"
+                          className="text_subtitle"
                           onClick={() => onDelete(pd)}
                         >
-                          <a className="wx__text_body wx__text-danger">
+                          <a className="text_body text-danger">
                             <WxIcon
                               icon="delete"
                               color="danger"
                               className="top-0"
                             />
-                            <span className="wx__text_small top-0 prod-table-dropdown-text">
+                            <span className="text_small top-0 prod-table-dropdown-text">
                               Delete
                             </span>
                           </a>

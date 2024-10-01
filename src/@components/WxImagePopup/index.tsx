@@ -23,7 +23,7 @@ const WxImagePopup = ({ srcKey, imageList }: IWxImagePopup) => {
 			<div className="row">
 				{imageList?.map((item, index) => (
 					<div
-						className="col-lg-4 col-md-6 col-sm-12 wx__mb-3 image_gallery"
+						className="col-lg-4 col-md-6 col-sm-12 mb-3 image_gallery"
 						key={index}
 					>
 						<img
@@ -59,7 +59,7 @@ const WxImagePopup = ({ srcKey, imageList }: IWxImagePopup) => {
 								className="arrow_icon"
 							/>
 						</WxButton>
-						<div className="popup_gallery_content d-flex wx__justify-content-center wx__align-items-center">
+						<div className="popup_gallery_content d-flex justify-content-center align-items-center">
 							<img src={imageURLGenerate(imageList[imagePopup][srcKey])} />
 						</div>
 						<WxButton

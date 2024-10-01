@@ -47,13 +47,13 @@ const ProductCart = ({
 										name="Image"
 										src={imageURLGenerate(product?.thumbnail)}
 									/>
-									<div className="wx__flex-column wx__ms-3 td-overflow-hidden">
-										<span className="wx__text_body wx__text_strong wx__text-primary ">
+									<div className="flex-column ms-3 td-overflow-hidden">
+										<span className="text_body text_strong text-primary ">
 											{product?.title}
 										</span>
 										<br />
 										{VariantsView(product?.options)}
-										<small className="wx__text_small wx__text-muted">
+										<small className="text_small text-muted">
 											Unit Price ৳
 											{product?.sellingPrice || product?.regularPrice}
 										</small>
@@ -62,7 +62,7 @@ const ProductCart = ({
 							</td>
 							<td className="wx__td unit">
 								{isEditable ? (
-									<div className="d-flex wx__align-items-start">
+									<div className="d-flex align-items-start">
 										<WxInput
 											type="number"
 											min={1}
@@ -89,17 +89,17 @@ const ProductCart = ({
 													: "secondary"
 											}
 										/>
-										<div className="d-flex wx__flex-column">
+										<div className="d-flex flex-column">
 											<WxIcon
 												icon="expand_less"
-												className="wx__bg-light"
+												className="bg-light"
 												onClick={() =>
 													updateQuantity(idx, product?.quantity + 1)
 												}
 											/>
 											<WxIcon
 												icon="expand_more"
-												className="wx__bg-light"
+												className="bg-light"
 												onClick={() =>
 													updateQuantity(
 														idx,
@@ -136,7 +136,7 @@ const ProductCart = ({
 const VariantsView = (options: { key: string; value: string }[]) =>
   options?.map((v) => (
     <Fragment key={v.key}>
-      <small className="wx__text_small wx__text-muted">
+      <small className="text_small text-muted">
         {v.key} - {v.value}
       </small>
       <br />

@@ -21,7 +21,7 @@ const WxFormFooter = ({
   formName,
 }: IFormFooterProps) => {
   return (
-    <div className="wx__form_footer d-flex wx__justify-content-between">
+    <div className="wx__form_footer d-flex justify-content-between">
       {children ? (
         children
       ) : (
@@ -29,7 +29,7 @@ const WxFormFooter = ({
           <span>{title}</span>
           <div className="d-flex">
             {onCancel ? (
-              <div className="wx__me-3">
+              <div className="me-3">
                 <WxButton
                   variant="outline"
                   color="secondary"

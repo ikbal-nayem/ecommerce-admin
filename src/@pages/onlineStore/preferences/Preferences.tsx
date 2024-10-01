@@ -96,7 +96,7 @@ const Preferences = () => {
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
           <div className="row">
             <div className="col-lg-9 col-md-8 col-sm-12">
-              <div className="card wx__p-3">
+              <div className="card p-3">
                 <WxLabel>Site logo Preview</WxLabel>
                 <MediaInput
                   fileList={siteLogo}
@@ -105,7 +105,7 @@ const Preferences = () => {
                   multiple={false}
                 />
               </div>
-              <div className="card wx__p-3">
+              <div className="card p-3">
                 <WxLabel>Site favicon Preview</WxLabel>
                 <MediaInput
                   fileList={favicon}
@@ -114,7 +114,7 @@ const Preferences = () => {
                   multiple={false}
                 />
               </div>
-              <div className="card wx__p-3">
+              <div className="card p-3">
                 <WxLabel>Social media Image Preview</WxLabel>
                 <MediaInput
                   fileList={socialMediaImage}
@@ -123,11 +123,11 @@ const Preferences = () => {
                   multiple={false}
                 />
               </div>
-              <div className="card wx__p-4">
-                <h6 className="wx__text_h6 wx__text_semibold">
+              <div className="card p-4">
+                <h6 className="text_h6 text_semibold">
                   Page Meta for Basic SEO
                 </h6>
-                <p className="wx__text_body wx__text_regular wx__text-muted">
+                <p className="text_body text_regular text-muted">
                   The title and meta description help define how your store
                   shows up on search engines.
                 </p>

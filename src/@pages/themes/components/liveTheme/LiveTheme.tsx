@@ -27,22 +27,22 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
 	return (
 		<div className="live-theme row">
 			<div className="col-md-12 col-sm-12">
-				<h5 className="wx__text_semibold">
+				<h5 className="text_semibold">
 					Live Theme <i>({activeTheme?.themeRegisterDTO?.title})</i>
 				</h5>
-				<p className="wx__text_body wx__text_regular">
+				<p className="text_body text_regular">
 					{activeTheme?.themeRegisterDTO?.shortDesc}
 				</p>
 			</div>
-			<div className="livetheme-pad col-lg-8 col-md-7 col-sm-12 wx__mt-3">
+			<div className="livetheme-pad col-lg-8 col-md-7 col-sm-12 mt-3">
 				<img
 					src={imageURLGenerate(
 						activeTheme?.themeRegisterDTO?.screenshots?.[0]
 					)}
 				/>
 			</div>
-			<div className="livetheme-pad col-lg-4 col-md-5 col-sm-12 wx__mt-3">
-				<h5 className="wx__text_semibold wx__mb-0">
+			<div className="livetheme-pad col-lg-4 col-md-5 col-sm-12 mt-3">
+				<h5 className="text_semibold mb-0">
 					{activeTheme?.themeRegisterDTO?.title}
 				</h5>
 				<p className="version">
@@ -51,15 +51,15 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
 						{activeTheme?.themeRegisterDTO?.totalReview}
 					</span>
 				</p>
-				<p className="wx__text_regular wx__mb-1">
+				<p className="text_regular mb-1">
 					Avarage rating : {activeTheme?.themeRegisterDTO?.avgRating} / 5
 				</p>
-				{/* <p className="wx__text_regular wx__mb-4">
+				{/* <p className="text_regular mb-4">
 					Layout : <span className="wx__body_medium">{layout}</span>
 				</p> */}
-				<div className="d-flex wx__align-items-center">
+				<div className="d-flex align-items-center">
 					<WxButton
-						className="wx__me-2"
+						className="me-2"
 						variant="fill"
 						onClick={() => {
 							navigate(THEME_CUSTOMIZATION_SLIDER);
@@ -72,7 +72,7 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
             <WxIcon
               icon="more_vert"
               id="triggerId"
-              className="text-primary wx__ms-3"
+              className="text-primary ms-3"
             />
             <WxDropdown
               isOpen={showPopup}
@@ -80,38 +80,38 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
               className="live-theme-drawer"
             >
               <ul>
-                <li className="wx__text_subtitle">
-                  <Link to="" className="wx__text_body">
+                <li className="text_subtitle">
+                  <Link to="" className="text_body">
                     <WxIcon icon="visibility" />
                     View
                   </Link>
                 </li>
-                <li className="wx__text_subtitle">
-                  <Link to="" className="wx__text_body">
+                <li className="text_subtitle">
+                  <Link to="" className="text_body">
                     <WxIcon icon="title" />
                     Rename
                   </Link>
                 </li>
-                <li className="wx__text_subtitle">
-                  <Link to="" className="wx__text_body">
+                <li className="text_subtitle">
+                  <Link to="" className="text_body">
                     <WxIcon icon="language" />
                     Duplicate Site
                   </Link>
                 </li>
-                <li className="wx__text_subtitle">
-                  <Link to="" className="wx__text_body">
+                <li className="text_subtitle">
+                  <Link to="" className="text_body">
                     <WxIcon icon="download" />
                     Download Theme
                   </Link>
                 </li>
-                <li className="wx__text_subtitle">
-                  <Link to="" className="wx__text_body">
+                <li className="text_subtitle">
+                  <Link to="" className="text_body">
                     <WxIcon icon="code" />
                     Edit Code
                   </Link>
                 </li>
-                <li className="wx__text_subtitle">
-                  <Link to="" className="wx__text_body">
+                <li className="text_subtitle">
+                  <Link to="" className="text_body">
                     <WxIcon icon="translate" />
                     Edit Language
                   </Link>

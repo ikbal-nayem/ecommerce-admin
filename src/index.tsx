@@ -1,10 +1,10 @@
 import { ToastComponent } from '@components/ToastComponent';
 import App from 'App';
+import 'assets/style.scss';
 import 'material-icons/iconfont/material-icons.css';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from 'store/store';
-// import 'webx-brighten/bootstrap/custom.scss';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

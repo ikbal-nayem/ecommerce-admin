@@ -42,20 +42,20 @@ export default function CustomizationColor() {
 					}
 				/>
 				{/* basic Color */}
-				<div className="card wx__p-4">
+				<div className="card p-4">
 					{isLoading ? <TableLoader isLoading={isLoading} /> : null}
 					<div className="row">
-						<h6 className="wx__text_semibold">Basic color</h6>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
-							<p className="wx__mb-2 text__small">Primary color</p>
+						<h6 className="text_semibold">Basic color</h6>
+						<div className="col-md-4 col-sm-6 mt-2">
+							<p className="mb-2 text__small">Primary color</p>
 							<WxColorPicker
 								registerProperty={{
 									...register("primary"),
 								}}
 							/>
 						</div>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
-							<p className="wx__mb-2 text__small">Secondary color</p>
+						<div className="col-md-4 col-sm-6 mt-2">
+							<p className="mb-2 text__small">Secondary color</p>
 							<WxColorPicker
 								registerProperty={{
 									...register("secondary"),
@@ -65,11 +65,11 @@ export default function CustomizationColor() {
 					</div>
 				</div>
 				{/* Button Color */}
-				<div className="card wx__mt-4 wx__p-4">
+				<div className="card mt-4 p-4">
 					<div className="row">
-						<h6 className="wx__text_semibold">Button</h6>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
-							<p className="wx__mb-2 text__small">Button Text</p>
+						<h6 className="text_semibold">Button</h6>
+						<div className="col-md-4 col-sm-6 mt-2">
+							<p className="mb-2 text__small">Button Text</p>
 							<WxColorPicker
 								registerProperty={{
 									...register("button.text"),
@@ -79,27 +79,27 @@ export default function CustomizationColor() {
 					</div>
 				</div>
 				{/* Footer Color */}
-				<div className="card wx__mt-4 wx__p-4">
+				<div className="card mt-4 p-4">
 					<div className="row">
-						<h6 className="wx__text_semibold">Footer</h6>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
-							<p className="wx__mb-2 text__small">Background Color</p>
+						<h6 className="text_semibold">Footer</h6>
+						<div className="col-md-4 col-sm-6 mt-2">
+							<p className="mb-2 text__small">Background Color</p>
 							<WxColorPicker
 								registerProperty={{
 									...register("footer.background"),
 								}}
 							/>
 						</div>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
-							<p className="wx__mb-2 text__small">Head line</p>
+						<div className="col-md-4 col-sm-6 mt-2">
+							<p className="mb-2 text__small">Head line</p>
 							<WxColorPicker
 								registerProperty={{
 									...register("footer.headLine"),
 								}}
 							/>
 						</div>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
-							<p className="wx__mb-2 text__small">text</p>
+						<div className="col-md-4 col-sm-6 mt-2">
+							<p className="mb-2 text__small">text</p>
 							<WxColorPicker
 								registerProperty={{
 									...register("footer.text"),

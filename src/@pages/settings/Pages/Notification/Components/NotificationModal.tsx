@@ -116,7 +116,7 @@ const NotificationModal = ({
 								errorMessage={errors.inputValue?.message}
 							/>
 							{data?.task === "BUY" ? (
-								<p className="wx__text_subtitle wx__text_regular">
+								<p className="text_subtitle text_regular">
 									Total amount: {value || 0} X {rate}&nbsp;=&nbsp;
 									{(value * rate).toFixed(2)} BDT
 								</p>
@@ -124,14 +124,14 @@ const NotificationModal = ({
 						</div>
 					</div>
 				</WxModalBody>
-				<WxModalFooter className="wx__bg-white">
+				<WxModalFooter className="bg-white">
 					<div className="d-flex justify-content-end">
 						<WxButton
 							variant="outline"
 							color="secondary"
 							onClick={handleDialogeClose}
 							disabled={isLoading}
-							className="wx__me-3"
+							className="me-3"
 						>
 							Cancel
 						</WxButton>

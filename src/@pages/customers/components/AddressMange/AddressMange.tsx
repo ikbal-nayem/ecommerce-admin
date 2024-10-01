@@ -212,7 +212,7 @@ const AddressManage = ({
                   {addresses?.length
                     ? addresses.map((address) => (
                         <div key={address.id} className="address-edit">
-                          <div className="d-flex wx__align-items-center wx__justify-content-center">
+                          <div className="d-flex align-items-center justify-content-center">
                             {onAddressSelect ? (
                               <WxRadio
                                 singleUse
@@ -222,7 +222,7 @@ const AddressManage = ({
                               />
                             ) : null}
                             <div style={{ width: "100%" }}>
-                              <div className="d-flex wx__align-items-center wx__mt-2 customer-location">
+                              <div className="d-flex align-items-center mt-2 customer-location">
                                 <WxIcon variants="round" icon="location_on" />
                                 <span className="text ms_2">
                                   {address?.title || "---"}
@@ -254,7 +254,7 @@ const AddressManage = ({
             <WxDrawerFooter>
               <div className="wx__manage_customer_group__footer">
                 {editData?.id ? (
-                  <div className="wx__me-auto">
+                  <div className="me-auto">
                     <WxButton
                       color="danger"
                       variant="fill"
@@ -266,7 +266,7 @@ const AddressManage = ({
                 ) : null}
                 <WxButton
                   type="button"
-                  className="wx__me-3"
+                  className="me-3"
                   variant="outline"
                   color="secondary"
                   onClick={() =>

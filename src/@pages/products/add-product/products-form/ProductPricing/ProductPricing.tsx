@@ -32,10 +32,10 @@ const ProductPricing = () => {
 	}, [sPrice, rPrice, errors]);
 
 	return (
-		<div className="card product_pricing wx__p-3 wx__mt-4">
-			<h6 className="wx__text_semibold wx__text_h6 wx__mb-0">Pricing</h6>
+		<div className="card product_pricing p-3 mt-4">
+			<h6 className="text_semibold text_h6 mb-0">Pricing</h6>
 			<div className="row">
-				<div className="col-md-6 wx__mt-3">
+				<div className="col-md-6 mt-3">
 					<WxInput
 						label="Selling price"
 						endIcon={<TakaSign />}
@@ -52,7 +52,7 @@ const ProductPricing = () => {
 						color={errors.sellingPrice ? "danger" : "secondary"}
 					/>
 				</div>
-				<div className="col-md-6 wx__mt-3">
+				<div className="col-md-6 mt-3">
 					<WxInput
 						label="Cost per item"
 						endIcon={<TakaSign />}

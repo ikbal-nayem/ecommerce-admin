@@ -1,10 +1,6 @@
-@import "../partials/mixins";
-@import "../partials/variables";
-@import "../partials/classes";
-
 // tabs is override with bootstrap classes
 .nav-tabs {
-  border-bottom: 1px solid$neutral__400 !important;
+  border-bottom: 1px solid $neutral__400 !important;
   .nav-item {
     // margin: 0 12px;
     .nav-link {

@@ -1,6 +1,5 @@
 import '@components/WxDropdown/WxDropdown.scss';
 import Router from 'routes/index';
-import 'assets/style.scss';
 import AuthProvider from 'context/auth';
 import { BrowserRouter } from 'react-router-dom';
 

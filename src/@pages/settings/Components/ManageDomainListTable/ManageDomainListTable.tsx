@@ -47,7 +47,7 @@ const RoleListTable = ({
           {domainList?.map((domain: IDomainSettingsItem, index: number) => (
             <tr className="wx__tr" key={index}>
               <td className="wx__td" width="30%">
-                <p className="wx__text_body">
+                <p className="text_body">
                   {domain?.domainAddress}
                   {domain?.isFreeSsl || domain?.isOwnSsl ? (
                     <WxIcon
@@ -78,7 +78,7 @@ const RoleListTable = ({
               </td>
               <td className="wx__td" width={200}>
                 {domain?.isPrimary ? (
-                  <WxTag label="Primary" color="success" className="wx__me-2" />
+                  <WxTag label="Primary" color="success" className="me-2" />
                 ) : null}
                 {domain?.isDefault ? (
                   <WxTag label="default" color="warning" />
@@ -98,7 +98,7 @@ const RoleListTable = ({
                     >
                       <ul>
                         {!domain?.isPrimary ? (
-                          <li className="wx__text_subtitle">
+                          <li className="text_subtitle">
                             <a onClick={() => onMarkAsPrimary(domain)}>
                               <WxIcon icon="public" />
                               Make Primary
@@ -106,10 +106,10 @@ const RoleListTable = ({
                           </li>
                         ) : null}
                         {!domain?.isDefault && !domain?.isPrimary ? (
-                          <li className="wx__text_subtitle delete">
+                          <li className="text_subtitle delete">
                             <Link
                               to=""
-                              className="wx__text_body"
+                              className="text_body"
                               onClick={() => onDelete(domain)}
                             >
                               <WxIcon icon="delete" />

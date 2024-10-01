@@ -56,7 +56,7 @@ const DeliveryZoneListTable = ({
                   {item?.name}
                 </td>
                 <td className="wx__td">{item?.countryName || "---"}</td>
-                <td className="wx__td wx__text-end">
+                <td className="wx__td text-end">
                   ৳ {item?.deliveryChargeAmount}
                 </td>
                 <td className="wx__td">
@@ -94,19 +94,19 @@ const DeliveryZoneListTable = ({
                         drop
                       >
                         <ul>
-                          <li className="wx__text_subtitle">
+                          <li className="text_subtitle">
                             <a
-                              className="wx__text_body"
+                              className="text_body"
                               onClick={() => onEditItem(item)}
                             >
                               <span className="material-icons-round">edit</span>
                               Edit
                             </a>
                           </li>
-                          <li className="wx__text_subtitle delete">
+                          <li className="text_subtitle delete">
                             <Link
                               to=""
-                              className="wx__text_body"
+                              className="text_body"
                               onClick={() => onDelete(item)}
                             >
                               <span className="material-icons-round">

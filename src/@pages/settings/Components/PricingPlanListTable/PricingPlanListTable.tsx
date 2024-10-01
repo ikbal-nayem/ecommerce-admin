@@ -39,27 +39,27 @@ const PricingPlanListTable = ({
 									plan?.pricingPlan?.isPopular ? "th__active" : ""
 								}`}
 							>
-								<div className="d-flex wx__flex-column wx__justify-content-center wx__align-items-center">
+								<div className="d-flex flex-column justify-content-center align-items-center">
 									{plan?.pricingPlan?.isPopular && (
-										<p className="w-100 wx__text_caption">Most Popular</p>
+										<p className="w-100 text_caption">Most Popular</p>
 									)}
-									<h4 className="wx__text_heading wx__text_regular wx__mb-3 wx__mt-3">
+									<h4 className="text_heading text_regular mb-3 mt-3">
 										{plan?.pricingPlan?.title}
 									</h4>
-									<h2 className="wx__text_medium wx__text_strong wx__mb-0">
+									<h2 className="text_medium text_strong mb-0">
 										৳{" "}
 										{Math.round(
 											(plan?.price / plan?.billingCycle?.cycleDays) * 30
 										)}
 										<span className="per_m">/month</span>
 									</h2>
-									{/* <p className="wx__text_small wx__text_regular">
+									{/* <p className="text_small text_regular">
 										{plan?.pricingPlan?.summary}
 									</p> */}
 									<WxButton
 										variant="outline"
 										onClick={() => onSelectPlan(plan)}
-										className="wx__mt-3 wx__mb-3"
+										className="mt-3 mb-3"
 									>
 										Choose plan
 									</WxButton>
@@ -71,7 +71,7 @@ const PricingPlanListTable = ({
 				<tbody className="wx__tbody">
 					{pricingValue?.map((operator: any) => (
 						<tr className="wx__tr" key={operator?.id}>
-							<td className="wx__td wx__text_body wx__text_strong">
+							<td className="wx__td text_body text_strong">
 								{operator?.title}
 							</td>
 							{priceingCell(pricingPlanes?.plan?.[activeBilling], operator)}
@@ -112,7 +112,7 @@ const priceingCell = (pricing, operator) =>
 
 		return (
 			<td
-				className={`wx__td wx__text_body wx__text_medium pricing_table_cell ${
+				className={`wx__td text_body text_medium pricing_table_cell ${
 					plan?.pricingPlan?.isPopular ? "td_active" : ""
 				}`}
 				key={plan?.id}

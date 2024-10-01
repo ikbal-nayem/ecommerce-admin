@@ -38,7 +38,7 @@ export const CustomerAddressModal = ({
                   ...register("address.title", { required: false }),
                 }}
                 label="Title"
-                className="wx__mb-0"
+                className="mb-0"
               />
             </div>
             <div className="col-md-12">
@@ -49,7 +49,7 @@ export const CustomerAddressModal = ({
                   }),
                 }}
                 label="Address Line 1"
-                className="wx__mb-0"
+                className="mb-0"
                 color={errors?.address?.addressLine1 ? "danger" : "secondary"}
                 errorMessage={
                   errors?.address?.addressLine1 && "Address Line 1 is required!"
@@ -64,7 +64,7 @@ export const CustomerAddressModal = ({
                   }),
                 }}
                 label="Address Line 2"
-                className="wx__mb-0"
+                className="mb-0"
               />
             </div>
             <div className="col-md-6">
@@ -73,7 +73,7 @@ export const CustomerAddressModal = ({
                   ...register("address.cityName", { required: true }),
                 }}
                 label="District/City"
-                className="wx__mb-0"
+                className="mb-0"
                 color={errors?.address?.cityName ? "danger" : "secondary"}
                 errorMessage={
                   errors?.address?.cityName &&
@@ -87,7 +87,7 @@ export const CustomerAddressModal = ({
                   ...register("address.state", { required: true }),
                 }}
                 label="Division/State"
-                className="wx__mb-0"
+                className="mb-0"
                 color={errors?.address?.state ? "danger" : "secondary"}
                 errorMessage={
                   errors?.address?.state &&
@@ -101,7 +101,7 @@ export const CustomerAddressModal = ({
                   ...register("address.postCode", { required: true }),
                 }}
                 label="Post code"
-                className="wx__mb-0"
+                className="mb-0"
               />
             </div>
             <div className="col-md-6">
@@ -110,7 +110,7 @@ export const CustomerAddressModal = ({
                   ...register("address.country", { required: false }),
                 }}
                 label="Country"
-                className="wx__mb-0"
+                className="mb-0"
               />
             </div>
             <div className="col-md-6">
@@ -121,7 +121,7 @@ export const CustomerAddressModal = ({
                   }),
                 }}
                 label="Phone Number"
-                className="wx__mb-0"
+                className="mb-0"
               />
             </div>
             <div className="col-md-6">
@@ -132,7 +132,7 @@ export const CustomerAddressModal = ({
                   }),
                 }}
                 label="Email Address"
-                className="wx__mb-0"
+                className="mb-0"
                 type="email"
               />
             </div>

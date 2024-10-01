@@ -11,16 +11,16 @@
   .wx__details_top {
     .wx__details_top_left {
       h2 {
-        @extend .wx__text_medium;
+        @extend .text_medium;
         margin-bottom: 0px;
       }
       .wx__tag_line {
-        @extend .wx__text_medium;
-        @extend .wx__text_subtitle;
+        @extend .text_medium;
+        @extend .text_subtitle;
         color: $neutral__700;
       }
       .wx__user_review {
-        @extend .wx__text_medium;
+        @extend .text_medium;
         .wx__icon_star {
           margin-bottom: 5px;
           margin-right: 5px;
@@ -31,8 +31,8 @@
       }
       .wx__validity_period {
         color: $neutral__800;
-        @extend .wx__text_subtitle;
-        @extend .wx__text_regular;
+        @extend .text_subtitle;
+        @extend .text_regular;
       }
     }
     .wx__details_top_right {
@@ -85,8 +85,8 @@
         }
       }
       .info_value {
-        @extend .wx__text_body;
-        @extend .wx__text_medium;
+        @extend .text_body;
+        @extend .text_medium;
         color: $neutral__900;
         font-weight: 500;
         button {
@@ -95,8 +95,8 @@
         }
       }
       .info_label {
-        @extend .wx__text_body;
-        @extend .wx__text_regular;
+        @extend .text_body;
+        @extend .text_regular;
         color: $neutral__800;
       }
       .email__icon {

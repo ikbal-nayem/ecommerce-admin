@@ -91,7 +91,7 @@ const AllTheme = () => {
 	return (
 		<WxMainXl>
 			<WxFormHeader title="All themes" backNavigationLink={THEMES} />
-			<div className="card wx__p-4">
+			<div className="card p-4">
 				<div className="row">
 					<div className="col-md-8 col-sm-12">
 						<WxInput

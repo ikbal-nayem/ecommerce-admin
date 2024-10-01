@@ -88,10 +88,10 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 									errorMessage={errors?.deliveryChargeAmount?.message}
 								/>
 							</div>
-							<p className="wx__text_subtitle wx__text_regular">
+							<p className="text_subtitle text_regular">
 								System will auto detect “0” as free delivery
 							</p>
-							<div className="col-md-12 col-sm-12 wx__mt-2">
+							<div className="col-md-12 col-sm-12 mt-2">
 								<WxSelect
 									label="Country"
 									isRequired
@@ -102,7 +102,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 									registerProperty={{ ...register("countryName") }}
 								/>
 							</div>
-							<div className="wx__mt-4" style={{ maxWidth: "90%" }}>
+							<div className="mt-4" style={{ maxWidth: "90%" }}>
 								<WxSwitch
 									label="Prebooking"
 									checkedTitle="Yes"
@@ -111,7 +111,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 								/>
 							</div>
 							{watch("hasAdvanceCharge") ? (
-								<div className="col-md-12 col-sm-12 wx__mt-3">
+								<div className="col-md-12 col-sm-12 mt-3">
 									<WxInput
 										isRequired
 										label="Set Prebooking Amount"
@@ -128,7 +128,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 								</div>
 							) : null}
 
-							<div className="wx__mt-4" style={{ maxWidth: "90%" }}>
+							<div className="mt-4" style={{ maxWidth: "90%" }}>
 								<WxSwitch
 									label="Status"
 									checkedTitle="Active"
@@ -149,12 +149,12 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 									Delete
 								</WxButton>
 							) : null}
-							<div className="wx__ms-auto d-flex">
+							<div className="ms-auto d-flex">
 								<WxButton
 									color="secondary"
 									type="button"
 									variant="outline"
-									className="wx__me-2"
+									className="me-2"
 									onClick={handleFormClose}
 									disabled={isSaving}
 								>

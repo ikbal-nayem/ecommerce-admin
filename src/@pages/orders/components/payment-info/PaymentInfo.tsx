@@ -77,17 +77,17 @@ const PaymentInfo = ({
 
 	return (
 		<>
-			<div className="card wx__p-3">
-				<h6 className="wx__text_h6 wx__text_semibold">Payment</h6>
-				<div className="wx__text_body">
-					<div className="wx__text_regular wx__text_body d-flex wx__justify-content-between wx__mb-3">
+			<div className="card p-3">
+				<h6 className="text_h6 text_semibold">Payment</h6>
+				<div className="text_body">
+					<div className="text_regular text_body d-flex justify-content-between mb-3">
 						<span>Subtotal</span>
 						<span>BDT {orderSubtotal?.toLocaleString() || 0}</span>
 					</div>
-					<div className="d-flex wx__justify-content-between wx__mb-3">
+					<div className="d-flex justify-content-between mb-3">
 						<div className="d-flex gap-5">
 							<span
-								className="wx__text-primary"
+								className="text-primary"
 								role="button"
 								onClick={() => setIsDiscountOpen(true)}
 							>
@@ -101,15 +101,15 @@ const PaymentInfo = ({
 							) : null}
 						</div>
 						{discountAmount ? (
-							<span className="wx__text-muted"> - BDT {discountAmount}</span>
+							<span className="text-muted"> - BDT {discountAmount}</span>
 						) : (
-							<span className="wx__text-muted">BDT 00.00</span>
+							<span className="text-muted">BDT 00.00</span>
 						)}
 					</div>
-					<div className="d-flex wx__justify-content-between wx__mb-3">
+					<div className="d-flex justify-content-between mb-3">
 						<div className="d-flex gap-5">
 							<span
-								className="wx__text-primary"
+								className="text-primary"
 								role="button"
 								onClick={() => setIsShippingOpen(true)}
 							>
@@ -117,13 +117,13 @@ const PaymentInfo = ({
 							</span>
 							{deliveryChargeAmount ? <span>{deliveryZoneName}</span> : null}
 						</div>
-						<span className="wx__text-muted">
+						<span className="text-muted">
 							BDT {deliveryChargeAmount?.toLocaleString() || "0.00"}
 						</span>
 					</div>
-					<div className="d-flex wx__justify-content-between wx__mb-3">
-						<span className="wx__text_strong">Total</span>
-						<span className="wx__text_strong">
+					<div className="d-flex justify-content-between mb-3">
+						<span className="text_strong">Total</span>
+						<span className="text_strong">
 							BDT {orderTotal?.toLocaleString() || "0.00"}
 						</span>
 					</div>

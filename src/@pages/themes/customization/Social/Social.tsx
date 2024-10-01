@@ -66,9 +66,9 @@ export default function CustomizationSocial() {
 						</WxButton>
 					}
 				/>
-				<div className="card wx__p-4">
+				<div className="card p-4">
 					<div className="row">
-						<div className="col-md-6 wx__mb-4">
+						<div className="col-md-6 mb-4">
 							<WxInput
 								label="Facebook Link"
 								type="url"
@@ -81,7 +81,7 @@ export default function CustomizationSocial() {
 								}}
 							/>
 						</div>
-						<div className="col-md-6 wx__mb-4">
+						<div className="col-md-6 mb-4">
 							<WxInput
 								label="Instagram Link"
 								type="url"
@@ -98,7 +98,7 @@ export default function CustomizationSocial() {
 								}}
 							/>
 						</div>
-						<div className="col-md-6 wx__mb-4">
+						<div className="col-md-6 mb-4">
 							<WxInput
 								label="Youtube Link"
 								type="url"
@@ -115,7 +115,7 @@ export default function CustomizationSocial() {
 								}}
 							/>
 						</div>
-						<div className="col-md-6 wx__mb-4">
+						<div className="col-md-6 mb-4">
 							<WxInput
 								label="Tiktok Link"
 								type="url"
@@ -132,7 +132,7 @@ export default function CustomizationSocial() {
 								}}
 							/>
 						</div>
-						<div className="col-md-6 wx__mb-4">
+						<div className="col-md-6 mb-4">
 							<WxInput
 								label="Linkedin Link"
 								type="url"
@@ -149,7 +149,7 @@ export default function CustomizationSocial() {
 								}}
 							/>
 						</div>
-						<div className="col-md-6 wx__mb-4">
+						<div className="col-md-6 mb-4">
 							<WxInput
 								label="Twitter Link"
 								type="url"

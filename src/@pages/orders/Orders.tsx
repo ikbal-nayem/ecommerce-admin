@@ -202,7 +202,7 @@ const Orders = () => {
 			<div className='card'>
 				{isLoader || (
 					<>
-						<div className='wx__mt-3 hide-mobile-view'>
+						<div className='mt-3 hide-mobile-view'>
 							<Tabs
 								option={statusList}
 								renderTab={(item) => item?.title}
@@ -210,8 +210,8 @@ const Orders = () => {
 								setCurrentIndex={onStatusChangeFromTab}
 							/>
 						</div>
-						<div className='row wx__p-3 wx__pb-0'>
-							<div className='col-lg-8 col-md-6 col-sm-12 wx__mb-3'>
+						<div className='row p-3 pb-0'>
+							<div className='col-lg-8 col-md-6 col-sm-12 mb-3'>
 								<WxInput
 									type='search'
 									placeholder='Search orders'
@@ -220,7 +220,7 @@ const Orders = () => {
 									onChange={(e: any) => setSearchQuery(e.target.value)}
 								/>
 							</div>
-							<div className='col-lg-2 col-md-3 col-sm-6 wx__mb-3'>
+							<div className='col-lg-2 col-md-3 col-sm-6 mb-3'>
 								<WxSelect
 									valuesKey='metaKey'
 									textKey='title'
@@ -231,7 +231,7 @@ const Orders = () => {
 									onChange={(e) => onStatusChangeFormDropdown(e, 'PAYMENT')}
 								/>
 							</div>
-							<div className='col-lg-2 col-md-3 col-sm-6 wx__mb-3'>
+							<div className='col-lg-2 col-md-3 col-sm-6 mb-3'>
 								<WxSelect
 									valuesKey='metaKey'
 									textKey='title'
@@ -264,7 +264,7 @@ const Orders = () => {
 						/>
 					) : null}
 					{isLoader ? (
-						<div className='wx__bg-white rounded'>
+						<div className='bg-white rounded'>
 							<ProductTableSkelton viewBox='0 0 600 230' />
 						</div>
 					) : (
@@ -272,7 +272,7 @@ const Orders = () => {
 							{ordersData?.length ? (
 								<>
 									<OrderListTable ordersData={ordersData} onDelete={onDelete} />
-									<div className='pagination_div wx__p-4'>
+									<div className='pagination_div p-4'>
 										<WxPagination
 											meta={metaData}
 											currentPage={currentPage}

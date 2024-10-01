@@ -24,7 +24,7 @@ const ThemeList = ({ themeList, installedThemes }: IAllThemeProps) => {
         return (
           <div
             key={index}
-            className="single-theme col-xl-4 col-lg-4 col-md-6 col-sm-12 wx__mt-4"
+            className="single-theme col-xl-4 col-lg-4 col-md-6 col-sm-12 mt-4"
           >
             <Link to={THEMES_OVERVIEW({ theme_id: item?.id })}>
               <div className="card theme-card">
@@ -45,24 +45,24 @@ const ThemeList = ({ themeList, installedThemes }: IAllThemeProps) => {
                   height={100}
                   width={100}
                 />
-                <strong className="wx__mt-2 wx__text-body wx__text_medium w-100 d-inline-block text-truncate">
+                <strong className="mt-2 text-body text_medium w-100 d-inline-block text-truncate">
                   {item?.title}
                 </strong>
-                <p className="wx__text_subtitle wx__text_regular wx__subtitle wx__mb-3 w-100 d-inline-block text-truncate">
+                <p className="text_subtitle text_regular wx__subtitle mb-3 w-100 d-inline-block text-truncate">
                   {item?.shortDesc}
                 </p>
-                <div className="d-flex wx__align-items-center wx__justify-content-between">
+                <div className="d-flex align-items-center justify-content-between">
                   {item?.currencyCode && item?.price && (
                     <div className="theme_price">
-                      <p className="wx__text_subtitle">
+                      <p className="text_subtitle">
                         {item?.currencyCode} {item?.price}
                       </p>
                     </div>
                   )}
                   {!!item?.avgRating && !!item?.totalReview && (
-                    <div className="theme-rating wx__ms-auto">
+                    <div className="theme-rating ms-auto">
                       <WxIcon icon="star" className="star-color" />
-                      <p className="wx__text_small wx__m-0">
+                      <p className="text_small m-0">
                         {item?.avgRating}/5 ({item?.totalReview})
                       </p>
                     </div>

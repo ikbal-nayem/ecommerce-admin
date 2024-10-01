@@ -155,7 +155,7 @@ const UpdateProducts = () => {
 			/>
 			<FormProvider {...methods}>
 				<form noValidate onSubmit={methods.handleSubmit(onSubmit)}>
-					<div className="row wx__mb-4">
+					<div className="row mb-4">
 						<div className="col-lg-8 col-md-7">
 							<ProductInfo />
 							<ProductMedia isEditForm />

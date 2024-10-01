@@ -39,7 +39,7 @@ const WxIcon = ({
     onClick={onClick}
     className={`noselect ${
       variants === "filled" ? "material-icons" : `material-icons-${variants}`
-    } wx__icon ${color ? "wx__text-" + color : ""} ${
+    } wx__icon ${color ? "text-" + color : ""} ${
       disabled ? "wx__icon_disabled" : ""
     } ${className ? className : ""}`}
     id={id ? id : ""}

@@ -71,7 +71,7 @@ const SelectCategory = ({
 
 						{isLoading ? <Preloader absolutePosition /> : null}
 						{!isLoading && !categories.length ? (
-							<h6 className="wx__text-center">No categories found!</h6>
+							<h6 className="text-center">No categories found!</h6>
 						) : null}
 
 						<div className="nested_categories">
@@ -86,7 +86,7 @@ const SelectCategory = ({
 					<WxDrawerFooter>
 						<div className="wx__category_select__footer">
 							<WxButton
-								className="wx__me-3"
+								className="me-3"
 								variant="outline"
 								color="secondary"
 								onClick={handleClose}

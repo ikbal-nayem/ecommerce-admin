@@ -88,18 +88,18 @@ const InventoryTable = ({
             return (
               <tr className="wx__tr" key={index}>
                 <td className="wx__td">
-                  <div className="wx__table_cell_avatar d-flex wx__align-items-center">
+                  <div className="wx__table_cell_avatar d-flex align-items-center">
                     <WxThumbnail
                       name={pd?.title}
                       src={pd?.images[0]?.previewUrl}
                     />
-                    <div className="wx__table_cell_focus_text wx__flex-column">
+                    <div className="wx__table_cell_focus_text flex-column">
                       <div>{pd?.title}</div>
                       <div className="">
                         {pd?.options?.map((item: any, indx) => {
                           return (
                             <span
-                              className="wx__text_small wx__text-secondary"
+                              className="text_small text-secondary"
                               key={indx}
                             >
                               {item?.key} - {item?.value}{" "}
@@ -118,7 +118,7 @@ const InventoryTable = ({
                   </div>
                 </td>
                 <td className="wx__td">
-                  <div className="wx__text_body">{pd?.sku || "---"}</div>
+                  <div className="text_body">{pd?.sku || "---"}</div>
                 </td>
                 <td className="wx__td">
                   <div className="wx__table_cell_icon  d-flex ">
@@ -161,7 +161,7 @@ const InventoryTable = ({
                                 }}
                               />
                             </div>
-                            <p className="wx__my-3 wx__text_small quantity_text">
+                            <p className="my-3 text_small quantity_text">
                               Original Quantity: {pd?.quantity}
                             </p>
                             <WxSelect

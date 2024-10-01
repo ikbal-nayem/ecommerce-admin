@@ -76,17 +76,17 @@ const Apps = () => {
 		<div className="wx__review">
 			{/* <div className="row wx__review_top">
 				<div className="col-lg-6 col-md-12 col-sm-12 ">
-					<h5 className="wx__text_semibold mb-3">Ratings</h5>
-					<p className="wx__text_body wx__text_regular">
+					<h5 className="text_semibold mb-3">Ratings</h5>
+					<p className="text_body text_regular">
 						Overall Rating &nbsp;&nbsp;
 						<WxIcon className="small_icon" icon="star" variants="filled" />
 						{reviewData.overallRating} ({reviewData.overallReview} Review)
 					</p>
-					<p className=" wx__text_regular w-100">
+					<p className=" text_regular w-100">
 						**You must be logged in to submit a review.
 					</p>
 				</div>
-				<div className="col-lg-6 col-md-12 col-sm-12 wx__mb-3">
+				<div className="col-lg-6 col-md-12 col-sm-12 mb-3">
 					{reviewProgress?.map((item, index) => {
 						return (
 							<WxProgressBar
@@ -102,20 +102,20 @@ const Apps = () => {
 			<div className="row wx__review_bottom">
 				{reviewData?.length ? (
 					<div className="wx__user_review pt-3">
-						{/* <div className="d-flex wx__justify-content-between wx__align-items-center">
-							<div className="d-flex wx__align-items-center w-100">
-								<p className="wx__text_small wx__text_regular">
+						{/* <div className="d-flex justify-content-between align-items-center">
+							<div className="d-flex align-items-center w-100">
+								<p className="text_small text_regular">
 									Sort 73 Reviews By
 								</p>
 							</div>
-							<div className="w-100 d-flex wx__justify-content-end wx__align-items-center">
+							<div className="w-100 d-flex justify-content-end align-items-center">
 								<WxButton variant="outline">Create Review</WxButton>
 							</div>
 						</div> */}
 						<div>
 							{reviewData?.map((item, index) => (
 								<div key={item?.id} className="wx__single_review">
-									<span className="wx__text_medium wx__text_strong">
+									<span className="text_medium text_strong">
 										{item?.firstName} {item?.lastName}
 									</span>
 									<div className="d-flex align-items-center">
@@ -130,12 +130,12 @@ const Apps = () => {
 													/>
 												))}
 										</div>
-										{/* <p className="wx__text_body wx__text_regular wx__mb-0">
+										{/* <p className="text_body text_regular mb-0">
 											{item.dateTime}
 										</p> */}
 									</div>
 									<p
-										className="w-100 wx__text_regular user_review_hide_msg"
+										className="w-100 text_regular user_review_hide_msg"
 										id={"user_review" + index}
 									>
 										{item.reviewMsg}
@@ -178,12 +178,12 @@ const Apps = () => {
 									</div>
 									{/* {item.reply?.map((reply, indx) => {
 										return (
-											<div className="wx__review_replay wx__mb-3" key={indx}>
-												<p className="wx__text_medium">{reply.name}</p>
-												<p className="wx__text_body wx__text_regular wx__mb-0">
+											<div className="wx__review_replay mb-3" key={indx}>
+												<p className="text_medium">{reply.name}</p>
+												<p className="text_body text_regular mb-0">
 													{reply.dateTime}
 												</p>
-												<p className="w-100 wx__text_regular">
+												<p className="w-100 text_regular">
 													{reply.replyMsg}
 												</p>
 											</div>
@@ -193,7 +193,7 @@ const Apps = () => {
 							))}
 						</div>
 						{reviewData?.length ? (
-							<div className="wx__mt-3">
+							<div className="mt-3">
 								<WxButton variant="outline">Read More Reviews</WxButton>
 							</div>
 						) : null}
@@ -206,12 +206,12 @@ const Apps = () => {
 							<WxIcon icon="star" variants="filled" />
 							<WxIcon icon="star" variants="filled" />
 						</div>
-						<h3 className="wx__text_regular">No review found!</h3>
-						<p className="wx__text_regular">
+						<h3 className="text_regular">No review found!</h3>
+						<p className="text_regular">
 							You can write a review about your experience by using the write a
 							review button.
 						</p>
-						<WxButton className="wx__m-auto" variant="fill">
+						<WxButton className="m-auto" variant="fill">
 							Create Review
 						</WxButton>
 					</div>

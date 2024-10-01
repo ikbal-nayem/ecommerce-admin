@@ -196,7 +196,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                     </WxButton>
                     {otpSent && (
                       <WxButton
-                        className="wx__mt-2"
+                        className="mt-2"
                         variant="fill"
                         w={100}
                         onClick={() => setSendOTP(false)}
@@ -233,7 +233,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                       Confirm OTP
                     </WxButton>
                     {/* <WxButton
-                    className="wx__mt-2"
+                    className="mt-2"
                     color="secondary"
                     variant="fill"
                     w={100}
@@ -242,25 +242,25 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                     Back to Edit Number
                   </WxButton> */}
 
-                    <p className="wx__text_body">
+                    <p className="text_body">
                       OTP sent to this number{" "}
-                      <span className="wx__text-primary">
+                      <span className="text-primary">
                         {getValues("sendingThrough")}
                       </span>
                       <WxIcon
-                        className="wx__ms-1"
+                        className="ms-1"
                         onClick={() => setSendOTP(true)}
                         icon="edit"
                       />
                     </p>
                     <br />
-                    <span className="wx__text-secondary wx__text_medium text-center wx__mt-3 d-flex wx__align-items-center">
+                    <span className="text-secondary text_medium text-center mt-3 d-flex align-items-center">
                       Didn't get OTP?{" "}
                       {!isVisibleResend && "Resend OTP in " + timer}
                       {/* {timer ? "Resend OTP in " + timer : <span>Resend</span>} */}
                       {isVisibleResend && (
                         <WxButton
-                          className="wx__mt-2 wx__ms-3"
+                          className="mt-2 ms-3"
                           variant="fill"
                           // type="submit"
                           onClick={() => handleOTP(getValues("sendingThrough"))}
@@ -275,7 +275,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
             )}
           </form>
         </WxModalBody>
-        <WxModalFooter className="wx__bg-white">
+        <WxModalFooter className="bg-white">
           <div className="d-flex justify-content-between">
             <WxButton
               variant="outline"

@@ -4,7 +4,7 @@
 .wx__switch_component {
   label {
     color: $neutral__900;
-    @extend .wx__text_medium;
+    @extend .text_medium;
     font-size: 14px;
   }
   span {

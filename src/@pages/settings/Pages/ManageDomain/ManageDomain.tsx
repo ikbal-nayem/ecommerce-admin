@@ -84,7 +84,7 @@ const ManageDomain = () => {
 
   return (
 		<WxMainXl>
-			<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+			<div className="d-flex justify-content-between align-items-center mb-3">
 				<WxFormHeader noMargin title="Domain" backNavigationLink={SETTINGS} />
 				<WxButton
 					variant="fill"

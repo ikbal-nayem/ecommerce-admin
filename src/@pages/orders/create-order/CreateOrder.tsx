@@ -198,9 +198,9 @@ const CreateOrder = () => {
 			<WxFormHeader noMargin title="Create Order" backNavigationLink={ORDER} />
 			<form onSubmit={handleSubmit(onSubmitting)}>
 				<div className="row ">
-					<div className="col-md-8 col-sm-12 wx__mt-3">
-						<div className="card wx__p-3 wx__mb-3">
-							<h5 className="wx__mb-3">Product</h5>
+					<div className="col-md-8 col-sm-12 mt-3">
+						<div className="card p-3 mb-3">
+							<h5 className="mb-3">Product</h5>
 							<div className="d-flex">
 								<div className="input-group search">
 									<WxInput
@@ -223,7 +223,7 @@ const CreateOrder = () => {
 							getValues={getValues}
 							setValue={setValue}
 						/>
-						<div className="card wx__p-3 wx__mt-3">
+						<div className="card p-3 mt-3">
 							<div className="col-md-12 col-sm-12">
 								<WxInput
 									label="Order note"
@@ -245,8 +245,8 @@ const CreateOrder = () => {
 							</div> */}
 						</div>
 					</div>
-					<div className="col-md-4 col-sm-12 wx__mt-3">
-						<div className="card wx__form_right wx__p-3 wx__mb-3">
+					<div className="col-md-4 col-sm-12 mt-3">
+						<div className="card wx__form_right p-3 mb-3">
 							<WxButton
 								type="submit"
 								variant="fill"
@@ -256,7 +256,7 @@ const CreateOrder = () => {
 								{saving ? <Preloader /> : "Create Order"}
 							</WxButton>
 							{!activePlan?.hasManualOrder && (
-								<WxAlert className="wx__mt-3" noMargin>
+								<WxAlert className="mt-3" noMargin>
 									Please upgrade your{" "}
 									<Link to={SETTINGS_PRICING_PLAN}>plan</Link> to create a
 									manual order.
@@ -290,7 +290,7 @@ const CreateOrder = () => {
 							handleAddressEdit={handleAddressEdit}
 							selectedAddress={selectedAddress}
 						/>
-						<div className="card wx__mt-3 wx__p-3 show-mobile-view">
+						<div className="card mt-3 p-3 show-mobile-view">
 							<WxButton
 								type="submit"
 								variant="fill"

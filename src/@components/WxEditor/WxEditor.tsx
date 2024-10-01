@@ -62,7 +62,7 @@ const WXEditor = ({
 
 	return (
 		<div
-			className={`form_group ${noMargin ? "wx__m-0" : ""} ${
+			className={`form_group ${noMargin ? "m-0" : ""} ${
 				className ? className : ""
 			}`}
 			aria-disabled={isDisabled}
@@ -89,7 +89,7 @@ const WXEditor = ({
 			{errorMessage ? (
 				typeof errorMessage === "string" ? (
 					<span
-						className={`note_text ${color === "danger" && "wx__text-danger"}`}
+						className={`note_text ${color === "danger" && "text-danger"}`}
 					>
 						{errorMessage}
 					</span>
@@ -100,7 +100,7 @@ const WXEditor = ({
 			{helpText ? (
 				typeof helpText === "string" ? (
 					<span
-						className={`note_text ${color === "danger" && "wx__text-danger"}`}
+						className={`note_text ${color === "danger" && "text-danger"}`}
 					>
 						{helpText}
 					</span>

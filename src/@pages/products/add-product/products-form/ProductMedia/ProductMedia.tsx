@@ -84,8 +84,8 @@ const ProductMedia = ({ isEditForm }: IProductMediaProps) => {
   );
 
   return (
-    <div className="wx__product_media card card wx__p-3 wx__mt-4">
-      <h6 className="wx__text_semibold wx__text_h6">Media</h6>
+    <div className="wx__product_media card card p-3 mt-4">
+      <h6 className="text_semibold text_h6">Media</h6>
       <BlockSection isblocked={isDeleting} hasLoader={true}>
         <MediaInput
           multiple

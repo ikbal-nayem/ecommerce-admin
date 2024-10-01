@@ -135,7 +135,7 @@ const SaveProducts = ({
 	const salesChannelsDefault = getValues("salesChannels");
 
 	return (
-		<div className="card wx__form_right wx__p-3 wx__mt-4">
+		<div className="card wx__form_right p-3 mt-4">
 			<div className="hide-mobile-view">
 				<WxButton type="submit" variant="fill" w={100} disabled={isSaving}>
 					{isSaving ? <ButtonLoader /> : "Save Product"}
@@ -156,10 +156,10 @@ const SaveProducts = ({
 			<div style={{ maxWidth: "80%" }}>
 				{!isChannelLoading &&
 					salesChannels?.map((channel) => (
-						<div key={channel.id} className="wx__my-3">
+						<div key={channel.id} className="my-3">
 							<WxSwitch
 								label={
-									<div className="d-flex wx__align-items-center">
+									<div className="d-flex align-items-center">
 										<span>{channel.title}</span>
 									</div>
 								}
@@ -178,11 +178,11 @@ const SaveProducts = ({
 			</div>
 			<WxHr />
 
-			<div className="wx__mb-3">
+			<div className="mb-3">
 				<WxLabel
 					labelRight={
 						<span
-							className="wx__text_btn_small wx__text-primary wx__text_medium"
+							className="text_btn_small text-primary text_medium"
 							role="button"
 							onClick={setVendorDrawerOpen}
 						>
@@ -216,7 +216,7 @@ const SaveProducts = ({
 
 			<WxLabel>Collections</WxLabel>
 			{selectedCollections.length ? (
-				<div className="wx__mb-2 d-flex gap-2 wx__flex-wrap">
+				<div className="mb-2 d-flex gap-2 flex-wrap">
 					{selectedCollections.map((collection, idx) => (
 						<WxChip
 							key={collection.id}
@@ -233,7 +233,7 @@ const SaveProducts = ({
 
 			<WxLabel>Category</WxLabel>
 			{selectedCategory.id ? (
-				<div className="wx__mb-2">
+				<div className="mb-2">
 					<WxChip
 						label={selectedCategory.name}
 						onClose={() => categorySetter({})}
@@ -263,7 +263,7 @@ const SaveProducts = ({
 				value=""
 			/>
 			{selectedTags.length ? (
-				<div className="wx__mt-2 d-flex gap-2 wx__flex-wrap">
+				<div className="mt-2 d-flex gap-2 flex-wrap">
 					{selectedTags.map((tag, idx) => (
 						<WxChip
 							key={tag.id}

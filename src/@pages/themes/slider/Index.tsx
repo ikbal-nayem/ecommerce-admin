@@ -122,7 +122,7 @@ const Slider = () => {
 	return (
 		<WxMainLg className="homeSection">
 			<WxFormHeader title="Slider" />
-			<div className="card wx__p-3">
+			<div className="card p-3">
 				<TableLoader isLoading={isLoading} />
 				<div className="title_section">
 					<div className="title" />
@@ -135,11 +135,11 @@ const Slider = () => {
 					<div className="wx__responsive_table">
 						{sliderData.map((item: ISlider, index) => (
 							<ul
-								className="single-banner d-flex wx__justify-content-between wx__align-items-center"
+								className="single-banner d-flex justify-content-between align-items-center"
 								key={index}
 							>
 								<li className="banner-left">
-									<div className="d-flex wx__align-items-center">
+									<div className="d-flex align-items-center">
 										<WxThumbnail src={imageURLGenerate(item?.thumbnail)} />
 										<div className="banner_title_section">
 											<Link
@@ -149,7 +149,7 @@ const Slider = () => {
 												{item.title}
 											</Link>
 											<br />
-											<small className="wx__text-muted wx__text_small">
+											<small className="text-muted text_small">
 												Last updated on &nbsp;
 												{generateDateFormat(
 													item?.lastUpdated,

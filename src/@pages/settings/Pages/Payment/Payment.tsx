@@ -130,17 +130,17 @@ const Payment = () => {
         {!configureLoader ? (
           configuredList?.gateway?.length ||
           configuredList?.offlinePayment?.length ? (
-            <div className="card wx__p-3 wx__mt-3">
-              <h6 className="wx__text_heading wx__text_semibold wx__mb-0">
+            <div className="card p-3 mt-3">
+              <h6 className="text_heading text_semibold mb-0">
                 Configured Payment Methods
               </h6>
               {configuredList?.gateway?.map((item, index) => (
                 <div
-                  className="payment_btn wx__mt-3"
+                  className="payment_btn mt-3"
                   key={index}
                   onClick={() => onFormOpen("CONFIGURED", item)}
                 >
-                  <div className="d-flex wx__justify-content-between wx__align-items-center">
+                  <div className="d-flex justify-content-between align-items-center">
                     <img
                       src={imageURLGenerate(item?.banner)}
                       alt={item?.gatewayProvider}
@@ -160,11 +160,11 @@ const Payment = () => {
               ))}
               {configuredList?.offlinePayment?.map((item, index) => (
                 <div
-                  className="payment_btn wx__mt-3"
+                  className="payment_btn mt-3"
                   key={index}
                   onClick={() => onFormOpen("CONFIGURED", item)}
                 >
-                  <div className="d-flex wx__justify-content-between wx__align-items-center">
+                  <div className="d-flex justify-content-between align-items-center">
                     <img
                       src={imageURLGenerate(item?.banner)}
                       alt={item?.gatewayProvider}
@@ -189,24 +189,24 @@ const Payment = () => {
             </div>
           )
         ) : (
-          <div className="wx__bg-white wx__mt-3 rounded">
+          <div className="bg-white mt-3 rounded">
             <PaymentMethodSkelton viewBox="0 0 595 150" />
           </div>
         )}
 
         {!supportLoader ? (
           supportedList?.length > 0 ? (
-            <div className="card wx__p-3 wx__mt-3">
-              <h6 className="wx__text_heading wx__text_semibold wx__mb-0">
+            <div className="card p-3 mt-3">
+              <h6 className="text_heading text_semibold mb-0">
                 Supported Payment Methods
               </h6>
               {supportedList?.map((item, index) => (
                 <div
-                  className="payment_btn wx__mt-3"
+                  className="payment_btn mt-3"
                   key={index}
                   onClick={() => onFormOpen("SUPPORTED", item)}
                 >
-                  <div className="d-flex wx__justify-content-between wx__align-items-center">
+                  <div className="d-flex justify-content-between align-items-center">
                     <img
                       src={imageURLGenerate(item?.banner)}
                       alt={item?.title}
@@ -219,7 +219,7 @@ const Payment = () => {
             </div>
           ) : null
         ) : (
-          <div className="wx__bg-white wx__mt-3 rounded">
+          <div className="bg-white mt-3 rounded">
             <PaymentMethodSkelton viewBox="0 0 595 150" />
           </div>
         )}

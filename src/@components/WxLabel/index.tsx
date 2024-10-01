@@ -9,10 +9,10 @@ interface ILabelProps {
 function WxLabel({ children, isRequired, labelRight }: ILabelProps) {
   return (
     <div className="wx__label">
-      <label className="wx__text_subtitle">
+      <label className="text_subtitle">
         {children} {isRequired && <span>*</span>}
       </label>
-      {labelRight && <div className="wx__float-end">{labelRight}</div>}
+      {labelRight && <div className="float-end">{labelRight}</div>}
     </div>
   );
 }

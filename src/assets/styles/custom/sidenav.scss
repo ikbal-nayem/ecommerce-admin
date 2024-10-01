@@ -37,8 +37,8 @@
   cursor: pointer;
   .wx__side__navigation__text {
     span {
-      @extend .wx__text_subtitle;
-      @extend .wx__text_semibold;
+      @extend .text_subtitle;
+      font-weight: bold;
     }
   }
   .wx__side__navigation__text {
@@ -68,8 +68,8 @@
   .wx__side__childrens__text {
     span {
       margin: 0 0 0 56px;
-      @extend .wx__text_subtitle;
-      @extend .wx__text_semibold;
+      @extend .text_subtitle;
+      font-weight: bold;
     }
   }
 }

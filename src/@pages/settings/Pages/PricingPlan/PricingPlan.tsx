@@ -175,9 +175,9 @@ const PricingPlan = () => {
 
 	return (
 		<WxMainFull className="pricing_plan_sec">
-			<div className="w-100 d-flex wx__justify-content-between wx__align-items-center">
+			<div className="w-100 d-flex justify-content-between align-items-center">
 				<WxFormHeader title="Pricing Plan" backNavigationLink={SETTINGS} />
-				<div className="__switch d-flex wx__align-items-center wx__text_heading wx__text_medium">
+				<div className="__switch d-flex align-items-center text_heading text_medium">
 					{pricingPlanes?.billingCycles?.map((cycle) => (
 						<WxRadio
 							key={cycle?.id}
@@ -223,7 +223,7 @@ const PricingPlan = () => {
 						{selectedPlan.current?.billingCycle?.cycleName} package of&nbsp;
 						<b>{selectedPlan.current?.pricingPlan?.title}</b>?
 						{selectedPlan.current?.pricingPlan?.level < activePlan?.level && (
-							<p className="wx__mt-3">
+							<p className="mt-3">
 								You may have to remove some data or images to buy this package.
 							</p>
 						)}

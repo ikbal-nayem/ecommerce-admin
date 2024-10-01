@@ -117,7 +117,7 @@ const Pages = () => {
 				{pages.length ? (
 					<>
 						<PageTable pages={pages} onDelete={onDelete} />
-						<div className="wx__p-4">
+						<div className="p-4">
 							<WxPagination
 								meta={pageMeta}
 								currentPage={currentPage}

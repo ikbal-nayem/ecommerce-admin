@@ -143,10 +143,10 @@ const UpdateOrder = () => {
         />
         <form onSubmit={handleSubmit(onSubmitting)}>
           <div className="row">
-            <div className="col-lg-8 col-md-7 col-sm-12 wx__mt-4">
-              <div className="card wx__p-0">
-                <h5 className="wx__mb-3 wx__p-3 wx__pb-0">Product</h5>
-                <div className="d-flex wx__ps-3 wx__pe-3">
+            <div className="col-lg-8 col-md-7 col-sm-12 mt-4">
+              <div className="card p-0">
+                <h5 className="mb-3 p-3 pb-0">Product</h5>
+                <div className="d-flex ps-3 pe-3">
                   <div className="input-group search">
                     <WxInput
                       type="search"
@@ -169,7 +169,7 @@ const UpdateOrder = () => {
                 getValues={getValues}
                 setValue={setValue}
               />
-              <div className="card wx__p-3">
+              <div className="card p-3">
                 <div className="col-md-12 col-sm-12">
                   <WxInput
                     label="Reason for edit"
@@ -179,15 +179,15 @@ const UpdateOrder = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-5 col-sm-12 wx__mt-4">
-              <div className="card wx__p-3 ">
+            <div className="col-lg-4 col-md-5 col-sm-12 mt-4">
+              <div className="card p-3 ">
                 <WxButton type="submit" variant="fill" disabled={saving}>
                   Update Order {saving ? <Preloader /> : null}
                 </WxButton>
                 <WxHr />
                 <section>
-                  <h6 className="wx__text_h6 wx__text_semibold">Summary</h6>
-                  <div className="d-flex wx__justify-content-between">
+                  <h6 className="text_h6 text_semibold">Summary</h6>
+                  <div className="d-flex justify-content-between">
                     <span>Updated Total </span>
                     <span>
                       BDT{" "}

@@ -32,8 +32,8 @@ const WxButton = ({
   return (
     <button
       className={ClassNames(
-        `d-flex wx__justify-content-center wx__align-items-center`,
-        `${w ? "wx__w-" + w : ""}`,
+        `d-flex justify-content-center align-items-center`,
+        `${w ? "w-" + w : ""}`,
         `${size === "default" ? "wx__btn" : `wx__btn_${size}`}`,
         `${
           variant === "none"

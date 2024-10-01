@@ -86,22 +86,22 @@ const SiteOperatorListTable = ({
                   {selectedIndex === index && (
                     <WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
                       <ul>
-                        <li className="wx__text_subtitle">
+                        <li className="text_subtitle">
                           <Link
                             key={operator.id}
                             to={SETTINGS_SITE_OPERATOR_EDIT({
                               id: operator.id,
                             })}
-                            className="wx__text_body"
+                            className="text_body"
                           >
                             <WxIcon icon="edit" />
                             Edit
                           </Link>
                         </li>
-                        <li className="wx__text_subtitle delete">
+                        <li className="text_subtitle delete">
                           <Link
                             to=""
-                            className="wx__text_body"
+                            className="text_body"
                             onClick={() => deleteFun(operator)}
                           >
                             <WxIcon icon="delete" />

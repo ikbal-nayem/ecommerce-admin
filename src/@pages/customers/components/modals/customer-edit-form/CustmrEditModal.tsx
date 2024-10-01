@@ -31,7 +31,7 @@ export const CustomerEditModal = ({
       />
       <form onSubmit={handleSubmit(onSubmit)}>
         <WxModalBody>
-          <div className="row d-flex wx__justify-content-between">
+          <div className="row d-flex justify-content-between">
             <div className="col-12">
               <WxInput
                 label="First Name"

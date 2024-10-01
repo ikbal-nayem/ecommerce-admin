@@ -176,7 +176,7 @@ const Payment = () => {
 				<form onSubmit={handleSubmit(onSubmit)} noValidate>
 					<div className="row">
 						<div className="col-lg-8 col-md-12 col-sm-12">
-							<div className="card wx__p-3 wx__mb-3">
+							<div className="card p-3 mb-3">
 								<h6>Payment Method</h6>
 								{getWayList?.map((getway) => (
 									<div key={getway.id}>
@@ -193,8 +193,8 @@ const Payment = () => {
 								))}
 							</div>
 							<div className="card border-0 p-3">
-								<div className="d-flex wx__justify-content-between wx__align-items-center">
-									<h6 className="wx__m-0">Billing address</h6>
+								<div className="d-flex justify-content-between align-items-center">
+									<h6 className="m-0">Billing address</h6>
 									<WxSelect
 										id="address-selector"
 										options={userAddressList}
@@ -278,13 +278,13 @@ const Payment = () => {
 							</div>
 						</div>
 						<div className="col-lg-4 col-md-12 col-sm-12">
-							<div className="card wx__p-3">
+							<div className="card p-3">
 								<h6>Summary</h6>
-								<div className="d-flex wx__align-items-center wx__justify-content-between">
-									<span className="wx__text_h6 wx__text_subtitle wx__text_strong">
+								<div className="d-flex align-items-center justify-content-between">
+									<span className="text_h6 text_subtitle text_strong">
 										Total
 									</span>
-									<strong className="wx__text_subtitle wx__text_strong">
+									<strong className="text_subtitle text_strong">
 										{invoiceInfo?.merchantPurchases?.totalPayableAmount?.toLocaleString()}
 										&nbsp;
 										{invoiceInfo?.merchantPurchases?.currencyCode}

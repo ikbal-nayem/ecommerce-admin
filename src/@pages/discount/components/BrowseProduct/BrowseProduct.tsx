@@ -46,8 +46,8 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
   const productJSX = ({ name, src }: ProductJSX) => {
     if (!name && !src) name = "N A";
     return (
-      <div className="d-flex wx__align-items-center">
-        <div className="wx__me-2">
+      <div className="d-flex align-items-center">
+        <div className="me-2">
           <WxThumbnail name={name} src={src} />
         </div>
         <span>Casual Shirt</span>
@@ -76,7 +76,7 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
         <div className="wx__drawer_body">
           <div className="input_div">
             <WxInput
-              className="wx__mb-0"
+              className="mb-0"
               type="search"
               placeholder="Search products"
               startIcon={<WxIcon icon="search" />}
@@ -90,7 +90,7 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
                 id="xxx"
                 label={productJSX({ name: "N A}" })}
               />
-              <div className="children wx__ms-4">
+              <div className="children ms-4">
                 {checkList.map(({ id, name }, i) => (
                   <WxCheckbox
                     onChange={(e: any) => handleClick(e)}
@@ -106,7 +106,7 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
         </div>
         <WxDrawerFooter>
           <div className="d-flex">
-            <WxButton className="wx__me-3" variant="outline" color="secondary">
+            <WxButton className="me-3" variant="outline" color="secondary">
               Cancel
             </WxButton>
             <WxButton

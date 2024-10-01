@@ -5,25 +5,19 @@
 @import 'partials/mixins';
 @import 'partials/classes';
 
-// Custom bootstrap classes
-@import './bootstrap/custom/index.scss';
-
-// partials
-
-// custom bootstrap file custom.scss
-@import './bootstrap/custom.scss';
-
-// overriding bootstrap class
-@import './bootstrap/forms/forms_class.scss';
-@import './bootstrap/popover.scss';
-
-@import './wx-bootstrap/index.scss';
-
 // typography class
 @import './custom/typography.scss';
 
-// buttons class
+// custom bootstrap file custom.scss
+@import './bootstrap/variable-customize.scss';
 
+// Custom bootstrap classes
+@import './bootstrap/custom/index.scss';
+
+// overriding bootstrap class
+@import './bootstrap/forms/forms_class.scss';
+
+// buttons class
 @import './custom/buttons.scss';
 @import './custom/tags.scss';
 
@@ -38,8 +32,6 @@
 // tags class
 @import './custom/tags.scss';
 
-// background class
-@import './custom/background.scss';
 
 .animate_child {
 	transform: scale(0.9);

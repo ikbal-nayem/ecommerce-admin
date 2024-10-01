@@ -52,7 +52,7 @@ const SliderDrawer = ({
 								/>
 							</div>
 
-							<div className="wx__mb-4" style={{ maxWidth: "85%" }}>
+							<div className="mb-4" style={{ maxWidth: "85%" }}>
 								<WxSwitch
 									label="Status"
 									checkedTitle="Active"
@@ -66,7 +66,7 @@ const SliderDrawer = ({
 					</WxDrawerBody>
 					<WxDrawerFooter>
 						<div className="delivery_create_sec__footer">
-							<div className="d-flex wx__align-items-center wx__justify-content-between">
+							<div className="d-flex align-items-center justify-content-between">
 								<div>
 									{isEditForm && (
 										<WxButton
@@ -81,12 +81,12 @@ const SliderDrawer = ({
 									)}
 								</div>
 
-								<div className="d-flex wx__align-items-center wx__justify-content-between">
+								<div className="d-flex align-items-center justify-content-between">
 									<WxButton
 										color="secondary"
 										type="button"
 										variant="outline"
-										className="wx__me-2"
+										className="me-2"
 										onClick={handleFormClose}
 										disabled={isSaving}
 									>

@@ -7,7 +7,7 @@
   border-radius: 4px;
   display: flex;
   align-items: center;
-  @extend .wx__text_regular;
+  @extend .text_regular;
   span:last-of-type {
     margin-left: 8px;
     cursor: pointer;
@@ -22,14 +22,14 @@
   }
   &_sm {
     padding: 4px 6px;
-    @extend .wx__text_small;
+    @extend .text_small;
     span:last-of-type {
       font-size: 15px;
     }
   }
   &_md {
     padding: 6px 8px;
-    @extend .wx__text_body;
+    @extend .text_body;
     span:last-of-type {
       font-size: 18px;
     }

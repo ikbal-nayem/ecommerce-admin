@@ -28,7 +28,7 @@ export default function ReferrerDetails() {
     <WxMainFull>
       <WxFormHeader title="Partner payment details" />
       {isLoading ? (
-        <div className="rounded w-100 wx__bg-white wx__mt-3">
+        <div className="rounded w-100 bg-white mt-3">
           <ProductTableSkelton viewBox="0 0 600 230" />
         </div>
       ) : (

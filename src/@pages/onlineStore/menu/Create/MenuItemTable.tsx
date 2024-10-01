@@ -45,11 +45,11 @@ const TableSubItem = ({
     return (
       <>
         <ul
-          className="wx__ul d-flex wx__justify-content-between"
+          className="wx__ul d-flex justify-content-between"
           style={{ marginLeft: `${space}px` }}
         >
           <li className="wx__li">
-            <span className="material-icons wx__me-2" role="button">
+            <span className="material-icons me-2" role="button">
               drag_indicator
             </span>
             <span>{sub.name}</span>
@@ -62,23 +62,23 @@ const TableSubItem = ({
             />
             <WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
               <ul>
-                <li className="wx__text_subtitle">
-                  <a className="wx__text_body" onClick={onEdit}>
+                <li className="text_subtitle">
+                  <a className="text_body" onClick={onEdit}>
                     <WxIcon icon="edit" />
                     Edit
                   </a>
                 </li>
                 {level > 0 && (
-                  <li className="wx__text_subtitle">
-                    <a className="wx__text_body" onClick={onAddSubcategory}>
+                  <li className="text_subtitle">
+                    <a className="text_body" onClick={onAddSubcategory}>
                       <WxIcon icon="add" />
                       Add Submenu
                     </a>
                   </li>
                 )}
 
-                {/* <li className="wx__text_subtitle delete">
-                  <a className="wx__text_body" onClick={onDelete}>
+                {/* <li className="text_subtitle delete">
+                  <a className="text_body" onClick={onDelete}>
                     <WxIcon icon="delete" />
                     Remove from list
                   </a>
@@ -102,11 +102,11 @@ const TableSubItem = ({
 
   return (
     <ul
-      className="wx__ul  d-flex wx__justify-content-between"
+      className="wx__ul  d-flex justify-content-between"
       style={{ marginLeft: `${space}px` }}
     >
       <li className="wx__li">
-        <span className="material-icons wx__me-2" aria-disabled>
+        <span className="material-icons me-2" aria-disabled>
           drag_indicator
         </span>
         <span>{sub.name}</span>
@@ -119,22 +119,22 @@ const TableSubItem = ({
         />
         <WxDropdown isOpen={showPopup} setIsOpen={setShowPopup}>
           <ul>
-            <li className="wx__text_subtitle">
-              <a className="wx__text_body" onClick={onEdit}>
+            <li className="text_subtitle">
+              <a className="text_body" onClick={onEdit}>
                 <WxIcon icon="edit" />
                 Edit
               </a>
             </li>
             {level > 0 && (
-              <li className="wx__text_subtitle">
-                <a className="wx__text_body" onClick={onAddSubcategory}>
+              <li className="text_subtitle">
+                <a className="text_body" onClick={onAddSubcategory}>
                   <WxIcon icon="add" />
                   Add Submenu
                 </a>
               </li>
             )}
-            {/* <li className="wx__text_subtitle delete">
-              <a className="wx__text_body" onClick={onDelete}>
+            {/* <li className="text_subtitle delete">
+              <a className="text_body" onClick={onDelete}>
                 <WxIcon icon="delete" />
                 Remove from list
               </a>

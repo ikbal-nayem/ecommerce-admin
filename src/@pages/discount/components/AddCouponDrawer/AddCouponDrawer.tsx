@@ -421,7 +421,7 @@ const AddCouponDrawer = forwardRef(
                           return (
                             <WxCheckbox
                               key={item.id}
-                              className="wx__py-3 wx__product_list_in_select_product_drawer"
+                              className="py-3 wx__product_list_in_select_product_drawer"
                               onChange={(e) => {
                                 handleSelectedData(item);
                               }}
@@ -429,7 +429,7 @@ const AddCouponDrawer = forwardRef(
                                 (checkItem) => checkItem.id === item.id
                               )}
                               label={
-                                <div className="d-flex wx__align-items-center">
+                                <div className="d-flex align-items-center">
                                   <WxThumbnail
                                     src={imageURLGenerate(item?.image)}
                                   />
@@ -445,7 +445,7 @@ const AddCouponDrawer = forwardRef(
                   totalPage[drawerContent] > page[drawerContent] + 1 ? (
                     <div
                       ref={loading}
-                      className="wx__text-primary wx__text-center"
+                      className="text-primary text-center"
                     >
                       Loading...
                     </div>
@@ -453,7 +453,7 @@ const AddCouponDrawer = forwardRef(
 
                   {!listContent[drawerContent].length && !loader && (
                     <div className="no-item d-flex justify-content-center align-items-center">
-                      <p className="wx__text_h3 ">No item found</p>
+                      <p className="text_h3 ">No item found</p>
                     </div>
                   )}
                 </div>
@@ -461,9 +461,9 @@ const AddCouponDrawer = forwardRef(
             </WxDrawerBody>
             <WxDrawerFooter>
               <div className="collection_form__footer">
-                <div className="wx__ms-auto d-flex">
+                <div className="ms-auto d-flex">
                   <WxButton
-                    className="wx__me-3"
+                    className="me-3"
                     variant="outline"
                     color="secondary"
                     onClick={onDrawerClose}

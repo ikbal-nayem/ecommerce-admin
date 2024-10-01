@@ -131,7 +131,7 @@ const RedXOrderPlace = () => {
           {(isLoading || isSaving) && <Preloader />}
           <div className="row">
             <div className="col-lg-8 col-md-12 col-sm-12">
-              <div className="card wx__p-4 wx__mb-3">
+              <div className="card p-4 mb-3">
                 <div className="row">
                   <div className="col-lg-6 col-md-6 col-sm-12">
                     <WxInput
@@ -255,52 +255,52 @@ const RedXOrderPlace = () => {
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12">
               <div className="card">
-                <div className="wx__mb-3">
+                <div className="mb-3">
                   {watch("customerName") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Name: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Name: </span>
                       {watch("customerName")}
                     </p>
                   )}
                   {watch("customerPhone") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Phone: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Phone: </span>
                       {watch("customerPhone")}
                     </p>
                   )}
                   {watch("deliveryArea") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Delivery Area: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Delivery Area: </span>
                       {watch("deliveryArea")}
                     </p>
                   )}
                   {watch("address") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Address: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Address: </span>
                       {watch("address")}
                     </p>
                   )}
                   {watch("cashCollectionAmount") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Amount: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Amount: </span>
                       {watch("cashCollectionAmount")}
                     </p>
                   )}
                   {watch("parcelWeight") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Weight: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Weight: </span>
                       {watch("parcelWeight")}
                     </p>
                   )}
                   {watch("value") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Value: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Value: </span>
                       {watch("value")}
                     </p>
                   )}
                   {watch("instruction") && (
-                    <p className="wx__my-0">
-                      <span className="wx__text_semibold">Instruction: </span>
+                    <p className="my-0">
+                      <span className="text_semibold">Instruction: </span>
                       {watch("instruction")}
                     </p>
                   )}

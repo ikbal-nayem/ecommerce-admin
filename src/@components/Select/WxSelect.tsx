@@ -41,7 +41,7 @@ const WxSelect = ({
 }: IWxSelectProps) => {
   return (
     <div
-      className={`form_group ${noMargin ? "wx__m-0" : ""}`}
+      className={`form_group ${noMargin ? "m-0" : ""}`}
       aria-disabled={isDisabled ? "true" : "false"}
     >
       {label ? (
@@ -51,7 +51,7 @@ const WxSelect = ({
       ) : null}
       <select
         id={id}
-        className={`form-select wx__bg-white wx__input_${color} wx__m-0`}
+        className={`form-select bg-white wx__input_${color} m-0`}
         style={{ ...style, padding: "0px 10px" }}
         defaultValue={defaultValue}
         value={value}
@@ -81,7 +81,7 @@ const WxSelect = ({
       {errorMessage ? (
         typeof errorMessage === "string" ? (
           <span
-            className={`note_text ${color === "danger" && "wx__text-danger"}`}
+            className={`note_text ${color === "danger" && "text-danger"}`}
           >
             {errorMessage}
           </span>

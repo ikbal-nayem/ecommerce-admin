@@ -67,8 +67,8 @@ const SiteOperator = () => {
 			/>
 			<form onSubmit={handleSubmit(onSubmitting)} noValidate>
 				<div className="row">
-					<div className="col-lg-8 col-md-7 col-sm-12 wx__mt-3">
-						<div className="card wx__p-4">
+					<div className="col-lg-8 col-md-7 col-sm-12 mt-3">
+						<div className="card p-4">
 							<div className="row">
 								<div className="col-md-12 col-sm-12">
 									<WxInput
@@ -84,7 +84,7 @@ const SiteOperator = () => {
 										}
 									/>
 								</div>
-								<div className="col-md-12 col-sm-12 wx__mt-3">
+								<div className="col-md-12 col-sm-12 mt-3">
 									<WxInput
 										label="Operator Name"
 										isRequired
@@ -99,12 +99,12 @@ const SiteOperator = () => {
 							</div>
 						</div>
 
-						<div className="card wx__p-4 wx__mt-3">
+						<div className="card p-4 mt-3">
 							<div className="row">
-								<h5 className="wx__text_heading wx__text_semibold wx__mb-0">
+								<h5 className="text_heading text_semibold mb-0">
 									Add User Password
 								</h5>
-								<div className="col-md-6 col-sm-12 wx__mt-3">
+								<div className="col-md-6 col-sm-12 mt-3">
 									<WxInput
 										isRequired
 										noMargin
@@ -117,7 +117,7 @@ const SiteOperator = () => {
 										errorMessage={errors.password && "Password is required"}
 									/>
 								</div>
-								<div className="col-md-6 col-sm-12 wx__mt-3">
+								<div className="col-md-6 col-sm-12 mt-3">
 									<WxInput
 										isRequired
 										noMargin
@@ -135,8 +135,8 @@ const SiteOperator = () => {
 							</div>
 						</div>
 					</div>
-					<div className="col-lg-4 col-md-5 col-sm-12 wx__mt-3">
-						<div className="card wx__form_right wx__p-4">
+					<div className="col-lg-4 col-md-5 col-sm-12 mt-3">
+						<div className="card wx__form_right p-4">
 							<WxButton
 								type="submit"
 								variant="fill"
@@ -156,12 +156,12 @@ const SiteOperator = () => {
 								errorMessage={errors.roleId && "Confirm Password is required"}
 							/>
 							<WxHr />
-							<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+							<div className="d-flex justify-content-between align-items-center mb-3">
 								<div className="d-flex">
 									<WxSwitch
 										label={
-											<div className="d-flex wx__text_medium">
-												<span className="wx__me-1">Operator Status</span>
+											<div className="d-flex text_medium">
+												<span className="me-1">Operator Status</span>
 											</div>
 										}
 										defaultChecked={true}
@@ -173,9 +173,9 @@ const SiteOperator = () => {
 									/>
 								</div>
 							</div>
-							<div className="d-flex wx__align-items-center status_mxg_warning">
+							<div className="d-flex align-items-center status_mxg_warning">
 								<WxIcon icon="info" />
-								<p className="wx__text_small wx__text_regular ms_2 wx__mb-0">
+								<p className="text_small text_regular ms_2 mb-0">
 									Operator will get password through email
 								</p>
 							</div>

@@ -142,8 +142,8 @@ const Products = () => {
   return (
 		<>
 			<WxMainFull>
-				<div className="d-flex wx__justify-content-between wx__align-items-center">
-					<h4 className="wx__text_h4 wx__text_medium mb-0">Products List</h4>
+				<div className="d-flex justify-content-between align-items-center">
+					<h4 className="text_h4 text_medium mb-0">Products List</h4>
 					<WxButton
 						disabled={isLoader}
 						variant="fill"
@@ -154,12 +154,12 @@ const Products = () => {
 				</div>
 
 				{isLoading ? (
-					<div className="rounded w-100 wx__bg-white wx__mt-3">
+					<div className="rounded w-100 bg-white mt-3">
 						<ProductTableSkelton viewBox="0 0 600 230" />
 					</div>
 				) : (
-					<div className="card wx__mt-3">
-						<div className="wx__mt-3 hide-mobile-view">
+					<div className="card mt-3">
+						<div className="mt-3 hide-mobile-view">
 							<Tabs
 								option={[{ id: 0, title: "All" }, ...PRODUCT_STATUS]}
 								renderTab={(item) => item?.title}
@@ -171,7 +171,7 @@ const Products = () => {
 								setCurrentIndex={onStatusChangeFromTab}
 							/>
 						</div>
-						<div className="row wx__p-4 wx__pb-0">
+						<div className="row p-4 pb-0">
 							<div className="col-xl-8 col-lg-6 col-md-6 col-sm-12">
 								<WxInput
 									type="search"
@@ -220,7 +220,7 @@ const Products = () => {
 								</div>
 							</>
 						) : (
-							<div className="wx__mt-3">
+							<div className="mt-3">
 								<WxNotFound
 									title="No Products Found"
 									btn_link={PRODUCT_CREATE}

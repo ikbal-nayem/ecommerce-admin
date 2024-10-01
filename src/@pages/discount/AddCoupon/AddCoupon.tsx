@@ -119,7 +119,7 @@ const AddCoupon = () => {
         <WxFormHeader title="Add Coupon" backNavigationLink={DISCOUNT} />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
           <div className="row">
-            <div className="col-md-8 col-sm-12 wx__mt-3">
+            <div className="col-md-8 col-sm-12 mt-3">
               <CouponForm
                 register={register}
                 errors={errors}
@@ -135,7 +135,7 @@ const AddCoupon = () => {
                 watch={watch}
               />
             </div>
-            <div className="col-md-4 col-sm-12 wx__mt-3">
+            <div className="col-md-4 col-sm-12 mt-3">
               <div className="card wx__form_right">
                 <WxButton
                   className="hide-mobile-view"
@@ -147,12 +147,12 @@ const AddCoupon = () => {
                 </WxButton>
                 <WxHr className="hide-mobile-view" />
                 <div style={{ maxWidth: "100%" }}>
-                  <h6 className="wx__text_h6 wx__text_semibold">Summary</h6>
+                  <h6 className="text_h6 text_semibold">Summary</h6>
                   <div className="no_discount_card">
                     {watch("couponDiscountAmount") >= 1 ? (
-                      <div className="wx__text-start">
+                      <div className="text-start">
                         <span>{watch("couponCode")}</span>
-                        <ul className="wx__m-0">
+                        <ul className="m-0">
                           {watch("couponDiscountAmount") >= 1 ? (
                             <li>
                               {watch("couponDiscountAmount")}% of
@@ -211,18 +211,18 @@ const AddCoupon = () => {
                 </div>
               </div>
               <div className="card wx__form_right">
-                <div className="d-flex wx__flex-column">
-                  <h6 className="wx__text_body wx__text_strong  wx__mb-1">
+                <div className="d-flex flex-column">
+                  <h6 className="text_body text_strong  mb-1">
                     0 Times
                   </h6>
-                  <span className="wx__text_small">Coupon Used</span>
+                  <span className="text_small">Coupon Used</span>
                 </div>
                 <WxHr />
-                <div className="d-flex wx__flex-column">
-                  <h6 className="wx__text_body wx__text_strong wx__mb-1">
+                <div className="d-flex flex-column">
+                  <h6 className="text_body text_strong mb-1">
                     0 Hour
                   </h6>
-                  <span className="wx__text_small">Remaining Time</span>
+                  <span className="text_small">Remaining Time</span>
                 </div>
               </div>
             </div>

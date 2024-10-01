@@ -88,10 +88,10 @@ const FacebookCampaignForm = ({ isSaving }) => {
   );
 
   return (
-    <form className="wx__mt-3" onSubmit={handleSubmit(onSubmitting)}>
+    <form className="mt-3" onSubmit={handleSubmit(onSubmitting)}>
       <div className="row ">
         <div className="col-md-12 col-lg-8 col-sm-12">
-          <div className="card wx__p-4 wx__mb-3">
+          <div className="card p-4 mb-3">
             <div className="row">
               <div className="col-md-12 col-lg-12">
                 <h6>Campaign Info</h6>
@@ -125,9 +125,9 @@ const FacebookCampaignForm = ({ isSaving }) => {
               </div>
             </div>
           </div>
-          <div className="card wx__p-4 wx__mb-3">
+          <div className="card p-4 mb-3">
             <div className="row">
-              <h6 className="wx__text_h6 wx__text_semibold">
+              <h6 className="text_h6 text_semibold">
                 Budget & Schedule
               </h6>
               <div className="col-md-6 col-lg-6 col-sm-12">
@@ -199,9 +199,9 @@ const FacebookCampaignForm = ({ isSaving }) => {
               </div>
             </div>
           </div>
-          <div className="card wx__p-4 wx__mb-3">
+          <div className="card p-4 mb-3">
             <div className="row">
-              <h6 className="wx__text_h6 wx__text_semibold">Audience Group</h6>
+              <h6 className="text_h6 text_semibold">Audience Group</h6>
               <div className="col-md-12 col-lg-12 col-sm-12">
                 <WxLabel isRequired>Targeted Audience</WxLabel>
                 <WxTextarea
@@ -234,7 +234,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   registerProperty={{ ...register("ageStartFrom") }}
                 />
               </div>
-              <div className="col-md-3 col-lg-3 col-sm-12 wx__mt-4">
+              <div className="col-md-3 col-lg-3 col-sm-12 mt-4">
                 <WxSelect
                   options={ageOption}
                   textKey="title"
@@ -244,9 +244,9 @@ const FacebookCampaignForm = ({ isSaving }) => {
               </div>
             </div>
           </div>
-          <div className="card wx__p-4 wx__mb-3">
+          <div className="card p-4 mb-3">
             <div className="row">
-              <h6 className="wx__text_h6 wx__text_semibold">Ads Content</h6>
+              <h6 className="text_h6 text_semibold">Ads Content</h6>
               <div className="col-md-12 col-lg-12 col-sm-12">
                 <WxRadio
                   label="Image"
@@ -258,7 +258,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   registerProperty={{ ...register("adsContentRadio") }}
                 >
                   {watch("adsContentRadio") === "1" && (
-                    <div className="wx__mt-2">
+                    <div className="mt-2">
                       <MediaInput
                         multiple
                         fileList={imageList}
@@ -279,7 +279,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   registerProperty={{ ...register("adsContentRadio") }}
                 >
                   {watch("adsContentRadio") === "2" && (
-                    <div className="wx__mt-2">
+                    <div className="mt-2">
                       <MediaInput
                         dragNDropFor="video"
                         dragNDropText="Video"
@@ -305,7 +305,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   >
                     {watch("adsContentRadio") === "3" && (
                       <WxInput
-                        className="wx__mt-2"
+                        className="mt-2"
                         placeholder="Enter Post ID or link"
                         registerProperty={{ ...register("postIdOrLink") }}
                       />
@@ -332,15 +332,15 @@ const FacebookCampaignForm = ({ isSaving }) => {
           </div>
         </div>
         <div className="col-lg-4 col-md-12 col-sm-12">
-          <div className="card wx__p-4 wx__mb-3">
+          <div className="card p-4 mb-3">
             <WxButton disabled={isSaving} type="submit" variant="fill">
               Launch Campaign
             </WxButton>
             <WxHr />
             <WxHr />
             <div>
-              <h6 className=" wx__mb-0 wx__text_strong">250</h6>
-              <span className="wx__text_small ">Total Audience Size</span>
+              <h6 className=" mb-0 text_strong">250</h6>
+              <span className="text_small ">Total Audience Size</span>
             </div>
           </div>
         </div>

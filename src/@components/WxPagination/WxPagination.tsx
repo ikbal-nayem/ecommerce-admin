@@ -123,7 +123,7 @@ const WxPagination = ({
 	return (
 		<div className="wx__table_pagination_main">
 			{/* table per page number selection start */}
-			<div className="wx__perpage_data wx__me-2">
+			<div className="wx__perpage_data me-2">
 				<p>Results per page</p>
 				<select
 					defaultValue={paginationLimit}

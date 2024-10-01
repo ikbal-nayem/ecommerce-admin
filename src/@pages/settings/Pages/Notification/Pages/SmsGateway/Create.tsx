@@ -54,8 +54,8 @@ const OrderConfirmation = () => {
       />
       <form onSubmit={handleSubmit(onSubmitHandler)}>
         <div className="row w-100">
-          <div className="sms_gateway_left col-lg-8 col-md-12 col-sm-12 wx__mt-3">
-            <div className="card wx__p-4">
+          <div className="sms_gateway_left col-lg-8 col-md-12 col-sm-12 mt-3">
+            <div className="card p-4">
               <div className="row">
                 <div className="col-md-12 col-sm-12">
                   <WxSelect
@@ -69,7 +69,7 @@ const OrderConfirmation = () => {
                 </div>
               </div>
             </div>
-            <div className="card wx__p-4 wx__mt-4">
+            <div className="card p-4 mt-4">
               <div className="row">
                 <div className="col-md-6 col-sm-12">
                   <WxInput
@@ -134,8 +134,8 @@ const OrderConfirmation = () => {
               </div>
             </div>
           </div>
-          <div className="sms_gateway_right col-lg-4 col-md-12 col-sm-12 wx__mt-3">
-            <div className="card wx__p-4">
+          <div className="sms_gateway_right col-lg-4 col-md-12 col-sm-12 mt-3">
+            <div className="card p-4">
               <WxButton variant="fill" type="submit">
                 Add
               </WxButton>

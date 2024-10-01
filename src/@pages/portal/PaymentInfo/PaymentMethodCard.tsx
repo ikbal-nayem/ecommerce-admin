@@ -19,7 +19,7 @@ const PaymentMethodCard = ({
 
   return (
     <div className="card payment_info_card">
-      <div className="d-flex wx__justify-content-between">
+      <div className="d-flex justify-content-between">
         {info?.paymentMedia?.type ===
         MASTER_META_KEY.PAYMENT_MEDIA_TYPE_BANK ? (
           <WxIcon
@@ -38,14 +38,14 @@ const PaymentMethodCard = ({
           <WxIcon icon="more_horiz" onClick={() => setShowPopup(true)} />
           <WxDropdown isOpen={showPopup} setIsOpen={setShowPopup} drop>
             <ul>
-              <li className="wx__text_subtitle">
-                <span className="wx__text_body" onClick={() => onUpdate(info)}>
+              <li className="text_subtitle">
+                <span className="text_body" onClick={() => onUpdate(info)}>
                   <WxIcon icon="edit" />
                   Edit
                 </span>
               </li>
-              <li className="wx__text_subtitle" style={{ cursor: "pointer" }}>
-                <span className="wx__text_body" onClick={() => onDelete(info)}>
+              <li className="text_subtitle" style={{ cursor: "pointer" }}>
+                <span className="text_body" onClick={() => onDelete(info)}>
                   <WxIcon icon="delete" color="danger" />
                   Delete
                 </span>
@@ -54,39 +54,39 @@ const PaymentMethodCard = ({
           </WxDropdown>
         </div>
       </div>
-      <div className="wx__mt-3">
-        <span className="wx__text-muted wx__text_body wx__text_regualar">
+      <div className="mt-3">
+        <span className="text-muted text_body text_regualar">
           {info?.paymentMedia?.typeMeta?.title}
         </span>
         <br />
-        <span className="wx__text_body wx__text_strong">
+        <span className="text_body text_strong">
           {info?.paymentMedia?.title}
         </span>
       </div>
-      <div className="wx__mt-3">
-        <span className="wx__text-muted wx__text_body wx__text_regualar">
+      <div className="mt-3">
+        <span className="text-muted text_body text_regualar">
           Branch Name
         </span>
         <br />
-        <span className="wx__text_body wx__text_strong">
+        <span className="text_body text_strong">
           {info?.branchName || "---"}
         </span>
       </div>
-      <div className="wx__mt-3">
-        <span className="wx__text-muted wx__text_body wx__text_regualar">
+      <div className="mt-3">
+        <span className="text-muted text_body text_regualar">
           Account Name
         </span>
         <br />
-        <span className="wx__text_body wx__text_strong">
+        <span className="text_body text_strong">
           {info?.accountName || "---"}
         </span>
       </div>
-      <div className="wx__mt-3">
-        <span className="wx__text-muted wx__text_body wx__text_regualar">
+      <div className="mt-3">
+        <span className="text-muted text_body text_regualar">
           Account / Mobile number
         </span>
         <br />
-        <span className="wx__text_body wx__text_strong">
+        <span className="text_body text_strong">
           {info?.accountNumber || info?.mobile}
         </span>
       </div>

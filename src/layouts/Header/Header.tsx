@@ -28,14 +28,14 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 	};
 
 	return (
-		<div className='wx__header d-flex wx__justify-content-between wx__align-items-center'>
+		<div className='wx__header d-flex justify-content-between align-items-center'>
 			<div className='menu_icon me-2' onClick={onClickMenuBar}>
 				{menuIconFlag ? <WxIcon icon='close' /> : <WxIcon icon='menu' />}
 			</div>
-			<div className='wx__header__logo d-flex wx__align-items-center'>
+			<div className='wx__header__logo d-flex align-items-center'>
 				<Link to='/dashboard'>
 					<img src='media/logos/shop-dark.png' alt='logo' width={40} />
-					<span className='wx__text_body wx__text_medium ms-2'>
+					<span className='text_body text_medium ms-2'>
 						<strong className='me-2'>Omuk Dokan</strong>
 						<WxTag label={activePlan?.title} color={statusColorMapping(activePlan?.title)} />
 					</span>
@@ -50,7 +50,7 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 					)}
 				</div>
 				<div>
-					<span role='button' className='wx__text_semibold topbar_user_name' onClick={() => setMenu(!menu)}>
+					<span role='button' className='text_semibold topbar_user_name' onClick={() => setMenu(!menu)}>
 						{user_data?.first_name
 							? user_data?.first_name + ' ' + user_data?.last_name
 							: user_data?.email || user_data?.role_name || 'My Account'}
@@ -59,17 +59,17 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 					<WxDropdown id='triggerPlace' isOpen={menu} setIsOpen={setMenu}>
 						<ul>
 							<li>
-								<Link to='account-setting' className='wx__text_body'>
+								<Link to='account-setting' className='text_body'>
 									<WxIcon icon='person' variants='outlined' size={20} /> Manage Profile
 								</Link>
 							</li>
 							<li>
-								<a href={ENV.LandingPageURL + 'learning-center'} target='_blank' className='wx__text_body'>
+								<a href={ENV.LandingPageURL + 'learning-center'} target='_blank' className='text_body'>
 									<WxIcon icon='menu_book' variants='outlined' size={20} /> Learning Center
 								</a>
 							</li>
 							<li>
-								<Link to={PORTAL_OVERVIEW} className='wx__text_body'>
+								<Link to={PORTAL_OVERVIEW} className='text_body'>
 									<WxIcon icon='group_work' variants='outlined' size={20} /> Partner Portal
 								</Link>
 							</li>
@@ -77,7 +77,7 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 								<WxHr />
 							</li>
 							<li>
-								<a className='wx__text_body' onClick={logout}>
+								<a className='text_body' onClick={logout}>
 									<WxIcon icon='wifi_protected_setup' variants='outlined' size={20} /> Log out
 								</a>
 							</li>

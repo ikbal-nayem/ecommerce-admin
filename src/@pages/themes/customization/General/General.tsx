@@ -50,7 +50,7 @@ export default function CustomizationGeneral() {
 						</WxButton>
 					}
 				/>
-				<div className="card wx__p-4">
+				<div className="card p-4">
 					<div className="row">
 						<div className="col-md-6">
 							<WxInput

@@ -9,7 +9,7 @@ const WxListItem = ({ children, btn, onEdit, onDelete }: WxListItemProps) => {
 	return (
 		<li
 			role={btn ? "button" : "none"}
-			className={`form_group-item d-flex wx__justify-content-between wx__align-items-center ${
+			className={`form_group-item d-flex justify-content-between align-items-center ${
 				btn ? "list-group-item-action" : ""
 			}`}
 		>
@@ -26,7 +26,7 @@ const WxListItem = ({ children, btn, onEdit, onDelete }: WxListItemProps) => {
 				) : null}
 				{onDelete ? (
 					<span
-						className="material-icons wx__ms-1"
+						className="material-icons ms-1"
 						role="button"
 						onClick={() => onDelete()}
 					>

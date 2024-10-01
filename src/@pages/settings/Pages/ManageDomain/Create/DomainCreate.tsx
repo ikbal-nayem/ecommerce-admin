@@ -37,14 +37,14 @@ const DomainCreate = () => {
 
 	return (
 		<WxMainSm className="domain_create_sec">
-			<div className="wx__mb-3">
+			<div className="mb-3">
 				<WxFormHeader
 					title="Connect Existing Domain"
 					backNavigationLink={SETTINGS_DOMAIN}
 				/>
 			</div>
 			<form onSubmit={handleSubmit(onSubmitting)} noValidate>
-				<div className="card wx__p-4">
+				<div className="card p-4">
 					<div className="row">
 						<div className="col-md-12 col-sm-12">
 							<WxInput
@@ -66,7 +66,7 @@ const DomainCreate = () => {
 								errorMessage={errors?.domainAddress?.message}
 							/>
 						</div>
-						<p className="wx__text_subtitle wx__mt-3">
+						<p className="text_subtitle mt-3">
 							<strong>Note: </strong>Please read this{" "}
 							<a
 								href={imageURLGenerate(DOMAIN_SETUP_INSTRUCTION)}
@@ -88,7 +88,7 @@ const DomainCreate = () => {
 				</div>
 			</form>
 			{domain?.id ? (
-				<div className="card wx__p-4 wx__mt-3">
+				<div className="card p-4 mt-3">
 					<p>
 						Thanks for staying with WebX. It will take few minutes (usually{" "}
 						<b>1-5</b> minutes) to configure your domain and acquire{" "}

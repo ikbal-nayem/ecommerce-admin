@@ -17,7 +17,7 @@ const Preloader = ({
 }: IPreloaderProps) => {
 	return (
 		<div
-			className={`d-flex wx__align-items-center wx__justify-content-center ${
+			className={`d-flex align-items-center justify-content-center ${
 				className || ""
 			}`}
 			style={absolutePosition ? { position: "relative" } : {}}
@@ -44,7 +44,7 @@ export const ButtonLoader = ({
 	className,
 }: IPreloaderProps) => (
 	<div
-		className={`d-flex wx__align-items-center wx__justify-content-center ${
+		className={`d-flex align-items-center justify-content-center ${
 			className || ""
 		}`}
 		style={absolutePosition ? { position: "relative" } : {}}

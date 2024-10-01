@@ -19,8 +19,8 @@
     // left: 50%;
     // margin-left: -60px;
     transition: opacity 0.3s;
-    @extend .wx__text_subtitle;
-    @extend .wx__text_400;
+    @extend .text_subtitle;
+    @extend .text_400;
     &::after {
       content: "";
       position: absolute;

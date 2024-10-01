@@ -16,7 +16,7 @@
           right: 15px;
           bottom: -10px;
         }
-        .wx__text_semibold {
+        .text_semibold {
           margin-bottom: 0.5em;
         }
       }
@@ -130,8 +130,8 @@
   width: 266px;
   min-height: 56px;
   padding: 18px 8px !important;
-  @extend .wx__text_body;
-  @extend .wx__text_regular;
+  @extend .text_body;
+  @extend .text_regular;
   color: $neutral__900;
   .copy_icon {
     font-size: 1.3rem;
@@ -148,8 +148,8 @@
   // justify-content: center;
   color: $neutral__900;
   // span {
-  @extend .wx__text_body;
-  @extend .wx__text_strong;
+  @extend .text_body;
+  @extend .text_strong;
   // }
   a {
     color: $neutral__900;
@@ -168,8 +168,8 @@
   justify-content: space-around;
   span,
   p {
-    @extend .wx__text_small;
-    @extend .wx__text_regular;
+    @extend .text_small;
+    @extend .text_regular;
     color: $neutral__700;
     margin: 0;
     padding: 0;
@@ -193,8 +193,8 @@
   a {
     text-decoration: none;
     color: $primary__600;
-    @extend .wx__text_body;
-    @extend .wx__text_strong;
+    @extend .text_body;
+    @extend .text_strong;
     &:hover {
       color: $primary__600;
     }
@@ -203,8 +203,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @extend .wx__text_small;
-    @extend .wx__text_regular;
+    @extend .text_small;
+    @extend .text_regular;
     color: $neutral__700;
     span {
       margin: 4px 0;
@@ -220,8 +220,8 @@
   min-height: 56px;
   text-align: end;
   padding: 18px 8px;
-  @extend .wx__text_body;
-  @extend .wx__text_regular;
+  @extend .text_body;
+  @extend .text_regular;
 }
 
 .wx__table_cell_date {
@@ -231,8 +231,8 @@
   min-height: 56px;
   text-align: end;
   padding: 18px 8px;
-  @extend .wx__text_body;
-  @extend .wx__text_regular;
+  @extend .text_body;
+  @extend .text_regular;
 }
 
 .wx__table_cell_phone {
@@ -241,8 +241,8 @@
   width: 187px;
   min-height: 56px;
   padding: 18px 8px;
-  @extend .wx__text_body;
-  @extend .wx__text_regular;
+  @extend .text_body;
+  @extend .text_regular;
   .phone_icon {
     color: $neutral__700;
     margin-right: 10.5px;
@@ -253,8 +253,8 @@
   // width: 266px;
   min-height: 56px;
   padding: 8px;
-  @extend .wx__text_body;
-  @extend .wx__text_regular;
+  @extend .text_body;
+  @extend .text_regular;
 }
 
 .wx__table_cell_input_number {
@@ -373,7 +373,7 @@ input::-webkit-inner-spin-button {
   width: 266px;
   min-height: 56px;
   padding: 8px;
-  @extend .wx__text_body;
-  @extend .wx__text_regular;
+  @extend .text_body;
+  @extend .text_regular;
   border: 1px solid $neutral__500;
 }

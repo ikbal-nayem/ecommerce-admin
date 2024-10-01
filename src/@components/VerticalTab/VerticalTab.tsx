@@ -62,7 +62,7 @@ const Tablist = ({ children, id, className, activeTab }): JSX.Element => {
   }, [activeTab]);
   return (
     <div className={`tabs_list ${className ? className : ""}`}>
-      <ul className="wx__m-0 wx__p-0" id={id}>
+      <ul className="m-0 p-0" id={id}>
         {children}
       </ul>
     </div>

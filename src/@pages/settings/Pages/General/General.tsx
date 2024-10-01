@@ -183,10 +183,10 @@ const General = () => {
 
       <form onSubmit={handleSubmit(onSubmitBasicInfo)}>
         {!basicInfoLoader ? (
-          <div className="card wx__p-3 wx__mt-3">
+          <div className="card p-3 mt-3">
             <div className="row">
-              <div className="col-md-12 col-sm-12 d-flex wx__justify-content-between wx__align-items-center">
-                <h5 className="wx__mb-0">Basic Information</h5>
+              <div className="col-md-12 col-sm-12 d-flex justify-content-between align-items-center">
+                <h5 className="mb-0">Basic Information</h5>
                 {basicInfoFlag ? (
                   <div className="d-flex">
                     <WxButton
@@ -213,7 +213,7 @@ const General = () => {
             </div>
             {basicInfoFlag ? (
               <div className="row">
-                <div className="col-md-6 col-sm-12 wx__mt-2">
+                <div className="col-md-6 col-sm-12 mt-2">
                   <WxInput
                     label="Store name"
                     noMargin
@@ -226,14 +226,14 @@ const General = () => {
                     }
                   />
                 </div>
-                <div className="col-md-6 col-sm-12 wx__mt-2">
+                <div className="col-md-6 col-sm-12 mt-2">
                   <WxInput
                     label="Legal Name Of Company"
                     noMargin
                     registerProperty={{ ...register("legalName") }}
                   />
                 </div>
-                <div className="col-md-6 col-sm-12 wx__mt-2">
+                <div className="col-md-6 col-sm-12 mt-2">
                   <WxSelect
                     label="Store Industry"
                     noMargin
@@ -254,17 +254,17 @@ const General = () => {
               </div>
             ) : (
               <div className="row">
-                <p className="wx__text_body wx__text_strong">
+                <p className="text_body text_strong">
                   {basicInfo?.businessName}
                 </p>
-                <p className="wx__text_small wx__text_regular">
+                <p className="text_small text_regular">
                   {basicInfo?.legalName} | {basicInfo?.storeTypes?.name || ""}
                 </p>
               </div>
             )}
           </div>
         ) : (
-          <div className="wx__bg-white rounded">
+          <div className="bg-white rounded">
             <BasicInfoSkelton viewBox="0 0 595 100" />
           </div>
         )}
@@ -272,10 +272,10 @@ const General = () => {
 
       <form onSubmit={addressHandleSubmit(onSubmitAddress)}>
         {!addressNContactLoader ? (
-          <div className="card wx__p-3 wx__mt-3 address_form">
+          <div className="card p-3 mt-3 address_form">
             <div className="row">
-              <div className="col-md-12 col-sm-12 d-flex wx__justify-content-between wx__align-items-center">
-                <h5 className="wx__mb-0">Address & Contact</h5>
+              <div className="col-md-12 col-sm-12 d-flex justify-content-between align-items-center">
+                <h5 className="mb-0">Address & Contact</h5>
                 {addressFlag ? (
                   <div className="d-flex">
                     <WxButton
@@ -295,14 +295,14 @@ const General = () => {
                   </WxButton>
                 )}
               </div>
-              <p className="wx__text_body wx__body_regular wx__mb-1">
+              <p className="text_body wx__body_regular mb-1">
                 Used on customer order confirmations and your WebX bill.
               </p>
               <WxHr />
             </div>
             {addressFlag ? (
               <div className="row">
-                <div className="col-md-12 col-sm-12 wx__mt-2">
+                <div className="col-md-12 col-sm-12 mt-2">
                   <WxInput
                     registerProperty={{
                       ...addressRegister("country", { required: false }),
@@ -313,7 +313,7 @@ const General = () => {
                     isDisabled
                   />
                 </div>
-                <div className="col-md-12 col-sm-12 wx__mt-2">
+                <div className="col-md-12 col-sm-12 mt-2">
                   <WxInput
                     isRequired
                     label="Address"
@@ -327,14 +327,14 @@ const General = () => {
                     }
                   />
                 </div>
-                <div className="col-md-12 col-sm-12 wx__mt-2">
+                <div className="col-md-12 col-sm-12 mt-2">
                   <WxInput
                     label="Appartment,  suits, etc"
                     noMargin
                     registerProperty={{ ...addressRegister("addressLine2") }}
                   />
                 </div>
-                <div className="col-md-4 col-sm-12 wx__mt-2">
+                <div className="col-md-4 col-sm-12 mt-2">
                   <WxSelect
                     label="Division/State"
                     noMargin
@@ -357,7 +357,7 @@ const General = () => {
                     }
                   />
                 </div>
-                <div className="col-md-4 col-sm-12 wx__mt-2">
+                <div className="col-md-4 col-sm-12 mt-2">
                   {/* {getValues("city")} */}
                   <WxSelect
                     label="District/City"
@@ -379,7 +379,7 @@ const General = () => {
                     }
                   />
                 </div>
-                <div className="col-md-4 col-sm-12 wx__mt-2">
+                <div className="col-md-4 col-sm-12 mt-2">
                   <WxInput
                     registerProperty={{
                       ...addressRegister("zip", { required: true }),
@@ -391,14 +391,14 @@ const General = () => {
                     }
                   />
                 </div>
-                <div className="col-md-6 col-sm-12 wx__mt-2">
+                <div className="col-md-6 col-sm-12 mt-2">
                   <WxInput
                     label="Email Address"
                     type="email"
                     registerProperty={{ ...addressRegister("email") }}
                   />
                 </div>
-                <div className="col-md-6 col-sm-12 wx__mt-2">
+                <div className="col-md-6 col-sm-12 mt-2">
                   <WxInput
                     label="Phone Number."
                     registerProperty={{ ...addressRegister("phone") }}
@@ -409,10 +409,10 @@ const General = () => {
               <>
                 {storeAddress && Object.keys(storeAddress).length !== 0 ? (
                   <>
-                    <div className="d-flex wx__justify-content-between">
+                    <div className="d-flex justify-content-between">
                       <div>
                         <div className="row">
-                          <div className="wx__text_body wx__text_strong d-flex align-items-center">
+                          <div className="text_body text_strong d-flex align-items-center">
                             <WxIcon icon="location_on" />
                             <span>
                               {storeAddress?.addressLine1
@@ -437,15 +437,15 @@ const General = () => {
                         {/* <div className="row"> */}
                         <div className="d-flex">
                           {storeAddress?.email && (
-                            <div className="wx__text_body wx__text_strong d-flex align-items-center  wx__my-2">
+                            <div className="text_body text_strong d-flex align-items-center  my-2">
                               <WxIcon icon="email" />
-                              <div className="d-flex wx__flex-column">
+                              <div className="d-flex flex-column">
                                 <span> {storeAddress?.email || ""}</span>
                               </div>
                             </div>
                           )}
                           {storeAddress?.phone && (
-                            <div className=" wx__text_body wx__text_strong d-flex align-items-center wx__ms-3">
+                            <div className=" text_body text_strong d-flex align-items-center ms-3">
                               <WxIcon icon="phone" />
                               <span> {storeAddress?.phone || ""}</span>
                             </div>
@@ -465,31 +465,31 @@ const General = () => {
             )}
           </div>
         ) : (
-          <div className="wx__bg-white rounded wx__mt-3">
+          <div className="bg-white rounded mt-3">
             <AddressNcontactSkelton viewBox="0 0 595 110" />
           </div>
         )}
       </form>
 
       {/* <form onSubmit={handleSubmit(onSubmitContactInfo)}>
-        <div className="card wx__p-3 wx__mt-3 contact_form">
+        <div className="card p-3 mt-3 contact_form">
           <div className="row">
-            <div className="col-md-12 col-sm-12 d-flex wx__justify-content-between wx__align-items-center">
-              <h5 className="wx__mb-0">Contact Information</h5>
+            <div className="col-md-12 col-sm-12 d-flex justify-content-between align-items-center">
+              <h5 className="mb-0">Contact Information</h5>
             </div>
             <WxHr />
           </div>
 
           <div className="row">
-            <div className="wx__text_body wx__text_strong d-flex align-items-center wx__mb-3">
+            <div className="text_body text_strong d-flex align-items-center mb-3">
               <WxIcon icon="phone" />
               <span> {storeAddress?.phone || ""}</span>
             </div>
-            <div className="wx__text_body wx__text_strong d-flex align-items-center wx__mb-3">
+            <div className="text_body text_strong d-flex align-items-center mb-3">
               <WxIcon icon="email" />
-              <div className="d-flex wx__flex-column">
+              <div className="d-flex flex-column">
                 <span> {storeAddress?.email || ""}</span>
-                <span className="wx__text_small wx__text_regular">
+                <span className="text_small text_regular">
                   Webx will communicated via this email
                 </span>
               </div>
@@ -498,13 +498,13 @@ const General = () => {
         </div>
       </form> */}
 
-      <div className="card wx__p-3 wx__mt-3 currency_sec">
+      <div className="card p-3 mt-3 currency_sec">
         <div className="row">
-          <div className="col-md-12 col-sm-12 d-flex wx__justify-content-between wx__align-items-center text__small">
-            <h5 className="wx__mb-0">Store currency</h5>
-            <div className="d-flex wx__align-items-center">
+          <div className="col-md-12 col-sm-12 d-flex justify-content-between align-items-center text__small">
+            <h5 className="mb-0">Store currency</h5>
+            <div className="d-flex align-items-center">
               <WxIcon icon="info" variants="outlined" />
-              <p className="wx__ms-1 wx__mb-0">
+              <p className="ms-1 mb-0">
                 More currencies are coming soon
               </p>
             </div>
@@ -512,24 +512,24 @@ const General = () => {
           <WxHr />
         </div>
         <div className="row">
-          <p className="wx__text_body wx__text_strong">
+          <p className="text_body text_strong">
             Bangladeshi takas (BDT)
           </p>
         </div>
       </div>
 
       <form onSubmit={handleSubmit(onSubmitAddress)}>
-        <div className="card wx__p-3 wx__mt-3 address_form">
+        <div className="card p-3 mt-3 address_form">
           <div className="row">
-            <div className="col-md-12 col-sm-12 d-flex wx__justify-content-between wx__align-items-center">
-              <h5 className="wx__mb-0">Time Zone</h5>
-              <div className="d-flex wx__align-items-center wx__text-secondary">
+            <div className="col-md-12 col-sm-12 d-flex justify-content-between align-items-center">
+              <h5 className="mb-0">Time Zone</h5>
+              <div className="d-flex align-items-center text-secondary">
                 <WxIcon
                   icon="info"
                   variants="outlined"
-                  className="wx__mt-auto"
+                  className="mt-auto"
                 />
-                <p className="wx__ms-1 wx__mb-0">
+                <p className="ms-1 mb-0">
                   More timezone are coming soon
                 </p>
               </div>
@@ -538,7 +538,7 @@ const General = () => {
           </div>
 
           <div className="row">
-            <p className="wx__text_body wx__text_strong d-flex align-items-center">
+            <p className="text_body text_strong d-flex align-items-center">
               (GMT +6:00) Astana, Dhaka
             </p>
           </div>

@@ -21,7 +21,7 @@ const SiteOperatorListTable = ({
 						<th className="wx__th">Name</th>
 						<th className="wx__th">Email</th>
 						<th className="wx__th">Phone</th>
-						<th className="wx__th wx__text-end">Action</th>
+						<th className="wx__th text-end">Action</th>
 					</tr>
 				</thead>
 				<tbody className="wx__tbody">

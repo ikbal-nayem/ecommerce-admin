@@ -64,7 +64,7 @@ const BrowseProduct = ({
 					closeIconAction={onClose}
 				/>
 				<WxInput
-					className="wx__mx-4"
+					className="mx-4"
 					type="search"
 					isAutoFocus
 					placeholder="Search products"
@@ -74,7 +74,7 @@ const BrowseProduct = ({
 				{isLoading ? (
 					<Preloader absolutePosition />
 				) : !productList.length ? (
-					<h6 className="wx__text-center wx__text-muted wx__text_italic">
+					<h6 className="text-center text-muted text_italic">
 						Search for product
 					</h6>
 				) : null}
@@ -93,15 +93,15 @@ const BrowseProduct = ({
 												name="Image"
 												src={imageURLGenerate(item?.thumbnail)}
 											/>
-											<div className="wx__flex-column  text-overflow-hidden wx__ms-3">
-												<span className="wx__text_body wx__text_strong wx__text-primary">
+											<div className="flex-column  text-overflow-hidden ms-3">
+												<span className="text_body text_strong text-primary">
 													{item.title}
 												</span>
 												<br />
 												{item?.options?.map((v) => (
 													<small
 														key={v.key}
-														className="wx__text_small wx__text-muted"
+														className="text_small text-muted"
 													>
 														{v.key} - {v.value}
 													</small>

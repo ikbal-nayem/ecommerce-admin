@@ -37,7 +37,7 @@ const WxSlider = ({ srcKey, imageList, timeInterval = 5000, autoPlay = true }: I
   
   return (
     <section className="wx__slider">
-      <div className="img-main-section w-100 d-flex wx__align-items-center">
+      <div className="img-main-section w-100 d-flex align-items-center">
         <div className="left-icon">
           <WxIcon icon="arrow_back_ios" onClick={() => setCurrentImgFun(-1)} />
         </div>

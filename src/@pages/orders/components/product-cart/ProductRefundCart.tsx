@@ -28,8 +28,8 @@ const ProductRefundCart = ({
 
 	return (
 		<>
-			<div className="d-flex wx__align-items-center gap-4 wx__p-3">
-				<h6 className="wx__text_h6 wx__text_semibold wx__m-0">Products</h6>
+			<div className="d-flex align-items-center gap-4 p-3">
+				<h6 className="text_h6 text_semibold m-0">Products</h6>
 				{orderStatus ? (
 					<div>
 						<WxTag
@@ -40,7 +40,7 @@ const ProductRefundCart = ({
 				) : null}
 				{/* <WxIcon
 					variants="round"
-					className="wx__ms-auto"
+					className="ms-auto"
 					role="button"
 					icon="more_vert"
 				/> */}
@@ -51,7 +51,7 @@ const ProductRefundCart = ({
 						<tr className="wx__tr">
 							<th className="wx__th">Product</th>
 							<th className="wx__th">Unit</th>
-							<th className="wx__th wx__text-end">Total</th>
+							<th className="wx__th text-end">Total</th>
 						</tr>
 					</thead>
 					<tbody className="wx__tbody">
@@ -63,13 +63,13 @@ const ProductRefundCart = ({
 											name="Image"
 											src={imageURLGenerate(product?.thumbnail)}
 										/>
-										<div className="wx__flex-column wx__ms-3 text-overflow-hidden">
-											<span className="wx__text_body wx__text_strong wx__text-primary ">
+										<div className="flex-column ms-3 text-overflow-hidden">
+											<span className="text_body text_strong text-primary ">
 												{product?.title}
 											</span>
 											<br />
 											{VariantsView(product?.options)}
-											<small className="wx__text_small wx__text-muted">
+											<small className="text_small text-muted">
 												Unit Price ৳
 												{product?.sellingPrice || product?.regularPrice}
 											</small>
@@ -98,7 +98,7 @@ const ProductRefundCart = ({
 const VariantsView = (options: { key: string; value: string }[]) =>
 	options?.map((v) => (
 		<Fragment key={v.key}>
-			<small className="wx__text_small wx__text-muted">
+			<small className="text_small text-muted">
 				{v.key} - {v.value}
 			</small>
 			<br />

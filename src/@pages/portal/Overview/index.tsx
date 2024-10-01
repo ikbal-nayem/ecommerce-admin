@@ -29,24 +29,24 @@ export default function Overview() {
 			<WxFormHeader title="Overview" noBack />
 			<div className="portal_overview">
 				<h6>Referred users</h6>
-				<div className="card wx__p-4">
+				<div className="card p-4">
 					{isLoading ? (
 						<Preloader />
 					) : (
 						<div className="row card_info">
 							<div className="col-md-4">
-								<div className="d-flex wx__align-items-center gap-3">
+								<div className="d-flex align-items-center gap-3">
 									<WxIcon icon="groups" className="groups" />
 									<p>
 										Total partner
-										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+										<h5 className="text_h5 text_semibold m-0">
 											{overviewData?.user?.totalUser || 0}
 										</h5>
 									</p>
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="d-flex wx__align-items-center gap-3">
+								<div className="d-flex align-items-center gap-3">
 									<WxIcon
 										icon="group"
 										className="group"
@@ -54,14 +54,14 @@ export default function Overview() {
 									/>
 									<p>
 										Paid partners
-										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+										<h5 className="text_h5 text_semibold m-0">
 											{overviewData?.user?.paidUser || 0}
 										</h5>
 									</p>
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="d-flex wx__align-items-center gap-3">
+								<div className="d-flex align-items-center gap-3">
 									<WxIcon
 										icon="group"
 										className="group"
@@ -69,7 +69,7 @@ export default function Overview() {
 									/>
 									<p>
 										Free partners
-										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+										<h5 className="text_h5 text_semibold m-0">
 											{overviewData?.user?.freeUser || 0}
 										</h5>
 									</p>
@@ -80,18 +80,18 @@ export default function Overview() {
 				</div>
 			</div>
 
-			<div className="wx__mt-5 portal_overview">
-				<div className="d-flex wx__justify-content-between wx__align-items-end wx__mb-2">
+			<div className="mt-5 portal_overview">
+				<div className="d-flex justify-content-between align-items-end mb-2">
 					<h6>Payment information</h6>
 					{/* <RequestWithdraw /> */}
 				</div>
 				{isLoading ? (
 					<Preloader />
 				) : (
-					<div className="card wx__p-4">
+					<div className="card p-4">
 						<div className="row card_info">
 							<div className="col-md-4">
-								<div className="d-flex wx__align-items-center gap-3">
+								<div className="d-flex align-items-center gap-3">
 									<WxIcon
 										icon="analytics"
 										className="bank_total"
@@ -99,29 +99,29 @@ export default function Overview() {
 									/>
 									<p>
 										Total payment method
-										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+										<h5 className="text_h5 text_semibold m-0">
 											{overviewData?.paymentMethod?.totalCount}
 										</h5>
 									</p>
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="d-flex wx__align-items-center gap-3">
+								<div className="d-flex align-items-center gap-3">
 									<WxIcon icon="account_balance" className="bank_info" />
 									<p>
 										Bank
-										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+										<h5 className="text_h5 text_semibold m-0">
 											{overviewData?.paymentMethod?.bankCount}
 										</h5>
 									</p>
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="d-flex wx__align-items-center gap-3">
+								<div className="d-flex align-items-center gap-3">
 									<WxIcon icon="account_balance_wallet" className="bank_info" />
 									<p>
 										Mobile (MFS)
-										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+										<h5 className="text_h5 text_semibold m-0">
 											{overviewData?.paymentMethod?.mfsCount}
 										</h5>
 									</p>
@@ -129,35 +129,35 @@ export default function Overview() {
 							</div>
 						</div>
 
-						<div className="row card_info wx__mt-5">
+						<div className="row card_info mt-5">
 							<div className="col-md-4">
-								<div className="d-flex wx__align-items-center gap-3">
+								<div className="d-flex align-items-center gap-3">
 									<WxIcon icon="payments" className="payments" />
 									<p>
 										Total Income
-										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+										<h5 className="text_h5 text_semibold m-0">
 											BDT 0
 										</h5>
 									</p>
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="d-flex wx__align-items-center gap-3">
+								<div className="d-flex align-items-center gap-3">
 									<WxIcon icon="money" className="money" />
 									<p>
 										Last Withdraw
-										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+										<h5 className="text_h5 text_semibold m-0">
 											BDT 0
 										</h5>
 									</p>
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="d-flex wx__align-items-center gap-3">
+								<div className="d-flex align-items-center gap-3">
 									<WxIcon icon="event_available" className="event_available" />
 									<p>
 										Available Withdraw
-										<h5 className="wx__text_h5 wx__text_semibold wx__m-0">
+										<h5 className="text_h5 text_semibold m-0">
 											BDT 0
 										</h5>
 									</p>

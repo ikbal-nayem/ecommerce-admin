@@ -73,25 +73,25 @@ const Dashboard = () => {
 														className='date_action_li'
 														onClick={() => setDateRange([new Date(), new Date()])}
 													>
-														<span className='wx__text_body'>Today</span>
+														<span className='text_body'>Today</span>
 													</li>
 													<li
 														className='date_action_li'
 														onClick={() => setDateRange([dateAction(1, 'day'), dateAction(1, 'day')])}
 													>
-														<span className='wx__text_body'>Yesterday</span>
+														<span className='text_body'>Yesterday</span>
 													</li>
 													<li
 														className='date_action_li'
 														onClick={() => setDateRange([dateAction(7, 'day'), endDate])}
 													>
-														<span className='wx__text_body'>This Week</span>
+														<span className='text_body'>This Week</span>
 													</li>
 													<li
 														className='date_action_li'
 														onClick={() => setDateRange([dateAction(1, 'month'), endDate])}
 													>
-														<span className='wx__text_body'>This Month</span>
+														<span className='text_body'>This Month</span>
 													</li>
 													<div className='w-100 mt-2'>
 														<DateInput
@@ -114,8 +114,8 @@ const Dashboard = () => {
 								<div className='col-md-4 col-sm-12 orders_summery'>
 									<WxIcon className='orders_icon' icon='receipt' />
 									<div>
-										<span className='wx__text_caption'>Total Orders</span>
-										<h5 className='wx__text_h5 wx__m-0 wx__text_medium'>
+										<span className='text_caption'>Total Orders</span>
+										<h5 className='text_h5 m-0 text_medium'>
 											{formateNumber(orderSummery?.totalOrder) || 0}
 										</h5>
 									</div>
@@ -123,8 +123,8 @@ const Dashboard = () => {
 								<div className='col-md-4 col-sm-12 sales_summery'>
 									<WxIcon className='sales_icon' icon='currency_yen' />
 									<div>
-										<span className='wx__text_caption'>Total Sales</span>
-										<h5 className='wx__text_h5 wx__m-0 wx__text_medium'>
+										<span className='text_caption'>Total Sales</span>
+										<h5 className='text_h5 m-0 text_medium'>
 											BDT {formateNumber(orderSummery?.totalSaleAmount) || 0}
 										</h5>
 									</div>
@@ -132,8 +132,8 @@ const Dashboard = () => {
 								<div className='col-md-4 col-sm-12 visitors_summery'>
 									<WxIcon className='visitors_icon' icon='supervisor_account' />
 									<div>
-										<span className='wx__text_caption'>Total Visitors</span>
-										<h5 className='wx__text_h5 wx__m-0 wx__text_medium'>
+										<span className='text_caption'>Total Visitors</span>
+										<h5 className='text_h5 m-0 text_medium'>
 											{formateNumber(orderSummery?.totalUniqueVisit) || 0}
 										</h5>
 									</div>
@@ -145,10 +145,10 @@ const Dashboard = () => {
 						<div className='card_ p-3 d-flex flex-column justify-content-between'>
 							<div className='top d-flex align-items-center mb-3'>
 								<span className='circle'></span>
-								<h6 className='wx__text_medium mb-0'>Live</h6>
+								<h6 className='text_medium mb-0'>Live</h6>
 							</div>
 							<div className='bottom'>
-								<p className='wx__text_caption'>Total visitors now</p>
+								<p className='text_caption'>Total visitors now</p>
 								<h2 className='mb-0'>0</h2>
 							</div>
 						</div>
@@ -167,7 +167,7 @@ const Dashboard = () => {
 								<div className='d-flex align-items-center left'>
 									<WxIcon className='me-2' icon='receipt' />
 									<p className='m-0'>
-										<span className='wx__text_semibold'>{orderSummery?.totalPendingOrder} orders</span> to
+										<span className='text_semibold'>{orderSummery?.totalPendingOrder} orders</span> to
 										pending
 									</p>
 								</div>
@@ -183,11 +183,11 @@ const Dashboard = () => {
 									</WxButton>
 								</div>
 							</div>
-							<div className='notify d-flex wx__justify-content-between wx__align-items-center'>
-								<div className='d-flex wx__align-items-center left'>
-									<WxIcon className='wx__me-2' icon='account_balance_wallet' />
-									<p className='wx__m-0'>
-										<span className='wx__text_semibold'>{orderSummery?.totalUnpaidOrder} payments</span> to
+							<div className='notify d-flex justify-content-between align-items-center'>
+								<div className='d-flex align-items-center left'>
+									<WxIcon className='me-2' icon='account_balance_wallet' />
+									<p className='m-0'>
+										<span className='text_semibold'>{orderSummery?.totalUnpaidOrder} payments</span> to
 										unpaid
 									</p>
 								</div>
@@ -203,11 +203,11 @@ const Dashboard = () => {
 									</WxButton>
 								</div>
 							</div>
-							<div className=' notify d-flex wx__justify-content-between wx__align-items-center'>
-								<div className='d-flex wx__align-items-center left'>
-									<WxIcon className='wx__me-2' icon='production_quantity_limits' />
-									<p className='wx__m-0'>
-										<span className='wx__text_semibold'>{orderSummery?.totalRefundRequest} Refunds</span>{' '}
+							<div className=' notify d-flex justify-content-between align-items-center'>
+								<div className='d-flex align-items-center left'>
+									<WxIcon className='me-2' icon='production_quantity_limits' />
+									<p className='m-0'>
+										<span className='text_semibold'>{orderSummery?.totalRefundRequest} Refunds</span>{' '}
 										request pending
 									</p>
 								</div>
@@ -225,34 +225,34 @@ const Dashboard = () => {
 							</div>
 						</div>
 					) : (
-						<div className='wx__bg-white rounded  wx__mt-3'>
+						<div className='bg-white rounded  mt-3'>
 							<NotifyListSkelton viewBox='0 0 590 115' />
 						</div>
 					)}
 				</div>
 			</div>
 			{/* {!summeryLoader ? (
-        <div className="wx__all_packBanner d-flex wx__justify-content-between wx__align-items-center">
-          <h2 className="wx__m-0">50% off on all packs</h2>
+        <div className="wx__all_packBanner d-flex justify-content-between align-items-center">
+          <h2 className="m-0">50% off on all packs</h2>
           <WxButton variant="outline">
             Explore Now
             <WxIcon className="ms_2" icon="arrow_forward" />
           </WxButton>
         </div>
       ) : (
-        <div className="wx__bg-white rounded wx__mt-3">
+        <div className="bg-white rounded mt-3">
           <AllPackBanner viewBox="0 0 590 60" />
         </div>
       )} */}
 
-			{/* <div className="wx__discover_webx card wx__p-3 wx__pb-0 wx__mt-3">
-				<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-4">
-					<h5 className="wx__m-0 wx__text_h5 wx__text_semibold">
+			{/* <div className="wx__discover_webx card p-3 pb-0 mt-3">
+				<div className="d-flex justify-content-between align-items-center mb-4">
+					<h5 className="m-0 text_h5 text_semibold">
 						Discover Webx
 					</h5>
-					<div className="d-flex wx__align-items-center">
+					<div className="d-flex align-items-center">
 						<WxButton size="sm">Explore More</WxButton>
-						<WxIcon className="wx__ms-3" icon="more_vert" />
+						<WxIcon className="ms-3" icon="more_vert" />
 					</div>
 				</div>
 				<div className="row">
@@ -260,7 +260,7 @@ const Dashboard = () => {
 						return (
 							<div
 								key={item.id}
-								className="wx__discover_cart col-md-4 col-sm-12 wx__mb-3"
+								className="wx__discover_cart col-md-4 col-sm-12 mb-3"
 							>
 								<iframe
 									src={`https://www.youtube.com/embed/${getId(item.videoLink)}`}
@@ -270,7 +270,7 @@ const Dashboard = () => {
 									allowFullScreen
 								></iframe>
 
-								<span className="wx__text_medium wx__text__body wx__mt-3">
+								<span className="text_medium text__body mt-3">
 									{sliceParagraph(item?.description, 15)}
 								</span>
 							</div>
@@ -280,12 +280,12 @@ const Dashboard = () => {
 			</div> */}
 			{/* {!appsLoader ? (
 				<div className='wx__apps_of_the_week'>
-					<div className='d-flex wx__justify-content-between wx__align-items-center'>
-						<div className='d-flex wx__align-items-center'>
+					<div className='d-flex justify-content-between align-items-center'>
+						<div className='d-flex align-items-center'>
 							<WxIcon className='trophy_icon' size={28} icon='emoji_events' />
 							<div className='ms_2'>
-								<h5 className='wx__m-0 wx__text_h5 wx__text_semibold'>Apps Of The Week</h5>
-								<span className='wx__text_body wx__text_regular'>
+								<h5 className='m-0 text_h5 text_semibold'>Apps Of The Week</h5>
+								<span className='text_body text_regular'>
 									Explore the endless possibilities with the help of our apps
 								</span>
 							</div>
@@ -297,19 +297,19 @@ const Dashboard = () => {
 						<div
 							onClick={() => navigate('/apps/list')}
 							style={{ cursor: 'pointer' }}
-							className='col-md-3 col-sm-12 wx__mt-3'
+							className='col-md-3 col-sm-12 mt-3'
 						>
 							<div className='wx__exploreMore_card card '>
-								<h2 className='wx__m-0'>
+								<h2 className='m-0'>
 									<span>Explore More</span>
-									<WxIcon className='explore_more_icon wx__ms-3' icon='arrow_circle_right' />
+									<WxIcon className='explore_more_icon ms-3' icon='arrow_circle_right' />
 								</h2>
 							</div>
 						</div>
 					</div>
 				</div>
 			) : (
-				<div className='wx__bg-white rounded wx__mt-3'>
+				<div className='bg-white rounded mt-3'>
 					<DashboardAppSkelton viewBox='0 0 595 205' />
 				</div>
 			)} */}

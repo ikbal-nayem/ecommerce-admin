@@ -47,12 +47,12 @@ const Themes = () => {
             color="secondary"
             onClick={() => window.open(ENV.STORE_DOMAIN, "_blank")}
           >
-            <WxIcon icon="visibility" className="wx__me-2" />
+            <WxIcon icon="visibility" className="me-2" />
             view your store
           </WxButton>
         }
       />
-      <div className="card wx__p-3">
+      <div className="card p-3">
         {loadingInstalledTheme ? (
           <Preloader />
         ) : (
@@ -60,7 +60,7 @@ const Themes = () => {
         )}
       </div>
 
-      <div className="card wx__p-3 wx__mt-3">
+      <div className="card p-3 mt-3">
         {themeList.length ? (
           <Themelibrary
             themeList={themeList}
@@ -69,7 +69,7 @@ const Themes = () => {
         ) : loadingThemeList ? (
           <Preloader />
         ) : (
-          <h3 className="wx__text-center">No theme found!</h3>
+          <h3 className="text-center">No theme found!</h3>
         )}
       </div>
     </WxMainLg>

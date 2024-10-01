@@ -152,10 +152,10 @@ export default function CustomizationTypography() {
 						</WxButton>
 					}
 				/>
-				<div className="card wx__p-4">
+				<div className="card p-4">
 					<div className="row">
 						<strong>Title</strong>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 mt-2">
 							<WxSelect
 								label="Font Family"
 								noMargin
@@ -168,7 +168,7 @@ export default function CustomizationTypography() {
 								}}
 							/>
 						</div>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 mt-2">
 							<WxSelect
 								label="Font Style"
 								noMargin
@@ -181,7 +181,7 @@ export default function CustomizationTypography() {
 								}}
 							/>
 						</div>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 mt-2">
 							<WxSelect
 								label="Font Weight"
 								noMargin
@@ -198,7 +198,7 @@ export default function CustomizationTypography() {
 							<WxHr />
 							<strong>Body</strong>
 						</div>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 mt-2">
 							<WxSelect
 								label="Font Family"
 								noMargin
@@ -211,7 +211,7 @@ export default function CustomizationTypography() {
 								}}
 							/>
 						</div>
-						<div className="col-md-4 col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 mt-2">
 							<WxSelect
 								label="Font Style"
 								noMargin
@@ -225,7 +225,7 @@ export default function CustomizationTypography() {
 							/>
 						</div>
 
-						<div className="col-md-4 col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 mt-2">
 							<WxSelect
 								label="Font Weight"
 								noMargin

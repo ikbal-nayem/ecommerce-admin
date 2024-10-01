@@ -38,7 +38,7 @@ export const ConfirmationModal = ({
 				{body ? (
 					body
 				) : (
-					<p className="wx__text_body wx__text_regular">
+					<p className="text_body text_regular">
 						Are your sure you want to delete it? This action wont be reversible!
 					</p>
 				)}
@@ -46,7 +46,7 @@ export const ConfirmationModal = ({
 			<WxModalFooter>
 				<div className="d-flex justify-content-end">
 					<WxButton
-						className="wx__me-3"
+						className="me-3"
 						variant="outline"
 						color="secondary"
 						onClick={() => (onClose ? onClose() : setIsOpen(false))}

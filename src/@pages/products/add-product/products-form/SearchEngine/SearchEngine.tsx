@@ -27,12 +27,12 @@ const SearchEngine = () => {
 	}, [url]);
 
 	return (
-		<div className="card search_engine wx__p-3 wx__mt-4">
-			<h6 className="wx__text_semibold wx__text_h6">
+		<div className="card search_engine p-3 mt-4">
+			<h6 className="text_semibold text_h6">
 				Search Engine Optimization
 				<WxIcon variants="round" icon="help" role="button" />
 			</h6>
-			<span className="wx__text_regular wx__text_body">
+			<span className="text_regular text_body">
 				Add a title and description to see how this product might appear in a
 				search engine listing
 			</span>
@@ -41,12 +41,12 @@ const SearchEngine = () => {
 					<WxHr />
 					<WxInput
 						label={
-							<label className="d-flex wx__align-items-center">
+							<label className="d-flex align-items-center">
 								Page Title &nbsp;
 								<WxIcon
 									variants="round"
 									icon="help"
-									className="wx__text-dark"
+									className="text-dark"
 									role="button"
 								/>
 							</label>
@@ -55,12 +55,12 @@ const SearchEngine = () => {
 					/>
 					<WxTextarea
 						label={
-							<label className="d-flex wx__align-items-center">
+							<label className="d-flex align-items-center">
 								Meta Description &nbsp;
 								<WxIcon
 									variants="round"
 									icon="help"
-									className="wx__text-dark"
+									className="text-dark"
 									role="button"
 								/>
 							</label>
@@ -72,12 +72,12 @@ const SearchEngine = () => {
 					<WxInput
 						noMargin
 						label={
-							<label className="d-flex wx__align-items-center">
+							<label className="d-flex align-items-center">
 								URL Handle &nbsp;
 								<WxIcon
 									variants="round"
 									icon="help"
-									className="wx__text-dark"
+									className="text-dark"
 									role="button"
 								/>
 							</label>
@@ -87,7 +87,7 @@ const SearchEngine = () => {
 					/>
 				</>
 			) : (
-				<div className="wx__mt-3">
+				<div className="mt-3">
 					<WxButton variant="outline" onClick={() => setEditSEO(true)}>
 						Edit SEO
 					</WxButton>

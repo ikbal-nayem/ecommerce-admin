@@ -9,35 +9,35 @@ const OrderHistoryTable = () => {
         <thead className="">
           <tr className="">
             <th className="" style={{}}>
-              <div className="wx__text_subtitle wx__text_semibold">Order</div>
+              <div className="text_subtitle text_semibold">Order</div>
             </th>
             <th className="" style={{}}>
-              <div className="wx__text_subtitle wx__text_semibold">Date</div>
+              <div className="text_subtitle text_semibold">Date</div>
             </th>
             {/* <th className="" style={{ width: "324px" }}></th> */}
             <th className="" style={{}}>
-              <div className="wx__text_subtitle wx__text_semibold">
+              <div className="text_subtitle text_semibold">
                 Source Channel
               </div>
             </th>
             <th className="" style={{}}>
-              <div className="wx__text_subtitle wx__text_semibold">Items</div>
+              <div className="text_subtitle text_semibold">Items</div>
             </th>
             <th className="" style={{}}>
-              <div className="wx__text_subtitle wx__text_semibold">Total</div>
+              <div className="text_subtitle text_semibold">Total</div>
             </th>
             <th className="" style={{}}>
-              <div className="wx__text_subtitle wx__text_semibold">
+              <div className="text_subtitle text_semibold">
                 Payment Status
               </div>
             </th>
             <th className="" style={{}}>
-              <div className="wx__text_subtitle wx__text_semibold">
+              <div className="text_subtitle text_semibold">
                 Order Status
               </div>
             </th>
             <th className="" style={{}}>
-              <div className="wx__text_subtitle wx__text_semibold"></div>
+              <div className="text_subtitle text_semibold"></div>
             </th>
             <th className="" style={{}}></th>
           </tr>

@@ -45,23 +45,23 @@ const OrderTimeline = ({
 
 	return (
 		<>
-			<div className="card wx__mt-3 wx__p-3">
-				<h6 className="wx__text_h6 wx__text_semibold">Timeline</h6>
+			<div className="card mt-3 p-3">
+				<h6 className="text_h6 text_semibold">Timeline</h6>
 				<div className="wx__timeline">
 					<div className="events">
 						{orderTimeline?.map((event: IOrderTimeline) => (
 							<div className="event" key={event?.id}>
 								<div className="dot parent-dot" />
-								<div className="wx__text_body wx__text_medium">
+								<div className="text_body text_medium">
 									{event?.description} <br />
-									<small className="wx__text_regular wx__text_small wx__text-muted">
+									<small className="text_regular text_small text-muted">
 										{generateDateFormat(
 											event?.time,
 											"%date%-%MM%-%yyyy% %hour%:%minute% %ampm%"
 										)}
 									</small>
 									{event?.canAppove ? (
-										<div className="d-flex gap-2 wx__mt-1">
+										<div className="d-flex gap-2 mt-1">
 											<WxTag
 												label="Approve"
 												color="success"

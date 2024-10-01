@@ -11,8 +11,8 @@
 		label {
 			margin-bottom: 0.7em;
 			font-weight: 600 !important;
-			@extend .wx__text_subtitle;
-			@extend .wx__text_semibold;
+			@extend .text_subtitle;
+			font-weight: bold;
 			display: inline-block !important;
 			color: $neutral__900;
 			span {
@@ -33,8 +33,8 @@
 		}
 		.note_text {
 			color: $neutral__600;
-			@extend .wx__text_subtitle;
-			@extend .wx__text_regular;
+			@extend .text_subtitle;
+			@extend .text_regular;
 		}
 		&[aria-disabled='true'] {
 			label {

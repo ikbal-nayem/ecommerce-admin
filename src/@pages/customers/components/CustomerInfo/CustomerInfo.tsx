@@ -32,7 +32,7 @@ const CustomerInfo = ({ customer, statistics }: CustomerInfoProps) => {
   return (
     <Fragment>
       <div className="wx__customer_info ">
-        <div className=" d-flex wx__justify-space-between  w-100">
+        <div className=" d-flex justify-space-between  w-100">
           <div className="customer__name d-flex w-100">
             <WxThumbnail name={customer?.customer?.name || ""} />
             <div className="d-block">
@@ -52,7 +52,7 @@ const CustomerInfo = ({ customer, statistics }: CustomerInfoProps) => {
           </div>
         </div>
         <WxHr />
-        <div className="customer__activity d-flex wx__justify-content-between wx__align-items-center wx__flex-wrap">
+        <div className="customer__activity d-flex justify-content-between align-items-center flex-wrap">
           <div className="item">
             <h6>{lastOrderDateTime(statistics)}</h6>
             <p className="sub-text">Last Order</p>

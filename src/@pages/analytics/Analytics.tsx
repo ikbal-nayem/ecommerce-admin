@@ -209,10 +209,10 @@ const Analytics = () => {
   };
 
   return (
-    <div className="container wx__p-0">
+    <div className="container p-0">
       <div className="w-100 row">
-        <div className="d-flex wx__justify-content-between">
-          <h4 className="wx__m-0 wx__text_h4 wx__text_medium">Analytics</h4>
+        <div className="d-flex justify-content-between">
+          <h4 className="m-0 text_h4 text_medium">Analytics</h4>
           <div className="col-lg-2 col-md-2 col-sm-5">
             <WxInput
               onClick={() => setMenu(!menu)}
@@ -239,7 +239,7 @@ const Analytics = () => {
                         setDateRange([new Date(), new Date()]);
                       }}
                     >
-                      <span className="wx__text_body">Today</span>
+                      <span className="text_body">Today</span>
                     </li>
                     <li
                       className="date_action_li"
@@ -251,7 +251,7 @@ const Analytics = () => {
                         ]);
                       }}
                     >
-                      <span className="wx__text_body">Yesterday</span>
+                      <span className="text_body">Yesterday</span>
                     </li>
                     <li
                       className="date_action_li"
@@ -260,7 +260,7 @@ const Analytics = () => {
                         setDateRange([dateAction(7, "day"), new Date()]);
                       }}
                     >
-                      <span className="wx__text_body">This Week</span>
+                      <span className="text_body">This Week</span>
                     </li>
                     <li
                       className="date_action_li"
@@ -269,7 +269,7 @@ const Analytics = () => {
                         setDateRange([dateAction(1, "month"), new Date()]);
                       }}
                     >
-                      <span className="wx__text_body">This Month</span>
+                      <span className="text_body">This Month</span>
                     </li>
                     <div className="w-100 mt-2">
                       <DateInput
@@ -291,17 +291,17 @@ const Analytics = () => {
           </div>
         </div>
       </div>
-      <div className="row wx__g-3 wx__mb-3">
+      <div className="row wx__g-3 mb-3">
         <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 wx__total_sales">
-          <div className="wx__bg-white rounded h-100">
+          <div className="bg-white rounded h-100">
             {!allContentLoader ? (
               <>
-                <div className="total_sales_info d-flex wx__justify-content-between wx__align-items-center wx__p-3">
+                <div className="total_sales_info d-flex justify-content-between align-items-center p-3">
                   <div>
-                    <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                    <h6 className="m-0 text_h6 text_regular">
                       Total Sales
                     </h6>
-                    <h3 className="wx__m-0 wx__text_h3 wx__text_semibold">
+                    <h3 className="m-0 text_h3 text_semibold">
                       {formateNumber(analyticsData.totalSales)} BDT
                     </h3>
                   </div>
@@ -318,10 +318,10 @@ const Analytics = () => {
               {/* {!allContentLoader ? (
                 <D3Chart initialData={totalSales} />
               ) : (
-                <Preloader className="wx__mt-5" />
+                <Preloader className="mt-5" />
               )} */}
               {
-                <Suspense fallback={<Preloader className="wx__mt-5" />}>
+                <Suspense fallback={<Preloader className="mt-5" />}>
                   <D3Chart
                     initialData={totalSales}
                     defaultColor="#ff206e"
@@ -337,15 +337,15 @@ const Analytics = () => {
           </div>
         </div>
         <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 wx__online_session">
-          <div className="wx__bg-white rounded h-100">
+          <div className="bg-white rounded h-100">
             {!allContentLoader ? (
               <>
-                <div className="online_session_info d-flex wx__justify-content-between wx__align-items-center wx__p-3">
+                <div className="online_session_info d-flex justify-content-between align-items-center p-3">
                   <div>
-                    <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                    <h6 className="m-0 text_h6 text_regular">
                       Total Unique Orders
                     </h6>
-                    <h3 className="wx__m-0 wx__text_h3 wx__text_semibold">
+                    <h3 className="m-0 text_h3 text_semibold">
                       {analyticsData.totalUniqueOrders}
                     </h3>
                   </div>
@@ -370,21 +370,21 @@ const Analytics = () => {
                   chartFor={valueFor}
                 />
               ) : (
-                <Preloader className="wx__mt-5" />
+                <Preloader className="mt-5" />
               )}
             </div>
           </div>
         </div>
         <div className="col-xl-4 col-lg-12 col-md-12 col-sm-12">
-          <div className="wx__bg-white rounded h-100 wx__total_orders">
+          <div className="bg-white rounded h-100 wx__total_orders">
             {!allContentLoader ? (
               <>
-                <div className="online_session_info d-flex wx__justify-content-between wx__align-items-center wx__p-3">
+                <div className="online_session_info d-flex justify-content-between align-items-center p-3">
                   <div>
-                    <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                    <h6 className="m-0 text_h6 text_regular">
                       Total Orders
                     </h6>
-                    <h3 className="wx__m-0 wx__text_h3 wx__text_semibold">
+                    <h3 className="m-0 text_h3 text_semibold">
                       {analyticsData.totalOrders}
                     </h3>
                   </div>
@@ -412,23 +412,23 @@ const Analytics = () => {
                   chartFor={valueFor}
                 />
               ) : (
-                <Preloader className="wx__mt-5" />
+                <Preloader className="mt-5" />
               )}
             </div>
           </div>
         </div>
       </div>
-      <div className="row wx__g-3 wx__mb-3">
+      <div className="row wx__g-3 mb-3">
         <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 wx__total_sales">
-          <div className="wx__bg-white rounded h-100 wx__avg_order_value">
+          <div className="bg-white rounded h-100 wx__avg_order_value">
             {!allContentLoader ? (
               <>
-                <div className="total_sales_info d-flex wx__justify-content-between wx__align-items-center wx__p-3">
+                <div className="total_sales_info d-flex justify-content-between align-items-center p-3">
                   <div>
-                    <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                    <h6 className="m-0 text_h6 text_regular">
                       Average Order Value
                     </h6>
-                    <h3 className="wx__m-0 wx__text_h3 wx__text_semibold">
+                    <h3 className="m-0 text_h3 text_semibold">
                       {formateNumber(analyticsData.averageOrderValue)} BDT
                     </h3>
                   </div>
@@ -451,26 +451,26 @@ const Analytics = () => {
                   chartFor={valueFor}
                 />
               ) : (
-                <Preloader className="wx__mt-5" />
+                <Preloader className="mt-5" />
               )}
             </div>
           </div>
         </div>
         {/* <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 wx__online_session">
-            <div className="wx__bg-white rounded h-100 wx__avg_order_count">
-              <div className="online_session_info d-flex wx__justify-content-between wx__align-items-center wx__p-3">
+            <div className="bg-white rounded h-100 wx__avg_order_count">
+              <div className="online_session_info d-flex justify-content-between align-items-center p-3">
                 <div>
-                  <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                  <h6 className="m-0 text_h6 text_regular">
                     Average Order Count
                   </h6>
-                  <h3 className="wx__m-0 wx__text_h3 wx__text_semibold">0</h3>
+                  <h3 className="m-0 text_h3 text_semibold">0</h3>
                 </div>
                 <div>
                   <WxIcon className="avg_count_icon" icon="connected_tv" />
                 </div>
               </div>
               <WxHr />
-              <div className="wx__p-3">
+              <div className="p-3">
                 <D3Chart
                   lineColor="#36CFC9"
                   areaColor="#B5F5EC"
@@ -481,13 +481,13 @@ const Analytics = () => {
           </div> */}
         <div className="wx__online-conversion-rate col-xl-4 col-lg-12 col-md-12 col-sm-12">
           {!allContentLoader ? (
-            <div className="wx__bg-white rounded h-100 wx__p-3">
-              <div className="d-flex wx__justify-content-between wx__align-items-center">
+            <div className="bg-white rounded h-100 p-3">
+              <div className="d-flex justify-content-between align-items-center">
                 <div>
-                  <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                  <h6 className="m-0 text_h6 text_regular">
                     Online Store Conversion Rate
                   </h6>
-                  <h3 className="wx__m-0 wx__text_h3 wx__text_semibold">
+                  <h3 className="m-0 text_h3 text_semibold">
                     {conversionData?.purchasePercentage || 0}%
                   </h3>
                 </div>
@@ -500,25 +500,25 @@ const Analytics = () => {
               </div>
               <WxHr />
               <div>
-                <span className="wx__text_caption">conversion funnel</span>
-                <div className="d-flex wx__justify-content-between wx__align-items-center wx__my-3">
+                <span className="text_caption">conversion funnel</span>
+                <div className="d-flex justify-content-between align-items-center my-3">
                   <div>
-                    <p className="wx__m-0 wx__text_body">Add to Cart</p>
-                    <h4 className="wx__m-0 wx__text_h4 wx__text_medium">
+                    <p className="m-0 text_body">Add to Cart</p>
+                    <h4 className="m-0 text_h4 text_medium">
                       {conversionData?.addToCartPercentage || 0}%
                     </h4>
-                    {/* <span className="wx__text_small">(0 sessions)</span> */}
+                    {/* <span className="text_small">(0 sessions)</span> */}
                   </div>
                   <div>{/* <FunnelChart /> */}</div>
                 </div>
                 <WxHr />
-                <div className="d-flex wx__justify-content-between wx__align-items-center">
+                <div className="d-flex justify-content-between align-items-center">
                   <div>
-                    <p className="wx__m-0 wx__text_body">Purchase</p>
-                    <h4 className="wx__m-0 wx__text_h4 wx__text_medium">
+                    <p className="m-0 text_body">Purchase</p>
+                    <h4 className="m-0 text_h4 text_medium">
                       {conversionData?.purchasePercentage || 0}%
                     </h4>
-                    {/* <span className="wx__text_small">(0 sessions)</span> */}
+                    {/* <span className="text_small">(0 sessions)</span> */}
                   </div>
                   {/* <div>chart</div> */}
                   {/* <FunnelChart /> */}
@@ -526,17 +526,17 @@ const Analytics = () => {
               </div>
             </div>
           ) : (
-            <div className="wx__bg-white rounded">
+            <div className="bg-white rounded">
               <ConversionRate viewBox="0 0 550 436" />
             </div>
           )}
         </div>
         {/* temporary here */}
         <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 wx__top_landing_page">
-          <div className="wx__bg-white wx__p-3 rounded h-100 wx__overflow-hidden">
+          <div className="bg-white p-3 rounded h-100 overflow-hidden">
             {!allContentLoader ? (
               <>
-                <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                <h6 className="m-0 text_h6 text_regular">
                   Top landing pages by sessions
                 </h6>
                 <div className="landing_page_list">
@@ -553,7 +553,7 @@ const Analytics = () => {
                         );
                       })
                     ) : (
-                      <h3 className="wx__text-danger">Not Found</h3>
+                      <h3 className="text-danger">Not Found</h3>
                     )}
                   </ul>
                 </div>
@@ -565,10 +565,10 @@ const Analytics = () => {
         </div>
         {/* end */}
       </div>
-      <div className="row wx__g-3 wx__mb-3">
+      <div className="row wx__g-3 mb-3">
         {/* <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 wx__top_products">
-            <div className="wx__bg-white wx__p-3 rounded h-100">
-              <h6 className="wx__m-0">Top Products</h6>
+            <div className="bg-white p-3 rounded h-100">
+              <h6 className="m-0">Top Products</h6>
               <div className="top_products_list">
                 <ul>
                   {products.length ? (
@@ -582,11 +582,11 @@ const Analytics = () => {
                             />
                           </div>
                           <div>
-                            <p className="wx__m-0 wx__text_body wx__text_strong">
+                            <p className="m-0 text_body text_strong">
                               {pd?.title}
                             </p>
                             <br />
-                            <span className="wx__text_subtitle">
+                            <span className="text_subtitle">
                               {pd?.quantity} sold
                             </span>
                           </div>
@@ -594,7 +594,7 @@ const Analytics = () => {
                       );
                     })
                   ) : (
-                    <h3 className="wx__text-danger">Not Found</h3>
+                    <h3 className="text-danger">Not Found</h3>
                   )}
                 </ul>
               </div>
@@ -602,8 +602,8 @@ const Analytics = () => {
           </div> */}
         {/* top landing pages by sessions */}
         {/* <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 wx__top_landing_page">
-            <div className="wx__bg-white wx__p-3 rounded h-100">
-              <h6 className="wx__m-0">Top landing pages by sessions</h6>
+            <div className="bg-white p-3 rounded h-100">
+              <h6 className="m-0">Top landing pages by sessions</h6>
               <div className="landing_page_list">
                 <ul>
                   {totalLandingPage.length ? (
@@ -618,7 +618,7 @@ const Analytics = () => {
                       );
                     })
                   ) : (
-                    <h3 className="wx__text-danger">Not Found</h3>
+                    <h3 className="text-danger">Not Found</h3>
                   )}
                 </ul>
               </div>
@@ -628,30 +628,30 @@ const Analytics = () => {
       </div>
       {/* <div className="row wx__g-3">
           <div className="col-lg-8 col-sm-12">
-            <div className="wx__overflow-hidden rounded w-100 h-100 border">
+            <div className="overflow-hidden rounded w-100 h-100 border">
               <VerticalTab>
                 <VerticalTab.Tablist activeTab={3} className="tablist">
                   <VerticalTab.Tab id={2}>
-                    <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                    <h6 className="m-0 text_h6 text_regular">
                       Avg Quantity Per Order
                     </h6>
-                    <h3 className="wx__m-0 wx__text_h3 wx__text_semibold">
+                    <h3 className="m-0 text_h3 text_semibold">
                       34
                     </h3>
                   </VerticalTab.Tab>
                   <VerticalTab.Tab id={3}>
-                    <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                    <h6 className="m-0 text_h6 text_regular">
                       Total Orders
                     </h6>
-                    <h3 className="wx__m-0 wx__text_h3 wx__text_semibold">
+                    <h3 className="m-0 text_h3 text_semibold">
                       45
                     </h3>
                   </VerticalTab.Tab>
                   <VerticalTab.Tab id={3}>
-                    <h6 className="wx__m-0 wx__text_h6 wx__text_regular">
+                    <h6 className="m-0 text_h6 text_regular">
                       Total Orders
                     </h6>
-                    <h3 className="wx__m-0 wx__text_h3 wx__text_semibold">0</h3>
+                    <h3 className="m-0 text_h3 text_semibold">0</h3>
                   </VerticalTab.Tab>
                 </VerticalTab.Tablist>
                 <VerticalTab.ContentItems>
@@ -669,8 +669,8 @@ const Analytics = () => {
             </div>
           </div>
           <div className="col-lg-4 col-sm-12 wx__top_products">
-            <div className="wx__bg-white wx__p-3 rounded h-100">
-              <h6 className="wx__m-0">Top Products</h6>
+            <div className="bg-white p-3 rounded h-100">
+              <h6 className="m-0">Top Products</h6>
               <div className="top_products_list">
                 <ul>
                   {products.length ? (
@@ -681,11 +681,11 @@ const Analytics = () => {
                             <img src={topsImg} alt="" />
                           </div>
                           <div>
-                            <p className="wx__m-0 wx__text_body wx__text_strong">
+                            <p className="m-0 text_body text_strong">
                               {pd.title}
                             </p>
                             <br />
-                            <span className="wx__text_subtitle">
+                            <span className="text_subtitle">
                               {pd.quantity} sold
                             </span>
                           </div>
@@ -693,7 +693,7 @@ const Analytics = () => {
                       );
                     })
                   ) : (
-                    <h3 className="wx__text-danger">Not Found</h3>
+                    <h3 className="text-danger">Not Found</h3>
                   )}
                 </ul>
               </div>

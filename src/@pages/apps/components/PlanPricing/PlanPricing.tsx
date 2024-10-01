@@ -14,19 +14,19 @@ const PlanPricing = ({ PlanPricingData }: IPlanPricingProps) => (
 				className="wx__single_pricing col-lg-4 col-md-6 col-sm-12 mb-2"
 				key={index}
 			>
-				<div className="card wx__p-3">
+				<div className="card p-3">
 					<WxIcon icon="workspace_premium" hoverTitle={item?.title} size={30} />
-					<p className="wx__text_small wx__text_regular wx__my-2">
+					<p className="text_small text_regular my-2">
 						{item?.title}
 					</p>
-					<div className="wx__mb-2">
-						<h6 className="wx__text_heading wx__text_medium wx__m-0">
+					<div className="mb-2">
+						<h6 className="text_heading text_medium m-0">
 							{item?.currencyCode} {item?.recurringAmount}&nbsp;
 							{item?.billingCycleName === STATUS_CONSTANT.free
 								? null
 								: item?.billingCycleName}
 						</h6>
-						<small className="wx__text-muted wx__text_small">
+						<small className="text-muted text_small">
 							(Purchase amount {item?.currencyCode} {item?.firstPayAmount})
 						</small>
 					</div>

@@ -52,8 +52,8 @@ const OrderConfirmation = () => {
 			/>
 			<form onSubmit={handleSubmit(onSubmitHandler)}>
 				<div className="row">
-					<div className="notification_left col-lg-8 col-md-12 col-sm-12 wx__mt-3">
-						<div className="card wx__p-4">
+					<div className="notification_left col-lg-8 col-md-12 col-sm-12 mt-3">
+						<div className="card p-4">
 							<div className="row">
 								<div className="col-md-12 col-sm-12">
 									<WxTabs
@@ -63,7 +63,7 @@ const OrderConfirmation = () => {
 										setCurrentIndex={setActiveTab}
 									/>
 									{activeTab === 1 ? (
-										<div className="wx__mt-3">
+										<div className="mt-3">
 											<WxInput
 												label="SMS Subject"
 												isRequired
@@ -73,14 +73,14 @@ const OrderConfirmation = () => {
 												}}
 											/>
 											<div className="body_label">
-												<p className="wx__text_subtitle wx__text_semibold">
+												<p className="text_subtitle text_semibold">
 													SMS Body <span>*</span>
 												</p>
 											</div>
 											<WXEditor onEditorChange={(e) => setSmsBody(e)} />
 										</div>
 									) : (
-										<div className="wx__mt-3">
+										<div className="mt-3">
 											<WxInput
 												label="Email Subject"
 												isRequired
@@ -90,7 +90,7 @@ const OrderConfirmation = () => {
 												}}
 											/>
 											<div className="body_label">
-												<p className="wx__text_subtitle wx__text_semibold">
+												<p className="text_subtitle text_semibold">
 													Email Body <span>*</span>
 												</p>
 											</div>
@@ -101,17 +101,17 @@ const OrderConfirmation = () => {
 							</div>
 						</div>
 					</div>
-					<div className="notification_right col-lg-4 col-md-12 col-sm-12 wx__mt-3">
-						<div className="card wx__p-4">
-							<WxButton variant="fill" type="submit" className="wx__mb-3">
+					<div className="notification_right col-lg-4 col-md-12 col-sm-12 mt-3">
+						<div className="card p-4">
+							<WxButton variant="fill" type="submit" className="mb-3">
 								Update
 							</WxButton>
 							<WxButton type="button" variant="outline">
 								Preview
 							</WxButton>
 							<WxHr />
-							<div className="d-flex wx__align-items-center wx__justify-content-between wx__pe-5">
-								<p className="wx__mb-0">Email</p>
+							<div className="d-flex align-items-center justify-content-between pe-5">
+								<p className="mb-0">Email</p>
 								<WxSwitch
 									defaultChecked
 									checkedTitle="Active"
@@ -119,8 +119,8 @@ const OrderConfirmation = () => {
 								/>
 							</div>
 
-							<div className="d-flex wx__align-items-center wx__justify-content-between wx__pe-5 wx__mt-4">
-								<p className="wx__mb-0">SMS</p>
+							<div className="d-flex align-items-center justify-content-between pe-5 mt-4">
+								<p className="mb-0">SMS</p>
 								<WxSwitch
 									defaultChecked
 									checkedTitle="Active"

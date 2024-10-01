@@ -152,9 +152,9 @@ const AddCollection = ({
 							isRequired
 							isDisabled={isEditForm}
 							helpText={
-								<div className="wx__text_regular wx__text_subtitle">
+								<div className="text_regular text_subtitle">
 									{ENV.STORE_DOMAIN}/products/collection/&nbsp;
-									<span className="wx__text_strong">{watch_slug}</span>
+									<span className="text_strong">{watch_slug}</span>
 								</div>
 							}
 							registerProperty={{
@@ -187,7 +187,7 @@ const AddCollection = ({
 					<WxDrawerFooter>
 						<div className="collection_form__footer">
 							{isEditForm ? (
-								<div className="wx__me-auto">
+								<div className="me-auto">
 									<WxButton
 										color="danger"
 										variant="fill"
@@ -198,9 +198,9 @@ const AddCollection = ({
 									</WxButton>
 								</div>
 							) : null}
-							<div className="wx__ms-auto d-flex">
+							<div className="ms-auto d-flex">
 								<WxButton
-									className="wx__me-3"
+									className="me-3"
 									variant="outline"
 									color="secondary"
 									disabled={isDeletingImage || isSaving}

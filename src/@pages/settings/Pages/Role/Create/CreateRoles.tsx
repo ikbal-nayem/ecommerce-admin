@@ -63,8 +63,8 @@ const CreateUserRoles = () => {
       />
       <form onSubmit={handleSubmit(onSubmitting)} noValidate>
         <div className="row w-100">
-          <div className="col-lg-8 col-md-12 col-sm-12 wx__mt-3">
-            <div className="card wx__p-4">
+          <div className="col-lg-8 col-md-12 col-sm-12 mt-3">
+            <div className="card p-4">
               <WxInput
                 isRequired
                 label="Role Name"
@@ -87,8 +87,8 @@ const CreateUserRoles = () => {
               />
             </div>
           </div>
-          <div className="col-lg-4 col-md-12 col-sm-12 wx__mt-3">
-            <div className="card wx__p-3">
+          <div className="col-lg-4 col-md-12 col-sm-12 mt-3">
+            <div className="card p-3">
               <WxButton type="submit" variant="fill" disabled={saving}>
                 {id ? "Save" : "Create Role"} {saving ? <Preloader /> : null}
               </WxButton>

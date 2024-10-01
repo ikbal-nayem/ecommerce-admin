@@ -54,7 +54,7 @@ const ShippingModal = ({
           </div>
         </div>
       </WxModalBody>
-      <WxModalFooter className="wx__bg-white">
+      <WxModalFooter className="bg-white">
         <div className="d-flex justify-content-between">
           <WxButton
             variant="outline"

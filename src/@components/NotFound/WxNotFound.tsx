@@ -14,8 +14,8 @@ const WxNotFound = ({ title, description, btn_text, btn_link }: INotFoundProps) 
 		<div className='w-100'>
 			<div className='card wx__not_found_component'>
 				<img src='/media/svg/not_found.svg' alt='Not Found' />
-				<h2 className='wx__text_regular wx__text_h3'>{title}</h2>
-				<p className='wx__text_body wx__text_regular'>{description}</p>
+				<h2 className='text_regular text_h3'>{title}</h2>
+				<p className='text_body text_regular'>{description}</p>
 				{btn_link ? (
 					<Link to={btn_link || ''}>
 						<WxButton variant='fill'>{btn_text}</WxButton>

@@ -95,12 +95,12 @@ const SiteFooter = () => {
 						</WxButton>
 					}
 				/>
-				<div className="card wx__p-4">
+				<div className="card p-4">
 					<div className="row footer-top">
-						<h6 className="wx__text_semibold">Select Footer Content</h6>
+						<h6 className="text_semibold">Select Footer Content</h6>
 						{layoutColumn.map((layout, idx) => (
 							<div
-								className="col-lg-3 col-md-6 wx__mt-3"
+								className="col-lg-3 col-md-6 mt-3"
 								key={idx}
 								onClick={() => setSelectedContent(idx + 1)}
 							>
@@ -115,7 +115,7 @@ const SiteFooter = () => {
 											<div key={cIdx} className="content" />
 										))}
 								</div>
-								<p className="wx__text_subtitle wx__text_regular column-label">
+								<p className="text_subtitle text_regular column-label">
 									{layout}
 								</p>
 							</div>
@@ -123,20 +123,20 @@ const SiteFooter = () => {
 					</div>
 				</div>
 
-				<div className="card wx__mt-4 wx__p-4">
+				<div className="card mt-4 p-4">
 					{Array(selectedContent)
 						.fill(null)
 						.map((_, idx) => (
 							<div key={idx}>
 								<div className="row">
-									<div className="middle-title d-flex wx__align-items-center">
-										<div className="column__select wx__me-2">
+									<div className="middle-title d-flex align-items-center">
+										<div className="column__select me-2">
 											<div className="column__select_cl" />
 										</div>
-										<h6 className="wx__text_semibold wx__mb-0">
+										<h6 className="text_semibold mb-0">
 											Select footer for column {idx + 1}
 										</h6>
-										<div className="wx__ms-auto">
+										<div className="ms-auto">
 											<WxButton
 												size="sm"
 												color="secondary"
@@ -149,7 +149,7 @@ const SiteFooter = () => {
 									</div>
 								</div>
 								<div className="row">
-									<div className="col-md-6 wx__mt-3">
+									<div className="col-md-6 mt-3">
 										<WxSelect
 											label="Choose menu set"
 											options={menuSetList}
@@ -163,7 +163,7 @@ const SiteFooter = () => {
 									</div>
 									<div className="col-md-6"></div>
 									<div className="col-md-6">
-										<div className="wx__mb-2" style={{ maxWidth: "85%" }}>
+										<div className="mb-2" style={{ maxWidth: "85%" }}>
 											<WxSwitch
 												label="Menu style"
 												checkedTitle="Vertical"
@@ -180,7 +180,7 @@ const SiteFooter = () => {
 						))}
 				</div>
 
-				<div className="card wx__mt-4 wx__p-4">
+				<div className="card mt-4 p-4">
 					<div className="row">
 						<div className="col-md-6">
 							<div style={{ maxWidth: "85%" }}>
@@ -195,7 +195,7 @@ const SiteFooter = () => {
 							</div>
 						</div>
 					</div>
-					<div className="row wx__mt-4">
+					<div className="row mt-4">
 						<div className="col-md-6">
 							<WxInput
 								label="Copyright Information"
@@ -209,7 +209,7 @@ const SiteFooter = () => {
 					{isIconsLoading ? (
 						<Preloader />
 					) : getwayIcons.length ? (
-						<div className="d-flex wx__flex-wrap wx__justify-content-center gap-2">
+						<div className="d-flex flex-wrap justify-content-center gap-2">
 							{getwayIcons?.map((icon) => (
 								<div
 									key={icon?.fileName}
@@ -231,7 +231,7 @@ const SiteFooter = () => {
 							))}
 						</div>
 					) : (
-						<small className="wx__text-center wx__text-muted">
+						<small className="text-center text-muted">
 							No payment getway image found!
 						</small>
 					)}

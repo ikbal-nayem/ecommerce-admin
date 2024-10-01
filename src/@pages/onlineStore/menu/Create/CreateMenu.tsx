@@ -148,7 +148,7 @@ const Create = ({
 									errorMessage={errors?.name ? "This field is required!" : ""}
 								/>
 							</div>
-							<div className="col-md-12 col-sm-12 wx__mt-2 link-field">
+							<div className="col-md-12 col-sm-12 mt-2 link-field">
 								<WxInput
 									isRequired
 									label="Link"
@@ -167,7 +167,7 @@ const Create = ({
 									color={errors?.url ? "danger" : "secondary"}
 									errorMessage={errors?.url && errors?.url?.message}
 									onClick={() => setShowDropdown(true)}
-									className="wx__mb-0"
+									className="mb-0"
 								/>
 
 								{isCustom && (
@@ -185,9 +185,9 @@ const Create = ({
 														key={index}
 														onClick={() => setDropdownFun(item)}
 														type="button"
-														className="w-100 d-flex wx__align-items-center wx__justify-content-between category-btn"
+														className="w-100 d-flex align-items-center justify-content-between category-btn"
 													>
-														<p className="wx__mb-1 count-submenu">
+														<p className="mb-1 count-submenu">
 															{item.title}
 															{getCountaaa(item.metaKey) ? (
 																<span>({getCountaaa(item.metaKey)})</span>
@@ -199,17 +199,17 @@ const Create = ({
 											})
 										) : (
 											<div>
-												<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3 sub-category">
+												<div className="d-flex justify-content-between align-items-center mb-3 sub-category">
 													<div
-														className="d-flex wx__align-items-center wx__ps-2"
+														className="d-flex align-items-center ps-2"
 														onClick={() => setShowSubItem("-1")}
 													>
 														<WxIcon icon="chevron_left" />
-														<p className="wx__text_body wx__text_medium wx__mb-1 ms_2">
+														<p className="text_body text_medium mb-1 ms_2">
 															{subDropdownList.title}
 														</p>
 													</div>
-													<p className="wx__mb-0 wx__text_small wx__text_regular">
+													<p className="mb-0 text_small text_regular">
 														{subDropdownList.children.length} found
 													</p>
 												</div>
@@ -232,7 +232,7 @@ const Create = ({
 									</div>
 								)}
 							</div>
-							<div className="col-md-12 col-sm-12 wx__mt-4 status_switch">
+							<div className="col-md-12 col-sm-12 mt-4 status_switch">
 								<WxSwitch
 									label="Status"
 									checkedTitle="Active"
@@ -247,12 +247,12 @@ const Create = ({
 					</WxDrawerBody>
 					<WxDrawerFooter>
 						<div className="delivery_create_sec__footer">
-							<div className="d-flex wx__justify-content-end">
+							<div className="d-flex justify-content-end">
 								<WxButton
 									color="secondary"
 									type="button"
 									variant="outline"
-									className="wx__me-2"
+									className="me-2"
 									onClick={handleFormClose}
 									disabled={isSaving}
 								>

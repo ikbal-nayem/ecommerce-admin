@@ -88,7 +88,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 										errors?.secretPwd ? "Secret password is required" : ""
 									}
 								/>
-								<div className="wx__mt-4" style={{ maxWidth: "90%" }}>
+								<div className="mt-4" style={{ maxWidth: "90%" }}>
 									<WxSwitch
 										label="Sandbox Mode"
 										checkedTitle="Active"
@@ -101,9 +101,9 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 										}}
 									/>
 								</div>
-								<div className="status_msg wx__mb-4 wx__mt-2">
+								<div className="status_msg mb-4 mt-2">
 									<WxIcon icon="info" />
-									<p className="wx__text_small wx__text_regular">
+									<p className="text_small text_regular">
 										Within sandbox mode only admin can test the payment gateway
 										from the website.
 									</p>
@@ -205,7 +205,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 							</>
 						) : null}
 
-						<div className="wx__mt-4" style={{ maxWidth: "90%" }}>
+						<div className="mt-4" style={{ maxWidth: "90%" }}>
 							<WxSwitch
 								label="Enable in website"
 								checkedTitle="Active"
@@ -218,20 +218,20 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 								}}
 							/>
 						</div>
-						<div className="status_msg wx__mb-3 wx__mt-2">
+						<div className="status_msg mb-3 mt-2">
 							<WxIcon icon="info" />
-							<p className="wx__text_small wx__text_regular">
+							<p className="text_small text_regular">
 								Turn off sandbox mode to enable in website
 							</p>
 						</div>
 					</WxDrawerBody>
 					<WxDrawerFooter>
-						<div className="d-flex wx__justify-content-end">
+						<div className="d-flex justify-content-end">
 							<WxButton
 								color="secondary"
 								type="button"
 								variant="outline"
-								className="wx__me-2"
+								className="me-2"
 								onClick={handleClose}
 								disabled={saving}
 							>

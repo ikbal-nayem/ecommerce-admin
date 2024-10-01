@@ -21,7 +21,7 @@ const AppStore = () => {
 	return (
 		<>
 			<WxFormHeader title="App Configuration" />
-			<div className="wx__mt-3 h-100">
+			<div className="mt-3 h-100">
 				{isLoading ? <Preloader absolutePosition /> : null}
 				<iframe
 					id="app-settings-iframe"
