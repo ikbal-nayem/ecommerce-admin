@@ -35,14 +35,14 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
 
   return (
     <div className="tlibrary">
-      <div className="tlibrary-pad wx__d-flex wx__justify-content-between wx__align-items-center wx__mb-2">
-        <div className="wx__w-100">
+      <div className="tlibrary-pad d-flex wx__justify-content-between wx__align-items-center wx__mb-2">
+        <div className="w-100">
           <h5 className="wx__text_semibold wx__mb-1">Theme Library</h5>
           <p className="wx__text_body">
             This is the theme customers see when they visit your store.
           </p>
         </div>
-        <div className="wx__w-100 wx__d-flex wx__justify-content-end">
+        <div className="w-100 d-flex wx__justify-content-end">
           <WxButton variant="outline" onClick={() => navigate(THEMES_LIST)}>
             Explore Themes
           </WxButton>
@@ -56,10 +56,10 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
           <div className="single__theme" key={item.id}>
             <div
               key={item?.id}
-              className="wx__d-flex wx__justify-content-between"
+              className="d-flex wx__justify-content-between"
             >
               <div
-                className="left wx__d-flex wx__align-items-center"
+                className="left d-flex wx__align-items-center"
                 onClick={() => navigate(THEMES_OVERVIEW({ theme_id: item.id }))}
               >
                 <WxThumbnail src={imageURLGenerate(item?.themeIcon)} noBorder />
@@ -69,7 +69,7 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
                       {item?.title}
                     </span>
                     {isInstalled && (
-                      <div className="wx__d-inline">
+                      <div className="d-inline">
                         <WxTag
                           label="Installed"
                           className="wx__mx-2 wx__mb-2"
@@ -89,7 +89,7 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
                   </span>
                 </div>
               </div>
-              <div className="right wx__d-flex wx__justify-content-end wx__align-items-center">
+              <div className="right d-flex wx__justify-content-end wx__align-items-center">
                 <WxButton
                   variant="none"
                   color="secondary"

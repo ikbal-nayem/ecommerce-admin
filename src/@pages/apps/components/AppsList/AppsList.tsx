@@ -60,9 +60,9 @@ const AppsList = () => {
 	return (
 		<WxMainXl className="wx__apps_list_page">
 			<WxFormHeader title="Browse All Apps" backNavigationLink={APPS} />
-			<div className="wx__card wx__mt-3 wx__p-4">
-				<div className="wx__row  wx__pb-0 app-list-top">
-					<div className="wx__col-md-8 wx__col-sm-12 wx__mb-3">
+			<div className="card wx__mt-3 wx__p-4">
+				<div className="row  wx__pb-0 app-list-top">
+					<div className="col-md-8 col-sm-12 wx__mb-3">
 						<WxInput
 							className="wx__mb-0"
 							type="search"
@@ -71,7 +71,7 @@ const AppsList = () => {
 							onChange={(e: any) => setSearchQuery(e.target.value)}
 						/>
 					</div>
-					<div className="wx__col-md-4 wx__col-sm-12 wx__mb-0">
+					<div className="col-md-4 col-sm-12 wx__mb-0">
 						<WxSelect
 							placeholder="Select category"
 							valuesKey="id"
@@ -81,7 +81,7 @@ const AppsList = () => {
 						/>
 					</div>
 				</div>
-				<div className="wx__row">
+				<div className="row">
 					<div className="wx__suggested_product">
 						{isLoading ? (
 							<Preloader />

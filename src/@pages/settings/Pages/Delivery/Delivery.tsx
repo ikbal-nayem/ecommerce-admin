@@ -283,7 +283,7 @@ const Delivery = () => {
           />
         ) : null}
         {deliveryList?.length ? (
-          <div className="wx__card">
+          <div className="card">
             <DeliveryZoneListTable
               onDelete={onDelete}
               onEditItem={onEditItem}

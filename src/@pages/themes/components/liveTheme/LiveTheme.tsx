@@ -25,8 +25,8 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
 		return <WxNotFound title="Oops!" description="No published theme found!" />;
 
 	return (
-		<div className="live-theme wx__row">
-			<div className="wx__col-md-12 wx__col-sm-12">
+		<div className="live-theme row">
+			<div className="col-md-12 col-sm-12">
 				<h5 className="wx__text_semibold">
 					Live Theme <i>({activeTheme?.themeRegisterDTO?.title})</i>
 				</h5>
@@ -34,14 +34,14 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
 					{activeTheme?.themeRegisterDTO?.shortDesc}
 				</p>
 			</div>
-			<div className="livetheme-pad wx__col-lg-8 wx__col-md-7 wx__col-sm-12 wx__mt-3">
+			<div className="livetheme-pad col-lg-8 col-md-7 col-sm-12 wx__mt-3">
 				<img
 					src={imageURLGenerate(
 						activeTheme?.themeRegisterDTO?.screenshots?.[0]
 					)}
 				/>
 			</div>
-			<div className="livetheme-pad wx__col-lg-4 wx__col-md-5 wx__col-sm-12 wx__mt-3">
+			<div className="livetheme-pad col-lg-4 col-md-5 col-sm-12 wx__mt-3">
 				<h5 className="wx__text_semibold wx__mb-0">
 					{activeTheme?.themeRegisterDTO?.title}
 				</h5>
@@ -57,7 +57,7 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
 				{/* <p className="wx__text_regular wx__mb-4">
 					Layout : <span className="wx__body_medium">{layout}</span>
 				</p> */}
-				<div className="wx__d-flex wx__align-items-center">
+				<div className="d-flex wx__align-items-center">
 					<WxButton
 						className="wx__me-2"
 						variant="fill"

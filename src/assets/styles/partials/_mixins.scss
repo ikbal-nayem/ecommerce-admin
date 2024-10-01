@@ -95,7 +95,7 @@
   padding: $padding;
   border-radius: 4px;
 
-  @include wx__border(
+  @include border(
     $border_width: $border_width,
     $border_style: $border_style,
     $border_color: $border_color,
@@ -107,7 +107,7 @@
   }
 }
 
-@mixin wx__border(
+@mixin border(
   $border_width: 1.5px,
   $border_style: solid,
   $border_color: $primary__500,

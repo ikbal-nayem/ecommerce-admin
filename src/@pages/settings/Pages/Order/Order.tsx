@@ -64,12 +64,12 @@ const Order = () => {
   return (
     <WxMainMd className="setting_order_page">
       <WxFormHeader title="Order" backNavigationLink={SETTINGS} />
-      <div className="wx__card wx__p-3 wx__mt-4">
+      <div className="card wx__p-3 wx__mt-4">
         <h6 className="wx__text_heading wx__text_semibold">
           Online Store Nature
         </h6>
-        <div className="order_btn_group wx__row">
-          <div className="wx__col-md-6 wx__col-sm-12">
+        <div className="order_btn_group row">
+          <div className="col-md-6 col-sm-12">
             <div
               className={`order_btn_single ${
                 orderSetting?.isAcceptOrder ? "active" : ""
@@ -102,7 +102,7 @@ const Order = () => {
               </div>
             </div>
           </div>
-          <div className="wx__col-md-6 wx__col-sm-12">
+          <div className="col-md-6 col-sm-12">
             <div
               className={`order_btn_single noselect${
                 !orderSetting?.isAcceptOrder ? "active" : ""
@@ -157,7 +157,7 @@ const Order = () => {
       </div>
       {orderSetting?.isAcceptOrder ? (
         <>
-          <div className="wx__card wx__p-3 wx__mt-3">
+          <div className="card wx__p-3 wx__mt-3">
             <h6 className="wx__text_heading wx__text_semibold">
               Order status Type
             </h6>
@@ -166,7 +166,7 @@ const Order = () => {
             </p>
             {orderSetting?.orderStatusList?.map((orderStatus, index) => (
               <div key={orderStatus?.id}>
-                <div className="wx__d-flex wx__align-items-start">
+                <div className="d-flex wx__align-items-start">
                   <WxCheckbox
                     disabled={!orderStatus?.isEditable}
                     checked={orderStatus?.isChecked}
@@ -221,7 +221,7 @@ const Order = () => {
             ))}
           </div>
 
-          <div className="wx__card wx__p-3 wx__mt-3">
+          <div className="card wx__p-3 wx__mt-3">
             <h6 className="wx__text_heading wx__text_semibold">
               Payment Status Types
             </h6>
@@ -230,7 +230,7 @@ const Order = () => {
             </p>
             {orderSetting?.paymentStatusList?.map((paymentStatus, index) => (
               <div key={paymentStatus?.id}>
-                <div className="wx__d-flex wx__align-items-start">
+                <div className="d-flex wx__align-items-start">
                   <WxCheckbox
                     disabled={!paymentStatus?.isEditable}
                     checked={paymentStatus?.isChecked}

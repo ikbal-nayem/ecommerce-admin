@@ -31,7 +31,7 @@ const InstallApp = ({ installAppsData }: IIinstallAppsProps) => {
 			{installAppsData?.map((item, index) => (
 				<div key={index} className="wx__single-app">
 					<Link to={APP_STORE({ appId: item?.appId })}>
-						<div className="wx__left wx__d-flex wx__align-items-center wx__gap-3">
+						<div className="wx__left d-flex wx__align-items-center gap-3">
 							<WxThumbnail
 								src={imageURLGenerate(item?.appRegisterDTO?.appIconPath)}
 								noBorder

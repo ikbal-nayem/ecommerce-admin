@@ -118,9 +118,9 @@ const OrderReturn = () => {
         backNavigationLink={ORDER_DETAILS({ order_id })}
       />
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="wx__row">
-          <div className="wx__col-lg-8 wx__col-md-7 wx__col-sm-12">
-            <div className="wx__card wx__p-3 wx__mt-3">
+        <div className="row">
+          <div className="col-lg-8 col-md-7 col-sm-12">
+            <div className="card wx__p-3 wx__mt-3">
               {loading ? (
                 <Preloader />
               ) : (
@@ -135,7 +135,7 @@ const OrderReturn = () => {
                 Returned items will be removed from the order
               </p>
             </div>
-            <div className="wx__card wx__mt-3 wx__p-3">
+            <div className="card wx__mt-3 wx__p-3">
               <h6 className="wx__text_h6 wx__text_semibold">Return Reason</h6>
               <WxInput
                 helpText="Only you and your staff can see ths reason"
@@ -144,8 +144,8 @@ const OrderReturn = () => {
               />
             </div>
           </div>
-          <div className="wx__col-lg-4 wx__col-md-5 wx__col-sm-12">
-            <div className="wx__card wx__p-3 wx__mt-3">
+          <div className="col-lg-4 col-md-5 col-sm-12">
+            <div className="card wx__p-3 wx__mt-3">
               <h6 className="wx__text_h6 wx__text_semibold">Summary</h6>
               <span className="wx__text_body wx__text_italic">
                 {returnableInfo.quantity} Items will be returned.

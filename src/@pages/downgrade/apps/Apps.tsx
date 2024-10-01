@@ -75,14 +75,14 @@ const DowngradeApps = () => {
 			{!!installedApp?.length && (
 				<WxAlert>You have to uninstall these installed apps.</WxAlert>
 			)}
-			<div className="wx__card wx__p-4 wx__mt-3 wx__install-app">
+			<div className="card wx__p-4 wx__mt-3 wx__install-app">
 				{isInstalledLoading ? (
 					<Preloader />
 				) : installedApp?.length ? (
 					<div className="install-app-conponent">
 						{installedApp?.map((item, index) => (
 							<div key={index} className="wx__single-app">
-								<div className="wx__left wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="wx__left d-flex wx__align-items-center gap-3">
 									<WxThumbnail
 										src={imageURLGenerate(item?.appRegisterDTO?.appIconPath)}
 										noBorder

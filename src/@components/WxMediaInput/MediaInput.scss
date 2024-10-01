@@ -6,7 +6,7 @@
   height: 91px;
   position: relative;
   border: 1px dashed $neutral__600;
-  @extend .wx__rounded;
+  @extend .rounded;
 
   &:hover {
     background-color: $neutral__200;
@@ -87,7 +87,7 @@
     margin-bottom: 10px;
     border: 1px solid $neutral__400;
     overflow: hidden;
-    @extend .wx__rounded;
+    @extend .rounded;
 
     &:first-child {
       grid-column: 1/3;

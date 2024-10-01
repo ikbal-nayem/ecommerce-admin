@@ -25,7 +25,7 @@ function WxSwitch({
 }: ISwithProps) {
   return (
     <div
-      className={`wx__switch_component wx__d-flex wx__justify-content-between wx__align-items-center ${
+      className={`wx__switch_component d-flex wx__justify-content-between wx__align-items-center ${
         className ? className : null
       }`}
     >

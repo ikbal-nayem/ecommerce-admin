@@ -14,7 +14,7 @@ const WxDrawerHeader = ({
 }: DrawerHeaderProps) => {
   return (
     <div className="wx__side_drawer__header">
-      <div className="wx__d-flex wx__align-items-center">
+      <div className="d-flex wx__align-items-center">
         {backIconAction ? (
           <span
             className="material-icons-outlined wx__me-2"

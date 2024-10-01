@@ -172,7 +172,7 @@ const InventoryTable = ({
           {inventoryData?.map((pd, index) => (
             <tr className="wx__tr" key={index}>
               <td className="wx__td">
-                <div className="wx__table_cell_avatar wx__d-flex wx__align-items-center">
+                <div className="wx__table_cell_avatar d-flex wx__align-items-center">
                   <WxThumbnail
                     name={pd?.title.toUpperCase()}
                     src={imageURLGenerate(pd?.thumbnail || pd?.images)}
@@ -202,7 +202,7 @@ const InventoryTable = ({
                 <div className="wx__text_body">{pd?.sku || "---"}</div>
               </td>
               <td className="wx__td">
-                <div className="wx__table_cell_icon  wx__d-flex ">
+                <div className="wx__table_cell_icon  d-flex ">
                   <div className="avaiability_input">
                     <WxInput
                       onChange={(e: any) => handleChanges(e, index, pd)}
@@ -234,7 +234,7 @@ const InventoryTable = ({
                       <div className="wx__availability_popup">
                         <div>
                           <div className="wx__mb-2">
-                            <p className="wx__text_subtitle wx__text_semibold wx__d-block">
+                            <p className="wx__text_subtitle wx__text_semibold d-block">
                               Adjust By
                             </p>
                             <WxInput
@@ -267,7 +267,7 @@ const InventoryTable = ({
                     </WxDropdown>
                   )}
                   <div className="action-section">
-                    <div className="inventory-action wx__d-flex wx__align-items-center">
+                    <div className="inventory-action d-flex wx__align-items-center">
                       <WxIcon
                         icon="tune"
                         variants="round"
@@ -280,7 +280,7 @@ const InventoryTable = ({
                         }`}
                       />
 
-                      <div className="action-buttons wx__d-flex ">
+                      <div className="action-buttons d-flex ">
                         {(selectedIndex === index || pd.isUpdate) && (
                           <div
                             onClick={(e: any) => {

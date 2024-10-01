@@ -9,7 +9,7 @@ type OrderPlacedInfoProps = {
 
 const OrderPlacedInfo = ({ orderDetails }: OrderPlacedInfoProps) => {
 	return (
-		<div className="wx__card wx__p-3">
+		<div className="card wx__p-3">
 			<section className="wx__mb-4">
 				<span className="wx__text_subtitle wx__text_semibold">
 					Order Placed on
@@ -27,7 +27,7 @@ const OrderPlacedInfo = ({ orderDetails }: OrderPlacedInfoProps) => {
 					Order Placed from
 				</span>
 				<br />
-				<div className="wx__text_body wx__text_regular wx__d-flex wx__align-items-center wx__gap-2">
+				<div className="wx__text_body wx__text_regular d-flex wx__align-items-center gap-2">
 					<WxIcon variants="outlined" icon="storefront" />
 					<span>{orderDetails?.saleChannel}</span>
 				</div>

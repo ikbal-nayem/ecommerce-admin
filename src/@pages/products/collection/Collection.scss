@@ -2,9 +2,9 @@
 @import "webx-brighten/partials/variables";
 @import "webx-brighten/partials/classes";
 
-.wx__collection {
+.collection {
   &_table_content {
-    @extend .wx__rounded;
+    @extend .rounded;
     margin-top: 20px;
     background-color: #fff;
     overflow: hidden;

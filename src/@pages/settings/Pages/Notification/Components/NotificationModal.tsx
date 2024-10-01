@@ -86,11 +86,11 @@ const NotificationModal = ({
 				<WxModalHeader
 					title={data?.heading}
 					closeIconAction={handleDialogeClose}
-					className="wx__border-0"
+					className="border-0"
 				/>
 				<WxModalBody>
-					<div className="wx__row">
-						<div className="wx__col-md-12">
+					<div className="row">
+						<div className="col-md-12">
 							<WxInput
 								label={data?.inputLabel}
 								isRequired
@@ -125,7 +125,7 @@ const NotificationModal = ({
 					</div>
 				</WxModalBody>
 				<WxModalFooter className="wx__bg-white">
-					<div className="wx__d-flex justify-content-end">
+					<div className="d-flex justify-content-end">
 						<WxButton
 							variant="outline"
 							color="secondary"

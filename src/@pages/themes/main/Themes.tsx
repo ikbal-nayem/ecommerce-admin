@@ -52,7 +52,7 @@ const Themes = () => {
           </WxButton>
         }
       />
-      <div className="wx__card wx__p-3">
+      <div className="card wx__p-3">
         {loadingInstalledTheme ? (
           <Preloader />
         ) : (
@@ -60,7 +60,7 @@ const Themes = () => {
         )}
       </div>
 
-      <div className="wx__card wx__p-3 wx__mt-3">
+      <div className="card wx__p-3 wx__mt-3">
         {themeList.length ? (
           <Themelibrary
             themeList={themeList}

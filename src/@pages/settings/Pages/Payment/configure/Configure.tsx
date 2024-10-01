@@ -113,8 +113,8 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 
 						{editItem?.isOffline ? (
 							<>
-								<div className="wx__row">
-									<div className="wx__col-sm-6 wx__col-12">
+								<div className="row">
+									<div className="col-sm-6 col-12">
 										<WxInput
 											isRequired
 											label="Account number"
@@ -128,7 +128,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 											errorMessage={errors?.accountNumber?.message}
 										/>
 									</div>
-									<div className="wx__col-sm-6 wx__col-12">
+									<div className="col-sm-6 col-12">
 										<WxSelect
 											label="Agent/Personal"
 											isRequired
@@ -226,7 +226,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 						</div>
 					</WxDrawerBody>
 					<WxDrawerFooter>
-						<div className="wx__d-flex wx__justify-content-end">
+						<div className="d-flex wx__justify-content-end">
 							<WxButton
 								color="secondary"
 								type="button"

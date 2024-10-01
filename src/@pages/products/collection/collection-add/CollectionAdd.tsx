@@ -130,7 +130,7 @@ const AddCollection = ({
 
 	return (
 		<WxDrawer show={isOpen} handleClose={handleClose}>
-			<div className="wx__collection_form">
+			<div className="collection_form">
 				<WxDrawerHeader
 					title={isEditForm ? "Update Collection" : "Add Collection"}
 					closeIconAction={handleClose}
@@ -163,7 +163,7 @@ const AddCollection = ({
 							color={errors?.slug ? "danger" : "secondary"}
 							errorMessage={errors?.slug ? errors?.slug?.message : ""}
 						/>
-						<div className="wx__form_group">
+						<div className="form_group">
 							<WxLabel>Collection details</WxLabel>
 							<Controller
 								control={control}
@@ -173,7 +173,7 @@ const AddCollection = ({
 								)}
 							/>
 						</div>
-						<div className="wx__form_group">
+						<div className="form_group">
 							<WxLabel>Collection icon</WxLabel>
 							<MediaInput
 								fileList={imageList}
@@ -185,7 +185,7 @@ const AddCollection = ({
 						</div>
 					</WxDrawerBody>
 					<WxDrawerFooter>
-						<div className="wx__collection_form__footer">
+						<div className="collection_form__footer">
 							{isEditForm ? (
 								<div className="wx__me-auto">
 									<WxButton
@@ -198,7 +198,7 @@ const AddCollection = ({
 									</WxButton>
 								</div>
 							) : null}
-							<div className="wx__ms-auto wx__d-flex">
+							<div className="wx__ms-auto d-flex">
 								<WxButton
 									className="wx__me-3"
 									variant="outline"

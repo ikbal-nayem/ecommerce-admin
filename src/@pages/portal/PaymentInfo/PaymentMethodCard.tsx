@@ -18,8 +18,8 @@ const PaymentMethodCard = ({
   const [showPopup, setShowPopup] = useState<boolean>(false);
 
   return (
-    <div className="wx__card payment_info_card">
-      <div className="wx__d-flex wx__justify-content-between">
+    <div className="card payment_info_card">
+      <div className="d-flex wx__justify-content-between">
         {info?.paymentMedia?.type ===
         MASTER_META_KEY.PAYMENT_MEDIA_TYPE_BANK ? (
           <WxIcon

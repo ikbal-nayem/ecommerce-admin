@@ -14,14 +14,14 @@ interface ISuggestedAppsProps {
 
 const SuggestedApp = ({ appListData, installedApps }: ISuggestedAppsProps) => {
   return (
-    <div className="wx__suggested_app_conponent wx__row">
+    <div className="wx__suggested_app_conponent row">
       {appListData?.map((item, index) => (
         <div
-          className="wx__col-lg-4 wx__col-md-6 wx__col-sm-12 wx__mt-3"
+          className="col-lg-4 col-md-6 col-sm-12 wx__mt-3"
           key={index}
         >
           <Link to={APP_OVERVIEW({ id: item?.id })}>
-            <div className="single-app wx__rounded">
+            <div className="single-app rounded">
               {installedApps?.some(
                 (installedApp) => installedApp?.appId === item?.id
               ) ? (
@@ -31,13 +31,13 @@ const SuggestedApp = ({ appListData, installedApps }: ISuggestedAppsProps) => {
               ) : null}
 
               <WxThumbnail src={imageURLGenerate(item?.appIconPath)} noBorder />
-              <p className="wx__text-body wx__text_medium wx__mb-0 wx__w-100 wx__d-inline-block wx__text-truncate">
+              <p className="wx__text-body wx__text_medium wx__mb-0 w-100 d-inline-block text-truncate">
                 {item?.appTitle}
               </p>
-              <p className="wx__text_subtitle wx__text_regular wx__subtitle wx__mb-3 wx__w-100 wx__d-inline-block wx__text-truncate">
+              <p className="wx__text_subtitle wx__text_regular wx__subtitle wx__mb-3 w-100 d-inline-block text-truncate">
                 {item?.shortDesc}
               </p>
-              <div className="wx__d-flex wx__justify-content-between wx__align-items-center card__bottom">
+              <div className="d-flex wx__justify-content-between wx__align-items-center card__bottom">
                 {item?.recurringAmount === 0 ? (
                   <p className="wx__text_regular wx__text_small">
                     Free Plan Available
@@ -50,8 +50,8 @@ const SuggestedApp = ({ appListData, installedApps }: ISuggestedAppsProps) => {
                   )
                 )}
                 {item?.avgRating && item?.totalReview && (
-                  <div className=" wx__d-flex wx__justify-content-between wx__align-items-center wx__ms-auto">
-                    <p className="wx__text_small wx__text_regular wx__d-flex wx__justify-content-center wx__align-items-center">
+                  <div className=" d-flex wx__justify-content-between wx__align-items-center wx__ms-auto">
+                    <p className="wx__text_small wx__text_regular d-flex wx__justify-content-center wx__align-items-center">
                       <img
                         className="wx__icon_star"
                         src={starIcon}

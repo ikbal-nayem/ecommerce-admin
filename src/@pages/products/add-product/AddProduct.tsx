@@ -141,8 +141,8 @@ const AddProducts = () => {
 			<WxFormHeader noMargin title="Add Product" backNavigationLink={PRODUCT} />
 			<FormProvider {...methods}>
 				<form noValidate onSubmit={methods.handleSubmit(onSubmit)}>
-					<div className="wx__row wx__mb-4">
-						<div className="wx__col-lg-8 wx__col-md-7 wx__col-sm-12">
+					<div className="row wx__mb-4">
+						<div className="col-lg-8 col-md-7 col-sm-12">
 							<ProductInfo />
 							<ProductMedia />
 							<ProductPricing />
@@ -152,7 +152,7 @@ const AddProducts = () => {
 							<ProductVariants />
 							<SearchEngine />
 						</div>
-						<div className="wx__col-lg-4 wx__col-md-5 wx__col-sm-12">
+						<div className="col-lg-4 col-md-5 col-sm-12">
 							<SaveProducts
 								selectedCategory={selectedCategory}
 								selectedCollections={selectedCollections}

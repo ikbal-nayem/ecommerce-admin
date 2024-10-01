@@ -10,15 +10,15 @@
       height: fit-content;
     }
   }
-  .wx__card {
+  .card {
     padding: 24px;
     margin-bottom: 16px;
   }
 }
 
-.wx__card{
+.card{
   &.product_dimension{
-    .wx__form_group{
+    .form_group{
       input{
         margin-right: 1em;
       }

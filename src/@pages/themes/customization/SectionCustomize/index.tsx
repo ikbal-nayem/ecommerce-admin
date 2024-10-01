@@ -40,10 +40,10 @@ const SectionCustomize = () => {
             </WxButton>
           }
         />
-        <div className="wx__card p-4">
+        <div className="card p-4">
           {[...Array(section?.numberOfInputs || 0).fill(0)]?.map((_, i) => (
             <div
-              className="wx__border wx__rounded wx__px-4 wx__py-2 wx__my-2"
+              className="border rounded wx__px-4 wx__py-2 wx__my-2"
               key={`sec-${i}`}
             >
               <h5>

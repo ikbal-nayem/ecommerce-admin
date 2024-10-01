@@ -8,11 +8,11 @@ interface IWxMainFull {
 const WxMainFull = ({ className, children }: IWxMainFull) => {
   return (
     <section
-      className={`wx__w-100 wx__d-flex justify-content-center wx__main_full ${
+      className={`w-100 d-flex justify-content-center wx__main_full ${
         className || ""
       }`}
     >
-      <div className="wx__container-fluid wx__main_content setting_content">
+      <div className="container-fluid wx__main_content setting_content">
         {children}
       </div>
     </section>

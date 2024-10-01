@@ -106,7 +106,7 @@ const WxRadio = ({
               ) : null}
             </label>
           ) : null}
-          <div className={`wx__d-flex wx__flex-${radioStyle}`}>
+          <div className={`d-flex wx__flex-${radioStyle}`}>
             {options?.map((item: any, index: number) => {
               return (
                 <div

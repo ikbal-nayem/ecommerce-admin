@@ -6,7 +6,7 @@ type WxListProps = {
 
 const WxList = ({children}:WxListProps) => {
   return (
-    <ul className="wx__list-group wx__list-group-flush">
+    <ul className="form_group form_group-flush">
       {children}
     </ul>
   );

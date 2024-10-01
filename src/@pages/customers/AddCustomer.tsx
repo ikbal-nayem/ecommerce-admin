@@ -135,8 +135,8 @@ export default function AddCustomer() {
 				/>
 				{isLoading ? <Preloader absolutePosition /> : null}
 				<form onSubmit={handleSubmit(onSubmitting)}>
-					<div className="wx__row">
-						<div className="wx__col-lg-8 wx__col-md-7 wx__col-sm-12 wx__mt-3">
+					<div className="row">
+						<div className="col-lg-8 col-md-7 col-sm-12 wx__mt-3">
 							<CustomerFrom
 								customerGroupDrawer={customerGroupDrawer}
 								setSelectedGroups={setSelectedGroups}
@@ -149,8 +149,8 @@ export default function AddCustomer() {
 								districts={districts}
 							/>
 						</div>
-						<div className="wx__col-lg-4 wx__col-md-5 wx__col-sm-12 hide-mobile-view wx__mt-3">
-							<div className="wx__card wx__form_right">
+						<div className="col-lg-4 col-md-5 col-sm-12 hide-mobile-view wx__mt-3">
+							<div className="card wx__form_right">
 								<WxButton type="submit" variant="fill" disabled={isLoading}>
 									Save Customer
 								</WxButton>
@@ -159,7 +159,7 @@ export default function AddCustomer() {
 									<div>
 										<WxSwitch
 											label={
-												<div className="wx__d-flex wx__align-items-center">
+												<div className="d-flex wx__align-items-center">
 													&nbsp; &nbsp;<span>Status</span>
 												</div>
 											}
@@ -190,7 +190,7 @@ export default function AddCustomer() {
                 }
                 placeholder="Search group"
               /> */}
-								<div className={`wx__form_group wx__m-0`}>
+								<div className={`form_group wx__m-0`}>
 									<label htmlFor="">Customer Group</label>
 									<div className="wx__float-end">
 										<span

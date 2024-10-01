@@ -20,7 +20,7 @@
       border: 1px solid $neutral__400;
       margin-left: 1em;
       font-size: $input_font_size;
-      @extend .wx__rounded;
+      @extend .rounded;
       &:focus {
         outline: none;
       }
@@ -50,7 +50,7 @@
           width: 40px;
           height: 36px;
           cursor: pointer;
-          @extend .wx__rounded;
+          @extend .rounded;
           transition: all 0.5s;
           &:hover {
             background-color: $primary__500;

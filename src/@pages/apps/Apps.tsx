@@ -47,12 +47,12 @@ const Apps = () => {
 
 	return (
 		<WxMainXl className="wx__apps-page">
-			<div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+			<div className="d-flex wx__justify-content-between wx__align-items-center">
 				<h4 className="wx__text_heading  mb-0">Apps</h4>
 				<WxButton variant="fill">Visit Store</WxButton>
 			</div>
 
-			<div className="wx__card wx__p-4 wx__mt-3 wx__install-app">
+			<div className="card wx__p-4 wx__mt-3 wx__install-app">
 				<h6 className="wx__text_body wx__text_medium wx__subtitle-1 wx__mb-2">
 					Installed Apps
 				</h6>
@@ -67,15 +67,15 @@ const Apps = () => {
 				)}
 			</div>
 
-			<div className="wx__card wx__p-4 wx__mt-3 wx__suggested_app">
-				<div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+			<div className="card wx__p-4 wx__mt-3 wx__suggested_app">
+				<div className="d-flex wx__justify-content-between wx__align-items-center">
 					<h6 className="wx__text_body wx__text_medium wx__mb-2 wx__subtitle-1">
 						Recommended For You
 					</h6>
 					<WxButton
 						variant="fill"
 						size="sm"
-						className="wx__rounded"
+						className="rounded"
 						onClick={() => navigate(APPS_LIST)}
 					>
 						Get More Apps

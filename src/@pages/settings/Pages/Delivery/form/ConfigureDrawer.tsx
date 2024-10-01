@@ -56,8 +56,8 @@ const ConfigureDrawer = ({
           <form onSubmit={handleSubmit(makeCourierConfigure)} noValidate>
             <WxDrawerBody>
               {getValues("courierProvider") === "COURIER_TYPE_ECOURIER" && (
-                <div className="wx__row">
-                  <div className="wx__col-md-12 wx__col-sm-12">
+                <div className="row">
+                  <div className="col-md-12 col-sm-12">
                     <WxInput
                       label="API Key"
                       isRequired
@@ -73,7 +73,7 @@ const ConfigureDrawer = ({
                       }
                     />
                   </div>
-                  <div className="wx__col-md-12 wx__col-sm-12">
+                  <div className="col-md-12 col-sm-12">
                     <WxInput
                       isRequired
                       label="API Secret"
@@ -87,7 +87,7 @@ const ConfigureDrawer = ({
                       }
                     />
                   </div>
-                  <div className="wx__col-md-12 wx__col-sm-12">
+                  <div className="col-md-12 col-sm-12">
                     <WxInput
                       label="User Id"
                       isRequired
@@ -117,8 +117,8 @@ const ConfigureDrawer = ({
                 </div>
               )}
               {getValues("courierProvider") === "COURIER_TYPE_REDX" && (
-                <div className="wx__row">
-                  <div className="wx__col-md-12 wx__col-sm-12">
+                <div className="row">
+                  <div className="col-md-12 col-sm-12">
                     <WxInput
                       label="Token"
                       isRequired
@@ -162,7 +162,7 @@ const ConfigureDrawer = ({
                     Delete
                   </WxButton>
                 ) : null}
-                <div className="wx__ms-auto wx__d-flex">
+                <div className="wx__ms-auto d-flex">
                   <WxButton
                     color="secondary"
                     type="button"

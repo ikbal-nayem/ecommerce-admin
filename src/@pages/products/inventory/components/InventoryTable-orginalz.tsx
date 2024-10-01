@@ -88,7 +88,7 @@ const InventoryTable = ({
             return (
               <tr className="wx__tr" key={index}>
                 <td className="wx__td">
-                  <div className="wx__table_cell_avatar wx__d-flex wx__align-items-center">
+                  <div className="wx__table_cell_avatar d-flex wx__align-items-center">
                     <WxThumbnail
                       name={pd?.title}
                       src={pd?.images[0]?.previewUrl}
@@ -121,7 +121,7 @@ const InventoryTable = ({
                   <div className="wx__text_body">{pd?.sku || "---"}</div>
                 </td>
                 <td className="wx__td">
-                  <div className="wx__table_cell_icon  wx__d-flex ">
+                  <div className="wx__table_cell_icon  d-flex ">
                     <div className="avaiability_input">
                       {/* {setQuantity(pd.quantity)} */}
                       <WxInput

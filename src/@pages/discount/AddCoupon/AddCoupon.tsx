@@ -118,8 +118,8 @@ const AddCoupon = () => {
       <WxFormContainer>
         <WxFormHeader title="Add Coupon" backNavigationLink={DISCOUNT} />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
-          <div className="wx__row">
-            <div className="wx__col-md-8 wx__col-sm-12 wx__mt-3">
+          <div className="row">
+            <div className="col-md-8 col-sm-12 wx__mt-3">
               <CouponForm
                 register={register}
                 errors={errors}
@@ -135,8 +135,8 @@ const AddCoupon = () => {
                 watch={watch}
               />
             </div>
-            <div className="wx__col-md-4 wx__col-sm-12 wx__mt-3">
-              <div className="wx__card wx__form_right">
+            <div className="col-md-4 col-sm-12 wx__mt-3">
+              <div className="card wx__form_right">
                 <WxButton
                   className="hide-mobile-view"
                   disabled={isSaving}
@@ -210,15 +210,15 @@ const AddCoupon = () => {
                   </div>
                 </div>
               </div>
-              <div className="wx__card wx__form_right">
-                <div className="wx__d-flex wx__flex-column">
+              <div className="card wx__form_right">
+                <div className="d-flex wx__flex-column">
                   <h6 className="wx__text_body wx__text_strong  wx__mb-1">
                     0 Times
                   </h6>
                   <span className="wx__text_small">Coupon Used</span>
                 </div>
                 <WxHr />
-                <div className="wx__d-flex wx__flex-column">
+                <div className="d-flex wx__flex-column">
                   <h6 className="wx__text_body wx__text_strong wx__mb-1">
                     0 Hour
                   </h6>

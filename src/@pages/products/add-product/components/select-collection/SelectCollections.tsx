@@ -69,7 +69,7 @@ const SelectCollection = ({
 				Select Collections
 			</WxButton>
 			<WxDrawer show={drawer_open} handleClose={handleClose}>
-				<div className="wx__collection_select">
+				<div className="collection_select">
 					<WxDrawerHeader
 						title="Select Collections"
 						closeIconAction={handleClose}

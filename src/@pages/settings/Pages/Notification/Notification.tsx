@@ -143,22 +143,22 @@ const Notification = () => {
     <div>
       <WxMainLg className="notification_sec">
         <WxFormHeader title="Notfication" backNavigationLink={SETTINGS} />
-        <div className="wx__row">
-          <div className="notification_left wx__col-lg-8 wx__col-md-12 wx__col-sm-12 wx__mt-3">
-            <div className="wx__card wx__p-4">
-              <div className="wx__row">
-                <div className="wx__col-md-12 wx__col-sm-12">
+        <div className="row">
+          <div className="notification_left col-lg-8 col-md-12 col-sm-12 wx__mt-3">
+            <div className="card wx__p-4">
+              <div className="row">
+                <div className="col-md-12 col-sm-12">
                   <h6 className="wx__mb-4">Order Notifications</h6>
                   {loading ? <Preloader /> : null}
                   {notificationData?.orderNotifications?.map((order, index) => {
                     return (
                       <div className="single_notification" key={order?.id}>
-                        <div className="wx__d-flex wx__justify-content-between wx__align-items-center wx__text_body wx__text_medium ">
+                        <div className="d-flex wx__justify-content-between wx__align-items-center wx__text_body wx__text_medium ">
                           <p className="wx__mb-0 wx__text_body wx__text_medium notification_title">
                             {order?.description || order?.title}
                           </p>
-                          <div className="wx__d-flex ">
-                            <div className="wx__d-flex wx__me-5">
+                          <div className="d-flex ">
+                            <div className="d-flex wx__me-5">
                               <WxSwitch
                                 isChecked={order?.sms}
                                 onChange={(e) =>
@@ -173,7 +173,7 @@ const Notification = () => {
                               />
                               <span>SMS</span>
                             </div>
-                            <div className="wx__d-flex">
+                            <div className="d-flex">
                               <WxSwitch
                                 isChecked={order?.email}
                                 onChange={(e) =>
@@ -200,21 +200,21 @@ const Notification = () => {
                 </div>
               </div>
             </div>
-            <div className="wx__card wx__p-4 wx__mt-4">
-              <div className="wx__row">
-                <div className="wx__col-md-12 wx__col-sm-12">
+            <div className="card wx__p-4 wx__mt-4">
+              <div className="row">
+                <div className="col-md-12 col-sm-12">
                   <h6 className="wx__mb-4">Account Notifications</h6>
                   {loading ? <Preloader /> : null}
                   {notificationData?.accountNotifications?.map(
                     (account, index) => {
                       return (
                         <div className="single_notification" key={account?.id}>
-                          <div className="wx__d-flex wx__justify-content-between wx__align-items-center wx__text_body wx__text_medium">
+                          <div className="d-flex wx__justify-content-between wx__align-items-center wx__text_body wx__text_medium">
                             <p className="wx__mb-0 wx__text_body wx__text_medium notification_title">
                               {account.description || account.title}
                             </p>
-                            <div className="wx__d-flex ">
-                              <div className="wx__d-flex wx__me-5">
+                            <div className="d-flex ">
+                              <div className="d-flex wx__me-5">
                                 <WxSwitch
                                   isChecked={account?.sms}
                                   onChange={(e) =>
@@ -229,7 +229,7 @@ const Notification = () => {
                                 />
                                 <span>SMS</span>
                               </div>
-                              <div className="wx__d-flex">
+                              <div className="d-flex">
                                 <WxSwitch
                                   isChecked={account?.email}
                                   onChange={(e) =>
@@ -259,9 +259,9 @@ const Notification = () => {
               </div>
             </div>
           </div>
-          <div className="notification_right wx__col-lg-4 wx__col-md-12 wx__col-sm-12 wx__mt-3">
-            <div className="wx__card wx__p-4 wx__d-flex wx__justify-content-center">
-              <div className="wx__d-flex wx__justify-content-between wx__mb-3">
+          <div className="notification_right col-lg-4 col-md-12 col-sm-12 wx__mt-3">
+            <div className="card wx__p-4 d-flex wx__justify-content-center">
+              <div className="d-flex wx__justify-content-between wx__mb-3">
                 <div>
                   <h6 className="wx__text_heading wx__text_medium">
                     SMS Balance
@@ -303,8 +303,8 @@ const Notification = () => {
                 Current SMS rate {rateInfo?.nonMaskingSmsRate} paisa/SMS
               </p>
             </div>
-            <div className="wx__card wx__p-4 wx__mt-3 wx__d-flex wx__justify-content-center">
-              <div className="wx__d-flex wx__justify-content-between wx__mb-3">
+            <div className="card wx__p-4 wx__mt-3 d-flex wx__justify-content-center">
+              <div className="d-flex wx__justify-content-between wx__mb-3">
                 <div>
                   <h6 className="wx__text_heading wx__text_medium">
                     Email Balance
@@ -337,7 +337,7 @@ const Notification = () => {
                 Current SMS rate {rateInfo?.emailRate} paisa/SMS
               </p>
               <WxHr />
-              <div className="wx__d-flex wx__align-items-center wx__justify-content-between">
+              <div className="d-flex wx__align-items-center wx__justify-content-between">
                 <p className="wx__text_subtitle wx__text_semibold wx__mb-0">
                   Email to be used
                 </p>

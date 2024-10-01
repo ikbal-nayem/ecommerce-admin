@@ -151,11 +151,11 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
 
   return (
     <form className="wx__mt-3" onSubmit={handleSubmit(onSubmitting)} noValidate>
-      <div className="wx__row ">
-        <div className="wx__col-md-12 wx__col-lg-8 wx__col-sm-12">
-          <div className="wx__card wx__p-4 wx__mb-3">
-            <div className="wx__row">
-              <div className="wx__col-md-12 wx__col-lg-12">
+      <div className="row ">
+        <div className="col-md-12 col-lg-8 col-sm-12">
+          <div className="card wx__p-4 wx__mb-3">
+            <div className="row">
+              <div className="col-md-12 col-lg-12">
                 <WxInput
                   label="Campaign Name"
                   registerProperty={{
@@ -168,7 +168,7 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
                 />
               </div>
 
-              <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+              <div className="col-lg-6 col-md-12 col-sm-6">
                 <Controller
                   control={control}
                   name="status"
@@ -193,7 +193,7 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
                   )}
                 />
               </div>
-              <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+              <div className="col-lg-6 col-md-12 col-sm-6">
                 <DateInput
                   // date={watch("requested_delivery_time")}
                   date={watch("deliveryTime")}
@@ -212,10 +212,10 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
               </div>
             </div>
           </div>
-          <div className="wx__card wx__p-4 wx__mb-3">
-            <div className="wx__row">
+          <div className="card wx__p-4 wx__mb-3">
+            <div className="row">
               <h6 className="wx__text_h6 wx__text_semibold">Address</h6>
-              <div className="wx__col-md-12 wx__col-lg-12">
+              <div className="col-md-12 col-lg-12">
                 <WxLabel
                   isRequired
                   children="SMS BODY"
@@ -240,8 +240,8 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
             </div>
           </div>
         </div>
-        <div className="wx__col-lg-4 wx__col-md-12 wx__col-sm-12">
-          <div className="wx__card wx__p-4 wx__mb-3">
+        <div className="col-lg-4 col-md-12 col-sm-12">
+          <div className="card wx__p-4 wx__mb-3">
             <WxButton disabled={isSaving} type="submit" variant="fill">
               Launch Campaign
             </WxButton>

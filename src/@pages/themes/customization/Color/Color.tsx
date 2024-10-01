@@ -42,11 +42,11 @@ export default function CustomizationColor() {
 					}
 				/>
 				{/* basic Color */}
-				<div className="wx__card wx__p-4">
+				<div className="card wx__p-4">
 					{isLoading ? <TableLoader isLoading={isLoading} /> : null}
-					<div className="wx__row">
+					<div className="row">
 						<h6 className="wx__text_semibold">Basic color</h6>
-						<div className="wx__col-md-4 wx__col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 wx__mt-2">
 							<p className="wx__mb-2 text__small">Primary color</p>
 							<WxColorPicker
 								registerProperty={{
@@ -54,7 +54,7 @@ export default function CustomizationColor() {
 								}}
 							/>
 						</div>
-						<div className="wx__col-md-4 wx__col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 wx__mt-2">
 							<p className="wx__mb-2 text__small">Secondary color</p>
 							<WxColorPicker
 								registerProperty={{
@@ -65,10 +65,10 @@ export default function CustomizationColor() {
 					</div>
 				</div>
 				{/* Button Color */}
-				<div className="wx__card wx__mt-4 wx__p-4">
-					<div className="wx__row">
+				<div className="card wx__mt-4 wx__p-4">
+					<div className="row">
 						<h6 className="wx__text_semibold">Button</h6>
-						<div className="wx__col-md-4 wx__col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 wx__mt-2">
 							<p className="wx__mb-2 text__small">Button Text</p>
 							<WxColorPicker
 								registerProperty={{
@@ -79,10 +79,10 @@ export default function CustomizationColor() {
 					</div>
 				</div>
 				{/* Footer Color */}
-				<div className="wx__card wx__mt-4 wx__p-4">
-					<div className="wx__row">
+				<div className="card wx__mt-4 wx__p-4">
+					<div className="row">
 						<h6 className="wx__text_semibold">Footer</h6>
-						<div className="wx__col-md-4 wx__col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 wx__mt-2">
 							<p className="wx__mb-2 text__small">Background Color</p>
 							<WxColorPicker
 								registerProperty={{
@@ -90,7 +90,7 @@ export default function CustomizationColor() {
 								}}
 							/>
 						</div>
-						<div className="wx__col-md-4 wx__col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 wx__mt-2">
 							<p className="wx__mb-2 text__small">Head line</p>
 							<WxColorPicker
 								registerProperty={{
@@ -98,7 +98,7 @@ export default function CustomizationColor() {
 								}}
 							/>
 						</div>
-						<div className="wx__col-md-4 wx__col-sm-6 wx__mt-2">
+						<div className="col-md-4 col-sm-6 wx__mt-2">
 							<p className="wx__mb-2 text__small">text</p>
 							<WxColorPicker
 								registerProperty={{

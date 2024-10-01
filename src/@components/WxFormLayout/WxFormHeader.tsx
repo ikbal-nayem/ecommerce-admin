@@ -22,9 +22,9 @@ const WxFormHeader = ({
 
 	return (
 		<div
-			className={`wx__d-flex wx__align-items-center justify-content-between wx__text_strong ${margin}`}
+			className={`d-flex wx__align-items-center justify-content-between wx__text_strong ${margin}`}
 		>
-			<div className="wx__d-flex wx__align-items-center">
+			<div className="d-flex wx__align-items-center">
 				{noBack ? null : (
 					<span
 						className="material-icons-outlined wx__me-3"

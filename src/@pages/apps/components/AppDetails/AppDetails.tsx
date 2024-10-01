@@ -128,12 +128,12 @@ const AppsDetails = () => {
 	return (
 		<div className="wx__app_details_page">
 			<WxFormHeader title="App Details" backNavigationLink={APPS_LIST} />
-			<div className="wx__card wx__p-4 wx__details_top">
+			<div className="card wx__p-4 wx__details_top">
 				{isLoading ? (
 					<Preloader />
 				) : (
-					<div className="wx__row">
-						<div className="wx__col-lg-5 wx__col-md-12 wx__col-sm-12 wx__details_top_left wx__d-flex wx__align-items-center">
+					<div className="row">
+						<div className="col-lg-5 col-md-12 col-sm-12 wx__details_top_left d-flex wx__align-items-center">
 							<div>
 								<WxThumbnail
 									src={imageURLGenerate(appDetails?.appIconPath)}
@@ -151,7 +151,7 @@ const AppsDetails = () => {
 									{appDetails?.avgRating}/5&nbsp;
 									<span>({appDetails?.totalReview} Review)</span>
 								</p>
-								<div className="wx__d-flex wx__align-items-center wx__mb-2 wx__gap-2">
+								<div className="d-flex wx__align-items-center wx__mb-2 gap-2">
 									{isInstalled ? (
 										<WxButton
 											variant="outline"
@@ -187,7 +187,7 @@ const AppsDetails = () => {
 									<small>
 										<Link
 											to={SETTINGS_PRICING_PLAN}
-											className="wx__text-decoration-none wx__text-warning wx__d-flex wx__align-items-center wx__gap-1"
+											className="wx__text-decoration-none wx__text-warning d-flex wx__align-items-center gap-1"
 										>
 											<WxIcon
 												icon="info"
@@ -219,7 +219,7 @@ const AppsDetails = () => {
 								)}
 							</div>
 						</div>
-						<div className="wx__col-lg-7 wx__col-md-12 wx__col-sm-12 wx__details_top_right d-flex align-items-center justify-content-center">
+						<div className="col-lg-7 col-md-12 col-sm-12 wx__details_top_right d-flex align-items-center justify-content-center">
 							<div className="video_sec">
 								<iframe
 									src={appDetails?.videoLink}
@@ -233,9 +233,9 @@ const AppsDetails = () => {
 					</div>
 				)}
 			</div>
-			<div className="wx__row wx__details_mid">
-				<div className="wx__col-md-8 wx__col-sm-12 wx__mt-3 ">
-					<div className="wx__card wx__details_mid_left wx__p-4">
+			<div className="row wx__details_mid">
+				<div className="col-md-8 col-sm-12 wx__mt-3 ">
+					<div className="card wx__details_mid_left wx__p-4">
 						<WxTabs
 							option={tabsData}
 							labelKey="label"
@@ -260,13 +260,13 @@ const AppsDetails = () => {
 					</div>
 				</div>
 
-				<div className="wx__col-md-4 wx__col-sm-12">
+				<div className="col-md-4 col-sm-12">
 					<AppInfoAndSupport appInfo={appInfo} />
 				</div>
 			</div>
 
 			{appPricing?.length ? (
-				<div className="wx__plan_pricing wx__mt-3 wx__p-4 wx__card">
+				<div className="wx__plan_pricing wx__mt-3 wx__p-4 card">
 					<h5 className="wx__text_semibold wx__mb-2">Plan & Pricing</h5>
 					{/* <p className="wx__text_body wx__text_regular wx__mb-4">
 						This app offers a 30-day free trial

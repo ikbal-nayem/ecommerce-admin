@@ -44,9 +44,9 @@ const DomainCreate = () => {
 				/>
 			</div>
 			<form onSubmit={handleSubmit(onSubmitting)} noValidate>
-				<div className="wx__card wx__p-4">
-					<div className="wx__row">
-						<div className="wx__col-md-12 wx__col-sm-12">
+				<div className="card wx__p-4">
+					<div className="row">
+						<div className="col-md-12 col-sm-12">
 							<WxInput
 								label="Existing Domain"
 								isRequired
@@ -88,7 +88,7 @@ const DomainCreate = () => {
 				</div>
 			</form>
 			{domain?.id ? (
-				<div className="wx__card wx__p-4 wx__mt-3">
+				<div className="card wx__p-4 wx__mt-3">
 					<p>
 						Thanks for staying with WebX. It will take few minutes (usually{" "}
 						<b>1-5</b> minutes) to configure your domain and acquire{" "}

@@ -91,9 +91,9 @@ const AllTheme = () => {
 	return (
 		<WxMainXl>
 			<WxFormHeader title="All themes" backNavigationLink={THEMES} />
-			<div className="wx__card wx__p-4">
-				<div className="wx__row">
-					<div className="wx__col-md-8 wx__col-sm-12">
+			<div className="card wx__p-4">
+				<div className="row">
+					<div className="col-md-8 col-sm-12">
 						<WxInput
 							type="search"
 							placeholder="Search themes"
@@ -101,7 +101,7 @@ const AllTheme = () => {
 							onChange={(e: any) => setSearchQuery(e.target.value)}
 						/>
 					</div>
-					<div className="wx__col-md-4 wx__col-sm-12">
+					<div className="col-md-4 col-sm-12">
 						<WxSelect
 							placeholder="Choose category"
 							valuesKey="id"

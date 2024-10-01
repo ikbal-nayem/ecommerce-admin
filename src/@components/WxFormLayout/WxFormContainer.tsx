@@ -7,7 +7,7 @@ type IFormContainerProps = {
 
 const WxFormContainer=({children}:IFormContainerProps)=>{
   return (
-    <div className="wx__container wx__form_container">
+    <div className="container wx__form_container">
       {children}
     </div>
   )

@@ -155,8 +155,8 @@ const UpdateProducts = () => {
 			/>
 			<FormProvider {...methods}>
 				<form noValidate onSubmit={methods.handleSubmit(onSubmit)}>
-					<div className="wx__row wx__mb-4">
-						<div className="wx__col-lg-8 wx__col-md-7">
+					<div className="row wx__mb-4">
+						<div className="col-lg-8 col-md-7">
 							<ProductInfo />
 							<ProductMedia isEditForm />
 							<ProductPricing />
@@ -166,7 +166,7 @@ const UpdateProducts = () => {
 							<ProductVariants isEditForm />
 							<SearchEngine />
 						</div>
-						<div className="wx__col-lg-4 wx__col-md-5">
+						<div className="col-lg-4 col-md-5">
 							<SaveProducts
 								selectedCategory={selectedCategory}
 								selectedCollections={selectedCollections}

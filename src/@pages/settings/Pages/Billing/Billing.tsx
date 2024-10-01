@@ -69,15 +69,15 @@ const Billing = () => {
     <WxMainXl className="billing_sec">
       <WxFormHeader title="Billing" backNavigationLink={SETTINGS} />
       {!userDataLoader ? (
-        <div className="wx__card wx__p-3 wx__mb-4">
-          <div className="wx__row">
-            <div className="wx__col-md-4 wx__col-12">
+        <div className="card wx__p-3 wx__mb-4">
+          <div className="row">
+            <div className="col-md-4 col-12">
               <span className="wx__text_small">Subscribed to</span>
               <h5 className="wx__m-0 wx__text_h5 wx__text_semibold">
                 {activePlan?.title} - {activePlan?.billingCycleName}
               </h5>
             </div>
-            <div className="wx__col-md-4 wx__col-12 wx__mt-md-0 wx__mt-3">
+            <div className="col-md-4 col-12 wx__mt-md-0 wx__mt-3">
               <span className="wx__text_small">Next invoice issue date</span>
               <h5 className="wx__m-0 wx__text_h5 wx__text_semibold">
                 {generateDateFormat(
@@ -89,7 +89,7 @@ const Billing = () => {
                 Amount: BDT {activePlan?.price}
               </span>
             </div>
-            <div className="wx__col-md-4 wx__col-12 wx__mt-md-0 wx__mt-3">
+            <div className="col-md-4 col-12 wx__mt-md-0 wx__mt-3">
               <span className="wx__text_small">Invoice sent to</span>
               <h5 className="wx__m-0 wx__text_h5 wx__text_semibold">
                 {userData?.email || "No Email"}
@@ -107,13 +107,13 @@ const Billing = () => {
           </div>
         </div>
       ) : (
-        <div className="wx__bg-white wx__rounded wx__mb-3">
+        <div className="wx__bg-white rounded wx__mb-3">
           <UserPlanNInfoSkelton viewBox="0 0 595 80" />
         </div>
       )}
 
       {!tableLoader ? (
-        <div className="wx__card wx__p-3 wx__mb-4">
+        <div className="card wx__p-3 wx__mb-4">
           {!billingData.length ? (
             <WxNotFound title="No Billing found!" />
           ) : (
@@ -132,7 +132,7 @@ const Billing = () => {
           )}
         </div>
       ) : (
-        <div className="wx__bg-white wx__rounded ">
+        <div className="wx__bg-white rounded ">
           <BillingTableSkelton viewBox="0 0 595 240" />
         </div>
       )}

@@ -129,11 +129,11 @@ const RedXOrderPlace = () => {
             backNavigationLink={ORDER_DETAILS({ order_id: order_id })}
           />
           {(isLoading || isSaving) && <Preloader />}
-          <div className="wx__row">
-            <div className="wx__col-lg-8 wx__col-md-12 wx__col-sm-12">
-              <div className="wx__card wx__p-4 wx__mb-3">
-                <div className="wx__row">
-                  <div className="wx__col-lg-6 wx__col-md-6 wx__col-sm-12">
+          <div className="row">
+            <div className="col-lg-8 col-md-12 col-sm-12">
+              <div className="card wx__p-4 wx__mb-3">
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 col-sm-12">
                     <WxInput
                       label="Customer Name"
                       registerProperty={{
@@ -145,7 +145,7 @@ const RedXOrderPlace = () => {
                       errorMessage={errors?.customerName?.message}
                     />
                   </div>
-                  <div className="wx__col-lg-6 wx__col-md-6 wx__col-sm-12">
+                  <div className="col-lg-6 col-md-6 col-sm-12">
                     <WxInput
                       label="Customer Phone"
                       registerProperty={{
@@ -158,8 +158,8 @@ const RedXOrderPlace = () => {
                     />
                   </div>
                 </div>
-                <div className="wx__row">
-                  <div className="wx__col-lg-6 wx__col-md-6 wx__col-sm-12">
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 col-sm-12">
                     <WxSelect
                       label="Delivery Area"
                       options={deliveryAreaList}
@@ -181,7 +181,7 @@ const RedXOrderPlace = () => {
                       // errorMessage={error && "District/City is required!"}
                     />
                   </div>
-                  <div className="wx__col-lg-6 wx__col-md-6 wx__col-sm-12">
+                  <div className="col-lg-6 col-md-6 col-sm-12">
                     <WxInput
                       label="Cash collection amount"
                       registerProperty={{
@@ -196,8 +196,8 @@ const RedXOrderPlace = () => {
                     />
                   </div>
                 </div>
-                <div className="wx__row">
-                  <div className="wx__col-lg-12 wx__col-md-12 wx__col-sm-12">
+                <div className="row">
+                  <div className="col-lg-12 col-md-12 col-sm-12">
                     <WxInput
                       label="Customer Address"
                       registerProperty={{
@@ -210,8 +210,8 @@ const RedXOrderPlace = () => {
                     />
                   </div>
                 </div>
-                <div className="wx__row">
-                  <div className="wx__col-lg-6 wx__col-md-6 wx__col-sm-12">
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 col-sm-12">
                     <WxInput
                       label="Parcel Weight"
                       placeholder="write here"
@@ -224,7 +224,7 @@ const RedXOrderPlace = () => {
                       errorMessage={errors?.parcelWeight?.message}
                     />
                   </div>
-                  <div className="wx__col-lg-6 wx__col-md-6 wx__col-sm-12">
+                  <div className="col-lg-6 col-md-6 col-sm-12">
                     <WxInput
                       label="Value"
                       placeholder="write here"
@@ -238,8 +238,8 @@ const RedXOrderPlace = () => {
                     />
                   </div>
                 </div>
-                <div className="wx__row">
-                  <div className="wx__col-lg-12 wx__col-md-12 wx__col-sm-12">
+                <div className="row">
+                  <div className="col-lg-12 col-md-12 col-sm-12">
                     <WxInput
                       label="Comment / Instruction"
                       registerProperty={{
@@ -253,8 +253,8 @@ const RedXOrderPlace = () => {
                 </div>
               </div>
             </div>
-            <div className="wx__col-lg-4 wx__col-md-12 wx__col-sm-12">
-              <div className="wx__card">
+            <div className="col-lg-4 col-md-12 col-sm-12">
+              <div className="card">
                 <div className="wx__mb-3">
                   {watch("customerName") && (
                     <p className="wx__my-0">

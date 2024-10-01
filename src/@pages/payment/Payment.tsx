@@ -174,9 +174,9 @@ const Payment = () => {
 				/>
 			) : (
 				<form onSubmit={handleSubmit(onSubmit)} noValidate>
-					<div className="wx__row">
-						<div className="wx__col-lg-8 wx__col-md-12 wx__col-sm-12">
-							<div className="wx__card wx__p-3 wx__mb-3">
+					<div className="row">
+						<div className="col-lg-8 col-md-12 col-sm-12">
+							<div className="card wx__p-3 wx__mb-3">
 								<h6>Payment Method</h6>
 								{getWayList?.map((getway) => (
 									<div key={getway.id}>
@@ -193,7 +193,7 @@ const Payment = () => {
 								))}
 							</div>
 							<div className="card border-0 p-3">
-								<div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+								<div className="d-flex wx__justify-content-between wx__align-items-center">
 									<h6 className="wx__m-0">Billing address</h6>
 									<WxSelect
 										id="address-selector"
@@ -217,8 +217,8 @@ const Payment = () => {
 									color={errors?.address?.addressLine1 ? "danger" : "secondary"}
 									errorMessage={errors?.address?.addressLine1?.message}
 								/>
-								<div className="wx__row">
-									<div className="wx__col-sm-6 wx__col-12">
+								<div className="row">
+									<div className="col-sm-6 col-12">
 										<WxSelect
 											label="Division"
 											isRequired
@@ -236,7 +236,7 @@ const Payment = () => {
 											errorMessage={errors?.address?.state?.message}
 										/>
 									</div>
-									<div className="wx__col-6">
+									<div className="col-6">
 										<WxSelect
 											key={districts?.length}
 											label="District"
@@ -254,13 +254,13 @@ const Payment = () => {
 											errorMessage={errors?.address?.cityName?.message}
 										/>
 									</div>
-									<div className="wx__col-6">
+									<div className="col-6">
 										<WxInput
 											label="Post code"
 											registerProperty={{ ...register("address.postCode") }}
 										/>
 									</div>
-									<div className="wx__col-sm-6 wx__col-12">
+									<div className="col-sm-6 col-12">
 										<WxInput
 											label="Email address"
 											type="email"
@@ -277,10 +277,10 @@ const Payment = () => {
 								</div>
 							</div>
 						</div>
-						<div className="wx__col-lg-4 wx__col-md-12 wx__col-sm-12">
-							<div className="wx__card wx__p-3">
+						<div className="col-lg-4 col-md-12 col-sm-12">
+							<div className="card wx__p-3">
 								<h6>Summary</h6>
-								<div className="wx__d-flex wx__align-items-center wx__justify-content-between">
+								<div className="d-flex wx__align-items-center wx__justify-content-between">
 									<span className="wx__text_h6 wx__text_subtitle wx__text_strong">
 										Total
 									</span>

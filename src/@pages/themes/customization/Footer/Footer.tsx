@@ -95,12 +95,12 @@ const SiteFooter = () => {
 						</WxButton>
 					}
 				/>
-				<div className="wx__card wx__p-4">
-					<div className="wx__row footer-top">
+				<div className="card wx__p-4">
+					<div className="row footer-top">
 						<h6 className="wx__text_semibold">Select Footer Content</h6>
 						{layoutColumn.map((layout, idx) => (
 							<div
-								className="wx__col-lg-3 wx__col-md-6 wx__mt-3"
+								className="col-lg-3 col-md-6 wx__mt-3"
 								key={idx}
 								onClick={() => setSelectedContent(idx + 1)}
 							>
@@ -123,13 +123,13 @@ const SiteFooter = () => {
 					</div>
 				</div>
 
-				<div className="wx__card wx__mt-4 wx__p-4">
+				<div className="card wx__mt-4 wx__p-4">
 					{Array(selectedContent)
 						.fill(null)
 						.map((_, idx) => (
 							<div key={idx}>
-								<div className="wx__row">
-									<div className="middle-title wx__d-flex wx__align-items-center">
+								<div className="row">
+									<div className="middle-title d-flex wx__align-items-center">
 										<div className="column__select wx__me-2">
 											<div className="column__select_cl" />
 										</div>
@@ -148,8 +148,8 @@ const SiteFooter = () => {
 										</div>
 									</div>
 								</div>
-								<div className="wx__row">
-									<div className="wx__col-md-6 wx__mt-3">
+								<div className="row">
+									<div className="col-md-6 wx__mt-3">
 										<WxSelect
 											label="Choose menu set"
 											options={menuSetList}
@@ -161,8 +161,8 @@ const SiteFooter = () => {
 											}}
 										/>
 									</div>
-									<div className="wx__col-md-6"></div>
-									<div className="wx__col-md-6">
+									<div className="col-md-6"></div>
+									<div className="col-md-6">
 										<div className="wx__mb-2" style={{ maxWidth: "85%" }}>
 											<WxSwitch
 												label="Menu style"
@@ -180,8 +180,8 @@ const SiteFooter = () => {
 						))}
 				</div>
 
-				<div className="wx__card wx__mt-4 wx__p-4">
-					<div className="wx__row">
+				<div className="card wx__mt-4 wx__p-4">
+					<div className="row">
 						<div className="col-md-6">
 							<div style={{ maxWidth: "85%" }}>
 								<WxSwitch
@@ -195,8 +195,8 @@ const SiteFooter = () => {
 							</div>
 						</div>
 					</div>
-					<div className="wx__row wx__mt-4">
-						<div className="wx__col-md-6">
+					<div className="row wx__mt-4">
+						<div className="col-md-6">
 							<WxInput
 								label="Copyright Information"
 								registerProperty={{
@@ -209,7 +209,7 @@ const SiteFooter = () => {
 					{isIconsLoading ? (
 						<Preloader />
 					) : getwayIcons.length ? (
-						<div className="wx__d-flex wx__flex-wrap wx__justify-content-center wx__gap-2">
+						<div className="d-flex wx__flex-wrap wx__justify-content-center gap-2">
 							{getwayIcons?.map((icon) => (
 								<div
 									key={icon?.fileName}

@@ -197,13 +197,13 @@ export default function Customer() {
 				}
 			/>
 			{isLoading ? (
-				<div className="wx__rounded wx__w-100 wx__bg-white wx__mt-3">
+				<div className="rounded w-100 wx__bg-white wx__mt-3">
 					<ProductTableSkelton viewBox="0 0 600 230" />
 				</div>
 			) : (
-				<div className="wx__card">
-					<div className="wx__row wx__p-4 wx__pb-0">
-						<div className="wx__col-lg-8 wx__col-md-6 wx__col-sm-12">
+				<div className="card">
+					<div className="row wx__p-4 wx__pb-0">
+						<div className="col-lg-8 col-md-6 col-sm-12">
 							<WxInput
 								type="search"
 								placeholder="Search Customer"
@@ -211,7 +211,7 @@ export default function Customer() {
 								onChange={(e) => setSearchQuery(e.target.value)}
 							/>
 						</div>
-						<div className="wx__col-lg-2 wx__col-md-3 wx__col-sm-12">
+						<div className="col-lg-2 col-md-3 col-sm-12">
 							<WxSelect
 								placeholder="Select Group"
 								valuesKey="object"
@@ -220,7 +220,7 @@ export default function Customer() {
 								onChange={onChangeGroup}
 							/>
 						</div>
-						<div className="wx__col-lg-2 wx__col-md-3 wx__col-sm-12">
+						<div className="col-lg-2 col-md-3 col-sm-12">
 							<WxSelect
 								placeholder="Select Status"
 								valuesKey="text"

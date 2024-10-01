@@ -53,11 +53,11 @@ const OrderConfirmation = () => {
         backNavigationLink={SETTINGS_NOTIFICATION}
       />
       <form onSubmit={handleSubmit(onSubmitHandler)}>
-        <div className="wx__row wx__w-100">
-          <div className="sms_gateway_left wx__col-lg-8 wx__col-md-12 wx__col-sm-12 wx__mt-3">
-            <div className="wx__card wx__p-4">
-              <div className="wx__row">
-                <div className="wx__col-md-12 wx__col-sm-12">
+        <div className="row w-100">
+          <div className="sms_gateway_left col-lg-8 col-md-12 col-sm-12 wx__mt-3">
+            <div className="card wx__p-4">
+              <div className="row">
+                <div className="col-md-12 col-sm-12">
                   <WxSelect
                     isRequired
                     label="Select SMS Gateway"
@@ -69,9 +69,9 @@ const OrderConfirmation = () => {
                 </div>
               </div>
             </div>
-            <div className="wx__card wx__p-4 wx__mt-4">
-              <div className="wx__row">
-                <div className="wx__col-md-6 wx__col-sm-12">
+            <div className="card wx__p-4 wx__mt-4">
+              <div className="row">
+                <div className="col-md-6 col-sm-12">
                   <WxInput
                     label="Mask name"
                     isRequired
@@ -81,7 +81,7 @@ const OrderConfirmation = () => {
                     }}
                   />
                 </div>
-                <div className="wx__col-md-6 wx__col-sm-12">
+                <div className="col-md-6 col-sm-12">
                   <WxInput
                     label="Non-mask name"
                     isRequired
@@ -91,7 +91,7 @@ const OrderConfirmation = () => {
                     }}
                   />
                 </div>
-                <div className="wx__col-md-6 wx__col-sm-12">
+                <div className="col-md-6 col-sm-12">
                   <WxInput
                     label="Username"
                     isRequired
@@ -101,7 +101,7 @@ const OrderConfirmation = () => {
                     }}
                   />
                 </div>
-                <div className="wx__col-md-6 wx__col-sm-12">
+                <div className="col-md-6 col-sm-12">
                   <WxInput
                     label="Password"
                     isRequired
@@ -111,7 +111,7 @@ const OrderConfirmation = () => {
                     }}
                   />
                 </div>
-                <div className="wx__col-md-6 wx__col-sm-12">
+                <div className="col-md-6 col-sm-12">
                   <WxInput
                     label="API Username"
                     isRequired
@@ -121,7 +121,7 @@ const OrderConfirmation = () => {
                     }}
                   />
                 </div>
-                <div className="wx__col-md-6 wx__col-sm-12">
+                <div className="col-md-6 col-sm-12">
                   <WxInput
                     label="API Token/Password"
                     isRequired
@@ -134,8 +134,8 @@ const OrderConfirmation = () => {
               </div>
             </div>
           </div>
-          <div className="sms_gateway_right wx__col-lg-4 wx__col-md-12 wx__col-sm-12 wx__mt-3">
-            <div className="wx__card wx__p-4">
+          <div className="sms_gateway_right col-lg-4 col-md-12 col-sm-12 wx__mt-3">
+            <div className="card wx__p-4">
               <WxButton variant="fill" type="submit">
                 Add
               </WxButton>

@@ -1,6 +1,6 @@
 const InvoiceTable = ({ data }) => {
   return (
-    <table className="wx__d-none" id="purchaseTable">
+    <table className="d-inline" id="purchaseTable">
       <thead>
         <tr>
           <th>Item</th>
@@ -14,7 +14,7 @@ const InvoiceTable = ({ data }) => {
               return (
                 <tr key={index}>
                   <td>
-                    <div className="wx__d-flex ">
+                    <div className="d-flex ">
                       {/* <div>
                     <img src={item.thumbnail} alt="" className="item_img" />
                   </div> */}

@@ -1,0 +1,35 @@
+.container {
+	@extend .container;
+	max-width: 100%;
+}
+.container-sm {
+	@extend .container-sm;
+	max-width: 100%;
+}
+.container-md {
+	@extend .container-md;
+	max-width: 100%;
+}
+.container-lg {
+	@extend .container-lg;
+	max-width: 100%;
+}
+.container-xl {
+	@extend .container-xl;
+	max-width: 100%;
+}
+.container-xxl {
+	@extend .container-xxl;
+	max-width: 100%;
+}
+.container-fluid {
+	@extend .container-fluid;
+	max-width: 100%;
+}
+
+@media (max-width: 671px) {
+	.wx__container {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}

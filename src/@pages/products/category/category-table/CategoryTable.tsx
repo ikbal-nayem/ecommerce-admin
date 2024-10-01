@@ -16,11 +16,11 @@ const CategoryTable = ({
 	handleCreateSubcategory,
 }: CategoryTableProps) => {
 	return (
-		<div className="wx__card wx__mt-3 wx__responsive_table">
+		<div className="card wx__mt-3 wx__responsive_table">
 			<table className="wx__table">
 				<thead className="wx__thead">
 					<tr className="wx__tr">
-						<th className="wx__th wx__w-50">Category Name</th>
+						<th className="wx__th w-50">Category Name</th>
 						<th className="wx__th">Products</th>
 						<th className="wx__th">Visibility</th>
 						<th className="wx__th" style={{ width: 50 }} />

@@ -61,8 +61,8 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 				/>
 				<form onSubmit={handleSubmit(onSubmitting)} noValidate>
 					<WxDrawerBody>
-						<div className="wx__row">
-							<div className="wx__col-md-12 wx__col-sm-12">
+						<div className="row">
+							<div className="col-md-12 col-sm-12">
 								<WxInput
 									isRequired
 									label="Delivery Zone Name"
@@ -71,7 +71,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 									errorMessage={errors?.name ? "This field is required!" : ""}
 								/>
 							</div>
-							<div className="wx__col-md-12 wx__col-sm-12">
+							<div className="col-md-12 col-sm-12">
 								<WxInput
 									label="Delivery Amount"
 									isRequired
@@ -91,7 +91,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 							<p className="wx__text_subtitle wx__text_regular">
 								System will auto detect “0” as free delivery
 							</p>
-							<div className="wx__col-md-12 wx__col-sm-12 wx__mt-2">
+							<div className="col-md-12 col-sm-12 wx__mt-2">
 								<WxSelect
 									label="Country"
 									isRequired
@@ -111,7 +111,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 								/>
 							</div>
 							{watch("hasAdvanceCharge") ? (
-								<div className="wx__col-md-12 wx__col-sm-12 wx__mt-3">
+								<div className="col-md-12 col-sm-12 wx__mt-3">
 									<WxInput
 										isRequired
 										label="Set Prebooking Amount"
@@ -149,7 +149,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 									Delete
 								</WxButton>
 							) : null}
-							<div className="wx__ms-auto wx__d-flex">
+							<div className="wx__ms-auto d-flex">
 								<WxButton
 									color="secondary"
 									type="button"

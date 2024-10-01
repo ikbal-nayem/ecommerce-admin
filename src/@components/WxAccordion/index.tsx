@@ -27,7 +27,7 @@ const WxAccordion = ({ data, labelKey, descriptionKey }: IWxAccordion) => {
 					<div className="wx__accordion w-100 mb-3" key={index}>
 						<div className="wx__single_accordion">
 							<div
-								className="wx__accordion_title wx__d-flex wx__align-items-center"
+								className="wx__accordion_title d-flex wx__align-items-center"
 								onClick={() => setShowFun(index)}
 							>
 								<div

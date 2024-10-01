@@ -71,9 +71,9 @@ const Invoice = ({ invoiceData }) => {
         <div className="sub-page">
           {/* topper */}
           <div className="topper">
-            <div className="wx__d-flex wx__justify-content-between">
+            <div className="d-flex wx__justify-content-between">
               <img src={imageURLGenerate(siteLogoUrl)} alt="" />
-              <div className="wx__d-flex wx__flex-column wx__align-items-end">
+              <div className="d-flex wx__flex-column wx__align-items-end">
                 <h6 className="wx__mb-0 wx__text">INVOICE NO #{invoiceNo}</h6>
                 <span className="wx__text_body">
                   {generateDateFormat(
@@ -89,7 +89,7 @@ const Invoice = ({ invoiceData }) => {
           {/* footer */}
           <div className="footer">
             <hr />
-            <div className="wx__d-flex wx__align-items-center wx__justify-content-between">
+            <div className="d-flex wx__align-items-center wx__justify-content-between">
               <div>
                 <div>
                   <img src={webXLogo} alt="" />
@@ -113,7 +113,7 @@ const Invoice = ({ invoiceData }) => {
             <tbody>
               <tr>
                 <td>
-                  <div className="invoice_address wx__d-flex  wx__justify-content-between">
+                  <div className="invoice_address d-flex  wx__justify-content-between">
                     <div>
                       <h6>Bill Form</h6>
                       <p className="wx__text__semibold wx__text_body">
@@ -182,7 +182,7 @@ const Invoice = ({ invoiceData }) => {
                         return (
                           <tr key={item.id}>
                             <td>
-                              <div className="wx__d-flex ">
+                              <div className="d-flex ">
                                 {/* <div className="table_img wx__me-2">
                                   <img
                                     src={item.thumbnail}
@@ -228,8 +228,8 @@ const Invoice = ({ invoiceData }) => {
                     </tbody>
                   </table>
 
-                  <div className="wx__row wx__mt-2">
-                    <div className="wx__col-5">
+                  <div className="row wx__mt-2">
+                    <div className="col-5">
                       {orderNote && (
                         <div className="wx__invoice_notes">
                           <p>
@@ -242,9 +242,9 @@ const Invoice = ({ invoiceData }) => {
                         </div>
                       )}
                     </div>
-                    <div className="wx__col-7">
+                    <div className="col-7">
                       <div className="order_summery">
-                        <div className="wx__d-flex wx__justify-content-between">
+                        <div className="d-flex wx__justify-content-between">
                           <span className="wx__text__semibold wx__text_body">
                             Sub Total
                           </span>
@@ -252,7 +252,7 @@ const Invoice = ({ invoiceData }) => {
                             {orderSubTotal || "0"} BDT
                           </span>
                         </div>
-                        <div className="wx__d-flex wx__justify-content-between">
+                        <div className="d-flex wx__justify-content-between">
                           <span className="wx__text__semibold wx__text_body">
                             Tax
                           </span>
@@ -260,7 +260,7 @@ const Invoice = ({ invoiceData }) => {
                             {taxAmount || "0"} BDT
                           </span>
                         </div>
-                        <div className="wx__d-flex wx__justify-content-between">
+                        <div className="d-flex wx__justify-content-between">
                           <span className="wx__text__semibold wx__text_body">
                             Delivery Charge
                           </span>
@@ -268,13 +268,13 @@ const Invoice = ({ invoiceData }) => {
                             {deliveryChargeAmount || "0"} BDT
                           </span>
                         </div>
-                        <div className="wx__d-flex wx__justify-content-between total">
+                        <div className="d-flex wx__justify-content-between total">
                           <span className="wx__text_semibold">Total</span>
                           <span className="wx__text_semibold">
                             {totalPayableAmount || "0"} BDT
                           </span>
                         </div>
-                        <div className="wx__d-flex wx__justify-content-between wx__my-2">
+                        <div className="d-flex wx__justify-content-between wx__my-2">
                           <span className="wx__text__semibold wx__text_body">
                             Paid
                           </span>
@@ -282,7 +282,7 @@ const Invoice = ({ invoiceData }) => {
                             {totalPayableAmount || "0"} BDT
                           </span>
                         </div>
-                        <div className="wx__d-flex wx__justify-content-between">
+                        <div className="d-flex wx__justify-content-between">
                           <h5 className="wx__text-secondary wx__text_semibold">
                             Total Due
                           </h5>

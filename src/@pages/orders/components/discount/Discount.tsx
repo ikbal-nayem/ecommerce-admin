@@ -38,11 +38,11 @@ const Discount = ({
       <WxModalHeader
         title="Add Discount"
         closeIconAction={handleDiscountClose}
-        className="wx__border-0"
+        className="border-0"
       />
       <WxModalBody>
-        <div className="wx__row">
-          <div className="wx__col-md-6">
+        <div className="row">
+          <div className="col-md-6">
             <WxSelect
               label="Discount Type"
               options={dicountTypes}
@@ -54,7 +54,7 @@ const Discount = ({
               }
             />
           </div>
-          <div className="wx__col-md-6">
+          <div className="col-md-6">
             <WxInput
               label="Discount Value"
               type="number"
@@ -78,7 +78,7 @@ const Discount = ({
         </div>
       </WxModalBody>
       <WxModalFooter className="wx__bg-white">
-        <div className="wx__d-flex justify-content-between">
+        <div className="d-flex justify-content-between">
           <WxButton
             variant="outline"
             color="secondary"

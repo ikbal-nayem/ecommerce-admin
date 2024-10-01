@@ -77,15 +77,15 @@ const PaymentInfo = ({
 
 	return (
 		<>
-			<div className="wx__card wx__p-3">
+			<div className="card wx__p-3">
 				<h6 className="wx__text_h6 wx__text_semibold">Payment</h6>
 				<div className="wx__text_body">
-					<div className="wx__text_regular wx__text_body wx__d-flex wx__justify-content-between wx__mb-3">
+					<div className="wx__text_regular wx__text_body d-flex wx__justify-content-between wx__mb-3">
 						<span>Subtotal</span>
 						<span>BDT {orderSubtotal?.toLocaleString() || 0}</span>
 					</div>
-					<div className="wx__d-flex wx__justify-content-between wx__mb-3">
-						<div className="wx__d-flex wx__gap-5">
+					<div className="d-flex wx__justify-content-between wx__mb-3">
+						<div className="d-flex gap-5">
 							<span
 								className="wx__text-primary"
 								role="button"
@@ -106,8 +106,8 @@ const PaymentInfo = ({
 							<span className="wx__text-muted">BDT 00.00</span>
 						)}
 					</div>
-					<div className="wx__d-flex wx__justify-content-between wx__mb-3">
-						<div className="wx__d-flex wx__gap-5">
+					<div className="d-flex wx__justify-content-between wx__mb-3">
+						<div className="d-flex gap-5">
 							<span
 								className="wx__text-primary"
 								role="button"
@@ -121,7 +121,7 @@ const PaymentInfo = ({
 							BDT {deliveryChargeAmount?.toLocaleString() || "0.00"}
 						</span>
 					</div>
-					<div className="wx__d-flex wx__justify-content-between wx__mb-3">
+					<div className="d-flex wx__justify-content-between wx__mb-3">
 						<span className="wx__text_strong">Total</span>
 						<span className="wx__text_strong">
 							BDT {orderTotal?.toLocaleString() || "0.00"}

@@ -71,11 +71,11 @@ const CouponForm = ({
   return (
     <>
       <div className="wx__order_form">
-        <div className="wx__card wx__p-4 wx__order_product">
+        <div className="card wx__p-4 wx__order_product">
           <h5 className="wx__mb-0">Discount Code</h5>
-          <div className="wx__row">
-            <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6 wx__mt-4">
-              <div className="wx__input-group">
+          <div className="row">
+            <div className="col-lg-6 col-md-12 col-sm-6 wx__mt-4">
+              <div className="input-group">
                 <WxInput
                   className="wx__mb-0"
                   placeholder="For example : Summer Offer 01"
@@ -92,8 +92,8 @@ const CouponForm = ({
                 </span>
               </div>
             </div>
-            <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6 wx__mt-4">
-              <div className="wx__input-group">
+            <div className="col-lg-6 col-md-12 col-sm-6 wx__mt-4">
+              <div className="input-group">
                 <WxInput
                   className="wx__mb-0"
                   placeholder="Type Code"
@@ -112,7 +112,7 @@ const CouponForm = ({
             </div>
           </div>
         </div>
-        <div className="wx__card wx__order_payment">
+        <div className="card wx__order_payment">
           <h5 className="wx__mb-4">Type</h5>
           <WxRadio
             id="typeRadio1"
@@ -210,7 +210,7 @@ const CouponForm = ({
             }}
           />
         </div>
-        <div className="wx__card wx__p-4 wx__order_payment">
+        <div className="card wx__p-4 wx__order_payment">
           <h5 className="wx__mb-3">Minimum Requirement</h5>
           <WxRadio
             id="requireRadio1"
@@ -279,7 +279,7 @@ const CouponForm = ({
             )}
           </WxRadio>
         </div>
-        <div className="wx__card wx__p-4 wx__order_payment">
+        <div className="card wx__p-4 wx__order_payment">
           <h5 className="wx__mb-4">Applicable For</h5>
           <WxRadio
             id="applicableForRadio1"
@@ -321,9 +321,9 @@ const CouponForm = ({
                   return (
                     <div
                       key={pd.id}
-                      className="wx__w-100 wx__my-3 wx__d-flex wx__align-items-center wx__justify-content-between"
+                      className="w-100 wx__my-3 d-flex wx__align-items-center wx__justify-content-between"
                     >
-                      <div className="wx__d-flex">
+                      <div className="d-flex">
                         <WxThumbnail src={imageURLGenerate(pd.image)} />
                         <div className="ms_2">
                           <p className="wx__m-0">{pd.name}</p>
@@ -383,9 +383,9 @@ const CouponForm = ({
                     return (
                       <div
                         key={categories.id}
-                        className="wx__w-100 wx__my-3 wx__d-flex wx__align-items-center wx__justify-content-between"
+                        className="w-100 wx__my-3 d-flex wx__align-items-center wx__justify-content-between"
                       >
-                        <div className="wx__d-flex">
+                        <div className="d-flex">
                           <WxThumbnail
                             src={imageURLGenerate(categories.image)}
                           />
@@ -424,7 +424,7 @@ const CouponForm = ({
             )}
           </WxRadio>
         </div>
-        <div className="wx__card wx__p-4 wx__order_payment">
+        <div className="card wx__p-4 wx__order_payment">
           <h5 className="wx__mb-4">Customer Eligibility</h5>
           <WxRadio
             id="customerEligibilityRadio1"
@@ -465,9 +465,9 @@ const CouponForm = ({
                   return (
                     <div
                       key={group.id}
-                      className="wx__w-100 wx__my-3 wx__d-flex wx__align-items-center wx__justify-content-between"
+                      className="w-100 wx__my-3 d-flex wx__align-items-center wx__justify-content-between"
                     >
-                      <div className="wx__d-flex">
+                      <div className="d-flex">
                         <WxThumbnail />
                         <div className="ms_2">
                           <p className="wx__m-0">{group.name}</p>
@@ -528,9 +528,9 @@ const CouponForm = ({
                   return (
                     <div
                       key={customer.id}
-                      className="wx__w-100 wx__my-3 wx__d-flex wx__align-items-center wx__justify-content-between"
+                      className="w-100 wx__my-3 d-flex wx__align-items-center wx__justify-content-between"
                     >
-                      <div className="wx__d-flex">
+                      <div className="d-flex">
                         <WxThumbnail />
                         <div className="ms_2">
                           <p className="wx__m-0">{customer?.name || ""}</p>
@@ -569,7 +569,7 @@ const CouponForm = ({
             )}
           </WxRadio>
         </div>
-        <div className="wx__card wx__p-4 wx__order_payment">
+        <div className="card wx__p-4 wx__order_payment">
           <h5 className="wx__mb-4">Usage Limit</h5>
           <div>
             <p className="wx__subtitle_form">
@@ -666,11 +666,11 @@ const CouponForm = ({
             </WxRadio>
           </div>
         </div>
-        <div className="wx__card wx__p-4 wx__order_payment">
+        <div className="card wx__p-4 wx__order_payment">
           <h5 className="wx__mb-0">Date & Time</h5>
           <div>
-            <div className="wx__row">
-              <div className="wx__col-lg-9 wx__col-md-12">
+            <div className="row">
+              <div className="col-lg-9 col-md-12">
                 <DateInput
                   date={watch("startDate")}
                   setDate={(val: any) => {
@@ -692,7 +692,7 @@ const CouponForm = ({
                 />
               </div>
 
-              <div className="wx__col-lg-3 wx__col-md-12">
+              <div className="col-lg-3 col-md-12">
                 <DateInput
                   label="Start Time (+06)"
                   type="time"
@@ -727,8 +727,8 @@ const CouponForm = ({
               }}
             />
             {watch("isContinued") && (
-              <div className="wx__row">
-                <div className="wx__col-lg-9 wx__col-md-12">
+              <div className="row">
+                <div className="col-lg-9 col-md-12">
                   <DateInput
                     date={watch("endDate")}
                     setDate={(val: any) => {
@@ -749,7 +749,7 @@ const CouponForm = ({
                   />
                 </div>
 
-                <div className="wx__col-lg-3 wx__col-md-12">
+                <div className="col-lg-3 col-md-12">
                   <DateInput
                     label="End Time (+06)"
                     type="time"

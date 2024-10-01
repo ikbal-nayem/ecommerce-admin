@@ -12,7 +12,7 @@ const RatingProgressBar = ({
 	progressWidth,
 	review,
 }: IRatingProgressBar) => (
-	<div className="wx__rating_progress wx__progress_5 wx__d-flex wx__align-items-center">
+	<div className="wx__rating_progress wx__progress_5 d-flex wx__align-items-center">
 		<div className="wx__text_body wx__text_regular progress_left">
 			<WxIcon className="small_icon" icon="star" variants="filled" />
 			&nbsp;{star}

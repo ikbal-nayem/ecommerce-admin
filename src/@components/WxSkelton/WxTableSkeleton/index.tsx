@@ -19,7 +19,7 @@ const WxTableSkelton = ({ rows, columns = 5, hasStartImage= false }: ITableSkelt
                 return (
                   <th className="wx__th" key={indx}>
                     <span
-                      className="placeholder wx__w-100"
+                      className="placeholder w-100"
                       style={{ height: "30px" }}
                     />
                   </th>
@@ -44,7 +44,7 @@ const WxTableSkelton = ({ rows, columns = 5, hasStartImage= false }: ITableSkelt
                             }
                             
                           <span
-                            className={hasStartImage && indx === 0 ?"placeholder row-with-image wx__w-100": "placeholder wx__w-100"}
+                            className={hasStartImage && indx === 0 ?"placeholder row-with-image w-100": "placeholder w-100"}
                             style={{ height: "30px" }}
                           />
                         </td>

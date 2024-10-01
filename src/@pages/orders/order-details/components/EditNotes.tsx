@@ -68,7 +68,7 @@ export const EditNotes = ({
 						/>
 					</WxModalBody>
 					<WxModalFooter>
-						<div className="wx__d-flex justify-content-end">
+						<div className="d-flex justify-content-end">
 							<WxButton
 								className="wx__me-3"
 								variant="outline"

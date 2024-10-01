@@ -163,7 +163,7 @@ const Discount = () => {
 
   return (
     <WxMainFull>
-      <div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+      <div className="d-flex wx__justify-content-between wx__align-items-center">
         <h4 className="_h4__medium mb-0">Discounts</h4>
         {couponsData.length ? (
           <WxButton variant="fill" onClick={() => navigate(DISCOUNT_CREATE)}>
@@ -183,7 +183,7 @@ const Discount = () => {
       ) : null}
 
       {isLoader ? (
-        <div className="wx__bg-white wx__rounded wx__mt-3">
+        <div className="wx__bg-white rounded wx__mt-3">
           <ProductTableSkelton
             thumb={false}
             topSearchNSelect={false}
@@ -193,7 +193,7 @@ const Discount = () => {
       ) : (
         <>
           {couponsData.length ? (
-            <div className="wx__card wx__mt-3">
+            <div className="card wx__mt-3">
               <CouponListTable
                 onDelete={onDelete}
                 couponsData={couponsData}

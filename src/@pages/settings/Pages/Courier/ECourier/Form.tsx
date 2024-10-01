@@ -105,9 +105,9 @@ const CourierForm = () => {
             title="Courier"
             backNavigationLink={SETTINGS_DELIVERY}
           />
-          <div className="wx__card wx__p-4 wx__mb-3">
-            <div className="wx__row">
-              <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+          <div className="card wx__p-4 wx__mb-3">
+            <div className="row">
+              <div className="col-lg-6 col-md-12 col-sm-6">
                 <WxInput
                   label="Pickup contact name"
                   registerProperty={{
@@ -119,7 +119,7 @@ const CourierForm = () => {
                   errorMessage={errors?.pick_contact_person?.message}
                 />
               </div>
-              <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+              <div className="col-lg-6 col-md-12 col-sm-6">
                 <PhoneNumberInput
                   isRequired
                   label="Pickup contact number"
@@ -134,7 +134,7 @@ const CourierForm = () => {
                 />
               </div>
 
-              <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+              <div className="col-lg-6 col-md-12 col-sm-6">
                 <Controller
                   control={control}
                   name="pick_district"
@@ -160,7 +160,7 @@ const CourierForm = () => {
                 />
               </div>
               {/* )} */}
-              <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+              <div className="col-lg-6 col-md-12 col-sm-6">
                 <Controller
                   control={control}
                   name="pick_thana"
@@ -185,7 +185,7 @@ const CourierForm = () => {
                   )}
                 />
               </div>
-              <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+              <div className="col-lg-6 col-md-12 col-sm-6">
                 <WxInput
                   label="Post code"
                   registerProperty={{
@@ -199,7 +199,7 @@ const CourierForm = () => {
                 />
               </div>
 
-              <div className="wx__col-md-6 wx__col-sm-6">
+              <div className="col-md-6 col-sm-6">
                 <WxInput
                   label="Address"
                   registerProperty={{
@@ -211,7 +211,7 @@ const CourierForm = () => {
                   errorMessage={errors?.pick_address?.message}
                 />
               </div>
-              {/* <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+              {/* <div className="col-lg-6 col-md-12 col-sm-6">
                 <WxInput
                   label="Phone Number"
                   registerProperty={{
@@ -221,7 +221,7 @@ const CourierForm = () => {
                   }}
                 />
               </div> */}
-              {/* <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+              {/* <div className="col-lg-6 col-md-12 col-sm-6">
                 <WxInput
                   label="Hub"
                   registerProperty={{
@@ -234,11 +234,11 @@ const CourierForm = () => {
             </div>
           </div>
 
-          <div className="wx__card wx__p-4">
+          <div className="card wx__p-4">
             <h5 className="wx__mb-3">Withdraw information</h5>
 
-            <div className="wx__row">
-              <div className="wx__col-md-6 wx__col-12">
+            <div className="row">
+              <div className="col-md-6 col-12">
                 <strong>Bank</strong>
                 <WxInput
                   label="Account holder name"
@@ -274,7 +274,7 @@ const CourierForm = () => {
                   errorMessage={errors?.accountNo?.message}
                 />
               </div>
-              <div className="wx__col-md-6 wx__col-12">
+              <div className="col-md-6 col-12">
                 <strong>Mobile banking</strong>
                 <WxInput
                   label="Bkash number"

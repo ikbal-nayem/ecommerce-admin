@@ -87,7 +87,7 @@ const SiteOperator = () => {
 				)}
 
 				{siteOperatorData?.length ? (
-					<div className="wx__card wx__mt-3">
+					<div className="card wx__mt-3">
 						<SiteOperatorListTable
 							onDelete={onDelete}
 							siteOperatorData={siteOperatorData}

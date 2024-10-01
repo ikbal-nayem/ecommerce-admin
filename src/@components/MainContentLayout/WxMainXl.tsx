@@ -8,11 +8,11 @@ interface IWxMainXl {
 const WxMainXl = ({ className, children }: IWxMainXl) => {
 	return (
 		<section
-			className={`wx__w-100 wx__d-flex justify-content-center wx__main_xl ${
+			className={`w-100 d-flex justify-content-center wx__main_xl ${
 				className || ""
 			}`}
 		>
-			<div className="wx__w-100 wx__main_content setting_content">
+			<div className="w-100 wx__main_content setting_content">
 				{children}
 			</div>
 		</section>

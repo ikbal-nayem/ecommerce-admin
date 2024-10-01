@@ -15,7 +15,7 @@ const WxAlert = ({
 }: IAlertProps) => {
 	return (
 		<div
-			className={`wx__d-flex wx__align-items-center wx__gap-2 wx__alert wx__alert-${type} ${
+			className={`d-flex wx__align-items-center gap-2 alert alert-${type} ${
 				noMargin ? "wx__m-0" : ""
 			} ${className}`}
 		>

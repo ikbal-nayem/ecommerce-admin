@@ -28,11 +28,11 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 	};
 
 	return (
-		<div className='wx__header wx__d-flex wx__justify-content-between wx__align-items-center'>
+		<div className='wx__header d-flex wx__justify-content-between wx__align-items-center'>
 			<div className='menu_icon me-2' onClick={onClickMenuBar}>
 				{menuIconFlag ? <WxIcon icon='close' /> : <WxIcon icon='menu' />}
 			</div>
-			<div className='wx__header__logo wx__d-flex wx__align-items-center'>
+			<div className='wx__header__logo d-flex wx__align-items-center'>
 				<Link to='/dashboard'>
 					<img src='media/logos/shop-dark.png' alt='logo' width={40} />
 					<span className='wx__text_body wx__text_medium ms-2'>

@@ -72,7 +72,7 @@ const Layout: FC = () => {
 					<Sidebar onClickFun={onClickFun} />
 				)}
 
-				<main className="s-layout__content wx__w-100">
+				<main className="s-layout__content w-100">
 					<div className="wx__app_wrapper">
 						<div className="wx__app_inner">
 							<Outlet />

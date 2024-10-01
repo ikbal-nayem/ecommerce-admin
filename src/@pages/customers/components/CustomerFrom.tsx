@@ -43,9 +43,9 @@ export const CustomerFrom = ({
 
   return (
 		<div>
-			<div className="wx__card wx__p-4 wx__mb-3">
-				<div className="wx__row">
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+			<div className="card wx__p-4 wx__mb-3">
+				<div className="row">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							label="First Name"
 							className=""
@@ -59,7 +59,7 @@ export const CustomerFrom = ({
 							isRequired
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							label="Last Name"
 							className=""
@@ -73,7 +73,7 @@ export const CustomerFrom = ({
 							isRequired
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<PhoneNumberInput
 							label="Phone Number"
 							phoneNumber={phoneNumber}
@@ -81,7 +81,7 @@ export const CustomerFrom = ({
 							isRequired
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							label="Email"
 							type="email"
@@ -90,7 +90,7 @@ export const CustomerFrom = ({
 							}}
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<DateInput
 							label={"Date of Birth"}
 							date={dateOfBirth}
@@ -99,7 +99,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6 wx__mb-3 show-mobile-view wx__d-md-none">
+					<div className="col-lg-6 col-md-12 col-sm-6 wx__mb-3 show-mobile-view d-md-none">
 						<label htmlFor="" style={{ fontWeight: "600" }}>
 							Customer Group
 						</label>
@@ -124,10 +124,10 @@ export const CustomerFrom = ({
 							) : null}
 						</div>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6 wx__pe-5 show-mobile-view wx__d-md-none">
+					<div className="col-lg-6 col-md-12 col-sm-6 wx__pe-5 show-mobile-view d-md-none">
 						<WxSwitch
 							label={
-								<div className="wx__d-flex wx__align-items-center">
+								<div className="d-flex wx__align-items-center">
 									<span>Status</span>
 								</div>
 							}
@@ -141,10 +141,10 @@ export const CustomerFrom = ({
 					</div>
 				</div>
 			</div>
-			<div className="wx__card wx__p-4">
+			<div className="card wx__p-4">
 				<h5 className="wx__mb-3">Customer Address</h5>
-				<div className="wx__row">
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+				<div className="row">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							registerProperty={{
 								...register("address.title", { required: false }),
@@ -153,7 +153,7 @@ export const CustomerFrom = ({
 							className=""
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							isRequired
 							registerProperty={{
@@ -169,7 +169,7 @@ export const CustomerFrom = ({
 							}
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							isRequired
 							registerProperty={{
@@ -185,7 +185,7 @@ export const CustomerFrom = ({
 							}
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							registerProperty={{
 								...register("address.country", { required: false }),
@@ -196,7 +196,7 @@ export const CustomerFrom = ({
 							isDisabled
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxSelect
 							isRequired
 							label="Division/State"
@@ -216,7 +216,7 @@ export const CustomerFrom = ({
 							}
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxSelect
 							isRequired
 							label="District/City"
@@ -234,7 +234,7 @@ export const CustomerFrom = ({
 							}
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							isRequired
 							registerProperty={{
@@ -248,7 +248,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							registerProperty={{
 								...register("address.phone", {
@@ -259,7 +259,7 @@ export const CustomerFrom = ({
 							className=""
 						/>
 					</div>
-					<div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-6">
 						<WxInput
 							registerProperty={{
 								...register("address.email", {

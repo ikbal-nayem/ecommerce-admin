@@ -30,15 +30,15 @@ const WxNewSlider = ({ imageList, timeInterval = 3000 }) => {
 
   return (
     <section className="wx__slider">
-      <div className="img-main-section wx__w-100 wx__d-flex wx__align-items-center">
+      <div className="img-main-section w-100 d-flex wx__align-items-center">
         <div className="left-icon">
           <WxIcon icon="arrow_back_ios" onClick={() => setCurrentImgFun(-1)} />
         </div>
-        <div className="img-section wx__w-100">
+        <div className="img-section w-100">
           <img
           key={currentImgIdx}
             src={currentImg}
-            className="wx__w-100"
+            className="w-100"
             alt={"Image #" + currentImgIdx}
           />
         </div>
@@ -49,7 +49,7 @@ const WxNewSlider = ({ imageList, timeInterval = 3000 }) => {
           />
         </div>
       </div>
-      <div className="slider-img-list wx__w-100">
+      <div className="slider-img-list w-100">
         {imageList?.map((item, index) => {
           return (
             <div

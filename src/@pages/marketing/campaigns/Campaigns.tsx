@@ -175,7 +175,7 @@ const Campaigns = () => {
 					</WxButton>
 				}
 			/>
-			<div className='wx__card'>
+			<div className='card'>
 				{isLoader || (
 					<>
 						<div className='wx__mt-3 hide-mobile-view'>
@@ -186,8 +186,8 @@ const Campaigns = () => {
 								setCurrentIndex={onStatusChangeFromTab}
 							/>
 						</div>
-						<div className='wx__row wx__p-3 wx__pb-0'>
-							<div className='wx__col-lg-9 wx__col-md-9 wx__col-sm-12 wx__mb-3'>
+						<div className='row wx__p-3 wx__pb-0'>
+							<div className='col-lg-9 col-md-9 col-sm-12 wx__mb-3'>
 								<WxInput
 									type='search'
 									placeholder='Search Campaigns Name'
@@ -196,7 +196,7 @@ const Campaigns = () => {
 									onChange={(e: any) => setSearchQuery(e.target.value)}
 								/>
 							</div>
-							<div className='wx__col-lg-3 wx__col-md-3 wx__col-sm-6 wx__mb-3'>
+							<div className='col-lg-3 col-md-3 col-sm-6 wx__mb-3'>
 								<WxSelect
 									valuesKey='title'
 									textKey='title'
@@ -227,7 +227,7 @@ const Campaigns = () => {
 						/>
 					) : null}
 					{isLoader ? (
-						<div className='wx__bg-white wx__rounded'>
+						<div className='wx__bg-white rounded'>
 							<ProductTableSkelton viewBox='0 0 600 230' />
 						</div>
 					) : (

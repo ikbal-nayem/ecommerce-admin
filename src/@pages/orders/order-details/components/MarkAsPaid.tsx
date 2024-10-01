@@ -100,7 +100,7 @@ const MarkAsPaid = ({
 					<form onSubmit={handleSubmit(onSubmit)} noValidate>
 						<WxModalBody>
 							{!approveData ? (
-								<div className="wx__d-flex">
+								<div className="d-flex">
 									<WxRadio
 										id="FULL"
 										label="Full pay"
@@ -117,8 +117,8 @@ const MarkAsPaid = ({
 									/>
 								</div>
 							) : null}
-							<div className="wx__row">
-								<div className="wx__col-md-6">
+							<div className="row">
+								<div className="col-md-6">
 									<WxSelect
 										label="Payment method"
 										placeholder="Choose method"
@@ -137,7 +137,7 @@ const MarkAsPaid = ({
 										color={errors?.payGateway ? "danger" : "secondary"}
 									/>
 								</div>
-								<div className="wx__col-md-6">
+								<div className="col-md-6">
 									<WxInput
 										label="Transection ID"
 										isDisabled={!!approveData}
@@ -147,7 +147,7 @@ const MarkAsPaid = ({
 									/>
 								</div>
 								{watch("isPartial") === "true" ? (
-									<div className="wx__col-md-6">
+									<div className="col-md-6">
 										<WxInput
 											label="Pay amount"
 											type="number"
@@ -181,7 +181,7 @@ const MarkAsPaid = ({
 							) : null}
 						</WxModalBody>
 						<WxModalFooter className="wx__bg-white">
-							<div className="wx__d-flex justify-content-between">
+							<div className="d-flex justify-content-between">
 								<WxButton
 									variant="outline"
 									color="secondary"

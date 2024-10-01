@@ -30,11 +30,11 @@ const WxCheckbox = ({
 			onClick={onClick}
 			className={`${
 				noMargin ? "" : "wx__mb-3"
-			} wx__form-check wx__form-check-inline wx__d-flex wx__align-items-center ${className}`}
+			} form-check form-check-inline d-flex wx__align-items-center ${className}`}
 		>
 			<input
 				id={id}
-				className="wx__form-check-input"
+				className="form-check-input"
 				type="checkbox"
 				role="button"
 				disabled={disabled}
@@ -44,7 +44,7 @@ const WxCheckbox = ({
 				{...registerProperty}
 			/>
 			<label
-				className="ms_2 wx__form-check-label wx__text_body"
+				className="ms_2 form-check-label wx__text_body"
 				htmlFor={id}
 			>
 				{label}

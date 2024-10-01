@@ -79,7 +79,7 @@ const Role = () => {
   return (
     <div>
       <WxMainLg>
-        <div className="wx__d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+        <div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
           <WxFormHeader title="User Roles" backNavigationLink={SETTINGS} />
           {/* <WxButton
             variant="fill"
@@ -99,7 +99,7 @@ const Role = () => {
         ) : null}
 
         {roleList?.length ? (
-          <div className="wx__card">
+          <div className="card">
             <RoleListTable onDelete={onDelete} roleList={roleList} />
             <div className="wx__px-4 wx__py-3">
               <WxPagination

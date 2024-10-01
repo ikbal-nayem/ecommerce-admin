@@ -91,11 +91,11 @@ const SiteOperatorUpdate = () => {
 			{isLoading && <Preloader />}
 
 			<form onSubmit={handleSubmit(onSubmitting)}>
-				<div className="wx__row">
-					<div className="wx__col-md-8 wx__col-sm-12 wx__mt-3">
-						<div className="wx__card wx__p-4">
-							<div className="wx__row">
-								<div className="wx__col-md-12 wx__col-sm-12">
+				<div className="row">
+					<div className="col-md-8 col-sm-12 wx__mt-3">
+						<div className="card wx__p-4">
+							<div className="row">
+								<div className="col-md-12 col-sm-12">
 									<WxInput
 										// isRequired
 										isDisabled
@@ -110,7 +110,7 @@ const SiteOperatorUpdate = () => {
 										}
 									/>
 								</div>
-								<div className="wx__col-md-12 wx__col-sm-12 wx__mt-3">
+								<div className="col-md-12 col-sm-12 wx__mt-3">
 									<WxInput
 										label="Operator Name"
 										noMargin
@@ -124,8 +124,8 @@ const SiteOperatorUpdate = () => {
 							</div>
 						</div>
 					</div>
-					<div className="wx__col-md-4 wx__col-sm-12 wx__mt-3">
-						<div className="wx__card wx__form_right wx__p-4">
+					<div className="col-md-4 col-sm-12 wx__mt-3">
+						<div className="card wx__form_right wx__p-4">
 							<WxButton type="submit" variant="fill" disabled={isSubmitting}>
 								Save Operator {isSubmitting && <Preloader />}
 							</WxButton>
@@ -142,11 +142,11 @@ const SiteOperatorUpdate = () => {
 								/>
 							</div>
 							<WxHr />
-							<div className="wx__d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+							<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
 								<div className="d-flex">
 									<WxSwitch
 										label={
-											<div className="wx__d-flex wx__text_medium wx__me-1">
+											<div className="d-flex wx__text_medium wx__me-1">
 												<span>Operator Status</span>
 											</div>
 										}
@@ -158,7 +158,7 @@ const SiteOperatorUpdate = () => {
 									/>
 								</div>
 							</div>
-							<div className="wx__d-flex wx__align-items-center status_mxg_warning">
+							<div className="d-flex wx__align-items-center status_mxg_warning">
 								<WxIcon icon="info" />
 								<p className="wx__text_small wx__text_regular ms_2 wx__mb-0">
 									Operator will get password through email

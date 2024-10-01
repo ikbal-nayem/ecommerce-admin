@@ -105,7 +105,7 @@ const Pages = () => {
 				}
 			/>
 			{isLoading ? <Preloader absolutePosition /> : null}
-			<div className="wx__card">
+			<div className="card">
 				{!isLoading && pages.length === 0 ? (
 					<WxNotFound
 						title="No pages found!"

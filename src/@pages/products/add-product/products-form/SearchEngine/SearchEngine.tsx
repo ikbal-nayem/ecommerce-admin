@@ -27,7 +27,7 @@ const SearchEngine = () => {
 	}, [url]);
 
 	return (
-		<div className="wx__card search_engine wx__p-3 wx__mt-4">
+		<div className="card search_engine wx__p-3 wx__mt-4">
 			<h6 className="wx__text_semibold wx__text_h6">
 				Search Engine Optimization
 				<WxIcon variants="round" icon="help" role="button" />
@@ -41,7 +41,7 @@ const SearchEngine = () => {
 					<WxHr />
 					<WxInput
 						label={
-							<label className="wx__d-flex wx__align-items-center">
+							<label className="d-flex wx__align-items-center">
 								Page Title &nbsp;
 								<WxIcon
 									variants="round"
@@ -55,7 +55,7 @@ const SearchEngine = () => {
 					/>
 					<WxTextarea
 						label={
-							<label className="wx__d-flex wx__align-items-center">
+							<label className="d-flex wx__align-items-center">
 								Meta Description &nbsp;
 								<WxIcon
 									variants="round"
@@ -72,7 +72,7 @@ const SearchEngine = () => {
 					<WxInput
 						noMargin
 						label={
-							<label className="wx__d-flex wx__align-items-center">
+							<label className="d-flex wx__align-items-center">
 								URL Handle &nbsp;
 								<WxIcon
 									variants="round"

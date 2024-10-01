@@ -51,11 +51,11 @@ const OrderConfirmation = () => {
 				backNavigationLink={SETTINGS_NOTIFICATION}
 			/>
 			<form onSubmit={handleSubmit(onSubmitHandler)}>
-				<div className="wx__row">
-					<div className="notification_left wx__col-lg-8 wx__col-md-12 wx__col-sm-12 wx__mt-3">
-						<div className="wx__card wx__p-4">
-							<div className="wx__row">
-								<div className="wx__col-md-12 wx__col-sm-12">
+				<div className="row">
+					<div className="notification_left col-lg-8 col-md-12 col-sm-12 wx__mt-3">
+						<div className="card wx__p-4">
+							<div className="row">
+								<div className="col-md-12 col-sm-12">
 									<WxTabs
 										option={tabOption}
 										labelKey="label"
@@ -101,8 +101,8 @@ const OrderConfirmation = () => {
 							</div>
 						</div>
 					</div>
-					<div className="notification_right wx__col-lg-4 wx__col-md-12 wx__col-sm-12 wx__mt-3">
-						<div className="wx__card wx__p-4">
+					<div className="notification_right col-lg-4 col-md-12 col-sm-12 wx__mt-3">
+						<div className="card wx__p-4">
 							<WxButton variant="fill" type="submit" className="wx__mb-3">
 								Update
 							</WxButton>
@@ -110,7 +110,7 @@ const OrderConfirmation = () => {
 								Preview
 							</WxButton>
 							<WxHr />
-							<div className="wx__d-flex wx__align-items-center wx__justify-content-between wx__pe-5">
+							<div className="d-flex wx__align-items-center wx__justify-content-between wx__pe-5">
 								<p className="wx__mb-0">Email</p>
 								<WxSwitch
 									defaultChecked
@@ -119,7 +119,7 @@ const OrderConfirmation = () => {
 								/>
 							</div>
 
-							<div className="wx__d-flex wx__align-items-center wx__justify-content-between wx__pe-5 wx__mt-4">
+							<div className="d-flex wx__align-items-center wx__justify-content-between wx__pe-5 wx__mt-4">
 								<p className="wx__mb-0">SMS</p>
 								<WxSwitch
 									defaultChecked

@@ -132,14 +132,14 @@ const Create = ({
 				/>
 				<form onSubmit={handleSubmit(onSubmitting)} noValidate>
 					<WxDrawerBody>
-						<div className="wx__row">
+						<div className="row">
 							{/* {formData?.name ? (
-                <div className="wx__col-md-12 wx__col-sm-12">
+                <div className="col-md-12 col-sm-12">
                   <div className="parent-menu-show">{formData.name}</div>
                 </div>
               ) : null} */}
 
-							<div className="wx__col-md-12 wx__col-sm-12">
+							<div className="col-md-12 col-sm-12">
 								<WxInput
 									isRequired
 									label="Menu Zone Name"
@@ -148,7 +148,7 @@ const Create = ({
 									errorMessage={errors?.name ? "This field is required!" : ""}
 								/>
 							</div>
-							<div className="wx__col-md-12 wx__col-sm-12 wx__mt-2 link-field">
+							<div className="col-md-12 col-sm-12 wx__mt-2 link-field">
 								<WxInput
 									isRequired
 									label="Link"
@@ -185,7 +185,7 @@ const Create = ({
 														key={index}
 														onClick={() => setDropdownFun(item)}
 														type="button"
-														className="wx__w-100 wx__d-flex wx__align-items-center wx__justify-content-between category-btn"
+														className="w-100 d-flex wx__align-items-center wx__justify-content-between category-btn"
 													>
 														<p className="wx__mb-1 count-submenu">
 															{item.title}
@@ -199,9 +199,9 @@ const Create = ({
 											})
 										) : (
 											<div>
-												<div className="wx__d-flex wx__justify-content-between wx__align-items-center wx__mb-3 sub-category">
+												<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3 sub-category">
 													<div
-														className="wx__d-flex wx__align-items-center wx__ps-2"
+														className="d-flex wx__align-items-center wx__ps-2"
 														onClick={() => setShowSubItem("-1")}
 													>
 														<WxIcon icon="chevron_left" />
@@ -220,7 +220,7 @@ const Create = ({
 																key={index}
 																type="button"
 																onClick={() => setOptionFun(item)}
-																className="wx__w-100 category-btn"
+																className="w-100 category-btn"
 															>
 																{item.name}
 															</button>
@@ -232,7 +232,7 @@ const Create = ({
 									</div>
 								)}
 							</div>
-							<div className="wx__col-md-12 wx__col-sm-12 wx__mt-4 status_switch">
+							<div className="col-md-12 col-sm-12 wx__mt-4 status_switch">
 								<WxSwitch
 									label="Status"
 									checkedTitle="Active"
@@ -247,7 +247,7 @@ const Create = ({
 					</WxDrawerBody>
 					<WxDrawerFooter>
 						<div className="delivery_create_sec__footer">
-							<div className="wx__d-flex wx__justify-content-end">
+							<div className="d-flex wx__justify-content-end">
 								<WxButton
 									color="secondary"
 									type="button"

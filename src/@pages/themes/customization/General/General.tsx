@@ -50,9 +50,9 @@ export default function CustomizationGeneral() {
 						</WxButton>
 					}
 				/>
-				<div className="wx__card wx__p-4">
-					<div className="wx__row">
-						<div className="wx__col-md-6">
+				<div className="card wx__p-4">
+					<div className="row">
+						<div className="col-md-6">
 							<WxInput
 								label="Site Title"
 								isAutoFocus
@@ -63,9 +63,9 @@ export default function CustomizationGeneral() {
 								errorMessage={errors?.siteTitle && "Title is required!"}
 							/>
 						</div>
-						<div className="wx__col-md-6"></div>
+						<div className="col-md-6"></div>
 
-						<div className="wx__col-md-6">
+						<div className="col-md-6">
 							<WxLabel>Website Logo</WxLabel>
 							<MediaInput
 								fileList={siteLogo}
@@ -74,7 +74,7 @@ export default function CustomizationGeneral() {
 								multiple={false}
 							/>
 						</div>
-						<div className="wx__col-md-6">
+						<div className="col-md-6">
 							<WxLabel>Fav Icon</WxLabel>
 							<MediaInput
 								fileList={favicon}

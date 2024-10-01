@@ -65,7 +65,7 @@ const WxInputNumber = ({
 }: IInputProps) => {
   return (
     <div
-      className={`wx__form_group ${noMargin ? "wx__m-0" : ""} ${
+      className={`form_group ${noMargin ? "wx__m-0" : ""} ${
         className ? className : ""
       }`}
       aria-disabled={isDisabled}

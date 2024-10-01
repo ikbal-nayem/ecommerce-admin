@@ -148,8 +148,8 @@ const Collection = () => {
 	};
 
 	return (
-		<WxMainLg className="wx__collection_container">
-			<div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+		<WxMainLg className="collection_container">
+			<div className="d-flex wx__justify-content-between wx__align-items-center">
 				<h4 className="wx__text_h4 wx__text_semibold wx__mb-0">Collection</h4>
 				<WxButton
 					disabled={isLoader}
@@ -174,11 +174,11 @@ const Collection = () => {
 				</div>
 			) : null}
 			{isLoader ? (
-				<div className="wx__bg-white wx__mt-3 wx__rounded">
+				<div className="wx__bg-white wx__mt-3 rounded">
 					<CollectionTBSkelton viewBox="0 0 600 310" />
 				</div>
 			) : (
-				<div className="wx__collection_table_content">
+				<div className="collection_table_content">
 					{collections?.length && (
 						<>
 							<CollectionTable

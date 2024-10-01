@@ -93,9 +93,9 @@ const AddPage = () => {
 				backNavigationLink={PAGES}
 			/>
 			<form onSubmit={handleSubmit(onSubmitting)} noValidate>
-				<div className="wx__row">
-					<div className="wx__col-lg-8 wx__col-md-7 wx__col-sm-12 ">
-						<div className="wx__card wx__p-3 wx__mt-4">
+				<div className="row">
+					<div className="col-lg-8 col-md-7 col-sm-12 ">
+						<div className="card wx__p-3 wx__mt-4">
 							<WxInput
 								label="Page title"
 								isRequired
@@ -147,8 +147,8 @@ const AddPage = () => {
 							/> */}
 						</div>
 					</div>
-					<div className="wx__col-lg-4 wx__col-md-5 wx__col-sm-12">
-						<div className="wx__card wx__p-3 wx__mt-4 wx__form_right">
+					<div className="col-lg-4 col-md-5 col-sm-12">
+						<div className="card wx__p-3 wx__mt-4 wx__form_right">
 							<WxButton
 								type="submit"
 								variant="fill"
@@ -161,7 +161,7 @@ const AddPage = () => {
 								<div>
 									<WxSwitch
 										label={
-											<div className="wx__d-flex wx__align-items-center">
+											<div className="d-flex wx__align-items-center">
 												&nbsp; <span>Publish</span>
 											</div>
 										}

@@ -32,11 +32,11 @@ const ShippingModal = ({
       <WxModalHeader
         title="Add Shipping"
         closeIconAction={handleShippingClose}
-        className="wx__border-0"
+        className="border-0"
       />
       <WxModalBody>
-        <div className="wx__row">
-          <div className="wx__col-md-6">
+        <div className="row">
+          <div className="col-md-6">
             <WxSelect
               label="Delivery Zone"
               options={zoneList}
@@ -48,14 +48,14 @@ const ShippingModal = ({
               }
             />
           </div>
-          <div className="wx__col-md-6">
+          <div className="col-md-6">
             <WxLabel>Amount</WxLabel>
             {localSelectZone?.deliveryChargeAmount || 0} BDT
           </div>
         </div>
       </WxModalBody>
       <WxModalFooter className="wx__bg-white">
-        <div className="wx__d-flex justify-content-between">
+        <div className="d-flex justify-content-between">
           <WxButton
             variant="outline"
             color="secondary"

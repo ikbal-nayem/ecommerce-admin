@@ -46,7 +46,7 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
   const productJSX = ({ name, src }: ProductJSX) => {
     if (!name && !src) name = "N A";
     return (
-      <div className="wx__d-flex wx__align-items-center">
+      <div className="d-flex wx__align-items-center">
         <div className="wx__me-2">
           <WxThumbnail name={name} src={src} />
         </div>
@@ -105,7 +105,7 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
           </div>
         </div>
         <WxDrawerFooter>
-          <div className="wx__d-flex">
+          <div className="d-flex">
             <WxButton className="wx__me-3" variant="outline" color="secondary">
               Cancel
             </WxButton>

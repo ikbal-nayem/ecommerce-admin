@@ -147,7 +147,7 @@ const SiteOperator = () => {
 				) : null}
 
 				{siteOperatorData?.length && !isLoading ? (
-					<div className="wx__card">
+					<div className="card">
 						<SiteOperatorListTable
 							onDelete={onDelete}
 							siteOperatorData={siteOperatorData}

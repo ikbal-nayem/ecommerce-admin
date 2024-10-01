@@ -121,7 +121,7 @@ const Menu = () => {
   return (
     <div>
       <WxMainXl>
-        <div className="wx__d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+        <div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
           <WxFormHeader title="Menu Set" noBack />
           <WxButton variant="fill" onClick={() => navigate(MENU_CREATE)}>
             Add Menu Set
@@ -139,7 +139,7 @@ const Menu = () => {
         ) : null}
 
         {menuSetData.length ? (
-          <div className="wx__card">
+          <div className="card">
             <div>
               <MenuListTable
                 onDelete={onDelete}

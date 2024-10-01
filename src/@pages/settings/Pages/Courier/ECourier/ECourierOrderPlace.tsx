@@ -194,11 +194,11 @@ const ECourierOrderPlace = () => {
             backNavigationLink={ORDER_DETAILS({ order_id: order_id })}
           />
           {isSearching && <Preloader absolutePosition={true} />}
-          <div className="wx__row">
-            <div className="wx__col-lg-8 wx__col-md-12 wx__col-sm-12">
-              <div className="wx__card wx__p-4 wx__mb-3">
-                <div className="wx__row">
-                  <div className="wx__col-lg-12 wx__col-md-12 wx__col-sm-12">
+          <div className="row">
+            <div className="col-lg-8 col-md-12 col-sm-12">
+              <div className="card wx__p-4 wx__mb-3">
+                <div className="row">
+                  <div className="col-lg-12 col-md-12 col-sm-12">
                     <WxInput
                       label="Customer Address"
                       registerProperty={{
@@ -210,7 +210,7 @@ const ECourierOrderPlace = () => {
                       errorMessage={errors?.recipient_address?.message}
                     />
                   </div>
-                  {/* <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+                  {/* <div className="col-lg-6 col-md-12 col-sm-6">
                     <WxSelect
                       label="Branch List"
                       options={branchList}
@@ -228,7 +228,7 @@ const ECourierOrderPlace = () => {
                       // errorMessage={error && "District/City is required!"}
                     />
                   </div> */}
-                  <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+                  <div className="col-lg-6 col-md-12 col-sm-6">
                     <WxSelect
                       label="Package List"
                       options={packageList}
@@ -250,7 +250,7 @@ const ECourierOrderPlace = () => {
                       }
                     />
                   </div>
-                  <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+                  <div className="col-lg-6 col-md-12 col-sm-6">
                     <Controller
                       control={control}
                       name="recipient_city"
@@ -275,7 +275,7 @@ const ECourierOrderPlace = () => {
                       )}
                     />
                   </div>
-                  <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+                  <div className="col-lg-6 col-md-12 col-sm-6">
                     <Controller
                       control={control}
                       name="recipient_thana"
@@ -300,7 +300,7 @@ const ECourierOrderPlace = () => {
                       )}
                     />
                   </div>
-                  <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+                  <div className="col-lg-6 col-md-12 col-sm-6">
                     <Controller
                       control={control}
                       name="recipient_zip"
@@ -325,7 +325,7 @@ const ECourierOrderPlace = () => {
                       )}
                     />
                   </div>
-                  <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+                  <div className="col-lg-6 col-md-12 col-sm-6">
                     <Controller
                       control={control}
                       name="recipient_area"
@@ -351,7 +351,7 @@ const ECourierOrderPlace = () => {
                     />
                   </div>
 
-                  <div className="wx__col-lg-6 wx__col-md-12 wx__col-sm-6">
+                  <div className="col-lg-6 col-md-12 col-sm-6">
                     <DateInput
                       // date={watch("requested_delivery_time")}
                       date={watch("requested_delivery_time")}
@@ -371,7 +371,7 @@ const ECourierOrderPlace = () => {
                     />
                   </div>
 
-                  <div className="wx__col-lg-12 wx__col-md-12 wx__col-sm-12">
+                  <div className="col-lg-12 col-md-12 col-sm-12">
                     <WxInput
                       label="Order Note"
                       registerProperty={{
@@ -385,8 +385,8 @@ const ECourierOrderPlace = () => {
                 </div>
               </div>
             </div>
-            <div className="wx__col-lg-4 wx__col-md-12 wx__col-sm-12">
-              <div className="wx__card">
+            <div className="col-lg-4 col-md-12 col-sm-12">
+              <div className="card">
                 <div className="wx__mb-3">
                   <p className="wx__my-0">{watch("recipient_address")}</p>
                   {watch("recipient_city") && (

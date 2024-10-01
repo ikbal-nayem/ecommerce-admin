@@ -9,12 +9,12 @@ const WxListItem = ({ children, btn, onEdit, onDelete }: WxListItemProps) => {
 	return (
 		<li
 			role={btn ? "button" : "none"}
-			className={`wx__list-group-item wx__d-flex wx__justify-content-between wx__align-items-center ${
+			className={`form_group-item d-flex wx__justify-content-between wx__align-items-center ${
 				btn ? "list-group-item-action" : ""
 			}`}
 		>
 			{children}
-			<div className="wx__d-flex">
+			<div className="d-flex">
 				{onEdit ? (
 					<span
 						className="material-icons"

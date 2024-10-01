@@ -72,7 +72,7 @@ const CustomerInfo = ({
 	const billingAddress = selectedAddress?.billing;
 
 	return (
-		<div className="wx__card wx__mt-3 wx__p-3">
+		<div className="card wx__mt-3 wx__p-3">
 			<WxLabel
 				isRequired
 				labelRight={

@@ -39,9 +39,9 @@ const PricingPlanListTable = ({
 									plan?.pricingPlan?.isPopular ? "th__active" : ""
 								}`}
 							>
-								<div className="wx__d-flex wx__flex-column wx__justify-content-center wx__align-items-center">
+								<div className="d-flex wx__flex-column wx__justify-content-center wx__align-items-center">
 									{plan?.pricingPlan?.isPopular && (
-										<p className="wx__w-100 wx__text_caption">Most Popular</p>
+										<p className="w-100 wx__text_caption">Most Popular</p>
 									)}
 									<h4 className="wx__text_heading wx__text_regular wx__mb-3 wx__mt-3">
 										{plan?.pricingPlan?.title}

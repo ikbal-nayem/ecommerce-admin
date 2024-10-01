@@ -42,7 +42,7 @@ const ProductCart = ({
 					{selectedProduct?.map((product: any, idx: number) => (
 						<tr className="wx__tr" key={product?.variantId || product?.id}>
 							<td className="wx__td product">
-								<div className="wx__d-flex">
+								<div className="d-flex">
 									<WxThumbnail
 										name="Image"
 										src={imageURLGenerate(product?.thumbnail)}
@@ -62,7 +62,7 @@ const ProductCart = ({
 							</td>
 							<td className="wx__td unit">
 								{isEditable ? (
-									<div className="wx__d-flex wx__align-items-start">
+									<div className="d-flex wx__align-items-start">
 										<WxInput
 											type="number"
 											min={1}
@@ -89,7 +89,7 @@ const ProductCart = ({
 													: "secondary"
 											}
 										/>
-										<div className="wx__d-flex wx__flex-column">
+										<div className="d-flex wx__flex-column">
 											<WxIcon
 												icon="expand_less"
 												className="wx__bg-light"

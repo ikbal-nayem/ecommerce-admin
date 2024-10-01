@@ -173,20 +173,20 @@ const MediaInput = ({
       {!(maxSelect <= fileItems?.length) ? (
         <div
           id="upload-container"
-          className="file-area wx__d-flex wx__align-items-center wx__justify-content-center"
+          className="file-area d-flex wx__align-items-center wx__justify-content-center"
         >
           <div className="file-dummy">
             <div className="success">
               Great, your files are selected. Keep on.
             </div>
-            <div className="default wx__d-flex wx__align-items-center wx__justify-content-center">
+            <div className="default d-flex wx__align-items-center wx__justify-content-center">
               <WxIcon
                 icon={icon}
                 className="img_icon"
                 size={50}
                 variants={variants}
               />
-              <div className="upload_info wx__d-flex wx__flex-column ">
+              <div className="upload_info d-flex wx__flex-column ">
                 <p>
                   Drag and Drop {dragNDropText} here or{" "}
                   <label htmlFor="upload-files">Browse on your computer</label>

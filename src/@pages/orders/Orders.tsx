@@ -199,7 +199,7 @@ const Orders = () => {
 					Please upgrade your <Link to={SETTINGS_PRICING_PLAN}>plan</Link> to create a manual order.
 				</WxAlert>
 			) : null}
-			<div className='wx__card'>
+			<div className='card'>
 				{isLoader || (
 					<>
 						<div className='wx__mt-3 hide-mobile-view'>
@@ -210,8 +210,8 @@ const Orders = () => {
 								setCurrentIndex={onStatusChangeFromTab}
 							/>
 						</div>
-						<div className='wx__row wx__p-3 wx__pb-0'>
-							<div className='wx__col-lg-8 wx__col-md-6 wx__col-sm-12 wx__mb-3'>
+						<div className='row wx__p-3 wx__pb-0'>
+							<div className='col-lg-8 col-md-6 col-sm-12 wx__mb-3'>
 								<WxInput
 									type='search'
 									placeholder='Search orders'
@@ -220,7 +220,7 @@ const Orders = () => {
 									onChange={(e: any) => setSearchQuery(e.target.value)}
 								/>
 							</div>
-							<div className='wx__col-lg-2 wx__col-md-3 wx__col-sm-6 wx__mb-3'>
+							<div className='col-lg-2 col-md-3 col-sm-6 wx__mb-3'>
 								<WxSelect
 									valuesKey='metaKey'
 									textKey='title'
@@ -231,7 +231,7 @@ const Orders = () => {
 									onChange={(e) => onStatusChangeFormDropdown(e, 'PAYMENT')}
 								/>
 							</div>
-							<div className='wx__col-lg-2 wx__col-md-3 wx__col-sm-6 wx__mb-3'>
+							<div className='col-lg-2 col-md-3 col-sm-6 wx__mb-3'>
 								<WxSelect
 									valuesKey='metaKey'
 									textKey='title'
@@ -264,7 +264,7 @@ const Orders = () => {
 						/>
 					) : null}
 					{isLoader ? (
-						<div className='wx__bg-white wx__rounded'>
+						<div className='wx__bg-white rounded'>
 							<ProductTableSkelton viewBox='0 0 600 230' />
 						</div>
 					) : (

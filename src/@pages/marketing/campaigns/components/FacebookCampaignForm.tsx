@@ -89,11 +89,11 @@ const FacebookCampaignForm = ({ isSaving }) => {
 
   return (
     <form className="wx__mt-3" onSubmit={handleSubmit(onSubmitting)}>
-      <div className="wx__row ">
-        <div className="wx__col-md-12 wx__col-lg-8 wx__col-sm-12">
-          <div className="wx__card wx__p-4 wx__mb-3">
-            <div className="wx__row">
-              <div className="wx__col-md-12 wx__col-lg-12">
+      <div className="row ">
+        <div className="col-md-12 col-lg-8 col-sm-12">
+          <div className="card wx__p-4 wx__mb-3">
+            <div className="row">
+              <div className="col-md-12 col-lg-12">
                 <h6>Campaign Info</h6>
                 <WxInput
                   label="Campaign Name"
@@ -106,7 +106,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   errorMessage={errors?.campaign_name?.message}
                 />
               </div>
-              <div className="wx__col-md-12 wx__col-lg-12">
+              <div className="col-md-12 col-lg-12">
                 <WxRadio
                   options={campaignObjectRadio}
                   singleUse={false}
@@ -125,12 +125,12 @@ const FacebookCampaignForm = ({ isSaving }) => {
               </div>
             </div>
           </div>
-          <div className="wx__card wx__p-4 wx__mb-3">
-            <div className="wx__row">
+          <div className="card wx__p-4 wx__mb-3">
+            <div className="row">
               <h6 className="wx__text_h6 wx__text_semibold">
                 Budget & Schedule
               </h6>
-              <div className="wx__col-md-6 wx__col-lg-6 wx__col-sm-12">
+              <div className="col-md-6 col-lg-6 col-sm-12">
                 <WxSelect
                   label="Budget"
                   isRequired
@@ -143,7 +143,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   }}
                 />
               </div>
-              <div className="wx__col-md-6 wx__col-lg-6 wx__col-sm-12">
+              <div className="col-md-6 col-lg-6 col-sm-12">
                 <WxInput
                   label="Amount"
                   startIcon={<WxIcon icon="attach_money" />}
@@ -153,7 +153,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   placeholder="Type Amount"
                 />
               </div>
-              <div className="wx__col-md-6 wx__col-lg-6 wx__col-sm-12">
+              <div className="col-md-6 col-lg-6 col-sm-12">
                 <DateInput
                   date={watch("startDate")}
                   setDate={(val: any) => {
@@ -173,7 +173,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   color={errors.startDate ? "danger" : "secondary"}
                 />
               </div>
-              <div className="wx__col-md-6 wx__col-lg-6 wx__col-sm-12">
+              <div className="col-md-6 col-lg-6 col-sm-12">
                 <DateInput
                   label="Start Time (+06)"
                   type="time"
@@ -199,10 +199,10 @@ const FacebookCampaignForm = ({ isSaving }) => {
               </div>
             </div>
           </div>
-          <div className="wx__card wx__p-4 wx__mb-3">
-            <div className="wx__row">
+          <div className="card wx__p-4 wx__mb-3">
+            <div className="row">
               <h6 className="wx__text_h6 wx__text_semibold">Audience Group</h6>
-              <div className="wx__col-md-12 wx__col-lg-12 wx__col-sm-12">
+              <div className="col-md-12 col-lg-12 col-sm-12">
                 <WxLabel isRequired>Targeted Audience</WxLabel>
                 <WxTextarea
                   placeholder="Type your audience here"
@@ -212,7 +212,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   }}
                 />
               </div>
-              <div className="wx__col-md-6 wx__col-lg-6 wx__col-sm-12">
+              <div className="col-md-6 col-lg-6 col-sm-12">
                 <WxSelect
                   registerProperty={{
                     ...register("gender"),
@@ -224,7 +224,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   placeholder="Select Gender"
                 />
               </div>
-              <div className="wx__col-md-3 wx__col-lg-3 wx__col-sm-12">
+              <div className="col-md-3 col-lg-3 col-sm-12">
                 <WxSelect
                   label="Age Range"
                   isRequired
@@ -234,7 +234,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   registerProperty={{ ...register("ageStartFrom") }}
                 />
               </div>
-              <div className="wx__col-md-3 wx__col-lg-3 wx__col-sm-12 wx__mt-4">
+              <div className="col-md-3 col-lg-3 col-sm-12 wx__mt-4">
                 <WxSelect
                   options={ageOption}
                   textKey="title"
@@ -244,10 +244,10 @@ const FacebookCampaignForm = ({ isSaving }) => {
               </div>
             </div>
           </div>
-          <div className="wx__card wx__p-4 wx__mb-3">
-            <div className="wx__row">
+          <div className="card wx__p-4 wx__mb-3">
+            <div className="row">
               <h6 className="wx__text_h6 wx__text_semibold">Ads Content</h6>
-              <div className="wx__col-md-12 wx__col-lg-12 wx__col-sm-12">
+              <div className="col-md-12 col-lg-12 col-sm-12">
                 <WxRadio
                   label="Image"
                   id="newPostRadio1"
@@ -313,7 +313,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   </WxRadio>
                 </div>
               </div>
-              <div className="wx__col-md-12 wx__col-lg-12 wx__col-sm-12">
+              <div className="col-md-12 col-lg-12 col-sm-12">
                 <WxInput
                   label="Headline"
                   placeholder="Type here Headline here"
@@ -321,7 +321,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   registerProperty={{ ...register("headline") }}
                 />
               </div>
-              <div className="wx__col-md-12 wx__col-lg-12 wx__col-sm-12">
+              <div className="col-md-12 col-lg-12 col-sm-12">
                 <WxInput
                   label="Website"
                   placeholder="Type website link"
@@ -331,8 +331,8 @@ const FacebookCampaignForm = ({ isSaving }) => {
             </div>
           </div>
         </div>
-        <div className="wx__col-lg-4 wx__col-md-12 wx__col-sm-12">
-          <div className="wx__card wx__p-4 wx__mb-3">
+        <div className="col-lg-4 col-md-12 col-sm-12">
+          <div className="card wx__p-4 wx__mb-3">
             <WxButton disabled={isSaving} type="submit" variant="fill">
               Launch Campaign
             </WxButton>

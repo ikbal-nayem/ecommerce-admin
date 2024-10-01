@@ -128,11 +128,11 @@ export default function CustomizationHome() {
 		<WxMainLg className="homeSection">
 			<WxFormHeader title="Homepage" />
 			{isLoading && <Preloader />}
-			<div className="wx__card wx__p-3">
-				<div className="wx__row">
-					<div className="page-title wx__d-flex wx__justify-content-between wx__align-items-center">
+			<div className="card wx__p-3">
+				<div className="row">
+					<div className="page-title d-flex wx__justify-content-between wx__align-items-center">
 						<h6 className="wx__text_semibold wx__mb-0">Home Slider</h6>
-						<div className="right wx__d-flex wx__flex-row wx__align-items-center">
+						<div className="right d-flex wx__flex-row wx__align-items-center">
 							{/* TODO:: need to responsive */}
 							<div style={{ width: "200px" }} className="wx__me-3">
 								<SelectOption

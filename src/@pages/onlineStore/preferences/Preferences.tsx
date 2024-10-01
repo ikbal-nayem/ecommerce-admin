@@ -94,9 +94,9 @@ const Preferences = () => {
       <WxFormContainer>
         <WxFormHeader title="Preferences" />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
-          <div className="wx__row">
-            <div className="wx__col-lg-9 wx__col-md-8 wx__col-sm-12">
-              <div className="wx__card wx__p-3">
+          <div className="row">
+            <div className="col-lg-9 col-md-8 col-sm-12">
+              <div className="card wx__p-3">
                 <WxLabel>Site logo Preview</WxLabel>
                 <MediaInput
                   fileList={siteLogo}
@@ -105,7 +105,7 @@ const Preferences = () => {
                   multiple={false}
                 />
               </div>
-              <div className="wx__card wx__p-3">
+              <div className="card wx__p-3">
                 <WxLabel>Site favicon Preview</WxLabel>
                 <MediaInput
                   fileList={favicon}
@@ -114,7 +114,7 @@ const Preferences = () => {
                   multiple={false}
                 />
               </div>
-              <div className="wx__card wx__p-3">
+              <div className="card wx__p-3">
                 <WxLabel>Social media Image Preview</WxLabel>
                 <MediaInput
                   fileList={socialMediaImage}
@@ -123,7 +123,7 @@ const Preferences = () => {
                   multiple={false}
                 />
               </div>
-              <div className="wx__card wx__p-4">
+              <div className="card wx__p-4">
                 <h6 className="wx__text_h6 wx__text_semibold">
                   Page Meta for Basic SEO
                 </h6>
@@ -170,8 +170,8 @@ const Preferences = () => {
                 />
               </div>
             </div>
-            <div className="wx__col-lg-3 wx__col-md-4 wx__col-sm-12 d-none-tab">
-              <div className="wx__card wx__form_right">
+            <div className="col-lg-3 col-md-4 col-sm-12 d-none-tab">
+              <div className="card wx__form_right">
                 <WxButton type="submit" variant="fill" disabled={isSaving}>
                   {isSaving ? <ButtonLoader /> : "Save"}
                 </WxButton>

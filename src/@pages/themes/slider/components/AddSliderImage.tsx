@@ -60,8 +60,8 @@ const AddSliderImage = ({
 				/>
 				<form onSubmit={handleSubmit(submitForm)}>
 					<WxDrawerBody>
-						<div className="wx__row">
-							<div className="wx__col-md-12">
+						<div className="row">
+							<div className="col-md-12">
 								<WxLabel>Slider Image</WxLabel>
 								<MediaInput
 									fileList={images}
@@ -84,7 +84,7 @@ const AddSliderImage = ({
 							</div>
 							{!!watch("hasButton") && (
 								<>
-									<div className="wx__col-md-12">
+									<div className="col-md-12">
 										<WxInput
 											label="Button Text"
 											isRequired
@@ -98,7 +98,7 @@ const AddSliderImage = ({
 										/>
 									</div>
 
-									<div className="wx__col-md-12">
+									<div className="col-md-12">
 										<WxInput
 											label="Button Url"
 											isRequired
@@ -114,19 +114,19 @@ const AddSliderImage = ({
 								</>
 							)}
 
-							<div className="wx__col-md-12">
+							<div className="col-md-12">
 								<WxInput
 									label="Title"
 									registerProperty={{ ...register("title") }}
 								/>
 							</div>
-							<div className="wx__col-md-12">
+							<div className="col-md-12">
 								<WxInput
 									label="Subtitle"
 									registerProperty={{ ...register("subTitle") }}
 								/>
 							</div>
-							{/* <div className="wx__col-md-12">
+							{/* <div className="col-md-12">
 								<WxTextarea
 									label="Description"
 									registerProperty={{ ...register("description") }}
@@ -147,7 +147,7 @@ const AddSliderImage = ({
 					</WxDrawerBody>
 					<WxDrawerFooter>
 						<div className="delivery_create_sec__footer">
-							<div className="wx__d-flex wx__align-items-center wx__justify-content-between">
+							<div className="d-flex wx__align-items-center wx__justify-content-between">
 								<div>
 									{isEditForm && (
 										<WxButton
@@ -161,7 +161,7 @@ const AddSliderImage = ({
 									)}
 								</div>
 
-								<div className="wx__d-flex wx__align-items-center wx__justify-content-between">
+								<div className="d-flex wx__align-items-center wx__justify-content-between">
 									<WxButton
 										color="secondary"
 										type="button"

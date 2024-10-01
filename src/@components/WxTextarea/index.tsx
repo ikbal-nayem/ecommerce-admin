@@ -39,7 +39,7 @@ const WxTextarea = ({
 	errorMessage,
 }: ITextareaProps) => {
 	return (
-		<div className={`wx__form_group ${noMargin ? "wx__m-0" : ""}`}>
+		<div className={`form_group ${noMargin ? "wx__m-0" : ""}`}>
 			{label ? (
 				typeof label === "string" ? (
 					<label htmlFor="">

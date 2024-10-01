@@ -17,7 +17,7 @@ const CollectionTable = ({
 }: CollectionTableProps) => {
   return (
     <div >
-      <table className="wx__collection_table">
+      <table className="collection_table">
         <thead>
           <tr>
             <th colSpan={2}>Collection Name</th>
@@ -37,7 +37,7 @@ const CollectionTable = ({
                 <span>{sub.name}</span>
               </th>
               <td className="more">
-                <div className="wx__d-flex wx__align-items-center">
+                <div className="d-flex wx__align-items-center">
                   <span
                     className="material-icons"
                     role="button"
@@ -45,7 +45,7 @@ const CollectionTable = ({
                   >
                     edit
                   </span>
-                  <div className="wx__d-flex wx__align-items-center ms_2">
+                  <div className="d-flex wx__align-items-center ms_2">
                     <span
                       className="material-icons"
                       role="button"

@@ -38,8 +38,8 @@ const SliderDrawer = ({
 				/>
 				<form onSubmit={handleSubmit(onSubmitting)}>
 					<WxDrawerBody>
-						<div className="wx__row">
-							<div className="wx__col-md-12">
+						<div className="row">
+							<div className="col-md-12">
 								<WxInput
 									isRequired
 									label="Title"
@@ -66,7 +66,7 @@ const SliderDrawer = ({
 					</WxDrawerBody>
 					<WxDrawerFooter>
 						<div className="delivery_create_sec__footer">
-							<div className="wx__d-flex wx__align-items-center wx__justify-content-between">
+							<div className="d-flex wx__align-items-center wx__justify-content-between">
 								<div>
 									{isEditForm && (
 										<WxButton
@@ -81,7 +81,7 @@ const SliderDrawer = ({
 									)}
 								</div>
 
-								<div className="wx__d-flex wx__align-items-center wx__justify-content-between">
+								<div className="d-flex wx__align-items-center wx__justify-content-between">
 									<WxButton
 										color="secondary"
 										type="button"

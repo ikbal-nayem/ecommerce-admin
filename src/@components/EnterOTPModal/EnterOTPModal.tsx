@@ -163,7 +163,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
         <WxModalHeader
           title=""
           closeIconAction={setShow}
-          className="wx__border-0"
+          className="border-0"
         />
         <WxModalBody>
           <form onSubmit={handleSubmit(handleOTPService)}>
@@ -254,7 +254,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                       />
                     </p>
                     <br />
-                    <span className="wx__text-secondary wx__text_medium text-center wx__mt-3 wx__d-flex wx__align-items-center">
+                    <span className="wx__text-secondary wx__text_medium text-center wx__mt-3 d-flex wx__align-items-center">
                       Didn't get OTP?{" "}
                       {!isVisibleResend && "Resend OTP in " + timer}
                       {/* {timer ? "Resend OTP in " + timer : <span>Resend</span>} */}
@@ -276,7 +276,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
           </form>
         </WxModalBody>
         <WxModalFooter className="wx__bg-white">
-          <div className="wx__d-flex justify-content-between">
+          <div className="d-flex justify-content-between">
             <WxButton
               variant="outline"
               color="secondary"

@@ -114,7 +114,7 @@ const PaymentInfoForm = ({
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<WxDrawerBody>
 							<WxLabel>Method</WxLabel>
-							<div className="wx__d-flex wx__mb-3">
+							<div className="d-flex wx__mb-3">
 								{paymentTypes?.map((pType) => (
 									<WxRadio
 										label={pType?.title}
@@ -126,8 +126,8 @@ const PaymentInfoForm = ({
 								))}
 							</div>
 							{watch("metaKey") === MASTER_META_KEY.PAYMENT_MEDIA_TYPE_BANK ? (
-								<div className="wx__row">
-									<div className="wx__col-md-6 wx__col-12">
+								<div className="row">
+									<div className="col-md-6 col-12">
 										<WxSelect
 											key={watch("metaKey")}
 											isRequired
@@ -148,7 +148,7 @@ const PaymentInfoForm = ({
 											errorMessage={errors?.paymentMediaId?.message}
 										/>
 									</div>
-									<div className="wx__col-md-6 wx__col-12">
+									<div className="col-md-6 col-12">
 										<WxInput
 											key={watch("metaKey")}
 											label="Branch name"
@@ -160,7 +160,7 @@ const PaymentInfoForm = ({
 											errorMessage={errors?.branchName?.message}
 										/>
 									</div>
-									<div className="wx__col-md-6 wx__col-12">
+									<div className="col-md-6 col-12">
 										<WxInput
 											label="Account number"
 											isRequired
@@ -171,7 +171,7 @@ const PaymentInfoForm = ({
 											errorMessage={errors?.accountNumber?.message}
 										/>
 									</div>
-									<div className="wx__col-md-6 wx__col-12">
+									<div className="col-md-6 col-12">
 										<WxInput
 											label="Account name"
 											isRequired
@@ -184,8 +184,8 @@ const PaymentInfoForm = ({
 									</div>
 								</div>
 							) : (
-								<div className="wx__row">
-									<div className="wx__col-md-6 wx__col-12">
+								<div className="row">
+									<div className="col-md-6 col-12">
 										<WxSelect
 											isRequired
 											key={watch("metaKey")}
@@ -204,7 +204,7 @@ const PaymentInfoForm = ({
 											errorMessage={errors?.paymentMediaId?.message}
 										/>
 									</div>
-									<div className="wx__col-md-6 wx__col-12">
+									<div className="col-md-6 col-12">
 										<Controller
 											control={control}
 											name="mobile"

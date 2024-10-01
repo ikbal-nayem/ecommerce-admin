@@ -59,11 +59,11 @@ export default function Partners() {
     <WxMainFull>
       <WxFormHeader title="Partner" />
       {isLoading ? (
-        <div className="wx__rounded wx__w-100 wx__bg-white wx__mt-3">
+        <div className="rounded w-100 wx__bg-white wx__mt-3">
           <ProductTableSkelton viewBox="0 0 600 230" />
         </div>
       ) : (
-        <div className="wx__card wx__pt-3">
+        <div className="card wx__pt-3">
           <WxTabs
             option={tabOptions}
             renderTab={(item) => item?.title}

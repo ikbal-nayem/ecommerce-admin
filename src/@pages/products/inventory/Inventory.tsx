@@ -81,17 +81,17 @@ const Inventory = () => {
 
   return (
     <WxMainFull>
-      <div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+      <div className="d-flex wx__justify-content-between wx__align-items-center">
         <h4 className="mb-0">Inventory List</h4>
       </div>
       {isLoader ? (
-        <div className="wx__bg-white wx__rounded wx__mt-3">
+        <div className="wx__bg-white rounded wx__mt-3">
           <ProductTableSkelton thumb={false} viewBox="0 0 600 230" />
         </div>
       ) : (
-        <div className="wx__card wx__mt-3">
-          <div className="wx__row wx__p-4">
-            <div className="wx__col-md-12 wx__col-sm-12">
+        <div className="card wx__mt-3">
+          <div className="row wx__p-4">
+            <div className="col-md-12 col-sm-12">
               <WxInput
                 className="wx__mb-0"
                 type="search"

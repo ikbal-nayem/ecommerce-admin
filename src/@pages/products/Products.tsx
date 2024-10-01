@@ -142,7 +142,7 @@ const Products = () => {
   return (
 		<>
 			<WxMainFull>
-				<div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+				<div className="d-flex wx__justify-content-between wx__align-items-center">
 					<h4 className="wx__text_h4 wx__text_medium mb-0">Products List</h4>
 					<WxButton
 						disabled={isLoader}
@@ -154,11 +154,11 @@ const Products = () => {
 				</div>
 
 				{isLoading ? (
-					<div className="wx__rounded wx__w-100 wx__bg-white wx__mt-3">
+					<div className="rounded w-100 wx__bg-white wx__mt-3">
 						<ProductTableSkelton viewBox="0 0 600 230" />
 					</div>
 				) : (
-					<div className="wx__card wx__mt-3">
+					<div className="card wx__mt-3">
 						<div className="wx__mt-3 hide-mobile-view">
 							<Tabs
 								option={[{ id: 0, title: "All" }, ...PRODUCT_STATUS]}
@@ -171,8 +171,8 @@ const Products = () => {
 								setCurrentIndex={onStatusChangeFromTab}
 							/>
 						</div>
-						<div className="wx__row wx__p-4 wx__pb-0">
-							<div className="wx__col-xl-8 wx__col-lg-6 wx__col-md-6 wx__col-sm-12">
+						<div className="row wx__p-4 wx__pb-0">
+							<div className="col-xl-8 col-lg-6 col-md-6 col-sm-12">
 								<WxInput
 									type="search"
 									placeholder="Search products"
@@ -180,7 +180,7 @@ const Products = () => {
 									onChange={(e: any) => setSearchQuery(e.target.value)}
 								/>
 							</div>
-							<div className="wx__col-xl-2 wx__col-lg-3 wx__col-md-3 wx__col-sm-12">
+							<div className="col-xl-2 col-lg-3 col-md-3 col-sm-12">
 								<WxSelect
 									placeholder="Select Category"
 									valuesKey="id"
@@ -190,7 +190,7 @@ const Products = () => {
 									onChange={onChangeCategory}
 								/>
 							</div>
-							<div className="wx__col-xl-2 wx__col-lg-3 wx__col-md-3 wx__col-sm-12">
+							<div className="col-xl-2 col-lg-3 col-md-3 col-sm-12">
 								<WxSelect
 									placeholder="Select Status"
 									valuesKey="text"

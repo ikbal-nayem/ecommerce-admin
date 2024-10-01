@@ -154,7 +154,7 @@ const SliderDetails = () => {
 	return (
 		<WxMainLg className='homeSection'>
 			<WxFormHeader title='Slider Banners' backNavigationLink={THEME_CUSTOMIZATION_SLIDER} />
-			<div className='wx__card wx__p-3 wx__mt-4'>
+			<div className='card wx__p-3 wx__mt-4'>
 				<div className='title_section'>
 					<div className='title' />
 					<WxButton onClick={() => setIsFormOpen(true)} variant='outline'>
@@ -169,12 +169,12 @@ const SliderDetails = () => {
 							itemId='id'
 							onOrderChange={onOrderChange}
 							renderItem={(item: any, index: number, dragHandler: any) => (
-								<ul className='single-banner wx__d-flex wx__justify-content-between wx__align-items-center'>
+								<ul className='single-banner d-flex wx__justify-content-between wx__align-items-center'>
 									<li className='banner-left'>
 										<span className='material-icons-round drag_indicator cursor-grab' {...dragHandler}>
 											drag_indicator
 										</span>
-										<div className='wx__d-flex wx__align-items-center'>
+										<div className='d-flex wx__align-items-center'>
 											<WxThumbnail src={imageURLGenerate(item?.image)} />
 											<div className='banner_title_section'>
 												<div className='banner_title'>{item.title}</div>
@@ -183,7 +183,7 @@ const SliderDetails = () => {
 										</div>
 									</li>
 									<li className='banner-right me-2'>
-										<div className='wx__d-flex align-items-center gap-3'>
+										<div className='d-flex align-items-center gap-3'>
 											<WxSwitch
 												isChecked={item.isActive}
 												onChange={(e) => onStatusChange(e.target.checked, index)}

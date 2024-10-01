@@ -8,13 +8,13 @@ interface IPlanPricingProps {
 }
 
 const PlanPricing = ({ PlanPricingData }: IPlanPricingProps) => (
-	<div className="wx__pricing wx__row ">
+	<div className="wx__pricing row ">
 		{PlanPricingData?.map((item, index) => (
 			<div
 				className="wx__single_pricing col-lg-4 col-md-6 col-sm-12 mb-2"
 				key={index}
 			>
-				<div className="wx__card wx__p-3">
+				<div className="card wx__p-3">
 					<WxIcon icon="workspace_premium" hoverTitle={item?.title} size={30} />
 					<p className="wx__text_small wx__text_regular wx__my-2">
 						{item?.title}

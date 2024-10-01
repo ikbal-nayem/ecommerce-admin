@@ -20,8 +20,8 @@ export const AddressForm = ({
 	control,
 }: AddressFormProps) => {
 	return (
-		<div className="wx__row">
-			<div className="wx__col-md-12">
+		<div className="row">
+			<div className="col-md-12">
 				<WxInput
 					registerProperty={{
 						...register("title", { required: false }),
@@ -29,7 +29,7 @@ export const AddressForm = ({
 					label="Title"
 				/>
 			</div>
-			<div className="wx__col-md-12">
+			<div className="col-md-12">
 				<WxInput
 					registerProperty={{
 						...register("addressLine1", {
@@ -41,7 +41,7 @@ export const AddressForm = ({
 					errorMessage={errors?.addressLine1 && "Address Line 1 is required!"}
 				/>
 			</div>
-			<div className="wx__col-md-12">
+			<div className="col-md-12">
 				<WxInput
 					registerProperty={{
 						...register("addressLine2", {
@@ -51,7 +51,7 @@ export const AddressForm = ({
 					label="Address Line 2"
 				/>
 			</div>
-			<div className="wx__col-md-6">
+			<div className="col-md-6">
 				<WxInput
 					label="Country"
 					defaultValue="Bangladesh"
@@ -61,7 +61,7 @@ export const AddressForm = ({
 					}}
 				/>
 			</div>
-			<div className="wx__col-md-6">
+			<div className="col-md-6">
 				<WxSelect
 					label="Division/State"
 					options={divisions}
@@ -78,7 +78,7 @@ export const AddressForm = ({
 					errorMessage={errors?.state && "Division/State is required!"}
 				/>
 			</div>
-			<div className="wx__col-md-6">
+			<div className="col-md-6">
 				{control ? (
 					<Controller
 						control={control}
@@ -117,7 +117,7 @@ export const AddressForm = ({
 					/>
 				)}
 			</div>
-			<div className="wx__col-md-6">
+			<div className="col-md-6">
 				<WxInput
 					registerProperty={{
 						...register("postCode", { required: true }),
@@ -126,7 +126,7 @@ export const AddressForm = ({
 				/>
 			</div>
 
-			<div className="wx__col-md-6">
+			<div className="col-md-6">
 				<WxInput
 					registerProperty={{
 						...register("phone", {
@@ -136,7 +136,7 @@ export const AddressForm = ({
 					label="Phone Number"
 				/>
 			</div>
-			<div className="wx__col-md-6">
+			<div className="col-md-6">
 				<WxInput
 					registerProperty={{
 						...register("email", {

@@ -282,7 +282,7 @@ const EditCoupon = () => {
               />
             </WxFormLeft>
             <WxFormRight>
-              <div className="wx__card wx__form_right">
+              <div className="card wx__form_right">
                 <WxButton disabled={isSaving} type="submit" variant="fill">
                   Update Coupon
                 </WxButton>
@@ -351,15 +351,15 @@ const EditCoupon = () => {
                   </div>
                 </div>
               </div>
-              <div className="wx__card wx__form_right">
-                <div className="wx__d-flex wx__flex-column">
+              <div className="card wx__form_right">
+                <div className="d-flex wx__flex-column">
                   <h6 className="wx__text_body wx__text_strong  wx__mb-1">
                     0 Times
                   </h6>
                   <span className="wx__text_small">Coupon Used</span>
                 </div>
                 <WxHr />
-                <div className="wx__d-flex wx__flex-column">
+                <div className="d-flex wx__flex-column">
                   <h6 className="wx__text_body wx__text_strong wx__mb-1">
                     0 Hour
                   </h6>

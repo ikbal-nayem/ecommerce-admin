@@ -28,7 +28,7 @@ const ProductRefundCart = ({
 
 	return (
 		<>
-			<div className="wx__d-flex wx__align-items-center wx__gap-4 wx__p-3">
+			<div className="d-flex wx__align-items-center gap-4 wx__p-3">
 				<h6 className="wx__text_h6 wx__text_semibold wx__m-0">Products</h6>
 				{orderStatus ? (
 					<div>
@@ -58,7 +58,7 @@ const ProductRefundCart = ({
 						{products?.map((product: any, idx: number) => (
 							<tr className="wx__tr" key={product?.variantId || product?.id}>
 								<td className="wx__td product">
-									<div className="wx__d-flex">
+									<div className="d-flex">
 										<WxThumbnail
 											name="Image"
 											src={imageURLGenerate(product?.thumbnail)}

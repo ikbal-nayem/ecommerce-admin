@@ -10,7 +10,7 @@
   min-height: 50px;
   max-height: 50px;
   overflow: hidden;
-  @extend .wx__rounded;
+  @extend .rounded;
   text-align: center;
   border: 1px solid $neutral__400;
   background-color: inherit;

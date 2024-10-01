@@ -31,8 +31,8 @@ export const CustomerAddressModal = ({
       />
       <form onSubmit={handleSubmit(onSubmit)}>
         <WxModalBody>
-          <div className="wx__row">
-            <div className="wx__col-md-12">
+          <div className="row">
+            <div className="col-md-12">
               <WxInput
                 registerProperty={{
                   ...register("address.title", { required: false }),
@@ -41,7 +41,7 @@ export const CustomerAddressModal = ({
                 className="wx__mb-0"
               />
             </div>
-            <div className="wx__col-md-12">
+            <div className="col-md-12">
               <WxInput
                 registerProperty={{
                   ...register("address.addressLine1", {
@@ -56,7 +56,7 @@ export const CustomerAddressModal = ({
                 }
               />
             </div>
-            <div className="wx__col-md-12">
+            <div className="col-md-12">
               <WxInput
                 registerProperty={{
                   ...register("address.addressLine2", {
@@ -67,7 +67,7 @@ export const CustomerAddressModal = ({
                 className="wx__mb-0"
               />
             </div>
-            <div className="wx__col-md-6">
+            <div className="col-md-6">
               <WxInput
                 registerProperty={{
                   ...register("address.cityName", { required: true }),
@@ -81,7 +81,7 @@ export const CustomerAddressModal = ({
                 }
               />
             </div>
-            <div className="wx__col-md-6">
+            <div className="col-md-6">
               <WxInput
                 registerProperty={{
                   ...register("address.state", { required: true }),
@@ -95,7 +95,7 @@ export const CustomerAddressModal = ({
                 }
               />
             </div>
-            <div className="wx__col-md-6">
+            <div className="col-md-6">
               <WxInput
                 registerProperty={{
                   ...register("address.postCode", { required: true }),
@@ -104,7 +104,7 @@ export const CustomerAddressModal = ({
                 className="wx__mb-0"
               />
             </div>
-            <div className="wx__col-md-6">
+            <div className="col-md-6">
               <WxInput
                 registerProperty={{
                   ...register("address.country", { required: false }),
@@ -113,7 +113,7 @@ export const CustomerAddressModal = ({
                 className="wx__mb-0"
               />
             </div>
-            <div className="wx__col-md-6">
+            <div className="col-md-6">
               <WxInput
                 registerProperty={{
                   ...register("address.phone", {
@@ -124,7 +124,7 @@ export const CustomerAddressModal = ({
                 className="wx__mb-0"
               />
             </div>
-            <div className="wx__col-md-6">
+            <div className="col-md-6">
               <WxInput
                 registerProperty={{
                   ...register("address.email", {

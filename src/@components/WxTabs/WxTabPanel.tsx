@@ -8,7 +8,7 @@ interface ITabPanel {
 
 const WxTabPanel = ({ children, currentIndex, tabIndex }: ITabPanel) => {
 	return (
-		<div className={currentIndex === tabIndex ? "wx__d-block" : "wx__d-none"}>
+		<div className={currentIndex === tabIndex ? "d-block" : "d-inline"}>
 			{children}
 		</div>
 	);

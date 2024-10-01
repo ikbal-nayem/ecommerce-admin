@@ -20,14 +20,14 @@ const WxImagePopup = ({ srcKey, imageList }: IWxImagePopup) => {
 
 	return (
 		<section className="wx__image_popup">
-			<div className="wx__row">
+			<div className="row">
 				{imageList?.map((item, index) => (
 					<div
-						className="wx__col-lg-4 wx__col-md-6 wx__col-sm-12 wx__mb-3 image_gallery"
+						className="col-lg-4 col-md-6 col-sm-12 wx__mb-3 image_gallery"
 						key={index}
 					>
 						<img
-							className="wx__w-100"
+							className="w-100"
 							src={imageURLGenerate(item?.[srcKey])}
 							alt="app screenshot"
 							onClick={() => setImagePopup(index)}
@@ -59,7 +59,7 @@ const WxImagePopup = ({ srcKey, imageList }: IWxImagePopup) => {
 								className="arrow_icon"
 							/>
 						</WxButton>
-						<div className="popup_gallery_content wx__d-flex wx__justify-content-center wx__align-items-center">
+						<div className="popup_gallery_content d-flex wx__justify-content-center wx__align-items-center">
 							<img src={imageURLGenerate(imageList[imagePopup][srcKey])} />
 						</div>
 						<WxButton

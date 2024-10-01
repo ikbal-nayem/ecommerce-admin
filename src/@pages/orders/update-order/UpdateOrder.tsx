@@ -142,12 +142,12 @@ const UpdateOrder = () => {
           backNavigationLink={ORDER_DETAILS({ order_id })}
         />
         <form onSubmit={handleSubmit(onSubmitting)}>
-          <div className="wx__row">
-            <div className="wx__col-lg-8 wx__col-md-7 wx__col-sm-12 wx__mt-4">
-              <div className="wx__card wx__p-0">
+          <div className="row">
+            <div className="col-lg-8 col-md-7 col-sm-12 wx__mt-4">
+              <div className="card wx__p-0">
                 <h5 className="wx__mb-3 wx__p-3 wx__pb-0">Product</h5>
-                <div className="wx__d-flex wx__ps-3 wx__pe-3">
-                  <div className="wx__input-group search">
+                <div className="d-flex wx__ps-3 wx__pe-3">
+                  <div className="input-group search">
                     <WxInput
                       type="search"
                       placeholder="Search products"
@@ -169,8 +169,8 @@ const UpdateOrder = () => {
                 getValues={getValues}
                 setValue={setValue}
               />
-              <div className="wx__card wx__p-3">
-                <div className="wx__col-md-12 wx__col-sm-12">
+              <div className="card wx__p-3">
+                <div className="col-md-12 col-sm-12">
                   <WxInput
                     label="Reason for edit"
                     noMargin
@@ -179,15 +179,15 @@ const UpdateOrder = () => {
                 </div>
               </div>
             </div>
-            <div className="wx__col-lg-4 wx__col-md-5 wx__col-sm-12 wx__mt-4">
-              <div className="wx__card wx__p-3 ">
+            <div className="col-lg-4 col-md-5 col-sm-12 wx__mt-4">
+              <div className="card wx__p-3 ">
                 <WxButton type="submit" variant="fill" disabled={saving}>
                   Update Order {saving ? <Preloader /> : null}
                 </WxButton>
                 <WxHr />
                 <section>
                   <h6 className="wx__text_h6 wx__text_semibold">Summary</h6>
-                  <div className="wx__d-flex wx__justify-content-between">
+                  <div className="d-flex wx__justify-content-between">
                     <span>Updated Total </span>
                     <span>
                       BDT{" "}

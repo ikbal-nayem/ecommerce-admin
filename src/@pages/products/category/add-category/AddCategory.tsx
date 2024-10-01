@@ -202,7 +202,7 @@ const AddCategory = ({
 								...register("parentId"),
 							}}
 						/>
-						<div className="wx__form_group">
+						<div className="form_group">
 							<WxLabel>Category details</WxLabel>
 							<Controller
 								control={control}
@@ -212,7 +212,7 @@ const AddCategory = ({
 								)}
 							/>
 						</div>
-						<div className="wx__form_group">
+						<div className="form_group">
 							<WxLabel>Category icon</WxLabel>
 							<MediaInput
 								fileList={images}
@@ -248,7 +248,7 @@ const AddCategory = ({
 									</WxButton>
 								</div>
 							) : null}
-							<div className="wx__ms-auto wx__d-flex">
+							<div className="wx__ms-auto d-flex">
 								<WxButton
 									className="wx__me-3"
 									variant="outline"

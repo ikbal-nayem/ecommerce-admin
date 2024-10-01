@@ -45,7 +45,7 @@ const TableSubItem = ({
     return (
       <>
         <ul
-          className="wx__ul wx__d-flex wx__justify-content-between"
+          className="wx__ul d-flex wx__justify-content-between"
           style={{ marginLeft: `${space}px` }}
         >
           <li className="wx__li">
@@ -102,7 +102,7 @@ const TableSubItem = ({
 
   return (
     <ul
-      className="wx__ul  wx__d-flex wx__justify-content-between"
+      className="wx__ul  d-flex wx__justify-content-between"
       style={{ marginLeft: `${space}px` }}
     >
       <li className="wx__li">

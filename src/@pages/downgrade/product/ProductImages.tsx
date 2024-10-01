@@ -130,11 +130,11 @@ const ProductImages = () => {
 				</WxAlert>
 			)}
 			{isLoading ? (
-				<div className="wx__rounded wx__w-100 wx__bg-white">
+				<div className="rounded w-100 wx__bg-white">
 					<ProductTableSkelton viewBox="0 0 600 230" />
 				</div>
 			) : productList?.length ? (
-				<div className="wx__card">
+				<div className="card">
 					<div className="wx__responsive_table">
 						<table className="wx__table">
 							<thead className="wx__thead">
@@ -194,7 +194,7 @@ const ProductImages = () => {
 };
 
 const Images = ({ product, selectedImages, onImageSelect }) => (
-	<div className="wx__d-flex justify-content-start wx__flex-wrap wx__gap-2 thumb-imgs">
+	<div className="d-flex justify-content-start wx__flex-wrap gap-2 thumb-imgs">
 		{product?.images?.map((pi: IFilePayload) => {
 			const isSelected = selectedImages?.[
 				selectedImages?.findIndex(

@@ -129,7 +129,7 @@ const AppReview = ({ appId }: IReview) => {
 
 	return (
 		<div className="wx__review">
-			<div className="wx__row wx__review_top">
+			<div className="row wx__review_top">
 				<div className="col-lg-6 col-md-12 col-sm-12 ">
 					<h5 className="wx__text_semibold mb-3">Ratings</h5>
 					<p className="wx__text_body wx__text_regular">
@@ -143,7 +143,7 @@ const AppReview = ({ appId }: IReview) => {
 							0}{" "}
 						Review)
 					</p>
-					{/* <p className=" wx__text_regular wx__w-100">
+					{/* <p className=" wx__text_regular w-100">
 						**You must be logged in to submit a review.
 					</p> */}
 				</div>
@@ -158,15 +158,15 @@ const AppReview = ({ appId }: IReview) => {
 					))}
 				</div>
 			</div>
-			<div className="wx__row wx__review_bottom">
+			<div className="row wx__review_bottom">
 				{reviewData?.length ? (
 					<div className="wx__user_review pt-3">
-						<div className="wx__d-flex wx__justify-content-between wx__align-items-center">
-							<div className="wx__d-flex wx__align-items-center wx__w-100">
+						<div className="d-flex wx__justify-content-between wx__align-items-center">
+							<div className="d-flex wx__align-items-center w-100">
 								<p className="wx__text_small wx__text_regular">
 									{/* Sort {data?.length} Reviews By */}
 								</p>
-								<div className="wx__col-md-6 wx__col-sm-12">
+								<div className="col-md-6 col-sm-12">
 									<WxSelect
 										defaultValue="Payment Status"
 										valuesKey="id"
@@ -176,7 +176,7 @@ const AppReview = ({ appId }: IReview) => {
 									/>
 								</div>
 							</div>
-							<div className="wx__w-100 wx__d-flex wx__justify-content-end wx__align-items-center">
+							<div className="w-100 d-flex wx__justify-content-end wx__align-items-center">
 								<WxButton variant="outline">Create Review</WxButton>
 							</div>
 						</div>
@@ -187,7 +187,7 @@ const AppReview = ({ appId }: IReview) => {
 										<p className="wx__text_medium wx__text_reguar">
 											{item?.firstName} {item?.lastName}
 										</p>
-										<div className="wx__d-flex align-items-center">
+										<div className="d-flex align-items-center">
 											<div>
 												{/* {item?.ratingMax?.map((rating, idx) => {
                           return (
@@ -240,8 +240,8 @@ const AppReview = ({ appId }: IReview) => {
 											</WxButton>
 										) : null}
 
-										<div className="wx__d-flex align-items-center">
-											<div className="wx__d-flex align-items-center helpful">
+										<div className="d-flex align-items-center">
+											<div className="d-flex align-items-center helpful">
 												<WxButton
 													variant="none"
 													onClick={() =>
@@ -264,7 +264,7 @@ const AppReview = ({ appId }: IReview) => {
 													</span>
 												)}
 											</div>
-											<div className="wx__d-flex align-items-center not-helpful">
+											<div className="d-flex align-items-center not-helpful">
 												<WxButton
 													variant="none"
 													onClick={() =>

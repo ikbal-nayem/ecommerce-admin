@@ -72,9 +72,9 @@ const PolicyCard = ({ item, policies }) => {
   };
 
   return (
-		<div className="wx__card wx__p-3 wx__mt-4 single_editor">
+		<div className="card wx__p-3 wx__mt-4 single_editor">
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
-				<div className="wx__d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+				<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
 					<h6 className="wx__text_heading wx__text_semibold wx__mb-0">
 						{item?.title}
 					</h6>
@@ -106,7 +106,7 @@ const PolicyCard = ({ item, policies }) => {
 					rules={{ required: true }}
 				/>
 
-				{/* <div className="wx__col-md-12 wx__col-sm-12 wx__mt-3">
+				{/* <div className="col-md-12 col-sm-12 wx__mt-3">
           <WxInput
             isRequired
             label="Slug"
@@ -123,7 +123,7 @@ const PolicyCard = ({ item, policies }) => {
             {store_domain}/<strong>{slug || "<slug will be here>"}</strong>
           </p>
         </div> */}
-				<div className="wx__d-flex wx__justify-content-end">
+				<div className="d-flex wx__justify-content-end">
 					<WxButton
 						className="wx__me-3"
 						variant="outline"

@@ -29,13 +29,13 @@ export default function Overview() {
 			<WxFormHeader title="Overview" noBack />
 			<div className="portal_overview">
 				<h6>Referred users</h6>
-				<div className="wx__card wx__p-4">
+				<div className="card wx__p-4">
 					{isLoading ? (
 						<Preloader />
 					) : (
 						<div className="row card_info">
 							<div className="col-md-4">
-								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="d-flex wx__align-items-center gap-3">
 									<WxIcon icon="groups" className="groups" />
 									<p>
 										Total partner
@@ -46,7 +46,7 @@ export default function Overview() {
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="d-flex wx__align-items-center gap-3">
 									<WxIcon
 										icon="group"
 										className="group"
@@ -61,7 +61,7 @@ export default function Overview() {
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="d-flex wx__align-items-center gap-3">
 									<WxIcon
 										icon="group"
 										className="group"
@@ -81,17 +81,17 @@ export default function Overview() {
 			</div>
 
 			<div className="wx__mt-5 portal_overview">
-				<div className="wx__d-flex wx__justify-content-between wx__align-items-end wx__mb-2">
+				<div className="d-flex wx__justify-content-between wx__align-items-end wx__mb-2">
 					<h6>Payment information</h6>
 					{/* <RequestWithdraw /> */}
 				</div>
 				{isLoading ? (
 					<Preloader />
 				) : (
-					<div className="wx__card wx__p-4">
+					<div className="card wx__p-4">
 						<div className="row card_info">
 							<div className="col-md-4">
-								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="d-flex wx__align-items-center gap-3">
 									<WxIcon
 										icon="analytics"
 										className="bank_total"
@@ -106,7 +106,7 @@ export default function Overview() {
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="d-flex wx__align-items-center gap-3">
 									<WxIcon icon="account_balance" className="bank_info" />
 									<p>
 										Bank
@@ -117,7 +117,7 @@ export default function Overview() {
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="d-flex wx__align-items-center gap-3">
 									<WxIcon icon="account_balance_wallet" className="bank_info" />
 									<p>
 										Mobile (MFS)
@@ -131,7 +131,7 @@ export default function Overview() {
 
 						<div className="row card_info wx__mt-5">
 							<div className="col-md-4">
-								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="d-flex wx__align-items-center gap-3">
 									<WxIcon icon="payments" className="payments" />
 									<p>
 										Total Income
@@ -142,7 +142,7 @@ export default function Overview() {
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="d-flex wx__align-items-center gap-3">
 									<WxIcon icon="money" className="money" />
 									<p>
 										Last Withdraw
@@ -153,7 +153,7 @@ export default function Overview() {
 								</div>
 							</div>
 							<div className="col-md-4">
-								<div className="wx__d-flex wx__align-items-center wx__gap-3">
+								<div className="d-flex wx__align-items-center gap-3">
 									<WxIcon icon="event_available" className="event_available" />
 									<p>
 										Available Withdraw

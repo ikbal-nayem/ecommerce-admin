@@ -84,7 +84,7 @@ const ManageDomain = () => {
 
   return (
 		<WxMainXl>
-			<div className="wx__d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
+			<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-3">
 				<WxFormHeader noMargin title="Domain" backNavigationLink={SETTINGS} />
 				<WxButton
 					variant="fill"
@@ -103,7 +103,7 @@ const ManageDomain = () => {
 			) : null}
 
 			{domainList?.length ? (
-				<div className="wx__card">
+				<div className="card">
 					<DomainListTable
 						onDelete={onDelete}
 						domainList={domainList}

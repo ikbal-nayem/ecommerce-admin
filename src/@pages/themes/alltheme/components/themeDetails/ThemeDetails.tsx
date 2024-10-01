@@ -154,12 +154,12 @@ const ThemesDetails = () => {
   return (
     <WxMainXl className="wx__theme_details_page">
       <WxFormHeader title="Theme Details" backNavigationLink={THEMES_LIST} />
-      <div className="wx__card wx__mt-3 wx__p-3 wx__details_top">
+      <div className="card wx__mt-3 wx__p-3 wx__details_top">
         {isLoading ? (
           <Preloader />
         ) : (
-          <div className="wx__row  wx__pb-0">
-            <div className="wx__col-lg-5 wx__col-md-6 wx__col-sm-12 wx__details_top_left wx__d-flex wx__align-items-center">
+          <div className="row  wx__pb-0">
+            <div className="col-lg-5 col-md-6 col-sm-12 wx__details_top_left d-flex wx__align-items-center">
               <div>
                 <WxThumbnail
                   src={imageURLGenerate(themeDetails?.themeIcon)}
@@ -172,7 +172,7 @@ const ThemesDetails = () => {
                   {themeDetails?.avgRating}/5 &nbsp;
                   <span>({themeDetails?.totalReview} Review)</span>
                 </p>
-                <div className="wx__d-flex wx__align-items-center wx__gap-3">
+                <div className="d-flex wx__align-items-center gap-3">
                   <WxButton
                     variant={installStatus?.isInstalled ? "outline" : "fill"}
                     color={installStatus?.isInstalled ? "secondary" : "primary"}
@@ -211,7 +211,7 @@ const ThemesDetails = () => {
                   <small>
                     <Link
                       to={SETTINGS_PRICING_PLAN}
-                      className="wx__text-decoration-none wx__text-warning wx__d-flex wx__align-items-center wx__gap-1 wx__mt-2"
+                      className="wx__text-decoration-none wx__text-warning d-flex wx__align-items-center gap-1 wx__mt-2"
                     >
                       <WxIcon
                         icon="info"
@@ -225,7 +225,7 @@ const ThemesDetails = () => {
                 )}
               </div>
             </div>
-            <div className="wx__col-lg-7 wx__col-md-6 wx__col-sm-12 wx__details_top_right wx__d-flex wx__justify-content-center wx__mt-md-0 wx__mt-3">
+            <div className="col-lg-7 col-md-6 col-sm-12 wx__details_top_right d-flex wx__justify-content-center wx__mt-md-0 wx__mt-3">
               <div className="video_sec">
                 <iframe
                   src={themeDetails?.videoLink}
@@ -239,9 +239,9 @@ const ThemesDetails = () => {
           </div>
         )}
       </div>
-      <div className="wx__row wx__details_mid">
-        <div className="wx__col-lg-8 wx__col-md-7 wx__col-sm-12 wx__mt-3 ">
-          <div className="wx__card wx__details_mid_left wx__p-4">
+      <div className="row wx__details_mid">
+        <div className="col-lg-8 col-md-7 col-sm-12 wx__mt-3 ">
+          <div className="card wx__details_mid_left wx__p-4">
             <WxTabs
               option={tabsData}
               labelKey="label"
@@ -286,8 +286,8 @@ const ThemesDetails = () => {
             </div>
           </div>
         </div>
-        <div className="wx__col-lg-4 wx__col-md-5 wx__col-sm-12">
-          <div className="wx__card wx__details_mid_right wx__mt-3 wx__p-3">
+        <div className="col-lg-4 col-md-5 col-sm-12">
+          <div className="card wx__details_mid_right wx__mt-3 wx__p-3">
             <h5>Info</h5>
             {isLoading ? <Preloader /> : null}
             {themeReleaseInfo ? (
@@ -315,19 +315,19 @@ const ThemesDetails = () => {
                       )}
                   </p>
                 </li>
-                <li className="wx__d-flex wx__justify-content-between wx__align-items-center">
+                <li className="d-flex wx__justify-content-between wx__align-items-center">
                   <p className="info_label ">Total User</p>
                   <p className="info_value ">{themeReleaseInfo?.totalUsers}</p>
                 </li>
-                <li className="wx__d-flex wx__justify-content-between wx__align-items-center">
+                <li className="d-flex wx__justify-content-between wx__align-items-center">
                   <p className="info_label ">Total Install</p>
                   <p className="info_value ">
                     {themeReleaseInfo?.totalInstalledUser || 0}
                   </p>
                 </li>
-                <li className="wx__d-flex wx__justify-content-between">
+                <li className="d-flex wx__justify-content-between">
                   <p className="info_label ">Tags</p>
-                  <div className="info_value wx__d-flex wx__flex-wrap wx__justify-content-end wx__gap-1">
+                  <div className="info_value d-flex wx__flex-wrap wx__justify-content-end gap-1">
                     {themeReleaseInfo?.tags?.split(",")?.map((tag: string) => (
                       <div key={tag}>
                         <WxTag label={tag} className="wx__m-0" />
@@ -338,16 +338,16 @@ const ThemesDetails = () => {
               </ul>
             ) : null}
           </div>
-          <div className="wx__card wx__details_mid_right wx__p-3 wx__mt-3">
+          <div className="card wx__details_mid_right wx__p-3 wx__mt-3">
             <h5>Support</h5>
-            <div className="wx__d-flex wx__align-items-center wx__mb-2">
+            <div className="d-flex wx__align-items-center wx__mb-2">
               <WxIcon icon="apartment" variants="filled" />
               &nbsp;
               <span>{themeReleaseInfo?.developer?.companyName}</span>
             </div>
             <a
               href={"tel:" + themeReleaseInfo?.developer?.supportPhone}
-              className="phone wx__d-flex wx__align-items-center"
+              className="phone d-flex wx__align-items-center"
             >
               <WxIcon icon="phone" variants="filled" />
               &nbsp;
@@ -356,7 +356,7 @@ const ThemesDetails = () => {
             <a
               href="https://webx.xyz/privacy-policy/"
               target="_blank"
-              className="privacy_policy wx__d-flex wx__align-items-center"
+              className="privacy_policy d-flex wx__align-items-center"
             >
               <WxIcon icon="privacy_tip" variants="filled" />
               &nbsp;
@@ -364,7 +364,7 @@ const ThemesDetails = () => {
             </a>
             <a
               href={"mailto:" + themeReleaseInfo?.developer?.supportEmail}
-              className="mail wx__d-flex wx__align-items-center"
+              className="mail d-flex wx__align-items-center"
             >
               <WxIcon
                 icon="markunread"
@@ -377,7 +377,7 @@ const ThemesDetails = () => {
           </div>
         </div>
       </div>
-      <div className="wx__similar_themes wx__mt-3 wx__p-3 wx__card">
+      <div className="wx__similar_themes wx__mt-3 wx__p-3 card">
         <h5 className="wx__text_semibold wx__mb-2">Similar Themes</h5>
         <div className="wx__pt-3">
           <ThemeList themeList={themeList} />

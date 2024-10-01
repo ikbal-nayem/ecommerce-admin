@@ -48,7 +48,7 @@ const TableSubItem = ({
     return (
       <>
         <ul
-          className="wx__ul wx__d-flex wx__justify-content-between"
+          className="wx__ul d-flex wx__justify-content-between"
           style={{ marginLeft: `${space}px` }}
         >
           <li className="wx__li">
@@ -57,7 +57,7 @@ const TableSubItem = ({
             </span>
             <span>{sub.name}</span>
           </li>
-          <li className="wx__td more wx__d-flex wx__align-items-center">
+          <li className="wx__td more d-flex wx__align-items-center">
             <WxSwitch
               key={sub?.isActive}
               checkedTitle="Active"
@@ -115,7 +115,7 @@ const TableSubItem = ({
 
   return (
     <ul
-      className="wx__ul wx__d-flex wx__justify-content-between"
+      className="wx__ul d-flex wx__justify-content-between"
       style={{ marginLeft: `${space}px` }}
     >
       <li className="wx__li">
@@ -124,7 +124,7 @@ const TableSubItem = ({
         </span>
         <span>{sub.name}</span>
       </li>
-      <li className="wx__td more wx__d-flex wx__align-items-center">
+      <li className="wx__td more d-flex wx__align-items-center">
         <WxSwitch
           key={sub?.isActive}
           className="wx__mb-auto"

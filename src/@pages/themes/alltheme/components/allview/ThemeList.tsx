@@ -16,7 +16,7 @@ type IAllThemeProps = {
 
 const ThemeList = ({ themeList, installedThemes }: IAllThemeProps) => {
   return (
-    <div className="wx__row theme-group">
+    <div className="row theme-group">
       {themeList?.map((item: any, index: number) => {
         const installed = installedThemes?.find(
           (th) => th?.themeId === item?.id
@@ -24,10 +24,10 @@ const ThemeList = ({ themeList, installedThemes }: IAllThemeProps) => {
         return (
           <div
             key={index}
-            className="single-theme wx__col-xl-4 wx__col-lg-4 wx__col-md-6 wx__col-sm-12 wx__mt-4"
+            className="single-theme col-xl-4 col-lg-4 col-md-6 col-sm-12 wx__mt-4"
           >
             <Link to={THEMES_OVERVIEW({ theme_id: item?.id })}>
-              <div className="wx__card theme-card">
+              <div className="card theme-card">
                 {installed ? (
                   <small className="installed">
                     {installed?.isActive && (
@@ -45,13 +45,13 @@ const ThemeList = ({ themeList, installedThemes }: IAllThemeProps) => {
                   height={100}
                   width={100}
                 />
-                <strong className="wx__mt-2 wx__text-body wx__text_medium wx__w-100 wx__d-inline-block wx__text-truncate">
+                <strong className="wx__mt-2 wx__text-body wx__text_medium w-100 d-inline-block text-truncate">
                   {item?.title}
                 </strong>
-                <p className="wx__text_subtitle wx__text_regular wx__subtitle wx__mb-3 wx__w-100 wx__d-inline-block wx__text-truncate">
+                <p className="wx__text_subtitle wx__text_regular wx__subtitle wx__mb-3 w-100 d-inline-block text-truncate">
                   {item?.shortDesc}
                 </p>
-                <div className="wx__d-flex wx__align-items-center wx__justify-content-between">
+                <div className="d-flex wx__align-items-center wx__justify-content-between">
                   {item?.currencyCode && item?.price && (
                     <div className="theme_price">
                       <p className="wx__text_subtitle">

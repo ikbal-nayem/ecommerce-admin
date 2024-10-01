@@ -88,7 +88,7 @@ const BrowseProduct = ({
 									onClick={() => addToCart(item)}
 								>
 									<td className="wx__td product">
-										<div className="wx__d-flex">
+										<div className="d-flex">
 											<WxThumbnail
 												name="Image"
 												src={imageURLGenerate(item?.thumbnail)}

@@ -175,9 +175,9 @@ const PricingPlan = () => {
 
 	return (
 		<WxMainFull className="pricing_plan_sec">
-			<div className="wx__w-100 wx__d-flex wx__justify-content-between wx__align-items-center">
+			<div className="w-100 d-flex wx__justify-content-between wx__align-items-center">
 				<WxFormHeader title="Pricing Plan" backNavigationLink={SETTINGS} />
-				<div className="__switch wx__d-flex wx__align-items-center wx__text_heading wx__text_medium">
+				<div className="__switch d-flex wx__align-items-center wx__text_heading wx__text_medium">
 					{pricingPlanes?.billingCycles?.map((cycle) => (
 						<WxRadio
 							key={cycle?.id}
@@ -191,7 +191,7 @@ const PricingPlan = () => {
 					))}
 				</div>
 			</div>
-			<div className="wx__card">
+			<div className="card">
 				{pricingPlanes?.billingCycles?.length ? (
 					<PricingListTable
 						pricingPlanes={pricingPlanes}

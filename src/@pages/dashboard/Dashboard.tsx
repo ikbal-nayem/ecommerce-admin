@@ -93,7 +93,7 @@ const Dashboard = () => {
 													>
 														<span className='wx__text_body'>This Month</span>
 													</li>
-													<div className='wx__w-100 mt-2'>
+													<div className='w-100 mt-2'>
 														<DateInput
 															startDate={startDate}
 															endDate={endDate}
@@ -110,8 +110,8 @@ const Dashboard = () => {
 									</WxDropdown>
 								</div>
 							</div>
-							<div className='wx__row'>
-								<div className='wx__col-md-4 wx__col-sm-12 orders_summery'>
+							<div className='row'>
+								<div className='col-md-4 col-sm-12 orders_summery'>
 									<WxIcon className='orders_icon' icon='receipt' />
 									<div>
 										<span className='wx__text_caption'>Total Orders</span>
@@ -120,7 +120,7 @@ const Dashboard = () => {
 										</h5>
 									</div>
 								</div>
-								<div className='wx__col-md-4 wx__col-sm-12 sales_summery'>
+								<div className='col-md-4 col-sm-12 sales_summery'>
 									<WxIcon className='sales_icon' icon='currency_yen' />
 									<div>
 										<span className='wx__text_caption'>Total Sales</span>
@@ -129,7 +129,7 @@ const Dashboard = () => {
 										</h5>
 									</div>
 								</div>
-								<div className='wx__col-md-4 wx__col-sm-12 visitors_summery'>
+								<div className='col-md-4 col-sm-12 visitors_summery'>
 									<WxIcon className='visitors_icon' icon='supervisor_account' />
 									<div>
 										<span className='wx__text_caption'>Total Visitors</span>
@@ -142,7 +142,7 @@ const Dashboard = () => {
 						</div>
 					</div>
 					<div className='col-md-3'>
-						<div className='wx__card_ p-3 d-flex flex-column justify-content-between'>
+						<div className='card_ p-3 d-flex flex-column justify-content-between'>
 							<div className='top d-flex align-items-center mb-3'>
 								<span className='circle'></span>
 								<h6 className='wx__text_medium mb-0'>Live</h6>
@@ -183,8 +183,8 @@ const Dashboard = () => {
 									</WxButton>
 								</div>
 							</div>
-							<div className='notify wx__d-flex wx__justify-content-between wx__align-items-center'>
-								<div className='wx__d-flex wx__align-items-center left'>
+							<div className='notify d-flex wx__justify-content-between wx__align-items-center'>
+								<div className='d-flex wx__align-items-center left'>
 									<WxIcon className='wx__me-2' icon='account_balance_wallet' />
 									<p className='wx__m-0'>
 										<span className='wx__text_semibold'>{orderSummery?.totalUnpaidOrder} payments</span> to
@@ -203,8 +203,8 @@ const Dashboard = () => {
 									</WxButton>
 								</div>
 							</div>
-							<div className=' notify wx__d-flex wx__justify-content-between wx__align-items-center'>
-								<div className='wx__d-flex wx__align-items-center left'>
+							<div className=' notify d-flex wx__justify-content-between wx__align-items-center'>
+								<div className='d-flex wx__align-items-center left'>
 									<WxIcon className='wx__me-2' icon='production_quantity_limits' />
 									<p className='wx__m-0'>
 										<span className='wx__text_semibold'>{orderSummery?.totalRefundRequest} Refunds</span>{' '}
@@ -225,14 +225,14 @@ const Dashboard = () => {
 							</div>
 						</div>
 					) : (
-						<div className='wx__bg-white wx__rounded  wx__mt-3'>
+						<div className='wx__bg-white rounded  wx__mt-3'>
 							<NotifyListSkelton viewBox='0 0 590 115' />
 						</div>
 					)}
 				</div>
 			</div>
 			{/* {!summeryLoader ? (
-        <div className="wx__all_packBanner wx__d-flex wx__justify-content-between wx__align-items-center">
+        <div className="wx__all_packBanner d-flex wx__justify-content-between wx__align-items-center">
           <h2 className="wx__m-0">50% off on all packs</h2>
           <WxButton variant="outline">
             Explore Now
@@ -240,27 +240,27 @@ const Dashboard = () => {
           </WxButton>
         </div>
       ) : (
-        <div className="wx__bg-white wx__rounded wx__mt-3">
+        <div className="wx__bg-white rounded wx__mt-3">
           <AllPackBanner viewBox="0 0 590 60" />
         </div>
       )} */}
 
-			{/* <div className="wx__discover_webx wx__card wx__p-3 wx__pb-0 wx__mt-3">
-				<div className="wx__d-flex wx__justify-content-between wx__align-items-center wx__mb-4">
+			{/* <div className="wx__discover_webx card wx__p-3 wx__pb-0 wx__mt-3">
+				<div className="d-flex wx__justify-content-between wx__align-items-center wx__mb-4">
 					<h5 className="wx__m-0 wx__text_h5 wx__text_semibold">
 						Discover Webx
 					</h5>
-					<div className="wx__d-flex wx__align-items-center">
+					<div className="d-flex wx__align-items-center">
 						<WxButton size="sm">Explore More</WxButton>
 						<WxIcon className="wx__ms-3" icon="more_vert" />
 					</div>
 				</div>
-				<div className="wx__row">
+				<div className="row">
 					{staticContent?.tutorials?.map((item: any) => {
 						return (
 							<div
 								key={item.id}
-								className="wx__discover_cart wx__col-md-4 wx__col-sm-12 wx__mb-3"
+								className="wx__discover_cart col-md-4 col-sm-12 wx__mb-3"
 							>
 								<iframe
 									src={`https://www.youtube.com/embed/${getId(item.videoLink)}`}
@@ -280,8 +280,8 @@ const Dashboard = () => {
 			</div> */}
 			{/* {!appsLoader ? (
 				<div className='wx__apps_of_the_week'>
-					<div className='wx__d-flex wx__justify-content-between wx__align-items-center'>
-						<div className='wx__d-flex wx__align-items-center'>
+					<div className='d-flex wx__justify-content-between wx__align-items-center'>
+						<div className='d-flex wx__align-items-center'>
 							<WxIcon className='trophy_icon' size={28} icon='emoji_events' />
 							<div className='ms_2'>
 								<h5 className='wx__m-0 wx__text_h5 wx__text_semibold'>Apps Of The Week</h5>
@@ -292,14 +292,14 @@ const Dashboard = () => {
 						</div>
 						<WxIcon icon='more_vert' />
 					</div>
-					<div className='wx__row'>
+					<div className='row'>
 						<DashboardApp apps={apps} />
 						<div
 							onClick={() => navigate('/apps/list')}
 							style={{ cursor: 'pointer' }}
-							className='wx__col-md-3 wx__col-sm-12 wx__mt-3'
+							className='col-md-3 col-sm-12 wx__mt-3'
 						>
-							<div className='wx__exploreMore_card wx__card '>
+							<div className='wx__exploreMore_card card '>
 								<h2 className='wx__m-0'>
 									<span>Explore More</span>
 									<WxIcon className='explore_more_icon wx__ms-3' icon='arrow_circle_right' />
@@ -309,7 +309,7 @@ const Dashboard = () => {
 					</div>
 				</div>
 			) : (
-				<div className='wx__bg-white wx__rounded wx__mt-3'>
+				<div className='wx__bg-white rounded wx__mt-3'>
 					<DashboardAppSkelton viewBox='0 0 595 205' />
 				</div>
 			)} */}

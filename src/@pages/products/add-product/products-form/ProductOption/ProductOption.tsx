@@ -75,17 +75,17 @@ const RenderOption = ({
 	if (!isEdit) {
 		return (
 			<>
-				<div className="wx__d-flex wx__align-items-center">
+				<div className="d-flex wx__align-items-center">
 					<span
 						className="material-icons-round drag_indicator"
 						{...optionDragHandler}
 					>
 						drag_indicator
 					</span>
-					<div className="wx__d-flex wx__w-100 wx__align-items-center">
+					<div className="d-flex w-100 wx__align-items-center">
 						<div className="wx__me-auto wx__ms-4">
 							<strong>{optionItem?.name}</strong>
-							<div className="wx__d-flex wx__gap-2 wx__mt-1 wx__flex-wrap">
+							<div className="d-flex gap-2 wx__mt-1 wx__flex-wrap">
 								{optionItem?.values?.map((value: any) =>
 									value?.name ? (
 										<WxTag key={value?.id} label={value?.name} />
@@ -286,7 +286,7 @@ const ProductOption = () => {
 	};
 
 	return (
-		<div className="wx__card product_option wx__p-3 wx__mt-4">
+		<div className="card product_option wx__p-3 wx__mt-4">
 			<h6 className="wx__text_semibold wx__text_h6">
 				Options
 				<WxIcon variants="round" icon="help" role="button" />

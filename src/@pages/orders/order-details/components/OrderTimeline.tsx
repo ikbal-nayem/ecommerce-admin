@@ -45,7 +45,7 @@ const OrderTimeline = ({
 
 	return (
 		<>
-			<div className="wx__card wx__mt-3 wx__p-3">
+			<div className="card wx__mt-3 wx__p-3">
 				<h6 className="wx__text_h6 wx__text_semibold">Timeline</h6>
 				<div className="wx__timeline">
 					<div className="events">
@@ -61,7 +61,7 @@ const OrderTimeline = ({
 										)}
 									</small>
 									{event?.canAppove ? (
-										<div className="wx__d-flex wx__gap-2 wx__mt-1">
+										<div className="d-flex gap-2 wx__mt-1">
 											<WxTag
 												label="Approve"
 												color="success"

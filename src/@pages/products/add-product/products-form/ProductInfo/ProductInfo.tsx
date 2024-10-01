@@ -15,7 +15,7 @@ const ProductInfo = () => {
 	const hasSummary = watch("hasSummary");
 
 	return (
-		<div className="wx__card wx__p-3 wx__mt-4">
+		<div className="card wx__p-3 wx__mt-4">
 			<WxInput
 				label="Product Title"
 				isRequired
@@ -24,7 +24,7 @@ const ProductInfo = () => {
 				errorMessage={errors.title?.message}
 				color={errors.title ? "danger" : "secondary"}
 			/>
-			<div className="wx__form_group">
+			<div className="form_group">
 				<label>Product Description</label>
 				<Controller
 					control={control}
@@ -45,7 +45,7 @@ const ProductInfo = () => {
 			</div>
 
 			{hasSummary ? (
-				<div className="wx__form_group wx__mt-4">
+				<div className="form_group wx__mt-4">
 					<label>Product Summary</label>
 					<Controller
 						control={control}

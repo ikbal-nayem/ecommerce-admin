@@ -122,7 +122,7 @@ const Slider = () => {
 	return (
 		<WxMainLg className="homeSection">
 			<WxFormHeader title="Slider" />
-			<div className="wx__card wx__p-3">
+			<div className="card wx__p-3">
 				<TableLoader isLoading={isLoading} />
 				<div className="title_section">
 					<div className="title" />
@@ -135,11 +135,11 @@ const Slider = () => {
 					<div className="wx__responsive_table">
 						{sliderData.map((item: ISlider, index) => (
 							<ul
-								className="single-banner wx__d-flex wx__justify-content-between wx__align-items-center"
+								className="single-banner d-flex wx__justify-content-between wx__align-items-center"
 								key={index}
 							>
 								<li className="banner-left">
-									<div className="wx__d-flex wx__align-items-center">
+									<div className="d-flex wx__align-items-center">
 										<WxThumbnail src={imageURLGenerate(item?.thumbnail)} />
 										<div className="banner_title_section">
 											<Link
@@ -160,7 +160,7 @@ const Slider = () => {
 									</div>
 								</li>
 								<li className="banner-right me-2">
-									<div className="wx__d-flex align-items-center gap-3">
+									<div className="d-flex align-items-center gap-3">
 										<WxSwitch
 											onChange={(e) =>
 												onStatusChange(item, e.target.checked, index)

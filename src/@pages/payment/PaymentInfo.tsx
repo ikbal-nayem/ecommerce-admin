@@ -41,7 +41,7 @@ const PaymentInfo = () => {
 
 	return (
 		<WxMainLg>
-			<div className="wx__card wx__p-5 wx__text-center">
+			<div className="card wx__p-5 wx__text-center">
 				<WxIcon
 					icon={params?.status === "success" ? "task_alt" : "cancel"}
 					size={100}
@@ -53,19 +53,19 @@ const PaymentInfo = () => {
 				<div className="wx__my-5">
 					<ul className="list-group list-group-flush">
 						<li className="list-group-item">
-							<div className="wx__d-flex wx__justify-content-between">
+							<div className="d-flex wx__justify-content-between">
 								<span>Invoice No</span>
 								<b>#{invoiceInfo?.merchantInvoice?.invoiceNo}</b>
 							</div>
 						</li>
 						<li className="list-group-item">
-							<div className="wx__d-flex wx__justify-content-between">
+							<div className="d-flex wx__justify-content-between">
 								<span>Payment status</span>
 								<span>{invoiceInfo?.merchantInvoice?.paymentStatus}</span>
 							</div>
 						</li>
 						<li className="list-group-item">
-							<div className="wx__d-flex wx__justify-content-between">
+							<div className="d-flex wx__justify-content-between">
 								<span>Total amount</span>
 								<span>
 									{invoiceInfo?.merchantInvoice?.currencyCode}&nbsp;&nbsp;
@@ -74,7 +74,7 @@ const PaymentInfo = () => {
 							</div>
 						</li>
 						<li className="list-group-item">
-							<div className="wx__d-flex wx__justify-content-between">
+							<div className="d-flex wx__justify-content-between">
 								<strong>Invoice amount</strong>
 								<strong>
 									{invoiceInfo?.merchantInvoice?.currencyCode}&nbsp;&nbsp;
@@ -85,8 +85,8 @@ const PaymentInfo = () => {
 					</ul>
 				</div>
 
-				<div className="wx__row">
-					<div className="col-sm-6 col-12 wx__d-flex wx__justify-content-sm-end wx__justify-content-center">
+				<div className="row">
+					<div className="col-sm-6 col-12 d-flex wx__justify-content-sm-end wx__justify-content-center">
 						<WxButton
 							color="primary"
 							variant="outline"
@@ -96,7 +96,7 @@ const PaymentInfo = () => {
 							Show all invoices
 						</WxButton>
 					</div>
-					<div className="col-sm-6 col-12 wx__d-flex wx__justify-content-sm-start wx__justify-content-center">
+					<div className="col-sm-6 col-12 d-flex wx__justify-content-sm-start wx__justify-content-center">
 						{params?.status === "success" ? (
 							<WxButton
 								color="primary"

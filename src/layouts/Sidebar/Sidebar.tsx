@@ -51,7 +51,7 @@ const Sidebar = ({ onClickFun }) => {
 			<div className='s-layout__sidebar'>
 				<div className='side-menu-close' onClick={() => onClickMenuItem('-1')}></div>
 				{!loader ? (
-					<nav className='s-sidebar__nav wx_d-flex wx_flex-column wx_justify-content-between'>
+					<nav className='s-sidebar__nav d-flex flex-column justify-content-between'>
 						<ul className='sidebar_nav_list'>
 							{nav_links.map((nav, i) => {
 								return (
@@ -70,7 +70,7 @@ const Sidebar = ({ onClickFun }) => {
 												onClick={nav.link !== ONLINE_STORE ? () => onClickMenuItem(nav.link) : null}
 											>
 												<div
-													className='wx__d-flex wx__justify-content-between wx__align-items-center'
+													className='d-flex wx__justify-content-between wx__align-items-center'
 													onClick={nav.link === ONLINE_STORE ? () => onClickMenuItem(nav.link) : null}
 												>
 													<WxIcon icon={nav.icon} />

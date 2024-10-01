@@ -28,11 +28,11 @@ export default function ReferrerDetails() {
     <WxMainFull>
       <WxFormHeader title="Partner payment details" />
       {isLoading ? (
-        <div className="wx__rounded wx__w-100 wx__bg-white wx__mt-3">
+        <div className="rounded w-100 wx__bg-white wx__mt-3">
           <ProductTableSkelton viewBox="0 0 600 230" />
         </div>
       ) : (
-        <div className="wx__card">
+        <div className="card">
           {!isLoading && !payments?.length ? (
             <WxNotFound title="No payments information found!" />
           ) : null}

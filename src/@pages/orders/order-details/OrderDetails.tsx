@@ -450,10 +450,10 @@ const OrderDetails = () => {
 
 			{loader && <Preloader />}
 
-			<div className="wx__row">
-				<div className="wx__col-md-8">
-					<div className="wx__card">
-						<div className="wx__d-flex wx__align-items-center wx__p-3">
+			<div className="row">
+				<div className="col-md-8">
+					<div className="card">
+						<div className="d-flex wx__align-items-center wx__p-3">
 							<h6 className="wx__text_h6 wx__text_semibold wx__m-0">Product</h6>
 							<div className="wx__ms-3">
 								<WxTag
@@ -538,16 +538,16 @@ const OrderDetails = () => {
 									drop={true}
 									backdrop={true}
 								>
-									<div className="wx__d-flex wx__delivery-dropdown">
+									<div className="d-flex wx__delivery-dropdown">
 										<div className="dropdown_wrapper">
-											<ul className="wx__w-100">
+											<ul className="w-100">
 												<li
 													onClick={() =>
 														handleOrderStatus(
 															MASTER_META_KEY.ORDER_STATUS_TYPE_DELIVERED
 														)
 													}
-													className="wx__d-flex"
+													className="d-flex"
 												>
 													<WxThumbnail
 														className="wx__bg-white"
@@ -570,7 +570,7 @@ const OrderDetails = () => {
 																		  )
 																		: null
 																}
-																className="wx__d-flex wx__my-1"
+																className="d-flex wx__my-1"
 																key={item?.id}
 															>
 																<WxThumbnail
@@ -590,14 +590,14 @@ const OrderDetails = () => {
 							</div>
 						)}
 					</div>
-					<div className="wx__card wx__order_payment wx__mt-3 wx__p-3">
+					<div className="card wx__order_payment wx__mt-3 wx__p-3">
 						{isUpdating ? <Preloader absolutePosition /> : null}
 						<PaymentDetailsInfo
 							orderDetails={orderDetails}
 							setIsDiscountOpen={setIsDiscountOpen}
 							setIsShippingOpen={setIsShippingOpen}
 						/>
-						<div className="wx__d-flex wx__ms-auto wx__gap-3">
+						<div className="d-flex wx__ms-auto gap-3">
 							{orderDetails?.orderStatus !== STATUS_CONSTANT.cancel ? (
 								<WxButton color="secondary">Send Invoice</WxButton>
 							) : null}
@@ -627,9 +627,9 @@ const OrderDetails = () => {
 						<OrderTrack orderTrack={orderTrackStatus} />
 					) : null}
 				</div>
-				<div className="wx__col-md-4">
+				<div className="col-md-4">
 					<OrderPlacedInfo orderDetails={orderDetails} />
-					<div className="wx__card wx__mt-3 wx__p-3">
+					<div className="card wx__mt-3 wx__p-3">
 						<WxLabel
 							labelRight={
 								<EditNotes

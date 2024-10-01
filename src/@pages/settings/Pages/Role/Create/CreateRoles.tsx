@@ -62,9 +62,9 @@ const CreateUserRoles = () => {
         backNavigationLink={SETTINGS_ROLES}
       />
       <form onSubmit={handleSubmit(onSubmitting)} noValidate>
-        <div className="wx__row wx__w-100">
-          <div className="wx__col-lg-8 wx__col-md-12 wx__col-sm-12 wx__mt-3">
-            <div className="wx__card wx__p-4">
+        <div className="row w-100">
+          <div className="col-lg-8 col-md-12 col-sm-12 wx__mt-3">
+            <div className="card wx__p-4">
               <WxInput
                 isRequired
                 label="Role Name"
@@ -87,8 +87,8 @@ const CreateUserRoles = () => {
               />
             </div>
           </div>
-          <div className="wx__col-lg-4 wx__col-md-12 wx__col-sm-12 wx__mt-3">
-            <div className="wx__card wx__p-3">
+          <div className="col-lg-4 col-md-12 col-sm-12 wx__mt-3">
+            <div className="card wx__p-3">
               <WxButton type="submit" variant="fill" disabled={saving}>
                 {id ? "Save" : "Create Role"} {saving ? <Preloader /> : null}
               </WxButton>

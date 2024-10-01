@@ -36,7 +36,7 @@
     border: 1px solid $neutral__300;
     z-index: 1;
     margin: 0;
-    @extend .wx__rounded;
+    @extend .rounded;
     overflow: hidden;
     .dropdown__header {
       .drop_info {
@@ -69,7 +69,7 @@
     }
     .dropdown__btn {
       padding: 5px;
-      @extend .wx__rounded;
+      @extend .rounded;
       &:hover {
         background-color: $primary__300;
         cursor: pointer;
@@ -115,7 +115,7 @@
         text-decoration: none;
         display: flex;
         align-items: center;
-        @extend .wx__rounded;
+        @extend .rounded;
         span {
           font-size: 20px;
           margin-right: 13.67px;

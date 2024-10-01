@@ -130,7 +130,7 @@ const Payment = () => {
         {!configureLoader ? (
           configuredList?.gateway?.length ||
           configuredList?.offlinePayment?.length ? (
-            <div className="wx__card wx__p-3 wx__mt-3">
+            <div className="card wx__p-3 wx__mt-3">
               <h6 className="wx__text_heading wx__text_semibold wx__mb-0">
                 Configured Payment Methods
               </h6>
@@ -140,7 +140,7 @@ const Payment = () => {
                   key={index}
                   onClick={() => onFormOpen("CONFIGURED", item)}
                 >
-                  <div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+                  <div className="d-flex wx__justify-content-between wx__align-items-center">
                     <img
                       src={imageURLGenerate(item?.banner)}
                       alt={item?.gatewayProvider}
@@ -164,7 +164,7 @@ const Payment = () => {
                   key={index}
                   onClick={() => onFormOpen("CONFIGURED", item)}
                 >
-                  <div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+                  <div className="d-flex wx__justify-content-between wx__align-items-center">
                     <img
                       src={imageURLGenerate(item?.banner)}
                       alt={item?.gatewayProvider}
@@ -189,14 +189,14 @@ const Payment = () => {
             </div>
           )
         ) : (
-          <div className="wx__bg-white wx__mt-3 wx__rounded">
+          <div className="wx__bg-white wx__mt-3 rounded">
             <PaymentMethodSkelton viewBox="0 0 595 150" />
           </div>
         )}
 
         {!supportLoader ? (
           supportedList?.length > 0 ? (
-            <div className="wx__card wx__p-3 wx__mt-3">
+            <div className="card wx__p-3 wx__mt-3">
               <h6 className="wx__text_heading wx__text_semibold wx__mb-0">
                 Supported Payment Methods
               </h6>
@@ -206,7 +206,7 @@ const Payment = () => {
                   key={index}
                   onClick={() => onFormOpen("SUPPORTED", item)}
                 >
-                  <div className="wx__d-flex wx__justify-content-between wx__align-items-center">
+                  <div className="d-flex wx__justify-content-between wx__align-items-center">
                     <img
                       src={imageURLGenerate(item?.banner)}
                       alt={item?.title}
@@ -219,7 +219,7 @@ const Payment = () => {
             </div>
           ) : null
         ) : (
-          <div className="wx__bg-white wx__mt-3 wx__rounded">
+          <div className="wx__bg-white wx__mt-3 rounded">
             <PaymentMethodSkelton viewBox="0 0 595 150" />
           </div>
         )}

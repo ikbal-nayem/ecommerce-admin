@@ -53,7 +53,7 @@ export const BillingTable = ({ tableData }: IBillingTable) => {
                   label={bill?.merchantPaymentStatus}
                 />
               </td>
-              <td className="wx__td wx__d-flex">
+              <td className="wx__td d-flex">
                 <WxButton
                   onClick={() =>
                     InvoiceService.downloadInvoice(bill?.invoiceId)

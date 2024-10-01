@@ -130,11 +130,11 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
         noValidate
       >
         {isSaving ? <Preloader /> : null}
-        <div className="wx__row ">
-          <div className="wx__col-md-12 wx__col-lg-12 wx__col-sm-12">
-            <div className="wx__card wx__p-4 wx__mb-3">
-              <div className="wx__row">
-                <div className="wx__col-md-12 wx__col-lg-12">
+        <div className="row ">
+          <div className="col-md-12 col-lg-12 col-sm-12">
+            <div className="card wx__p-4 wx__mb-3">
+              <div className="row">
+                <div className="col-md-12 col-lg-12">
                   <h6 className="wx__text_h6 wx__text_semibold">
                     Create Audience
                   </h6>
@@ -152,13 +152,13 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                 </div>
               </div>
             </div>
-            <div className="wx__card wx__p-4 wx__mb-3">
-              <div className="wx__row">
+            <div className="card wx__p-4 wx__mb-3">
+              <div className="row">
                 <h6 className="wx__text_h6 wx__text_semibold">Upload File</h6>
                 {!ifUpdate ? (
                   !Object.keys(fileDetails).length ? (
                     <>
-                      <div className="wx__col-md-12 wx__col-lg-12">
+                      <div className="col-md-12 col-lg-12">
                         <MediaInput
                           icon="file_present"
                           recommendedText=" 1MB"
@@ -174,15 +174,15 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                           </span>
                         ) : null}
                       </div>
-                      <div className="wx__col-md-12 wx__col-lg-12">
+                      <div className="col-md-12 col-lg-12">
                         {parseLoader ? <Preloader /> : null}
                       </div>
                       {dataLimitExceed && (
-                        <div className="wx__col-md-12 wx__col-lg-12 wx__mt-3 ">
-                          <div className="wx__d-flex wx__align-items-center wx__rounded wx__warn_alert">
+                        <div className="col-md-12 col-lg-12 wx__mt-3 ">
+                          <div className="d-flex wx__align-items-center rounded wx__warn_alert">
                             <WxIcon icon="info" />
                             <div>
-                              <p className="wx__mb-0 wx__text_body wx__d-block">
+                              <p className="wx__mb-0 wx__text_body d-block">
                                 You exceed file size limit. Please upload less
                                 than 1MB file
                               </p>
@@ -190,15 +190,15 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                           </div>
                         </div>
                       )}
-                      <div className="wx__col-md-12 wx__col-lg-12 wx__mt-3 ">
-                        <div className="wx__d-flex wx__align-items-center wx__rounded wx__demo_file">
+                      <div className="col-md-12 col-lg-12 wx__mt-3 ">
+                        <div className="d-flex wx__align-items-center rounded wx__demo_file">
                           <WxIcon icon="file_download" />
                           <div>
-                            <div className="wx__w-100 wx__d-flex wx__align-items-center wx__justify-content-between">
+                            <div className="w-100 d-flex wx__align-items-center wx__justify-content-between">
                               <a href="#" className="wx__text_body">
                                 Download file type
                               </a>
-                              <div className="wx__d-flex wx__align-items-center wx__text_small wx__text-secondary">
+                              <div className="d-flex wx__align-items-center wx__text_small wx__text-secondary">
                                 <WxIcon
                                   style={{ fontSize: "8px" }}
                                   icon="info"
@@ -210,7 +210,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                                 </span>
                               </div>
                             </div>
-                            <p className="wx__mb-0 wx__text_small wx__d-block">
+                            <p className="wx__mb-0 wx__text_small d-block">
                               Download this for creating your actually file
                               properly
                             </p>
@@ -219,17 +219,17 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                       </div>
                     </>
                   ) : (
-                    <div className="wx__col-md-12 wx__col-lg-12 wx__mt-3 ">
-                      <div className="wx__d-flex wx__align-items-center wx__rounded wx__file_present">
+                    <div className="col-md-12 col-lg-12 wx__mt-3 ">
+                      <div className="d-flex wx__align-items-center rounded wx__file_present">
                         <WxIcon className="wx__text-success" icon="task" />
                         <div>
                           {fileDetails.fileName && (
-                            <p className="wx__mb-0 wx__text_body wx__d-block">
+                            <p className="wx__mb-0 wx__text_body d-block">
                               {fileDetails.fileName}
                             </p>
                           )}
                           {fileDetails.fileExtension && (
-                            <p className="wx__mb-0 wx__text_body wx__d-block">
+                            <p className="wx__mb-0 wx__text_body d-block">
                               <span className="wx__text_semibold">
                                 File type :{" "}
                               </span>
@@ -237,7 +237,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                             </p>
                           )}
                           {fileDetails.fileSize && (
-                            <p className="wx__mb-0 wx__text_body wx__d-block">
+                            <p className="wx__mb-0 wx__text_body d-block">
                               <span className="wx__text_semibold">
                                 File Size :{" "}
                               </span>
@@ -245,7 +245,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                             </p>
                           )}
                           {fileDetails.fileDataLength && (
-                            <p className="wx__mb-0 wx__text_body wx__d-block">
+                            <p className="wx__mb-0 wx__text_body d-block">
                               <span className="wx__text_semibold">
                                 Total Data found :{" "}
                               </span>
@@ -265,7 +265,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                     </div>
                   )
                 ) : null}
-                <div className="wx__col-md-12 wx__col-lg-12 wx__mt-2">
+                <div className="col-md-12 col-lg-12 wx__mt-2">
                   <WxInput
                     label="Audience Title"
                     isRequired
@@ -279,7 +279,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                     errorMessage={errors?.title?.message}
                   />
                 </div>
-                <div className="wx__col-md-12 wx__col-lg-12">
+                <div className="col-md-12 col-lg-12">
                   <WxTextarea
                     label="Description"
                     isRequired

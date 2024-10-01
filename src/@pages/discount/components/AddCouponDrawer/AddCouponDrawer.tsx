@@ -429,7 +429,7 @@ const AddCouponDrawer = forwardRef(
                                 (checkItem) => checkItem.id === item.id
                               )}
                               label={
-                                <div className="wx__d-flex wx__align-items-center">
+                                <div className="d-flex wx__align-items-center">
                                   <WxThumbnail
                                     src={imageURLGenerate(item?.image)}
                                   />
@@ -460,8 +460,8 @@ const AddCouponDrawer = forwardRef(
               </div>
             </WxDrawerBody>
             <WxDrawerFooter>
-              <div className="wx__collection_form__footer">
-                <div className="wx__ms-auto wx__d-flex">
+              <div className="collection_form__footer">
+                <div className="wx__ms-auto d-flex">
                   <WxButton
                     className="wx__me-3"
                     variant="outline"
