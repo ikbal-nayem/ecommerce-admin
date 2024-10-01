@@ -16,7 +16,7 @@
   display: inline-flex;
   border: $border_width $border_style $border_color;
   overflow: hidden;
-  @extend .rounded;
+  
   .wx__btn_primary_outline,
   .wx__btn_secondary_outline,
   .wx__btn_danger_outline {

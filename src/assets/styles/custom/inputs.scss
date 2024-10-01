@@ -83,7 +83,7 @@ input {
   // margin: 8px 0;
   padding: 0 1em;
   background-color: $neutral__100;
-  @extend .rounded;
+  
   input {
     @include input__style(
       $border: none,
