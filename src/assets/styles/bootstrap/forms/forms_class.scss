@@ -6,87 +6,85 @@
 // radio buttons & checkbox
 
 .form-check-input {
-	// width: $form-check-input-width;
-	// height: $form-check-input-width;
-	// margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
+	width: $form-check-input-width;
+	height: $form-check-input-width;
+	margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
 	vertical-align: top;
-	// background-color: $form-check-input-bg;
+	background-color: $form-check-input-bg;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
-	// border: $form-check-input-border;
+	border: $form-check-input-border;
 	border: $form-check-input-border;
 	appearance: none;
-	color-adjust: exact; // Keep themed appearance for print
-	// @include transition($form-check-transition);
+	@include transition($form-check-transition);
 
 	&[type='checkbox'] {
 		width: 18px;
 		height: 18px;
-		// margin-top: ($line-height-base - $form-check-input-width - 0.1) * 0.5; // line-height minus check height
-		// @include border-radius($form-check-input-border-radius);
+		margin-top: ($line-height-base - $form-check-input-width - 0.1) * 0.5; // line-height minus check height
+		@include border-radius($form-check-input-border-radius);
 	}
 
 	&[type='radio'] {
 		width: 20px;
 		height: 20px;
-		// margin-top: ($line-height-base - $form-check-input-width - 0.2) * 0.5; // line-height minus check height
+		margin-top: ($line-height-base - $form-check-input-width - 0.2) * 0.5; // line-height minus check height
 		// stylelint-disable-next-line property-disallowed-list
-		// border-radius: $form-check-radio-border-radius;
+		border-radius: $form-check-radio-border-radius;
 	}
 
 	&:active {
-		// filter: $form-check-input-active-filter;
+		filter: $form-check-input-active-filter;
 	}
 
 	&:focus {
 		border-color: $primary__500;
 		outline: 0;
-		// box-shadow: $form-check-input-focus-box-shadow;
+		box-shadow: $form-check-input-focus-box-shadow;
 	}
 
 	&:checked {
-		// background-color: $form-check-input-checked-bg-color;
-		// border-color: $form-check-input-checked-border-color;
+		background-color: $form-check-input-checked-bg-color;
+		border-color: $form-check-input-checked-border-color;
 		border-color: $primary__500;
 
 		&[type='checkbox'] {
 			background-color: $primary__500;
-			// @if $enable-gradients {
-			// 	// background-image: escape-svg($form-check-input-checked-bg-image),
-			// 	// var(--#{$variable-prefix}gradient);
-			// } @else {
-			// 	// background-image: escape-svg($form-check-input-checked-bg-image);
-			// }
+			@if $enable-gradients {
+				// background-image: escape-svg($form-check-input-checked-bg-image),
+				// var(--#{$variable-prefix}gradient);
+			} @else {
+				// background-image: escape-svg($form-check-input-checked-bg-image);
+			}
 		}
 
 		&[type='radio'] {
 			background-color: white;
-			// @if $enable-gradients {
-			// 	// background-image: escape-svg($form-check-radio-checked-bg-image),
-			// 	// var(--#{$variable-prefix}gradient);
-			// } @else {
-			// 	// background-image: escape-svg($form-check-radio-checked-bg-image);
-			// }
+			@if $enable-gradients {
+				background-image: escape-svg($form-check-radio-checked-bg-image), var(--#{$variable-prefix}gradient);
+			} @else {
+				background-image: escape-svg($form-check-radio-checked-bg-image);
+			}
 		}
 	}
 
 	&[type='checkbox']:indeterminate {
-		// background-color: $form-check-input-indeterminate-bg-color;
-		// border-color: $form-check-input-indeterminate-border-color;
+		background-color: $form-check-input-indeterminate-bg-color;
+		border-color: $form-check-input-indeterminate-border-color;
 
-		// @if $enable-gradients {
-		// 	// background-image: escape-svg($form-check-input-indeterminate-bg-image),
-		// 		// var(--#{$variable-prefix}gradient);
-		// } @else {
-		// 	// background-image: escape-svg($form-check-input-indeterminate-bg-image);
-		// }
+		@if $enable-gradients {
+			background-image: escape-svg($form-check-input-indeterminate-bg-image),
+				var(--#{$variable-prefix}gradient);
+		} @else {
+			background-image: escape-svg($form-check-input-indeterminate-bg-image);
+		}
 	}
 
 	&:disabled {
 		pointer-events: none;
 		filter: none;
-		// opacity: $form-check-input-disabled-opacity;
+		opacity: $form-check-input-disabled-opacity;
 	}
 
 	// Use disabled attribute in addition of :disabled pseudo-class
@@ -94,7 +92,7 @@
 	&[disabled],
 	&:disabled {
 		~ .form-check-label {
-			// opacity: $form-check-label-disabled-opacity;
+			opacity: $form-check-label-disabled-opacity;
 		}
 	}
 }
@@ -107,7 +105,7 @@
 		height: 16.67px;
 		border: none;
 		background-color: $neutral__600;
-		// margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
+		margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
 		position: relative;
 		display: block;
 		cursor: pointer;
@@ -146,9 +144,9 @@
 	&::after {
 		content: 'Hidden';
 		position: absolute;
-		// color: $neutral__700;
-		// @extend .wx__text_subtitle;
-		// @extend .wx__text_regular;
+		color: $neutral__700;
+		@extend .wx__text_subtitle;
+		@extend .wx__text_regular;
 	}
 }
 
@@ -158,6 +156,6 @@
 }
 
 .wx__subtitle_form {
-	// font-size: $form_subtitle_size;
+	font-size: $form_subtitle_size;
 	font-weight: 600;
 }

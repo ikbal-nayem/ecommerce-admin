@@ -55,13 +55,13 @@ const WxRadio = ({
 
   return (
     <div
-      className={`wx__d-flex wx__align-item-center ${
-        noMargin ? "" : "wx__mb-3"
+      className={`d-flex align-item-center ${
+        noMargin ? "" : "mb-3"
       } ${className ? className : ""}`}
       onClick={onClick}
     >
       {singleUse ? (
-        <div className="form-check form-check-inline wx__w-100">
+        <div className="form-check form-check-inline w-100">
           <input
             className="form-check-input"
             type="radio"
