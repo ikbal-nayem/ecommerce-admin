@@ -37,7 +37,7 @@
 		"react-content-loader": "^6.2.0",
 		"react-datepicker": "^4.8.0",
 		"react-dom": "^18.3.1",
-		"react-hook-form": "^7.29.0",
+		"react-hook-form": "^7.53.0",
 		"react-icons": "^4.3.1",
 		"react-phone-number-input": "^3.2.2",
 		"react-redux": "^7.2.8",

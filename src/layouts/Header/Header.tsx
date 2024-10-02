@@ -3,6 +3,7 @@ import WxHr from '@components/WxHr';
 import WxIcon from '@components/WxIcon/WxIcon';
 import WxImg from '@components/WxImg/WxImg';
 import WxTag from '@components/WxTag';
+import { ROUTES } from '@constants/route.constant';
 import { ENV } from 'config/ENV.config';
 import { useAuth } from 'context/auth';
 import { useEffect, useState } from 'react';
@@ -33,8 +34,8 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 				{menuIconFlag ? <WxIcon icon='close' /> : <WxIcon icon='menu' />}
 			</div>
 			<div className='wx__header__logo d-flex align-items-center'>
-				<Link to='/dashboard'>
-					<img src='media/logos/shop-dark.png' alt='logo' width={40} />
+				<Link to={ROUTES.DASHBOARD}>
+					<img src='/media/logos/shop-dark.png' alt='logo' width={40} />
 					<span className='text_body text_medium ms-2'>
 						<strong className='me-2'>Omuk Dokan</strong>
 						<WxTag label={activePlan?.title} color={statusColorMapping(activePlan?.title)} />
