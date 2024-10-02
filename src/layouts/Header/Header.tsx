@@ -1,6 +1,6 @@
 import WxDropdown from '@components/WxDropdown/WxDropdown';
 import WxHr from '@components/WxHr';
-import WxIcon from '@components/WxIcon/WxIcon';
+import WxIcon from '@components/Icon';
 import WxImg from '@components/WxImg/WxImg';
 import WxTag from '@components/WxTag';
 import { ROUTES } from '@constants/route.constant';

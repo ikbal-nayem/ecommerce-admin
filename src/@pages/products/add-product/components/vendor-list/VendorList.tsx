@@ -1,6 +1,6 @@
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxList from "@components/WxList";
 import WxListItem from "@components/WxList/WxListItem";
 import { IVendorPayload } from "services/api/products/Vendor.services";
@@ -24,7 +24,7 @@ function VendorList({
 }: VendorListProps) {
   return (
     <WxDrawerBody>
-      <WxInput
+      <TextInput
         type="search"
         startIcon={<WxIcon icon="search" />}
         placeholder="Search vendors"

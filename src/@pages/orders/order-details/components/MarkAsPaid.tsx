@@ -1,8 +1,8 @@
 import BlockSection from "@components/BlockSection/BlockSection";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxImg from "@components/WxImg/WxImg";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
@@ -138,7 +138,7 @@ const MarkAsPaid = ({
 									/>
 								</div>
 								<div className="col-md-6">
-									<WxInput
+									<TextInput
 										label="Transection ID"
 										isDisabled={!!approveData}
 										registerProperty={{
@@ -148,7 +148,7 @@ const MarkAsPaid = ({
 								</div>
 								{watch("isPartial") === "true" ? (
 									<div className="col-md-6">
-										<WxInput
+										<TextInput
 											label="Pay amount"
 											type="number"
 											min={0}
@@ -165,7 +165,7 @@ const MarkAsPaid = ({
 									</div>
 								) : null}
 							</div>
-							<WxInput
+							<TextInput
 								label="Referance"
 								registerProperty={{ ...register("referance") }}
 							/>

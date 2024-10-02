@@ -1,9 +1,9 @@
-import WxMainLg from '@components/MainContentLayout/WxMainLg';
-import WxButton from '@components/WxButton';
+import WxMainLg from '@components/MainContentLayout/MainLg';
+import WxButton from '@components/Button';
 import { WxFormHeader } from '@components/WxFormLayout';
 import WxHr from '@components/WxHr';
-import WxIcon from '@components/WxIcon/WxIcon';
-import WxInput from '@components/WxInput';
+import WxIcon from '@components/Icon';
+import TextInput from '@components/TextInput';
 import WxSwitch from '@components/WxSwitch';
 import { MASTER_META_TYPE } from 'config/constants';
 import { ENV } from 'config/ENV.config';
@@ -228,7 +228,7 @@ const CreateMenu = () => {
 				<div className='row m-auto w-100'>
 					<div className='col-lg-8 cards-sec col-md-12 col-sm-12 left'>
 						<div className='card p-4 mt-3'>
-							<WxInput
+							<TextInput
 								isRequired
 								label='Menu set name'
 								isAutoFocus

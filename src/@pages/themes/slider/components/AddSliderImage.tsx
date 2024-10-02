@@ -1,9 +1,9 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
 import { MediaInput } from "@components/WxMediaInput";
 import WxSwitch from "@components/WxSwitch";
@@ -85,7 +85,7 @@ const AddSliderImage = ({
 							{!!watch("hasButton") && (
 								<>
 									<div className="col-md-12">
-										<WxInput
+										<TextInput
 											label="Button Text"
 											isRequired
 											registerProperty={{
@@ -99,7 +99,7 @@ const AddSliderImage = ({
 									</div>
 
 									<div className="col-md-12">
-										<WxInput
+										<TextInput
 											label="Button Url"
 											isRequired
 											registerProperty={{
@@ -115,13 +115,13 @@ const AddSliderImage = ({
 							)}
 
 							<div className="col-md-12">
-								<WxInput
+								<TextInput
 									label="Title"
 									registerProperty={{ ...register("title") }}
 								/>
 							</div>
 							<div className="col-md-12">
-								<WxInput
+								<TextInput
 									label="Subtitle"
 									registerProperty={{ ...register("subTitle") }}
 								/>

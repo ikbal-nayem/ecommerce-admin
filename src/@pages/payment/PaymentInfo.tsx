@@ -1,6 +1,6 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
+import WxIcon from "@components/Icon";
 import { SETTINGS_BILLING } from "routes/path-name.route";
 import { AuthService } from "services/api/Auth.service";
 import { InvoiceService } from "services/api/Invoice.service";

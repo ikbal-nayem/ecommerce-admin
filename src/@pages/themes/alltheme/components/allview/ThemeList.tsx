@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import {
   ITheme,

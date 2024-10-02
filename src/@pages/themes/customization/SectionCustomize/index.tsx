@@ -1,7 +1,7 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxTextarea from "@components/WxTextarea";
 import { themeConfig$ } from "@rxjs/theme-config.rx";
 import { useEffect, useState } from "react";
@@ -55,7 +55,7 @@ const SectionCustomize = () => {
                     {section?.template?.[sec]?.inputType === "textarea" ? (
                       <WxTextarea label={section?.template?.[sec]?.label} />
                     ) : (
-                      <WxInput
+                      <TextInput
                         label={section?.template?.[sec]?.label}
                         type={section?.template?.[sec]?.inputType}
                       />

@@ -1,11 +1,11 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxList from "@components/WxList";
 import WxListItem from "@components/WxList/WxListItem";
 import { GroupService } from "services/api/Group.service";
@@ -134,7 +134,7 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
           <form noValidate onSubmit={handleSubmit(handleSave)}>
             <WxDrawerBody>
               {isEditorOpen ? (
-                <WxInput
+                <TextInput
                   type="text"
                   label="Group Name"
                   placeholder="Name"
@@ -145,7 +145,7 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
                 />
               ) : (
                 <>
-                  <WxInput
+                  <TextInput
                     type="search"
                     startIcon={<WxIcon icon="search" />}
                     placeholder="Search Group"

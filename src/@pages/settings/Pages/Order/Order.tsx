@@ -2,7 +2,7 @@ import WxMainMd from "@components/MainContentLayout/WxMainMd";
 import WxCheckbox from "@components/WxCheckbox";
 import { WxFormFooter, WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { IOrderSettingsResponse } from "@interfaces/order.interface";
 import { SETTINGS } from "routes/path-name.route";
 import { OrderSettingService } from "services/api/settings/Order.service";
@@ -187,7 +187,7 @@ const Order = () => {
                     </p>
                     {orderStatus?.isEditable && orderStatus?.isChecked ? (
                       <div className="mt-3">
-                        <WxInput
+                        <TextInput
                           value={
                             orderStatus?.dayCount ? orderStatus?.dayCount : ""
                           }

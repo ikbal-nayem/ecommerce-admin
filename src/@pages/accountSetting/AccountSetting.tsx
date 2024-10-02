@@ -1,7 +1,7 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import { ENV } from "config/ENV.config";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { AccountSettingService } from "services/api/AccountSetting.service";
@@ -506,28 +506,28 @@ const AccountSetting = () => {
                       ) : null}
                     </div>
                   </div>
-                  <WxInput
+                  <TextInput
                     className="col-sm-6"
                     label="First Name"
                     registerProperty={{
                       ...register("firstName"),
                     }}
                   />
-                  <WxInput
+                  <TextInput
                     className="col-sm-6"
                     label="Last Name"
                     registerProperty={{
                       ...register("lastName"),
                     }}
                   />
-                  <WxInput
+                  <TextInput
                     className="col-sm-6"
                     label="Email"
                     registerProperty={{
                       ...register("email"),
                     }}
                   />
-                  <WxInput
+                  <TextInput
                     className="col-sm-6"
                     label="Phone Number"
                     registerProperty={{
@@ -686,7 +686,7 @@ const AccountSetting = () => {
             {addressFlag ? (
               <div className="row">
                 <div className="col-md-12 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     registerProperty={{
                       ...addressRegister("title", { required: true }),
                     }}
@@ -696,7 +696,7 @@ const AccountSetting = () => {
                   />
                 </div>
                 <div className="col-md-12 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Address Details"
                     noMargin
                     registerProperty={{
@@ -709,7 +709,7 @@ const AccountSetting = () => {
                   />
                 </div>
                 <div className="col-md-12 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Appartment,  suits, etc"
                     noMargin
                     registerProperty={{ ...addressRegister("addressLine2") }}
@@ -746,7 +746,7 @@ const AccountSetting = () => {
                   />
                 </div>
                 <div className="col-md-4 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     registerProperty={{
                       ...addressRegister("postCode"),
                     }}
@@ -758,7 +758,7 @@ const AccountSetting = () => {
                   />
                 </div>
                 <div className="col-md-12 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     registerProperty={{
                       ...addressRegister("country"),
                     }}
@@ -769,7 +769,7 @@ const AccountSetting = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Email Address"
                     type="email"
                     registerProperty={{
@@ -784,7 +784,7 @@ const AccountSetting = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Phone Number."
                     registerProperty={{
                       ...addressRegister("phone", {
@@ -916,7 +916,7 @@ const AccountSetting = () => {
                 <Preloader />
               ) : (
                 <div>
-                  <WxInput
+                  <TextInput
                     label="Current Password"
                     type="password"
                     // helpText={
@@ -930,7 +930,7 @@ const AccountSetting = () => {
                     errorMessage={passErrors.old_password?.message}
                     color={passErrors.old_password ? "danger" : "secondary"}
                   />
-                  <WxInput
+                  <TextInput
                     label="New Password"
                     type="password"
                     registerProperty={{
@@ -939,7 +939,7 @@ const AccountSetting = () => {
                     errorMessage={passErrors.new_password?.message}
                     color={passErrors.new_password ? "danger" : "secondary"}
                   />
-                  <WxInput
+                  <TextInput
                     label="Confirm New Password"
                     type="password"
                     registerProperty={{

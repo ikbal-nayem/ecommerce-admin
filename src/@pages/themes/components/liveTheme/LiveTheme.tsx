@@ -1,9 +1,9 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IThemeInstalled } from "@interfaces/themeCustomization.interface";
 import "./livetheme.scss";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 import { imageURLGenerate } from "utils/utils";
 import { THEME_CUSTOMIZATION_SLIDER } from "routes/path-name.route";
 

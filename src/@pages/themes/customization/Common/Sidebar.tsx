@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import {
 	THEME_CUSTOMIZATION_GENERAL,
 	THEME_CUSTOMIZATION_HOMEPAGE,

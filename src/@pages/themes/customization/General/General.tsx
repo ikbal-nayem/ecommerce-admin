@@ -1,7 +1,7 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
 import { MediaInput } from "@components/WxMediaInput";
 import { IFilePayload } from "@interfaces/common.interface";
@@ -53,7 +53,7 @@ export default function CustomizationGeneral() {
 				<div className="card p-4">
 					<div className="row">
 						<div className="col-md-6">
-							<WxInput
+							<TextInput
 								label="Site Title"
 								isAutoFocus
 								registerProperty={{

@@ -1,4 +1,4 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { ButtonLoader } from "services/utils/preloader.service";
 
 type IFormFooterProps = {

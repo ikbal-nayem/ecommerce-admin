@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
 import WxModalHeader from "@components/WxModal/WxModalHeader";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { OrderService } from "services/api/Order.service";
 import { ToastService } from "services/utils/toastr.service";
 
@@ -57,7 +57,7 @@ export const EditNotes = ({
 				/>
 				<form onSubmit={handleSubmit} noValidate>
 					<WxModalBody>
-						<WxInput
+						<TextInput
 							isRequired
 							label="Order Notes"
 							isAutoFocus

@@ -1,8 +1,8 @@
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 import TableLoader from "@components/TableLoader/TableLoader";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import { IRequestMeta } from "@interfaces/common.interface";
@@ -92,7 +92,7 @@ const Inventory = () => {
         <div className="card mt-3">
           <div className="row p-4">
             <div className="col-md-12 col-sm-12">
-              <WxInput
+              <TextInput
                 className="mb-0"
                 type="search"
                 placeholder="Search by products, SKU"

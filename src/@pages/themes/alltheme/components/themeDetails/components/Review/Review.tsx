@@ -1,7 +1,7 @@
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 import WxProgressBar from "@components/RatingProgressBar";
-import WxButton from "@components/WxButton";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxButton from "@components/Button";
+import WxIcon from "@components/Icon";
 import { IReview } from "@interfaces/app.interface";
 import { ThemeService } from "services/api/onlineStore/themes/Theme.service";
 import Preloader from "services/utils/preloader.service";

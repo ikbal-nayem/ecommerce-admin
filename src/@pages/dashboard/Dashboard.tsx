@@ -1,9 +1,9 @@
 import DateInput from '@components/DatePicker/DateInput';
-import WxMainLg from '@components/MainContentLayout/WxMainLg';
-import WxButton from '@components/WxButton';
+import WxMainLg from '@components/MainContentLayout/MainLg';
+import WxButton from '@components/Button';
 import WxDropdown from '@components/WxDropdown/WxDropdown';
-import WxIcon from '@components/WxIcon/WxIcon';
-import WxInput from '@components/WxInput';
+import WxIcon from '@components/Icon';
+import TextInput from '@components/TextInput';
 import NotifyListSkelton from '@components/WxSkelton/Dashboard/NotifyListSkelton';
 import SummerySkelton from '@components/WxSkelton/Dashboard/SummerySkelton';
 import { MASTER_META_KEY } from 'config/constants';
@@ -56,7 +56,7 @@ const Dashboard = () => {
 						<div className='card p-3'>
 							<div className='row position-relative'>
 								<div className='col-lg-4 col-md-4 col-sm-5'>
-									<WxInput
+									<TextInput
 										onClick={() => setMenu(!menu)}
 										className='wx__data_input'
 										label='Select Date Range'

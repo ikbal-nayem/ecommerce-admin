@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import { WxFormFooter, WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import { AUDIENCES } from "routes/path-name.route";

@@ -1,9 +1,9 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
 import WxSwitch from "@components/WxSwitch";
 import { IFilePayload } from "@interfaces/common.interface";
@@ -197,7 +197,7 @@ const SiteFooter = () => {
 					</div>
 					<div className="row mt-4">
 						<div className="col-md-6">
-							<WxInput
+							<TextInput
 								label="Copyright Information"
 								registerProperty={{
 									...register("copyright"),

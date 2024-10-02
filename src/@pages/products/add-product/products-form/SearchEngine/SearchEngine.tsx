@@ -1,13 +1,13 @@
 import "./SearchEngine.scss";
 import React, { useEffect, useState } from "react";
 import WxHr from "@components/WxHr";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxTextarea from "@components/WxTextarea";
 import { useFormContext } from "react-hook-form";
 import makeSlug from "utils/make-slug";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import useDebounce from "utils/debouncer";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 
 const SearchEngine = () => {
 	const [editSEO, setEditSEO] = useState(false);
@@ -39,7 +39,7 @@ const SearchEngine = () => {
 			{editSEO ? (
 				<>
 					<WxHr />
-					<WxInput
+					<TextInput
 						label={
 							<label className="d-flex align-items-center">
 								Page Title &nbsp;
@@ -69,7 +69,7 @@ const SearchEngine = () => {
 						helpText="0 out of 320 charecters used"
 						registerProperty={{ ...register("seo.metaDescription") }}
 					/>
-					<WxInput
+					<TextInput
 						noMargin
 						label={
 							<label className="d-flex align-items-center">

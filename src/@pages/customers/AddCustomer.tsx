@@ -1,6 +1,6 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Select";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxFormContainer from "@components/WxFormLayout/WxFormContainer";
 import WxFormFooter from "@components/WxFormLayout/WxFormFooter";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
@@ -174,7 +174,7 @@ export default function AddCustomer() {
 								</div>
 								<WxHr />
 
-								{/* <WxInput
+								{/* <TextInput
                 label="Customer Group"
                 labelRight={
                   <span

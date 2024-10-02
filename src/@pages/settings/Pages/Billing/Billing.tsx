@@ -1,5 +1,5 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import BillingTableSkelton from "@components/WxSkelton/Setting/Billing/BillingTableSkelton";

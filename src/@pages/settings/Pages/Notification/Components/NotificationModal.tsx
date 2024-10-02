@@ -1,5 +1,5 @@
-import WxButton from "@components/WxButton";
-import WxInput from "@components/WxInput";
+import WxButton from "@components/Button";
+import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
@@ -91,7 +91,7 @@ const NotificationModal = ({
 				<WxModalBody>
 					<div className="row">
 						<div className="col-md-12">
-							<WxInput
+							<TextInput
 								label={data?.inputLabel}
 								isRequired
 								isAutoFocus

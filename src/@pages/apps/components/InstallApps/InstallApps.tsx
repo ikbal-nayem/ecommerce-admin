@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { IInstalledApp } from "@interfaces/app.interface";

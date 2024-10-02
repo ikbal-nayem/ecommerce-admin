@@ -1,10 +1,10 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import AddressNcontactSkelton from "@components/WxSkelton/Setting/General/AddressNcontactSkelton";
 import BasicInfoSkelton from "@components/WxSkelton/Setting/General/BasicInfoSkelton";
 import { SETTINGS } from "routes/path-name.route";
@@ -214,7 +214,7 @@ const General = () => {
             {basicInfoFlag ? (
               <div className="row">
                 <div className="col-md-6 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Store name"
                     noMargin
                     registerProperty={{
@@ -227,7 +227,7 @@ const General = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Legal Name Of Company"
                     noMargin
                     registerProperty={{ ...register("legalName") }}
@@ -303,7 +303,7 @@ const General = () => {
             {addressFlag ? (
               <div className="row">
                 <div className="col-md-12 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     registerProperty={{
                       ...addressRegister("country", { required: false }),
                     }}
@@ -314,7 +314,7 @@ const General = () => {
                   />
                 </div>
                 <div className="col-md-12 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     isRequired
                     label="Address"
                     noMargin
@@ -328,7 +328,7 @@ const General = () => {
                   />
                 </div>
                 <div className="col-md-12 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Appartment,  suits, etc"
                     noMargin
                     registerProperty={{ ...addressRegister("addressLine2") }}
@@ -380,7 +380,7 @@ const General = () => {
                   />
                 </div>
                 <div className="col-md-4 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     registerProperty={{
                       ...addressRegister("zip", { required: true }),
                     }}
@@ -392,14 +392,14 @@ const General = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Email Address"
                     type="email"
                     registerProperty={{ ...addressRegister("email") }}
                   />
                 </div>
                 <div className="col-md-6 col-sm-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Phone Number."
                     registerProperty={{ ...addressRegister("phone") }}
                   />

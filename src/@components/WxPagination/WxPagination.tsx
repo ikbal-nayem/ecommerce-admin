@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { IRequestMeta } from "@interfaces/common.interface";
 import { memo, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";

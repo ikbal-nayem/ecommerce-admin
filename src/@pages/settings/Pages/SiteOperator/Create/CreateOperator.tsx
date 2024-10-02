@@ -1,10 +1,10 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { SETTINGS_SITE_OPERATOR } from "routes/path-name.route";
 import { AdminService } from "services/api/admin/Admin.service";
@@ -71,7 +71,7 @@ const SiteOperator = () => {
 						<div className="card p-4">
 							<div className="row">
 								<div className="col-md-12 col-sm-12">
-									<WxInput
+									<TextInput
 										isRequired
 										noMargin
 										label="Email Address or Phone Number"
@@ -85,7 +85,7 @@ const SiteOperator = () => {
 									/>
 								</div>
 								<div className="col-md-12 col-sm-12 mt-3">
-									<WxInput
+									<TextInput
 										label="Operator Name"
 										isRequired
 										noMargin
@@ -105,7 +105,7 @@ const SiteOperator = () => {
 									Add User Password
 								</h5>
 								<div className="col-md-6 col-sm-12 mt-3">
-									<WxInput
+									<TextInput
 										isRequired
 										noMargin
 										label="Password"
@@ -118,7 +118,7 @@ const SiteOperator = () => {
 									/>
 								</div>
 								<div className="col-md-6 col-sm-12 mt-3">
-									<WxInput
+									<TextInput
 										isRequired
 										noMargin
 										label="Confirm Password"

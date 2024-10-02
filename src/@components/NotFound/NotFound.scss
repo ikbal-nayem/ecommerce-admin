@@ -13,9 +13,17 @@
 		text-decoration: none;
 	}
 	img {
-		width: 40%;
+		width: 25%;
 		object-fit: contain;
     margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.wx__not_found_component {
+		img {
+			width: 50%;
+		}
 	}
 }
 

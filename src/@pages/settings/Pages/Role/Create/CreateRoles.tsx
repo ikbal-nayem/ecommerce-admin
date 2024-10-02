@@ -1,6 +1,6 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxTextarea from "@components/WxTextarea";
 import { SETTINGS_ROLES } from "routes/path-name.route";
 import { AdminService } from "services/api/admin/Admin.service";
@@ -9,7 +9,7 @@ import { ToastService } from "services/utils/toastr.service";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 
 const CreateUserRoles = () => {
   const [saving, setSaving] = useState<boolean>(false);
@@ -65,7 +65,7 @@ const CreateUserRoles = () => {
         <div className="row w-100">
           <div className="col-lg-8 col-md-12 col-sm-12 mt-3">
             <div className="card p-4">
-              <WxInput
+              <TextInput
                 isRequired
                 label="Role Name"
                 isAutoFocus

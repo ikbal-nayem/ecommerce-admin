@@ -1,8 +1,8 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { SETTINGS_NOTIFICATION } from "routes/path-name.route";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -72,7 +72,7 @@ const OrderConfirmation = () => {
             <div className="card p-4 mt-4">
               <div className="row">
                 <div className="col-md-6 col-sm-12">
-                  <WxInput
+                  <TextInput
                     label="Mask name"
                     isRequired
                     type="text"
@@ -82,7 +82,7 @@ const OrderConfirmation = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12">
-                  <WxInput
+                  <TextInput
                     label="Non-mask name"
                     isRequired
                     type="text"
@@ -92,7 +92,7 @@ const OrderConfirmation = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12">
-                  <WxInput
+                  <TextInput
                     label="Username"
                     isRequired
                     type="text"
@@ -102,7 +102,7 @@ const OrderConfirmation = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12">
-                  <WxInput
+                  <TextInput
                     label="Password"
                     isRequired
                     type="password"
@@ -112,7 +112,7 @@ const OrderConfirmation = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12">
-                  <WxInput
+                  <TextInput
                     label="API Username"
                     isRequired
                     type="text"
@@ -122,7 +122,7 @@ const OrderConfirmation = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12">
-                  <WxInput
+                  <TextInput
                     label="API Token/Password"
                     isRequired
                     type="text"

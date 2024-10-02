@@ -1,5 +1,5 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxIcon from "@components/Icon";
 import {
 	SETTINGS_BILLING,
 	SETTINGS_CHECKOUT,

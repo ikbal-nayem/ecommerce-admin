@@ -1,6 +1,6 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxNotFound from "@components/NotFound/NotFound";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import { IRequestMeta } from "@interfaces/common.interface";

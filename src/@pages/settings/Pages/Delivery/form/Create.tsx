@@ -1,10 +1,10 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { IDeliveryZoneItem } from "@interfaces/Settings.interface";
 import { DeliverySettingService } from "services/api/settings/Delivery.service";
@@ -63,7 +63,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 					<WxDrawerBody>
 						<div className="row">
 							<div className="col-md-12 col-sm-12">
-								<WxInput
+								<TextInput
 									isRequired
 									label="Delivery Zone Name"
 									registerProperty={{ ...register("name", { required: true }) }}
@@ -72,7 +72,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 								/>
 							</div>
 							<div className="col-md-12 col-sm-12">
-								<WxInput
+								<TextInput
 									label="Delivery Amount"
 									isRequired
 									type="number"
@@ -112,7 +112,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 							</div>
 							{watch("hasAdvanceCharge") ? (
 								<div className="col-md-12 col-sm-12 mt-3">
-									<WxInput
+									<TextInput
 										isRequired
 										label="Set Prebooking Amount"
 										noMargin

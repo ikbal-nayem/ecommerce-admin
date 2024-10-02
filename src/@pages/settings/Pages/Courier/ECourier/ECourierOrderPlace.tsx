@@ -1,10 +1,10 @@
 import DateInput from "@components/DatePicker/DateInput";
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormContainer, WxFormHeader } from "@components/WxFormLayout";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ORDER_DETAILS } from "routes/path-name.route";
 import { ECourierService } from "services/api/courier/ECourier.service";
@@ -199,7 +199,7 @@ const ECourierOrderPlace = () => {
               <div className="card p-4 mb-3">
                 <div className="row">
                   <div className="col-lg-12 col-md-12 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Customer Address"
                       registerProperty={{
                         ...register("recipient_address"),
@@ -372,7 +372,7 @@ const ECourierOrderPlace = () => {
                   </div>
 
                   <div className="col-lg-12 col-md-12 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Order Note"
                       registerProperty={{
                         ...register("comment"),

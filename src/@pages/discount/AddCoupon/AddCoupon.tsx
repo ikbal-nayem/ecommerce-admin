@@ -1,5 +1,5 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
 import {
   WxFormContainer,
   WxFormFooter,

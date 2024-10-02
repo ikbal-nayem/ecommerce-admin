@@ -1,5 +1,5 @@
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import { MediaInput } from "@components/WxMediaInput";
 import WxRadio from "@components/WxRadio/WxRadio";
 import WxTextarea from "@components/WxTextarea";
@@ -266,7 +266,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                   )
                 ) : null}
                 <div className="col-md-12 col-lg-12 mt-2">
-                  <WxInput
+                  <TextInput
                     label="Audience Title"
                     isRequired
                     placeholder="Enter audience title here"

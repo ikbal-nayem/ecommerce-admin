@@ -1,9 +1,9 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
 import WXEditor from "@components/WxEditor/WxEditor";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import WxTabs from "@components/WxTabs/WxTabs";
 import { SETTINGS_NOTIFICATION } from "routes/path-name.route";
@@ -64,7 +64,7 @@ const OrderConfirmation = () => {
 									/>
 									{activeTab === 1 ? (
 										<div className="mt-3">
-											<WxInput
+											<TextInput
 												label="SMS Subject"
 												isRequired
 												type="text"
@@ -81,7 +81,7 @@ const OrderConfirmation = () => {
 										</div>
 									) : (
 										<div className="mt-3">
-											<WxInput
+											<TextInput
 												label="Email Subject"
 												isRequired
 												type="text"

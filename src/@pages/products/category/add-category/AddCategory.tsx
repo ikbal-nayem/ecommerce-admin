@@ -1,11 +1,11 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxEditor from "@components/WxEditor/WxEditor";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
 import MediaInput from "@components/WxMediaInput/MediaInput";
 import WxSwitch from "@components/WxSwitch";
@@ -166,7 +166,7 @@ const AddCategory = ({
 				/>
 				<form onSubmit={handleSubmit(onSubmit)} noValidate>
 					<WxDrawerBody>
-						<WxInput
+						<TextInput
 							label="Category name"
 							isRequired
 							isAutoFocus
@@ -176,7 +176,7 @@ const AddCategory = ({
 							color={errors?.name ? "danger" : "secondary"}
 							errorMessage={errors?.name && "Name is required!"}
 						/>
-						<WxInput
+						<TextInput
 							label="Slug"
 							isRequired
 							isDisabled={isEditForm}

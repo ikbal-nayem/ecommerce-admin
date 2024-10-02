@@ -1,9 +1,9 @@
 import WxAlert from "@components/Alert/WxAlert";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxDraggableList } from "@components/WxDraggableList";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
 import WxSwitch from "@components/WxSwitch";
 import WxTag from "@components/WxTag";
@@ -120,7 +120,7 @@ const RenderOption = ({
 						drag_indicator
 					</span>
 				) : null}
-				<WxInput
+				<TextInput
 					label="Option name"
 					placeholder="For example: Color or size or meterial etc"
 					value={optionItem?.name}
@@ -160,7 +160,7 @@ const RenderOption = ({
 							>
 								drag_indicator
 							</span>
-							<WxInput
+							<TextInput
 								placeholder="Add another value"
 								defaultValue={valueItem?.name}
 								noMargin
@@ -179,7 +179,7 @@ const RenderOption = ({
 						</div>
 					)}
 				/>
-				<WxInput
+				<TextInput
 					placeholder="Add another value"
 					onChange={(e: any) => {
 						onAddNewValue(index, e.target.value);

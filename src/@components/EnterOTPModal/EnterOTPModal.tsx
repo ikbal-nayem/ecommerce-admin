@@ -1,7 +1,7 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
@@ -173,7 +173,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                 <WxHr />
                 <div>
                   <div>
-                    <WxInput
+                    <TextInput
                       label="OTP will be send in this number below"
                       placeholder="Type your phone number"
                       type="number"
@@ -213,7 +213,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                 <WxHr />
                 <div>
                   <div>
-                    <WxInput
+                    <TextInput
                       label="One Time Password"
                       placeholder="Type OTP here"
                       type="number"

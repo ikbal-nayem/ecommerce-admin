@@ -1,12 +1,12 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 import WxSelect from "@components/Select/WxSelect";
 import TableLoader from "@components/TableLoader/TableLoader";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import { STATUS_CONSTANT } from "config/constants";
@@ -204,7 +204,7 @@ export default function Customer() {
 				<div className="card">
 					<div className="row p-4 pb-0">
 						<div className="col-lg-8 col-md-6 col-sm-12">
-							<WxInput
+							<TextInput
 								type="search"
 								placeholder="Search Customer"
 								startIcon={<WxIcon icon="search" />}

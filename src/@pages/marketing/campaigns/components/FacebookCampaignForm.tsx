@@ -1,10 +1,10 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormFooter } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
 import { MediaInput } from "@components/WxMediaInput";
 import WxRadio from "@components/WxRadio/WxRadio";
@@ -95,7 +95,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
             <div className="row">
               <div className="col-md-12 col-lg-12">
                 <h6>Campaign Info</h6>
-                <WxInput
+                <TextInput
                   label="Campaign Name"
                   registerProperty={{
                     ...register("campaign_name"),
@@ -144,7 +144,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                 />
               </div>
               <div className="col-md-6 col-lg-6 col-sm-12">
-                <WxInput
+                <TextInput
                   label="Amount"
                   startIcon={<WxIcon icon="attach_money" />}
                   registerProperty={{
@@ -304,7 +304,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                     registerProperty={{ ...register("adsContentRadio") }}
                   >
                     {watch("adsContentRadio") === "3" && (
-                      <WxInput
+                      <TextInput
                         className="mt-2"
                         placeholder="Enter Post ID or link"
                         registerProperty={{ ...register("postIdOrLink") }}
@@ -314,7 +314,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                 </div>
               </div>
               <div className="col-md-12 col-lg-12 col-sm-12">
-                <WxInput
+                <TextInput
                   label="Headline"
                   placeholder="Type here Headline here"
                   isRequired
@@ -322,7 +322,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                 />
               </div>
               <div className="col-md-12 col-lg-12 col-sm-12">
-                <WxInput
+                <TextInput
                   label="Website"
                   placeholder="Type website link"
                   registerProperty={{ ...register("website") }}

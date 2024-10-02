@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
-import WxNotFound from "@components/NotFound/WxNotFound";
-import WxButton from "@components/WxButton";
+import WxNotFound from "@components/NotFound/NotFound";
+import WxButton from "@components/Button";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import { DISCOUNT_CREATE } from "routes/path-name.route";

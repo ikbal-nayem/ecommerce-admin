@@ -1,10 +1,10 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
 import WxTextarea from "@components/WxTextarea";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -156,7 +156,7 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
           <div className="card p-4 mb-3">
             <div className="row">
               <div className="col-md-12 col-lg-12">
-                <WxInput
+                <TextInput
                   label="Campaign Name"
                   registerProperty={{
                     ...register("name"),

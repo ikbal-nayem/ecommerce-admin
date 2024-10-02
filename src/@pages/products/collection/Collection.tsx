@@ -1,95 +1,92 @@
-import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxNotFound from "@components/NotFound/WxNotFound";
-import WxButton from "@components/WxButton";
-import WxPagination from "@components/WxPagination/WxPagination";
-import CollectionTBSkelton from "@components/WxSkelton/CollectionTBSkelton";
-import {
-  CollectionService,
-  ICollectionPayload,
-} from "services/api/products/Collection.services";
-import { ToastService } from "services/utils/toastr.service";
-import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
-import skeltonLoader from "utils/skeltonLoader";
-import CollectionAdd from "./collection-add/CollectionAdd";
-import CollectionTable from "./collection-table/CollectionTable";
-import "./Collection.scss";
+import Button from '@components/Button';
+import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
+import MainLg from '@components/MainContentLayout/MainLg';
+import NotFound from '@components/NotFound/NotFound';
+import WxPagination from '@components/WxPagination/WxPagination';
+import CollectionTBSkelton from '@components/WxSkelton/CollectionTBSkelton';
+import useLoader from 'hooks/useLoader';
+import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { CollectionService, ICollectionPayload } from 'services/api/products/Collection.services';
+import { ToastService } from 'services/utils/toastr.service';
+import skeltonLoader from 'utils/skeltonLoader';
+import CollectionAdd from './collection-add/CollectionAdd';
+import CollectionTable from './collection-table/CollectionTable';
+import './Collection.scss';
+
+const meta = {
+	meta: {
+		page: 0,
+		limit: 10,
+		sort: [
+			{
+				order: 'desc',
+				field: 'createdOn',
+			},
+		],
+	},
+};
 
 const Collection = () => {
-  const [open, setOpen] = useState(false);
-  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
-  const [isEdit, setIsEdit] = useState(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [isLoader, setIsLoader] = useState<boolean>(true);
-  const [isSaving, setIsSaving] = useState<boolean>(false);
-  const [editData, setEditData] = useState<ICollectionPayload>();
-  const [collections, setCollections] = useState<ICollectionPayload[]>();
-  const [collectionMeta, setCollectionMeta] = useState<any>();
-  const deleteItem = useRef(null);
-  // pagination states
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [currentPage, setCurrentPage] = useState<number>(
-    Number(searchParams.get("page"))
-      ? Number(searchParams.get("page")) - 1
-      : null || 0
-  );
-  const [paginationLimit, setPaginationLimit] = useState(10);
+	const [open, setOpen] = useState(false);
+	const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+	const [isEdit, setIsEdit] = useState(false);
+	const [isLoading, setIsLoading] = useLoader(true);
+	const [isLoader, setIsLoader] = useState<boolean>(true);
+	const [isSaving, setIsSaving] = useState<boolean>(false);
+	const [editData, setEditData] = useState<ICollectionPayload>();
+	const [collections, setCollections] = useState<ICollectionPayload[]>();
+	const [collectionMeta, setCollectionMeta] = useState<any>();
+	const deleteItem = useRef(null);
+	// pagination states
+	const [searchParams, setSearchParams] = useSearchParams();
+	const [currentPage, setCurrentPage] = useState<number>(
+		Number(searchParams.get('page')) ? Number(searchParams.get('page')) - 1 : null || 0
+	);
+	const [paginationLimit, setPaginationLimit] = useState(10);
 
-  const handleClose = () => {
-    setOpen(false);
-    setIsEdit(false);
-    setEditData(null);
-    setIsConfirmOpen(false);
-    deleteItem.current = null;
-  };
+	const handleClose = () => {
+		setOpen(false);
+		setIsEdit(false);
+		setEditData(null);
+		setIsConfirmOpen(false);
+		deleteItem.current = null;
+	};
 
-  useEffect(() => {
-    if (currentPage || paginationLimit) getCollection();
-  }, [currentPage, paginationLimit]);
+	useEffect(() => {
+		if (currentPage || paginationLimit) getCollection();
+	}, [currentPage, paginationLimit]);
 
-  const getCollection = () => {
-    setIsLoading(true);
-    CollectionService.get({
-      meta: {
-        offset: currentPage,
-        limit: paginationLimit,
-        sort: [
-          {
-            order: "desc",
-            field: "createdOn",
-          },
-        ],
-      },
-    })
-      .then((res) => {
-        if (res.body.length) setCollections(res.body);
-        setCollectionMeta(res.meta || {});
-      })
-      .catch((err) => ToastService.error(err))
-      .finally(() => {
-        setIsLoading(false);
-        skeltonLoader(setIsLoader);
-      });
-  };
+	const getCollection = () => {
+		setIsLoading(true);
+		CollectionService.get()
+			.then((res) => {
+				setCollections(res?.data || []);
+				setCollectionMeta(res.meta || {});
+			})
+			.catch((err) => ToastService.error(err))
+			.finally(() => {
+				setIsLoading(false);
+				skeltonLoader(setIsLoader);
+			});
+	};
 
-  const getCollectionById = (id: string) => {
-    CollectionService.collectionGetById(id)
-      .then((res) => {
-        setEditData(res.body);
-      })
-      .catch((err) => ToastService.error(err));
-  };
+	const getCollectionById = (id: string) => {
+		CollectionService.collectionGetById(id)
+			.then((res) => {
+				setEditData(res.body);
+			})
+			.catch((err) => ToastService.error(err));
+	};
 
-  const handleEdit = (data: ICollectionPayload) => {
-    getCollectionById(data.id);
-    setIsEdit(true);
-    setOpen(true);
-  };
+	const handleEdit = (data: ICollectionPayload) => {
+		getCollectionById(data._id);
+		setIsEdit(true);
+		setOpen(true);
+	};
 
-  // This function will be called when user click on comfirm delete button
-  const onConfirmDelete = () => {
+	// This function will be called when user click on comfirm delete button
+	const onConfirmDelete = () => {
 		const { id } = deleteItem.current;
 		if (!id) {
 			handleClose();
@@ -101,7 +98,7 @@ const Collection = () => {
 				handleClose();
 				getCollection();
 				onConfirmClose();
-				ToastService.success("Collection deleted successfully");
+				ToastService.success('Collection deleted successfully');
 			})
 			.catch((err) => ToastService.error(err.message))
 			.finally(() => setIsSaving(false));
@@ -131,12 +128,11 @@ const Collection = () => {
 			return;
 		}
 
-		const img: any = data?.banner;
-		delete data?.banner;
-		const newData = new FormData();
-		newData.append("body", JSON.stringify(data));
-		newData.append("file", img);
-		CollectionService.create(newData)
+		const fd = new FormData();
+		Object.keys(data).map((d) => {
+			fd.append(d, data[d]);
+		});
+		CollectionService.create(fd)
 			.then((response) => {
 				ToastService.success(response.message);
 				handleClose();
@@ -148,16 +144,12 @@ const Collection = () => {
 	};
 
 	return (
-		<WxMainLg className="collection_container">
-			<div className="d-flex justify-content-between align-items-center">
-				<h4 className="text_h4 text_semibold mb-0">Collection</h4>
-				<WxButton
-					disabled={isLoader}
-					variant="fill"
-					onClick={() => setOpen(true)}
-				>
+		<MainLg className='collection_container'>
+			<div className='d-flex justify-content-between align-items-center'>
+				<h4 className='text_h4 text_semibold mb-0'>Collection</h4>
+				<Button disabled={isLoader} variant='fill' onClick={() => setOpen(true)}>
 					Add Collection
-				</WxButton>
+				</Button>
 				<CollectionAdd
 					isOpen={open}
 					handleClose={handleClose}
@@ -169,24 +161,20 @@ const Collection = () => {
 				/>
 			</div>
 			{!isLoader && !isLoading && !collections?.length ? (
-				<div className="mt-3">
-					<WxNotFound title="No collection found!" />
+				<div className='mt-3'>
+					<NotFound title='No collection found!' />
 				</div>
 			) : null}
 			{isLoader ? (
-				<div className="bg-white mt-3 rounded">
-					<CollectionTBSkelton viewBox="0 0 600 310" />
+				<div className='bg-white mt-3 rounded'>
+					<CollectionTBSkelton viewBox='0 0 600 310' />
 				</div>
 			) : (
-				<div className="collection_table_content">
-					{collections?.length && (
+				<div className='collection_table_content'>
+					{collections?.length ? (
 						<>
-							<CollectionTable
-								data={collections}
-								handleEdit={handleEdit}
-								onDelete={handleDelete}
-							/>
-							<div className="p-4">
+							<CollectionTable data={collections} handleEdit={handleEdit} onDelete={handleDelete} />
+							<div className='p-4'>
 								<WxPagination
 									meta={collectionMeta}
 									currentPage={currentPage}
@@ -196,7 +184,7 @@ const Collection = () => {
 								/>
 							</div>
 						</>
-					)}
+					) : null}
 				</div>
 			)}
 			<ConfirmationModal
@@ -206,7 +194,7 @@ const Collection = () => {
 				onConfirm={onConfirmDelete}
 				body={`Are your sure you want to delete '${deleteItem.current?.name}'? This action wont be reverseable!`}
 			/>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

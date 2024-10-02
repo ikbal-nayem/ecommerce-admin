@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import "./VendorEditor.scss";
 
 type VendorEditorProps = {
@@ -10,7 +10,7 @@ type VendorEditorProps = {
 const VendorEditor = ({ registerProps }: VendorEditorProps) => {
   return (
     <WxDrawerBody>
-      <WxInput
+      <TextInput
         type="text"
         label="Vendor Name"
         placeholder="Name"

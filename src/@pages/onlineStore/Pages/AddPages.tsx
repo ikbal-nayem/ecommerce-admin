@@ -1,9 +1,9 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
 import WXEditor from "@components/WxEditor/WxEditor";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
 import WxHr from "@components/WxHr";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { IPagesSettings } from "@interfaces/Settings.interface";
 import { ENV } from "config/ENV.config";
@@ -96,7 +96,7 @@ const AddPage = () => {
 				<div className="row">
 					<div className="col-lg-8 col-md-7 col-sm-12 ">
 						<div className="card p-3 mt-4">
-							<WxInput
+							<TextInput
 								label="Page title"
 								isRequired
 								registerProperty={{
@@ -105,7 +105,7 @@ const AddPage = () => {
 								color={errors?.title ? "danger" : "secondary"}
 								errorMessage={errors?.title && errors.title.message}
 							/>
-							<WxInput
+							<TextInput
 								label="Page url"
 								isRequired
 								registerProperty={{
@@ -135,7 +135,7 @@ const AddPage = () => {
 								)}
 								// rules={{ required: true }}
 							/>
-							{/* <WxInput
+							{/* <TextInput
 								label="Page tags"
 								isRequired
 								registerProperty={{

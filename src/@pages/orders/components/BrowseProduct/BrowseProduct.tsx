@@ -1,7 +1,7 @@
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { STATUS_CONSTANT } from "config/constants";
 import { IProductVariant } from "@interfaces/product.interface";
@@ -63,7 +63,7 @@ const BrowseProduct = ({
 					//   backIconAction={isEditorOpen ? handleEditorClose : null}
 					closeIconAction={onClose}
 				/>
-				<WxInput
+				<TextInput
 					className="mx-4"
 					type="search"
 					isAutoFocus

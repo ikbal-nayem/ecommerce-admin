@@ -1,7 +1,7 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { ThemeCustomizationService } from "services/api/settings/ThemeCustomization.service";
 import Preloader from "services/utils/preloader.service";
 import { ToastService } from "services/utils/toastr.service";
@@ -69,7 +69,7 @@ export default function CustomizationSocial() {
 				<div className="card p-4">
 					<div className="row">
 						<div className="col-md-6 mb-4">
-							<WxInput
+							<TextInput
 								label="Facebook Link"
 								type="url"
 								noMargin
@@ -82,7 +82,7 @@ export default function CustomizationSocial() {
 							/>
 						</div>
 						<div className="col-md-6 mb-4">
-							<WxInput
+							<TextInput
 								label="Instagram Link"
 								type="url"
 								noMargin
@@ -99,7 +99,7 @@ export default function CustomizationSocial() {
 							/>
 						</div>
 						<div className="col-md-6 mb-4">
-							<WxInput
+							<TextInput
 								label="Youtube Link"
 								type="url"
 								noMargin
@@ -116,7 +116,7 @@ export default function CustomizationSocial() {
 							/>
 						</div>
 						<div className="col-md-6 mb-4">
-							<WxInput
+							<TextInput
 								label="Tiktok Link"
 								type="url"
 								noMargin
@@ -133,7 +133,7 @@ export default function CustomizationSocial() {
 							/>
 						</div>
 						<div className="col-md-6 mb-4">
-							<WxInput
+							<TextInput
 								label="Linkedin Link"
 								type="url"
 								noMargin
@@ -150,7 +150,7 @@ export default function CustomizationSocial() {
 							/>
 						</div>
 						<div className="col-md-6 mb-4">
-							<WxInput
+							<TextInput
 								label="Twitter Link"
 								type="url"
 								noMargin

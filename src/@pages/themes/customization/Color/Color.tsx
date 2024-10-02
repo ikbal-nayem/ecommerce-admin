@@ -1,6 +1,6 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import TableLoader from "@components/TableLoader/TableLoader";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxColorPicker from "@components/WxColorPicker";
 import { WxFormHeader } from "@components/WxFormLayout";
 import { ThemeCustomizationService } from "services/api/settings/ThemeCustomization.service";

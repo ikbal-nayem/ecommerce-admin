@@ -1,44 +1,41 @@
-@import "webx-brighten/custom/typography.scss";
-@import "webx-brighten/partials/variables";
-@import "webx-brighten/partials/classes";
+@import '../../../assets/styles/partials/variables';
 
 .collection {
-  &_table_content {
-    
-    margin-top: 20px;
-    background-color: #fff;
-    overflow: hidden;
-  }
-  &_table {
-    width: 100%;
-    margin-bottom: 1rem;
-    background-color: transparent;
-    th,
-    td {
-      padding: 11px 15px;
-      vertical-align: middle;
-      border-top: 1px solid $neutral__300;
-    }
-    th {
-      font-weight: bold;
-      color: $neutral__900;
-    }
-    thead {
-      th {
-        font-size: 13px;
-        padding-top: 20px;
-      }
-    }
-    tbody {
-      th {
-        font-size: 14px;
-      }
-    }
-    .more {
-      width: 70px;
-    }
-    .collection_image {
-      width: 80px;
-    }
-  }
+	&_table_content {
+		margin-top: 20px;
+		background-color: #fff;
+		overflow: hidden;
+	}
+	&_table {
+		width: 100%;
+		margin-bottom: 1rem;
+		background-color: transparent;
+		th,
+		td {
+			padding: 11px 15px;
+			vertical-align: middle;
+			border-top: 1px solid $neutral__300;
+		}
+		th {
+			font-weight: bold;
+			color: $neutral__900;
+		}
+		thead {
+			th {
+				font-size: 13px;
+				padding-top: 20px;
+			}
+		}
+		tbody {
+			th {
+				font-size: 14px;
+			}
+		}
+		.more {
+			width: 70px;
+		}
+		.collection_image {
+			width: 80px;
+		}
+	}
 }

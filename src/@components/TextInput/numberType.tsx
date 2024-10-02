@@ -1,4 +1,4 @@
-import "./WxInput.scss";
+import "./TextInput.scss";
 
 type Colors = "primary" | "secondary" | "danger" | "warning" | "success";
 // type W = 25 | 50 | 75 | 100;
@@ -34,7 +34,7 @@ interface IInputProps {
   ref?: any;
 }
 
-const WxInputNumber = ({
+const TextInputNumber = ({
   color = "secondary",
   isRequired = false,
   label,
@@ -157,4 +157,4 @@ const WxInputNumber = ({
   );
 };
 
-export default WxInputNumber;
+export default TextInputNumber;

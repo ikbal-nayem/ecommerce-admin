@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { ISiteOperator } from "@interfaces/Settings.interface";
 import { useState } from "react";
 import "./SiteOperator.scss";

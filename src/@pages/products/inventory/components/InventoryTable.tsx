@@ -1,7 +1,7 @@
 import WxSelect from "@components/Select/WxSelect";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { ProductService } from "services/api/products/Product.services";
 import { LocalStorageService } from "services/utils/local-storage.service";
@@ -204,7 +204,7 @@ const InventoryTable = ({
               <td className="wx__td">
                 <div className="wx__table_cell_icon  d-flex ">
                   <div className="avaiability_input">
-                    <WxInput
+                    <TextInput
                       onChange={(e: any) => handleChanges(e, index, pd)}
                       type="number"
                       key={
@@ -237,7 +237,7 @@ const InventoryTable = ({
                             <p className="text_subtitle text_semibold d-block">
                               Adjust By
                             </p>
-                            <WxInput
+                            <TextInput
                               type="number"
                               defaultValue={pd.adjustment || "0"}
                               onChange={(e: any) =>

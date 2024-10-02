@@ -1,9 +1,9 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
 import { WxFormFooter } from "@components/WxFormLayout";
 import WxFormContainer from "@components/WxFormLayout/WxFormContainer";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
 import MediaInput from "@components/WxMediaInput/MediaInput";
 import WxTextarea from "@components/WxTextarea";
@@ -131,13 +131,13 @@ const Preferences = () => {
                   The title and meta description help define how your store
                   shows up on search engines.
                 </p>
-                <WxInput
+                <TextInput
                   label="Site title"
                   registerProperty={{
                     ...register("siteTitle"),
                   }}
                 />
-                <WxInput
+                <TextInput
                   label="Site Author"
                   registerProperty={{
                     ...register("siteAuthor"),
@@ -153,14 +153,14 @@ const Preferences = () => {
                   helpText="Max lenght 255"
                   color={errors?.siteDesc ? "danger" : "secondary"}
                 />
-                <WxInput
+                <TextInput
                   label="Site Keywords"
                   registerProperty={{
                     ...register("siteKeywords"),
                   }}
                   helpText="Use comma(,) to seperate the tags (eg: keyword1, keyword2, keyword3)"
                 />
-                <WxInput
+                <TextInput
                   label="Cart Button Text"
                   noMargin
                   registerProperty={{

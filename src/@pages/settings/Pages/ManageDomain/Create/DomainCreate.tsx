@@ -1,7 +1,7 @@
 import WxMainSm from "@components/MainContentLayout/WxMainSm";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { DOMAIN_SETUP_INSTRUCTION } from "config/constants";
 import { IDomainSettingsItem } from "@interfaces/Settings.interface";
 import { SETTINGS_DOMAIN } from "routes/path-name.route";
@@ -47,7 +47,7 @@ const DomainCreate = () => {
 				<div className="card p-4">
 					<div className="row">
 						<div className="col-md-12 col-sm-12">
-							<WxInput
+							<TextInput
 								label="Existing Domain"
 								isRequired
 								noMargin

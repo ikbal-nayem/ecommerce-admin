@@ -1,4 +1,4 @@
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 import WxAccordion from "@components/WxAccordion";
 import { AppsService } from "services/api/Apps.service";
 import Preloader from "services/utils/preloader.service";

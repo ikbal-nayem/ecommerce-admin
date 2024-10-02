@@ -1,6 +1,6 @@
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { IPortalOverview } from "@interfaces/portal.interface";
 import { PORTAL_PARTNERS } from "routes/path-name.route";
 import { ProfileService } from "services/api/settings/Profile.service";

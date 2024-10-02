@@ -1,5 +1,5 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { Controller } from "react-hook-form";
 
 interface AddressFormProps {
@@ -22,7 +22,7 @@ export const AddressForm = ({
 	return (
 		<div className="row">
 			<div className="col-md-12">
-				<WxInput
+				<TextInput
 					registerProperty={{
 						...register("title", { required: false }),
 					}}
@@ -30,7 +30,7 @@ export const AddressForm = ({
 				/>
 			</div>
 			<div className="col-md-12">
-				<WxInput
+				<TextInput
 					registerProperty={{
 						...register("addressLine1", {
 							required: true,
@@ -42,7 +42,7 @@ export const AddressForm = ({
 				/>
 			</div>
 			<div className="col-md-12">
-				<WxInput
+				<TextInput
 					registerProperty={{
 						...register("addressLine2", {
 							required: false,
@@ -52,7 +52,7 @@ export const AddressForm = ({
 				/>
 			</div>
 			<div className="col-md-6">
-				<WxInput
+				<TextInput
 					label="Country"
 					defaultValue="Bangladesh"
 					isDisabled
@@ -118,7 +118,7 @@ export const AddressForm = ({
 				)}
 			</div>
 			<div className="col-md-6">
-				<WxInput
+				<TextInput
 					registerProperty={{
 						...register("postCode", { required: true }),
 					}}
@@ -127,7 +127,7 @@ export const AddressForm = ({
 			</div>
 
 			<div className="col-md-6">
-				<WxInput
+				<TextInput
 					registerProperty={{
 						...register("phone", {
 							required: false,
@@ -137,7 +137,7 @@ export const AddressForm = ({
 				/>
 			</div>
 			<div className="col-md-6">
-				<WxInput
+				<TextInput
 					registerProperty={{
 						...register("email", {
 							required: false,

@@ -1,11 +1,11 @@
 import "./Configure.scss";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { MASTER_META_KEY } from "config/constants";
 import { IPaymentConfigured } from "@interfaces/common.interface";
@@ -65,7 +65,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 							MASTER_META_KEY.PAYMENT_GATEWAY_TYPE_COD &&
 						!editItem?.isOffline ? (
 							<>
-								<WxInput
+								<TextInput
 									isRequired
 									label="Secret Key"
 									registerProperty={{
@@ -76,7 +76,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 									color={errors.secretKey ? "danger" : "secondary"}
 									errorMessage={errors?.secretKey?.message}
 								/>
-								<WxInput
+								<TextInput
 									isRequired
 									label="Password"
 									type="password"
@@ -115,7 +115,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 							<>
 								<div className="row">
 									<div className="col-sm-6 col-12">
-										<WxInput
+										<TextInput
 											isRequired
 											label="Account number"
 											placeholder="01XX-XXX-XXXX"

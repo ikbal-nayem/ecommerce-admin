@@ -1,9 +1,9 @@
 import { SESSION_STORAGE_KEY } from '@constants/common.constant';
 import { ROUTES } from '@constants/route.constant';
-import { LocalStorageService } from 'services/utils/local-storage.service';
-import { SessionStorageService } from 'services/utils/session-storage.service';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { LocalStorageService } from 'services/utils/local-storage.service';
+import { SessionStorageService } from 'services/utils/session-storage.service';
 import { ENV } from './ENV.config';
 
 const axiosIns = axios.create({
@@ -13,9 +13,9 @@ const axiosIns = axios.create({
 	},
 });
 
-const setAuthHeader = () => {
-	const authInfo = LocalStorageService.get(SESSION_STORAGE_KEY.ACCESS_TOKEN) || null;
-	if (authInfo) axiosIns.defaults.headers.common['Authorization'] = 'Bearer ' + authInfo?.accessToken;
+export const setAuthHeader = () => {
+	const accessToken = LocalStorageService.get(SESSION_STORAGE_KEY.ACCESS_TOKEN) || null;
+	if (accessToken) axiosIns.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
 };
 
 axiosIns.interceptors.request.use(
@@ -38,13 +38,7 @@ axiosIns.interceptors.request.use(
 
 axiosIns.interceptors.response.use(
 	(res: any) => {
-		if (res?.status === 200) return { ...res.data };
-
-		return Promise.reject({
-			body: res?.data?.body,
-			status: res?.data?.status,
-			message: res?.data?.message,
-		});
+		return { ...res.data };
 	},
 	(error) => {
 		if (error?.response) {

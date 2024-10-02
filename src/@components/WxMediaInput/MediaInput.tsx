@@ -1,5 +1,5 @@
 import WxAlert from "@components/Alert/WxAlert";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { IFilePayload } from "@interfaces/common.interface";
 import { SETTINGS_PRICING_PLAN } from "routes/path-name.route";
 import Preloader from "services/utils/preloader.service";

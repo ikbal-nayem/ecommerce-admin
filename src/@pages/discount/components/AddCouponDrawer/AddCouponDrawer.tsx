@@ -1,11 +1,11 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { CustomerService } from "services/api/Customer.service";
 import { GroupService } from "services/api/Group.service";
@@ -399,7 +399,7 @@ const AddCouponDrawer = forwardRef(
           <form noValidate>
             <WxDrawerBody>
               <div id="testDiv">
-                <WxInput
+                <TextInput
                   onChange={(e: any) => {
                     setSearchQuery(e.target.value);
                     e.target.value.trim().length && setLoader(true);

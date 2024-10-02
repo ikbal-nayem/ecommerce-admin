@@ -1,11 +1,11 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxNotFound from "@components/NotFound/NotFound";
 import SelectOption from "@components/Select/Select";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import CustomerAdresSkelton from "@components/WxSkelton/Customer/CustomerAdresSkelton";
 import CustomerContactDtls from "@components/WxSkelton/Customer/CustomerContactDtls";
 import CustomerDtlInfoSkelton from "@components/WxSkelton/Customer/CustomerDtlInfoSkelton";

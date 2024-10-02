@@ -2,7 +2,7 @@ import DateInput from "@components/DatePicker/DateInput";
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
 import SelectOption from "@components/Select/Select";
 import WxSelect from "@components/Select/WxSelect";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { useEffect, useState } from "react";
 interface CustomerFormProps {
@@ -46,7 +46,7 @@ export const CustomerFrom = ({
 			<div className="card p-4 mb-3">
 				<div className="row">
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							label="First Name"
 							className=""
 							registerProperty={{
@@ -60,7 +60,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							label="Last Name"
 							className=""
 							registerProperty={{
@@ -82,7 +82,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							label="Email"
 							type="email"
 							registerProperty={{
@@ -145,7 +145,7 @@ export const CustomerFrom = ({
 				<h5 className="mb-3">Customer Address</h5>
 				<div className="row">
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							registerProperty={{
 								...register("address.title", { required: false }),
 							}}
@@ -154,7 +154,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							isRequired
 							registerProperty={{
 								...register("address.addressLine1", {
@@ -170,7 +170,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							isRequired
 							registerProperty={{
 								...register("address.addressLine2", {
@@ -186,7 +186,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							registerProperty={{
 								...register("address.country", { required: false }),
 							}}
@@ -235,7 +235,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							isRequired
 							registerProperty={{
 								...register("address.postCode", { required: true }),
@@ -249,7 +249,7 @@ export const CustomerFrom = ({
 					</div>
 
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							registerProperty={{
 								...register("address.phone", {
 									required: false,
@@ -260,7 +260,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxInput
+						<TextInput
 							registerProperty={{
 								...register("address.email", {
 									required: false,

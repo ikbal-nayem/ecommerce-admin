@@ -3,13 +3,13 @@ import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationMod
 import Invoice from '@components/Invoice/Invoice';
 import InvoiceTable from '@components/Invoice/InvoiceTable';
 import WxMainFull from '@components/MainContentLayout/WxMainFull';
-import WxNotFound from '@components/NotFound/WxNotFound';
+import WxNotFound from '@components/NotFound/NotFound';
 import WxSelect from '@components/Select/WxSelect';
 import TableLoader from '@components/TableLoader/TableLoader';
-import WxButton from '@components/WxButton';
+import WxButton from '@components/Button';
 import { WxFormHeader } from '@components/WxFormLayout';
-import WxIcon from '@components/WxIcon/WxIcon';
-import WxInput from '@components/WxInput';
+import WxIcon from '@components/Icon';
+import TextInput from '@components/TextInput';
 import WxPagination from '@components/WxPagination/WxPagination';
 import ProductTableSkelton from '@components/WxSkelton/ProductTableSkelton';
 import Tabs from '@components/WxTabs/WxTabs';
@@ -212,7 +212,7 @@ const Orders = () => {
 						</div>
 						<div className='row p-3 pb-0'>
 							<div className='col-lg-8 col-md-6 col-sm-12 mb-3'>
-								<WxInput
+								<TextInput
 									type='search'
 									placeholder='Search orders'
 									noMargin

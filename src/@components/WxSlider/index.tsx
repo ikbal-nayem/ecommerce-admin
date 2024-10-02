@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import React, { useEffect, useState } from "react";
 import { imageURLGenerate } from "utils/utils";
 import "./WxSlider.scss";

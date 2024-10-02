@@ -1,8 +1,8 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormContainer, WxFormHeader } from "@components/WxFormLayout";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ORDER_DETAILS } from "routes/path-name.route";
 import { RedXService } from "services/api/courier/RedX.sevice";
@@ -134,7 +134,7 @@ const RedXOrderPlace = () => {
               <div className="card p-4 mb-3">
                 <div className="row">
                   <div className="col-lg-6 col-md-6 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Customer Name"
                       registerProperty={{
                         ...register("customerName"),
@@ -146,7 +146,7 @@ const RedXOrderPlace = () => {
                     />
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Customer Phone"
                       registerProperty={{
                         ...register("customerPhone"),
@@ -182,7 +182,7 @@ const RedXOrderPlace = () => {
                     />
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Cash collection amount"
                       registerProperty={{
                         ...register("cashCollectionAmount"),
@@ -198,7 +198,7 @@ const RedXOrderPlace = () => {
                 </div>
                 <div className="row">
                   <div className="col-lg-12 col-md-12 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Customer Address"
                       registerProperty={{
                         ...register("address"),
@@ -212,7 +212,7 @@ const RedXOrderPlace = () => {
                 </div>
                 <div className="row">
                   <div className="col-lg-6 col-md-6 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Parcel Weight"
                       placeholder="write here"
                       isRequired
@@ -225,7 +225,7 @@ const RedXOrderPlace = () => {
                     />
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Value"
                       placeholder="write here"
                       isRequired
@@ -240,7 +240,7 @@ const RedXOrderPlace = () => {
                 </div>
                 <div className="row">
                   <div className="col-lg-12 col-md-12 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Comment / Instruction"
                       registerProperty={{
                         ...register("instruction"),

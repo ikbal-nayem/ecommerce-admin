@@ -1,10 +1,10 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import {
   CollectionService,
   ICollectionPayload,
@@ -14,7 +14,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useDebounce from "utils/debouncer";
 
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { ToastService } from "services/utils/toastr.service";
 import "./SelectCollections.scss";
 
@@ -76,7 +76,7 @@ const SelectCollection = ({
 					/>
 
 					<WxDrawerBody>
-						<WxInput
+						<TextInput
 							type="search"
 							startIcon={<WxIcon icon="search" />}
 							placeholder="Search categories"

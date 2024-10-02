@@ -1,5 +1,5 @@
 import WxHr from "@components/WxHr";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { ReactComponent as TakaSign } from "assets/svg/taka.svg";
 import { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -36,7 +36,7 @@ const ProductPricing = () => {
 			<h6 className="text_semibold text_h6 mb-0">Pricing</h6>
 			<div className="row">
 				<div className="col-md-6 mt-3">
-					<WxInput
+					<TextInput
 						label="Selling price"
 						endIcon={<TakaSign />}
 						min={0}
@@ -53,7 +53,7 @@ const ProductPricing = () => {
 					/>
 				</div>
 				<div className="col-md-6 mt-3">
-					<WxInput
+					<TextInput
 						label="Cost per item"
 						endIcon={<TakaSign />}
 						min={0}
@@ -70,7 +70,7 @@ const ProductPricing = () => {
 				</div>
 				<WxHr />
 				<div className="col-md-6">
-					<WxInput
+					<TextInput
 						label="Compare at price"
 						endIcon={<TakaSign />}
 						noMargin

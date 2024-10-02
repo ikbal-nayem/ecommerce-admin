@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
-import WxNotFound from "@components/NotFound/WxNotFound";
-import WxButton from "@components/WxButton";
+import WxNotFound from "@components/NotFound/NotFound";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import { IMenuset } from "@interfaces/OnlineStore.interface";

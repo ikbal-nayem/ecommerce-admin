@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { createRef, useRef } from "react";
 import { generateDateFormat } from "utils/splitDate";
 import { imageURLGenerate } from "utils/utils";

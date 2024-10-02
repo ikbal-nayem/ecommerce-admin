@@ -1,5 +1,5 @@
-import WxButton from "@components/WxButton";
-import WxInput from "@components/WxInput";
+import WxButton from "@components/Button";
+import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
@@ -33,7 +33,7 @@ export const CustomerEditModal = ({
         <WxModalBody>
           <div className="row d-flex justify-content-between">
             <div className="col-12">
-              <WxInput
+              <TextInput
                 label="First Name"
                 isDisabled
                 registerProperty={{
@@ -42,7 +42,7 @@ export const CustomerEditModal = ({
               />
             </div>
             <div className="col-12">
-              <WxInput
+              <TextInput
                 label="Last Name"
                 isDisabled
                 registerProperty={{
@@ -51,13 +51,13 @@ export const CustomerEditModal = ({
               />
             </div>
           </div>
-          <WxInput
+          <TextInput
             label="Email"
             registerProperty={{
               ...register("email"),
             }}
           />
-          <WxInput
+          <TextInput
             label="Phone Number"
             registerProperty={{
               ...register("phoneNumber"),

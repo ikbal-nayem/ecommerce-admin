@@ -1,5 +1,5 @@
 import WxEditor from "@components/WxEditor/WxEditor";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { Controller, useFormContext } from "react-hook-form";
 import "./ProductInfo.scss";
@@ -16,7 +16,7 @@ const ProductInfo = () => {
 
 	return (
 		<div className="card p-3 mt-4">
-			<WxInput
+			<TextInput
 				label="Product Title"
 				isRequired
 				className=""

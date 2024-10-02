@@ -1,8 +1,8 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Select";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxSlider from "@components/WxSlider";
 import { ISliderItem } from "@interfaces/themeCustomization.interface";
 import { ThemeCustomizationService } from "services/api/settings/ThemeCustomization.service";

@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { IOrderDetails } from "@interfaces/order.interface";
 import { memo } from "react";
 import { generateDateFormat } from "utils/splitDate";

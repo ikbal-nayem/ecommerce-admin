@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { IProductTable } from "@interfaces/product.interface";
 import { PRODUCT_DETAILS } from "routes/path-name.route";

@@ -1,7 +1,7 @@
 import WxAlert from "@components/Alert/WxAlert";
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxTableSkelton from "@components/WxSkelton/WxTableSkeleton";
 import { ISiteOperator } from "@interfaces/Settings.interface";

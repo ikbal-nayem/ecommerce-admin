@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { STATUS_CONSTANT } from "config/constants";
 import { IAppPricing } from "@interfaces/app.interface";
 import "./PlanPricing.scss";

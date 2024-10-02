@@ -1,8 +1,8 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { memo, useState } from "react";
 import "./InventoryTable.scss";
@@ -124,7 +124,7 @@ const InventoryTable = ({
                   <div className="wx__table_cell_icon  d-flex ">
                     <div className="avaiability_input">
                       {/* {setQuantity(pd.quantity)} */}
-                      <WxInput
+                      <TextInput
                         // onBlur={(e: any) => {
                         //   // pd.quantity = Number(e.target.value);
                         //   // setQuantity(Number(e.target.value));
@@ -149,7 +149,7 @@ const InventoryTable = ({
                         <div className="wx__availability_popup">
                           <div>
                             <div>
-                              <WxInput
+                              <TextInput
                                 label="Adjust By"
                                 type="number"
                                 defaultValue={pd.adjustValue}

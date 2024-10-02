@@ -1,10 +1,10 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { MASTER_META_KEY } from "config/constants";
 import { useEffect, useState } from "react";
@@ -140,7 +140,7 @@ const Create = ({
               ) : null} */}
 
 							<div className="col-md-12 col-sm-12">
-								<WxInput
+								<TextInput
 									isRequired
 									label="Menu Zone Name"
 									registerProperty={{ ...register("name", { required: true }) }}
@@ -149,7 +149,7 @@ const Create = ({
 								/>
 							</div>
 							<div className="col-md-12 col-sm-12 mt-2 link-field">
-								<WxInput
+								<TextInput
 									isRequired
 									label="Link"
 									type="url"

@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxNotFound from "@components/NotFound/WxNotFound";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxNotFound from "@components/NotFound/NotFound";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import {
   IConfigureDeliverService,

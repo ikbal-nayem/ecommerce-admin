@@ -1,6 +1,7 @@
 import { LOCAL_STORAGE_KEY, SESSION_STORAGE_KEY } from '@constants/common.constant';
 import { ROUTES } from '@constants/route.constant';
 import { IObject } from '@interfaces/common.interface';
+import { setAuthHeader } from 'config/api.config';
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LocalStorageService } from 'services/utils/local-storage.service';
@@ -57,6 +58,7 @@ const AuthProvider = (props: any) => {
 		LocalStorageService.set(SESSION_STORAGE_KEY.ACCESS_TOKEN, accessToken);
 		LocalStorageService.set(LOCAL_STORAGE_KEY.USER_INFO, userInfo);
 		setIsAuthenticated(true);
+		setAuthHeader()
 	};
 
 	const logout = useCallback(() => {

@@ -10,6 +10,7 @@ node_modules
 
 # production
 /build
+.million
 
 # misc
 .DS_Store

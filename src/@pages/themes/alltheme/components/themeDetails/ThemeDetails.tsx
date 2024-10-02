@@ -1,8 +1,8 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxAccordion from "@components/WxAccordion";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxTabs from "@components/WxTabs/WxTabs";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";

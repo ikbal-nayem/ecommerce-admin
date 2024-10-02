@@ -1,8 +1,8 @@
 import WxAlert from "@components/Alert/WxAlert";
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
-import WxNotFound from "@components/NotFound/WxNotFound";
-import WxButton from "@components/WxButton";
+import WxNotFound from "@components/NotFound/NotFound";
+import WxButton from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";

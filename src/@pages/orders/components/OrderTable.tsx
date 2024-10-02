@@ -1,6 +1,6 @@
 import GenerateReactPDF from "@components/Invoice/GenerateReactPDF";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { IOrderList } from "@interfaces/order.interface";
 import { pdf } from "@react-pdf/renderer";
 import { ORDER_DETAILS } from "routes/path-name.route";

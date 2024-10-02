@@ -1,8 +1,8 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import ChartBoxHeader from "@components/WxSkelton/Analytics/ChartBoxHeader";
 import ConversionRate from "@components/WxSkelton/Analytics/ConverstionRate";
 import SessionLandingSkelton from "@components/WxSkelton/Analytics/SessionLandingSkelton";
@@ -214,7 +214,7 @@ const Analytics = () => {
         <div className="d-flex justify-content-between">
           <h4 className="m-0 text_h4 text_medium">Analytics</h4>
           <div className="col-lg-2 col-md-2 col-sm-5">
-            <WxInput
+            <TextInput
               onClick={() => setMenu(!menu)}
               className="wx__analytics-date"
               key={dateCompare(startDate, endDate)}

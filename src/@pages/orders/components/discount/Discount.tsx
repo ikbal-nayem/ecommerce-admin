@@ -1,7 +1,7 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxButton from "@components/Button";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
@@ -55,7 +55,7 @@ const Discount = ({
             />
           </div>
           <div className="col-md-6">
-            <WxInput
+            <TextInput
               label="Discount Value"
               type="number"
               min={0}

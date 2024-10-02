@@ -1,9 +1,9 @@
 import DateInput from "@components/DatePicker/DateInput";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxRadio from "@components/WxRadio/WxRadio";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { ReactComponent as TakaSign } from "assets/svg/taka.svg";
@@ -76,7 +76,7 @@ const CouponForm = ({
           <div className="row">
             <div className="col-lg-6 col-md-12 col-sm-6 mt-4">
               <div className="input-group">
-                <WxInput
+                <TextInput
                   className="mb-0"
                   placeholder="For example : Summer Offer 01"
                   label="Discount Name"
@@ -94,7 +94,7 @@ const CouponForm = ({
             </div>
             <div className="col-lg-6 col-md-12 col-sm-6 mt-4">
               <div className="input-group">
-                <WxInput
+                <TextInput
                   className="mb-0"
                   placeholder="Type Code"
                   label="Discount Code"
@@ -127,7 +127,7 @@ const CouponForm = ({
           >
             {watch("type_radio") === "COUPON_TYPE_PERCENT" && (
               <div className="w-md-50 my-3">
-                <WxInput
+                <TextInput
                   placeholder="Type value here"
                   endIcon={<WxIcon variants="round" icon="percent" />}
                   isRequired
@@ -153,7 +153,7 @@ const CouponForm = ({
                     }}
                   />
                   {watch("maximumDiscountCheck") && (
-                    <WxInput
+                    <TextInput
                       placeholder="Set Max Amount"
                       endIcon={<TakaSign />}
                       isRequired
@@ -182,7 +182,7 @@ const CouponForm = ({
           >
             {watch("type_radio") === "COUPON_TYPE_FIXED_AMOUNT" && (
               <div className="w-md-50  my-3">
-                <WxInput
+                <TextInput
                   placeholder="Type value here"
                   endIcon={<TakaSign />}
                   isRequired
@@ -236,7 +236,7 @@ const CouponForm = ({
           >
             {watch("minimum_requirement_radio") === "2" && (
               <div className="w-md-50 my-3">
-                <WxInput
+                <TextInput
                   placeholder="Type value here"
                   endIcon={<TakaSign />}
                   isRequired
@@ -265,7 +265,7 @@ const CouponForm = ({
           >
             {watch("minimum_requirement_radio") === "3" && (
               <div className="w-md-50 my-3">
-                <WxInput
+                <TextInput
                   placeholder="Type value here"
                   registerProperty={{
                     ...register("minimumQuantityOfItem"),
@@ -599,7 +599,7 @@ const CouponForm = ({
             >
               {watch("useLimit_radio") === "2" && (
                 <div className="w-md-50 my-3">
-                  <WxInput
+                  <TextInput
                     placeholder="Type value here"
                     isRequired
                     helpText={
@@ -646,7 +646,7 @@ const CouponForm = ({
             >
               {watch("userLimit_radio") === "2" && (
                 <div className="w-md-50 my-3">
-                  <WxInput
+                  <TextInput
                     placeholder="Type value here"
                     helpText={
                       <span className="text_subtitle text-secondary">

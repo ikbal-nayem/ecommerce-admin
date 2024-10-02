@@ -1,5 +1,5 @@
 import WxHr from '@components/WxHr';
-import WxIcon from '@components/WxIcon/WxIcon';
+import WxIcon from '@components/Icon';
 import SidebarSkelton from '@components/WxSkelton/SidebarSkelton';
 import { ENV } from 'config/ENV.config';
 import { Fragment, useEffect, useState } from 'react';

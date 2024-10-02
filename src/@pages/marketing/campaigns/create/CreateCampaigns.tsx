@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import { WxFormHeader } from "@components/WxFormLayout";
 import { MASTER_META_KEY } from "config/constants";
 import { CAMPAIGNS } from "routes/path-name.route";

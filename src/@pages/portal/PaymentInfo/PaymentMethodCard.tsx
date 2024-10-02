@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import { MASTER_META_KEY } from "config/constants";
 import { IPortalPaymentMedia } from "@interfaces/portal.interface";
 import { useState } from "react";

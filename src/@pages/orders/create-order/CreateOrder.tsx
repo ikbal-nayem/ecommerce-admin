@@ -1,12 +1,12 @@
 import WxAlert from "@components/Alert/WxAlert";
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import { MASTER_META_KEY } from "config/constants";
 import { IStatus } from "@interfaces/common.interface";
 import {
@@ -203,7 +203,7 @@ const CreateOrder = () => {
 							<h5 className="mb-3">Product</h5>
 							<div className="d-flex">
 								<div className="input-group search">
-									<WxInput
+									<TextInput
 										type="search"
 										placeholder="Search products"
 										startIcon={<WxIcon icon="search" />}
@@ -225,7 +225,7 @@ const CreateOrder = () => {
 						/>
 						<div className="card p-3 mt-3">
 							<div className="col-md-12 col-sm-12">
-								<WxInput
+								<TextInput
 									label="Order note"
 									noMargin
 									registerProperty={{ ...register("orderNote") }}

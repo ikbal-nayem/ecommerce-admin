@@ -1,5 +1,5 @@
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 import { WxFormHeader } from "@components/WxFormLayout";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTag from "@components/WxTag";

@@ -1,9 +1,9 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { ButtonLoader } from "services/utils/preloader.service";
 import { useEffect } from "react";
@@ -40,7 +40,7 @@ const SliderDrawer = ({
 					<WxDrawerBody>
 						<div className="row">
 							<div className="col-md-12">
-								<WxInput
+								<TextInput
 									isRequired
 									label="Title"
 									isAutoFocus

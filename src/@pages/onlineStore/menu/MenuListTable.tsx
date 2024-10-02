@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxSwitch from "@components/WxSwitch";
 import { ROLE_KEY } from "config/constants";
 import { MENU_EDIT } from "routes/path-name.route";

@@ -1,10 +1,10 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxNotFound from "@components/NotFound/NotFound";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxRadio from "@components/WxRadio/WxRadio";
 import { PAYMENT_SERVICE } from "config/api-constant";
 import { MASTER_META_KEY } from "config/constants";
@@ -206,7 +206,7 @@ const Payment = () => {
 									/>
 								</div>
 								<WxHr />
-								<WxInput
+								<TextInput
 									label="Address line 1"
 									isRequired
 									registerProperty={{
@@ -255,13 +255,13 @@ const Payment = () => {
 										/>
 									</div>
 									<div className="col-6">
-										<WxInput
+										<TextInput
 											label="Post code"
 											registerProperty={{ ...register("address.postCode") }}
 										/>
 									</div>
 									<div className="col-sm-6 col-12">
-										<WxInput
+										<TextInput
 											label="Email address"
 											type="email"
 											isRequired

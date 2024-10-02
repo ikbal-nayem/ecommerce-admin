@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
 import WxSelect from "@components/Select/WxSelect";
 import {
@@ -6,7 +6,7 @@ import {
   WxFormFooter,
   WxFormHeader,
 } from "@components/WxFormLayout";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SETTINGS_DELIVERY } from "routes/path-name.route";
 import { ECourierService } from "services/api/courier/ECourier.service";
@@ -108,7 +108,7 @@ const CourierForm = () => {
           <div className="card p-4 mb-3">
             <div className="row">
               <div className="col-lg-6 col-md-12 col-sm-6">
-                <WxInput
+                <TextInput
                   label="Pickup contact name"
                   registerProperty={{
                     ...register("pick_contact_person"),
@@ -186,7 +186,7 @@ const CourierForm = () => {
                 />
               </div>
               <div className="col-lg-6 col-md-12 col-sm-6">
-                <WxInput
+                <TextInput
                   label="Post code"
                   registerProperty={{
                     ...register("pick_union"),
@@ -200,7 +200,7 @@ const CourierForm = () => {
               </div>
 
               <div className="col-md-6 col-sm-6">
-                <WxInput
+                <TextInput
                   label="Address"
                   registerProperty={{
                     ...register("pick_address"),
@@ -212,7 +212,7 @@ const CourierForm = () => {
                 />
               </div>
               {/* <div className="col-lg-6 col-md-12 col-sm-6">
-                <WxInput
+                <TextInput
                   label="Phone Number"
                   registerProperty={{
                     ...register("pick_mobile", {
@@ -222,7 +222,7 @@ const CourierForm = () => {
                 />
               </div> */}
               {/* <div className="col-lg-6 col-md-12 col-sm-6">
-                <WxInput
+                <TextInput
                   label="Hub"
                   registerProperty={{
                     ...register("pickup.hub", {
@@ -240,7 +240,7 @@ const CourierForm = () => {
             <div className="row">
               <div className="col-md-6 col-12">
                 <strong>Bank</strong>
-                <WxInput
+                <TextInput
                   label="Account holder name"
                   registerProperty={{
                     ...register("accountHolderName"),
@@ -248,7 +248,7 @@ const CourierForm = () => {
                   color={errors?.accountHolderName ? "danger" : "secondary"}
                   errorMessage={errors?.accountHolderName?.message}
                 />
-                <WxInput
+                <TextInput
                   label="Bank name"
                   registerProperty={{
                     ...register("bankName"),
@@ -256,7 +256,7 @@ const CourierForm = () => {
                   color={errors?.bankName ? "danger" : "secondary"}
                   errorMessage={errors?.bankName?.message}
                 />
-                <WxInput
+                <TextInput
                   label="Branch name"
                   registerProperty={{
                     ...register("bankBranch"),
@@ -264,7 +264,7 @@ const CourierForm = () => {
                   color={errors?.bankBranch ? "danger" : "secondary"}
                   errorMessage={errors?.bankBranch?.message}
                 />
-                <WxInput
+                <TextInput
                   label="Account number"
                   type="number"
                   registerProperty={{
@@ -276,7 +276,7 @@ const CourierForm = () => {
               </div>
               <div className="col-md-6 col-12">
                 <strong>Mobile banking</strong>
-                <WxInput
+                <TextInput
                   label="Bkash number"
                   registerProperty={{
                     ...register("bkash"),
@@ -298,7 +298,7 @@ const CourierForm = () => {
                   color={errors?.bkashType ? "danger" : "secondary"}
                   errorMessage={errors?.bkashType?.message}
                 />
-                <WxInput
+                <TextInput
                   label="Rocket number"
                   registerProperty={{
                     ...register("rocket"),
@@ -306,7 +306,7 @@ const CourierForm = () => {
                   color={errors?.rocket ? "danger" : "secondary"}
                   errorMessage={errors?.rocket?.message}
                 />
-                {/* <WxInput
+                {/* <TextInput
                   label="Rocket type"
                   registerProperty={{
                     ...register("withdraw.mobileBank.accountType"),

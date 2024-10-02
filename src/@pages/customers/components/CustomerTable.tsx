@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxSwitch from "@components/WxSwitch";
 import { ICustomerPayload } from "@interfaces/Customer.interface";
 import { CUSTOMERS } from "routes/path-name.route";

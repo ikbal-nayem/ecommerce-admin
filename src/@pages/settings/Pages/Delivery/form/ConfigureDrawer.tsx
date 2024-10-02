@@ -1,9 +1,9 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { useState } from "react";
 import "./ConfigureDrawer.scss";
@@ -58,7 +58,7 @@ const ConfigureDrawer = ({
               {getValues("courierProvider") === "COURIER_TYPE_ECOURIER" && (
                 <div className="row">
                   <div className="col-md-12 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="API Key"
                       isRequired
                       placeholder="Type api key"
@@ -74,7 +74,7 @@ const ConfigureDrawer = ({
                     />
                   </div>
                   <div className="col-md-12 col-sm-12">
-                    <WxInput
+                    <TextInput
                       isRequired
                       label="API Secret"
                       placeholder="Type api secret"
@@ -88,7 +88,7 @@ const ConfigureDrawer = ({
                     />
                   </div>
                   <div className="col-md-12 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="User Id"
                       isRequired
                       placeholder="Type user id"
@@ -119,7 +119,7 @@ const ConfigureDrawer = ({
               {getValues("courierProvider") === "COURIER_TYPE_REDX" && (
                 <div className="row">
                   <div className="col-md-12 col-sm-12">
-                    <WxInput
+                    <TextInput
                       label="Token"
                       isRequired
                       placeholder="Enter Token"

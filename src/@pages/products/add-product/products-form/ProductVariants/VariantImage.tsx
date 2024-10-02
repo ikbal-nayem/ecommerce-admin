@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";

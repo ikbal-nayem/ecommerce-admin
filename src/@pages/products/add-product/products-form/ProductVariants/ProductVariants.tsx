@@ -1,5 +1,5 @@
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import { IFilePayload } from "@interfaces/common.interface";
 import { useEffect, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -87,7 +87,7 @@ const VariantRow = ({
 				</p>
 			</td>
 			<td className="wx__td quentity" style={{ width: 100 }}>
-				<WxInput
+				<TextInput
 					placeholder="Qty."
 					type="number"
 					min={0}
@@ -101,7 +101,7 @@ const VariantRow = ({
 			</td>
 			<td className="wx__td selling-price">
 				<div>
-					<WxInput
+					<TextInput
 						type="number"
 						placeholder="Price"
 						min={0}
@@ -119,7 +119,7 @@ const VariantRow = ({
 				</div>
 			</td>
 			<td className="wx__td regular-price">
-				<WxInput
+				<TextInput
 					type="number"
 					placeholder="Price"
 					min={0}
@@ -136,7 +136,7 @@ const VariantRow = ({
 				/>
 			</td>
 			<td className="wx__td sku">
-				<WxInput
+				<TextInput
 					registerProperty={{
 						...register(`variants.${index}.sku`),
 					}}
@@ -146,7 +146,7 @@ const VariantRow = ({
 				/>
 			</td>
 			<td className="wx__td barcode">
-				<WxInput
+				<TextInput
 					registerProperty={{ ...register(`variants.${index}.barCode`) }}
 					onFocus={(e) => e.target.select()}
 				/>

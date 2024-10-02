@@ -1,5 +1,5 @@
 import SelectOption from "@components/Select/Select";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxLabel from "@components/WxLabel";
 import { STATUS_CONSTANT } from "config/constants";
 import {

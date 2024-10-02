@@ -1,4 +1,4 @@
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 
 const PageNotFound = () => {
 	return (

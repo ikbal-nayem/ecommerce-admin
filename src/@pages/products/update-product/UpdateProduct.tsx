@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
+import WxMainLg from "@components/MainContentLayout/MainLg";
 import {
 	WxFormContainer,
 	WxFormFooter,

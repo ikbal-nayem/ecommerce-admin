@@ -1,5 +1,5 @@
 import WxHr from "@components/WxHr";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { useFormContext } from "react-hook-form";
 import "./ProductStock.scss";
@@ -40,7 +40,7 @@ const ProductStock = () => {
 			{isTrackQuantity ? (
 				<div className="row">
 					<div className="col-md-6 col-sm-12">
-						<WxInput
+						<TextInput
 							type="number"
 							label="Quantity"
 							noMargin
@@ -59,7 +59,7 @@ const ProductStock = () => {
 			<WxHr className=" mt-4 mb-0" />
 			<div className="row">
 				<div className="col-md-6 col-sm-12 mt-3">
-					<WxInput
+					<TextInput
 						label="Product SKU"
 						noMargin
 						registerProperty={{ ...register("sku") }}
@@ -67,7 +67,7 @@ const ProductStock = () => {
 					/>
 				</div>
 				<div className="col-md-6 col-sm-12 mt-3">
-					<WxInput
+					<TextInput
 						label="Barcode"
 						noMargin
 						registerProperty={{ ...register("barCode") }}

@@ -1,5 +1,5 @@
-import WxButton from "@components/WxButton";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxButton from "@components/Button";
+import WxIcon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import { STATUS_CONSTANT } from "config/constants";
 import { PAYMENT } from "routes/path-name.route";

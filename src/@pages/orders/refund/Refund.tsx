@@ -1,7 +1,7 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import { IProductVariant } from "@interfaces/product.interface";
 import { ORDER_DETAILS } from "routes/path-name.route";
 import { OrderService } from "services/api/Order.service";
@@ -149,7 +149,7 @@ const OrderRefund = () => {
 						</div>
 						<div className="card mt-3 p-3">
 							<h6 className="text_h6 text_semibold">Refund Reason</h6>
-							<WxInput
+							<TextInput
 								helpText="Only you and your staff can see ths reason"
 								noMargin
 								registerProperty={{ ...register("reason") }}
@@ -165,7 +165,7 @@ const OrderRefund = () => {
 						</div>
 						<div className="card p-3 mt-3">
 							<h6 className="text_h6 text_semibold">Refund Amount</h6>
-							<WxInput
+							<TextInput
 								type="number"
 								startIcon={<TKSign />}
 								placeholder="00.00"

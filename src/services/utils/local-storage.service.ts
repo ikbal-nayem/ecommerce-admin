@@ -1,4 +1,4 @@
-import { LOCALSTORAGE_KEY } from 'config/constants';
+import { LOCAL_STORAGE_KEY } from '@constants/common.constant';
 
 export const isBrowser = typeof window !== 'undefined';
 export const isServer = typeof window == 'undefined';
@@ -8,6 +8,6 @@ export const LocalStorageService = {
 	get: (key: string): string | null => JSON.parse(localStorage.getItem(key)),
 	delete: (key: string): void => localStorage.removeItem(key),
 	clear: (): void => {
-		LOCALSTORAGE_KEY.forEach((key: string) => localStorage.removeItem(key));
+		Object.keys(LOCAL_STORAGE_KEY).forEach((key: string) => localStorage.removeItem(LOCAL_STORAGE_KEY[key]));
 	},
 };

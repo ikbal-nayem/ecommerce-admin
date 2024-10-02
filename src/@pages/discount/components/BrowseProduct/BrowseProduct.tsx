@@ -1,10 +1,10 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -75,7 +75,7 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
         <WxDrawerHeader title="Add Product" closeIconAction={handleClose} />
         <div className="wx__drawer_body">
           <div className="input_div">
-            <WxInput
+            <TextInput
               className="mb-0"
               type="search"
               placeholder="Search products"

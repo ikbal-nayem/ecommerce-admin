@@ -1,11 +1,11 @@
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
 import WxRadio from "@components/WxRadio/WxRadio";
 import { MASTER_META_KEY, MASTER_META_TYPE } from "config/constants";
@@ -149,7 +149,7 @@ const PaymentInfoForm = ({
 										/>
 									</div>
 									<div className="col-md-6 col-12">
-										<WxInput
+										<TextInput
 											key={watch("metaKey")}
 											label="Branch name"
 											isRequired
@@ -161,7 +161,7 @@ const PaymentInfoForm = ({
 										/>
 									</div>
 									<div className="col-md-6 col-12">
-										<WxInput
+										<TextInput
 											label="Account number"
 											isRequired
 											registerProperty={{
@@ -172,7 +172,7 @@ const PaymentInfoForm = ({
 										/>
 									</div>
 									<div className="col-md-6 col-12">
-										<WxInput
+										<TextInput
 											label="Account name"
 											isRequired
 											registerProperty={{

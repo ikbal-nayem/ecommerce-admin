@@ -1,6 +1,6 @@
 import WxSelect from "@components/Select/WxSelect";
 import WxHr from "@components/WxHr";
-import WxInput from "@components/WxInput";
+import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { DIMENSIONS } from "config/constants";
 import { useEffect, useState } from "react";
@@ -54,7 +54,7 @@ const ProductDimension = () => {
 					<WxHr />
 					<div className="row">
 						<div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-end">
-							<WxInput
+							<TextInput
 								label="Weight"
 								noMargin
 								type="number"
@@ -73,7 +73,7 @@ const ProductDimension = () => {
 							/>
 						</div>
 						<div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-end">
-							<WxInput
+							<TextInput
 								label="Width"
 								noMargin
 								type="number"
@@ -92,7 +92,7 @@ const ProductDimension = () => {
 							/>
 						</div>
 						<div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-end">
-							<WxInput
+							<TextInput
 								label="Height"
 								noMargin
 								type="number"

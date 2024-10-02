@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { IAppDetails, IInstalledApp } from "@interfaces/app.interface";
 import { APP_OVERVIEW } from "routes/path-name.route";

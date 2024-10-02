@@ -1,4 +1,4 @@
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxIcon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import { generateDateFormat } from "utils/splitDate";
 

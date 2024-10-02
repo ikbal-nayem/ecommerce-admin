@@ -1,13 +1,13 @@
-import WxMainLg from "@components/MainContentLayout/WxMainLg";
-import WxButton from "@components/WxButton";
+import WxMainLg from "@components/MainContentLayout/MainLg";
+import WxButton from "@components/Button";
 import {
   WxFormContainer,
   WxFormFooter,
   WxFormHeader,
 } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import { STATUS_CONSTANT } from "config/constants";
 import { IProductVariant } from "@interfaces/product.interface";
 import { ORDER_DETAILS } from "routes/path-name.route";
@@ -148,7 +148,7 @@ const UpdateOrder = () => {
                 <h5 className="mb-3 p-3 pb-0">Product</h5>
                 <div className="d-flex ps-3 pe-3">
                   <div className="input-group search">
-                    <WxInput
+                    <TextInput
                       type="search"
                       placeholder="Search products"
                       startIcon={<WxIcon icon="search" />}
@@ -171,7 +171,7 @@ const UpdateOrder = () => {
               />
               <div className="card p-3">
                 <div className="col-md-12 col-sm-12">
-                  <WxInput
+                  <TextInput
                     label="Reason for edit"
                     noMargin
                     registerProperty={{ ...register("editReason") }}

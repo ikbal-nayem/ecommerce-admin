@@ -1,9 +1,9 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
-import WxNotFound from "@components/NotFound/WxNotFound";
+import WxNotFound from "@components/NotFound/NotFound";
 import WxSelect from "@components/Select/WxSelect";
 import { WxFormHeader } from "@components/WxFormLayout";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import { IAppDetails, IInstalledApp } from "@interfaces/app.interface";
 import { APPS } from "routes/path-name.route";
 import { AppsService, AppsTypesService } from "services/api/Apps.service";
@@ -63,7 +63,7 @@ const AppsList = () => {
 			<div className="card mt-3 p-4">
 				<div className="row  pb-0 app-list-top">
 					<div className="col-md-8 col-sm-12 mb-3">
-						<WxInput
+						<TextInput
 							className="mb-0"
 							type="search"
 							placeholder="Search apps"

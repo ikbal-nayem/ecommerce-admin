@@ -1,6 +1,6 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/WxButton";
-import WxIcon from "@components/WxIcon/WxIcon";
+import WxButton from "@components/Button";
+import WxIcon from "@components/Icon";
 import { notification } from "@components/WxNotificaton/index";
 import RatingProgressBar from "@components/RatingProgressBar";
 import { IAppRatingCount, IRatingPreview } from "@interfaces/app.interface";

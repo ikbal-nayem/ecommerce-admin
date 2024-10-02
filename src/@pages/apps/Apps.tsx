@@ -1,5 +1,5 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import { IAppDetails, IInstalledApp } from "@interfaces/app.interface";
 import { APPS_LIST } from "routes/path-name.route";
 import { AppsService } from "services/api/Apps.service";

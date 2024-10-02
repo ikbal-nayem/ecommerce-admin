@@ -1,6 +1,6 @@
 import "./ProductCart.scss";
-import WxIcon from "@components/WxIcon/WxIcon";
-import WxInput from "@components/WxInput";
+import WxIcon from "@components/Icon";
+import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
 import { IProductVariant } from "@interfaces/product.interface";
 import { imageURLGenerate } from "utils/utils";
@@ -63,7 +63,7 @@ const ProductCart = ({
 							<td className="wx__td unit">
 								{isEditable ? (
 									<div className="d-flex align-items-start">
-										<WxInput
+										<TextInput
 											type="number"
 											min={1}
 											value={product?.quantity}

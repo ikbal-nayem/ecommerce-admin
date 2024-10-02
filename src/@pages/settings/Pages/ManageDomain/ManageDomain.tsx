@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
-import WxNotFound from "@components/NotFound/WxNotFound";
-import WxButton from "@components/WxButton";
+import WxNotFound from "@components/NotFound/NotFound";
+import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import { IDomainSettingsItem } from "@interfaces/Settings.interface";
 import { SETTINGS, SETTINGS_DOMAIN_CREATE } from "routes/path-name.route";

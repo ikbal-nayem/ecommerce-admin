@@ -1,9 +1,9 @@
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
-import WxMainLg from '@components/MainContentLayout/WxMainLg';
-import WxButton from '@components/WxButton';
+import WxMainLg from '@components/MainContentLayout/MainLg';
+import WxButton from '@components/Button';
 import { WxDraggableList } from '@components/WxDraggableList';
 import { WxFormHeader } from '@components/WxFormLayout';
-import WxIcon from '@components/WxIcon/WxIcon';
+import WxIcon from '@components/Icon';
 import WxSwitch from '@components/WxSwitch';
 import WxThumbnail from '@components/WxThumbnail/WxThumbnail';
 import { ISliderItem } from '@interfaces/themeCustomization.interface';

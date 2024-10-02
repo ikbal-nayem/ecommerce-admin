@@ -1,4 +1,4 @@
-import WxButton from "@components/WxButton";
+import WxButton from "@components/Button";
 import WXEditor from "@components/WxEditor/WxEditor";
 import { IPolicySettings } from "@interfaces/Settings.interface";
 import React, { useEffect } from "react";
@@ -107,7 +107,7 @@ const PolicyCard = ({ item, policies }) => {
 				/>
 
 				{/* <div className="col-md-12 col-sm-12 mt-3">
-          <WxInput
+          <TextInput
             isRequired
             label="Slug"
             noMargin
