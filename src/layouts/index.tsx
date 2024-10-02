@@ -3,7 +3,6 @@ import Sidebar from "layouts/Sidebar/Sidebar";
 import { FC, Fragment, useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import SecondarySidebar from "./SecondarySidebar";
-import "./Layout.scss";
 import {
 	customizationRouteList,
 	downgradeRouteList,

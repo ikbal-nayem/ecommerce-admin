@@ -60,8 +60,8 @@ const Sidebar = ({ onClickFun }) => {
 											<li className=' wx__sales__channels hide__nav_text'>Sales Channels</li>
 										) : null}
 										<li
-											className={`wx__single_side_nav_single_childrens   ${
-												setActiveNav(nav) ? 'nav_active' : ''
+											className={`wx__single_side_nav_single_childrens${
+												setActiveNav(nav) ? ' nav_active' : ''
 											}`}
 										>
 											<Link
@@ -90,8 +90,8 @@ const Sidebar = ({ onClickFun }) => {
 										</li>
 										{nav.childrens && (
 											<ul
-												className={` wx__single_side_nav_childrens medium_show ${
-													open === nav.link ? 'wx__show_subChildrens' : ''
+												className={`wx__single_side_nav_childrens${
+													open === nav.link ? ' wx__show_subChildrens' : ''
 												}`}
 											>
 												{nav.childrens.map((child) => (

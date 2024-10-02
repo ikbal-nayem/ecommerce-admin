@@ -14,6 +14,7 @@ export const ToastComponent = () => {
 			draggable
 			pauseOnHover
 			theme='colored'
+			stacked
 		/>
 	);
 };
