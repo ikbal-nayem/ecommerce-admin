@@ -1,4 +1,4 @@
-import { LOCAL_STORAGE_KEY, SESSION_STORAGE_KEY } from '@constants/common.constant';
+import { LOCAL_STORAGE_KEY } from '@constants/common.constant';
 import { ROUTES } from '@constants/route.constant';
 import { IObject } from '@interfaces/common.interface';
 import { setAuthHeader } from 'config/api.config';
@@ -26,7 +26,7 @@ export const AuthContext = React.createContext<AuthProps>(initAuth);
 export const useAuth = () => useContext(AuthContext);
 
 const isValidToken = () => {
-	const accessToken = LocalStorageService.get(SESSION_STORAGE_KEY.ACCESS_TOKEN);
+	const accessToken = LocalStorageService.get(LOCAL_STORAGE_KEY.ACCESS_TOKEN);
 	if (!accessToken) return false;
 	return !isExpiredToken(accessToken);
 };
@@ -50,24 +50,24 @@ const AuthProvider = (props: any) => {
 	}, [isValidToken()]);
 
 	const handleInvalidToken = (e) => {
-		if (e.key === SESSION_STORAGE_KEY.ACCESS_TOKEN && e.oldValue && !e.newValue) logout();
+		if (e.key === LOCAL_STORAGE_KEY.ACCESS_TOKEN && e.oldValue && !e.newValue) logout();
 	};
 
 	const makeAuthenticate = (accessToken: string, userInfo: IObject) => {
 		if (!accessToken) return;
-		LocalStorageService.set(SESSION_STORAGE_KEY.ACCESS_TOKEN, accessToken);
+		LocalStorageService.set(LOCAL_STORAGE_KEY.ACCESS_TOKEN, accessToken);
 		LocalStorageService.set(LOCAL_STORAGE_KEY.USER_INFO, userInfo);
+		setAuthHeader();
 		setIsAuthenticated(true);
-		setAuthHeader()
 	};
 
 	const logout = useCallback(() => {
 		setLogingOut(true);
 		setIsAuthenticated(false);
-		LocalStorageService.delete(SESSION_STORAGE_KEY.ACCESS_TOKEN);
+		LocalStorageService.delete(LOCAL_STORAGE_KEY.ACCESS_TOKEN);
 		navigate(ROUTES.LOGIN);
 		setLogingOut(false);
-		// AuthService.logout({ token: LocalStorageService.get(SESSION_STORAGE_KEY.ACCESS_TOKEN) })
+		// AuthService.logout({ token: LocalStorageService.get(LOCAL_STORAGE_KEY.ACCESS_TOKEN) })
 		// 	.then((res: any) => {
 		// 	})
 		// 	.catch((err) => ToastService.error(err?.message))

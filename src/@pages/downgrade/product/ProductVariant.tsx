@@ -8,7 +8,7 @@ import { WxFormHeader } from "@components/WxFormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { IRequestMeta } from "@interfaces/common.interface";
 import { IProductTable } from "@interfaces/product.interface";
 import { PRODUCT_DETAILS } from "routes/path-name.route";

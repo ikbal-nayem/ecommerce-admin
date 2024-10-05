@@ -1,5 +1,5 @@
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { useNavigate } from "react-router-dom";
 import { imageURLGenerate } from "utils/utils";
 

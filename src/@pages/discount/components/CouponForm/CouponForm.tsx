@@ -5,7 +5,7 @@ import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxRadio from "@components/WxRadio/WxRadio";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { ReactComponent as TakaSign } from "assets/svg/taka.svg";
 import { useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";

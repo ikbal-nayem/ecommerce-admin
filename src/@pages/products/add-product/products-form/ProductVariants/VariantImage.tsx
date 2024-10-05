@@ -4,7 +4,7 @@ import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
 import WxModalHeader from "@components/WxModal/WxModalHeader";
-import MediaInput from "@components/WxMediaInput/MediaInput";
+import MediaInput from "@components/MediaInput/MediaInput";
 import { FileService } from "services/api/file.service";
 import { useSelector } from "react-redux";
 import { IFilePayload } from "@interfaces/common.interface";

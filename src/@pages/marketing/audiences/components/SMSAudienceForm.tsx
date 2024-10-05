@@ -1,6 +1,6 @@
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import { MediaInput } from "@components/WxMediaInput";
+import { MediaInput } from "@components/MediaInput";
 import WxRadio from "@components/WxRadio/WxRadio";
 import WxTextarea from "@components/WxTextarea";
 import { yupResolver } from "@hookform/resolvers/yup";

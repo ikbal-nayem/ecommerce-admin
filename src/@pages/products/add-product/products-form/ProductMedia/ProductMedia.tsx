@@ -1,5 +1,5 @@
 import BlockSection from "@components/BlockSection/BlockSection";
-import MediaInput from "@components/WxMediaInput/MediaInput";
+import MediaInput from "@components/MediaInput/MediaInput";
 import { IFilePayload } from "@interfaces/common.interface";
 import { ProductService } from "services/api/products/Product.services";
 import { ToastService } from "services/utils/toastr.service";

@@ -1,6 +1,7 @@
+import clsx from 'clsx';
 import './Icon.scss';
 
-interface IWxIcon {
+interface IIcon {
 	icon: string;
 	variants?: 'outlined' | 'filled' | 'round' | 'sharp' | 'two-tone';
 	color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'disabled';
@@ -14,7 +15,7 @@ interface IWxIcon {
 	size?: number;
 }
 
-const WxIcon = ({
+const Icon = ({
 	icon,
 	variants = 'filled',
 	color,
@@ -26,21 +27,21 @@ const WxIcon = ({
 	hoverTitle,
 	style,
 	size,
-}: IWxIcon) => (
+}: IIcon) => (
 	<span
 		title={hoverTitle}
 		onClick={onClick}
-		className={`noselect ${
-			variants === 'filled' ? 'material-icons' : `material-icons-${variants}`
-		} wx__icon ${color ? 'text-' + color : ''} ${disabled ? 'wx__icon_disabled' : ''} ${
-			className ? className : ''
-		}`}
+		className={clsx('noselect', 'material-symbols-rounded', 'icon', {
+			[`text-${color}`]: !!color,
+			icon_disabled: disabled,
+			[className as string]: className,
+		})}
 		id={id ? id : ''}
-		role={role ? role : ''}
+		role={role}
 		style={{ fontSize: size || '1.1rem', ...style }}
 	>
 		{icon}
 	</span>
 );
 
-export default WxIcon;
+export default Icon;

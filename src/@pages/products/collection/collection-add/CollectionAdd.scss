@@ -1,5 +1,8 @@
 .collection_form {
   // width: 598px;
+  .form_group {
+    margin-bottom: 1rem;
+  }
   &__footer {
     display: flex;
     align-items: center;

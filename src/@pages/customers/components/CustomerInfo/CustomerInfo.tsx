@@ -1,6 +1,6 @@
 import WxHr from "@components/WxHr";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { Fragment } from "react";
 import { statusColorMapping } from "utils/colorMap";
 import { dateFormate } from "utils/splitDate";

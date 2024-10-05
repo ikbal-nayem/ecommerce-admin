@@ -5,7 +5,7 @@ import WxFormContainer from "@components/WxFormLayout/WxFormContainer";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
 import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
-import MediaInput from "@components/WxMediaInput/MediaInput";
+import MediaInput from "@components/MediaInput/MediaInput";
 import WxTextarea from "@components/WxTextarea";
 import { IFilePayload } from "@interfaces/common.interface";
 import { IPreferencesSettings } from "@interfaces/Settings.interface";

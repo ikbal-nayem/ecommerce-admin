@@ -11,7 +11,7 @@ import CustomerContactDtls from "@components/WxSkelton/Customer/CustomerContactD
 import CustomerDtlInfoSkelton from "@components/WxSkelton/Customer/CustomerDtlInfoSkelton";
 import CustomerLastOrdrSkelton from "@components/WxSkelton/Customer/CustomerLastOrdrSkelton";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import {
 	CUSTOMERS,
 	CUSTOMER_CREATE,

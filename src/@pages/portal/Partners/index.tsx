@@ -6,7 +6,7 @@ import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTabs from "@components/WxTabs/WxTabs";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { IRequestMeta } from "@interfaces/common.interface";
 import { IPartner } from "@interfaces/portal.interface";
 import { PORTAL_PARTNERS_DETAILS } from "routes/path-name.route";

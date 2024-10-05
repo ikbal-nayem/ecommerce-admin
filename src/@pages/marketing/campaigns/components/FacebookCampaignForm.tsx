@@ -6,7 +6,7 @@ import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
-import { MediaInput } from "@components/WxMediaInput";
+import { MediaInput } from "@components/MediaInput";
 import WxRadio from "@components/WxRadio/WxRadio";
 import WxTextarea from "@components/WxTextarea";
 import { IFilePayload } from "@interfaces/common.interface";

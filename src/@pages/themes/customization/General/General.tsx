@@ -3,7 +3,7 @@ import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
-import { MediaInput } from "@components/WxMediaInput";
+import { MediaInput } from "@components/MediaInput";
 import { IFilePayload } from "@interfaces/common.interface";
 import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";

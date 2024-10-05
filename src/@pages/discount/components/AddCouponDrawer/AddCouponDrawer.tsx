@@ -6,7 +6,7 @@ import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { CustomerService } from "services/api/Customer.service";
 import { GroupService } from "services/api/Group.service";
 import { CategoryService } from "services/api/products/Category.services";

@@ -9,7 +9,7 @@ import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import WxLabel from "@components/WxLabel";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { MASTER_META_KEY, STATUS_CONSTANT } from "config/constants";
 import { IStatus } from "@interfaces/common.interface";
 import {

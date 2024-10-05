@@ -1,5 +1,5 @@
 import WxIcon from "@components/Icon";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import {
   ITheme,
   IThemeInstalled,

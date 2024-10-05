@@ -5,7 +5,7 @@ import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useDebounce from "utils/debouncer";

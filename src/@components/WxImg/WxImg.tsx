@@ -1,5 +1,5 @@
+import { DEFAULT_LINKS } from '@constants/common.constant';
 import clsx from 'clsx';
-import { imageURLGenerate } from 'utils/utils';
 
 interface IImg {
 	src: string;
@@ -10,8 +10,7 @@ interface IImg {
 	onClick?: Function;
 }
 
-const WxImg = ({ src, alt, width, height, className, onClick }: IImg) => {
-	const forBrokenImg = imageURLGenerate('/webx/NotFoundImage.jpeg');
+const Img = ({ src, alt, width, height, className, onClick }: IImg) => {
 	return (
 		<img
 			src={src}
@@ -22,10 +21,10 @@ const WxImg = ({ src, alt, width, height, className, onClick }: IImg) => {
 			onClick={() => onClick}
 			onError={({ currentTarget }) => {
 				currentTarget.onerror = null; // prevents looping
-				currentTarget.src = forBrokenImg;
+				currentTarget.src = DEFAULT_LINKS.blank_image;
 			}}
 		/>
 	);
 };
 
-export default WxImg;
+export default Img;

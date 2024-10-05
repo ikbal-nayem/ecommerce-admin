@@ -1,29 +1,26 @@
-import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxEditor from "@components/WxEditor/WxEditor";
-import TextInput from "@components/TextInput";
-import WxLabel from "@components/WxLabel";
-import MediaInput from "@components/WxMediaInput/MediaInput";
-import WxSwitch from "@components/WxSwitch";
-import { IFilePayload } from "@interfaces/common.interface";
-import { ENV } from "config/ENV.config";
-import { useCallback, useEffect, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import {
-	CategoryService,
-	ICategoryPayload,
-} from "services/api/products/Category.services";
-import { ButtonLoader } from "services/utils/preloader.service";
-import { ToastService } from "services/utils/toastr.service";
-import { parentTreeToLinear } from "utils/categoryTreeOperation";
-import useDebounce from "utils/debouncer";
-import makeSlug from "utils/make-slug";
-import { compressImage } from "utils/utils";
-import "./AddCategory.scss";
+import WxButton from '@components/Button';
+import WxSelect from '@components/Select/WxSelect';
+import TextInput from '@components/TextInput';
+import WxDrawer from '@components/WxDrawer';
+import WxDrawerBody from '@components/WxDrawer/WxDrawerBody';
+import WxDrawerFooter from '@components/WxDrawer/WxDrawerFooter';
+import WxDrawerHeader from '@components/WxDrawer/WxDrawerHeader';
+import WxEditor from '@components/WxEditor/WxEditor';
+import WxLabel from '@components/WxLabel';
+import MediaInput from '@components/MediaInput/MediaInput';
+import WxSwitch from '@components/WxSwitch';
+import { IFilePayload } from '@interfaces/common.interface';
+import { ENV } from 'config/ENV.config';
+import { useCallback, useEffect, useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { CategoryService, ICategoryPayload } from 'services/api/products/Category.services';
+import { ButtonLoader } from 'services/utils/preloader.service';
+import { ToastService } from 'services/utils/toastr.service';
+import { parentTreeToLinear } from 'utils/categoryTreeOperation';
+import useDebounce from 'utils/debouncer';
+import makeSlug from 'utils/make-slug';
+import { compressImage } from 'utils/utils';
+import './AddCategory.scss';
 
 type AddCategoryProps = {
 	isOpen: boolean;
@@ -48,9 +45,7 @@ const AddCategory = ({
 }: AddCategoryProps) => {
 	const [uploading, setUploading] = useState<boolean>(false);
 	const [isDeletingImage, setIsDeletingImage] = useState<boolean>(false);
-	const [linearCategories, setLinearCategories] = useState<ICategoryPayload[]>(
-		[]
-	);
+	const [linearCategories, setLinearCategories] = useState<ICategoryPayload[]>([]);
 	const [images, setImages] = useState<IFilePayload[] | File[]>([]);
 	const {
 		register,
@@ -64,23 +59,23 @@ const AddCategory = ({
 		clearErrors,
 	} = useForm();
 
-	const watch_name = watch("name");
-	const slug = useDebounce(watch("slug"), 500);
+	const watch_name = watch('name');
+	const slug = useDebounce(watch('slug'), 500);
 
 	useEffect(() => {
-		!isEditForm && setValue("slug", makeSlug(watch_name));
+		!isEditForm && setValue('slug', makeSlug(watch_name));
 	}, [watch_name]);
 
 	useEffect(() => {
 		if (!isEditForm) {
-			setValue("slug", makeSlug(slug));
+			setValue('slug', makeSlug(slug));
 			slug &&
 				CategoryService.isSlugAvailable({ slug }).then((res) => {
 					if (res.body) {
-						clearErrors("slug");
+						clearErrors('slug');
 						return;
 					}
-					setError("slug", { message: res.message });
+					setError('slug', { message: res.message });
 				});
 		}
 	}, [slug]);
@@ -123,17 +118,17 @@ const AddCategory = ({
 			const compressedImg = await compressImage(images[0]);
 			if (!isEditForm) {
 				setImages(images);
-				setValue("banner", compressedImg);
+				setValue('banner', compressedImg);
 				setUploading(false);
 				return;
 			}
 			const formData: any = new FormData();
-			formData.append("file", compressedImg);
-			formData.append("id", editData?.id);
+			formData.append('file', compressedImg);
+			formData.append('id', editData?.id);
 			CategoryService.uploadBanner(formData)
 				.then((resp) => {
 					setImages([resp.body]);
-					setValue("banner", resp.body);
+					setValue('banner', resp.body);
 				})
 				.catch((err) => ToastService.error(err.message))
 				.finally(() => setUploading(false));
@@ -147,72 +142,72 @@ const AddCategory = ({
 			CategoryService.deleteBanner({ id: editData?.id })
 				.then(() => {
 					setImages([]);
-					setValue("banner", null);
+					setValue('banner', null);
 				})
 				.catch((err) => ToastService.error(err.message))
 				.finally(() => setIsDeletingImage(false));
 			return;
 		}
 		setImages([]);
-		setValue("banner", null);
+		setValue('banner', null);
 	}, [isEditForm, editData]);
 
 	return (
 		<WxDrawer show={isOpen} handleClose={handleClose}>
-			<div className="wx__category_form">
+			<div className='wx__category_form'>
 				<WxDrawerHeader
-					title={isEditForm ? "Update Category" : "Add Category"}
+					title={isEditForm ? 'Update Category' : 'Add Category'}
 					closeIconAction={handleClose}
 				/>
 				<form onSubmit={handleSubmit(onSubmit)} noValidate>
 					<WxDrawerBody>
 						<TextInput
-							label="Category name"
+							label='Category name'
 							isRequired
 							isAutoFocus
 							registerProperty={{
-								...register("name", { required: true }),
+								...register('name', { required: true }),
 							}}
-							color={errors?.name ? "danger" : "secondary"}
-							errorMessage={errors?.name && "Name is required!"}
+							color={errors?.name ? 'danger' : 'secondary'}
+							errorMessage={errors?.name && 'Name is required!'}
 						/>
 						<TextInput
-							label="Slug"
+							label='Slug'
 							isRequired
 							isDisabled={isEditForm}
 							helpText={
-								<div className="text_regular text_subtitle">
+								<div className='text_regular text_subtitle'>
 									{ENV.STORE_DOMAIN}/products/category/&nbsp;
-									<span className="text_strong">{slug}</span>
+									<span className='text_strong'>{slug}</span>
 								</div>
 							}
 							registerProperty={{
-								...register("slug", { required: true }),
+								...register('slug', { required: true }),
 							}}
-							color={errors?.slug ? "danger" : "secondary"}
-							errorMessage={errors?.slug ? errors?.slug?.message : ""}
+							color={errors?.slug ? 'danger' : 'secondary'}
+							errorMessage={errors?.slug?.message as string}
 						/>
 						<WxSelect
-							label="Parent category"
-							valuesKey="id"
-							placeholder="Select parent category"
-							textKey="name"
+							label='Parent category'
+							valuesKey='id'
+							placeholder='Select parent category'
+							textKey='name'
 							options={linearCategories}
 							registerProperty={{
-								...register("parentId"),
+								...register('parentId'),
 							}}
 						/>
-						<div className="form_group">
+						<div className='form_group'>
 							<WxLabel>Category details</WxLabel>
 							<Controller
 								control={control}
-								name="description"
+								name='description'
 								render={({ field: { onChange, value } }) => (
 									<WxEditor onEditorChange={onChange} defaultValue={value} />
 								)}
 							/>
 						</div>
-						<div className="form_group">
+						<div className='form_group'>
 							<WxLabel>Category icon</WxLabel>
 							<MediaInput
 								fileList={images}
@@ -222,25 +217,25 @@ const AddCategory = ({
 								multiple={false}
 							/>
 						</div>
-						<div className="mt-4" style={{ maxWidth: "50%" }}>
+						<div className='mt-4' style={{ maxWidth: '50%' }}>
 							<WxSwitch
-								label="Category Status"
-								checkedTitle="Visible"
-								unCheckedTitle="Hidden"
+								label='Category Status'
+								checkedTitle='Visible'
+								unCheckedTitle='Hidden'
 								defaultChecked={isEditForm ? editData?.isActive : true}
 								registerProperty={{
-									...register("isActive"),
+									...register('isActive'),
 								}}
 							/>
 						</div>
 					</WxDrawerBody>
 					<WxDrawerFooter>
-						<div className="wx__category_form__footer">
+						<div className='wx__category_form__footer'>
 							{isEditForm ? (
-								<div className="me-auto">
+								<div className='me-auto'>
 									<WxButton
-										color="danger"
-										variant="fill"
+										color='danger'
+										variant='fill'
 										disabled={isDeletingImage || isSaving}
 										onClick={() => handleDelete(editData)}
 									>
@@ -248,22 +243,18 @@ const AddCategory = ({
 									</WxButton>
 								</div>
 							) : null}
-							<div className="ms-auto d-flex">
+							<div className='ms-auto d-flex'>
 								<WxButton
-									className="me-3"
-									variant="outline"
-									color="secondary"
+									className='me-3'
+									variant='outline'
+									color='secondary'
 									disabled={isDeletingImage || isSaving}
 									onClick={() => handleClose()}
 								>
 									Cancel
 								</WxButton>
-								<WxButton
-									variant="fill"
-									type="submit"
-									disabled={isSaving || isDeletingImage}
-								>
-									{isEditForm ? "Update" : "Add"} Category
+								<WxButton variant='fill' type='submit' disabled={isSaving || isDeletingImage}>
+									{isEditForm ? 'Update' : 'Add'} Category
 									{isSaving || isDeletingImage ? <ButtonLoader /> : null}
 								</WxButton>
 							</div>

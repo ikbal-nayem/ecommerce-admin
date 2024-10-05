@@ -5,7 +5,7 @@ import { WxDraggableList } from '@components/WxDraggableList';
 import { WxFormHeader } from '@components/WxFormLayout';
 import WxIcon from '@components/Icon';
 import WxSwitch from '@components/WxSwitch';
-import WxThumbnail from '@components/WxThumbnail/WxThumbnail';
+import WxThumbnail from '@components/WxThumbnail';
 import { ISliderItem } from '@interfaces/themeCustomization.interface';
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';

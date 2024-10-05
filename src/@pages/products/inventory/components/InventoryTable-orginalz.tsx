@@ -3,7 +3,7 @@ import WxButton from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { memo, useState } from "react";
 import "./InventoryTable.scss";
 interface InventoryTableProps {

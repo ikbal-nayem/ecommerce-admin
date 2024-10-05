@@ -5,7 +5,7 @@ import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
-import { MediaInput } from "@components/WxMediaInput";
+import { MediaInput } from "@components/MediaInput";
 import WxSwitch from "@components/WxSwitch";
 import { IFilePayload } from "@interfaces/common.interface";
 import { ButtonLoader } from "services/utils/preloader.service";

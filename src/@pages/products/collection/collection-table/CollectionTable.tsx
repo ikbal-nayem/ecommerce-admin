@@ -1,4 +1,4 @@
-import WxThumbnail from '@components/WxThumbnail/WxThumbnail';
+import WxThumbnail from '@components/WxThumbnail';
 import { genetartMediaURL } from 'utils/utils';
 
 type CollectionTableProps = {

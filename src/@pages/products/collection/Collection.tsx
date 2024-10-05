@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { CollectionService, ICollectionPayload } from 'services/api/products/Collection.services';
 import { ToastService } from 'services/utils/toastr.service';
+import { makeFormData } from 'utils/preprocessor';
 import skeltonLoader from 'utils/skeltonLoader';
 import CollectionAdd from './collection-add/CollectionAdd';
 import CollectionTable from './collection-table/CollectionTable';
@@ -114,7 +115,7 @@ const Collection = () => {
 		setIsConfirmOpen(false);
 	};
 
-	const onSubmit = (data: ICollectionPayload) => {
+	const onSubmit = async (data: ICollectionPayload) => {
 		setIsSaving(true);
 		if (isEdit) {
 			CollectionService.update(data)
@@ -128,10 +129,7 @@ const Collection = () => {
 			return;
 		}
 
-		const fd = new FormData();
-		Object.keys(data).map((d) => {
-			fd.append(d, data[d]);
-		});
+		const fd = await makeFormData(data);
 		CollectionService.create(fd)
 			.then((response) => {
 				ToastService.success(response.message);

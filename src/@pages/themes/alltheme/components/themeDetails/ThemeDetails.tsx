@@ -5,7 +5,7 @@ import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import WxTabs from "@components/WxTabs/WxTabs";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import {
   ITheme,
   IThemeRelease,

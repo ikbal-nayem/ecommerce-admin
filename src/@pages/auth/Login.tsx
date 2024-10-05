@@ -27,10 +27,9 @@ const Login = () => {
 				navigate(ROUTES.DASHBOARD);
 			})
 			.catch((err) => {
+				ToastService.error(err?.message);
 				setError('email', { message: err?.message, type: 'manual' });
 				setError('password', { message: err?.message, type: 'manual' });
-				console.log(err);
-				ToastService.error(err?.message);
 			})
 			.finally(() => setLoading(false));
 	};

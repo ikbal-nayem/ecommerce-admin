@@ -7,7 +7,7 @@ import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { IFilePayload, IRequestMeta } from "@interfaces/common.interface";
 import { IProductTable } from "@interfaces/product.interface";
 import { downgrade$ } from "@rxjs/downgrade.rx";

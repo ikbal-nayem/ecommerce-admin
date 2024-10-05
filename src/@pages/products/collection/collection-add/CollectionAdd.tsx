@@ -1,4 +1,6 @@
 import WxButton from '@components/Button';
+import { SingleImage } from '@components/MediaInput';
+import MediaInput from '@components/MediaInput/MediaInput';
 import TextInput from '@components/TextInput';
 import WxDrawer from '@components/WxDrawer';
 import WxDrawerBody from '@components/WxDrawer/WxDrawerBody';
@@ -6,7 +8,6 @@ import WxDrawerFooter from '@components/WxDrawer/WxDrawerFooter';
 import WxDrawerHeader from '@components/WxDrawer/WxDrawerHeader';
 import WxEditor from '@components/WxEditor/WxEditor';
 import WxLabel from '@components/WxLabel';
-import MediaInput from '@components/WxMediaInput/MediaInput';
 import { ENV } from 'config/ENV.config';
 import { useCallback, useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -108,22 +109,6 @@ const AddCollection = ({
 		[editData, isEditForm]
 	);
 
-	const handleImageRemove = useCallback(() => {
-		if (isEditForm) {
-			setIsDeletingImage(true);
-			CollectionService.deleteBanner({ id: editData?._id })
-				.then(() => {
-					setImageList([]);
-					setValue('image', null);
-				})
-				.catch((err) => ToastService.error(err.message))
-				.finally(() => setIsDeletingImage(false));
-			return;
-		}
-		setImageList([]);
-		setValue('image', null);
-	}, [editData, isEditForm]);
-
 	return (
 		<WxDrawer show={isOpen} handleClose={handleClose}>
 			<div className='collection_form'>
@@ -169,11 +154,13 @@ const AddCollection = ({
 							/>
 						</div>
 						<div className='form_group'>
-							<WxLabel>Collection icon</WxLabel>
+							<WxLabel>Collection Image</WxLabel>
 							<MediaInput
-								fileList={imageList}
-								onChange={handleImageAdd}
-								onRemove={handleImageRemove}
+								name='image'
+								control={control}
+								// fileList={imageList}
+								// onChange={handleImageAdd}
+								// onRemove={handleImageRemove}
 								isUploading={isUploading}
 								multiple={false}
 							/>

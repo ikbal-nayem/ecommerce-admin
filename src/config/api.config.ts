@@ -1,4 +1,4 @@
-import { SESSION_STORAGE_KEY } from '@constants/common.constant';
+import { LOCAL_STORAGE_KEY } from '@constants/common.constant';
 import { ROUTES } from '@constants/route.constant';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -14,9 +14,10 @@ const axiosIns = axios.create({
 });
 
 export const setAuthHeader = () => {
-	const accessToken = LocalStorageService.get(SESSION_STORAGE_KEY.ACCESS_TOKEN) || null;
+	const accessToken = LocalStorageService.get(LOCAL_STORAGE_KEY.ACCESS_TOKEN) || null;
 	if (accessToken) axiosIns.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
 };
+setAuthHeader();
 
 axiosIns.interceptors.request.use(
 	(config) => config,
@@ -42,19 +43,11 @@ axiosIns.interceptors.response.use(
 	},
 	(error) => {
 		if (error?.response) {
-			if (error.response?.status === 401) logout();
+			if (error?.response?.status === 401) logout();
 			if (error.response?.status === 413) {
 				toast.error(error.response?.message);
 				return;
 			}
-			if (error.response?.data) {
-				return Promise.reject({
-					status: error.response?.status,
-					message: error.response?.data?.message || error.response?.data?.error,
-					body: {},
-				});
-			}
-
 			return Promise.reject({
 				message: error.message,
 				status: error?.response?.status || error.status || 500,
@@ -63,7 +56,6 @@ axiosIns.interceptors.response.use(
 			return Promise.reject({
 				status: 500,
 				message: 'Server not responding',
-				body: {},
 			});
 	}
 );
@@ -71,7 +63,7 @@ axiosIns.interceptors.response.use(
 const logout = () => {
 	SessionStorageService.clear();
 	LocalStorageService.clear();
-	window.location.replace(ROUTES.HOME);
+	window.location.replace(ROUTES.LOGIN);
 };
 
 const refreshToken = () => {

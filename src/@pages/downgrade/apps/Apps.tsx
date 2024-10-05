@@ -5,7 +5,7 @@ import WxNotFound from "@components/NotFound/NotFound";
 import WxButton from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail/WxThumbnail";
+import WxThumbnail from "@components/WxThumbnail";
 import { IInstalledApp } from "@interfaces/app.interface";
 import { downgrade$ } from "@rxjs/downgrade.rx";
 import { IDowngradeStatus } from "@rxjs/interfaces.rx";
