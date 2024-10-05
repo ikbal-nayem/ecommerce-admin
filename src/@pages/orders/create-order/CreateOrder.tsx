@@ -1,7 +1,7 @@
 import WxAlert from "@components/Alert/WxAlert";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
@@ -239,22 +239,22 @@ const CreateOrder = () => {
 							/>
 							{/* <WxHr />
 							<div>
-								<WxButton variant="outline" color="primary">
+								<Button variant="outline" color="primary">
 									Preview Invoice
-								</WxButton>
+								</Button>
 							</div> */}
 						</div>
 					</div>
 					<div className="col-md-4 col-sm-12 mt-3">
 						<div className="card wx__form_right p-3 mb-3">
-							<WxButton
+							<Button
 								type="submit"
 								variant="fill"
 								className="hide-mobile-view"
 								disabled={saving || !activePlan?.hasManualOrder}
 							>
 								{saving ? <Preloader /> : "Create Order"}
-							</WxButton>
+							</Button>
 							{!activePlan?.hasManualOrder && (
 								<WxAlert className="mt-3" noMargin>
 									Please upgrade your{" "}
@@ -291,14 +291,14 @@ const CreateOrder = () => {
 							selectedAddress={selectedAddress}
 						/>
 						<div className="card mt-3 p-3 show-mobile-view">
-							<WxButton
+							<Button
 								type="submit"
 								variant="fill"
 								className="w-100"
 								disabled={saving || !activePlan?.hasManualOrder}
 							>
 								{saving ? <Preloader /> : "Create Order"}
-							</WxButton>
+							</Button>
 						</div>
 					</div>
 				</div>

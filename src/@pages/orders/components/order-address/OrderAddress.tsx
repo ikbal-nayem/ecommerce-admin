@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -113,7 +113,7 @@ const OrderAddress = ({
 					</WxDrawerBody>
 					<WxDrawerFooter>
 						<div className="wx__order_address__footer">
-							<WxButton
+							<Button
 								type="button"
 								className="me-3"
 								variant="outline"
@@ -122,10 +122,10 @@ const OrderAddress = ({
 								disabled={isUpdating}
 							>
 								Cancel
-							</WxButton>
-							<WxButton type="submit" variant="fill" disabled={isUpdating}>
+							</Button>
+							<Button type="submit" variant="fill" disabled={isUpdating}>
 								{isUpdating ? <Preloader /> : "Save"}
-							</WxButton>
+							</Button>
 						</div>
 					</WxDrawerFooter>
 				</form>

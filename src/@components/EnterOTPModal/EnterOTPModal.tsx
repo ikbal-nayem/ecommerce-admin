@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -186,23 +186,23 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                       }}
                       defaultValue={sendingThrough}
                     />
-                    <WxButton
+                    <Button
                       disabled={btnDisable || otpSent}
                       type="submit"
                       variant="fill"
                       w={100}
                     >
                       Send OTP
-                    </WxButton>
+                    </Button>
                     {otpSent && (
-                      <WxButton
+                      <Button
                         className="mt-2"
                         variant="fill"
                         w={100}
                         onClick={() => setSendOTP(false)}
                       >
                         Back to Submit OTP
-                      </WxButton>
+                      </Button>
                     )}
                   </div>
                 </div>
@@ -224,15 +224,15 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                       }}
                     />
 
-                    <WxButton
+                    <Button
                       disabled={btnDisable}
                       type="submit"
                       variant="fill"
                       w={100}
                     >
                       Confirm OTP
-                    </WxButton>
-                    {/* <WxButton
+                    </Button>
+                    {/* <Button
                     className="mt-2"
                     color="secondary"
                     variant="fill"
@@ -240,7 +240,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                     onClick={() => setSendOTP(true)}
                   >
                     Back to Edit Number
-                  </WxButton> */}
+                  </Button> */}
 
                     <p className="text_body">
                       OTP sent to this number{" "}
@@ -259,14 +259,14 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                       {!isVisibleResend && "Resend OTP in " + timer}
                       {/* {timer ? "Resend OTP in " + timer : <span>Resend</span>} */}
                       {isVisibleResend && (
-                        <WxButton
+                        <Button
                           className="mt-2 ms-3"
                           variant="fill"
                           // type="submit"
                           onClick={() => handleOTP(getValues("sendingThrough"))}
                         >
                           Resend OTP
-                        </WxButton>
+                        </Button>
                       )}
                     </span>
                   </div>
@@ -277,13 +277,13 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
         </WxModalBody>
         <WxModalFooter className="bg-white">
           <div className="d-flex justify-content-between">
-            <WxButton
+            <Button
               variant="outline"
               color="secondary"
               onClick={() => setShow(false)}
             >
               Cancel
-            </WxButton>
+            </Button>
           </div>
         </WxModalFooter>
       </WxModal>

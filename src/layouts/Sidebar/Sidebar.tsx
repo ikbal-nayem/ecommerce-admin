@@ -1,5 +1,5 @@
+import Icon from '@components/Icon';
 import WxHr from '@components/WxHr';
-import WxIcon from '@components/Icon';
 import SidebarSkelton from '@components/WxSkelton/SidebarSkelton';
 import { ENV } from 'config/ENV.config';
 import { Fragment, useEffect, useState } from 'react';
@@ -73,13 +73,13 @@ const Sidebar = ({ onClickFun }) => {
 													className='d-flex justify-content-between align-items-center'
 													onClick={nav.link === ONLINE_STORE ? () => onClickMenuItem(nav.link) : null}
 												>
-													<WxIcon icon={nav.icon} />
+													<Icon icon={nav.icon} />
 													<span className='nav_link_text hide__nav_text'>{nav.label}</span>
 												</div>
 											</Link>
 											{nav?.icon1 ? (
 												<div className='view_website'>
-													<WxIcon
+													<Icon
 														icon={nav.icon1}
 														onClick={
 															nav.link === ONLINE_STORE ? () => window.open(ENV.STORE_DOMAIN, '_blank') : null
@@ -121,7 +121,7 @@ const Sidebar = ({ onClickFun }) => {
 									to={SETTINGS}
 									onClick={() => onClickMenuItem(SETTINGS, '')}
 								>
-									<WxIcon icon='settings' />
+									<Icon icon='settings' />
 									<span className='nav_link_text'>Settings</span>
 								</Link>
 							</li>
@@ -138,7 +138,7 @@ const Sidebar = ({ onClickFun }) => {
 									to={SETTINGS}
 									onClick={() => onClickMenuItem(SETTINGS, '')}
 								>
-									<WxIcon icon='settings' />
+									<Icon icon='settings' />
 									<span className='nav_link_text'>Settings</span>
 								</Link>
 							</li>

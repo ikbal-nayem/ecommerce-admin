@@ -1,6 +1,6 @@
 import WxIcon from "@components/Icon";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
 import { statusColorMapping } from "utils/colorMap";

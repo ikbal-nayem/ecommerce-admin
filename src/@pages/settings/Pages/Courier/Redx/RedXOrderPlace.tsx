@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormContainer, WxFormHeader } from "@components/WxFormLayout";
 import TextInput from "@components/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -305,9 +305,9 @@ const RedXOrderPlace = () => {
                     </p>
                   )}
                 </div>
-                <WxButton disabled={isSaving} type="submit" variant="fill">
+                <Button disabled={isSaving} type="submit" variant="fill">
                   save
-                </WxButton>
+                </Button>
               </div>
             </div>
           </div>

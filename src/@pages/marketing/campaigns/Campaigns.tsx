@@ -3,7 +3,7 @@ import WxMainFull from '@components/MainContentLayout/WxMainFull';
 import WxNotFound from '@components/NotFound/NotFound';
 import WxSelect from '@components/Select/WxSelect';
 import TableLoader from '@components/TableLoader/TableLoader';
-import WxButton from '@components/Button';
+import {Button} from '@components/Button';
 import { WxFormHeader } from '@components/WxFormLayout';
 import WxIcon from '@components/Icon';
 import TextInput from '@components/TextInput';
@@ -166,13 +166,13 @@ const Campaigns = () => {
 				title='Campaigns'
 				noBack
 				rightContent={
-					<WxButton
+					<Button
 						variant='fill'
 						onClick={() => handleCreateCampaign()}
 						disabled={!activePlan?.hasManualOrder}
 					>
 						Create Campaign
-					</WxButton>
+					</Button>
 				}
 			/>
 			<div className='card'>

@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import { MASTER_META_KEY } from "config/constants";
 import {
@@ -174,7 +174,7 @@ const SecondarySidebar = ({
 
 				{isDowngrade ? (
 					<div className="bottom-nav-item show-mobile-view-sm">
-						<WxButton
+						<Button
 							color="primary"
 							variant="fill"
 							w={100}
@@ -182,13 +182,13 @@ const SecondarySidebar = ({
 							onClick={onDowngrade}
 						>
 							{isPurchesing ? <Preloader /> : "Downgrade"}
-						</WxButton>
+						</Button>
 					</div>
 				) : null}
 			</ul>
 			{isDowngrade ? (
 				<div className="bottom-nav-item hide-mobile-view">
-					<WxButton
+					<Button
 						color="primary"
 						variant="fill"
 						w={100}
@@ -196,7 +196,7 @@ const SecondarySidebar = ({
 						onClick={onDowngrade}
 					>
 						{isPurchesing ? <Preloader /> : "Downgrade"}
-					</WxButton>
+					</Button>
 				</div>
 			) : null}
 		</div>

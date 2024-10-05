@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormFooter } from "@components/WxFormLayout";
 import WxFormContainer from "@components/WxFormLayout/WxFormContainer";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
@@ -172,9 +172,9 @@ const Preferences = () => {
             </div>
             <div className="col-lg-3 col-md-4 col-sm-12">
               <div className="card wx__form_right">
-                <WxButton type="submit" variant="fill" disabled={isSaving}>
+                <Button type="submit" variant="fill" disabled={isSaving}>
                   {isSaving ? <ButtonLoader /> : "Save"}
-                </WxButton>
+                </Button>
               </div>
             </div>
           </div>

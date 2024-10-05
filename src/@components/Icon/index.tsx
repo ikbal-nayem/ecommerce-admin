@@ -1,10 +1,11 @@
+import { IColors } from '@interfaces/common.interface';
 import clsx from 'clsx';
 import './Icon.scss';
 
 interface IIcon {
 	icon: string;
 	variants?: 'outlined' | 'filled' | 'round' | 'sharp' | 'two-tone';
-	color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'disabled';
+	color?: IColors;
 	onClick?: any;
 	className?: string;
 	id?: string;

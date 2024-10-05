@@ -1,6 +1,6 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
@@ -280,7 +280,7 @@ const Notification = () => {
                   </div>
                 </div>
                 <div className="icon_megenta">
-                  <WxButton
+                  <Button
                     type="button"
                     variant="none"
                     onClick={() =>
@@ -288,17 +288,17 @@ const Notification = () => {
                     }
                   >
                     <WxIcon icon="sms" />
-                  </WxButton>
+                  </Button>
                 </div>
               </div>
-              <WxButton
+              <Button
                 type="button"
                 variant="outline"
                 disabled={!rateInfo}
                 onClick={() => setDialogeIndex("buyNonMasking")}
               >
                 Buy SMS
-              </WxButton>
+              </Button>
               <p className="text_small text_regular text-center mt-2 mb-0">
                 Current SMS rate {rateInfo?.nonMaskingSmsRate} paisa/SMS
               </p>
@@ -314,7 +314,7 @@ const Notification = () => {
                   </h2>
                 </div>
                 <div className="icon_megenta">
-                  <WxButton
+                  <Button
                     type="button"
                     variant="none"
                     onClick={() =>
@@ -322,17 +322,17 @@ const Notification = () => {
                     }
                   >
                     <WxIcon icon="email" />
-                  </WxButton>
+                  </Button>
                 </div>
               </div>
-              <WxButton
+              <Button
                 type="button"
                 variant="outline"
                 disabled={!rateInfo}
                 onClick={() => setDialogeIndex("buyEmail")}
               >
                 Buy Email
-              </WxButton>
+              </Button>
               <p className="text_small text_regular text-center mt-2 mb-0">
                 Current SMS rate {rateInfo?.emailRate} paisa/SMS
               </p>
@@ -341,13 +341,13 @@ const Notification = () => {
                 <p className="text_subtitle text_semibold mb-0">
                   Email to be used
                 </p>
-                <WxButton
+                <Button
                   type="button"
                   variant="none"
                   onClick={() => setDialogeIndex("updateEmail")}
                 >
                   {senderEmail ? "Edit" : "Add"}
-                </WxButton>
+                </Button>
               </div>
               <p className="text_body text_regular mb-0">
                 {loading ? (

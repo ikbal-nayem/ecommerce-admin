@@ -2,7 +2,7 @@ import WxAlert from "@components/Alert/WxAlert";
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxTableSkelton from "@components/WxSkelton/WxTableSkeleton";
 import {
@@ -111,13 +111,13 @@ const SiteOperator = () => {
 					title="Site Operator"
 					backNavigationLink={SETTINGS}
 					rightContent={
-						<WxButton
+						<Button
 							variant="fill"
 							onClick={() => navigate(SETTINGS_SITE_OPERATOR_ADD)}
 							disabled={storeOperatorCount <= siteOperatorData?.length}
 						>
 							Add Operator
-						</WxButton>
+						</Button>
 					}
 				/>
 

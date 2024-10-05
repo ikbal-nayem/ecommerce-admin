@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
@@ -66,9 +66,9 @@ export const CustomerEditModal = ({
           />
         </WxModalBody>
         <WxModalFooter>
-          <WxButton variant="fill" type="submit" disabled={isSubmitting}>
+          <Button variant="fill" type="submit" disabled={isSubmitting}>
             Save
-          </WxButton>
+          </Button>
         </WxModalFooter>
       </form>
     </WxModal>

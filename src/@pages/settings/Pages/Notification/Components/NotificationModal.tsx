@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
@@ -126,7 +126,7 @@ const NotificationModal = ({
 				</WxModalBody>
 				<WxModalFooter className="bg-white">
 					<div className="d-flex justify-content-end">
-						<WxButton
+						<Button
 							variant="outline"
 							color="secondary"
 							onClick={handleDialogeClose}
@@ -134,10 +134,10 @@ const NotificationModal = ({
 							className="me-3"
 						>
 							Cancel
-						</WxButton>
-						<WxButton variant="fill" type="submit" disabled={isLoading}>
+						</Button>
+						<Button variant="fill" type="submit" disabled={isLoading}>
 							{isLoading ? <Preloader /> : data?.buttonLabel}
-						</WxButton>
+						</Button>
 					</div>
 				</WxModalFooter>
 			</form>

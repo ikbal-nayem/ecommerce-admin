@@ -1,5 +1,5 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxLabel from "@components/WxLabel";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
@@ -56,16 +56,16 @@ const ShippingModal = ({
       </WxModalBody>
       <WxModalFooter className="bg-white">
         <div className="d-flex justify-content-between">
-          <WxButton
+          <Button
             variant="outline"
             color="secondary"
             onClick={handleShippingClose}
           >
             Cancel
-          </WxButton>
-          <WxButton variant="fill" onClick={handleShippingConfirm}>
+          </Button>
+          <Button variant="fill" onClick={handleShippingConfirm}>
             Done
-          </WxButton>
+          </Button>
         </div>
       </WxModalFooter>
     </WxModal>

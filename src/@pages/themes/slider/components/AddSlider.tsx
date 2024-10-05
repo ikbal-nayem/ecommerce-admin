@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -69,7 +69,7 @@ const SliderDrawer = ({
 							<div className="d-flex align-items-center justify-content-between">
 								<div>
 									{isEditForm && (
-										<WxButton
+										<Button
 											variant="fill"
 											type="button"
 											disabled={isSaving}
@@ -77,12 +77,12 @@ const SliderDrawer = ({
 											onClick={() => handleDelete(editedData)}
 										>
 											Delete
-										</WxButton>
+										</Button>
 									)}
 								</div>
 
 								<div className="d-flex align-items-center justify-content-between">
-									<WxButton
+									<Button
 										color="secondary"
 										type="button"
 										variant="outline"
@@ -91,8 +91,8 @@ const SliderDrawer = ({
 										disabled={isSaving}
 									>
 										Cancel
-									</WxButton>
-									<WxButton variant="fill" type="submit" disabled={isSaving}>
+									</Button>
+									<Button variant="fill" type="submit" disabled={isSaving}>
 										{isSaving ? (
 											<ButtonLoader />
 										) : isEditForm ? (
@@ -100,7 +100,7 @@ const SliderDrawer = ({
 										) : (
 											"Add"
 										)}
-									</WxButton>
+									</Button>
 								</div>
 							</div>
 						</div>

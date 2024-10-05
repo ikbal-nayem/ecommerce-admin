@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import TextInput from "@components/TextInput";
 import { IProductVariant } from "@interfaces/product.interface";
@@ -182,14 +182,14 @@ const OrderRefund = () => {
 								color={errors?.refundAmount ? "danger" : "secondary"}
 								errorMessage={errors.refundAmount?.message}
 							/>
-							<WxButton
+							<Button
 								color="primary"
 								variant="fill"
 								type="submit"
 								disabled={isSubmiting}
 							>
 								Refund {isSubmiting && <ButtonLoader />}
-							</WxButton>
+							</Button>
 						</div>
 					</div>
 				</div>

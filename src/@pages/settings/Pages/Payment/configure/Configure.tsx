@@ -1,5 +1,5 @@
 import "./Configure.scss";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -227,7 +227,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 					</WxDrawerBody>
 					<WxDrawerFooter>
 						<div className="d-flex justify-content-end">
-							<WxButton
+							<Button
 								color="secondary"
 								type="button"
 								variant="outline"
@@ -236,10 +236,10 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 								disabled={saving}
 							>
 								Cancel
-							</WxButton>
-							<WxButton variant="fill" type="submit" disabled={saving}>
+							</Button>
+							<Button variant="fill" type="submit" disabled={saving}>
 								{saving ? <ButtonLoader /> : "Save"}
-							</WxButton>
+							</Button>
 						</div>
 					</WxDrawerFooter>
 				</form>

@@ -1,5 +1,5 @@
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
@@ -152,12 +152,12 @@ const Checkout = () => {
 				<div className="d-flex justify-content-between align-items-center mb-3">
 					<WxFormHeader title="Checkout" backNavigationLink={SETTINGS} />
 					{/* TODO::currently not working */}
-					{/* <WxButton
+					{/* <Button
             variant="none"
             // onClick={() => navigate(SETTINGS_ROLES_CREATE)}
           >
             View Checkout Page
-          </WxButton> */}
+          </Button> */}
 				</div>
 
 				<div className="card p-3 mt-3">
@@ -530,17 +530,17 @@ const Checkout = () => {
 					<div className="d-flex justify-content-between align-items-center">
 						<p className="mb-0">No changes yet</p>
 						<div className="d-flex">
-							<WxButton
+							<Button
 								variant="outline"
 								color="secondary"
 								className="me-3"
 								onClick={() => navigate(SETTINGS_CHECKOUT)}
 							>
 								Cancel
-							</WxButton>
-							<WxButton variant="fill" type="submit" disabled={isSubmitting}>
+							</Button>
+							<Button variant="fill" type="submit" disabled={isSubmitting}>
 								Save Change {isSubmitting && <Preloader />}
-							</WxButton>
+							</Button>
 						</div>
 					</div>
 				</div>

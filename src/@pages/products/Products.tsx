@@ -3,7 +3,7 @@ import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import WxSelect from "@components/Select/WxSelect";
 import TableLoader from "@components/TableLoader/TableLoader";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxPagination from "@components/WxPagination/WxPagination";
@@ -144,13 +144,13 @@ const Products = () => {
 			<WxMainFull>
 				<div className="d-flex justify-content-between align-items-center">
 					<h4 className="text_h4 text_medium mb-0">Products List</h4>
-					<WxButton
+					<Button
 						disabled={isLoader}
 						variant="fill"
 						onClick={() => navigate(PRODUCT_CREATE)}
 					>
 						Add Product
-					</WxButton>
+					</Button>
 				</div>
 
 				{isLoading ? (

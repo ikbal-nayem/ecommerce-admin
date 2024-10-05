@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -175,16 +175,16 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
               <div className="wx__manage_customer_group__footer">
                 {editData?.id ? (
                   <div className="me-auto">
-                    <WxButton
+                    <Button
                       color="danger"
                       variant="fill"
                       onClick={() => handleDelete(editData)}
                     >
                       Delete
-                    </WxButton>
+                    </Button>
                   </div>
                 ) : null}
-                <WxButton
+                <Button
                   className="me-3"
                   variant="outline"
                   color="secondary"
@@ -193,14 +193,14 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
                   }
                 >
                   Cancel
-                </WxButton>
-                <WxButton
+                </Button>
+                <Button
                   type={isEditorOpen ? "submit" : "button"}
                   variant="fill"
                   onClick={() => (!isEditorOpen ? setIsEditorOpen(true) : null)}
                 >
                   {isEditorOpen ? "Save" : "Add Group"}
-                </WxButton>
+                </Button>
                 <ConfirmationModal
                   onConfirm={() => onConfirmGroup()}
                   isOpen={isConfirmOpenModal}

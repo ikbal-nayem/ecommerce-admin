@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import { ThemeCustomizationService } from "services/api/settings/ThemeCustomization.service";
@@ -147,9 +147,9 @@ export default function CustomizationTypography() {
 				<WxFormHeader
 					title="Typography"
 					rightContent={
-						<WxButton variant="fill" type="submit">
+						<Button variant="fill" type="submit">
 							Save
-						</WxButton>
+						</Button>
 					}
 				/>
 				<div className="card p-4">

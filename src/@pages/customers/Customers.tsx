@@ -3,7 +3,7 @@ import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import WxSelect from "@components/Select/WxSelect";
 import TableLoader from "@components/TableLoader/TableLoader";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -190,9 +190,9 @@ export default function Customer() {
 				title="Customers"
 				rightContent={
 					customers.length ? (
-						<WxButton variant="fill" onClick={() => navigate(CUSTOMER_CREATE)}>
+						<Button variant="fill" onClick={() => navigate(CUSTOMER_CREATE)}>
 							Add Customer
-						</WxButton>
+						</Button>
 					) : null
 				}
 			/>

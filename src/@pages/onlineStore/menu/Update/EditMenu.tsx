@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -9,7 +9,7 @@ import WxSwitch from "@components/WxSwitch";
 import { MASTER_META_KEY } from "config/constants";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import isValidUrl from "utils/checkvalidUrl";
+import isValidUrl from "utils/check-validity";
 import "../Create/Create.scss";
 
 const Create = ({
@@ -245,7 +245,7 @@ const Create = ({
           <WxDrawerFooter>
             <div className="delivery_create_sec__footer">
               <div className="d-flex justify-content-end">
-                <WxButton
+                <Button
                   color="secondary"
                   type="button"
                   variant="outline"
@@ -253,10 +253,10 @@ const Create = ({
                   onClick={handleFormClose}
                 >
                   Cancel
-                </WxButton>
-                <WxButton variant="fill" type="submit">
+                </Button>
+                <Button variant="fill" type="submit">
                   Add
-                </WxButton>
+                </Button>
               </div>
             </div>
           </WxDrawerFooter>

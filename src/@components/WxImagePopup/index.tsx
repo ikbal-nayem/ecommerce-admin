@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import { useState } from "react";
 import { imageURLGenerate } from "utils/utils";
@@ -38,16 +38,16 @@ const WxImagePopup = ({ srcKey, imageList }: IWxImagePopup) => {
 			{imagePopup < 0 ? null : (
 				<div className="wx__popup_container">
 					<div className="popup_header">
-						<WxButton
+						<Button
 							variant="none"
 							size="lg"
 							onClick={() => setImagePopup(-1)}
 						>
 							<WxIcon variants="round" icon="close" className="close_icon" />
-						</WxButton>
+						</Button>
 					</div>
 					<div className="popup_content">
-						<WxButton
+						<Button
 							variant="none"
 							size="lg"
 							className="arrow__left"
@@ -58,11 +58,11 @@ const WxImagePopup = ({ srcKey, imageList }: IWxImagePopup) => {
 								icon="arrow_back_ios"
 								className="arrow_icon"
 							/>
-						</WxButton>
+						</Button>
 						<div className="popup_gallery_content d-flex justify-content-center align-items-center">
 							<img src={imageURLGenerate(imageList[imagePopup][srcKey])} />
 						</div>
-						<WxButton
+						<Button
 							className="arrow__right"
 							variant="none"
 							size="lg"
@@ -73,7 +73,7 @@ const WxImagePopup = ({ srcKey, imageList }: IWxImagePopup) => {
 								icon="arrow_forward_ios"
 								className="arrow_icon"
 							/>
-						</WxButton>
+						</Button>
 						<button
 							className="wx__close_sec"
 							onClick={() => setImagePopup(-1)}

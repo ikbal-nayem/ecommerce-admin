@@ -1,9 +1,9 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { memo, useState } from "react";
 import "./InventoryTable.scss";
 interface InventoryTableProps {
@@ -206,7 +206,7 @@ const InventoryTable = ({
                     />
                     {pd?.saveBtn && selectedIndex === index && (
                       <>
-                        <WxButton
+                        <Button
                           onClick={(e: any) => {
                             pd.quantity = pd.quantity;
                             console.log(adjustValue);
@@ -216,7 +216,7 @@ const InventoryTable = ({
                           size="sm"
                         >
                           Save
-                        </WxButton>
+                        </Button>
                       </>
                     )}
                   </div>

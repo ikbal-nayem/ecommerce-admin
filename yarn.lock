@@ -3717,11 +3717,6 @@ map-obj@^4.0.0:
   resolved "https://registry.npmjs.org/map-obj/-/map-obj-4.3.0.tgz"
   integrity sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==
 
-material-icons@^1.11.3:
-  version "1.11.7"
-  resolved "https://registry.npmjs.org/material-icons/-/material-icons-1.11.7.tgz"
-  integrity sha512-M/cp6HvT9IWNKffU4NZ41+DQe5d9O1rxfBn5/hYf12RxLC09khMDWruDHOCzLbAub7SgNrAmxVNDpEmubxHUbg==
-
 media-engine@^1.0.3:
   version "1.0.3"
   resolved "https://registry.npmjs.org/media-engine/-/media-engine-1.0.3.tgz"

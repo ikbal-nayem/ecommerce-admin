@@ -1,6 +1,6 @@
 import BlockSection from "@components/BlockSection/BlockSection";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxImg from "@components/WxImg/WxImg";
 import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
@@ -170,29 +170,29 @@ const MarkAsPaid = ({
 								registerProperty={{ ...register("referance") }}
 							/>
 							{Object.keys(approveData?.file || {})?.length ? (
-								<WxButton
+								<Button
 									size="sm"
 									variant="fill"
 									color="secondary"
 									onClick={() => setImageView(true)}
 								>
 									See prove
-								</WxButton>
+								</Button>
 							) : null}
 						</WxModalBody>
 						<WxModalFooter className="bg-white">
 							<div className="d-flex justify-content-between">
-								<WxButton
+								<Button
 									variant="outline"
 									color="secondary"
 									disabled={isSaving}
 									onClick={handleClose}
 								>
 									Cancel
-								</WxButton>
-								<WxButton type="submit" variant="fill" disabled={isSaving}>
+								</Button>
+								<Button type="submit" variant="fill" disabled={isSaving}>
 									{isSaving ? <ButtonLoader /> : "Done"}
-								</WxButton>
+								</Button>
 							</div>
 						</WxModalFooter>
 					</form>

@@ -2,7 +2,7 @@ import WxSelect from "@components/Select/WxSelect";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { ProductService } from "services/api/products/Product.services";
 import { LocalStorageService } from "services/utils/local-storage.service";
 import Preloader from "services/utils/preloader.service";

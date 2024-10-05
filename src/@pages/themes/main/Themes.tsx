@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import {
@@ -42,14 +42,14 @@ const Themes = () => {
         title="Themes"
         noBack
         rightContent={
-          <WxButton
+          <Button
             variant="none"
             color="secondary"
             onClick={() => window.open(ENV.STORE_DOMAIN, "_blank")}
           >
             <WxIcon icon="visibility" className="me-2" />
             view your store
-          </WxButton>
+          </Button>
         }
       />
       <div className="card p-3">

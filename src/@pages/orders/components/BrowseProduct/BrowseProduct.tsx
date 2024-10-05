@@ -2,7 +2,7 @@ import WxDrawer from "@components/WxDrawer";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { STATUS_CONSTANT } from "config/constants";
 import { IProductVariant } from "@interfaces/product.interface";
 import { ProductService } from "services/api/products/Product.services";

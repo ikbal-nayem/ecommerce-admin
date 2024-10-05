@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WXEditor from "@components/WxEditor/WxEditor";
 import { IPolicySettings } from "@interfaces/Settings.interface";
 import React, { useEffect } from "react";
@@ -78,14 +78,14 @@ const PolicyCard = ({ item, policies }) => {
 					<h6 className="text_heading text_semibold mb-0">
 						{item?.title}
 					</h6>
-					<WxButton
+					<Button
 						variant="none"
 						color="secondary"
 						onClick={getTemplate}
 						disabled={isLoading}
 					>
 						Create From Template
-					</WxButton>
+					</Button>
 				</div>
 
 				<Controller
@@ -124,7 +124,7 @@ const PolicyCard = ({ item, policies }) => {
           </p>
         </div> */}
 				<div className="d-flex justify-content-end">
-					<WxButton
+					<Button
 						className="me-3"
 						variant="outline"
 						color="secondary"
@@ -132,10 +132,10 @@ const PolicyCard = ({ item, policies }) => {
 						onClick={() => reset({ description: "", slug: "" })}
 					>
 						Reset
-					</WxButton>
-					<WxButton variant="fill" type="submit" disabled={isLoading}>
+					</Button>
+					<Button variant="fill" type="submit" disabled={isLoading}>
 						Save
-					</WxButton>
+					</Button>
 				</div>
 			</form>
 		</div>

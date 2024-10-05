@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import SelectOption from "@components/Select/Select";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
@@ -11,7 +11,7 @@ import CustomerContactDtls from "@components/WxSkelton/Customer/CustomerContactD
 import CustomerDtlInfoSkelton from "@components/WxSkelton/Customer/CustomerDtlInfoSkelton";
 import CustomerLastOrdrSkelton from "@components/WxSkelton/Customer/CustomerLastOrdrSkelton";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import {
 	CUSTOMERS,
 	CUSTOMER_CREATE,
@@ -237,14 +237,14 @@ const CustomerDetails = () => {
           />
         )}
         {customer?.customer && (
-          <WxButton
+          <Button
             variant="none"
             color="primary"
             onClick={() => navigate(ORDER_CREATE + "?customer_id=" + id)}
             disabled={!activePlan?.hasManualOrder}
           >
             create Order
-          </WxButton>
+          </Button>
         )}
       </div>
       {isLoading && <Preloader absolutePosition />}
@@ -327,24 +327,24 @@ const CustomerDetails = () => {
 
                 <WxHr />
                 <div className="d-flex justify-content-end">
-                  <WxButton
+                  <Button
                     variant="fill"
                     onClick={() => navigate(ORDER + "?customerId=" + id)}
                   >
                     View All Orders
-                  </WxButton>
+                  </Button>
                 </div>
               </div>
             )}
             {!customerDetailsLoader && (
               <div className="hide-mobile-view">
-                <WxButton
+                <Button
                   variant="outline"
                   color="danger"
                   onClick={onDeleteCustomer}
                 >
                   Delete Customer
-                </WxButton>
+                </Button>
               </div>
             )}
           </div>
@@ -433,13 +433,13 @@ const CustomerDetails = () => {
                             }
                           />
                           <div className="d-flex justify-content-end mt-3">
-                            <WxButton
+                            <Button
                               variant="outline"
                               color="primary"
                               onClick={() => onUpdateGroup()}
                             >
                               Update
-                            </WxButton>
+                            </Button>
                           </div>
                         </div>
                       ) : null}
@@ -477,26 +477,26 @@ const CustomerDetails = () => {
                       </div>
                     </div>
                   ))}
-                  <WxButton
+                  <Button
                     variant="none"
                     color="primary"
                     type="button"
                     onClick={() => onAddNewAddress()}
                   >
                     Add New Address
-                  </WxButton>
+                  </Button>
                 </div>
               </div>
             )}
             <div className="show-mobile-view w-100 mt-4">
-              <WxButton
+              <Button
                 variant="outline"
                 color="danger"
                 w={100}
                 onClick={onDeleteCustomer}
               >
                 Delete Customer
-              </WxButton>
+              </Button>
             </div>
           </div>
         </div>

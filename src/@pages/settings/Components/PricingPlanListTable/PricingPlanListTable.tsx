@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import { MASTER_META_KEY } from "config/constants";
 import "./PricingPlanTable.scss";
@@ -56,13 +56,13 @@ const PricingPlanListTable = ({
 									{/* <p className="text_small text_regular">
 										{plan?.pricingPlan?.summary}
 									</p> */}
-									<WxButton
+									<Button
 										variant="outline"
 										onClick={() => onSelectPlan(plan)}
 										className="mt-3 mb-3"
 									>
 										Choose plan
-									</WxButton>
+									</Button>
 								</div>
 							</th>
 						))}

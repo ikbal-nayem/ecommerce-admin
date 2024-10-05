@@ -3,7 +3,7 @@ import WxMainFull from '@components/MainContentLayout/WxMainFull';
 import WxNotFound from '@components/NotFound/NotFound';
 import WxSelect from '@components/Select/WxSelect';
 import TableLoader from '@components/TableLoader/TableLoader';
-import WxButton from '@components/Button';
+import {Button} from '@components/Button';
 import { WxFormHeader } from '@components/WxFormLayout';
 import WxIcon from '@components/Icon';
 import TextInput from '@components/TextInput';
@@ -157,7 +157,7 @@ const Audiences: FC = () => {
 				title='Audiences'
 				noBack
 				rightContent={
-					<WxButton
+					<Button
 						variant='fill'
 						onClick={() => handleCreateAudience()}
 						disabled={!activePlan?.hasManualOrder}
@@ -165,7 +165,7 @@ const Audiences: FC = () => {
 						{searchParams.get('type') === MARKETING_AUDIENCE_SMS
 							? 'Create SMS Audience'
 							: 'Create Email Audience'}
-					</WxButton>
+					</Button>
 				}
 			/>
 			<div className='card'>

@@ -1,14 +1,15 @@
-import Button from '@components/Button';
+import { Button } from '@components/Button';
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
 import MainLg from '@components/MainContentLayout/MainLg';
 import NotFound from '@components/NotFound/NotFound';
-import WxPagination from '@components/WxPagination/WxPagination';
+import Pagination from '@components/WxPagination/WxPagination';
 import CollectionTBSkelton from '@components/WxSkelton/CollectionTBSkelton';
 import useLoader from 'hooks/useLoader';
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { CollectionService, ICollectionPayload } from 'services/api/products/Collection.services';
 import { ToastService } from 'services/utils/toastr.service';
+import { isObjectNull } from 'utils/check-validity';
 import { makeFormData } from 'utils/preprocessor';
 import skeltonLoader from 'utils/skeltonLoader';
 import CollectionAdd from './collection-add/CollectionAdd';
@@ -31,11 +32,10 @@ const meta = {
 const Collection = () => {
 	const [open, setOpen] = useState(false);
 	const [isConfirmOpen, setIsConfirmOpen] = useState(false);
-	const [isEdit, setIsEdit] = useState(false);
 	const [isLoading, setIsLoading] = useLoader(true);
 	const [isLoader, setIsLoader] = useState<boolean>(true);
 	const [isSaving, setIsSaving] = useState<boolean>(false);
-	const [editData, setEditData] = useState<ICollectionPayload>();
+	// const [editData, setEditData] = useState<ICollectionPayload>();
 	const [collections, setCollections] = useState<ICollectionPayload[]>();
 	const [collectionMeta, setCollectionMeta] = useState<any>();
 	const deleteItem = useRef(null);
@@ -45,12 +45,12 @@ const Collection = () => {
 		Number(searchParams.get('page')) ? Number(searchParams.get('page')) - 1 : null || 0
 	);
 	const [paginationLimit, setPaginationLimit] = useState(10);
+	const editData = useRef<ICollectionPayload>();
 
 	const handleClose = () => {
 		setOpen(false);
-		setIsEdit(false);
-		setEditData(null);
 		setIsConfirmOpen(false);
+		editData.current = null;
 		deleteItem.current = null;
 	};
 
@@ -72,17 +72,8 @@ const Collection = () => {
 			});
 	};
 
-	const getCollectionById = (id: string) => {
-		CollectionService.collectionGetById(id)
-			.then((res) => {
-				setEditData(res.body);
-			})
-			.catch((err) => ToastService.error(err));
-	};
-
 	const handleEdit = (data: ICollectionPayload) => {
-		getCollectionById(data._id);
-		setIsEdit(true);
+		editData.current = data;
 		setOpen(true);
 	};
 
@@ -117,8 +108,9 @@ const Collection = () => {
 
 	const onSubmit = async (data: ICollectionPayload) => {
 		setIsSaving(true);
-		if (isEdit) {
-			CollectionService.update(data)
+		if (!isObjectNull(editData.current)) {
+			const fd = await makeFormData(data);
+			CollectionService.update(editData.current?._id, fd)
 				.then((response) => {
 					ToastService.success(response.message);
 					handleClose();
@@ -152,8 +144,7 @@ const Collection = () => {
 					isOpen={open}
 					handleClose={handleClose}
 					onSubmit={onSubmit}
-					isEditForm={isEdit}
-					editData={editData}
+					editData={editData.current}
 					isSaving={isSaving}
 					handleDelete={handleDelete}
 				/>
@@ -173,7 +164,7 @@ const Collection = () => {
 						<>
 							<CollectionTable data={collections} handleEdit={handleEdit} onDelete={handleDelete} />
 							<div className='p-4'>
-								<WxPagination
+								<Pagination
 									meta={collectionMeta}
 									currentPage={currentPage}
 									setCurrentPage={setCurrentPage}

@@ -1,4 +1,4 @@
-import { IRequestMeta } from '@interfaces/common.interface';
+import { IObject, IRequestMeta } from '@interfaces/common.interface';
 import { PRODUCT_COLLECTION } from 'config/api-constant';
 import { apiIns } from 'config/api.config';
 import { mergePayloadWithStoreId } from 'services/utils/localStorageData.service';
@@ -33,6 +33,9 @@ const defaultRequest = {
 export const CollectionService = {
 	create: async (payload: FormData): Promise<any> => await apiIns.post('product-config/collection', payload),
 
+	update: async (id: string, payload: IObject): Promise<any> =>
+		await apiIns.put('product-config/collection/' + id, payload),
+
 	isSlugAvailable: async (payload: any): Promise<any> =>
 		await apiIns.post(PRODUCT_COLLECTION + 'is-slug-available', mergePayloadWithStoreId(payload)),
 
@@ -44,8 +47,6 @@ export const CollectionService = {
 
 	get: async (payload: ICollectionReadPayload = defaultRequest): Promise<any> =>
 		await apiIns.get('product-config/collections'),
-
-	update: async (payload: any): Promise<any> => await apiIns.put(PRODUCT_COLLECTION + 'update', payload),
 
 	delete: async (deletePayload: any): Promise<any> =>
 		await apiIns.post(PRODUCT_COLLECTION + 'delete', mergePayloadWithStoreId(deletePayload)),

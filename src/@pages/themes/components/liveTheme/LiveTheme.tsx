@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IThemeInstalled } from "@interfaces/themeCustomization.interface";
@@ -58,7 +58,7 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
 					Layout : <span className="wx__body_medium">{layout}</span>
 				</p> */}
 				<div className="d-flex align-items-center">
-					<WxButton
+					<Button
 						className="me-2"
 						variant="fill"
 						onClick={() => {
@@ -66,8 +66,8 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
 						}}
 					>
 						Customize
-					</WxButton>
-					{/* <WxButton variant="none" onClick={() => onShowPopup()}>
+					</Button>
+					{/* <Button variant="none" onClick={() => onShowPopup()}>
             More
             <WxIcon
               icon="more_vert"
@@ -118,7 +118,7 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
                 </li>
               </ul>
             </WxDropdown>
-          </WxButton> */}
+          </Button> */}
 				</div>
 			</div>
 		</div>

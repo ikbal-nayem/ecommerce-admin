@@ -1,6 +1,6 @@
 import DateInput from '@components/DatePicker/DateInput';
 import WxMainLg from '@components/MainContentLayout/MainLg';
-import WxButton from '@components/Button';
+import {Button} from '@components/Button';
 import WxDropdown from '@components/WxDropdown/WxDropdown';
 import WxIcon from '@components/Icon';
 import TextInput from '@components/TextInput';
@@ -172,7 +172,7 @@ const Dashboard = () => {
 									</p>
 								</div>
 								<div>
-									<WxButton
+									<Button
 										size='sm'
 										color='secondary'
 										onClick={() => {
@@ -180,7 +180,7 @@ const Dashboard = () => {
 										}}
 									>
 										View More <WxIcon className='ms_2' icon='arrow_forward' />
-									</WxButton>
+									</Button>
 								</div>
 							</div>
 							<div className='notify d-flex justify-content-between align-items-center'>
@@ -192,7 +192,7 @@ const Dashboard = () => {
 									</p>
 								</div>
 								<div>
-									<WxButton
+									<Button
 										size='sm'
 										color='secondary'
 										onClick={() => {
@@ -200,7 +200,7 @@ const Dashboard = () => {
 										}}
 									>
 										View More <WxIcon className='ms_2' icon='arrow_forward' />
-									</WxButton>
+									</Button>
 								</div>
 							</div>
 							<div className=' notify d-flex justify-content-between align-items-center'>
@@ -212,7 +212,7 @@ const Dashboard = () => {
 									</p>
 								</div>
 								<div>
-									<WxButton
+									<Button
 										size='sm'
 										color='secondary'
 										onClick={() => {
@@ -220,7 +220,7 @@ const Dashboard = () => {
 										}}
 									>
 										View More <WxIcon className='ms_2' icon='arrow_forward' />
-									</WxButton>
+									</Button>
 								</div>
 							</div>
 						</div>
@@ -234,10 +234,10 @@ const Dashboard = () => {
 			{/* {!summeryLoader ? (
         <div className="wx__all_packBanner d-flex justify-content-between align-items-center">
           <h2 className="m-0">50% off on all packs</h2>
-          <WxButton variant="outline">
+          <Button variant="outline">
             Explore Now
             <WxIcon className="ms_2" icon="arrow_forward" />
-          </WxButton>
+          </Button>
         </div>
       ) : (
         <div className="bg-white rounded mt-3">
@@ -251,7 +251,7 @@ const Dashboard = () => {
 						Discover Webx
 					</h5>
 					<div className="d-flex align-items-center">
-						<WxButton size="sm">Explore More</WxButton>
+						<Button size="sm">Explore More</Button>
 						<WxIcon className="ms-3" icon="more_vert" />
 					</div>
 				</div>

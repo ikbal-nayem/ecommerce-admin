@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Select";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import WxSlider from "@components/WxSlider";
@@ -143,7 +143,7 @@ export default function CustomizationHome() {
 									value={selectedSlider}
 								/>
 							</div>
-							<WxButton
+							<Button
 								onClick={onSaveFun}
 								variant="fill"
 								className="me-3 wx__btn_sm"
@@ -153,9 +153,9 @@ export default function CustomizationHome() {
 								}
 							>
 								Save
-							</WxButton>
+							</Button>
 							{!!selectedSlider?.id && (
-								<WxButton
+								<Button
 									onClick={() => setPreviewFlag(!previewFlag)}
 									variant="outline"
 									color="secondary"
@@ -166,7 +166,7 @@ export default function CustomizationHome() {
 									) : (
 										<WxIcon icon="remove_red_eye" />
 									)}
-								</WxButton>
+								</Button>
 							)}
 						</div>
 					</div>

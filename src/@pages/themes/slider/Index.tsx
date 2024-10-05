@@ -1,11 +1,11 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import TableLoader from "@components/TableLoader/TableLoader";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import WxSwitch from "@components/WxSwitch";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { ISlider } from "@interfaces/themeCustomization.interface";
 import { THEME_CUSTOMIZATION_SLIDER_DETAILS } from "routes/path-name.route";
 import { SliderService } from "services/api/onlineStore/themes/Slider.service";
@@ -126,10 +126,10 @@ const Slider = () => {
 				<TableLoader isLoading={isLoading} />
 				<div className="title_section">
 					<div className="title" />
-					<WxButton onClick={() => setIsFormOpen(true)} variant="outline">
+					<Button onClick={() => setIsFormOpen(true)} variant="outline">
 						<WxIcon icon="add" />
 						<span>Add Slider</span>
-					</WxButton>
+					</Button>
 				</div>
 				{sliderData?.length ? (
 					<div className="wx__responsive_table">

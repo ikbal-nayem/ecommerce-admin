@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import TextInput from "@components/TextInput";
 import { SETTINGS_NOTIFICATION } from "routes/path-name.route";
@@ -136,9 +136,9 @@ const OrderConfirmation = () => {
           </div>
           <div className="sms_gateway_right col-lg-4 col-md-12 col-sm-12 mt-3">
             <div className="card p-4">
-              <WxButton variant="fill" type="submit">
+              <Button variant="fill" type="submit">
                 Add
-              </WxButton>
+              </Button>
             </div>
           </div>
         </div>

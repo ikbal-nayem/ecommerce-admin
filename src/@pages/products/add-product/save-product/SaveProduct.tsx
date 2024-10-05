@@ -1,6 +1,6 @@
 import SelectOption from "@components/Select/Select";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxChip from "@components/WxChip";
 import WxHr from "@components/WxHr";
 import WxLabel from "@components/WxLabel";
@@ -137,9 +137,9 @@ const SaveProducts = ({
 	return (
 		<div className="card wx__form_right p-3 mt-4">
 			<div className="hide-mobile-view">
-				<WxButton type="submit" variant="fill" w={100} disabled={isSaving}>
+				<Button type="submit" variant="fill" w={100} disabled={isSaving}>
 					{isSaving ? <ButtonLoader /> : "Save Product"}
-				</WxButton>
+				</Button>
 				<WxHr />
 			</div>
 			<WxSelect

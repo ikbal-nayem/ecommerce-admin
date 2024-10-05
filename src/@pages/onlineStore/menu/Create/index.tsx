@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
@@ -238,9 +238,9 @@ const CreateMenu = () => {
 					</div>
 					<div className="right cards-sec col-lg-4 col-md-12 col-sm-12 mt-3">
 						<div className="card p-3">
-							<WxButton type="submit" variant="fill" disabled={saving}>
+							<Button type="submit" variant="fill" disabled={saving}>
 								Save{saving ? <Preloader /> : null}
-							</WxButton>
+							</Button>
 
 							<WxHr />
 

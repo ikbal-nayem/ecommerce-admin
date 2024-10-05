@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
@@ -154,17 +154,17 @@ const ManageVendor = ({ drawerOpen, handleClose }: ManageVendorProps) => {
 							<div className="wx__manage_vendor__footer">
 								{isEditForm ? (
 									<div className="me-auto">
-										<WxButton
+										<Button
 											color="danger"
 											variant="fill"
 											disabled={saving}
 											onClick={() => handleDelete(editData)}
 										>
 											Delete
-										</WxButton>
+										</Button>
 									</div>
 								) : null}
-								<WxButton
+								<Button
 									className="me-3"
 									variant="outline"
 									color="secondary"
@@ -174,15 +174,15 @@ const ManageVendor = ({ drawerOpen, handleClose }: ManageVendorProps) => {
 									}
 								>
 									Cancel
-								</WxButton>
-								<WxButton
+								</Button>
+								<Button
 									type={isEditorOpen ? "submit" : "button"}
 									variant="fill"
 									disabled={saving}
 									onClick={() => (!isEditorOpen ? setIsEditorOpen(true) : null)}
 								>
 									{isEditorOpen ? "Save" : "Add Vendor"}
-								</WxButton>
+								</Button>
 							</div>
 						</WxDrawerFooter>
 					</form>

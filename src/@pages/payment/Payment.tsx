@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
@@ -291,9 +291,9 @@ const Payment = () => {
 									</strong>
 								</div>
 								<WxHr />
-								<WxButton type="submit" variant="fill" disabled={openingGetway}>
+								<Button type="submit" variant="fill" disabled={openingGetway}>
 									{openingGetway ? <ButtonLoader /> : "Continue"}
-								</WxButton>
+								</Button>
 							</div>
 						</div>
 					</div>

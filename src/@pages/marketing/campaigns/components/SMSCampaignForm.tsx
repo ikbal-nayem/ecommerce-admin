@@ -1,6 +1,6 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
@@ -242,9 +242,9 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
         </div>
         <div className="col-lg-4 col-md-12 col-sm-12">
           <div className="card p-4 mb-3">
-            <WxButton disabled={isSaving} type="submit" variant="fill">
+            <Button disabled={isSaving} type="submit" variant="fill">
               Launch Campaign
-            </WxButton>
+            </Button>
             <WxHr />
             {!watch("audienceIds") && errors.audienceIds ? (
               <span className="text-danger my-2">

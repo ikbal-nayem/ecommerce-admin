@@ -1,4 +1,4 @@
-import WxButton from '@components/Button';
+import {Button} from '@components/Button';
 import WxSelect from '@components/Select/WxSelect';
 import TextInput from '@components/TextInput';
 import WxDrawer from '@components/WxDrawer';
@@ -233,18 +233,18 @@ const AddCategory = ({
 						<div className='wx__category_form__footer'>
 							{isEditForm ? (
 								<div className='me-auto'>
-									<WxButton
+									<Button
 										color='danger'
 										variant='fill'
 										disabled={isDeletingImage || isSaving}
 										onClick={() => handleDelete(editData)}
 									>
 										Delete
-									</WxButton>
+									</Button>
 								</div>
 							) : null}
 							<div className='ms-auto d-flex'>
-								<WxButton
+								<Button
 									className='me-3'
 									variant='outline'
 									color='secondary'
@@ -252,11 +252,11 @@ const AddCategory = ({
 									onClick={() => handleClose()}
 								>
 									Cancel
-								</WxButton>
-								<WxButton variant='fill' type='submit' disabled={isSaving || isDeletingImage}>
+								</Button>
+								<Button variant='fill' type='submit' disabled={isSaving || isDeletingImage}>
 									{isEditForm ? 'Update' : 'Add'} Category
 									{isSaving || isDeletingImage ? <ButtonLoader /> : null}
-								</WxButton>
+								</Button>
 							</div>
 						</div>
 					</WxDrawerFooter>

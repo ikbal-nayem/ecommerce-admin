@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
@@ -45,9 +45,9 @@ export default function CustomizationGeneral() {
 				<WxFormHeader
 					title="General"
 					rightContent={
-						<WxButton variant="fill" type="submit">
+						<Button variant="fill" type="submit">
 							Save
-						</WxButton>
+						</Button>
 					}
 				/>
 				<div className="card p-4">

@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import TableLoader from "@components/TableLoader/TableLoader";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxColorPicker from "@components/WxColorPicker";
 import { WxFormHeader } from "@components/WxFormLayout";
 import { ThemeCustomizationService } from "services/api/settings/ThemeCustomization.service";
@@ -36,9 +36,9 @@ export default function CustomizationColor() {
 				<WxFormHeader
 					title="Color"
 					rightContent={
-						<WxButton variant="fill" type="submit" disabled={isSaving}>
+						<Button variant="fill" type="submit" disabled={isSaving}>
 							{isSaving ? <Preloader /> : "Save"}
-						</WxButton>
+						</Button>
 					}
 				/>
 				{/* basic Color */}

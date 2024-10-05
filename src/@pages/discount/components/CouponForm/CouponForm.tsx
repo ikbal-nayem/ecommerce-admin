@@ -1,11 +1,11 @@
 import DateInput from "@components/DatePicker/DateInput";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxRadio from "@components/WxRadio/WxRadio";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { ReactComponent as TakaSign } from "assets/svg/taka.svg";
 import { useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
@@ -307,7 +307,7 @@ const CouponForm = ({
             {/* {J} */}
             {watch("applicableForRadio") === "2" && (
               <div className="my-3">
-                <WxButton
+                <Button
                   onClick={() => {
                     setDrawer(true);
                     setDrawerContent("products");
@@ -316,7 +316,7 @@ const CouponForm = ({
                   color="primary"
                 >
                   Browse Products
-                </WxButton>
+                </Button>
                 {checkedData?.products.map((pd: any, index: number) => {
                   return (
                     <div
@@ -368,7 +368,7 @@ const CouponForm = ({
           >
             {watch("applicableForRadio") === "3" && (
               <div className="my-3">
-                <WxButton
+                <Button
                   onClick={() => {
                     setDrawer(true);
                     setDrawerContent("categories");
@@ -377,7 +377,7 @@ const CouponForm = ({
                   color="primary"
                 >
                   Browse Categories
-                </WxButton>
+                </Button>
                 {checkedData.categories.map(
                   (categories: any, index: number) => {
                     return (
@@ -450,7 +450,7 @@ const CouponForm = ({
           >
             {watch("customerEligibilityRadio") === "2" && (
               <div className="my-3">
-                <WxButton
+                <Button
                   onClick={() => {
                     setDrawer(true);
                     setDrawerContent("customerGroups");
@@ -459,7 +459,7 @@ const CouponForm = ({
                   color="primary"
                 >
                   Browse customer group
-                </WxButton>
+                </Button>
 
                 {checkedData.customerGroups.map((group: any, index: any) => {
                   return (
@@ -514,7 +514,7 @@ const CouponForm = ({
           >
             {watch("customerEligibilityRadio") === "3" && (
               <div className="my-3">
-                <WxButton
+                <Button
                   onClick={() => {
                     setDrawer(true);
                     setDrawerContent("customers");
@@ -523,7 +523,7 @@ const CouponForm = ({
                   color="primary"
                 >
                   Browse customer
-                </WxButton>
+                </Button>
                 {checkedData.customers.map((customer: any, index: number) => {
                   return (
                     <div

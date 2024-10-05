@@ -391,14 +391,14 @@ input[type=number] {
 .wx__input_group_secondary{
   &.icon-left, &.icon-right{
     position: relative; 
-    svg, .wx__icon, .material-symbols-outlined{
+    svg, .icon, .material-symbols-outlined{
         background-color: #fff;
         position: absolute;
         z-index: 5;
     }
   }
   &.icon-left{
-    svg, .wx__icon, .material-symbols-outlined{
+    svg, .icon, .material-symbols-outlined{
       left:0.5em;
     }
     input{
@@ -406,7 +406,7 @@ input[type=number] {
     }
   }
   &.icon-right{
-    svg, .wx__icon, .material-symbols-outlined{
+    svg, .icon, .material-symbols-outlined{
       right:0.5em;
     }
   }

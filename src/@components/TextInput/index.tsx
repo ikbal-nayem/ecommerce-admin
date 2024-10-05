@@ -108,7 +108,7 @@ const TextInput = ({
 			>
 				{startIcon ? (
 					typeof startIcon === 'string' ? (
-						<span className='wx__icon'>{startIcon}</span>
+						<span className='icon'>{startIcon}</span>
 					) : (
 						startIcon
 					)
@@ -141,7 +141,7 @@ const TextInput = ({
 					<Icon style={{ background: 'transparent' }} onClick={handleInputType} icon={toggleIcon} />
 				) : endIcon ? (
 					typeof endIcon === 'string' ? (
-						<span className='wx__icon'>{endIcon}</span>
+						<span className='icon'>{endIcon}</span>
 					) : (
 						endIcon
 					)

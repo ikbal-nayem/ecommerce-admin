@@ -1,8 +1,7 @@
 import Icon from '@components/Icon';
-import { IFilePayload } from '@interfaces/common.interface';
-import { FC, Fragment, useRef, useState } from 'react';
+import { FC, Fragment, useEffect, useRef, useState } from 'react';
 import { Controller } from 'react-hook-form';
-import Preloader from 'services/utils/preloader.service';
+import { genetartMediaURL } from 'utils/utils';
 import './MediaInput.scss';
 
 interface IMediaInputProps {
@@ -12,7 +11,6 @@ interface IMediaInputProps {
 	isRequired?: boolean;
 	fileList?: any[];
 	multiple?: boolean;
-	isUploading?: boolean;
 	maxSelect?: number;
 	dragNDropFor?: string;
 	dragNDropText?: string;
@@ -21,7 +19,7 @@ interface IMediaInputProps {
 	onChange?: (file: File | FileList | null | string | string[], name?: string) => void;
 	// onOrderChange?: (fileList: IFilePayload[] | File[]) => void;
 	// onRemove?: (fileObject?: IFilePayload | File, idx?: number) => void;
-	onSelect?: (imgObj: IFilePayload | File, idx?: number) => void;
+	// onSelect?: (imgObj: IFilePayload | File, idx?: number) => void;
 }
 
 const MediaInput = ({
@@ -29,21 +27,23 @@ const MediaInput = ({
 	fileList = [],
 	multiple,
 	maxSelect,
-	isUploading,
 	dragNDropFor = 'image',
 	dragNDropText = 'images',
 	recommendedText = '1000px X 1000px',
 	accept = 'image/png, image/jpg, image/jpeg',
 	onChange,
-	// onOrderChange,
-	// onRemove,
-	onSelect,
-}: IMediaInputProps) => {
+}: // onOrderChange,
+// onRemove,
+// onSelect,
+IMediaInputProps) => {
 	const [fileItems, setFileItems] = useState<any[]>(fileList || []);
 	const [draggedItem, setDraggedItem] = useState<any>(null);
 	const [isLimitExceeded, setIsLimitExceeded] = useState<boolean>(false);
-	const [fileDetails, setFileDetails] = useState<any>({});
 	const shouldResetNext = useRef(true);
+
+	useEffect(() => {
+		setFileItems(fileList);
+	}, [fileList]);
 
 	// maximum image can select
 	maxSelect = !multiple ? 1 : maxSelect === -1 ? 999 : maxSelect;
@@ -92,6 +92,8 @@ const MediaInput = ({
 	const onRemove = (idx: number) => {
 		setFileItems((prev) => {
 			prev.splice(idx, 1);
+			console.log(prev);
+
 			onChange(multiple ? prev : prev?.length ? prev[0] : null, name);
 			return prev;
 		});
@@ -103,7 +105,7 @@ const MediaInput = ({
 		if (!file) return;
 
 		if (!multiple) {
-			setFileItems([URL.createObjectURL(file[0])]);
+			setFileItems([file[0]]);
 			onChange(file[0], name);
 			return;
 		}
@@ -203,7 +205,7 @@ const MediaInput = ({
 						accept={accept}
 						multiple={dragNDropFor === 'video' ? false : multiple}
 						onChange={(e) => onFileSelect(e.target.files)}
-						disabled={isUploading || maxSelect <= fileItems?.length}
+						disabled={maxSelect <= fileItems?.length}
 					/>
 				</div>
 			) : null}
@@ -212,6 +214,11 @@ const MediaInput = ({
 			{dragNDropFor === 'image' ? (
 				<div className='image_files-container' onDragOver={(e) => e.preventDefault}>
 					{fileItems?.map((item, idx) => {
+						if (item instanceof File) {
+							item = URL.createObjectURL(item);
+						} else {
+							item = genetartMediaURL(item);
+						}
 						const id = item;
 						return (
 							<div
@@ -222,7 +229,7 @@ const MediaInput = ({
 								draggable={onOrderChange ? true : false}
 								onDragStart={(e) => onDragStart(e, idx, id)}
 								onDragEnd={() => onDragEnd(id)}
-								onClick={() => onSelect && onSelect(fileItems[idx])}
+								// onClick={() => onSelect && onSelect(fileItems[idx])}
 							>
 								<img className='image' src={item} alt={item} />
 								<div className='image_hover'>
@@ -232,7 +239,7 @@ const MediaInput = ({
 							</div>
 						);
 					})}
-					{isUploading ? <Preloader /> : null}
+					{/* {isUploading ? <Preloader /> : null} */}
 				</div>
 			) : null}
 
@@ -241,7 +248,7 @@ const MediaInput = ({
 				<div id='video-container' className='video_files-container'>
 					<video controls src={fileItems[0]} />
 					<Icon onClick={() => setFileItems([])} className='closeIcon' icon='close' />
-					{isUploading ? <Preloader /> : null}
+					{/* {isUploading ? <Preloader /> : null} */}
 				</div>
 			) : null}
 		</Fragment>
@@ -251,7 +258,7 @@ const MediaInput = ({
 const ImageInput: FC<IMediaInputProps> = ({ control, ...props }) => {
 	if (!control) return <MediaInput {...props} />;
 
-	const { isRequired, name, defaultImage, onChange } = props;
+	const { isRequired, name, defaultImage, multiple, onChange } = props;
 	return (
 		<Controller
 			control={control}
@@ -262,10 +269,8 @@ const ImageInput: FC<IMediaInputProps> = ({ control, ...props }) => {
 				return (
 					<MediaInput
 						{...props}
-						fileList={field?.value}
+						fileList={multiple ? field.value || [] : field.value ? [field.value] : []}
 						onChange={(f, n) => {
-							console.log(f);
-
 							field.onChange(f);
 							onChange && onChange(f, n);
 						}}

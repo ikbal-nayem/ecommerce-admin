@@ -74,7 +74,7 @@
         :hover {
           color: $neutral__100;
         }
-        .wx__icon {
+        .icon {
           font-size: $icon_sm;
         }
         &.selected {
@@ -112,7 +112,7 @@
         &:hover {
           color: $neutral__100;
         }
-        .wx__icon {
+        .icon {
           font-size: $icon_md;
           font-weight: 500;
           margin-right: 0.5em;
@@ -162,7 +162,7 @@
           height: 37px;
           padding: 0 10px;
           img,
-          .wx__icon {
+          .icon {
             margin-right: 0;
           }
         }
@@ -188,7 +188,7 @@
           a {
             padding: 0.5em 1em;
             img,
-            .wx__icon {
+            .icon {
               margin-right: 0.5rem !important;
             }
           }

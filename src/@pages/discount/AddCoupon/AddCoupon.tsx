@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import {
   WxFormContainer,
   WxFormFooter,
@@ -137,14 +137,14 @@ const AddCoupon = () => {
             </div>
             <div className="col-md-4 col-sm-12 mt-3">
               <div className="card wx__form_right">
-                <WxButton
+                <Button
                   className="hide-mobile-view"
                   disabled={isSaving}
                   type="submit"
                   variant="fill"
                 >
                   Add Coupon
-                </WxButton>
+                </Button>
                 <WxHr className="hide-mobile-view" />
                 <div style={{ maxWidth: "100%" }}>
                   <h6 className="text_h6 text_semibold">Summary</h6>

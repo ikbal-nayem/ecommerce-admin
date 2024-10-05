@@ -1,6 +1,6 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormFooter } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
@@ -333,9 +333,9 @@ const FacebookCampaignForm = ({ isSaving }) => {
         </div>
         <div className="col-lg-4 col-md-12 col-sm-12">
           <div className="card p-4 mb-3">
-            <WxButton disabled={isSaving} type="submit" variant="fill">
+            <Button disabled={isSaving} type="submit" variant="fill">
               Launch Campaign
-            </WxButton>
+            </Button>
             <WxHr />
             <WxHr />
             <div>

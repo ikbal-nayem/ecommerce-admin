@@ -1,9 +1,9 @@
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import WxTabs from "@components/WxTabs/WxTabs";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { IAppDetails, IAppInfo, IAppPricing } from "@interfaces/app.interface";
 import {
 	APPS,
@@ -147,32 +147,32 @@ const AppsDetails = () => {
 										"Find millions of dropship items to sell online"}
 								</p>
 								<p className="wx__user_review h6 pt-3 pb-3">
-									<img className="wx__icon_star" src={starIcon} alt="icon" />
+									<img className="icon_star" src={starIcon} alt="icon" />
 									{appDetails?.avgRating}/5&nbsp;
 									<span>({appDetails?.totalReview} Review)</span>
 								</p>
 								<div className="d-flex align-items-center mb-2 gap-2">
 									{isInstalled ? (
-										<WxButton
+										<Button
 											variant="outline"
 											color="danger"
 											onClick={onInstallOrUninstall}
 											disabled={isInstalling}
 										>
 											{isInstalling ? <Preloader /> : "Uninstall"}
-										</WxButton>
+										</Button>
 									) : (
-										<WxButton
+										<Button
 											variant="fill"
 											color="primary"
 											onClick={onInstallOrUninstall}
 											disabled={isInstalling || isLowerLevel}
 										>
 											{isInstalling ? <Preloader /> : "Install"}
-										</WxButton>
+										</Button>
 									)}
 									{isInstalled && (
-										<WxButton
+										<Button
 											variant="outline"
 											color="primary"
 											className="p-2"
@@ -180,7 +180,7 @@ const AppsDetails = () => {
 											disabled={isLowerLevel}
 										>
 											<WxIcon icon="settings" size={20} />
-										</WxButton>
+										</Button>
 									)}
 								</div>
 								{!isInstalled && isLowerLevel ? (

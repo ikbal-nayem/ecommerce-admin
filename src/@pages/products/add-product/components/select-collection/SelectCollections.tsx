@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
@@ -61,13 +61,13 @@ const SelectCollection = ({
 
   return (
 		<>
-			<WxButton
+			<Button
 				variant="outline"
 				onClick={() => setDrawerOpen(true)}
 				className="mb-3"
 			>
 				Select Collections
-			</WxButton>
+			</Button>
 			<WxDrawer show={drawer_open} handleClose={handleClose}>
 				<div className="collection_select">
 					<WxDrawerHeader
@@ -108,17 +108,17 @@ const SelectCollection = ({
 
 					<WxDrawerFooter>
 						<div className="wx__category_select__footer">
-							<WxButton
+							<Button
 								className="me-3"
 								variant="outline"
 								color="secondary"
 								onClick={handleClose}
 							>
 								Cancel
-							</WxButton>
-							<WxButton variant="fill" onClick={handleClose}>
+							</Button>
+							<Button variant="fill" onClick={handleClose}>
 								Select Category
-							</WxButton>
+							</Button>
 						</div>
 					</WxDrawerFooter>
 				</div>

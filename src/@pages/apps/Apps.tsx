@@ -1,5 +1,5 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { IAppDetails, IInstalledApp } from "@interfaces/app.interface";
 import { APPS_LIST } from "routes/path-name.route";
 import { AppsService } from "services/api/Apps.service";
@@ -49,7 +49,7 @@ const Apps = () => {
 		<WxMainXl className="wx__apps-page">
 			<div className="d-flex justify-content-between align-items-center">
 				<h4 className="text_heading  mb-0">Apps</h4>
-				<WxButton variant="fill">Visit Store</WxButton>
+				<Button variant="fill">Visit Store</Button>
 			</div>
 
 			<div className="card p-4 mt-3 wx__install-app">
@@ -72,14 +72,14 @@ const Apps = () => {
 					<h6 className="text_body text_medium mb-2 wx__subtitle-1">
 						Recommended For You
 					</h6>
-					<WxButton
+					<Button
 						variant="fill"
 						size="sm"
 						className="rounded"
 						onClick={() => navigate(APPS_LIST)}
 					>
 						Get More Apps
-					</WxButton>
+					</Button>
 				</div>
 
 				<div className="wx__suggested_product">

@@ -54,7 +54,7 @@
 				transform: translateY(-50%);
 				width: 4px;
 			}
-			.wx__icon,
+			.icon,
 			.nav_link_text {
 				color: $primary__600;
 			}
@@ -79,13 +79,13 @@
 					font-size: 14px;
 					font-weight: 500;
 				}
-				.wx__icon {
+				.icon {
 					font-size: 15px;
-					margin-right: 27px;
+					margin-right: 20px;
 				}
 			}
 			.s-sidebar__nav-link:hover {
-				.wx__icon,
+				.icon,
 				.nav_link_text {
 					color: $primary__600;
 				}
@@ -177,7 +177,7 @@
 				right: 0;
 				opacity: 1;
 				transition: opacity 0.3s;
-				.wx__icon {
+				.icon {
 					padding: 5px 5px;
 					border-radius: 4px;
 					transition: 0.3s ease-in-out;

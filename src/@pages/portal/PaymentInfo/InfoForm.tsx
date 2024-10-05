@@ -1,6 +1,6 @@
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -229,7 +229,7 @@ const PaymentInfoForm = ({
 
 						<WxDrawerFooter>
 							<div className="portal_payment_info__footer">
-								<WxButton
+								<Button
 									className="me-3"
 									variant="outline"
 									color="secondary"
@@ -237,10 +237,10 @@ const PaymentInfoForm = ({
 									disabled={isSaving}
 								>
 									Cancel
-								</WxButton>
-								<WxButton variant="fill" type="submit" disabled={isSaving}>
+								</Button>
+								<Button variant="fill" type="submit" disabled={isSaving}>
 									{isSaving ? <Preloader /> : "Save"}
-								</WxButton>
+								</Button>
 							</div>
 						</WxDrawerFooter>
 					</form>

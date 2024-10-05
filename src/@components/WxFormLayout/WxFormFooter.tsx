@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { ButtonLoader } from "services/utils/preloader.service";
 
 type IFormFooterProps = {
@@ -30,7 +30,7 @@ const WxFormFooter = ({
           <div className="d-flex">
             {onCancel ? (
               <div className="me-3">
-                <WxButton
+                <Button
                   variant="outline"
                   color="secondary"
                   onClick={onCancel}
@@ -38,10 +38,10 @@ const WxFormFooter = ({
                   disabled={isSaving}
                 >
                   Cancel
-                </WxButton>
+                </Button>
               </div>
             ) : null}
-            <WxButton
+            <Button
               variant="fill"
               color="primary"
               type="submit"
@@ -50,7 +50,7 @@ const WxFormFooter = ({
               onClick={() => (onClickSave ? onClickSave() : null)}
             >
               {isSaving ? <ButtonLoader /> : saveButtonText || "Save"}
-            </WxButton>
+            </Button>
           </div>
         </>
       )}

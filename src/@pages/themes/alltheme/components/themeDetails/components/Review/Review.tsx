@@ -1,6 +1,6 @@
 import WxNotFound from "@components/NotFound/NotFound";
 import WxProgressBar from "@components/RatingProgressBar";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import { IReview } from "@interfaces/app.interface";
 import { ThemeService } from "services/api/onlineStore/themes/Theme.service";
@@ -109,7 +109,7 @@ const Apps = () => {
 								</p>
 							</div>
 							<div className="w-100 d-flex justify-content-end align-items-center">
-								<WxButton variant="outline">Create Review</WxButton>
+								<Button variant="outline">Create Review</Button>
 							</div>
 						</div> */}
 						<div>
@@ -141,36 +141,36 @@ const Apps = () => {
 										{item.reviewMsg}
 									</p>
 									{readMoreBtn ? (
-										<WxButton
+										<Button
 											variant="none"
 											size="sm"
 											onClick={() => showFullData("user_review" + index)}
 										>
 											Read Full Review
-										</WxButton>
+										</Button>
 									) : null}
 
 									<div className="d-flex align-items-center">
 										<div className="d-flex align-items-center helpful">
-											<WxButton variant="none">
+											<Button variant="none">
 												<WxIcon
 													className="icon "
 													icon="thumb_up_off_alt"
 													variants="round"
 												/>
-											</WxButton>
+											</Button>
 											<span>
 												HELPFUL ({item?.reactionCountDTO?.[0]?.helpFull})
 											</span>
 										</div>
 										<div className="d-flex align-items-center not-helpful">
-											<WxButton variant="none">
+											<Button variant="none">
 												<WxIcon
 													className="icon "
 													icon="thumb_down"
 													variants="outlined"
 												/>
-											</WxButton>
+											</Button>
 											<span>
 												NOT HELPFUL ({item?.reactionCountDTO?.[0]?.notHelpFull})
 											</span>
@@ -194,7 +194,7 @@ const Apps = () => {
 						</div>
 						{reviewData?.length ? (
 							<div className="mt-3">
-								<WxButton variant="outline">Read More Reviews</WxButton>
+								<Button variant="outline">Read More Reviews</Button>
 							</div>
 						) : null}
 					</div>
@@ -211,9 +211,9 @@ const Apps = () => {
 							You can write a review about your experience by using the write a
 							review button.
 						</p>
-						<WxButton className="m-auto" variant="fill">
+						<Button className="m-auto" variant="fill">
 							Create Review
-						</WxButton>
+						</Button>
 					</div>
 				)}
 			</div>

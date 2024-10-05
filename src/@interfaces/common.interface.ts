@@ -2,6 +2,8 @@ export interface IObject {
 	[key: string]: any;
 }
 
+export type IColors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+
 export interface IFilePayload {
 	id?: string;
 	bucketName?: string;

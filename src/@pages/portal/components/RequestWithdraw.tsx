@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -13,13 +13,13 @@ function RequestWithdraw() {
 
 	return (
 		<div>
-			<WxButton
+			<Button
 				color="primary"
 				variant="fill"
 				onClick={() => setDrawerOpen(true)}
 			>
 				Request for withdraw
-			</WxButton>
+			</Button>
 			<WxDrawer show={drawer_open} handleClose={handleClose}>
 				<div className="withdraw_request">
 					<WxDrawerHeader
@@ -33,15 +33,15 @@ function RequestWithdraw() {
 
 					<WxDrawerFooter>
 						<div className="withdraw_request__footer">
-							<WxButton
+							<Button
 								className="me-3"
 								variant="outline"
 								color="secondary"
 								onClick={handleClose}
 							>
 								Cancel
-							</WxButton>
-							<WxButton variant="fill">Save</WxButton>
+							</Button>
+							<Button variant="fill">Save</Button>
 						</div>
 					</WxDrawerFooter>
 				</div>

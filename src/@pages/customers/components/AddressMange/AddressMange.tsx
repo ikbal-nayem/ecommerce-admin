@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -255,16 +255,16 @@ const AddressManage = ({
               <div className="wx__manage_customer_group__footer">
                 {editData?.id ? (
                   <div className="me-auto">
-                    <WxButton
+                    <Button
                       color="danger"
                       variant="fill"
                       onClick={() => handleDelete(editData?.id)}
                     >
                       Delete
-                    </WxButton>
+                    </Button>
                   </div>
                 ) : null}
-                <WxButton
+                <Button
                   type="button"
                   className="me-3"
                   variant="outline"
@@ -276,8 +276,8 @@ const AddressManage = ({
                   }
                 >
                   Cancel
-                </WxButton>
-                <WxButton
+                </Button>
+                <Button
                   type={isEditorOpen || isNewAddress ? "submit" : "button"}
                   variant="fill"
                   onClick={() => {
@@ -286,7 +286,7 @@ const AddressManage = ({
                   }}
                 >
                   {isEditorOpen || isNewAddress ? "Save" : "Add Address"}
-                </WxButton>
+                </Button>
               </div>
             </WxDrawerFooter>
           </form>

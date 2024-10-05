@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import TextInput from "@components/TextInput";
 import { IProductVariant } from "@interfaces/product.interface";
@@ -151,14 +151,14 @@ const OrderReturn = () => {
                 {returnableInfo.quantity} Items will be returned.
               </span>
               <hr />
-              <WxButton
+              <Button
                 color="primary"
                 variant="fill"
                 type="submit"
                 disabled={isSubmiting || returnableInfo.quantity <= 0}
               >
                 Return {isSubmiting && <Preloader />}
-              </WxButton>
+              </Button>
             </div>
           </div>
         </div>

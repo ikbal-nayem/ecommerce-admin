@@ -81,12 +81,12 @@ const Role = () => {
       <WxMainLg>
         <div className="d-flex justify-content-between align-items-center mb-3">
           <WxFormHeader title="User Roles" backNavigationLink={SETTINGS} />
-          {/* <WxButton
+          {/* <Button
             variant="fill"
             onClick={() => navigate(SETTINGS_ROLES_CREATE)}
           >
             Add Role
-          </WxButton> */}
+          </Button> */}
         </div>
         {isLoading ? <Preloader absolutePosition /> : null}
 

@@ -1,7 +1,7 @@
 import "./ProductCart.scss";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { IProductVariant } from "@interfaces/product.interface";
 import { imageURLGenerate } from "utils/utils";
 import { Fragment } from "react";

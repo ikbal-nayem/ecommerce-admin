@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
@@ -90,9 +90,9 @@ const SiteFooter = () => {
 				<WxFormHeader
 					title="Footer"
 					rightContent={
-						<WxButton variant="fill" type="submit" disabled={isSaving}>
+						<Button variant="fill" type="submit" disabled={isSaving}>
 							{isSaving ? <Preloader /> : "Save"}
-						</WxButton>
+						</Button>
 					}
 				/>
 				<div className="card p-4">
@@ -137,14 +137,14 @@ const SiteFooter = () => {
 											Select footer for column {idx + 1}
 										</h6>
 										<div className="ms-auto">
-											<WxButton
+											<Button
 												size="sm"
 												color="secondary"
 												variant="outline"
 												onClick={() => handleReset(idx)}
 											>
 												Reset
-											</WxButton>
+											</Button>
 										</div>
 									</div>
 								</div>

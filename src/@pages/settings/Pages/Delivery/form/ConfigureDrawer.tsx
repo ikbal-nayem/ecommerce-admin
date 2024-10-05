@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -151,7 +151,7 @@ const ConfigureDrawer = ({
             <WxDrawerFooter>
               <div className="delivery_create_sec__footer">
                 {editDrawer ? (
-                  <WxButton
+                  <Button
                     color="danger"
                     variant="fill"
                     onClick={() => {
@@ -160,10 +160,10 @@ const ConfigureDrawer = ({
                     disabled={isSaving}
                   >
                     Delete
-                  </WxButton>
+                  </Button>
                 ) : null}
                 <div className="ms-auto d-flex">
-                  <WxButton
+                  <Button
                     color="secondary"
                     type="button"
                     variant="outline"
@@ -172,10 +172,10 @@ const ConfigureDrawer = ({
                     disabled={isSaving}
                   >
                     Cancel
-                  </WxButton>
-                  <WxButton variant="fill" type="submit" disabled={isSaving}>
+                  </Button>
+                  <Button variant="fill" type="submit" disabled={isSaving}>
                     {editDrawer ? "Update" : "Save"}
-                  </WxButton>
+                  </Button>
                 </div>
               </div>
             </WxDrawerFooter>

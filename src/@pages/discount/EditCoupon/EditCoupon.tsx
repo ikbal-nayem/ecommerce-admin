@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import {
   WxFormContainer,
   WxFormContent,
@@ -283,9 +283,9 @@ const EditCoupon = () => {
             </WxFormLeft>
             <WxFormRight>
               <div className="card wx__form_right">
-                <WxButton disabled={isSaving} type="submit" variant="fill">
+                <Button disabled={isSaving} type="submit" variant="fill">
                   Update Coupon
-                </WxButton>
+                </Button>
                 <WxHr />
                 <div style={{ maxWidth: "100%" }}>
                   <h6 className="text_h6 text_semibold">Summary</h6>

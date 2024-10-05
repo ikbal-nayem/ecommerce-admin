@@ -36,7 +36,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				.wx__icon {
+				.icon {
 					margin-right: 8px;
 				}
 				&:hover {
@@ -91,7 +91,7 @@
 			display: flex;
 			align-items: center;
 			margin-top: 10px;
-			.wx__icon {
+			.icon {
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -193,11 +193,11 @@
 			&:first-child {
 				padding-top: 0;
 			}
-			.wx__icon {
+			.icon {
 				margin-top: 3px;
 			}
 			.left {
-				.wx__icon {
+				.icon {
 					color: $primary__500;
 				}
 			}

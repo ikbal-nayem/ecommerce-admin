@@ -1,7 +1,7 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { IInstalledApp } from "@interfaces/app.interface";
 import { APP_OVERVIEW, APP_STORE } from "routes/path-name.route";
 import { useState } from "react";

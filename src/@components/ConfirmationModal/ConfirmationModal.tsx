@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
@@ -45,7 +45,7 @@ export const ConfirmationModal = ({
 			</WxModalBody>
 			<WxModalFooter>
 				<div className="d-flex justify-content-end">
-					<WxButton
+					<Button
 						className="me-3"
 						variant="outline"
 						color="secondary"
@@ -53,9 +53,9 @@ export const ConfirmationModal = ({
 						disabled={isSubmitting}
 					>
 						Cancel
-					</WxButton>
+					</Button>
 					{onConfirm ? (
-						<WxButton
+						<Button
 							variant="fill"
 							color={confirmType}
 							onClick={() => onConfirm()}
@@ -66,7 +66,7 @@ export const ConfirmationModal = ({
 							) : (
 								onConfirmLabel || "Yes Delete It"
 							)}
-						</WxButton>
+						</Button>
 					) : null}
 				</div>
 			</WxModalFooter>

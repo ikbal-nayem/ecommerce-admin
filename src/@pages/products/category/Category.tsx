@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import CategoryTBSkelton from "@components/WxSkelton/CategoryTBSkelton";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -149,9 +149,9 @@ const Category = () => {
 		<WxMainLg>
 			<div className='d-flex justify-content-between align-items-center mb-3'>
 				<h4 className='text_h4 text_semibold mb-0'>Category</h4>
-				<WxButton disabled={isLoader} variant='fill' onClick={() => setOpen(true)}>
+				<Button disabled={isLoader} variant='fill' onClick={() => setOpen(true)}>
 					Add Category
-				</WxButton>
+				</Button>
 				<AddCategory
 					isOpen={open}
 					handleClose={handleClose}

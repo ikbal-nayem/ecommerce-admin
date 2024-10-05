@@ -1,11 +1,11 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useDebounce from "utils/debouncer";
@@ -106,16 +106,16 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
         </div>
         <WxDrawerFooter>
           <div className="d-flex">
-            <WxButton className="me-3" variant="outline" color="secondary">
+            <Button className="me-3" variant="outline" color="secondary">
               Cancel
-            </WxButton>
-            <WxButton
+            </Button>
+            <Button
               type={isEditorOpen ? "submit" : "button"}
               variant="fill"
               onClick={() => (!isEditorOpen ? setIsEditorOpen(true) : null)}
             >
               {isEditorOpen ? "Save" : "Add Vendor"}
-            </WxButton>
+            </Button>
           </div>
         </WxDrawerFooter>
       </div>

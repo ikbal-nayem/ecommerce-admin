@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WXEditor from "@components/WxEditor/WxEditor";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
@@ -103,12 +103,12 @@ const OrderConfirmation = () => {
 					</div>
 					<div className="notification_right col-lg-4 col-md-12 col-sm-12 mt-3">
 						<div className="card p-4">
-							<WxButton variant="fill" type="submit" className="mb-3">
+							<Button variant="fill" type="submit" className="mb-3">
 								Update
-							</WxButton>
-							<WxButton type="button" variant="outline">
+							</Button>
+							<Button type="button" variant="outline">
 								Preview
-							</WxButton>
+							</Button>
 							<WxHr />
 							<div className="d-flex align-items-center justify-content-between pe-5">
 								<p className="mb-0">Email</p>

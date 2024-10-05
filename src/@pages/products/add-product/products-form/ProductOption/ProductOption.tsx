@@ -1,5 +1,5 @@
 import WxAlert from "@components/Alert/WxAlert";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxDraggableList } from "@components/WxDraggableList";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
@@ -94,13 +94,13 @@ const RenderOption = ({
 							</div>
 						</div>
 						<div>
-							<WxButton
+							<Button
 								variant="outline"
 								color="secondary"
 								onClick={() => setIsEdit(true)}
 							>
 								Edit
-							</WxButton>
+							</Button>
 						</div>
 					</div>
 				</div>
@@ -189,14 +189,14 @@ const RenderOption = ({
 				/>
 			</div>
 			<div className="ms-5">
-				<WxButton
+				<Button
 					variant="outline"
 					disabled={!optionItem?.name || optionItem?.values?.length === 0}
 					color="secondary"
 					onClick={() => setIsEdit(false)}
 				>
 					Done
-				</WxButton>
+				</Button>
 			</div>
 			<WxHr />
 		</>
@@ -336,10 +336,10 @@ const ProductOption = () => {
 					</div>
 					{options.length < 3 ? (
 						<div>
-							<WxButton onClick={onAddNewOption}>
+							<Button onClick={onAddNewOption}>
 								<WxIcon icon="add" className="text-primary" />
 								&nbsp; Add another option
-							</WxButton>
+							</Button>
 						</div>
 					) : null}
 				</>

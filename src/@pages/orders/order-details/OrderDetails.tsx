@@ -3,13 +3,13 @@ import GenerateReactPDF from "@components/Invoice/GenerateReactPDF";
 import Invoice from "@components/Invoice/Invoice";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import WxLabel from "@components/WxLabel";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { MASTER_META_KEY, STATUS_CONSTANT } from "config/constants";
 import { IStatus } from "@interfaces/common.interface";
 import {
@@ -376,27 +376,27 @@ const OrderDetails = () => {
 							{orderDetails?.orderStatus === STATUS_CONSTANT.delivered &&
 							orderDetails?.paymentStatus === STATUS_CONSTANT.paid ? (
 								<li>
-									<WxButton
+									<Button
 										color="secondary"
 										onClick={() => navigate(ORDER_REFUND({ order_id }))}
 									>
 										Refund
-									</WxButton>
+									</Button>
 								</li>
 							) : null}
 							{orderDetails?.orderStatus === STATUS_CONSTANT.delivered &&
 							orderDetails?.paymentStatus !== STATUS_CONSTANT.paid ? (
 								<li>
-									<WxButton
+									<Button
 										color="secondary"
 										onClick={() => navigate(ORDER_RETURN({ order_id }))}
 									>
 										Return
-									</WxButton>
+									</Button>
 								</li>
 							) : null}
 							<li>
-								<WxButton
+								<Button
 									color="secondary"
 									onClick={() =>
 										orderDetails?.orderStatus === STATUS_CONSTANT.delivered ||
@@ -406,12 +406,12 @@ const OrderDetails = () => {
 									}
 								>
 									Edit
-								</WxButton>
+								</Button>
 							</li>
 							<li>
-								<WxButton color="secondary" onClick={() => setIsMoreOpen(true)}>
+								<Button color="secondary" onClick={() => setIsMoreOpen(true)}>
 									More <WxIcon icon="arrow_drop_down" />
-								</WxButton>
+								</Button>
 								<WxDropdown isOpen={isMoreOpen} setIsOpen={setIsMoreOpen}>
 									<ul>
 										<li
@@ -523,14 +523,14 @@ const OrderDetails = () => {
 						orderDetails?.orderStatus === STATUS_CONSTANT.cancel ||
 						orderDetails.orderStatus === STATUS_CONSTANT.return ? null : (
 							<div className="p-3 ms-auto">
-								<WxButton
+								<Button
 									onClick={() => setMenu(!menu)}
 									color="primary"
 									variant="fill"
 								>
 									Mark as Delivered
 									<WxIcon icon="expand_more" className="ms_2" />
-								</WxButton>
+								</Button>
 								<WxDropdown
 									id="triggerPlace"
 									isOpen={menu}
@@ -599,17 +599,17 @@ const OrderDetails = () => {
 						/>
 						<div className="d-flex ms-auto gap-3">
 							{orderDetails?.orderStatus !== STATUS_CONSTANT.cancel ? (
-								<WxButton color="secondary">Send Invoice</WxButton>
+								<Button color="secondary">Send Invoice</Button>
 							) : null}
 							{orderDetails?.paymentStatus === STATUS_CONSTANT.paid ||
 							orderDetails?.orderStatus === STATUS_CONSTANT.cancel ||
 							orderTimeline?.some((v) => v.canAppove) ? null : (
-								<WxButton
+								<Button
 									variant="fill"
 									onClick={() => setPaymentFormOpen(true)}
 								>
 									Mark As Paid
-								</WxButton>
+								</Button>
 							)}
 						</div>
 					</div>

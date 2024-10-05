@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WXEditor from "@components/WxEditor/WxEditor";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
 import WxHr from "@components/WxHr";
@@ -149,13 +149,13 @@ const AddPage = () => {
 					</div>
 					<div className="col-lg-4 col-md-5 col-sm-12">
 						<div className="card p-3 mt-4 wx__form_right">
-							<WxButton
+							<Button
 								type="submit"
 								variant="fill"
 								disabled={isSaving || !isValid}
 							>
 								{isSaving ? <Preloader /> : "Save Page"}
-							</WxButton>
+							</Button>
 							<WxHr />
 							<div style={{ maxWidth: "80%" }}>
 								<div>

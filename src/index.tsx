@@ -1,7 +1,6 @@
 import { ToastComponent } from '@components/ToastComponent';
 import App from 'App';
 import 'assets/styles/main.scss';
-import 'material-icons/iconfont/material-icons.css';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from 'store/store';

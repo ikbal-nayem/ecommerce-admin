@@ -2,13 +2,13 @@ import WxAlert from "@components/Alert/WxAlert";
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { IRequestMeta } from "@interfaces/common.interface";
 import { IProductTable } from "@interfaces/product.interface";
 import { PRODUCT_DETAILS } from "routes/path-name.route";
@@ -101,14 +101,14 @@ const ProductVariant = () => {
 				title="Products with variant"
 				noBack
 				rightContent={
-					<WxButton
+					<Button
 						variant="fill"
 						color="danger"
 						onClick={() => setConfirmModal(true)}
 						disabled={!selectedProduct?.length}
 					>
 						Remove variants
-					</WxButton>
+					</Button>
 				}
 			/>
 			{!!productList?.length && !downgradeStatus?.plan?.hasProductVariant && (

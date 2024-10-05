@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import {
   WxFormContainer,
   WxFormFooter,
@@ -181,9 +181,9 @@ const UpdateOrder = () => {
             </div>
             <div className="col-lg-4 col-md-5 col-sm-12 mt-4">
               <div className="card p-3 ">
-                <WxButton type="submit" variant="fill" disabled={saving}>
+                <Button type="submit" variant="fill" disabled={saving}>
                   Update Order {saving ? <Preloader /> : null}
-                </WxButton>
+                </Button>
                 <WxHr />
                 <section>
                   <h6 className="text_h6 text_semibold">Summary</h6>

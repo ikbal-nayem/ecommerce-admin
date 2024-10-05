@@ -1,5 +1,5 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import { notification } from "@components/WxNotificaton/index";
 import RatingProgressBar from "@components/RatingProgressBar";
@@ -177,7 +177,7 @@ const AppReview = ({ appId }: IReview) => {
 								</div>
 							</div>
 							<div className="w-100 d-flex justify-content-end align-items-center">
-								<WxButton variant="outline">Create Review</WxButton>
+								<Button variant="outline">Create Review</Button>
 							</div>
 						</div>
 						<div>
@@ -231,18 +231,18 @@ const AppReview = ({ appId }: IReview) => {
 											{item.reviewMsg}
 										</p>
 										{readMoreBtn ? (
-											<WxButton
+											<Button
 												variant="none"
 												size="sm"
 												onClick={() => showFullData("user_review" + index)}
 											>
 												Read Full Review
-											</WxButton>
+											</Button>
 										) : null}
 
 										<div className="d-flex align-items-center">
 											<div className="d-flex align-items-center helpful">
-												<WxButton
+												<Button
 													variant="none"
 													onClick={() =>
 														onReactionSubmit(index, item.id, "isLiked")
@@ -253,7 +253,7 @@ const AppReview = ({ appId }: IReview) => {
 														icon="thumb_up_off_alt"
 														variants="round"
 													/>
-												</WxButton>
+												</Button>
 												{helpfulNotHelpful.index === index ? (
 													<span>
 														HELPFUL ({helpfulNotHelpful?.helpful | 0})
@@ -265,7 +265,7 @@ const AppReview = ({ appId }: IReview) => {
 												)}
 											</div>
 											<div className="d-flex align-items-center not-helpful">
-												<WxButton
+												<Button
 													variant="none"
 													onClick={() =>
 														onReactionSubmit(index, item.id, "isunLiked")
@@ -276,7 +276,7 @@ const AppReview = ({ appId }: IReview) => {
 														icon="thumb_down"
 														variants="outlined"
 													/>
-												</WxButton>
+												</Button>
 												{helpfulNotHelpful.index === index ? (
 													<span>
 														NOT HELPFUL ({helpfulNotHelpful?.notHelpful | 0})
@@ -307,9 +307,9 @@ const AppReview = ({ appId }: IReview) => {
 							})}
 						</div>
 						{/* <div className="mt-3">
-                    <WxButton variant="outline">
+                    <Button variant="outline">
                       Read More Reviews
-                    </WxButton>
+                    </Button>
                   </div> */}
 					</div>
 				) : (
@@ -325,9 +325,9 @@ const AppReview = ({ appId }: IReview) => {
 							You can write a review about your experience by using the write a
 							review button.
 						</p>
-						<WxButton className="m-auto" variant="fill">
+						<Button className="m-auto" variant="fill">
 							Create Review
-						</WxButton>
+						</Button>
 					</div>
 				)}
 			</div>

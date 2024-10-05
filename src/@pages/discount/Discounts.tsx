@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import { DISCOUNT_CREATE } from "routes/path-name.route";
@@ -166,9 +166,9 @@ const Discount = () => {
       <div className="d-flex justify-content-between align-items-center">
         <h4 className="_h4__medium mb-0">Discounts</h4>
         {couponsData.length ? (
-          <WxButton variant="fill" onClick={() => navigate(DISCOUNT_CREATE)}>
+          <Button variant="fill" onClick={() => navigate(DISCOUNT_CREATE)}>
             Add Coupon
-          </WxButton>
+          </Button>
         ) : null}
       </div>
 

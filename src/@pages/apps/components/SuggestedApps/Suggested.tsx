@@ -1,5 +1,5 @@
 import WxIcon from "@components/Icon";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { IAppDetails, IInstalledApp } from "@interfaces/app.interface";
 import { APP_OVERVIEW } from "routes/path-name.route";
 import { Link } from "react-router-dom";
@@ -52,7 +52,7 @@ const SuggestedApp = ({ appListData, installedApps }: ISuggestedAppsProps) => {
                   <div className=" d-flex justify-content-between align-items-center ms-auto">
                     <p className="text_small text_regular d-flex justify-content-center align-items-center">
                       <img
-                        className="wx__icon_star"
+                        className="icon_star"
                         src="/media/icons/star.png"
                         alt="icon"
                       />

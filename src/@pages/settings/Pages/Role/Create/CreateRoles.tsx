@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import TextInput from "@components/TextInput";
 import WxTextarea from "@components/WxTextarea";
@@ -89,9 +89,9 @@ const CreateUserRoles = () => {
           </div>
           <div className="col-lg-4 col-md-12 col-sm-12 mt-3">
             <div className="card p-3">
-              <WxButton type="submit" variant="fill" disabled={saving}>
+              <Button type="submit" variant="fill" disabled={saving}>
                 {id ? "Save" : "Create Role"} {saving ? <Preloader /> : null}
-              </WxButton>
+              </Button>
             </div>
           </div>
         </div>

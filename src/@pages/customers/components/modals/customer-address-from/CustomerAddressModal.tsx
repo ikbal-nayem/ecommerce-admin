@@ -1,5 +1,5 @@
 import React from "react";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
@@ -139,9 +139,9 @@ export const CustomerAddressModal = ({
           </div>
         </WxModalBody>
         <WxModalFooter>
-          <WxButton type="submit" variant="fill">
+          <Button type="submit" variant="fill">
             Save
-          </WxButton>
+          </Button>
         </WxModalFooter>
       </form>
     </WxModal>

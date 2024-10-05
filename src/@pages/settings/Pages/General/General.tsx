@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
@@ -189,24 +189,24 @@ const General = () => {
                 <h5 className="mb-0">Basic Information</h5>
                 {basicInfoFlag ? (
                   <div className="d-flex">
-                    <WxButton
+                    <Button
                       variant="none"
                       className="cancel__btn"
                       onClick={() => setBasicInfoFlag(false)}
                     >
                       Cancel
-                    </WxButton>
-                    <WxButton type="submit" variant="none">
+                    </Button>
+                    <Button type="submit" variant="none">
                       Save Changes
-                    </WxButton>
+                    </Button>
                   </div>
                 ) : (
-                  <WxButton
+                  <Button
                     variant="none"
                     onClick={() => setBasicInfoFlag(true)}
                   >
                     Edit
-                  </WxButton>
+                  </Button>
                 )}
               </div>
               <WxHr />
@@ -278,21 +278,21 @@ const General = () => {
                 <h5 className="mb-0">Address & Contact</h5>
                 {addressFlag ? (
                   <div className="d-flex">
-                    <WxButton
+                    <Button
                       variant="none"
                       className="cancel__btn"
                       onClick={() => setAddressFlag(false)}
                     >
                       Cancel
-                    </WxButton>
-                    <WxButton type="submit" variant="none" disabled={isLoading}>
+                    </Button>
+                    <Button type="submit" variant="none" disabled={isLoading}>
                       Save Changes
-                    </WxButton>
+                    </Button>
                   </div>
                 ) : (
-                  <WxButton variant="none" onClick={() => setAddressFlag(true)}>
+                  <Button variant="none" onClick={() => setAddressFlag(true)}>
                     Edit
-                  </WxButton>
+                  </Button>
                 )}
               </div>
               <p className="text_body wx__body_regular mb-1">

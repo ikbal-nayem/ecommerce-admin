@@ -1,11 +1,11 @@
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
 import WxMainLg from '@components/MainContentLayout/MainLg';
-import WxButton from '@components/Button';
+import {Button} from '@components/Button';
 import { WxDraggableList } from '@components/WxDraggableList';
 import { WxFormHeader } from '@components/WxFormLayout';
 import WxIcon from '@components/Icon';
 import WxSwitch from '@components/WxSwitch';
-import WxThumbnail from '@components/WxThumbnail';
+import WxThumbnail from '@components/Thumbnail';
 import { ISliderItem } from '@interfaces/themeCustomization.interface';
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -157,10 +157,10 @@ const SliderDetails = () => {
 			<div className='card p-3 mt-4'>
 				<div className='title_section'>
 					<div className='title' />
-					<WxButton onClick={() => setIsFormOpen(true)} variant='outline'>
+					<Button onClick={() => setIsFormOpen(true)} variant='outline'>
 						<WxIcon icon='add' />
 						<span>Add Banner</span>
-					</WxButton>
+					</Button>
 				</div>
 				{sliderItems?.length ? (
 					<div className='wx__table_noPopup'>

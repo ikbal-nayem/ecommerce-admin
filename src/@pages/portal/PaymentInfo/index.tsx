@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import { IPortalPaymentMedia } from "@interfaces/portal.interface";
 import { ProfileService } from "services/api/settings/Profile.service";
@@ -84,9 +84,9 @@ export default function PaymentInfo() {
 				title="Payment info"
 				noBack
 				rightContent={
-					<WxButton variant="fill" onClick={() => setDrawerOpen(true)}>
+					<Button variant="fill" onClick={() => setDrawerOpen(true)}>
 						Add Payment Method
-					</WxButton>
+					</Button>
 				}
 			/>
 			{isLoading ? (

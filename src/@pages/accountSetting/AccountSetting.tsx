@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -439,29 +439,29 @@ const AccountSetting = () => {
                 <h5 className="mb-0">Basic Information</h5>
                 {editBasicInfo ? (
                   <div className="d-flex">
-                    <WxButton
+                    <Button
                       color="secondary"
                       onClick={() => setEditBasicInfo(false)}
                     >
                       cancel
-                    </WxButton>
+                    </Button>
                     {editBasicInfo && (
-                      <WxButton
+                      <Button
                         disabled={basicInfoBtn}
                         variant="fill"
                         type="submit"
                       >
                         Save Changes
-                      </WxButton>
+                      </Button>
                     )}
                   </div>
                 ) : (
-                  <WxButton
+                  <Button
                     className="me-4"
                     onClick={() => setEditBasicInfo(true)}
                   >
                     Edit
-                  </WxButton>
+                  </Button>
                 )}
               </div>
               <WxHr />
@@ -579,9 +579,9 @@ const AccountSetting = () => {
                     experience .
                   </p>
                 </div>
-                <WxButton onClick={() => setOtpModal(true)} variant="fill">
+                <Button onClick={() => setOtpModal(true)} variant="fill">
                   Verify Phone Number
-                </WxButton>
+                </Button>
               </div>
             )}
           </div>
@@ -589,7 +589,7 @@ const AccountSetting = () => {
             <div className="bg-white rounded mt-3 p-4">
               <div className="d-flex align-items-center justify-content-between">
                 <h5 className="mb-0">Affiliate Info</h5>
-                <WxButton
+                <Button
                   disabled={
                     userBasicInfo?.isPartnerEnabled || isSubmittingEnablePartner
                   }
@@ -597,7 +597,7 @@ const AccountSetting = () => {
                   onClick={enablePartner}
                 >
                   Enable Partner
-                </WxButton>
+                </Button>
               </div>
               <WxHr className="mb-0" />
               <div className="row">
@@ -652,7 +652,7 @@ const AccountSetting = () => {
                 <h5 className="mb-0">Address & Contact</h5>
                 {addressFlag ? (
                   <div className="d-flex">
-                    <WxButton
+                    <Button
                       variant="none"
                       className="me-4 cancel__btn"
                       onClick={() => {
@@ -661,13 +661,13 @@ const AccountSetting = () => {
                       }}
                     >
                       Cancel
-                    </WxButton>
-                    <WxButton type="submit" variant="none">
+                    </Button>
+                    <Button type="submit" variant="none">
                       Save Changes
-                    </WxButton>
+                    </Button>
                   </div>
                 ) : (
-                  <WxButton
+                  <Button
                     variant="none"
                     onClick={() => {
                       addressReset({});
@@ -675,7 +675,7 @@ const AccountSetting = () => {
                     }}
                   >
                     Add address
-                  </WxButton>
+                  </Button>
                 )}
               </div>
               <p className="text_body wx__body_regular mb-0">
@@ -889,24 +889,24 @@ const AccountSetting = () => {
               </h5>
               {changePassword ? (
                 <div className="d-flex">
-                  <WxButton
+                  <Button
                     color="secondary"
                     className="me-2"
                     onClick={() => setChangePassword(false)}
                   >
                     cancel
-                  </WxButton>
+                  </Button>
                   {changePassword && (
-                    <WxButton variant="fill" type="submit">
+                    <Button variant="fill" type="submit">
                       Save Changes
-                    </WxButton>
+                    </Button>
                   )}
                 </div>
               ) : (
                 <div>
-                  <WxButton onClick={() => setChangePassword(true)}>
+                  <Button onClick={() => setChangePassword(true)}>
                     Edit
-                  </WxButton>
+                  </Button>
                 </div>
               )}
             </div>

@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import { STATUS_CONSTANT } from "config/constants";
@@ -54,16 +54,16 @@ export const BillingTable = ({ tableData }: IBillingTable) => {
                 />
               </td>
               <td className="wx__td d-flex">
-                <WxButton
+                <Button
                   onClick={() =>
                     InvoiceService.downloadInvoice(bill?.invoiceId)
                   }
                 >
                   <WxIcon style={{ top: "0" }} icon="download" /> Download
-                </WxButton>
+                </Button>
                 {bill?.invoicePaymentStatus !== STATUS_CONSTANT.paid ? (
                   <div>
-                    <WxButton
+                    <Button
                       className="mx-3 btn-sm"
                       variant="fill"
                       onClick={() =>
@@ -72,7 +72,7 @@ export const BillingTable = ({ tableData }: IBillingTable) => {
                       size="sm"
                     >
                       Pay Now
-                    </WxButton>
+                    </Button>
                   </div>
                 ) : null}
               </td>

@@ -2,10 +2,10 @@ import WxAlert from "@components/Alert/WxAlert";
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { IInstalledApp } from "@interfaces/app.interface";
 import { downgrade$ } from "@rxjs/downgrade.rx";
 import { IDowngradeStatus } from "@rxjs/interfaces.rx";
@@ -98,13 +98,13 @@ const DowngradeApps = () => {
 									) : null}
 								</div>
 								<div className="ms-auto me-2">
-									<WxButton
+									<Button
 										color="danger"
 										variant="fill"
 										onClick={() => onDelete(item)}
 									>
 										Uninstall
-									</WxButton>
+									</Button>
 								</div>
 							</div>
 						))}

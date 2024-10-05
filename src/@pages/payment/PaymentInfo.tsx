@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import { SETTINGS_BILLING } from "routes/path-name.route";
 import { AuthService } from "services/api/Auth.service";
@@ -87,18 +87,18 @@ const PaymentInfo = () => {
 
 				<div className="row">
 					<div className="col-sm-6 col-12 d-flex justify-content-sm-end justify-content-center">
-						<WxButton
+						<Button
 							color="primary"
 							variant="outline"
 							onClick={() => navigate(SETTINGS_BILLING)}
 						>
 							<WxIcon icon="keyboard_backspace" className="me-2" />
 							Show all invoices
-						</WxButton>
+						</Button>
 					</div>
 					<div className="col-sm-6 col-12 d-flex justify-content-sm-start justify-content-center">
 						{params?.status === "success" ? (
-							<WxButton
+							<Button
 								color="primary"
 								variant="fill"
 								className="mt-sm-0 mt-2"
@@ -108,7 +108,7 @@ const PaymentInfo = () => {
 							>
 								<WxIcon icon="file_download" className="me-2" />
 								Download Invoice
-							</WxButton>
+							</Button>
 						) : null}
 					</div>
 				</div>

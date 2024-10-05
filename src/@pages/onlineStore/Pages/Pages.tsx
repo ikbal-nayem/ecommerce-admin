@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import { IPagesSettings } from "@interfaces/Settings.interface";
@@ -99,9 +99,9 @@ const Pages = () => {
 			<WxFormHeader
 				title="Pages"
 				rightContent={
-					<WxButton variant="fill" onClick={() => navigate(PAGES_CREATE)}>
+					<Button variant="fill" onClick={() => navigate(PAGES_CREATE)}>
 						Add Page
-					</WxButton>
+					</Button>
 				}
 			/>
 			{isLoading ? <Preloader absolutePosition /> : null}

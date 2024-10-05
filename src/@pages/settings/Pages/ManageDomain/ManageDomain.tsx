@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import { IDomainSettingsItem } from "@interfaces/Settings.interface";
 import { SETTINGS, SETTINGS_DOMAIN_CREATE } from "routes/path-name.route";
@@ -86,12 +86,12 @@ const ManageDomain = () => {
 		<WxMainXl>
 			<div className="d-flex justify-content-between align-items-center mb-3">
 				<WxFormHeader noMargin title="Domain" backNavigationLink={SETTINGS} />
-				<WxButton
+				<Button
 					variant="fill"
 					onClick={() => navigate(SETTINGS_DOMAIN_CREATE)}
 				>
 					Add Existing Domain
-				</WxButton>
+				</Button>
 			</div>
 			{isLoading ? <Preloader absolutePosition /> : null}
 			{!isLoading && domainList.length === 0 ? (

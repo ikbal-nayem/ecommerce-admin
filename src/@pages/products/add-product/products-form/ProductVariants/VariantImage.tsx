@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxModal from "@components/WxModal";
 import WxModalBody from "@components/WxModal/WxModalBody";
 import WxModalFooter from "@components/WxModal/WxModalFooter";
@@ -82,17 +82,17 @@ const VariantImage = ({
 			</WxModalBody>
 			<WxModalFooter>
 				<div className="d-flex justify-content-end">
-					<WxButton
+					<Button
 						className="me-3"
 						variant="outline"
 						color="secondary"
 						onClick={onClose}
 					>
 						Cancel
-					</WxButton>
-					<WxButton variant="fill" onClick={onSave}>
+					</Button>
+					<Button variant="fill" onClick={onSave}>
 						Save
-					</WxButton>
+					</Button>
 				</div>
 			</WxModalFooter>
 		</WxModal>

@@ -2,12 +2,12 @@ import WxAlert from "@components/Alert/WxAlert";
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { IFilePayload, IRequestMeta } from "@interfaces/common.interface";
 import { IProductTable } from "@interfaces/product.interface";
 import { downgrade$ } from "@rxjs/downgrade.rx";
@@ -113,14 +113,14 @@ const ProductImages = () => {
 				title="Product list with extra images"
 				noBack
 				rightContent={
-					<WxButton
+					<Button
 						variant="fill"
 						color="danger"
 						onClick={() => setIsConfirmOpen(true)}
 						disabled={!selectedImages?.length}
 					>
 						Remove images
-					</WxButton>
+					</Button>
 				}
 			/>
 			{!!productList?.length && (

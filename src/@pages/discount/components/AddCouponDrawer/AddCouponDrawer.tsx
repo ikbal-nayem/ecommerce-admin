@@ -1,4 +1,4 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
@@ -6,7 +6,7 @@ import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import { CustomerService } from "services/api/Customer.service";
 import { GroupService } from "services/api/Group.service";
 import { CategoryService } from "services/api/products/Category.services";
@@ -407,7 +407,7 @@ const AddCouponDrawer = forwardRef(
                   startIcon={<WxIcon variants="round" icon="search" />}
                   placeholder="search ..."
                 />
-                {/* <WxButton>00 {drawerContent} selected</WxButton> */}
+                {/* <Button>00 {drawerContent} selected</Button> */}
                 <div
                   style={{ minHeight: "70vh" }}
                   className="position-relative"
@@ -462,18 +462,18 @@ const AddCouponDrawer = forwardRef(
             <WxDrawerFooter>
               <div className="collection_form__footer">
                 <div className="ms-auto d-flex">
-                  <WxButton
+                  <Button
                     className="me-3"
                     variant="outline"
                     color="secondary"
                     onClick={onDrawerClose}
                   >
                     Cancel
-                  </WxButton>
+                  </Button>
                   {!!checkedData[drawerContent].length && (
-                    <WxButton onClick={onDrawerClose} variant="fill">
+                    <Button onClick={onDrawerClose} variant="fill">
                       Save
-                    </WxButton>
+                    </Button>
                   )}
                 </div>
               </div>

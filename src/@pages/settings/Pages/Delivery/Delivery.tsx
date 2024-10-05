@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import {
   IConfigureDeliverService,
@@ -269,9 +269,9 @@ const Delivery = () => {
           title="Delivery"
           backNavigationLink={SETTINGS}
           rightContent={
-            <WxButton variant="fill" onClick={() => setOpenForm(true)}>
+            <Button variant="fill" onClick={() => setOpenForm(true)}>
               Add Delivery Zone
-            </WxButton>
+            </Button>
           }
         />
 

@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Select";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxFormContainer from "@components/WxFormLayout/WxFormContainer";
 import WxFormFooter from "@components/WxFormLayout/WxFormFooter";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
@@ -151,9 +151,9 @@ export default function AddCustomer() {
 						</div>
 						<div className="col-lg-4 col-md-5 col-sm-12 hide-mobile-view mt-3">
 							<div className="card wx__form_right">
-								<WxButton type="submit" variant="fill" disabled={isLoading}>
+								<Button type="submit" variant="fill" disabled={isLoading}>
 									Save Customer
-								</WxButton>
+								</Button>
 								<WxHr />
 								<div style={{ maxWidth: "80%" }}>
 									<div>

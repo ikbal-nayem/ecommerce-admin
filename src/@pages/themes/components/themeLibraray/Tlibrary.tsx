@@ -1,7 +1,7 @@
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import WxTag from "@components/WxTag";
-import WxThumbnail from "@components/WxThumbnail";
+import WxThumbnail from "@components/Thumbnail";
 import {
   ITheme,
   IThemeInstalled,
@@ -43,9 +43,9 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
           </p>
         </div>
         <div className="w-100 d-flex justify-content-end">
-          <WxButton variant="outline" onClick={() => navigate(THEMES_LIST)}>
+          <Button variant="outline" onClick={() => navigate(THEMES_LIST)}>
             Explore Themes
-          </WxButton>
+          </Button>
         </div>
       </div>
       {themeList?.map((item) => {
@@ -90,7 +90,7 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
                 </div>
               </div>
               <div className="right d-flex justify-content-end align-items-center">
-                <WxButton
+                <Button
                   variant="none"
                   color="secondary"
                   className="wx_text_regular preview me-2"
@@ -100,13 +100,13 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
                 >
                   <WxIcon icon="visibility" className="me-2 mt-auto" />
                   <span>Preview</span>
-                </WxButton>
-                {/* <WxButton
+                </Button>
+                {/* <Button
 								variant="none"
 								className="wx_text_regular ms_2 me-2"
 							>
 								Customize
-							</WxButton> */}
+							</Button> */}
                 {/* <div>
 									<WxIcon
 										icon="more_vert"

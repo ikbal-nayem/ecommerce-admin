@@ -5,7 +5,7 @@ import TextInput from "@components/TextInput";
 import WxTextarea from "@components/WxTextarea";
 import { useFormContext } from "react-hook-form";
 import makeSlug from "utils/make-slug";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import useDebounce from "utils/debouncer";
 import WxIcon from "@components/Icon";
 
@@ -88,9 +88,9 @@ const SearchEngine = () => {
 				</>
 			) : (
 				<div className="mt-3">
-					<WxButton variant="outline" onClick={() => setEditSEO(true)}>
+					<Button variant="outline" onClick={() => setEditSEO(true)}>
 						Edit SEO
-					</WxButton>
+					</Button>
 				</div>
 			)}
 		</div>

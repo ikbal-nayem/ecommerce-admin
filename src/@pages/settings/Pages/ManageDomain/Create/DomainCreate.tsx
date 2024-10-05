@@ -1,5 +1,5 @@
 import WxMainSm from "@components/MainContentLayout/WxMainSm";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import TextInput from "@components/TextInput";
 import { DOMAIN_SETUP_INSTRUCTION } from "config/constants";
@@ -79,9 +79,9 @@ const DomainCreate = () => {
 						</p>
 						{!domain?.id ? (
 							<div>
-								<WxButton type="submit" variant="fill" w={25} disabled={saving}>
+								<Button type="submit" variant="fill" w={25} disabled={saving}>
 									Save
-								</WxButton>
+								</Button>
 							</div>
 						) : null}
 					</div>

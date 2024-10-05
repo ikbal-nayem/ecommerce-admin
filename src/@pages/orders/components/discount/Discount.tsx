@@ -1,5 +1,5 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxModal from "@components/WxModal";
@@ -79,16 +79,16 @@ const Discount = ({
       </WxModalBody>
       <WxModalFooter className="bg-white">
         <div className="d-flex justify-content-between">
-          <WxButton
+          <Button
             variant="outline"
             color="secondary"
             onClick={handleDiscountClose}
           >
             Cancel
-          </WxButton>
-          <WxButton variant="fill" onClick={handleDiscountConfirm}>
+          </Button>
+          <Button variant="fill" onClick={handleDiscountConfirm}>
             Done
-          </WxButton>
+          </Button>
         </div>
       </WxModalFooter>
     </WxModal>

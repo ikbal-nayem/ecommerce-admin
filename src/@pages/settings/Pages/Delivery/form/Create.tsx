@@ -1,5 +1,5 @@
 import WxSelect from "@components/Select/WxSelect";
-import WxButton from "@components/Button";
+import {Button} from "@components/Button";
 import WxDrawer from "@components/WxDrawer";
 import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
 import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
@@ -141,16 +141,16 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 					<WxDrawerFooter>
 						<div className="delivery_create_sec__footer">
 							{editedData ? (
-								<WxButton
+								<Button
 									color="danger"
 									variant="fill"
 									onClick={() => onDelete(editedData)}
 								>
 									Delete
-								</WxButton>
+								</Button>
 							) : null}
 							<div className="ms-auto d-flex">
-								<WxButton
+								<Button
 									color="secondary"
 									type="button"
 									variant="outline"
@@ -159,10 +159,10 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 									disabled={isSaving}
 								>
 									Cancel
-								</WxButton>
-								<WxButton variant="fill" type="submit" disabled={isSaving}>
+								</Button>
+								<Button variant="fill" type="submit" disabled={isSaving}>
 									{editedData ? "Save Changes" : "Add Delivery Zone"}
-								</WxButton>
+								</Button>
 							</div>
 						</div>
 					</WxDrawerFooter>
