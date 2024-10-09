@@ -1,7 +1,7 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import { IAddressesPayload } from "@interfaces/Customer.interface";
 import { AddressForm } from "@pages/customers/components/AddressMange/AddressFrom";
@@ -99,7 +99,7 @@ const OrderAddress = ({
 	return (
 		<WxDrawer show={drawerOpen} handleClose={handleClose}>
 			<div className="wx__order_address">
-				<WxDrawerHeader title="Order Address" closeIconAction={handleClose} />
+				<WxDrawerHeader title="Order Address" onClickClose={handleClose} />
 				<form onSubmit={handleSubmit(handleSave)} noValidate>
 					<WxDrawerBody>
 						<AddressForm

@@ -1,8 +1,8 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import {Button} from "@components/Button";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import WxRadio from "@components/WxRadio/WxRadio";
@@ -195,7 +195,7 @@ const AddressManage = ({
                 : "Manage Address"
             }
             backIconAction={isEditorOpen ? handleEditorClose : null}
-            closeIconAction={handleFormClose}
+            onClickClose={handleFormClose}
           />
           <form onSubmit={handleSubmit(handleSave)}>
             <WxDrawerBody>

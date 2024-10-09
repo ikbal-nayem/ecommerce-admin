@@ -1,9 +1,9 @@
 import {Button} from '@components/Button';
 import WxSelect from '@components/Select/WxSelect';
 import TextInput from '@components/TextInput';
-import WxDrawer from '@components/WxDrawer';
-import WxDrawerBody from '@components/WxDrawer/WxDrawerBody';
-import WxDrawerFooter from '@components/WxDrawer/WxDrawerFooter';
+import WxDrawer from '@components/Drawer';
+import WxDrawerBody from '@components/Drawer/DrawerBody';
+import WxDrawerFooter from '@components/Drawer/DrawerFooter';
 import WxDrawerHeader from '@components/WxDrawer/WxDrawerHeader';
 import WxEditor from '@components/WxEditor/WxEditor';
 import WxLabel from '@components/WxLabel';
@@ -157,7 +157,7 @@ const AddCategory = ({
 			<div className='wx__category_form'>
 				<WxDrawerHeader
 					title={isEditForm ? 'Update Category' : 'Add Category'}
-					closeIconAction={handleClose}
+					onClickClose={handleClose}
 				/>
 				<form onSubmit={handleSubmit(onSubmit)} noValidate>
 					<WxDrawerBody>

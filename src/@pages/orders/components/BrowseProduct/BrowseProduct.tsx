@@ -1,4 +1,4 @@
-import WxDrawer from "@components/WxDrawer";
+import WxDrawer from "@components/Drawer";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -61,7 +61,7 @@ const BrowseProduct = ({
 				<WxDrawerHeader
 					title="Browse Product"
 					//   backIconAction={isEditorOpen ? handleEditorClose : null}
-					closeIconAction={onClose}
+					onClickClose={onClose}
 				/>
 				<TextInput
 					className="mx-4"

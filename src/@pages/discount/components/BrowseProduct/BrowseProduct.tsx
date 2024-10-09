@@ -1,7 +1,7 @@
 import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -72,7 +72,7 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
   return (
     <WxDrawer show={drawerOpen}>
       <div className="wx__browse_product">
-        <WxDrawerHeader title="Add Product" closeIconAction={handleClose} />
+        <WxDrawerHeader title="Add Product" onClickClose={handleClose} />
         <div className="wx__drawer_body">
           <div className="input_div">
             <TextInput

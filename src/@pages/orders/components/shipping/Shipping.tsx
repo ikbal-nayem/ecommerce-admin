@@ -1,10 +1,10 @@
 import WxSelect from "@components/Select/WxSelect";
 import {Button} from "@components/Button";
 import WxLabel from "@components/WxLabel";
-import WxModal from "@components/WxModal";
-import WxModalBody from "@components/WxModal/WxModalBody";
-import WxModalFooter from "@components/WxModal/WxModalFooter";
-import WxModalHeader from "@components/WxModal/WxModalHeader";
+import WxModal from "@components/Modal";
+import WxModalBody from "@components/Modal/ModalBody";
+import WxModalFooter from "@components/Modal/ModalFooter";
+import WxModalHeader from "@components/Modal/ModalHeader";
 import { IDeliveryZoneItem } from "@interfaces/Settings.interface";
 import { useEffect, useState } from "react";
 
@@ -31,7 +31,7 @@ const ShippingModal = ({
     <WxModal show={isShippingOpen} size="md" handleClose={handleShippingClose}>
       <WxModalHeader
         title="Add Shipping"
-        closeIconAction={handleShippingClose}
+        onClickClose={handleShippingClose}
         className="border-0"
       />
       <WxModalBody>

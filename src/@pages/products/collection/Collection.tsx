@@ -34,15 +34,13 @@ const Collection = () => {
 	const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 	const [isLoading, setIsLoading] = useLoader(true);
 	const [isLoader, setIsLoader] = useState<boolean>(true);
-	const [isSaving, setIsSaving] = useState<boolean>(false);
-	// const [editData, setEditData] = useState<ICollectionPayload>();
+	const [isSaving, setIsSaving] = useLoader(false);
 	const [collections, setCollections] = useState<ICollectionPayload[]>();
 	const [collectionMeta, setCollectionMeta] = useState<any>();
 	const deleteItem = useRef(null);
-	// pagination states
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [currentPage, setCurrentPage] = useState<number>(
-		Number(searchParams.get('page')) ? Number(searchParams.get('page')) - 1 : null || 0
+		Number(searchParams.get('page')) ? Number(searchParams.get('page')) - 1 : 0
 	);
 	const [paginationLimit, setPaginationLimit] = useState(10);
 	const editData = useRef<ICollectionPayload>();
@@ -79,18 +77,18 @@ const Collection = () => {
 
 	// This function will be called when user click on comfirm delete button
 	const onConfirmDelete = () => {
-		const { id } = deleteItem.current;
-		if (!id) {
+		const { _id } = deleteItem.current;
+		if (!_id) {
 			handleClose();
 			return;
 		}
 		setIsSaving(true);
-		CollectionService.delete({ id })
+		CollectionService.delete(_id)
 			.then((res) => {
+				ToastService.success('Collection deleted successfully');
 				handleClose();
 				getCollection();
 				onConfirmClose();
-				ToastService.success('Collection deleted successfully');
 			})
 			.catch((err) => ToastService.error(err.message))
 			.finally(() => setIsSaving(false));
@@ -159,7 +157,7 @@ const Collection = () => {
 					<CollectionTBSkelton viewBox='0 0 600 310' />
 				</div>
 			) : (
-				<div className='collection_table_content'>
+				<div className='collection_table_content card'>
 					{collections?.length ? (
 						<>
 							<CollectionTable data={collections} handleEdit={handleEdit} onDelete={handleDelete} />

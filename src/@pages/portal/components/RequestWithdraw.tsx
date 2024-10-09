@@ -1,7 +1,7 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import { useState } from "react";
 import "./RequestWithdraw.scss";
@@ -24,7 +24,7 @@ function RequestWithdraw() {
 				<div className="withdraw_request">
 					<WxDrawerHeader
 						title="Withdraw request"
-						closeIconAction={handleClose}
+						onClickClose={handleClose}
 					/>
 
 					<WxDrawerBody>

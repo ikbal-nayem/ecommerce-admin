@@ -1,7 +1,7 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
@@ -34,7 +34,7 @@ const SliderDrawer = ({
 			<div className="manage_slider_sec">
 				<WxDrawerHeader
 					title={`${isEditForm ? "Edit" : "Add"} Slider`}
-					closeIconAction={handleFormClose}
+					onClickClose={handleFormClose}
 				/>
 				<form onSubmit={handleSubmit(onSubmitting)}>
 					<WxDrawerBody>

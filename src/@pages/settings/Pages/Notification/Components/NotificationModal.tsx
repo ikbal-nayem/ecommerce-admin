@@ -1,9 +1,9 @@
 import {Button} from "@components/Button";
 import TextInput from "@components/TextInput";
-import WxModal from "@components/WxModal";
-import WxModalBody from "@components/WxModal/WxModalBody";
-import WxModalFooter from "@components/WxModal/WxModalFooter";
-import WxModalHeader from "@components/WxModal/WxModalHeader";
+import WxModal from "@components/Modal";
+import WxModalBody from "@components/Modal/ModalBody";
+import WxModalFooter from "@components/Modal/ModalFooter";
+import WxModalHeader from "@components/Modal/ModalHeader";
 import { MASTER_META_KEY } from "config/constants";
 import { ISenderEmail } from "@interfaces/common.interface";
 import { IRateInfo } from "@interfaces/Settings.interface";
@@ -85,7 +85,7 @@ const NotificationModal = ({
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
 				<WxModalHeader
 					title={data?.heading}
-					closeIconAction={handleDialogeClose}
+					onClickClose={handleDialogeClose}
 					className="border-0"
 				/>
 				<WxModalBody>

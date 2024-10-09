@@ -21,7 +21,6 @@ import {
 } from "services/api/Apps.service";
 import Preloader from "services/utils/preloader.service";
 import { ToastService } from "services/utils/toastr.service";
-import starIcon from "assets/images/apps_img/star.png";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
@@ -39,6 +38,7 @@ import PlanPricing from "../PlanPricing/PlanPricing";
 import TabReview from "../ReviewTab/Review";
 import "./AppDetails.scss";
 import AppInfoAndSupport from "./AppInfoAndSupport";
+import { DEFAULT_LINKS } from "@constants/common.constant";
 
 const tabsData = [
 	{ id: 1, label: "Overview" },
@@ -147,7 +147,7 @@ const AppsDetails = () => {
 										"Find millions of dropship items to sell online"}
 								</p>
 								<p className="wx__user_review h6 pt-3 pb-3">
-									<img className="icon_star" src={starIcon} alt="icon" />
+									<img className="icon_star" src={DEFAULT_LINKS.star_icon} alt="icon" />
 									{appDetails?.avgRating}/5&nbsp;
 									<span>({appDetails?.totalReview} Review)</span>
 								</p>

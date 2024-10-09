@@ -1,14 +1,14 @@
-import {Button} from "@components/Button";
-import WxModal from "@components/WxModal";
-import WxModalBody from "@components/WxModal/WxModalBody";
-import WxModalFooter from "@components/WxModal/WxModalFooter";
-import WxModalHeader from "@components/WxModal/WxModalHeader";
-import { ButtonLoader } from "services/utils/preloader.service";
+import { Button } from '@components/Button';
+import Modal from '@components/Modal';
+import ModalBody from '@components/Modal/ModalBody';
+import ModalFooter from '@components/Modal/ModalFooter';
+import ModalHeader from '@components/Modal/ModalHeader';
+import { ReactNode } from 'react';
 
 interface ConfirmationModalProps {
 	title?: string;
-	body?: any;
-	confirmType?: "primary" | "danger" | "secondary";
+	body?: string | ReactNode | ReactNode[];
+	confirmType?: 'primary' | 'danger' | 'secondary';
 	onConfirm?: any;
 	onConfirmLabel?: string;
 	isOpen: boolean;
@@ -22,54 +22,43 @@ export const ConfirmationModal = ({
 	isSubmitting,
 	setIsOpen,
 	title,
-	confirmType = "danger",
+	confirmType = 'danger',
 	body,
 	onClose,
 	onConfirm,
 	onConfirmLabel,
 }: ConfirmationModalProps) => {
 	return (
-		<WxModal show={isOpen} handleClose={onClose}>
-			<WxModalHeader
-				title={title || "Delete Confirmation"}
-				closeIconAction={() => (onClose ? onClose() : setIsOpen(false))}
+		<Modal show={isOpen} handleClose={onClose}>
+			<ModalHeader
+				title={title || 'Delete Confirmation'}
+				onClickClose={() => (onClose ? onClose() : setIsOpen(false))}
 			/>
-			<WxModalBody>
-				{body ? (
-					body
-				) : (
-					<p className="text_body text_regular">
+			<ModalBody>
+				{body || (
+					<p className='text_body text_regular'>
 						Are your sure you want to delete it? This action wont be reversible!
 					</p>
 				)}
-			</WxModalBody>
-			<WxModalFooter>
-				<div className="d-flex justify-content-end">
+			</ModalBody>
+			<ModalFooter>
+				<div className='d-flex justify-content-end'>
 					<Button
-						className="me-3"
-						variant="outline"
-						color="secondary"
+						className='me-3'
+						variant='outline'
+						color='secondary'
 						onClick={() => (onClose ? onClose() : setIsOpen(false))}
 						disabled={isSubmitting}
 					>
 						Cancel
 					</Button>
 					{onConfirm ? (
-						<Button
-							variant="fill"
-							color={confirmType}
-							onClick={() => onConfirm()}
-							disabled={isSubmitting}
-						>
-							{isSubmitting ? (
-								<ButtonLoader />
-							) : (
-								onConfirmLabel || "Yes Delete It"
-							)}
+						<Button variant='fill' color={confirmType} onClick={() => onConfirm()} isLoading={isSubmitting}>
+							{onConfirmLabel || 'Yes, Delete It'}
 						</Button>
 					) : null}
 				</div>
-			</WxModalFooter>
-		</WxModal>
+			</ModalFooter>
+		</Modal>
 	);
 };

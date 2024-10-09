@@ -1,4 +1,4 @@
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxList from "@components/WxList";

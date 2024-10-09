@@ -1,7 +1,7 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import TextInput from "@components/TextInput";
 import WxLabel from "@components/WxLabel";
@@ -56,7 +56,7 @@ const AddSliderImage = ({
 			<div className="manage_slider_sec">
 				<WxDrawerHeader
 					title={`${isEditForm ? "Edit" : "Add"} Slider Banner`}
-					closeIconAction={handleFormClose}
+					onClickClose={handleFormClose}
 				/>
 				<form onSubmit={handleSubmit(submitForm)}>
 					<WxDrawerBody>

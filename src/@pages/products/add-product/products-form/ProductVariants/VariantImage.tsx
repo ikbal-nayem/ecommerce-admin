@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {Button} from "@components/Button";
-import WxModal from "@components/WxModal";
-import WxModalBody from "@components/WxModal/WxModalBody";
-import WxModalFooter from "@components/WxModal/WxModalFooter";
-import WxModalHeader from "@components/WxModal/WxModalHeader";
+import WxModal from "@components/Modal";
+import WxModalBody from "@components/Modal/ModalBody";
+import WxModalFooter from "@components/Modal/ModalFooter";
+import WxModalHeader from "@components/Modal/ModalHeader";
 import MediaInput from "@components/MediaInput/MediaInput";
 import { FileService } from "services/api/file.service";
 import { useSelector } from "react-redux";
@@ -69,7 +69,7 @@ const VariantImage = ({
 
 	return (
 		<WxModal show={isOpen} handleClose={onClose}>
-			<WxModalHeader title="Update Variant Image" closeIconAction={onClose} />
+			<WxModalHeader title="Update Variant Image" onClickClose={onClose} />
 			<WxModalBody>
 				<MediaInput
 					multiple

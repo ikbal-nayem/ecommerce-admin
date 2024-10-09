@@ -15,7 +15,7 @@ const CollectionTable = ({ data, handleEdit, onDelete }: CollectionTableProps) =
 			<thead>
 				<tr>
 					<th colSpan={2}>Collection Name</th>
-					<th></th>
+					{/* <th></th> */}
 				</tr>
 			</thead>
 			<tbody>

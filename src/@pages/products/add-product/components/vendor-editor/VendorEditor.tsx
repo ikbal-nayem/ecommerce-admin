@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
 import TextInput from "@components/TextInput";
 import "./VendorEditor.scss";
 

@@ -1,10 +1,10 @@
 import React from "react";
 import {Button} from "@components/Button";
 import TextInput from "@components/TextInput";
-import WxModal from "@components/WxModal";
-import WxModalBody from "@components/WxModal/WxModalBody";
-import WxModalFooter from "@components/WxModal/WxModalFooter";
-import WxModalHeader from "@components/WxModal/WxModalHeader";
+import WxModal from "@components/Modal";
+import WxModalBody from "@components/Modal/ModalBody";
+import WxModalFooter from "@components/Modal/ModalFooter";
+import WxModalHeader from "@components/Modal/ModalHeader";
 
 interface CustomerPropsModalProps {
   register: any;
@@ -27,7 +27,7 @@ export const CustomerAddressModal = ({
     <WxModal show={show}>
       <WxModalHeader
         title="Customer Address Update"
-        closeIconAction={() => onHide(false)}
+        onClickClose={() => onHide(false)}
       />
       <form onSubmit={handleSubmit(onSubmit)}>
         <WxModalBody>

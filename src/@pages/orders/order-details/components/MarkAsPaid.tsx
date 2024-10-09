@@ -3,10 +3,10 @@ import WxSelect from "@components/Select/WxSelect";
 import {Button} from "@components/Button";
 import WxImg from "@components/WxImg/WxImg";
 import TextInput from "@components/TextInput";
-import WxModal from "@components/WxModal";
-import WxModalBody from "@components/WxModal/WxModalBody";
-import WxModalFooter from "@components/WxModal/WxModalFooter";
-import WxModalHeader from "@components/WxModal/WxModalHeader";
+import WxModal from "@components/Modal";
+import WxModalBody from "@components/Modal/ModalBody";
+import WxModalFooter from "@components/Modal/ModalFooter";
+import WxModalHeader from "@components/Modal/ModalHeader";
 import WxRadio from "@components/WxRadio/WxRadio";
 import { MASTER_META_KEY } from "config/constants";
 import { IOrderTimeline } from "@interfaces/order.interface";
@@ -95,7 +95,7 @@ const MarkAsPaid = ({
 	return (
 		<>
 			<WxModal show={isModalOpen} size="md" handleClose={handleClose}>
-				<WxModalHeader title="Manual payment" closeIconAction={handleClose} />
+				<WxModalHeader title="Manual payment" onClickClose={handleClose} />
 				<BlockSection isblocked={isLoading} hasLoader>
 					<form onSubmit={handleSubmit(onSubmit)} noValidate>
 						<WxModalBody>

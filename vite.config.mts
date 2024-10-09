@@ -1,4 +1,4 @@
-import MillionLint from '@million/lint';
+// import MillionLint from '@million/lint';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import commonjs from 'vite-plugin-commonjs';
@@ -8,7 +8,7 @@ import vitetsConfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   envDir: './environments',
 	plugins: [
-		MillionLint.vite(),
+		// MillionLint.vite(),
 		react(),
 		vitetsConfigPaths(),
 		commonjs(),

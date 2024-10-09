@@ -1,8 +1,8 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import {Button} from "@components/Button";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -129,7 +129,7 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
                 : "Manage Group"
             }
             backIconAction={isEditorOpen ? handleEditorClose : null}
-            closeIconAction={handleClose}
+            onClickClose={handleClose}
           />
           <form noValidate onSubmit={handleSubmit(handleSave)}>
             <WxDrawerBody>

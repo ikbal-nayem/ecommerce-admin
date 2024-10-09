@@ -1,8 +1,8 @@
 import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -394,7 +394,7 @@ const AddCouponDrawer = forwardRef(
         <div className="wx__coupon_drawer">
           <WxDrawerHeader
             title={`Select ${drawerContent}`}
-            closeIconAction={onDrawerClose}
+            onClickClose={onDrawerClose}
           />
           <form noValidate>
             <WxDrawerBody>

@@ -1,21 +1,28 @@
 import { Button } from '@components/Button';
 import MediaInput from '@components/MediaInput/MediaInput';
 import TextInput from '@components/TextInput';
-import WxDrawer from '@components/WxDrawer';
-import WxDrawerBody from '@components/WxDrawer/WxDrawerBody';
-import WxDrawerFooter from '@components/WxDrawer/WxDrawerFooter';
-import WxDrawerHeader from '@components/WxDrawer/WxDrawerHeader';
+import WxDrawer from '@components/Drawer';
+import WxDrawerBody from '@components/Drawer/DrawerBody';
+import WxDrawerFooter from '@components/Drawer/DrawerFooter';
+import DrawerHeader from '@components/Drawer/DrawerHeader';
 import WxEditor from '@components/WxEditor/WxEditor';
 import WxLabel from '@components/WxLabel';
+import { IObject } from '@interfaces/common.interface';
 import { ENV } from 'config/ENV.config';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { CollectionService, ICollectionPayload } from 'services/api/products/Collection.services';
-import { ButtonLoader } from 'services/utils/preloader.service';
 import { isObjectNull } from 'utils/check-validity';
 import useDebounce from 'utils/debouncer';
 import makeSlug from 'utils/make-slug';
 import './CollectionAdd.scss';
+
+const generateDefaultValues = (defaultValues?: IObject) => ({
+	name: defaultValues?.name || '',
+	slug: defaultValues?.slug || '',
+	description: defaultValues?.description || '',
+	image: defaultValues?.image || '',
+});
 
 type AddCollectionProps = {
 	isOpen: boolean;
@@ -44,7 +51,7 @@ const AddCollection = ({
 		formState: { errors },
 		setError,
 		clearErrors,
-	} = useForm();
+	} = useForm({ defaultValues: generateDefaultValues(editData) });
 
 	const isEditForm = !isObjectNull(editData);
 
@@ -72,26 +79,16 @@ const AddCollection = ({
 
 	useEffect(() => {
 		if (isEditForm) {
-			reset({
-				name: editData?.name,
-				slug: editData?.slug,
-				description: editData?.description,
-				image: editData?.image,
-			});
-		} else
-			reset({
-				name: '',
-				slug: '',
-				description: '',
-			});
+			reset(generateDefaultValues(editData));
+		} else reset(generateDefaultValues());
 	}, [editData]);
 
 	return (
 		<WxDrawer show={isOpen} handleClose={handleClose}>
 			<div className='collection_form'>
-				<WxDrawerHeader
+				<DrawerHeader
 					title={isEditForm ? 'Update Collection' : 'Add Collection'}
-					closeIconAction={handleClose}
+					onClickClose={handleClose}
 				/>
 				<form onSubmit={handleSubmit(onSubmit)} noValidate>
 					<WxDrawerBody>
@@ -159,8 +156,8 @@ const AddCollection = ({
 								>
 									Cancel
 								</Button>
-								<Button variant='fill' type='submit' disabled={isSaving}>
-									{isSaving ? <ButtonLoader /> : isEditForm ? 'Update' : 'Save'}
+								<Button variant='fill' type='submit' isLoading={isSaving}>
+									{isEditForm ? 'Update' : 'Save'}
 								</Button>
 							</div>
 						</div>

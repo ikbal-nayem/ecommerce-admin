@@ -36,6 +36,8 @@ export const CollectionService = {
 	update: async (id: string, payload: IObject): Promise<any> =>
 		await apiIns.put('product-config/collection/' + id, payload),
 
+	delete: async (id: string): Promise<any> => await apiIns.delete('product-config/collection/' + id),
+
 	isSlugAvailable: async (payload: any): Promise<any> =>
 		await apiIns.post(PRODUCT_COLLECTION + 'is-slug-available', mergePayloadWithStoreId(payload)),
 
@@ -47,9 +49,6 @@ export const CollectionService = {
 
 	get: async (payload: ICollectionReadPayload = defaultRequest): Promise<any> =>
 		await apiIns.get('product-config/collections'),
-
-	delete: async (deletePayload: any): Promise<any> =>
-		await apiIns.post(PRODUCT_COLLECTION + 'delete', mergePayloadWithStoreId(deletePayload)),
 
 	collectionGetById: async (id: string): Promise<any> =>
 		await apiIns.get(PRODUCT_COLLECTION + 'get-by-id/' + id),

@@ -1,5 +1,5 @@
 import React from "react";
-import "./WxModal.scss";
+import "./Modal.scss";
 
 type ModalSizeType = "sm" | "md" | "lg";
 

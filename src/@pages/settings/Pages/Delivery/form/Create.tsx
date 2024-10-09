@@ -1,8 +1,8 @@
 import WxSelect from "@components/Select/WxSelect";
 import {Button} from "@components/Button";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerBody from "@components/WxDrawer/WxDrawerBody";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerBody from "@components/Drawer/DrawerBody";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
@@ -57,7 +57,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 			<div className="delivery_create_sec">
 				<WxDrawerHeader
 					title={`${editedData ? "Edit" : "Add"} Delivery Zone`}
-					closeIconAction={handleFormClose}
+					onClickClose={handleFormClose}
 				/>
 				<form onSubmit={handleSubmit(onSubmitting)} noValidate>
 					<WxDrawerBody>

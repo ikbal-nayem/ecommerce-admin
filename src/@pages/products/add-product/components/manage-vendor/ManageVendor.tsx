@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import {Button} from "@components/Button";
-import WxDrawer from "@components/WxDrawer";
-import WxDrawerFooter from "@components/WxDrawer/WxDrawerFooter";
+import WxDrawer from "@components/Drawer";
+import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import {
 	IVendorPayload,
@@ -135,7 +135,7 @@ const ManageVendor = ({ drawerOpen, handleClose }: ManageVendorProps) => {
 								: "Manage Vendor"
 						}
 						backIconAction={isEditorOpen ? handleEditorClose : null}
-						closeIconAction={handleClose}
+						onClickClose={handleClose}
 					/>
 					<form noValidate onSubmit={handleSubmit(handleSave)}>
 						{isEditorOpen ? (

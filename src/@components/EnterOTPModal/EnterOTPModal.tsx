@@ -2,10 +2,10 @@ import {Button} from "@components/Button";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxModal from "@components/WxModal";
-import WxModalBody from "@components/WxModal/WxModalBody";
-import WxModalFooter from "@components/WxModal/WxModalFooter";
-import WxModalHeader from "@components/WxModal/WxModalHeader";
+import WxModal from "@components/Modal";
+import WxModalBody from "@components/Modal/ModalBody";
+import WxModalFooter from "@components/Modal/ModalFooter";
+import WxModalHeader from "@components/Modal/ModalHeader";
 import { AccountSettingService } from "services/api/AccountSetting.service";
 import { LocalStorageService } from "services/utils/local-storage.service";
 import { ToastService } from "services/utils/toastr.service";
@@ -162,7 +162,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
       <WxModal show={show} size="md" handleClose={setShow}>
         <WxModalHeader
           title=""
-          closeIconAction={setShow}
+          onClickClose={setShow}
           className="border-0"
         />
         <WxModalBody>
