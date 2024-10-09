@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import {
   WxFormContainer,
   WxFormFooter,

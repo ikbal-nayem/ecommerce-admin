@@ -1,146 +1,81 @@
-import React, { Fragment } from "react";
-import { ActionMeta, InputActionMeta } from "react-select";
-import Select from "react-select";
-import CreatableSelect from "react-select/creatable";
-import AsyncCreatableSelect from "react-select/async-creatable";
+import Label from '@components/WxLabel';
+import clsx from 'clsx';
+import { memo } from 'react';
 
-interface SelectOptionProps {
-	readonly isClearable?: boolean;
-	readonly isCreatable?: boolean;
-	readonly isDisabled?: boolean;
-	readonly isLoading?: boolean;
-	readonly isRtl?: boolean;
-	readonly isMulti?: boolean;
-	readonly isSearchable?: boolean;
-	options?: any[];
-	placeholder?: string;
-	defaultSelected?: any;
+type valuesKey = 'id' | 'text' | 'object' | any;
+
+interface SelectProps {
+	id?: any;
+	defaultValue?: string;
 	value?: any;
+	placeholder?: string;
+	label?: string | JSX.Element;
+	options: any[];
+	onChange?: Function;
+	isRequired?: boolean;
+	noMargin?: boolean;
+	isDisabled?: boolean;
 	registerProperty?: any;
-	name?: any;
-	className?: string;
-	onChange?: (newValue: any, actionMeta: ActionMeta<any>) => void;
-	onFocus?: () => void;
-	onInputChange?: (newValue: string, actionMeta?: InputActionMeta) => void;
-	filterOption?: (candidate: any, input: string) => boolean;
-	getOptionLabel?: any;
-	getOptionValue?: any;
-	onCreateOption?: (inputValue: string) => void;
-	noOptionsMessage?: () => string | JSX.Element | string;
-	isAsyncList?: boolean;
-	loadAsyncOptions?: (
-		inputValue: string,
-		callBack: (options: any[]) => void
-	) => any;
-	cacheOptions?: boolean;
-	defaultOptions?: boolean;
+	valuesKey?: valuesKey;
+	textKey?: string;
+	style?: any;
+	errorMessage?: any;
+	color?: any;
 }
 
-const SelectOption = ({
-	isMulti = false,
-	isClearable = true,
-	isCreatable,
-	isDisabled,
-	isLoading,
-	className,
-	placeholder,
-	isRtl,
-	isSearchable,
-	options,
-	defaultSelected,
+const Select = ({
+	id,
+	label,
+	defaultValue,
 	value,
+	placeholder,
+	options,
 	onChange,
-	name,
-	onInputChange,
-	onFocus,
-	filterOption,
-	getOptionLabel,
-	getOptionValue,
-	onCreateOption,
-	noOptionsMessage,
-	isAsyncList = false,
-	loadAsyncOptions,
-	cacheOptions = false,
-	defaultOptions = true,
-}: SelectOptionProps) => {
-	if (isAsyncList)
-		return (
-			<AsyncCreatableSelect
-				cacheOptions={cacheOptions}
-				loadOptions={loadAsyncOptions}
-				getOptionLabel={getOptionLabel}
-				getOptionValue={getOptionValue}
-				defaultOptions={defaultOptions}
-				onInputChange={onInputChange}
-				onCreateOption={onCreateOption}
-				value={value}
-				onChange={onChange}
-				className={className}
-				classNamePrefix="select"
-				placeholder={placeholder}
-				defaultValue={defaultSelected}
-				isDisabled={isDisabled}
-				isLoading={isLoading}
-				noOptionsMessage={noOptionsMessage}
-				onFocus={onFocus}
-				isClearable={isClearable}
-			/>
-		);
-
-	if (isCreatable)
-		return (
-			<Fragment>
-				<CreatableSelect
-					isMulti={isMulti}
-					className={isMulti ? "basic-multi-select" : "basic-single"}
-					classNamePrefix="select"
-					placeholder={placeholder}
-					defaultValue={defaultSelected}
-					isDisabled={isDisabled}
-					isLoading={isLoading}
-					isClearable={isClearable}
-					isRtl={isRtl}
-					isSearchable={isSearchable}
-					name={name}
-					options={options}
-					onChange={onChange}
-					onInputChange={onInputChange}
-					noOptionsMessage={noOptionsMessage}
-					onFocus={onFocus}
-					filterOption={filterOption}
-					getOptionLabel={getOptionLabel}
-					getOptionValue={getOptionValue}
-					onCreateOption={onCreateOption}
-					value={value}
-				/>
-			</Fragment>
-		);
-
+	isRequired,
+	noMargin,
+	registerProperty,
+	valuesKey = 'object',
+	textKey = 'text',
+	style,
+	isDisabled,
+	errorMessage,
+	color = 'secondary',
+}: SelectProps) => {
 	return (
-		<Fragment>
-			<Select
-				isMulti={isMulti}
-				className={isMulti ? "basic-multi-select" : "basic-single"}
-				classNamePrefix="select"
-				placeholder={placeholder}
-				defaultValue={defaultSelected}
-				isDisabled={isDisabled}
-				isLoading={isLoading}
-				isClearable={isClearable}
-				isRtl={isRtl}
-				isSearchable={isSearchable}
-				name={name}
-				options={options}
-				onChange={onChange}
-				onInputChange={onInputChange}
-				noOptionsMessage={noOptionsMessage}
-				onFocus={onFocus}
-				filterOption={filterOption}
-				getOptionLabel={getOptionLabel}
-				getOptionValue={getOptionValue}
+		<div className={clsx('form_group', { 'm-0': noMargin })} aria-disabled={isDisabled ? 'true' : 'false'}>
+			{label ? <Label isRequired={isRequired}>{label}</Label> : null}
+			<select
+				id={id}
+				className={`form-select bg-white wx__input_${color} m-0`}
+				style={{ ...style, padding: '0px 10px' }}
+				defaultValue={defaultValue}
 				value={value}
-			/>
-		</Fragment>
+				onChange={onChange}
+				disabled={isDisabled}
+				role='button'
+				{...registerProperty}
+			>
+				{placeholder ? <option value=''>{placeholder || 'Select ...'}</option> : null}
+
+				{options?.map((option: any, index: number) => (
+					<option
+						value={valuesKey === 'object' ? JSON.stringify(options[index]) : option[valuesKey]}
+						key={index}
+						disabled={option?.disable}
+					>
+						{option[textKey]}
+					</option>
+				))}
+			</select>
+			{errorMessage ? (
+				typeof errorMessage === 'string' ? (
+					<span className={`note_text ${color === 'danger' && 'text-danger'}`}>{errorMessage}</span>
+				) : (
+					<>{errorMessage}</>
+				)
+			) : null}
+		</div>
 	);
-}
-export default SelectOption;
+};
+
+export default memo(Select);

@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";

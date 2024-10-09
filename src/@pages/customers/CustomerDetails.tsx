@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
-import SelectOption from "@components/Select/Select";
+import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";

@@ -1,25 +1,21 @@
-import {Button} from '@components/Button';
-import WxSelect from '@components/Select/WxSelect';
+import { Button } from '@components/Button';
+import Drawer from '@components/Drawer';
+import DrawerBody from '@components/Drawer/DrawerBody';
+import DrawerFooter from '@components/Drawer/DrawerFooter';
+import DrawerHeader from '@components/Drawer/DrawerHeader';
+import MediaInput from '@components/MediaInput/MediaInput';
+import Select from '@components/Select/Select';
 import TextInput from '@components/TextInput';
-import WxDrawer from '@components/Drawer';
-import WxDrawerBody from '@components/Drawer/DrawerBody';
-import WxDrawerFooter from '@components/Drawer/DrawerFooter';
-import WxDrawerHeader from '@components/WxDrawer/WxDrawerHeader';
 import WxEditor from '@components/WxEditor/WxEditor';
 import WxLabel from '@components/WxLabel';
-import MediaInput from '@components/MediaInput/MediaInput';
 import WxSwitch from '@components/WxSwitch';
-import { IFilePayload } from '@interfaces/common.interface';
 import { ENV } from 'config/ENV.config';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { CategoryService, ICategoryPayload } from 'services/api/products/Category.services';
-import { ButtonLoader } from 'services/utils/preloader.service';
-import { ToastService } from 'services/utils/toastr.service';
 import { parentTreeToLinear } from 'utils/categoryTreeOperation';
 import useDebounce from 'utils/debouncer';
 import makeSlug from 'utils/make-slug';
-import { compressImage } from 'utils/utils';
 import './AddCategory.scss';
 
 type AddCategoryProps = {
@@ -43,10 +39,7 @@ const AddCategory = ({
 	isSaving,
 	categories,
 }: AddCategoryProps) => {
-	const [uploading, setUploading] = useState<boolean>(false);
-	const [isDeletingImage, setIsDeletingImage] = useState<boolean>(false);
 	const [linearCategories, setLinearCategories] = useState<ICategoryPayload[]>([]);
-	const [images, setImages] = useState<IFilePayload[] | File[]>([]);
 	const {
 		register,
 		handleSubmit,
@@ -84,7 +77,6 @@ const AddCategory = ({
 		if (isEditForm) {
 			editData?.id && getLinearCategories(editData?.id);
 			reset(editData);
-			setImages(editData?.banner ? [editData?.banner] : []);
 			return;
 		}
 		if (isOpen && editData) {
@@ -93,7 +85,6 @@ const AddCategory = ({
 			reset({});
 		}
 		isOpen && getLinearCategories();
-		setImages([]);
 	}, [isOpen, editData, isEditForm]);
 
 	const getLinearCategories = (id = null) => {
@@ -112,57 +103,15 @@ const AddCategory = ({
 		setLinearCategories(linearData);
 	};
 
-	const handleImageAdd = useCallback(
-		async (images: File[]) => {
-			setUploading(true);
-			const compressedImg = await compressImage(images[0]);
-			if (!isEditForm) {
-				setImages(images);
-				setValue('banner', compressedImg);
-				setUploading(false);
-				return;
-			}
-			const formData: any = new FormData();
-			formData.append('file', compressedImg);
-			formData.append('id', editData?.id);
-			CategoryService.uploadBanner(formData)
-				.then((resp) => {
-					setImages([resp.body]);
-					setValue('banner', resp.body);
-				})
-				.catch((err) => ToastService.error(err.message))
-				.finally(() => setUploading(false));
-		},
-		[isEditForm, editData]
-	);
-
-	const onImageRemove = useCallback(() => {
-		if (isEditForm) {
-			setIsDeletingImage(true);
-			CategoryService.deleteBanner({ id: editData?.id })
-				.then(() => {
-					setImages([]);
-					setValue('banner', null);
-				})
-				.catch((err) => ToastService.error(err.message))
-				.finally(() => setIsDeletingImage(false));
-			return;
-		}
-		setImages([]);
-		setValue('banner', null);
-	}, [isEditForm, editData]);
-
 	return (
-		<WxDrawer show={isOpen} handleClose={handleClose}>
-			<div className='wx__category_form'>
-				<WxDrawerHeader
-					title={isEditForm ? 'Update Category' : 'Add Category'}
-					onClickClose={handleClose}
-				/>
+		<Drawer show={isOpen} handleClose={handleClose}>
+			<div className='category_form'>
+				<DrawerHeader title={isEditForm ? 'Update Category' : 'Add Category'} onClickClose={handleClose} />
 				<form onSubmit={handleSubmit(onSubmit)} noValidate>
-					<WxDrawerBody>
+					<DrawerBody>
 						<TextInput
 							label='Category name'
+							placeholder='Name'
 							isRequired
 							isAutoFocus
 							registerProperty={{
@@ -187,7 +136,7 @@ const AddCategory = ({
 							color={errors?.slug ? 'danger' : 'secondary'}
 							errorMessage={errors?.slug?.message as string}
 						/>
-						<WxSelect
+						<Select
 							label='Parent category'
 							valuesKey='id'
 							placeholder='Select parent category'
@@ -208,14 +157,8 @@ const AddCategory = ({
 							/>
 						</div>
 						<div className='form_group'>
-							<WxLabel>Category icon</WxLabel>
-							<MediaInput
-								fileList={images}
-								onChange={handleImageAdd}
-								onRemove={onImageRemove}
-								isUploading={uploading}
-								multiple={false}
-							/>
+							<WxLabel>Category Image</WxLabel>
+							<MediaInput name='image' control={control} multiple={false} />
 						</div>
 						<div className='mt-4' style={{ maxWidth: '50%' }}>
 							<WxSwitch
@@ -228,15 +171,15 @@ const AddCategory = ({
 								}}
 							/>
 						</div>
-					</WxDrawerBody>
-					<WxDrawerFooter>
-						<div className='wx__category_form__footer'>
+					</DrawerBody>
+					<DrawerFooter>
+						<div className='category_form__footer'>
 							{isEditForm ? (
 								<div className='me-auto'>
 									<Button
 										color='danger'
 										variant='fill'
-										disabled={isDeletingImage || isSaving}
+										disabled={isSaving}
 										onClick={() => handleDelete(editData)}
 									>
 										Delete
@@ -248,21 +191,20 @@ const AddCategory = ({
 									className='me-3'
 									variant='outline'
 									color='secondary'
-									disabled={isDeletingImage || isSaving}
+									disabled={isSaving}
 									onClick={() => handleClose()}
 								>
 									Cancel
 								</Button>
-								<Button variant='fill' type='submit' disabled={isSaving || isDeletingImage}>
+								<Button variant='fill' type='submit' isLoading={isSaving}>
 									{isEditForm ? 'Update' : 'Add'} Category
-									{isSaving || isDeletingImage ? <ButtonLoader /> : null}
 								</Button>
 							</div>
 						</div>
-					</WxDrawerFooter>
+					</DrawerFooter>
 				</form>
 			</div>
-		</WxDrawer>
+		</Drawer>
 	);
 };
 

@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import WxTextarea from "@components/WxTextarea";
 import { ButtonLoader } from "services/utils/preloader.service";
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import WxCheckbox from "@components/WxCheckbox";
 import WxRadio from "@components/WxRadio/WxRadio";
 import WxLabel from "@components/WxLabel";

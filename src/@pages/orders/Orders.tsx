@@ -4,7 +4,7 @@ import Invoice from '@components/Invoice/Invoice';
 import InvoiceTable from '@components/Invoice/InvoiceTable';
 import WxMainFull from '@components/MainContentLayout/WxMainFull';
 import WxNotFound from '@components/NotFound/NotFound';
-import WxSelect from '@components/Select/WxSelect';
+import WxSelect from '@components/Select/Select';
 import TableLoader from '@components/TableLoader/TableLoader';
 import {Button} from '@components/Button';
 import { WxFormHeader } from '@components/WxFormLayout';

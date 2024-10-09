@@ -1,4 +1,4 @@
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import TextInput from "@components/TextInput";
 import { Controller } from "react-hook-form";
 

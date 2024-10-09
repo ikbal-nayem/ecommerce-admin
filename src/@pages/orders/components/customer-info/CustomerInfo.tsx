@@ -1,4 +1,4 @@
-import SelectOption from "@components/Select/Select";
+import SelectOption from "@components/Select/Autocomplete";
 import WxIcon from "@components/Icon";
 import WxLabel from "@components/WxLabel";
 import { STATUS_CONSTANT } from "config/constants";

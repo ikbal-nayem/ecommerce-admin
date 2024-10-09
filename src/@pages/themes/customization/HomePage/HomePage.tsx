@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import SelectOption from "@components/Select/Select";
+import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";

@@ -1,4 +1,4 @@
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";

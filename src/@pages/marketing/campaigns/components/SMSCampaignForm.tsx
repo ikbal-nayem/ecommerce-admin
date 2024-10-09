@@ -1,5 +1,5 @@
 import DateInput from "@components/DatePicker/DateInput";
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxCheckbox from "@components/WxCheckbox";
 import WxHr from "@components/WxHr";

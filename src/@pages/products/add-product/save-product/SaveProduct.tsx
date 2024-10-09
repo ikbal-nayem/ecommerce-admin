@@ -1,5 +1,5 @@
-import SelectOption from "@components/Select/Select";
-import WxSelect from "@components/Select/WxSelect";
+import SelectOption from "@components/Select/Autocomplete";
+import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxChip from "@components/WxChip";
 import WxHr from "@components/WxHr";

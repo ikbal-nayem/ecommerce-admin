@@ -1,7 +1,7 @@
 import DateInput from "@components/DatePicker/DateInput";
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
-import SelectOption from "@components/Select/Select";
-import WxSelect from "@components/Select/WxSelect";
+import SelectOption from "@components/Select/Autocomplete";
+import WxSelect from "@components/Select/Select";
 import TextInput from "@components/TextInput";
 import WxSwitch from "@components/WxSwitch";
 import { useEffect, useState } from "react";

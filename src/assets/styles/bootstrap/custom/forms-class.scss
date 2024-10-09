@@ -118,7 +118,6 @@
 			@extend .text_regular;
 		}
 		&:checked {
-			background-color: $green__500 !important;
 			position: relative;
 			&::after {
 				// content: "Visible" !important;

@@ -1,5 +1,5 @@
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";

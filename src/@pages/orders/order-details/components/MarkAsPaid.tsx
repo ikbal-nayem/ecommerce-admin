@@ -1,5 +1,5 @@
 import BlockSection from "@components/BlockSection/BlockSection";
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxImg from "@components/WxImg/WxImg";
 import TextInput from "@components/TextInput";

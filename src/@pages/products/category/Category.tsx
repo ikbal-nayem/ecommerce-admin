@@ -1,21 +1,21 @@
-import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxNotFound from "@components/NotFound/NotFound";
-import {Button} from "@components/Button";
-import CategoryTBSkelton from "@components/WxSkelton/CategoryTBSkelton";
-import { useEffect, useRef, useState } from "react";
+import { Button } from '@components/Button';
+import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
+import WxMainLg from '@components/MainContentLayout/MainLg';
+import WxNotFound from '@components/NotFound/NotFound';
+import CategoryTBSkelton from '@components/WxSkelton/CategoryTBSkelton';
+import { useEffect, useRef, useState } from 'react';
 import {
 	CategoryService,
 	ICategoryPayload,
-	ICategoryToggleUpdate
-} from "services/api/products/Category.services";
-import { ToastService } from "services/utils/toastr.service";
-import { setGlobCategoriesList } from "store/reducers/utileReducer";
-import { dispatch } from "store/store";
-import { productCountFromTree } from "utils/categoryTreeOperation";
-import skeltonLoader from "utils/skeltonLoader";
-import AddCategory from "./add-category/AddCategory";
-import CategoryTable from "./category-table/CategoryTable";
+	ICategoryToggleUpdate,
+} from 'services/api/products/Category.services';
+import { ToastService } from 'services/utils/toastr.service';
+import { setGlobCategoriesList } from 'store/reducers/utileReducer';
+import { dispatch } from 'store/store';
+import { productCountFromTree } from 'utils/categoryTreeOperation';
+import skeltonLoader from 'utils/skeltonLoader';
+import AddCategory from './add-category/AddCategory';
+import CategoryTable from './category-table/CategoryTable';
 
 const Category = () => {
 	const [open, setOpen] = useState(false);
@@ -116,6 +116,9 @@ const Category = () => {
 	};
 
 	const onSubmit = (data: ICategoryPayload) => {
+		console.log(data);
+		return
+		
 		setIsSaving(true);
 		if (isEdit) {
 			CategoryService.update(data)
@@ -163,14 +166,13 @@ const Category = () => {
 					handleDelete={handleDelete}
 				/>
 			</div>
-			{/* {isLoading ? (
-        <Preloader absolutePosition />
-      ) : !categories?.length ? (
-        <WxNotFound title="Category not found!" btn_text="Create Category" />
-      ) : null} */}
 
 			{!isLoader && !categories?.length ? (
-				<WxNotFound title='Category not found!' btn_text='Create Category' />
+				<WxNotFound
+					title='No Category found!'
+					btn_text='Create Category'
+					onButtonClick={() => setOpen(true)}
+				/>
 			) : null}
 
 			{isLoader ? (
@@ -178,7 +180,7 @@ const Category = () => {
 					<CategoryTBSkelton viewBox='0 0 600 165' />
 				</div>
 			) : (
-				<div className='wx__category_table_content mt-2'>
+				<div className='wx__category_table_content card mt-2'>
 					{categories.length ? (
 						<CategoryTable
 							data={categories}

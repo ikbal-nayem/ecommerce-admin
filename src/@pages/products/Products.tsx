@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import TableLoader from "@components/TableLoader/TableLoader";
 import {Button} from "@components/Button";
 import WxIcon from "@components/Icon";

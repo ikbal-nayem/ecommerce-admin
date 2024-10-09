@@ -14,7 +14,7 @@ import * as yup from "yup";
 import avatar from "../../assets/images/avatar.png";
 
 import EnterOTPModal from "@components/EnterOTPModal/EnterOTPModal";
-import WxSelect from "@components/Select/WxSelect";
+import WxSelect from "@components/Select/Select";
 import { LocationService } from "services/api/Location.service";
 import { ProfileService } from "services/api/settings/Profile.service";
 import { useSearchParams } from "react-router-dom";
