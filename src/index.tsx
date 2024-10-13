@@ -1,6 +1,7 @@
 import { ToastComponent } from '@components/ToastComponent';
 import App from 'App';
 import 'assets/styles/main.scss';
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from 'store/store';

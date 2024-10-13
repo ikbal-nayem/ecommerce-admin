@@ -21,7 +21,7 @@ export const utileSlice = createSlice({
     setGlobProductList: (state, { type, payload }) => {
       state.globProductsList = payload;
     },
-    setGlobCategoriesList: (state, { type, payload }) => {
+    setGlobCategoryList: (state, { type, payload }) => {
       state.globCategoriesList = payload;
     },
     setGlobCustomerList: (state, { type, payload }) => {
@@ -35,7 +35,7 @@ export const utileSlice = createSlice({
 
 export const {
   setGlobProductList,
-  setGlobCategoriesList,
+  setGlobCategoryList,
   setGlobCustomerList,
   setGlobCustomerGroupList,
 } = utileSlice.actions;

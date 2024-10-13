@@ -9,8 +9,8 @@ const SomethingWrong: FC = () => {
 				<h2 className='text_regular text_h2 mb-4'>Oops!</h2>
 				<img src='/media/svg/something-wrong.svg' alt='Something went wrong' height={250} />
 				<p className='text_body text_regular my-4'>Something went wrong!</p>
-				<Button variant='fill'>
-					<Icon icon='refresh' onClick={() => window.location.reload()} />
+				<Button variant='fill' onClick={() => window.location.reload()}>
+					<Icon icon='refresh' />
 					&nbsp; Reload
 				</Button>
 			</div>

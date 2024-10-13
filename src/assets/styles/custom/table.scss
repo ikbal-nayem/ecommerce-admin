@@ -1,7 +1,7 @@
 .wx__responsive_table {
   overflow: auto;
   height: 100%;
-  min-height: 240px;
+  min-height: 300px;
 
   tbody {
     tr {
@@ -109,14 +109,14 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 200px;
+    // width: 200px;
   }
 }
 .text-overflow-hidden {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 200px;
+  // width: 200px;
 }
 .wx__table_cell_text_with_icon {
   display: flex;

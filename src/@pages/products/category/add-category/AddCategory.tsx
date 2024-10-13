@@ -7,7 +7,7 @@ import MediaInput from '@components/MediaInput/MediaInput';
 import Select from '@components/Select/Select';
 import TextInput from '@components/TextInput';
 import WxEditor from '@components/WxEditor/WxEditor';
-import WxLabel from '@components/WxLabel';
+import Label from '@components/WxLabel';
 import WxSwitch from '@components/WxSwitch';
 import { ENV } from 'config/ENV.config';
 import { useEffect, useState } from 'react';
@@ -147,7 +147,7 @@ const AddCategory = ({
 							}}
 						/>
 						<div className='form_group'>
-							<WxLabel>Category details</WxLabel>
+							<Label>Category details</Label>
 							<Controller
 								control={control}
 								name='description'
@@ -157,7 +157,7 @@ const AddCategory = ({
 							/>
 						</div>
 						<div className='form_group'>
-							<WxLabel>Category Image</WxLabel>
+							<Label>Category Image</Label>
 							<MediaInput name='image' control={control} multiple={false} />
 						</div>
 						<div className='mt-4' style={{ maxWidth: '50%' }}>

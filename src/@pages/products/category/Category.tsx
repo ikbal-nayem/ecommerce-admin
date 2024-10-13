@@ -1,7 +1,7 @@
 import { Button } from '@components/Button';
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
 import WxMainLg from '@components/MainContentLayout/MainLg';
-import WxNotFound from '@components/NotFound/NotFound';
+import NotFound from '@components/NotFound/NotFound';
 import CategoryTBSkelton from '@components/WxSkelton/CategoryTBSkelton';
 import { useEffect, useRef, useState } from 'react';
 import {
@@ -10,9 +10,10 @@ import {
 	ICategoryToggleUpdate,
 } from 'services/api/products/Category.services';
 import { ToastService } from 'services/utils/toastr.service';
-import { setGlobCategoriesList } from 'store/reducers/utileReducer';
+import { setGlobCategoryList } from 'store/reducers/utileReducer';
 import { dispatch } from 'store/store';
 import { productCountFromTree } from 'utils/categoryTreeOperation';
+import { makeFormData } from 'utils/preprocessor';
 import skeltonLoader from 'utils/skeltonLoader';
 import AddCategory from './add-category/AddCategory';
 import CategoryTable from './category-table/CategoryTable';
@@ -40,19 +41,13 @@ const Category = () => {
 	}, []);
 
 	const getCategory = () => {
-		CategoryService.categoryGetByStoreId('userData.store_id')
+		CategoryService.getTree()
 			.then((res) => {
-				if (res.body.length) {
-					setCategories(productCountFromTree(res.body));
-					dispatch(setGlobCategoriesList(res.body));
-				}
+				setCategories(productCountFromTree(res.data));
+				dispatch(setGlobCategoryList(res.data));
 			})
-			.catch((err) => {
-				ToastService.error(err);
-			})
-			.finally(() => {
-				skeltonLoader(setIsLoader);
-			});
+			.catch((err) => ToastService.error(err))
+			.finally(() => skeltonLoader(setIsLoader));
 	};
 
 	const getCategoryById = (id: string) => {
@@ -77,7 +72,7 @@ const Category = () => {
 	};
 
 	const handleCreateSubcategory = (data: ICategoryPayload) => {
-		setEditData({ parentId: data.id });
+		// setEditData({ parentId: data.id });
 		setOpen(true);
 	};
 
@@ -115,10 +110,7 @@ const Category = () => {
 		setIsConfirmOpen(false);
 	};
 
-	const onSubmit = (data: ICategoryPayload) => {
-		console.log(data);
-		return
-		
+	const onSubmit = async (data: ICategoryPayload) => {
 		setIsSaving(true);
 		if (isEdit) {
 			CategoryService.update(data)
@@ -131,14 +123,8 @@ const Category = () => {
 				.finally(() => setIsSaving(false));
 			return;
 		}
-
-		const img: any = data?.banner;
-		delete data?.banner;
-		const newData = new FormData();
-		newData.append('body', JSON.stringify(data));
-		newData.append('file', img);
-
-		CategoryService.create(newData)
+		const fd = await makeFormData(data);
+		CategoryService.create(fd)
 			.then((response) => {
 				ToastService.success(response.message);
 				handleClose();
@@ -168,11 +154,7 @@ const Category = () => {
 			</div>
 
 			{!isLoader && !categories?.length ? (
-				<WxNotFound
-					title='No Category found!'
-					btn_text='Create Category'
-					onButtonClick={() => setOpen(true)}
-				/>
+				<NotFound title='No Category found!' btn_text='Create Category' onButtonClick={() => setOpen(true)} />
 			) : null}
 
 			{isLoader ? (
