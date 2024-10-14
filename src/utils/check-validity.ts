@@ -14,9 +14,17 @@ const isValidUrl = (url: string) => {
 	return !!pattern.test(url);
 };
 
-export const isObjectNull = (object: IObject | null | undefined) => !Object.keys(object || {})?.length;
-
-export const isListNull = (li: Array<IObject | string | number | null | undefined> | null | undefined) =>
-	!li || li?.length <= 0;
+export const isNull = (val: string | null | undefined | Array<any> | IObject) => {
+	return (
+		val === null ||
+		val === undefined ||
+		val === '' ||
+		val === 'null' ||
+		val === 'undefined' ||
+		Object.keys(val || {}).length === 0 ||
+		Array.isArray(val) ||
+		val?.length === 0
+	);
+};
 
 export default isValidUrl;

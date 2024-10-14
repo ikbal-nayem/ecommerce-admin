@@ -3,6 +3,7 @@ import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationMod
 import WxMainLg from '@components/MainContentLayout/MainLg';
 import NotFound from '@components/NotFound/NotFound';
 import CategoryTBSkelton from '@components/WxSkelton/CategoryTBSkelton';
+import { IObject } from '@interfaces/common.interface';
 import { useEffect, useRef, useState } from 'react';
 import {
 	CategoryService,
@@ -15,24 +16,22 @@ import { dispatch } from 'store/store';
 import { productCountFromTree } from 'utils/categoryTreeOperation';
 import { makeFormData } from 'utils/preprocessor';
 import skeltonLoader from 'utils/skeltonLoader';
-import AddCategory from './add-category/AddCategory';
+import AddCategory from './category-form';
 import CategoryTable from './category-table/CategoryTable';
 
 const Category = () => {
 	const [open, setOpen] = useState(false);
-	const [isEdit, setIsEdit] = useState(false);
 	const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 	const [isSaving, setIsSaving] = useState<boolean>(false);
-	const [editData, setEditData] = useState<ICategoryPayload>();
 	const [isLoader, setIsLoader] = useState<boolean>(true);
 	const [categories, setCategories] = useState<ICategoryPayload[]>([]);
+	const tempItem = useRef<IObject>();
 	const deleteItem = useRef(null);
 
 	const handleClose = () => {
 		setIsConfirmOpen(false);
 		setOpen(false);
-		setIsEdit(false);
-		setEditData(null);
+		tempItem.current = null;
 		deleteItem.current = null;
 	};
 
@@ -48,14 +47,6 @@ const Category = () => {
 			})
 			.catch((err) => ToastService.error(err))
 			.finally(() => skeltonLoader(setIsLoader));
-	};
-
-	const getCategoryById = (id: string) => {
-		CategoryService.categoryGetById(id)
-			.then((res) => {
-				setEditData(res.body);
-			})
-			.catch((err) => ToastService.error(err.message));
 	};
 
 	const handleVisibility = (data: ICategoryToggleUpdate) => {
@@ -77,8 +68,7 @@ const Category = () => {
 	};
 
 	const handleEdit = (data: ICategoryPayload) => {
-		getCategoryById(data.id);
-		setIsEdit(true);
+		tempItem.current = data;
 		setOpen(true);
 	};
 
@@ -111,9 +101,12 @@ const Category = () => {
 	};
 
 	const onSubmit = async (data: ICategoryPayload) => {
+		console.log(tempItem.current);
+		
 		setIsSaving(true);
-		if (isEdit) {
-			CategoryService.update(data)
+		const fd = await makeFormData(data);
+		if (!!tempItem.current) {
+			CategoryService.update(tempItem.current._id, fd)
 				.then((response) => {
 					ToastService.success(response.message);
 					handleClose();
@@ -123,7 +116,6 @@ const Category = () => {
 				.finally(() => setIsSaving(false));
 			return;
 		}
-		const fd = await makeFormData(data);
 		CategoryService.create(fd)
 			.then((response) => {
 				ToastService.success(response.message);
@@ -145,8 +137,7 @@ const Category = () => {
 					isOpen={open}
 					handleClose={handleClose}
 					onSubmit={onSubmit}
-					isEditForm={isEdit}
-					editData={editData}
+					editData={tempItem.current}
 					isSaving={isSaving}
 					categories={categories}
 					handleDelete={handleDelete}

@@ -9,11 +9,11 @@ import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { CollectionService, ICollectionPayload } from 'services/api/products/Collection.services';
 import { ToastService } from 'services/utils/toastr.service';
-import { isObjectNull } from 'utils/check-validity';
+import { isNull } from 'utils/check-validity';
 import { makeFormData } from 'utils/preprocessor';
 import skeltonLoader from 'utils/skeltonLoader';
-import CollectionAdd from './collection-add/CollectionAdd';
-import CollectionTable from './collection-table/CollectionTable';
+import CollectionAdd from './collection-form';
+import CollectionTable from './collection-table';
 import './Collection.scss';
 
 const meta = {
@@ -106,7 +106,7 @@ const Collection = () => {
 
 	const onSubmit = async (data: ICollectionPayload) => {
 		setIsSaving(true);
-		if (!isObjectNull(editData.current)) {
+		if (!isNull(editData.current)) {
 			const fd = await makeFormData(data);
 			CollectionService.update(editData.current?._id, fd)
 				.then((response) => {

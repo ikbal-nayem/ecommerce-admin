@@ -4,12 +4,12 @@ import { apiIns } from 'config/api.config';
 import { mergeBodyWithStoreId, mergePayloadWithStoreId } from 'services/utils/localStorageData.service';
 
 export interface ICategoryPayload {
-	id?: string;
+	_id?: string;
 	name?: string;
 	slug?: string;
 	description?: string;
 	parent?: string | IObject;
-	// productCount?: number;
+	productCount?: number;
 	subcategories?: ICategoryPayload[];
 	image?: string;
 	isActive?: boolean;
@@ -57,6 +57,9 @@ export const CategoryService = {
 
 	create: async (payload: FormData): Promise<any> => await apiIns.post('product-config/category', payload),
 
+	update: async (id: string, payload: FormData): Promise<any> =>
+		await apiIns.put('product-config/category/' + id, payload),
+
 	isSlugAvailable: async (payload: any): Promise<any> =>
 		await apiIns.post(PRODUCT_CATEGORY + 'is-slug-available', mergePayloadWithStoreId(payload)),
 
@@ -65,8 +68,6 @@ export const CategoryService = {
 
 	getByIdSet: async (payload: ICategoryGetByIdSet): Promise<any> =>
 		await apiIns.post(PRODUCT_CATEGORY + 'get-by-id-set', mergePayloadWithStoreId(payload)),
-
-	update: async (payload: any): Promise<any> => await apiIns.put(PRODUCT_CATEGORY + 'update', payload),
 
 	uploadBanner: async (payload: any): Promise<any> =>
 		await apiIns.put(PRODUCT_CATEGORY + 'upload-banner', payload),

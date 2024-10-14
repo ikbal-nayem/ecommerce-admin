@@ -1,4 +1,4 @@
-import { ICategoryPayload } from "services/api/products/Category.services";
+import { ICategoryPayload } from 'services/api/products/Category.services';
 
 export const parentTreeToLinear = (treeData: any) => {
 	const result = [];
@@ -6,9 +6,9 @@ export const parentTreeToLinear = (treeData: any) => {
 	const generateSubcategoryTree = (data, parent = []) => {
 		data.forEach((item) => {
 			parent.push(item.name);
-			result.push({ id: item.id, slug: item?.slug, name: parent.join(" > ") });
-			if (item.children.length) {
-				generateSubcategoryTree(item.children, parent);
+			result.push({ id: item.id, slug: item?.slug, name: parent.join(' > ') });
+			if (item.subcategories?.length) {
+				generateSubcategoryTree(item.subcategories, parent);
 			}
 			parent.pop();
 		});
@@ -20,16 +20,11 @@ export const parentTreeToLinear = (treeData: any) => {
 
 export const productCountFromTree = (categoryTree: ICategoryPayload[]) => {
 	categoryTree?.forEach((category: any) => {
-		let childProductCount = category.children?.length
-			? productCountFromTree(category.children)
-			: 0;
-		if (typeof childProductCount === "object") {
-			childProductCount = childProductCount.reduce(
-				(acc, curr) => acc + curr.productCount,
-				0
-			);
+		let childProductCount = category.subcategories?.length ? productCountFromTree(category.subcategories) : 0;
+		if (typeof childProductCount === 'object') {
+			childProductCount = childProductCount.reduce((acc, curr) => acc + curr.productCount, 0);
 		}
-		category.productCount = category.productCount + childProductCount;
+		category.productCount = category.productCount || 0 + childProductCount;
 	});
 	return categoryTree;
 };

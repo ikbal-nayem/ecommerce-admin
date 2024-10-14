@@ -9,20 +9,26 @@ import TextInput from '@components/TextInput';
 import WxEditor from '@components/WxEditor/WxEditor';
 import Label from '@components/WxLabel';
 import WxSwitch from '@components/WxSwitch';
-import { ENV } from 'config/ENV.config';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { CategoryService, ICategoryPayload } from 'services/api/products/Category.services';
 import { parentTreeToLinear } from 'utils/categoryTreeOperation';
 import useDebounce from 'utils/debouncer';
 import makeSlug from 'utils/make-slug';
-import './AddCategory.scss';
+
+const generateDefaultValues = (defaultValues?: ICategoryPayload) => ({
+	name: defaultValues?.name || '',
+	slug: defaultValues?.slug || '',
+	parent: defaultValues?.parent || null,
+	description: defaultValues?.description || '',
+	image: defaultValues?.image || '',
+	isActive: defaultValues?.isActive || '',
+});
 
 type AddCategoryProps = {
 	isOpen: boolean;
 	handleClose?: Function;
 	onSubmit: any;
-	isEditForm?: boolean;
 	editData?: ICategoryPayload;
 	handleDelete?: Function;
 	isSaving?: boolean;
@@ -33,7 +39,6 @@ const AddCategory = ({
 	handleClose,
 	isOpen,
 	onSubmit,
-	isEditForm,
 	editData,
 	handleDelete,
 	isSaving,
@@ -53,11 +58,9 @@ const AddCategory = ({
 	} = useForm();
 
 	const watch_name = watch('name');
-	const slug = useDebounce(watch('slug'), 500);
+	const slug = useDebounce(watch_name, 500);
 
-	useEffect(() => {
-		!isEditForm && setValue('slug', makeSlug(watch_name));
-	}, [watch_name]);
+	const isEditForm = !!editData;
 
 	useEffect(() => {
 		if (!isEditForm) {
@@ -74,26 +77,23 @@ const AddCategory = ({
 	}, [slug]);
 
 	useEffect(() => {
-		if (isEditForm) {
-			editData?.id && getLinearCategories(editData?.id);
-			reset(editData);
+		if (isOpen && !!editData) {
+			getLinearCategories(editData?._id);
+			reset(generateDefaultValues(editData));
 			return;
-		}
-		if (isOpen && editData) {
-			reset({ ...editData });
 		} else {
-			reset({});
+			reset(generateDefaultValues());
 		}
 		isOpen && getLinearCategories();
-	}, [isOpen, editData, isEditForm]);
+	}, [isOpen, editData]);
 
 	const getLinearCategories = (id = null) => {
 		let categoryCopy = [...categories];
 		if (id) {
 			const removeChild = (data) => {
 				data.forEach((item, index) => {
-					if (item.id === id) data.splice(index, 1);
-					else if (item.children) removeChild(item.children);
+					if (item._id === id) data.splice(index, 1);
+					else if (item.subcategories) removeChild(item.subcategories);
 				});
 				return data;
 			};
@@ -120,7 +120,7 @@ const AddCategory = ({
 							color={errors?.name ? 'danger' : 'secondary'}
 							errorMessage={errors?.name && 'Name is required!'}
 						/>
-						<TextInput
+						{/* <TextInput
 							label='Slug'
 							isRequired
 							isDisabled={isEditForm}
@@ -135,16 +135,14 @@ const AddCategory = ({
 							}}
 							color={errors?.slug ? 'danger' : 'secondary'}
 							errorMessage={errors?.slug?.message as string}
-						/>
+						/> */}
 						<Select
 							label='Parent category'
 							valuesKey='id'
-							placeholder='Select parent category'
+							placeholder='Select...'
 							textKey='name'
 							options={linearCategories}
-							registerProperty={{
-								...register('parentId'),
-							}}
+							registerProperty={{ ...register('parent') }}
 						/>
 						<div className='form_group'>
 							<Label>Category details</Label>
@@ -173,7 +171,7 @@ const AddCategory = ({
 						</div>
 					</DrawerBody>
 					<DrawerFooter>
-						<div className='category_form__footer'>
+						<div className='d-flex'>
 							{isEditForm ? (
 								<div className='me-auto'>
 									<Button

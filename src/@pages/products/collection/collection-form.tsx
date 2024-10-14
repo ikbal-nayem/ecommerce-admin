@@ -1,27 +1,26 @@
 import { Button } from '@components/Button';
-import MediaInput from '@components/MediaInput/MediaInput';
-import TextInput from '@components/TextInput';
 import WxDrawer from '@components/Drawer';
 import WxDrawerBody from '@components/Drawer/DrawerBody';
 import WxDrawerFooter from '@components/Drawer/DrawerFooter';
 import DrawerHeader from '@components/Drawer/DrawerHeader';
+import MediaInput from '@components/MediaInput/MediaInput';
+import TextInput from '@components/TextInput';
 import WxEditor from '@components/WxEditor/WxEditor';
 import WxLabel from '@components/WxLabel';
-import { IObject } from '@interfaces/common.interface';
 import { ENV } from 'config/ENV.config';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { CollectionService, ICollectionPayload } from 'services/api/products/Collection.services';
-import { isObjectNull } from 'utils/check-validity';
+import { isNull } from 'utils/check-validity';
 import useDebounce from 'utils/debouncer';
 import makeSlug from 'utils/make-slug';
-import './CollectionAdd.scss';
 
-const generateDefaultValues = (defaultValues?: IObject) => ({
+const generateDefaultValues = (defaultValues?: ICollectionPayload) => ({
 	name: defaultValues?.name || '',
 	slug: defaultValues?.slug || '',
 	description: defaultValues?.description || '',
 	image: defaultValues?.image || '',
+	isActive: defaultValues?.isActive || '',
 });
 
 type AddCollectionProps = {
@@ -53,7 +52,7 @@ const AddCollection = ({
 		clearErrors,
 	} = useForm({ defaultValues: generateDefaultValues(editData) });
 
-	const isEditForm = !isObjectNull(editData);
+	const isEditForm = !isNull(editData);
 
 	const [watch_name, watch_slug] = watch(['name', 'slug']);
 
@@ -133,7 +132,7 @@ const AddCollection = ({
 						</div>
 					</WxDrawerBody>
 					<WxDrawerFooter>
-						<div className='collection_form__footer'>
+						<div className='d-flex'>
 							{isEditForm ? (
 								<div className='me-auto'>
 									<Button
