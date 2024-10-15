@@ -14,6 +14,7 @@ interface IIcon {
 	hoverTitle?: string;
 	style?: any;
 	size?: number;
+	rotate?: number;
 }
 
 const Icon = ({
@@ -28,6 +29,7 @@ const Icon = ({
 	hoverTitle,
 	style,
 	size,
+	rotate,
 }: IIcon) => (
 	<span
 		title={hoverTitle}
@@ -39,7 +41,7 @@ const Icon = ({
 		})}
 		id={id ? id : ''}
 		role={role}
-		style={{ fontSize: size || '1.1rem', ...style }}
+		style={{ fontSize: size || '1.1rem', transform: `rotate(${rotate || 0}deg)`, ...style }}
 	>
 		{icon}
 	</span>

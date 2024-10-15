@@ -21,22 +21,10 @@ const TableSubItem = ({
 	handleCreateSubcategory,
 }: ItemsProps) => {
 	const [showSub, setShowSub] = useState<boolean>(false);
-	const [showPopup, setShowPopup] = useState<boolean>(false);
 
 	const handleToggleSub = () => setShowSub((prev) => !prev);
 
-	const onEdit = () => {
-		setShowPopup(false);
-		handleEdit(sub);
-	};
-
-	const onAddSubcategory = () => {
-		setShowPopup(false);
-		handleCreateSubcategory(sub);
-	};
-
 	const onDelete = () => {
-		setShowPopup(false);
 		handleDelete(sub);
 	};
 
@@ -45,29 +33,35 @@ const TableSubItem = ({
 			<>
 				<tr>
 					<th className='wx__td'>
-						<Icon icon='arrow_forward_ios' onClick={handleToggleSub} />
-						<span className='material-icons inline left' role='button' style={{ paddingLeft: `${space}px` }}>
-							{showSub ? 'remove_circle' : 'add_circle'}
-						</span>
-						<span>{sub.name}</span>
+						<div className='d-flex align-items-center gap-2'>
+							<Icon
+								icon={showSub ? 'arrow_forward_ios' : 'arrow_forward_ios'}
+								role='button'
+								rotate={showSub ? 90 : 0}
+								style={{ paddingLeft: `${space}px` }}
+								onClick={handleToggleSub}
+							/>
+							<span>{sub.name}</span>
+						</div>
 					</th>
-					<td className='wx__td'>{sub.productCount}</td>
-					<td className='wx__td'>
-						<span
-							className={`material-icons inline left ${!sub.isActive ? 'inactive' : ''}`}
+					<td className='wx__td text-center'>{sub.productCount}</td>
+					<td className='wx__td text-center'>
+						<Icon
+							icon={sub.isActive ? 'remove_red_eye' : 'visibility_off'}
+							color={sub.isActive ? 'primary' : 'danger'}
+							size={20}
 							role='button'
+							className={!sub.isActive ? 'inactive' : ''}
 							onClick={() => handleVisibility(sub)}
-						>
-							{sub.isActive ? 'remove_red_eye' : 'visibility_off'}
-						</span>
+						/>
 					</td>
 					<td className='wx__td more'>
-						<Menu triggerContent={<Icon icon='more_vert' />}>
-							<MenuItem onClick={onEdit}>
+						<Menu triggerContent={<Icon icon='more_vert' />} position='end'>
+							<MenuItem onClick={() => handleEdit(sub)}>
 								<Icon icon='edit' />
 								<small>Edit</small>
 							</MenuItem>
-							<MenuItem onClick={onAddSubcategory}>
+							<MenuItem onClick={() => handleCreateSubcategory(sub)}>
 								<Icon icon='add' />
 								<small>Add Sub-category</small>
 							</MenuItem>
@@ -95,43 +89,34 @@ const TableSubItem = ({
 	return (
 		<tr>
 			<th className='wx__td'>
-				<Icon
-					icon='arrow_forward_ios'
-					onClick={handleToggleSub}
-					style={{ opacity: '0.1', paddingLeft: `${space}px` }}
-					size={15}
-				/>
-				{/* <span
-					className='material-icons inline left'
-					aria-disabled
-					style={{ opacity: '0.1', paddingLeft: `${space}px` }}
-				>
-					add_circle
-				</span> */}
-				<span>{sub.name}</span>
+				<div className='d-flex align-items-center gap-2'>
+					<Icon
+						icon='arrow_forward_ios'
+						role='button'
+						onClick={handleToggleSub}
+						style={{ opacity: '0.1', paddingLeft: `${space}px` }}
+					/>
+					<span>{sub.name}</span>
+				</div>
 			</th>
-			<td className='wx__td'>{sub.productCount}</td>
+			<td className='wx__td text-center'>{sub.productCount}</td>
 			<td className='wx__td text-center'>
 				<Icon
 					icon={sub.isActive ? 'remove_red_eye' : 'visibility_off'}
+					color={sub.isActive ? 'primary' : 'danger'}
+					size={20}
+					role='button'
 					className={!sub.isActive ? 'inactive' : ''}
 					onClick={() => handleVisibility(sub)}
 				/>
-				{/* <span
-					className={`material-icons inline left ${!sub.isActive ? 'inactive' : ''}`}
-					role='button'
-					onClick={() => handleVisibility(sub)}
-				>
-					{sub.isActive ? 'remove_red_eye' : 'visibility_off'}
-				</span> */}
 			</td>
 			<td className='wx__td'>
-				<Menu triggerContent={<Icon icon='more_vert' />}>
-					<MenuItem onClick={onEdit}>
+				<Menu triggerContent={<Icon icon='more_vert' />} position='end'>
+					<MenuItem onClick={() => handleEdit(sub)}>
 						<Icon icon='edit' />
 						<small>Edit</small>
 					</MenuItem>
-					<MenuItem onClick={onAddSubcategory}>
+					<MenuItem onClick={() => handleCreateSubcategory(sub)}>
 						<Icon icon='add' />
 						<small>Add Sub-category</small>
 					</MenuItem>

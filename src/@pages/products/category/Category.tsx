@@ -5,12 +5,9 @@ import NotFound from '@components/NotFound/NotFound';
 import CategoryTBSkelton from '@components/WxSkelton/CategoryTBSkelton';
 import { IObject } from '@interfaces/common.interface';
 import { useEffect, useRef, useState } from 'react';
-import {
-	CategoryService,
-	ICategoryPayload,
-	ICategoryToggleUpdate,
-} from 'services/api/products/Category.services';
+import { CategoryService, ICategoryPayload } from 'services/api/products/Category.services';
 import { ToastService } from 'services/utils/toastr.service';
+import { topProgress } from 'services/utils/topProgress.service';
 import { setGlobCategoryList } from 'store/reducers/utileReducer';
 import { dispatch } from 'store/store';
 import { productCountFromTree } from 'utils/categoryTreeOperation';
@@ -26,14 +23,6 @@ const Category = () => {
 	const [isLoader, setIsLoader] = useState<boolean>(true);
 	const [categories, setCategories] = useState<ICategoryPayload[]>([]);
 	const tempItem = useRef<IObject>();
-	const deleteItem = useRef(null);
-
-	const handleClose = () => {
-		setIsConfirmOpen(false);
-		setOpen(false);
-		tempItem.current = null;
-		deleteItem.current = null;
-	};
 
 	useEffect(() => {
 		getCategory();
@@ -49,40 +38,34 @@ const Category = () => {
 			.finally(() => skeltonLoader(setIsLoader));
 	};
 
-	const handleVisibility = (data: ICategoryToggleUpdate) => {
-		// data.isActive = data.isActive;
-		const dd = {
-			id: data.id,
-			isActive: !data.isActive,
-		};
-		CategoryService.toggleActivity(dd)
-			.then((res) => {
-				getCategory();
-			})
-			.catch((err) => ToastService.error(err));
+	const handleVisibility = (data: ICategoryPayload) => {
+		topProgress.show();
+		CategoryService.update(data?._id, { parent: data?.parent, isActive: !data?.isActive })
+			.then((res) => getCategory())
+			.catch((err) => ToastService.error(err))
+			.finally(() => topProgress.hide());
 	};
 
 	const handleCreateSubcategory = (data: ICategoryPayload) => {
-		// setEditData({ parentId: data.id });
+		tempItem.current = { data: { parent: data._id }, isEditMode: false };
 		setOpen(true);
 	};
 
 	const handleEdit = (data: ICategoryPayload) => {
-		tempItem.current = data;
+		tempItem.current = { data, isEditMode: true };
 		setOpen(true);
 	};
 
 	// This function will be called when user click on comfirm delete button
 	const onDeleteConfirm = () => {
-		const { id } = deleteItem.current;
-		if (!id) {
+		const { _id } = tempItem.current;
+		if (!_id) {
 			handleClose();
 			return;
 		}
 		setIsSaving(true);
-		CategoryService.delete({ id })
+		CategoryService.delete(_id)
 			.then((res) => {
-				deleteItem.current = null;
 				handleClose();
 				getCategory();
 			})
@@ -91,22 +74,20 @@ const Category = () => {
 	};
 
 	const handleDelete = (item: ICategoryPayload) => {
-		deleteItem.current = item;
+		tempItem.current = item;
 		setIsConfirmOpen(true);
 	};
 
 	const onConfirmClose = () => {
-		deleteItem.current = null;
+		tempItem.current = null;
 		setIsConfirmOpen(false);
 	};
 
 	const onSubmit = async (data: ICategoryPayload) => {
-		console.log(tempItem.current);
-		
 		setIsSaving(true);
 		const fd = await makeFormData(data);
-		if (!!tempItem.current) {
-			CategoryService.update(tempItem.current._id, fd)
+		if (tempItem.current?.isEditMode) {
+			CategoryService.update(tempItem.current?.data?._id, fd)
 				.then((response) => {
 					ToastService.success(response.message);
 					handleClose();
@@ -124,6 +105,12 @@ const Category = () => {
 			})
 			.catch((error) => ToastService.error(error.message))
 			.finally(() => setIsSaving(false));
+	};
+
+	const handleClose = () => {
+		setIsConfirmOpen(false);
+		setOpen(false);
+		tempItem.current = { data: null, isEditMode: false };
 	};
 
 	return (
@@ -171,7 +158,7 @@ const Category = () => {
 				isOpen={isConfirmOpen}
 				onClose={onConfirmClose}
 				onConfirm={onDeleteConfirm}
-				body={`Are your sure you want to delete '${deleteItem.current?.name}'? This action wont be reverseable!`}
+				body={`Are your sure you want to delete '${tempItem.current?.name}'? This action wont be reverseable!`}
 			/>
 		</WxMainLg>
 	);

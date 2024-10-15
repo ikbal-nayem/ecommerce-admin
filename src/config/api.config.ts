@@ -1,9 +1,9 @@
 import { LOCAL_STORAGE_KEY } from '@constants/common.constant';
 import { ROUTES } from '@constants/route.constant';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import { LocalStorageService } from 'services/utils/local-storage.service';
 import { SessionStorageService } from 'services/utils/session-storage.service';
+import { ToastService } from 'services/utils/toastr.service';
 import { ENV } from './ENV.config';
 
 const axiosIns = axios.create({
@@ -31,7 +31,7 @@ axiosIns.interceptors.request.use(
 
 		return Promise.reject({
 			body: false,
-			status: 404,
+			status: 500,
 			message: 'Server not responding',
 		});
 	}
@@ -45,16 +45,17 @@ axiosIns.interceptors.response.use(
 		if (error?.response) {
 			if (error?.response?.status === 401) logout();
 			if (error.response?.status === 413) {
-				toast.error(error.response?.message);
+				ToastService.error(error.response?.message);
 				return;
 			}
+
 			return Promise.reject({
-				message: error.message,
+				message: error?.response?.data?.error?.message || error.message,
 				status: error?.response?.status || error.status || 500,
 			});
 		} else
 			return Promise.reject({
-				status: 500,
+				status: 503,
 				message: 'Server not responding',
 			});
 	}

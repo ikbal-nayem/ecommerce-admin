@@ -9,17 +9,16 @@ import TextInput from '@components/TextInput';
 import WxEditor from '@components/WxEditor/WxEditor';
 import Label from '@components/WxLabel';
 import WxSwitch from '@components/WxSwitch';
+import { IObject } from '@interfaces/common.interface';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { CategoryService, ICategoryPayload } from 'services/api/products/Category.services';
+import { ICategoryPayload } from 'services/api/products/Category.services';
 import { parentTreeToLinear } from 'utils/categoryTreeOperation';
-import useDebounce from 'utils/debouncer';
-import makeSlug from 'utils/make-slug';
 
 const generateDefaultValues = (defaultValues?: ICategoryPayload) => ({
 	name: defaultValues?.name || '',
 	slug: defaultValues?.slug || '',
-	parent: defaultValues?.parent || null,
+	parent: defaultValues?.parent || '',
 	description: defaultValues?.description || '',
 	image: defaultValues?.image || '',
 	isActive: defaultValues?.isActive || '',
@@ -29,7 +28,7 @@ type AddCategoryProps = {
 	isOpen: boolean;
 	handleClose?: Function;
 	onSubmit: any;
-	editData?: ICategoryPayload;
+	editData?: IObject;
 	handleDelete?: Function;
 	isSaving?: boolean;
 	categories?: ICategoryPayload[];
@@ -48,43 +47,33 @@ const AddCategory = ({
 	const {
 		register,
 		handleSubmit,
-		setValue,
 		control,
 		reset,
-		watch,
 		formState: { errors },
-		setError,
-		clearErrors,
 	} = useForm();
 
-	const watch_name = watch('name');
-	const slug = useDebounce(watch_name, 500);
+	// const watch_name = watch('name');
+	// const slug = useDebounce(watch_name, 500);
 
-	const isEditForm = !!editData;
-
-	useEffect(() => {
-		if (!isEditForm) {
-			setValue('slug', makeSlug(slug));
-			slug &&
-				CategoryService.isSlugAvailable({ slug }).then((res) => {
-					if (res.body) {
-						clearErrors('slug');
-						return;
-					}
-					setError('slug', { message: res.message });
-				});
-		}
-	}, [slug]);
+	// useEffect(() => {
+	// 	if (!editData?.isEditMode) {
+	// 		setValue('slug', makeSlug(slug));
+	// 		slug &&
+	// 			CategoryService.isSlugAvailable({ slug }).then((res) => {
+	// 				if (res.body) {
+	// 					clearErrors('slug');
+	// 					return;
+	// 				}
+	// 				setError('slug', { message: res.message });
+	// 			});
+	// 	}
+	// }, [slug]);
 
 	useEffect(() => {
-		if (isOpen && !!editData) {
-			getLinearCategories(editData?._id);
-			reset(generateDefaultValues(editData));
-			return;
-		} else {
-			reset(generateDefaultValues());
+		if (isOpen) {
+			getLinearCategories(editData?.isEditMode ? editData?.data?._id : null);
+			reset(generateDefaultValues(editData?.data));
 		}
-		isOpen && getLinearCategories();
 	}, [isOpen, editData]);
 
 	const getLinearCategories = (id = null) => {
@@ -106,7 +95,10 @@ const AddCategory = ({
 	return (
 		<Drawer show={isOpen} handleClose={handleClose}>
 			<div className='category_form'>
-				<DrawerHeader title={isEditForm ? 'Update Category' : 'Add Category'} onClickClose={handleClose} />
+				<DrawerHeader
+					title={editData?.isEditMode ? 'Update Category' : 'Add Category'}
+					onClickClose={handleClose}
+				/>
 				<form onSubmit={handleSubmit(onSubmit)} noValidate>
 					<DrawerBody>
 						<TextInput
@@ -123,7 +115,7 @@ const AddCategory = ({
 						{/* <TextInput
 							label='Slug'
 							isRequired
-							isDisabled={isEditForm}
+							isDisabled={editData?.isEditMode}
 							helpText={
 								<div className='text_regular text_subtitle'>
 									{ENV.STORE_DOMAIN}/products/category/&nbsp;
@@ -163,7 +155,7 @@ const AddCategory = ({
 								label='Category Status'
 								checkedTitle='Visible'
 								unCheckedTitle='Hidden'
-								defaultChecked={isEditForm ? editData?.isActive : true}
+								defaultChecked={editData?.isEditMode ? editData?.isActive : true}
 								registerProperty={{
 									...register('isActive'),
 								}}
@@ -172,7 +164,7 @@ const AddCategory = ({
 					</DrawerBody>
 					<DrawerFooter>
 						<div className='d-flex'>
-							{isEditForm ? (
+							{editData?.isEditMode ? (
 								<div className='me-auto'>
 									<Button
 										color='danger'
@@ -195,7 +187,7 @@ const AddCategory = ({
 									Cancel
 								</Button>
 								<Button variant='fill' type='submit' isLoading={isSaving}>
-									{isEditForm ? 'Update' : 'Add'} Category
+									{editData?.isEditMode ? 'Update' : 'Add'} Category
 								</Button>
 							</div>
 						</div>

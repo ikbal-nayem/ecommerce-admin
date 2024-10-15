@@ -6,7 +6,7 @@ export const parentTreeToLinear = (treeData: any) => {
 	const generateSubcategoryTree = (data, parent = []) => {
 		data.forEach((item) => {
 			parent.push(item.name);
-			result.push({ id: item.id, slug: item?.slug, name: parent.join(' > ') });
+			result.push({ id: item._id, slug: item?.slug, name: parent.join(' > ') });
 			if (item.subcategories?.length) {
 				generateSubcategoryTree(item.subcategories, parent);
 			}

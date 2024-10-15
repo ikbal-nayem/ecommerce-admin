@@ -21,7 +21,7 @@ const CategoryTable = ({
 				<thead className="wx__thead">
 					<tr className="wx__tr">
 						<th className="wx__th w-50">Category Name</th>
-						<th className="wx__th">Products</th>
+						<th className="wx__th text-center">Products</th>
 						<th className="wx__th text-center">Visibility</th>
 						<th className="wx__th" style={{ width: 50 }} />
 					</tr>

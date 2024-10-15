@@ -1,3 +1,4 @@
+import Icon from '@components/Icon';
 import { ROUTES } from '@constants/route.constant';
 import clsx from 'clsx';
 import { useAuth } from 'context/auth';
@@ -51,9 +52,7 @@ const Login = () => {
 							{...register('email', { required: true })}
 						/>
 						<label htmlFor='email'>Email:</label>
-						<div className='icon'>
-							<span className='material-icons-outlined'>alternate_email</span>
-						</div>
+						<Icon icon='alternate_email' />
 					</div>
 					<div className='floating-label'>
 						<input
@@ -65,9 +64,7 @@ const Login = () => {
 							{...register('password', { required: true })}
 						/>
 						<label htmlFor='password'>Password:</label>
-						<div className='icon'>
-							<span className='material-icons-outlined'>key</span>
-						</div>
+						<Icon icon='key' />
 					</div>
 					<button type='submit' disabled={loading}>
 						Log in

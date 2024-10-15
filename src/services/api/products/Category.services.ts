@@ -57,8 +57,10 @@ export const CategoryService = {
 
 	create: async (payload: FormData): Promise<any> => await apiIns.post('product-config/category', payload),
 
-	update: async (id: string, payload: FormData): Promise<any> =>
+	update: async (id: string, payload: FormData | IObject): Promise<any> =>
 		await apiIns.put('product-config/category/' + id, payload),
+
+	delete: async (id: string): Promise<any> => await apiIns.delete('product-config/category/' + id),
 
 	isSlugAvailable: async (payload: any): Promise<any> =>
 		await apiIns.post(PRODUCT_CATEGORY + 'is-slug-available', mergePayloadWithStoreId(payload)),
@@ -72,17 +74,5 @@ export const CategoryService = {
 	uploadBanner: async (payload: any): Promise<any> =>
 		await apiIns.put(PRODUCT_CATEGORY + 'upload-banner', payload),
 
-	deleteBanner: async (payload: any): Promise<any> =>
-		await apiIns.put(PRODUCT_CATEGORY + 'delete-banner', mergePayloadWithStoreId(payload)),
-
-	delete: async (deletePayload: any): Promise<any> =>
-		await apiIns.put(PRODUCT_CATEGORY + 'delete', mergePayloadWithStoreId(deletePayload)),
-
-	toggleActivity: async (payload: ICategoryToggleUpdate): Promise<any> =>
-		await apiIns.put(PRODUCT_CATEGORY + 'toggle-activity/', payload),
-
 	categoryGetById: async (id: string): Promise<any> => await apiIns.get(PRODUCT_CATEGORY + 'get-by-id/' + id),
-
-	categoryGetByStoreId: async (id: string): Promise<any> =>
-		await apiIns.get(PRODUCT_CATEGORY + 'get-by-store-id/' + id),
 };

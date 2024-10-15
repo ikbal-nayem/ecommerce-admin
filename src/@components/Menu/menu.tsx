@@ -34,12 +34,13 @@ const Menu: FC<IMenu> = ({
         aria-expanded="false"
         data-bs-offset="10,20"
         data-bs-auto-close={closeOnClick}
+        role="button"
       >
         {triggerContent}
       </div>
       <ul
         className={clsx(
-          "dropdown-menu mw-100px",
+          "dropdown-menu",
           { [`dropdown-menu-${position}`]: !!position && position !== "center" },
           menuClassName
         )}
