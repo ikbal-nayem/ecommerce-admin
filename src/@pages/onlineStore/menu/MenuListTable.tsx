@@ -1,6 +1,6 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { ROLE_KEY } from "config/constants";
 import { MENU_EDIT } from "routes/path-name.route";
 import { useState } from "react";
@@ -57,7 +57,7 @@ const MenuListTable = ({
 							</Link>
 						</td>
 						<td className="wx__td">
-							<WxSwitch
+							<Switch
 								checkedTitle="Active"
 								unCheckedTitle="Inactive"
 								isChecked={menuItem?.isActive || menuItem?.isActive === null}

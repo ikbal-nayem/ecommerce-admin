@@ -1,6 +1,6 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { DISCOUNT_EDIT } from "routes/path-name.route";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -63,7 +63,7 @@ const CouponListTable = ({
               <td className="wx__td">{coupon?.couponCode}</td>
               <td className="wx__td">{coupon?.couponTypeName || ""}</td>
               <td className="wx__td">
-                <WxSwitch
+                <Switch
                   checkedTitle="Active"
                   unCheckedTitle="Inactive"
                   isChecked={coupon?.status === "Active"}

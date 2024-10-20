@@ -1,4 +1,4 @@
-import Label from '@components/WxLabel';
+import Label from '@components/Label';
 import clsx from 'clsx';
 import { memo } from 'react';
 

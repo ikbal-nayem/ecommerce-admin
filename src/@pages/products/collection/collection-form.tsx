@@ -6,7 +6,7 @@ import DrawerHeader from '@components/Drawer/DrawerHeader';
 import MediaInput from '@components/MediaInput/MediaInput';
 import TextInput from '@components/TextInput';
 import WxEditor from '@components/WxEditor/WxEditor';
-import WxLabel from '@components/WxLabel';
+import Label from '@components/Label';
 import { ENV } from 'config/ENV.config';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -117,7 +117,7 @@ const AddCollection = ({
 							errorMessage={errors?.slug?.message as string}
 						/>
 						<div className='form_group'>
-							<WxLabel>Collection details</WxLabel>
+							<Label>Collection details</Label>
 							<Controller
 								control={control}
 								name='description'
@@ -127,7 +127,7 @@ const AddCollection = ({
 							/>
 						</div>
 						<div className='form_group'>
-							<WxLabel>Collection Image</WxLabel>
+							<Label>Collection Image</Label>
 							<MediaInput name='image' control={control} multiple={false} />
 						</div>
 					</WxDrawerBody>

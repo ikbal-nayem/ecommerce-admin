@@ -3,7 +3,7 @@ import PhoneNumberInput from "@components/PhoneWithCountryCode";
 import SelectOption from "@components/Select/Autocomplete";
 import WxSelect from "@components/Select/Select";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { useEffect, useState } from "react";
 interface CustomerFormProps {
   register: any;
@@ -125,7 +125,7 @@ export const CustomerFrom = ({
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6 pe-5 show-mobile-view d-md-none">
-						<WxSwitch
+						<Switch
 							label={
 								<div className="d-flex align-items-center">
 									<span>Status</span>

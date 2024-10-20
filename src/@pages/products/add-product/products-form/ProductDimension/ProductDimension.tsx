@@ -1,7 +1,7 @@
 import WxSelect from "@components/Select/Select";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { DIMENSIONS } from "config/constants";
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -41,7 +41,7 @@ const ProductDimension = () => {
 		<div className="card product_dimension p-3 mt-4">
 			<h6 className="text_semibold text_h6">Product Dimension</h6>
 			<div style={{ maxWidth: "90%" }}>
-				<WxSwitch
+				<Switch
 					label="Add product dimension"
 					checkedTitle="Yes"
 					unCheckedTitle="No"

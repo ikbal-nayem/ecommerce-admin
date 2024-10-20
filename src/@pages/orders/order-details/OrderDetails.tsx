@@ -7,7 +7,7 @@ import {Button} from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/Thumbnail";
 import { MASTER_META_KEY, STATUS_CONSTANT } from "config/constants";
@@ -630,7 +630,7 @@ const OrderDetails = () => {
 				<div className="col-md-4">
 					<OrderPlacedInfo orderDetails={orderDetails} />
 					<div className="card mt-3 p-3">
-						<WxLabel
+						<Label
 							labelRight={
 								<EditNotes
 									orderId={orderDetails?.id}
@@ -640,7 +640,7 @@ const OrderDetails = () => {
 							}
 						>
 							Notes
-						</WxLabel>
+						</Label>
 						<span className="text_body text_regular">
 							{orderDetails?.orderNote || "No notes from customer"}
 						</span>

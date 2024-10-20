@@ -1,5 +1,5 @@
 import Icon from '@components/Icon';
-import WxLabel from '@components/WxLabel';
+import Label from '@components/Label';
 import clsx from 'clsx';
 import { useState } from 'react';
 import './Input.scss';
@@ -95,7 +95,7 @@ const TextInput = ({
 		>
 			{label ? (
 				typeof label === 'string' ? (
-					<WxLabel isRequired={isRequired}>{label}</WxLabel>
+					<Label isRequired={isRequired}>{label}</Label>
 				) : (
 					<>{label}</>
 				)

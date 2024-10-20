@@ -1,5 +1,5 @@
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
-import WxCheckbox from "@components/WxCheckbox";
+import WxCheckbox from "@components/Checkbox";
 import { WxFormFooter, WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";

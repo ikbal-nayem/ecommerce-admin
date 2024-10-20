@@ -1,6 +1,6 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { IDeliveryZoneItem } from "@interfaces/Settings.interface";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -60,7 +60,7 @@ const DeliveryZoneListTable = ({
                   ৳ {item?.deliveryChargeAmount}
                 </td>
                 <td className="wx__td">
-                  <WxSwitch
+                  <Switch
                     defaultChecked={item?.hasAdvanceCharge}
                     checkedTitle="Yes"
                     unCheckedTitle="No"
@@ -71,7 +71,7 @@ const DeliveryZoneListTable = ({
                   />
                 </td>
                 <td className="wx__td">
-                  <WxSwitch
+                  <Switch
                     defaultChecked={item?.isActive}
                     checkedTitle="Active"
                     unCheckedTitle="inactive"

@@ -5,7 +5,7 @@ import { WxFormFooter } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 import { MediaInput } from "@components/MediaInput";
 import WxRadio from "@components/WxRadio/WxRadio";
 import WxTextarea from "@components/WxTextarea";
@@ -203,7 +203,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
             <div className="row">
               <h6 className="text_h6 text_semibold">Audience Group</h6>
               <div className="col-md-12 col-lg-12 col-sm-12">
-                <WxLabel isRequired>Targeted Audience</WxLabel>
+                <Label isRequired>Targeted Audience</Label>
                 <WxTextarea
                   placeholder="Type your audience here"
                   helpText="An activation mail will be sent"

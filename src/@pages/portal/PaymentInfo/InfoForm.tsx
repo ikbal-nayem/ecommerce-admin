@@ -6,7 +6,7 @@ import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import TextInput from "@components/TextInput";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 import WxRadio from "@components/WxRadio/WxRadio";
 import { MASTER_META_KEY, MASTER_META_TYPE } from "config/constants";
 import { IPaymentMetaType } from "@interfaces/common.interface";
@@ -113,7 +113,7 @@ const PaymentInfoForm = ({
 				) : (
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<WxDrawerBody>
-							<WxLabel>Method</WxLabel>
+							<Label>Method</Label>
 							<div className="d-flex mb-3">
 								{paymentTypes?.map((pType) => (
 									<WxRadio

@@ -4,9 +4,9 @@ import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import TextInput from "@components/TextInput";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 import { MediaInput } from "@components/MediaInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { IFilePayload } from "@interfaces/common.interface";
 import { ButtonLoader } from "services/utils/preloader.service";
 import { useCallback, useEffect, useState } from "react";
@@ -62,7 +62,7 @@ const AddSliderImage = ({
 					<WxDrawerBody>
 						<div className="row">
 							<div className="col-md-12">
-								<WxLabel>Slider Image</WxLabel>
+								<Label>Slider Image</Label>
 								<MediaInput
 									fileList={images}
 									onChange={handleImageAdd}
@@ -71,7 +71,7 @@ const AddSliderImage = ({
 								/>
 							</div>
 							<div className="my-4" style={{ maxWidth: "90%" }}>
-								<WxSwitch
+								<Switch
 									key={watch("hasButton")}
 									label="Show Button"
 									checkedTitle="Yes"
@@ -134,7 +134,7 @@ const AddSliderImage = ({
 							</div> */}
 
 							<div className="mb-4" style={{ maxWidth: "90%" }}>
-								<WxSwitch
+								<Switch
 									label="Status"
 									checkedTitle="Active"
 									unCheckedTitle="Inactive"

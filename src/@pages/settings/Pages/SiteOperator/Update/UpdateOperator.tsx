@@ -5,7 +5,7 @@ import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { SETTINGS_SITE_OPERATOR } from "routes/path-name.route";
 import { AdminService } from "services/api/admin/Admin.service";
 import { SiteOperatorService } from "services/api/settings/SiteOperator.service";
@@ -144,7 +144,7 @@ const SiteOperatorUpdate = () => {
 							<WxHr />
 							<div className="d-flex justify-content-between align-items-center mb-3">
 								<div className="d-flex">
-									<WxSwitch
+									<Switch
 										label={
 											<div className="d-flex text_medium me-1">
 												<span>Operator Status</span>

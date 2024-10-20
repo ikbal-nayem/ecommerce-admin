@@ -1,6 +1,6 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { ROLE_KEY } from "config/constants";
 import { SETTINGS_SITE_OPERATOR_EDIT } from "routes/path-name.route";
 import { useState } from "react";
@@ -57,7 +57,7 @@ const SiteOperatorListTable = ({
               <td className="wx__td">{operator?.email || "---"}</td>
               <td className="wx__td">{operator?.phone || "---"}</td>
               <td className="wx__td" width={100}>
-                <WxSwitch
+                <Switch
                   checkedTitle="Active"
                   unCheckedTitle="Inactive"
                   isChecked={

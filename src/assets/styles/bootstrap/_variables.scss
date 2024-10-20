@@ -946,7 +946,7 @@ $form-check-transition:                   null !default;
 
 $form-check-input-active-filter:          brightness(90%) !default;
 
-$form-check-input-bg:                     $input-bg !default;
+$form-check-input-bg:                     $gray-400 !default;
 $form-check-input-border:                 var(--#{$prefix}border-width) solid var(--#{$prefix}border-color) !default;
 $form-check-input-border-radius:          .25em !default;
 $form-check-radio-border-radius:          50% !default;
@@ -1005,7 +1005,7 @@ $form-select-indicator-padding:     $form-select-padding-x * 3 !default; // Extr
 $form-select-font-weight:           $input-font-weight !default;
 $form-select-line-height:           $input-line-height !default;
 $form-select-color:                 $input-color !default;
-$form-select-bg:                    $input-bg !default;
+$form-select-bg:                    $gray-300 !default;
 $form-select-disabled-color:        null !default;
 $form-select-disabled-bg:           $input-disabled-bg !default;
 $form-select-disabled-border-color: $input-disabled-border-color !default;

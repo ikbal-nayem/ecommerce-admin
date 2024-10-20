@@ -1,4 +1,4 @@
-import WxCheckbox from "@components/WxCheckbox";
+import WxCheckbox from "@components/Checkbox";
 
 type SelectTreeProps = {
   data?: any[];

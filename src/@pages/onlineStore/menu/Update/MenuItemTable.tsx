@@ -1,6 +1,6 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { useState } from "react";
 
 type ItemsProps = {
@@ -58,7 +58,7 @@ const TableSubItem = ({
             <span>{sub.name}</span>
           </li>
           <li className="wx__td more d-flex align-items-center">
-            <WxSwitch
+            <Switch
               key={sub?.isActive}
               checkedTitle="Active"
               unCheckedTitle="Inactive"
@@ -125,7 +125,7 @@ const TableSubItem = ({
         <span>{sub.name}</span>
       </li>
       <li className="wx__td more d-flex align-items-center">
-        <WxSwitch
+        <Switch
           key={sub?.isActive}
           className="mb-auto"
           checkedTitle="Active"

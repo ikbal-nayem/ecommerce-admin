@@ -1,5 +1,5 @@
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/WxCheckbox";
+import WxCheckbox from "@components/Checkbox";
 import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";

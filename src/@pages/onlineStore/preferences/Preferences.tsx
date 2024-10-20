@@ -4,7 +4,7 @@ import { WxFormFooter } from "@components/WxFormLayout";
 import WxFormContainer from "@components/WxFormLayout/WxFormContainer";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
 import TextInput from "@components/TextInput";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 import MediaInput from "@components/MediaInput/MediaInput";
 import WxTextarea from "@components/WxTextarea";
 import { IFilePayload } from "@interfaces/common.interface";
@@ -97,7 +97,7 @@ const Preferences = () => {
           <div className="row">
             <div className="col-lg-9 col-md-8 col-sm-12">
               <div className="card p-3">
-                <WxLabel>Site logo Preview</WxLabel>
+                <Label>Site logo Preview</Label>
                 <MediaInput
                   fileList={siteLogo}
                   onChange={(image) => handleImageAdd(image, 0)}
@@ -106,7 +106,7 @@ const Preferences = () => {
                 />
               </div>
               <div className="card p-3">
-                <WxLabel>Site favicon Preview</WxLabel>
+                <Label>Site favicon Preview</Label>
                 <MediaInput
                   fileList={favicon}
                   onChange={(image) => handleImageAdd(image, 1)}
@@ -115,7 +115,7 @@ const Preferences = () => {
                 />
               </div>
               <div className="card p-3">
-                <WxLabel>Social media Image Preview</WxLabel>
+                <Label>Social media Image Preview</Label>
                 <MediaInput
                   fileList={socialMediaImage}
                   onChange={(image) => handleImageAdd(image, 2)}

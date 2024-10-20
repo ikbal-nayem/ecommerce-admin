@@ -1,49 +1,39 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
-import {
-	WxFormContainer,
-	WxFormFooter,
-	WxFormHeader,
-} from "@components/WxFormLayout";
-import { STATUS_CONSTANT } from "config/constants";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { PRODUCT } from "routes/path-name.route";
-import { ITagBody } from "services/api/admin/Tag.service";
-import { ICategoryPayload } from "services/api/products/Category.services";
-import { ICollectionPayload } from "services/api/products/Collection.services";
-import { ProductService } from "services/api/products/Product.services";
-import { ToastService } from "services/utils/toastr.service";
-import { useEffect, useState } from "react";
-import { FormProvider, useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { getFirstErrorObj } from "utils/errors";
-import "./AddProduct.scss";
-import ManageVendor from "./components/manage-vendor/ManageVendor";
-import ProductDimension from "./products-form/ProductDimension/ProductDimension";
-import ProductInfo from "./products-form/ProductInfo/ProductInfo";
-import ProductMedia from "./products-form/ProductMedia/ProductMedia";
-import ProductOption from "./products-form/ProductOption/ProductOption";
-import ProductPricing from "./products-form/ProductPricing/ProductPricing";
-import ProductStock from "./products-form/ProductStock/ProductStock";
-import ProductVariants from "./products-form/ProductVariants/ProductVariants";
-import SearchEngine from "./products-form/SearchEngine/SearchEngine";
-import SaveProducts from "./save-product/SaveProduct";
-import schema from "./validation";
+import MainLg from '@components/MainContentLayout/MainLg';
+import { WxFormFooter, WxFormHeader } from '@components/WxFormLayout';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { STATUS_CONSTANT } from 'config/constants';
+import { useEffect, useState } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { PRODUCT } from 'routes/path-name.route';
+import { ITagBody } from 'services/api/admin/Tag.service';
+import { ICategoryPayload } from 'services/api/products/Category.services';
+import { ICollectionPayload } from 'services/api/products/Collection.services';
+import { ProductService } from 'services/api/products/Product.services';
+import { ToastService } from 'services/utils/toastr.service';
+import { getFirstErrorObj } from 'utils/errors';
+import './AddProduct.scss';
+// import ManageVendor from './components/manage-vendor/ManageVendor';
+import ProductDimension from './products-form/ProductDimension/ProductDimension';
+import ProductInfo from './products-form/ProductInfo/ProductInfo';
+import ProductMedia from './products-form/ProductMedia/ProductMedia';
+import ProductOption from './products-form/ProductOption/ProductOption';
+import ProductPricing from './products-form/ProductPricing/ProductPricing';
+import ProductStock from './products-form/ProductStock/ProductStock';
+import ProductVariants from './products-form/ProductVariants/ProductVariants';
+import SearchEngine from './products-form/SearchEngine/SearchEngine';
+import SaveProducts from './save-product/SaveProduct';
+import schema from './validation';
 
 const AddProducts = () => {
 	const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
 	const [isSaving, setIsSaving] = useState<boolean>(false);
-	const [selectedCategory, setSelectedCategory] = useState<ICategoryPayload>(
-		{}
-	);
-	const [selectedCollections, setSelectedCollections] = useState<
-		ICollectionPayload[]
-	>([]);
+	const [selectedCategory, setSelectedCategory] = useState<ICategoryPayload>({});
+	const [selectedCollections, setSelectedCollections] = useState<ICollectionPayload[]>([]);
 	const [selectedTags, setSelectedTags] = useState<ITagBody[]>([]);
-	const userData = useSelector((data: any) => data?.user?.user_data);
 	const navigate = useNavigate();
 	const methods = useForm({
-		mode: "onChange",
+		mode: 'onChange',
 		resolver: yupResolver(schema),
 		defaultValues: {
 			regularPrice: 0,
@@ -52,37 +42,37 @@ const AddProducts = () => {
 			quantity: 0,
 			hasSummary: false,
 			hasDimension: false,
-			heightUnit: "cm",
-			widthUnit: "cm",
-			weightUnit: "gm",
+			heightUnit: 'cm',
+			widthUnit: 'cm',
+			weightUnit: 'gm',
 			hasVariant: false,
 			isTrackQuantity: true,
 			isOverselling: false,
 			status: STATUS_CONSTANT.published,
-			categoryId: "",
+			categoryId: '',
 			collections: [],
-			tags: "",
+			tags: '',
 			images: [],
 		},
 	});
 
 	useEffect(() => {
-		methods.setValue("collections", [...selectedCollections]);
+		methods.setValue('collections', [...selectedCollections]);
 	}, [selectedCollections]);
 
 	useEffect(() => {
-		const tags = selectedTags?.map((tag) => tag.name)?.join(",");
-		methods.setValue("tags", tags);
+		const tags = selectedTags?.map((tag) => tag.name)?.join(',');
+		methods.setValue('tags', tags);
 	}, [selectedTags]);
 
 	const categorySetter = (category: ICategoryPayload) => {
 		setSelectedCategory(category);
-		methods.setValue("categoryId", category?.id);
+		methods.setValue('categoryId', category?._id);
 	};
 
 	const onCollectionSelect = (collection: ICollectionPayload) => {
 		const newCollections = [...selectedCollections];
-		const idx = newCollections.findIndex((val) => val.id === collection.id);
+		const idx = newCollections.findIndex((val) => val._id === collection._id);
 		idx >= 0 ? newCollections.splice(idx, 1) : newCollections.push(collection);
 		setSelectedCollections(newCollections);
 	};
@@ -124,8 +114,8 @@ const AddProducts = () => {
 		const images: any = data?.images;
 		delete data?.images;
 		const formData = new FormData();
-		formData.append("body", JSON.stringify(data));
-		Object.keys(images).forEach((img) => formData.append("files", images[img]));
+		formData.append('body', JSON.stringify(data));
+		Object.keys(images).forEach((img) => formData.append('files', images[img]));
 		ProductService.createProduct(formData)
 			.then((resp) => {
 				ToastService.success(resp.message);
@@ -136,13 +126,12 @@ const AddProducts = () => {
 	};
 
 	return (
-		<WxMainLg>
-			{/* <WxFormContainer> */}
-			<WxFormHeader noMargin title="Add Product" backNavigationLink={PRODUCT} />
+		<MainLg>
+			<WxFormHeader noMargin title='Add Product' backNavigationLink={PRODUCT} />
 			<FormProvider {...methods}>
 				<form noValidate onSubmit={methods.handleSubmit(onSubmit)}>
-					<div className="row mb-4">
-						<div className="col-lg-8 col-md-7 col-sm-12">
+					<div className='row mb-4'>
+						<div className='col-lg-8 col-md-7 col-sm-12'>
 							<ProductInfo />
 							<ProductMedia />
 							<ProductPricing />
@@ -152,7 +141,7 @@ const AddProducts = () => {
 							<ProductVariants />
 							<SearchEngine />
 						</div>
-						<div className="col-lg-4 col-md-5 col-sm-12">
+						<div className='col-lg-4 col-md-5 col-sm-12'>
 							<SaveProducts
 								selectedCategory={selectedCategory}
 								selectedCollections={selectedCollections}
@@ -167,16 +156,12 @@ const AddProducts = () => {
 							/>
 						</div>
 					</div>
-					<WxFormFooter
-						title="Unsaved Changes"
-						saveButtonText="Save product"
-						isSaving={isSaving}
-					/>
+					<WxFormFooter title='Unsaved Changes' saveButtonText='Save product' isSaving={isSaving} />
 				</form>
 			</FormProvider>
-			<ManageVendor drawerOpen={drawerOpen} handleClose={handleClose} />
+			{/* <ManageVendor drawerOpen={drawerOpen} handleClose={handleClose} /> */}
 			{/* </WxFormContainer> */}
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

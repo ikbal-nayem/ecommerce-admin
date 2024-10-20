@@ -4,7 +4,7 @@ import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { ButtonLoader } from "services/utils/preloader.service";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -53,7 +53,7 @@ const SliderDrawer = ({
 							</div>
 
 							<div className="mb-4" style={{ maxWidth: "85%" }}>
-								<WxSwitch
+								<Switch
 									label="Status"
 									checkedTitle="Active"
 									unCheckedTitle="Inactive"

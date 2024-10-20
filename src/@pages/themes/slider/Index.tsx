@@ -4,7 +4,7 @@ import TableLoader from "@components/TableLoader/TableLoader";
 import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxIcon from "@components/Icon";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import WxThumbnail from "@components/Thumbnail";
 import { ISlider } from "@interfaces/themeCustomization.interface";
 import { THEME_CUSTOMIZATION_SLIDER_DETAILS } from "routes/path-name.route";
@@ -161,7 +161,7 @@ const Slider = () => {
 								</li>
 								<li className="banner-right me-2">
 									<div className="d-flex align-items-center gap-3">
-										<WxSwitch
+										<Switch
 											onChange={(e) =>
 												onStatusChange(item, e.target.checked, index)
 											}

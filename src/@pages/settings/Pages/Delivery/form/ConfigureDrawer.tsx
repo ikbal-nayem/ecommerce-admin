@@ -4,7 +4,7 @@ import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { useState } from "react";
 import "./ConfigureDrawer.scss";
 
@@ -104,7 +104,7 @@ const ConfigureDrawer = ({
                     />
                   </div>
                   <div className="mt-4" style={{ maxWidth: "90%" }}>
-                    <WxSwitch
+                    <Switch
                       label="Activity of service"
                       checkedTitle="Active"
                       unCheckedTitle="Inactive"
@@ -135,7 +135,7 @@ const ConfigureDrawer = ({
                     />
                   </div>
                   <div className="mt-4" style={{ maxWidth: "90%" }}>
-                    <WxSwitch
+                    <Switch
                       label="Activity of service"
                       checkedTitle="Active"
                       unCheckedTitle="Inactive"

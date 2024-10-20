@@ -2,7 +2,7 @@ import WxAlert from "@components/Alert/WxAlert";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/WxCheckbox";
+import WxCheckbox from "@components/Checkbox";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";

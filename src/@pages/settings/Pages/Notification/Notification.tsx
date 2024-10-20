@@ -4,7 +4,7 @@ import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { MASTER_META_KEY } from "config/constants";
 import { ISenderEmail } from "@interfaces/common.interface";
 import {
@@ -159,7 +159,7 @@ const Notification = () => {
                           </p>
                           <div className="d-flex ">
                             <div className="d-flex me-5">
-                              <WxSwitch
+                              <Switch
                                 isChecked={order?.sms}
                                 onChange={(e) =>
                                   onNotifigationSet(
@@ -174,7 +174,7 @@ const Notification = () => {
                               <span>SMS</span>
                             </div>
                             <div className="d-flex">
-                              <WxSwitch
+                              <Switch
                                 isChecked={order?.email}
                                 onChange={(e) =>
                                   onNotifigationSet(
@@ -215,7 +215,7 @@ const Notification = () => {
                             </p>
                             <div className="d-flex ">
                               <div className="d-flex me-5">
-                                <WxSwitch
+                                <Switch
                                   isChecked={account?.sms}
                                   onChange={(e) =>
                                     onNotifigationSet(
@@ -230,7 +230,7 @@ const Notification = () => {
                                 <span>SMS</span>
                               </div>
                               <div className="d-flex">
-                                <WxSwitch
+                                <Switch
                                   isChecked={account?.email}
                                   onChange={(e) =>
                                     onNotifigationSet(

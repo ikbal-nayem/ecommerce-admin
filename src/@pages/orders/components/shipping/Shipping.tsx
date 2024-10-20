@@ -1,6 +1,6 @@
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 import WxModal from "@components/Modal";
 import WxModalBody from "@components/Modal/ModalBody";
 import WxModalFooter from "@components/Modal/ModalFooter";
@@ -49,7 +49,7 @@ const ShippingModal = ({
             />
           </div>
           <div className="col-md-6">
-            <WxLabel>Amount</WxLabel>
+            <Label>Amount</Label>
             {localSelectZone?.deliveryChargeAmount || 0} BDT
           </div>
         </div>

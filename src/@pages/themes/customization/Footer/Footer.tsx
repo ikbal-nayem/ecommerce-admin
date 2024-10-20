@@ -4,8 +4,8 @@ import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
-import WxLabel from "@components/WxLabel";
-import WxSwitch from "@components/WxSwitch";
+import Label from "@components/Label";
+import Switch from "@components/Switch";
 import { IFilePayload } from "@interfaces/common.interface";
 import { IMenuset } from "@interfaces/OnlineStore.interface";
 import { IThemeFooter } from "@interfaces/themeCustomization.interface";
@@ -164,7 +164,7 @@ const SiteFooter = () => {
 									<div className="col-md-6"></div>
 									<div className="col-md-6">
 										<div className="mb-2" style={{ maxWidth: "85%" }}>
-											<WxSwitch
+											<Switch
 												label="Menu style"
 												checkedTitle="Vertical"
 												unCheckedTitle="Horizontal"
@@ -184,7 +184,7 @@ const SiteFooter = () => {
 					<div className="row">
 						<div className="col-md-6">
 							<div style={{ maxWidth: "85%" }}>
-								<WxSwitch
+								<Switch
 									label="Show social media icons"
 									checkedTitle="Yes"
 									unCheckedTitle="No"
@@ -205,7 +205,7 @@ const SiteFooter = () => {
 							/>
 						</div>
 					</div>
-					<WxLabel>Payment icon</WxLabel>
+					<Label>Payment icon</Label>
 					{isIconsLoading ? (
 						<Preloader />
 					) : getwayIcons.length ? (

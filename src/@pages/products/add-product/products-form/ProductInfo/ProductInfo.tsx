@@ -1,6 +1,6 @@
 import WxEditor from "@components/WxEditor/WxEditor";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { Controller, useFormContext } from "react-hook-form";
 import "./ProductInfo.scss";
 
@@ -36,7 +36,7 @@ const ProductInfo = () => {
 			</div>
 
 			<div className="mt-3" style={{ maxWidth: "90%" }}>
-				<WxSwitch
+				<Switch
 					label="Add Product Summary"
 					checkedTitle="Yes"
 					unCheckedTitle="No"

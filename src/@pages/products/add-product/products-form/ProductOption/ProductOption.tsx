@@ -4,8 +4,8 @@ import { WxDraggableList } from "@components/WxDraggableList";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxLabel from "@components/WxLabel";
-import WxSwitch from "@components/WxSwitch";
+import Label from "@components/Label";
+import Switch from "@components/Switch";
 import WxTag from "@components/WxTag";
 import { SETTINGS_PRICING_PLAN } from "routes/path-name.route";
 import { useEffect, useRef, useState } from "react";
@@ -143,7 +143,7 @@ const RenderOption = ({
         </span> */}
 			</div>
 			<div className="product_option_values">
-				<WxLabel>Option Values</WxLabel>
+				<Label>Option Values</Label>
 				<WxDraggableList
 					data={optionItem?.values}
 					itemId="id"
@@ -299,7 +299,7 @@ const ProductOption = () => {
 			) : null}
 			<div style={{ maxWidth: "90%" }}>
 				<div className="mb-2">
-					<WxSwitch
+					<Switch
 						label="This product has options, like size or color etc."
 						checkedTitle="Yes"
 						unCheckedTitle="No"

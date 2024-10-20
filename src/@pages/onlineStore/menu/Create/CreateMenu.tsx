@@ -5,7 +5,7 @@ import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { MASTER_META_KEY } from "config/constants";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -233,7 +233,7 @@ const Create = ({
 								)}
 							</div>
 							<div className="col-md-12 col-sm-12 mt-4 status_switch">
-								<WxSwitch
+								<Switch
 									label="Status"
 									checkedTitle="Active"
 									unCheckedTitle="Inactive"

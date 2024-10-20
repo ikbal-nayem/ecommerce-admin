@@ -1,6 +1,6 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxIcon from "@components/Icon";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { ICustomerPayload } from "@interfaces/Customer.interface";
 import { CUSTOMERS } from "routes/path-name.route";
 import { useState } from "react";
@@ -65,7 +65,7 @@ const CustomerTable = ({
 								<td className="wx__td">{customer?.groupName || "---"}</td>
 								<td className="wx__td">
 									<div className="wx__table_cell_icon">
-										<WxSwitch
+										<Switch
 											checkedTitle="Active"
 											unCheckedTitle="Inactive"
 											// defaultChecked={

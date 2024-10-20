@@ -4,7 +4,7 @@ import WXEditor from "@components/WxEditor/WxEditor";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { IPagesSettings } from "@interfaces/Settings.interface";
 import { ENV } from "config/ENV.config";
 import { useEffect, useRef, useState } from "react";
@@ -159,7 +159,7 @@ const AddPage = () => {
 							<WxHr />
 							<div style={{ maxWidth: "80%" }}>
 								<div>
-									<WxSwitch
+									<Switch
 										label={
 											<div className="d-flex align-items-center">
 												&nbsp; <span>Publish</span>

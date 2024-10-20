@@ -41,7 +41,7 @@
 
 	&:checked {
 		background-color: $form-check-input-checked-bg-color;
-		border-color: $form-check-input-checked-border-color;
+		// border-color: $form-check-input-checked-border-color;
 		border-color: $primary__500;
 
 		&[type='checkbox'] {
@@ -99,7 +99,7 @@
 		// height: 18px;
 		height: 16.67px;
 		border: none;
-		background-color: $neutral__600;
+		// background-color: $neutral__600;
 		margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
 		position: relative;
 		display: block;

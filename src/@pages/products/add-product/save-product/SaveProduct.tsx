@@ -1,28 +1,24 @@
-import SelectOption from "@components/Select/Autocomplete";
-import WxSelect from "@components/Select/Select";
-import {Button} from "@components/Button";
-import WxChip from "@components/WxChip";
-import WxHr from "@components/WxHr";
-import WxLabel from "@components/WxLabel";
-import WxSwitch from "@components/WxSwitch";
-import { MASTER_META_KEY, PRODUCT_STATUS } from "config/constants";
-import { ISalesChannel } from "@interfaces/product.interface";
-import { ITagBody, TagService } from "services/api/admin/Tag.service";
-import { ICategoryPayload } from "services/api/products/Category.services";
-import { ICollectionPayload } from "services/api/products/Collection.services";
-import { ProductService } from "services/api/products/Product.services";
-import {
-	IVendorPayload,
-	VendorService,
-} from "services/api/products/Vendor.services";
-import Preloader, { ButtonLoader } from "services/utils/preloader.service";
-import { memo, useEffect, useState } from "react";
-import { Controller, useFormContext } from "react-hook-form";
-import { useSelector } from "react-redux";
-import useDebounce from "utils/debouncer";
-import { generateId } from "utils/random-generate";
-import SelectCategory from "../../add-product/components/select-category/SelectCategory";
-import SelectCollections from "../../add-product/components/select-collection/SelectCollections";
+import { Button } from '@components/Button';
+import Label from '@components/Label';
+import SelectOption from '@components/Select/Autocomplete';
+import Select from '@components/Select/Select';
+import Switch from '@components/Switch';
+import WxChip from '@components/WxChip';
+import WxHr from '@components/WxHr';
+import { ISalesChannel } from '@interfaces/product.interface';
+import { MASTER_META_KEY, PRODUCT_STATUS } from 'config/constants';
+import { memo, useEffect, useState } from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
+import { ITagBody, TagService } from 'services/api/admin/Tag.service';
+import { ICategoryPayload } from 'services/api/products/Category.services';
+import { ICollectionPayload } from 'services/api/products/Collection.services';
+import { ProductService } from 'services/api/products/Product.services';
+import { IVendorPayload, VendorService } from 'services/api/products/Vendor.services';
+import Preloader from 'services/utils/preloader.service';
+import useDebounce from 'utils/debouncer';
+import { generateId } from 'utils/random-generate';
+import SelectCategory from '../../add-product/components/select-category/SelectCategory';
+import SelectCollections from '../../add-product/components/select-collection/SelectCollections';
 
 type SaveProductsProps = {
 	onCollectionSelect?: (collection: ICollectionPayload) => void;
@@ -70,10 +66,9 @@ const SaveProducts = ({
 				setSalesChannels(resp.body);
 				if (!isEditForm) {
 					const onlineStore = resp.body?.find(
-						(item) =>
-							item.metaKey === MASTER_META_KEY.SALES_CHANNEL_ONLINE_STORE
+						(item) => item.metaKey === MASTER_META_KEY.SALES_CHANNEL_ONLINE_STORE
 					)?.id;
-					setValue("salesChannels", onlineStore ? [onlineStore] : []);
+					setValue('salesChannels', onlineStore ? [onlineStore] : []);
 				}
 			})
 			.finally(() => setIsChannelLoading(false));
@@ -99,7 +94,7 @@ const SaveProducts = ({
 	};
 
 	const onVendorChange = (vendor: IVendorPayload) => {
-		setValue("vendorId", vendor?.id);
+		setValue('vendorId', vendor?.id);
 	};
 
 	const getTagList = (searchQuery: string = null) => {
@@ -107,13 +102,11 @@ const SaveProducts = ({
 		const payload = {
 			body: { name: searchQuery },
 			meta: { offset: 0, limit: 15 },
-			sort: [{ field: "name", order: "asc" }],
+			sort: [{ field: 'name', order: 'asc' }],
 		};
 		TagService.tagList(payload)
 			.then((resp) => {
-				const tList = resp?.body?.filter(
-					(t: ITagBody) => !selectedTags.some((st) => st.name === t.name)
-				);
+				const tList = resp?.body?.filter((t: ITagBody) => !selectedTags.some((st) => st.name === t.name));
 				setTagList(tList);
 			})
 			.finally(() => setTagIsLoading(false));
@@ -124,66 +117,60 @@ const SaveProducts = ({
 	};
 
 	const onSalesChannelChange = (channel: ISalesChannel, isChecked: boolean) => {
-		let currentChannels: string[] = getValues("salesChannels") || [];
+		let currentChannels: string[] = getValues('salesChannels') || [];
 		const idx = currentChannels.indexOf(channel.id);
-		if (isChecked && idx < 0)
-			currentChannels = [...currentChannels, channel.id];
+		if (isChecked && idx < 0) currentChannels = [...currentChannels, channel.id];
 		else if (!isChecked && idx >= 0) currentChannels.splice(idx, 1);
-		setValue("salesChannels", [...currentChannels]);
+		setValue('salesChannels', [...currentChannels]);
 	};
 
-	const salesChannelsDefault = getValues("salesChannels");
+	const salesChannelsDefault = getValues('salesChannels');
 
 	return (
-		<div className="card wx__form_right p-3 mt-4">
-			<div className="hide-mobile-view">
-				<Button type="submit" variant="fill" w={100} disabled={isSaving}>
-					{isSaving ? <ButtonLoader /> : "Save Product"}
+		<div className='card wx__form_right p-3 mt-4'>
+			<div className='d-none d-sm-block'>
+				<Button type='submit' variant='fill' width={100} isLoading={isSaving}>
+					Save Product
 				</Button>
 				<WxHr />
 			</div>
-			<WxSelect
-				label="Product Status"
-				valuesKey="title"
-				textKey="title"
+			<Select
+				label='Product Status'
+				valuesKey='title'
+				textKey='title'
 				options={PRODUCT_STATUS}
 				noMargin
-				registerProperty={{ ...register("status") }}
+				registerProperty={{ ...register('status') }}
 			/>
 			<WxHr />
-			<WxLabel>Sales Cannnel</WxLabel>
+			<Label>Sales Cannnel</Label>
 			{isChannelLoading ? <Preloader /> : null}
-			<div style={{ maxWidth: "80%" }}>
+			<div style={{ maxWidth: '80%' }}>
 				{!isChannelLoading &&
 					salesChannels?.map((channel) => (
-						<div key={channel.id} className="my-3">
-							<WxSwitch
+						<div key={channel.id} className='my-3'>
+							<Switch
 								label={
-									<div className="d-flex align-items-center">
+									<div className='d-flex align-items-center'>
 										<span>{channel.title}</span>
 									</div>
 								}
-								checkedTitle="Visible"
-								unCheckedTitle="Hidden"
-								defaultChecked={
-									salesChannelsDefault &&
-									(salesChannelsDefault?.includes(channel.id) || false)
-								}
-								onChange={(e: any) =>
-									onSalesChannelChange(channel, e.target.checked)
-								}
+								checkedTitle='Visible'
+								unCheckedTitle='Hidden'
+								defaultChecked={salesChannelsDefault && (salesChannelsDefault?.includes(channel.id) || false)}
+								onChange={(e: any) => onSalesChannelChange(channel, e.target.checked)}
 							/>
 						</div>
 					))}
 			</div>
 			<WxHr />
 
-			<div className="mb-3">
-				<WxLabel
+			<div className='mb-3'>
+				<Label
 					labelRight={
 						<span
-							className="text_btn_small text-primary text_medium"
-							role="button"
+							className='text_btn_small text-primary text_medium'
+							role='button'
 							onClick={setVendorDrawerOpen}
 						>
 							Manage
@@ -191,10 +178,10 @@ const SaveProducts = ({
 					}
 				>
 					Vendor
-				</WxLabel>
+				</Label>
 				<Controller
 					control={control}
-					name="vendor"
+					name='vendor'
 					render={({ field: { onChange, value } }) => (
 						<SelectOption
 							options={vendorList}
@@ -214,43 +201,30 @@ const SaveProducts = ({
 				/>
 			</div>
 
-			<WxLabel>Collections</WxLabel>
+			<Label>Collections</Label>
 			{selectedCollections.length ? (
-				<div className="mb-2 d-flex gap-2 flex-wrap">
+				<div className='mb-2 d-flex gap-2 flex-wrap'>
 					{selectedCollections.map((collection, idx) => (
-						<WxChip
-							key={collection.id}
-							label={collection.name}
-							onClose={() => onRemoveCollection(idx)}
-						/>
+						<WxChip key={collection._id} label={collection.name} onClose={() => onRemoveCollection(idx)} />
 					))}
 				</div>
 			) : null}
-			<SelectCollections
-				selectedCollections={selectedCollections}
-				setCollections={onCollectionSelect}
-			/>
+			<SelectCollections selectedCollections={selectedCollections} setCollections={onCollectionSelect} />
 
-			<WxLabel>Category</WxLabel>
-			{selectedCategory.id ? (
-				<div className="mb-2">
-					<WxChip
-						label={selectedCategory.name}
-						onClose={() => categorySetter({})}
-					/>
+			<Label>Category</Label>
+			{selectedCategory._id ? (
+				<div className='mb-2'>
+					<WxChip label={selectedCategory.name} onClose={() => categorySetter({})} />
 				</div>
 			) : null}
-			<SelectCategory
-				selectedCategory={selectedCategory}
-				setCategory={categorySetter}
-			/>
+			<SelectCategory selectedCategory={selectedCategory} setCategory={categorySetter} />
 
 			<WxHr />
 
-			<WxLabel>Tags</WxLabel>
+			<Label>Tags</Label>
 			<SelectOption
 				options={tagList}
-				placeholder="Search tag"
+				placeholder='Search tag'
 				isCreatable
 				isSearchable
 				onInputChange={(val) => setTagSearchQuery(val)}
@@ -258,18 +232,14 @@ const SaveProducts = ({
 				onChange={(val: ITagBody) => onTagSelect(val)}
 				getOptionLabel={(op: ITagBody) => op.name || op.label}
 				getOptionValue={(op: ITagBody) => op}
-				noOptionsMessage={() => "Search for tag"}
+				noOptionsMessage={() => 'Search for tag'}
 				onCreateOption={onTagCreate}
-				value=""
+				value=''
 			/>
 			{selectedTags.length ? (
-				<div className="mt-2 d-flex gap-2 flex-wrap">
+				<div className='mt-2 d-flex gap-2 flex-wrap'>
 					{selectedTags.map((tag, idx) => (
-						<WxChip
-							key={tag.id}
-							label={tag.name}
-							onClose={() => onRemoveTag(idx)}
-						/>
+						<WxChip key={tag.id} label={tag.name} onClose={() => onRemoveTag(idx)} />
 					))}
 				</div>
 			) : null}

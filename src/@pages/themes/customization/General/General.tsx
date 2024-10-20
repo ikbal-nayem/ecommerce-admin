@@ -2,7 +2,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { WxFormHeader } from "@components/WxFormLayout";
 import TextInput from "@components/TextInput";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 import { MediaInput } from "@components/MediaInput";
 import { IFilePayload } from "@interfaces/common.interface";
 import { useCallback, useState } from "react";
@@ -66,7 +66,7 @@ export default function CustomizationGeneral() {
 						<div className="col-md-6"></div>
 
 						<div className="col-md-6">
-							<WxLabel>Website Logo</WxLabel>
+							<Label>Website Logo</Label>
 							<MediaInput
 								fileList={siteLogo}
 								onChange={(image) => handleImageAdd(image, 0)}
@@ -75,7 +75,7 @@ export default function CustomizationGeneral() {
 							/>
 						</div>
 						<div className="col-md-6">
-							<WxLabel>Fav Icon</WxLabel>
+							<Label>Fav Icon</Label>
 							<MediaInput
 								fileList={favicon}
 								onChange={(image) => handleImageAdd(image, 1)}

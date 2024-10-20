@@ -4,7 +4,7 @@ import {Button} from '@components/Button';
 import { WxDraggableList } from '@components/WxDraggableList';
 import { WxFormHeader } from '@components/WxFormLayout';
 import WxIcon from '@components/Icon';
-import WxSwitch from '@components/WxSwitch';
+import Switch from '@components/Switch';
 import WxThumbnail from '@components/Thumbnail';
 import { ISliderItem } from '@interfaces/themeCustomization.interface';
 import { useEffect, useRef, useState } from 'react';
@@ -184,7 +184,7 @@ const SliderDetails = () => {
 									</li>
 									<li className='banner-right me-2'>
 										<div className='d-flex align-items-center gap-3'>
-											<WxSwitch
+											<Switch
 												isChecked={item.isActive}
 												onChange={(e) => onStatusChange(e.target.checked, index)}
 												disabled={isSaving}

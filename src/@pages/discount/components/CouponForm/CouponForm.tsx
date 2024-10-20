@@ -1,6 +1,6 @@
 import DateInput from "@components/DatePicker/DateInput";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/WxCheckbox";
+import WxCheckbox from "@components/Checkbox";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";

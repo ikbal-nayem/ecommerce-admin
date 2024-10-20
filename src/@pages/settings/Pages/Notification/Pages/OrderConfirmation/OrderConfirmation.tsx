@@ -4,7 +4,7 @@ import WXEditor from "@components/WxEditor/WxEditor";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import WxTabs from "@components/WxTabs/WxTabs";
 import { SETTINGS_NOTIFICATION } from "routes/path-name.route";
 import { useEffect, useState } from "react";
@@ -112,7 +112,7 @@ const OrderConfirmation = () => {
 							<WxHr />
 							<div className="d-flex align-items-center justify-content-between pe-5">
 								<p className="mb-0">Email</p>
-								<WxSwitch
+								<Switch
 									defaultChecked
 									checkedTitle="Active"
 									unCheckedTitle="Inactive"
@@ -121,7 +121,7 @@ const OrderConfirmation = () => {
 
 							<div className="d-flex align-items-center justify-content-between pe-5 mt-4">
 								<p className="mb-0">SMS</p>
-								<WxSwitch
+								<Switch
 									defaultChecked
 									checkedTitle="Active"
 									unCheckedTitle="Inactive"

@@ -108,58 +108,6 @@
 	@include font__style($font-size: 0.875rem, $line-height: 140%, $letter-spacing: -0.01rem);
 }
 
-// .wx__body_regular {
-//   @include font__style(
-//     $font-size: 0.875rem,
-//     $line-height: 140%,
-//     $letter-spacing: -0.01rem
-//   );
-// }
-
-// .text_body; @extend .text_medium; {
-//   @include font__style(
-//     $font-weight: 500,
-//     $font-size: 0.875rem,
-//     $line-height: 140%,
-//     $letter-spacing: -0.01rem
-//   );
-// }
-
-// .text_body; @extend .text_strong; {
-//   @include font__style(
-//     $font-weight: 600,
-//     $font-size: 0.875rem,
-//     $line-height: 140%,
-//     $letter-spacing: -0.01rem
-//   );
-// }
-
-// .wx__body_underline {
-//   @include font__style(
-//     $font-size: 0.875rem,
-//     $line-height: 140%,
-//     $letter-spacing: -0.01rem
-//   );
-//   text-decoration: underline;
-// }
-
-// .wx__body_strikethrough {
-//   @include font__style(
-//     $font-size: 0.875rem,
-//     $line-height: 140%,
-//     $letter-spacing: -0.01rem
-//   );
-//   text-decoration: line-through;
-// }
-
-// .wx__body_italic {
-//   @include font__style(
-//     $font-size: 0.875rem,
-//     $line-height: 140%,
-//     $letter-spacing: -0.009rem
-//   );
-//   font-style: italic;
-// }
 
 .text_body_code {
 	font-family: $primary__font__family;

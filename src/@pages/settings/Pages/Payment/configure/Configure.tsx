@@ -6,7 +6,7 @@ import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { MASTER_META_KEY } from "config/constants";
 import { IPaymentConfigured } from "@interfaces/common.interface";
 import { useEffect } from "react";
@@ -14,9 +14,9 @@ import { useForm } from "react-hook-form";
 import WxTextarea from "@components/WxTextarea";
 import { ButtonLoader } from "services/utils/preloader.service";
 import WxSelect from "@components/Select/Select";
-import WxCheckbox from "@components/WxCheckbox";
+import WxCheckbox from "@components/Checkbox";
 import WxRadio from "@components/WxRadio/WxRadio";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 
 const accountType = [{ title: "Personal" }, { title: "Agent" }];
 const options = [
@@ -89,7 +89,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 									}
 								/>
 								<div className="mt-4" style={{ maxWidth: "90%" }}>
-									<WxSwitch
+									<Switch
 										label="Sandbox Mode"
 										checkedTitle="Active"
 										unCheckedTitle="Inactive"
@@ -158,7 +158,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 									errorMessage={errors?.instructions?.message}
 								/>
 								<div className="mb-2">
-									<WxLabel>Take customer account number?</WxLabel>
+									<Label>Take customer account number?</Label>
 									<div className="d-flex gap-3">
 										{options.map((op) => (
 											<WxRadio
@@ -173,7 +173,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 									</div>
 								</div>
 								<div className="mb-2">
-									<WxLabel>Take transection id?</WxLabel>
+									<Label>Take transection id?</Label>
 									<div className="d-flex gap-3">
 										{options.map((op) => (
 											<WxRadio
@@ -188,7 +188,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 									</div>
 								</div>
 								<div>
-									<WxLabel>Take proof file?</WxLabel>
+									<Label>Take proof file?</Label>
 									<div className="d-flex gap-3">
 										{options.map((op) => (
 											<WxRadio
@@ -206,7 +206,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 						) : null}
 
 						<div className="mt-4" style={{ maxWidth: "90%" }}>
-							<WxSwitch
+							<Switch
 								label="Enable in website"
 								checkedTitle="Active"
 								unCheckedTitle="Inactive"

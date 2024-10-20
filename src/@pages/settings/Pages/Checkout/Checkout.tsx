@@ -1,10 +1,10 @@
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/WxCheckbox";
+import WxCheckbox from "@components/Checkbox";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxHr from "@components/WxHr";
 import WxRadio from "@components/WxRadio/WxRadio";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { SETTINGS, SETTINGS_CHECKOUT } from "routes/path-name.route";
 import { CheckoutSettingService } from "services/api/settings/Checkout.service";
 import Preloader from "services/utils/preloader.service";
@@ -291,7 +291,7 @@ const Checkout = () => {
 								<p className="text_body text_medium mb-0">
 									First Name<span className="color_red">*</span>
 								</p>
-								<WxSwitch
+								<Switch
 									checkedTitle="Mandatory"
 									unCheckedTitle="Optional"
 									defaultChecked
@@ -302,7 +302,7 @@ const Checkout = () => {
 								<p className="text_body text_medium mb-0">
 									Last Name
 								</p>
-								<WxSwitch
+								<Switch
 									checkedTitle="Mandatory"
 									unCheckedTitle="Optional"
 									registerProperty={{ ...register("lastName") }}
@@ -352,7 +352,7 @@ const Checkout = () => {
 										</p>
 									</div>
 								</div>
-								<WxSwitch
+								<Switch
 									isChecked
 									checkedTitle="Mandatory"
 									registerProperty={{ ...register("fullAddressMandatory") }}
@@ -403,7 +403,7 @@ const Checkout = () => {
 										</p>
 									</div>
 								</div>
-								<WxSwitch
+								<Switch
 									isChecked
 									checkedTitle="Mandatory"
 									registerProperty={{ ...register("addressLine1Mandatory") }}
@@ -422,7 +422,7 @@ const Checkout = () => {
 									/>
 								</label>
 								{addressLine2 ? (
-									<WxSwitch
+									<Switch
 										checkedTitle="Mandatory"
 										unCheckedTitle="Optional"
 										registerProperty={{
@@ -444,7 +444,7 @@ const Checkout = () => {
 									/>
 								</label>
 								{city ? (
-									<WxSwitch
+									<Switch
 										checkedTitle="Mandatory"
 										unCheckedTitle="Optional"
 										registerProperty={{
@@ -467,7 +467,7 @@ const Checkout = () => {
 									/>
 								</label>
 								{postCode ? (
-									<WxSwitch
+									<Switch
 										checkedTitle="Mandatory"
 										unCheckedTitle="Optional"
 										registerProperty={{
@@ -489,7 +489,7 @@ const Checkout = () => {
 									/>
 								</label>
 								{state ? (
-									<WxSwitch
+									<Switch
 										checkedTitle="Mandatory"
 										unCheckedTitle="Optional"
 										registerProperty={{
@@ -511,7 +511,7 @@ const Checkout = () => {
 									/>
 								</label>
 								{country ? (
-									<WxSwitch
+									<Switch
 										checkedTitle="Mandatory"
 										unCheckedTitle="Optional"
 										defaultChecked={false}

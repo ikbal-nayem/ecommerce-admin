@@ -5,7 +5,7 @@ import WxFormContainer from "@components/WxFormLayout/WxFormContainer";
 import WxFormFooter from "@components/WxFormLayout/WxFormFooter";
 import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
 import WxHr from "@components/WxHr";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { STATUS_CONSTANT } from "config/constants";
 import { CUSTOMERS } from "routes/path-name.route";
 import { CustomerService } from "services/api/Customer.service";
@@ -157,7 +157,7 @@ export default function AddCustomer() {
 								<WxHr />
 								<div style={{ maxWidth: "80%" }}>
 									<div>
-										<WxSwitch
+										<Switch
 											label={
 												<div className="d-flex align-items-center">
 													&nbsp; &nbsp;<span>Status</span>

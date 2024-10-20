@@ -4,7 +4,7 @@ import { WxFormHeader } from '@components/WxFormLayout';
 import WxHr from '@components/WxHr';
 import WxIcon from '@components/Icon';
 import TextInput from '@components/TextInput';
-import WxSwitch from '@components/WxSwitch';
+import Switch from '@components/Switch';
 import { MASTER_META_TYPE } from 'config/constants';
 import { ENV } from 'config/ENV.config';
 import { useEffect, useState } from 'react';
@@ -276,7 +276,7 @@ const CreateMenu = () => {
 							</Button>
 							<WxHr />
 							<div className='pe-5'>
-								<WxSwitch
+								<Switch
 									label={
 										<div className='d-flex menu_help_icon align-items-center'>
 											<span className=''>Status</span>

@@ -1,9 +1,8 @@
-import WxHr from "@components/WxHr";
-import TextInput from "@components/TextInput";
-import { ReactComponent as TakaSign } from "assets/svg/taka.svg";
-import { useEffect } from "react";
-import { useFormContext } from "react-hook-form";
-import "./ProductPricing.scss";
+import TextInput from '@components/TextInput';
+import WxHr from '@components/WxHr';
+import { useEffect } from 'react';
+import { useFormContext } from 'react-hook-form';
+import './ProductPricing.scss';
 
 const ProductPricing = () => {
 	const {
@@ -14,82 +13,76 @@ const ProductPricing = () => {
 		clearErrors,
 	} = useFormContext();
 
-	const [sPrice, rPrice] = watch(["sellingPrice", "regularPrice"]);
+	const [sPrice, rPrice] = watch(['sellingPrice', 'regularPrice']);
 
 	useEffect(() => {
 		if (+rPrice > 0 && Number(sPrice) >= Number(rPrice)) {
-			setError("sellingPrice", {
+			setError('sellingPrice', {
 				message: "'Selling Price' must be less than 'Compare at price'",
-				type: "invalid",
+				type: 'invalid',
 			});
-			setError("regularPrice", {
+			setError('regularPrice', {
 				message: "'Selling Price' must be less than 'Compare at price'",
-				type: "invalid",
+				type: 'invalid',
 			});
 			return;
 		}
-		clearErrors(["sellingPrice", "regularPrice"]);
+		clearErrors(['sellingPrice', 'regularPrice']);
 	}, [sPrice, rPrice, errors]);
 
 	return (
-		<div className="card product_pricing p-3 mt-4">
-			<h6 className="text_semibold text_h6 mb-0">Pricing</h6>
-			<div className="row">
-				<div className="col-md-6 mt-3">
+		<div className='card product_pricing p-3 mt-4'>
+			<h6 className='text_semibold text_h6 mb-0'>Pricing</h6>
+			<div className='row'>
+				<div className='col-md-6 mt-3'>
 					<TextInput
-						label="Selling price"
-						endIcon={<TakaSign />}
+						label='Selling price'
+						endIcon={'৳'}
 						min={0}
 						noMargin
-						type="number"
+						type='number'
 						registerProperty={{
-							...register("sellingPrice", {
+							...register('sellingPrice', {
 								valueAsNumber: true,
 							}),
 						}}
 						onFocus={(e) => e.target.select()}
-						errorMessage={errors.sellingPrice?.message}
-						color={errors.sellingPrice ? "danger" : "secondary"}
+						errorMessage={errors.sellingPrice?.message as string}
+						color={errors.sellingPrice ? 'danger' : 'secondary'}
 					/>
 				</div>
-				<div className="col-md-6 mt-3">
+				<div className='col-md-6 mt-3'>
 					<TextInput
-						label="Cost per item"
-						endIcon={<TakaSign />}
+						label='Cost per item'
+						endIcon={'৳'}
 						min={0}
 						noMargin
-						type="number"
+						type='number'
 						registerProperty={{
-							...register("costPrice", { valueAsNumber: true }),
+							...register('costPrice', { valueAsNumber: true }),
 						}}
-						helpText="Customers won’t see this"
+						helpText='Customers won’t see this'
 						onFocus={(e) => e.target.select()}
-						errorMessage={errors.costPrice?.message}
-						color={errors.costPrice ? "danger" : "secondary"}
+						errorMessage={errors.costPrice?.message as string}
+						color={errors.costPrice ? 'danger' : 'secondary'}
 					/>
 				</div>
 				<WxHr />
-				<div className="col-md-6">
+				<div className='col-md-6'>
 					<TextInput
-						label="Compare at price"
-						endIcon={<TakaSign />}
+						label='Compare at price'
+						endIcon={'৳'}
 						noMargin
 						min={0}
-						type="number"
+						type='number'
 						registerProperty={{
-							...register("regularPrice", {
+							...register('regularPrice', {
 								valueAsNumber: true,
 							}),
 						}}
 						onFocus={(e) => e.target.select()}
-						errorMessage={
-							errors.regularPrice?.message || errors.comparePrices?.message
-						}
-						color={
-							errors.regularPrice || errors.comparePrices
-								? "danger"
-								: "secondary"
-						}
+						errorMessage={(errors.regularPrice?.message || errors.comparePrices?.message) as string}
+						color={errors.regularPrice || errors.comparePrices ? 'danger' : 'secondary'}
 					/>
 				</div>
 			</div>

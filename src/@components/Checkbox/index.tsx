@@ -1,4 +1,4 @@
-import "./WxCheckbox.scss";
+import './Checkbox.scss';
 
 type CheckboxProps = {
 	id?: string;
@@ -13,7 +13,7 @@ type CheckboxProps = {
 	noMargin?: boolean;
 };
 
-const WxCheckbox = ({
+const Checkbox = ({
 	id,
 	label,
 	checked,
@@ -29,28 +29,25 @@ const WxCheckbox = ({
 		<div
 			onClick={onClick}
 			className={`${
-				noMargin ? "" : "mb-3"
+				noMargin ? '' : 'mb-3'
 			} form-check form-check-inline d-flex align-items-center ${className}`}
 		>
 			<input
 				id={id}
-				className="form-check-input"
-				type="checkbox"
-				role="button"
+				className='form-check-input'
+				type='checkbox'
+				role='button'
 				disabled={disabled}
 				onChange={onChange}
 				defaultChecked={defaultChecked}
 				checked={checked}
 				{...registerProperty}
 			/>
-			<label
-				className="ms_2 form-check-label text_body"
-				htmlFor={id}
-			>
+			<label className='ms_2 form-check-label text_body' htmlFor={id}>
 				{label}
 			</label>
 		</div>
 	);
 };
 
-export default WxCheckbox;
+export default Checkbox;

@@ -5,7 +5,7 @@ import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { IDeliveryZoneItem } from "@interfaces/Settings.interface";
 import { DeliverySettingService } from "services/api/settings/Delivery.service";
 import { ToastService } from "services/utils/toastr.service";
@@ -103,7 +103,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 								/>
 							</div>
 							<div className="mt-4" style={{ maxWidth: "90%" }}>
-								<WxSwitch
+								<Switch
 									label="Prebooking"
 									checkedTitle="Yes"
 									unCheckedTitle="No"
@@ -129,7 +129,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 							) : null}
 
 							<div className="mt-4" style={{ maxWidth: "90%" }}>
-								<WxSwitch
+								<Switch
 									label="Status"
 									checkedTitle="Active"
 									unCheckedTitle="Inactive"

@@ -1,6 +1,6 @@
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
-import WxSwitch from "@components/WxSwitch";
+import Switch from "@components/Switch";
 import { useFormContext } from "react-hook-form";
 import "./ProductStock.scss";
 
@@ -19,7 +19,7 @@ const ProductStock = () => {
 
 			<div style={{ maxWidth: "90%" }}>
 				<div className="mb-4">
-					<WxSwitch
+					<Switch
 						label="Do you want to track stock?"
 						checkedTitle="Yes"
 						unCheckedTitle="No"
@@ -28,7 +28,7 @@ const ProductStock = () => {
 				</div>
 				{/* {isTrackQuantity ? (
           <div className="mb-4">
-            <WxSwitch
+            <Switch
               label="Do you want to oversell?"
               checkedTitle="Yes"
               unCheckedTitle="No"

@@ -1,44 +1,40 @@
-@import "webx-brighten/partials/variables";
-@import "webx-brighten/custom/typography.scss";
+@import '../../assets/styles/partials/variables';
 
 .wx__chip {
-  min-width: 15px;
-  width: fit-content;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  @extend .text_regular;
-  span:last-of-type {
-    margin-left: 8px;
-    cursor: pointer;
-  }
-  &_primary {
-    color: #fff;
-    background-color: $primary__500;
-  }
-  &_secondary {
-    color: $neutral__700;
-    background-color: $neutral__200;
-  }
-  &_sm {
-    padding: 4px 6px;
-    @extend .text_small;
-    span:last-of-type {
-      font-size: 15px;
-    }
-  }
-  &_md {
-    padding: 6px 8px;
-    @extend .text_body;
-    span:last-of-type {
-      font-size: 18px;
-    }
-  }
-  &_lg {
-    padding: 8px 10px;
-    font-size: 20px;
-    span:last-of-type {
-      font-size: 22px;
-    }
-  }
+	min-width: 15px;
+	width: fit-content;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	span:last-of-type {
+		margin-left: 8px;
+		cursor: pointer;
+	}
+	&_primary {
+		color: #fff;
+		background-color: $primary__500;
+	}
+	&_secondary {
+		color: $neutral__700;
+		background-color: $neutral__200;
+	}
+	&_sm {
+		padding: 4px 6px;
+		span:last-of-type {
+			font-size: 15px;
+		}
+	}
+	&_md {
+		padding: 6px 8px;
+		span:last-of-type {
+			font-size: 18px;
+		}
+	}
+	&_lg {
+		padding: 8px 10px;
+		font-size: 20px;
+		span:last-of-type {
+			font-size: 22px;
+		}
+	}
 }

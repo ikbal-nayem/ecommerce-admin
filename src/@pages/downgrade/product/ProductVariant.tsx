@@ -3,7 +3,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/WxCheckbox";
+import WxCheckbox from "@components/Checkbox";
 import { WxFormHeader } from "@components/WxFormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";

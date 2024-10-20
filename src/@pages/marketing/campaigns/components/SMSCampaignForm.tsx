@@ -1,11 +1,11 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/WxCheckbox";
+import WxCheckbox from "@components/Checkbox";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 import WxTextarea from "@components/WxTextarea";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { CAMPAIGNS } from "routes/path-name.route";
@@ -216,7 +216,7 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
             <div className="row">
               <h6 className="text_h6 text_semibold">Address</h6>
               <div className="col-md-12 col-lg-12">
-                <WxLabel
+                <Label
                   isRequired
                   children="SMS BODY"
                   labelRight={

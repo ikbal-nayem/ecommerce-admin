@@ -7,8 +7,8 @@ import MediaInput from '@components/MediaInput/MediaInput';
 import Select from '@components/Select/Select';
 import TextInput from '@components/TextInput';
 import WxEditor from '@components/WxEditor/WxEditor';
-import Label from '@components/WxLabel';
-import WxSwitch from '@components/WxSwitch';
+import Label from '@components/Label';
+import Switch from '@components/Switch';
 import { IObject } from '@interfaces/common.interface';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -151,7 +151,7 @@ const AddCategory = ({
 							<MediaInput name='image' control={control} multiple={false} />
 						</div>
 						<div className='mt-4' style={{ maxWidth: '50%' }}>
-							<WxSwitch
+							<Switch
 								label='Category Status'
 								checkedTitle='Visible'
 								unCheckedTitle='Hidden'

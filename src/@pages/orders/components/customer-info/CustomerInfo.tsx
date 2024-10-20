@@ -1,6 +1,6 @@
 import SelectOption from "@components/Select/Autocomplete";
 import WxIcon from "@components/Icon";
-import WxLabel from "@components/WxLabel";
+import Label from "@components/Label";
 import { STATUS_CONSTANT } from "config/constants";
 import {
 	ICustomerPayload,
@@ -73,7 +73,7 @@ const CustomerInfo = ({
 
 	return (
 		<div className="card mt-3 p-3">
-			<WxLabel
+			<Label
 				isRequired
 				labelRight={
 					selectedCustomer && onCustomerSelect ? (
@@ -87,14 +87,14 @@ const CustomerInfo = ({
 				}
 			>
 				Customer
-			</WxLabel>
+			</Label>
 			{selectedCustomer ? (
 				<>
 					<p className="text_body text_strong text-primary">
 						{selectedCustomer?.customer?.name}
 					</p>
 					<div className="mb-3">
-						<WxLabel
+						<Label
 							labelRight={
 								<span
 									className="text-primary text_small"
@@ -106,7 +106,7 @@ const CustomerInfo = ({
 							}
 						>
 							Shipping Address
-						</WxLabel>
+						</Label>
 						{shippingAddress ? (
 							<div className="text_body text_regular">
 								{shippingAddress?.email ? (
@@ -143,7 +143,7 @@ const CustomerInfo = ({
 						)}
 					</div>
 					<div className="mb-3">
-						<WxLabel
+						<Label
 							labelRight={
 								<span
 									className="text-primary text_small"
@@ -155,7 +155,7 @@ const CustomerInfo = ({
 							}
 						>
 							Billing Address
-						</WxLabel>
+						</Label>
 						{billingAddress ? (
 							<div className="text_body text_regular">
 								{billingAddress?.email ? (
