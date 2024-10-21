@@ -1,142 +1,267 @@
-import { Fragment } from 'react';
-import Select, { ActionMeta, InputActionMeta } from 'react-select';
-import AsyncCreatableSelect from 'react-select/async-creatable';
+import { IconButton } from '@components/Button';
+import { IColors, IObject } from '@interfaces/common.interface';
+import clsx from 'clsx';
+import { useRef } from 'react';
+import { Controller } from 'react-hook-form';
+import Select, { InputActionMeta, createFilter } from 'react-select';
+import AsyncSelect from 'react-select/async';
 import CreatableSelect from 'react-select/creatable';
+import { debounce } from 'utils/debouncer';
 
 interface AutocompleteProps {
-	readonly isClearable?: boolean;
-	readonly isCreatable?: boolean;
-	readonly isDisabled?: boolean;
-	readonly isLoading?: boolean;
-	readonly isRtl?: boolean;
-	readonly isMulti?: boolean;
-	readonly isSearchable?: boolean;
-	options?: any[];
+	isClearable?: boolean;
+	isCreatable?: boolean;
+	isDisabled?: boolean;
+	isLoading?: boolean;
+	isMulti?: boolean;
+	maxLength?: number;
+	isAsync?: boolean;
+	isSearchable?: boolean;
+	control?: any;
+	isRequired?: boolean | string;
+	filterProps?: Array<string>;
+	options?: Array<IObject>;
 	placeholder?: string;
-	defaultSelected?: any;
+	defaultValue?: any;
 	value?: any;
-	registerProperty?: any;
-	name?: any;
-	className?: string;
-	onChange?: (newValue: any, actionMeta: ActionMeta<any>) => void;
+	name?: string;
+	label?: string;
+	onChange?: (selected: any) => void;
 	onFocus?: () => void;
 	onInputChange?: (newValue: string, actionMeta?: InputActionMeta) => void;
-	filterOption?: (candidate: any, input: string) => boolean;
-	getOptionLabel?: any;
-	getOptionValue?: any;
+	inputValue?: string;
+	getOptionLabel: (option: IObject) => any;
+	getOptionValue?: (option: IObject) => string;
 	onCreateOption?: (inputValue: string) => void;
 	noOptionsMessage?: () => string | JSX.Element | string;
-	isAsyncList?: boolean;
-	loadAsyncOptions?: (inputValue: string, callBack: (options: any[]) => void) => any;
-	cacheOptions?: boolean;
-	defaultOptions?: boolean;
+	closeMenuOnSelect?: boolean;
+	tagColor?: IColors;
+	noMargin?: boolean;
+	autoFocus?: boolean;
+	isError?: boolean;
+	errorMessage?: string;
+	loadOptions?: (searchKey: string, callback: any) => void;
+	endIcon?: string;
+	endIconTitle?: string;
+	onEditIconClick?: () => void;
+	helpText?: string;
+	viewOnly?: IObject | IObject[];
 }
 
+type SelectComponentProps = {
+	value: any;
+	onChange?: (selected: any) => void;
+};
+
 const Autocomplete = ({
+	control,
+	isAsync,
 	isMulti = false,
 	isClearable = true,
 	isCreatable,
 	isDisabled,
+	isRequired,
+	filterProps = [], // If pass empty array it will filter from lable
 	isLoading,
-	className,
+	autoFocus,
+	maxLength,
+	label,
 	placeholder,
-	isRtl,
 	isSearchable,
 	options,
-	defaultSelected,
+	defaultValue,
 	value,
 	onChange,
 	name,
 	onInputChange,
+	inputValue,
 	onFocus,
-	filterOption,
 	getOptionLabel,
 	getOptionValue,
 	onCreateOption,
 	noOptionsMessage,
-	isAsyncList = false,
-	loadAsyncOptions,
-	cacheOptions = false,
-	defaultOptions = true,
+	tagColor = 'secondary',
+	closeMenuOnSelect,
+	noMargin,
+	isError,
+	errorMessage,
+	loadOptions,
+	endIcon,
+	endIconTitle,
+	onEditIconClick,
+	helpText,
+	viewOnly,
 }: AutocompleteProps) => {
-	if (isAsyncList)
-		return (
-			<AsyncCreatableSelect
-				cacheOptions={cacheOptions}
-				loadOptions={loadAsyncOptions}
-				getOptionLabel={getOptionLabel}
-				getOptionValue={getOptionValue}
-				defaultOptions={defaultOptions}
-				onInputChange={onInputChange}
-				onCreateOption={onCreateOption}
-				value={value}
-				onChange={onChange}
-				className={className}
-				classNamePrefix='select'
-				placeholder={placeholder}
-				defaultValue={defaultSelected}
-				isDisabled={isDisabled}
-				isLoading={isLoading}
-				noOptionsMessage={noOptionsMessage}
-				onFocus={onFocus}
-				isClearable={isClearable}
-			/>
-		);
+	const SelectComponent = ({ value, onChange }: SelectComponentProps) => {
+		const prevState = useRef<{ searchKey: null | string; prevList: IObject[] }>({
+			searchKey: '',
+			prevList: [],
+		});
 
-	if (isCreatable)
-		return (
-			<Fragment>
-				<CreatableSelect
+		const debouncedLoadOptions = debounce((searchKey: string, callback: any) => {
+			if (prevState.current.searchKey !== searchKey) {
+				prevState.current.searchKey = searchKey;
+				loadOptions &&
+					loadOptions(searchKey, (data: IObject[]) => {
+						prevState.current.prevList = data;
+						callback(data);
+					});
+			} else callback(prevState.current.prevList);
+		}, 500);
+
+		const onFilter = createFilter({
+			stringify: (option: IObject) => {
+				if (filterProps?.length)
+					return filterProps
+						.map((f) => (option.data[f] ? option.data[f] : ''))
+						.join(' ')
+						.trim();
+				return option?.label;
+			},
+		});
+
+		if (isAsync)
+			return (
+				<AsyncSelect
+					classNames={{
+						control: () => clsx(['form-control form-control-sm p-0', { 'is-invalid': isError }]),
+					}}
+					className='w-100'
+					cacheOptions
+					defaultOptions
 					isMulti={isMulti}
-					className={isMulti ? 'basic-multi-select' : 'basic-single'}
-					classNamePrefix='select'
 					placeholder={placeholder}
-					defaultValue={defaultSelected}
+					defaultValue={defaultValue}
 					isDisabled={isDisabled}
 					isLoading={isLoading}
 					isClearable={isClearable}
-					isRtl={isRtl}
 					isSearchable={isSearchable}
 					name={name}
 					options={options}
 					onChange={onChange}
 					onInputChange={onInputChange}
-					noOptionsMessage={noOptionsMessage}
+					noOptionsMessage={
+						noOptionsMessage
+							? noOptionsMessage
+							: ({ inputValue }) => (inputValue === '' ? 'অনুসন্ধান করুন' : 'কোনো তথ্য পাওয়া যায়নি!')
+					}
 					onFocus={onFocus}
-					filterOption={filterOption}
 					getOptionLabel={getOptionLabel}
 					getOptionValue={getOptionValue}
-					onCreateOption={onCreateOption}
+					closeMenuOnSelect={closeMenuOnSelect}
 					value={value}
+					loadOptions={debouncedLoadOptions}
 				/>
-			</Fragment>
-		);
+			);
 
-	return (
-		<Fragment>
-			<Select
+		return isCreatable ? (
+			<CreatableSelect
+				classNames={{
+					control: () => clsx(['form-control form-control-sm p-0', { 'is-invalid': isError }]),
+				}}
+				className='w-100'
 				isMulti={isMulti}
-				className={isMulti ? 'basic-multi-select' : 'basic-single'}
-				classNamePrefix='select'
 				placeholder={placeholder}
-				defaultValue={defaultSelected}
+				defaultValue={defaultValue}
 				isDisabled={isDisabled}
 				isLoading={isLoading}
 				isClearable={isClearable}
-				isRtl={isRtl}
 				isSearchable={isSearchable}
+				isValidNewOption={() => true}
 				name={name}
 				options={options}
 				onChange={onChange}
 				onInputChange={onInputChange}
 				noOptionsMessage={noOptionsMessage}
 				onFocus={onFocus}
-				filterOption={filterOption}
+				filterOption={onFilter}
+				getOptionLabel={getOptionLabel}
+				getOptionValue={getOptionValue}
+				onCreateOption={onCreateOption}
+				closeMenuOnSelect={closeMenuOnSelect}
+				value={value}
+			/>
+		) : (
+			<Select
+				classNames={{
+					control: () => clsx(['form-control form-control-sm p-0', { 'is-invalid': isError }]),
+				}}
+				className='w-100'
+				isMulti={isMulti}
+				placeholder={placeholder}
+				defaultValue={defaultValue}
+				isDisabled={isDisabled}
+				isLoading={isLoading}
+				isClearable={isClearable}
+				isSearchable={isSearchable}
+				name={name}
+				autoFocus={autoFocus}
+				options={options}
+				onChange={onChange}
+				onInputChange={onInputChange}
+				inputValue={inputValue}
+				noOptionsMessage={noOptionsMessage}
+				onFocus={onFocus}
+				filterOption={onFilter}
+				closeMenuOnSelect={closeMenuOnSelect}
 				getOptionLabel={getOptionLabel}
 				getOptionValue={getOptionValue}
 				value={value}
 			/>
-		</Fragment>
+		);
+	};
+
+	return (
+		<div className={`min-w-100px ${noMargin ? '' : 'mb-6'}`}>
+			{label && (
+				<label className='d-flex align-items-center fs-5'>
+					<span className={isRequired ? 'required' : ''}>{label}</span>
+				</label>
+			)}
+
+			<div className={clsx([{ 'd-flex w-100': !!endIcon }])}>
+				{control ? (
+					<Controller
+						control={control}
+						name={name || ''}
+						rules={{
+							required: isRequired,
+							validate: {
+								checkLength: (val) => {
+									if (!isMulti) return true;
+									return maxLength && val?.length > maxLength ? `Max length is ${maxLength}` : true;
+								},
+							},
+						}}
+						render={({ field }: { field: any }) => (
+							<SelectComponent
+								onChange={(val) => {
+									field.onChange(val);
+									onChange && onChange(val);
+								}}
+								value={field.value}
+							/>
+						)}
+					/>
+				) : (
+					<SelectComponent onChange={onChange} value={value} />
+				)}
+				{!!endIcon && (
+					<IconButton
+						iconName={endIcon}
+						rounded={false}
+						onClick={onEditIconClick}
+						hoverTitle={endIconTitle}
+					/>
+				)}
+			</div>
+
+			{isError ? (
+				<div className='invalid-feedback d-block'>{errorMessage}</div>
+			) : !!helpText ? (
+				<div className='form-text text-gray-600'>{helpText}</div>
+			) : null}
+		</div>
 	);
 };
 export default Autocomplete;

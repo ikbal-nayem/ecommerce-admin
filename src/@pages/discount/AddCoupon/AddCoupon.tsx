@@ -3,8 +3,8 @@ import {Button} from "@components/Button";
 import {
   WxFormContainer,
   WxFormFooter,
-  WxFormHeader,
-} from "@components/WxFormLayout";
+  FormHeader,
+} from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { DISCOUNT } from "routes/path-name.route";
@@ -116,7 +116,7 @@ const AddCoupon = () => {
   return (
     <WxMainLg>
       <WxFormContainer>
-        <WxFormHeader title="Add Coupon" backNavigationLink={DISCOUNT} />
+        <FormHeader title="Add Coupon" backNavigationLink={DISCOUNT} />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
           <div className="row">
             <div className="col-md-8 col-sm-12 mt-3">

@@ -1,5 +1,5 @@
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import { IPortalOverview } from "@interfaces/portal.interface";
 import { PORTAL_PARTNERS } from "routes/path-name.route";
@@ -26,7 +26,7 @@ export default function Overview() {
 
 	return (
 		<WxMainFull>
-			<WxFormHeader title="Overview" noBack />
+			<FormHeader title="Overview" noBack />
 			<div className="portal_overview">
 				<h6>Referred users</h6>
 				<div className="card p-4">

@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
 import WxTextarea from "@components/WxTextarea";
 import { themeConfig$ } from "@rxjs/theme-config.rx";
@@ -32,7 +32,7 @@ const SectionCustomize = () => {
   return (
     <WxMainLg>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <WxFormHeader
+        <FormHeader
           title={`${section?.label} section`}
           rightContent={
             <Button variant="fill" type="submit">

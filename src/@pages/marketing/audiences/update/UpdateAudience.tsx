@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import { WxFormFooter, WxFormHeader } from "@components/WxFormLayout";
+import { WxFormFooter, FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import { MASTER_META_KEY } from "config/constants";
 import { AUDIENCES } from "routes/path-name.route";
@@ -37,7 +37,7 @@ const UpdateAudience = () => {
 
   return (
     <WxMainLg>
-      <WxFormHeader
+      <FormHeader
         noMargin
         title={formTitle}
         backNavigationLink={AUDIENCES + "?type=" + searchParams.get("audience")}

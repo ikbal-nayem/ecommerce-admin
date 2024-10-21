@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import { ThemeCustomizationService } from "services/api/settings/ThemeCustomization.service";
 import Preloader from "services/utils/preloader.service";
@@ -144,7 +144,7 @@ export default function CustomizationTypography() {
 		<WxMainLg className="typography">
 			{isLoading && <Preloader />}
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
-				<WxFormHeader
+				<FormHeader
 					title="Typography"
 					rightContent={
 						<Button variant="fill" type="submit">

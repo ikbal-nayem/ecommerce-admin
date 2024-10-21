@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import { IMenuset } from "@interfaces/OnlineStore.interface";
 import { useEffect, useState } from "react";
@@ -122,7 +122,7 @@ const Menu = () => {
     <div>
       <WxMainXl>
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <WxFormHeader title="Menu Set" noBack />
+          <FormHeader title="Menu Set" noBack />
           <Button variant="fill" onClick={() => navigate(MENU_CREATE)}>
             Add Menu Set
           </Button>

@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import { IDomainSettingsItem } from "@interfaces/Settings.interface";
 import { SETTINGS, SETTINGS_DOMAIN_CREATE } from "routes/path-name.route";
 import { DomainSettingService } from "services/api/settings/Domain.service";
@@ -85,7 +85,7 @@ const ManageDomain = () => {
   return (
 		<WxMainXl>
 			<div className="d-flex justify-content-between align-items-center mb-3">
-				<WxFormHeader noMargin title="Domain" backNavigationLink={SETTINGS} />
+				<FormHeader noMargin title="Domain" backNavigationLink={SETTINGS} />
 				<Button
 					variant="fill"
 					onClick={() => navigate(SETTINGS_DOMAIN_CREATE)}

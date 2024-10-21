@@ -1,6 +1,6 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import BillingTableSkelton from "@components/WxSkelton/Setting/Billing/BillingTableSkelton";
 import UserPlanNInfoSkelton from "@components/WxSkelton/Setting/Billing/UserPlanNInfoSkelton";
@@ -67,7 +67,7 @@ const Billing = () => {
 
   return (
     <WxMainXl className="billing_sec">
-      <WxFormHeader title="Billing" backNavigationLink={SETTINGS} />
+      <FormHeader title="Billing" backNavigationLink={SETTINGS} />
       {!userDataLoader ? (
         <div className="card p-3 mb-4">
           <div className="row">

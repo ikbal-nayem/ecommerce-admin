@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import WXEditor from "@components/WxEditor/WxEditor";
-import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
+import TextEditor from "@components/TextEditor/Editor";
+import FormHeader from "@components/FormLayout/FormHeader";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
@@ -87,7 +87,7 @@ const AddPage = () => {
 
 	return (
 		<WxMainLg>
-			<WxFormHeader
+			<FormHeader
 				noMargin
 				title={id ? "Update Page" : "Add Page"}
 				backNavigationLink={PAGES}
@@ -124,7 +124,7 @@ const AddPage = () => {
 									field: { onChange, value },
 									fieldState: { error },
 								}) => (
-									<WXEditor
+									<TextEditor
 										label="Description"
 										noMargin
 										defaultValue={value}

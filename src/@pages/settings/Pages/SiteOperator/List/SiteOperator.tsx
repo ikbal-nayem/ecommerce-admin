@@ -3,7 +3,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxTableSkelton from "@components/WxSkelton/WxTableSkeleton";
 import {
 	SETTINGS,
@@ -107,7 +107,7 @@ const SiteOperator = () => {
 	return (
 		<div>
 			<WxMainXl className="site-operator">
-				<WxFormHeader
+				<FormHeader
 					title="Site Operator"
 					backNavigationLink={SETTINGS}
 					rightContent={

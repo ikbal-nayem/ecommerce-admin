@@ -2,7 +2,7 @@ import DateInput from "@components/DatePicker/DateInput";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormContainer, WxFormHeader } from "@components/WxFormLayout";
+import { WxFormContainer, FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -189,7 +189,7 @@ const ECourierOrderPlace = () => {
     <WxMainLg className="delivery_zone_sec">
       <WxFormContainer>
         <form onSubmit={handleSubmit(onsubmit)}>
-          <WxFormHeader
+          <FormHeader
             title="E-Courier Info"
             backNavigationLink={ORDER_DETAILS({ order_id: order_id })}
           />

@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import { IPagesSettings } from "@interfaces/Settings.interface";
 import { PAGES_CREATE } from "routes/path-name.route";
@@ -96,7 +96,7 @@ const Pages = () => {
 
   return (
 		<WxMainFull>
-			<WxFormHeader
+			<FormHeader
 				title="Pages"
 				rightContent={
 					<Button variant="fill" onClick={() => navigate(PAGES_CREATE)}>

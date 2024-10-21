@@ -2,7 +2,7 @@ import WxAlert from "@components/Alert/WxAlert";
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxTableSkelton from "@components/WxSkelton/WxTableSkeleton";
 import { ISiteOperator } from "@interfaces/Settings.interface";
 import { downgrade$ } from "@rxjs/downgrade.rx";
@@ -69,7 +69,7 @@ const SiteOperator = () => {
 	return (
 		<>
 			<WxMainXl>
-				<WxFormHeader title="Site operators" noBack />
+				<FormHeader title="Site operators" noBack />
 
 				{!!siteOperatorData?.length && (
 					<WxAlert>

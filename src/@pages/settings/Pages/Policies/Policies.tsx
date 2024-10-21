@@ -1,5 +1,5 @@
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import { MASTER_META_KEY } from "config/constants";
 import { IPolicySettings } from "@interfaces/Settings.interface";
 import { SETTINGS } from "routes/path-name.route";
@@ -40,7 +40,7 @@ const Policies = () => {
 
 	return (
 		<WxMainMd className="setting_policies_page">
-			<WxFormHeader title="Policies" backNavigationLink={SETTINGS} />
+			<FormHeader title="Policies" backNavigationLink={SETTINGS} />
 			{isLoading ? <Preloader absolutePosition /> : null}
 			{cardItems.map((item) => (
 				<PolicyCard key={item?.metaKey} item={item} policies={policies} />

@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import {
   IConfigureDeliverService,
   IDeliveryZoneItem,
@@ -265,7 +265,7 @@ const Delivery = () => {
   return (
     <div>
       <WxMainLg className="delivery_zone_sec">
-        <WxFormHeader
+        <FormHeader
           title="Delivery"
           backNavigationLink={SETTINGS}
           rightContent={

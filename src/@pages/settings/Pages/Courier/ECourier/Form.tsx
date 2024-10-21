@@ -4,8 +4,8 @@ import WxSelect from "@components/Select/Select";
 import {
   WxFormContainer,
   WxFormFooter,
-  WxFormHeader,
-} from "@components/WxFormLayout";
+  FormHeader,
+} from "@components/FormLayout";
 import TextInput from "@components/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SETTINGS_DELIVERY } from "routes/path-name.route";
@@ -101,7 +101,7 @@ const CourierForm = () => {
       <WxFormContainer>
         {/* {getValues("pick_district")} */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <WxFormHeader
+          <FormHeader
             title="Courier"
             backNavigationLink={SETTINGS_DELIVERY}
           />

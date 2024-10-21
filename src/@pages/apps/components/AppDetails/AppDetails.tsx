@@ -1,6 +1,6 @@
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import WxTabs from "@components/WxTabs/WxTabs";
 import WxThumbnail from "@components/Thumbnail";
@@ -127,7 +127,7 @@ const AppsDetails = () => {
 
 	return (
 		<div className="wx__app_details_page">
-			<WxFormHeader title="App Details" backNavigationLink={APPS_LIST} />
+			<FormHeader title="App Details" backNavigationLink={APPS_LIST} />
 			<div className="card p-4 wx__details_top">
 				{isLoading ? (
 					<Preloader />

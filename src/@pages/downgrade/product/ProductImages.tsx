@@ -3,7 +3,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
@@ -109,7 +109,7 @@ const ProductImages = () => {
 
 	return (
 		<WxMainXl className="downgrade-list-page">
-			<WxFormHeader
+			<FormHeader
 				title="Product list with extra images"
 				noBack
 				rightContent={

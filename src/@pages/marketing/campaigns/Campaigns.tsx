@@ -4,7 +4,7 @@ import WxNotFound from '@components/NotFound/NotFound';
 import WxSelect from '@components/Select/Select';
 import TableLoader from '@components/TableLoader/TableLoader';
 import {Button} from '@components/Button';
-import { WxFormHeader } from '@components/WxFormLayout';
+import { FormHeader } from '@components/FormLayout';
 import WxIcon from '@components/Icon';
 import TextInput from '@components/TextInput';
 import WxPagination from '@components/WxPagination/WxPagination';
@@ -162,7 +162,7 @@ const Campaigns = () => {
 
 	return (
 		<WxMainFull className='campaign-list-page'>
-			<WxFormHeader
+			<FormHeader
 				title='Campaigns'
 				noBack
 				rightContent={

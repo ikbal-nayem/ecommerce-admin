@@ -1,6 +1,6 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxRadio from "@components/WxRadio/WxRadio";
 import { MASTER_META_KEY } from "config/constants";
 import PricingListTable from "@pages/settings/Components/PricingPlanListTable/PricingPlanListTable";
@@ -176,7 +176,7 @@ const PricingPlan = () => {
 	return (
 		<WxMainFull className="pricing_plan_sec">
 			<div className="w-100 d-flex justify-content-between align-items-center">
-				<WxFormHeader title="Pricing Plan" backNavigationLink={SETTINGS} />
+				<FormHeader title="Pricing Plan" backNavigationLink={SETTINGS} />
 				<div className="__switch d-flex align-items-center text_heading text_medium">
 					{pricingPlanes?.billingCycles?.map((cycle) => (
 						<WxRadio

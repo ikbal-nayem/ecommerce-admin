@@ -5,7 +5,7 @@ import WxDrawerFooter from '@components/Drawer/DrawerFooter';
 import DrawerHeader from '@components/Drawer/DrawerHeader';
 import MediaInput from '@components/MediaInput/MediaInput';
 import TextInput from '@components/TextInput';
-import WxEditor from '@components/WxEditor/WxEditor';
+import TextEditor from '@components/TextEditor/Editor';
 import Label from '@components/Label';
 import { ENV } from 'config/ENV.config';
 import { useEffect } from 'react';
@@ -122,7 +122,7 @@ const AddCollection = ({
 								control={control}
 								name='description'
 								render={({ field: { onChange, value } }) => (
-									<WxEditor onEditorChange={onChange} defaultValue={value} />
+									<TextEditor onEditorChange={onChange} defaultValue={value} />
 								)}
 							/>
 						</div>

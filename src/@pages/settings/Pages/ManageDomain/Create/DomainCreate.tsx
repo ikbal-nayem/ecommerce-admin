@@ -1,6 +1,6 @@
 import WxMainSm from "@components/MainContentLayout/WxMainSm";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
 import { DOMAIN_SETUP_INSTRUCTION } from "config/constants";
 import { IDomainSettingsItem } from "@interfaces/Settings.interface";
@@ -38,7 +38,7 @@ const DomainCreate = () => {
 	return (
 		<WxMainSm className="domain_create_sec">
 			<div className="mb-3">
-				<WxFormHeader
+				<FormHeader
 					title="Connect Existing Domain"
 					backNavigationLink={SETTINGS_DOMAIN}
 				/>

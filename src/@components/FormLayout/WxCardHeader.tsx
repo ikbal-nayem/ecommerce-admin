@@ -7,7 +7,7 @@ type IFormHeaderProps = {
   rightContent?: React.ReactNode | string;
 };
 
-const  WxFormHeader = ({
+const  FormHeader = ({
   navigationLink,
   title,
   rightContent,
@@ -35,4 +35,4 @@ const  WxFormHeader = ({
   );
 };
 
-export default WxFormHeader;
+export default FormHeader;

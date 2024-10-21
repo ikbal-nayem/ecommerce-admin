@@ -1,7 +1,7 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import WxSelect from "@components/Select/Select";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import {
@@ -90,7 +90,7 @@ const AllTheme = () => {
 
 	return (
 		<WxMainXl>
-			<WxFormHeader title="All themes" backNavigationLink={THEMES} />
+			<FormHeader title="All themes" backNavigationLink={THEMES} />
 			<div className="card p-4">
 				<div className="row">
 					<div className="col-md-8 col-sm-12">

@@ -2,7 +2,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
 import WxRadio from "@components/WxRadio/WxRadio";
@@ -166,7 +166,7 @@ const Payment = () => {
 
 	return (
 		<WxMainLg>
-			<WxFormHeader title="Payment" />
+			<FormHeader title="Payment" />
 			{isError ? (
 				<WxNotFound
 					title="Oops!"

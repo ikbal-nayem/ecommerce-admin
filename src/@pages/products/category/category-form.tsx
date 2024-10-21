@@ -6,7 +6,7 @@ import DrawerHeader from '@components/Drawer/DrawerHeader';
 import MediaInput from '@components/MediaInput/MediaInput';
 import Select from '@components/Select/Select';
 import TextInput from '@components/TextInput';
-import WxEditor from '@components/WxEditor/WxEditor';
+import TextEditor from '@components/TextEditor/Editor';
 import Label from '@components/Label';
 import Switch from '@components/Switch';
 import { IObject } from '@interfaces/common.interface';
@@ -142,7 +142,7 @@ const AddCategory = ({
 								control={control}
 								name='description'
 								render={({ field: { onChange, value } }) => (
-									<WxEditor onEditorChange={onChange} defaultValue={value} />
+									<TextEditor onEditorChange={onChange} defaultValue={value} />
 								)}
 							/>
 						</div>

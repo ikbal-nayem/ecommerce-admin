@@ -2,7 +2,7 @@ import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationMod
 import WxMainLg from '@components/MainContentLayout/MainLg';
 import {Button} from '@components/Button';
 import { WxDraggableList } from '@components/WxDraggableList';
-import { WxFormHeader } from '@components/WxFormLayout';
+import { FormHeader } from '@components/FormLayout';
 import WxIcon from '@components/Icon';
 import Switch from '@components/Switch';
 import WxThumbnail from '@components/Thumbnail';
@@ -153,7 +153,7 @@ const SliderDetails = () => {
 
 	return (
 		<WxMainLg className='homeSection'>
-			<WxFormHeader title='Slider Banners' backNavigationLink={THEME_CUSTOMIZATION_SLIDER} />
+			<FormHeader title='Slider Banners' backNavigationLink={THEME_CUSTOMIZATION_SLIDER} />
 			<div className='card p-3 mt-4'>
 				<div className='title_section'>
 					<div className='title' />

@@ -2,7 +2,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import TableLoader from "@components/TableLoader/TableLoader";
 import {Button} from "@components/Button";
 import WxColorPicker from "@components/WxColorPicker";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import { ThemeCustomizationService } from "services/api/settings/ThemeCustomization.service";
 import Preloader from "services/utils/preloader.service";
 import { ToastService } from "services/utils/toastr.service";
@@ -33,7 +33,7 @@ export default function CustomizationColor() {
 	return (
 		<WxMainLg className="color-sec">
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
-				<WxFormHeader
+				<FormHeader
 					title="Color"
 					rightContent={
 						<Button variant="fill" type="submit" disabled={isSaving}>

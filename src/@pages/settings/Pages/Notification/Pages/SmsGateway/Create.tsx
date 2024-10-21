@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
 import { SETTINGS_NOTIFICATION } from "routes/path-name.route";
 import { useEffect, useState } from "react";
@@ -48,7 +48,7 @@ const OrderConfirmation = () => {
 
   return (
     <WxMainLg className="sms_gateway_sec">
-      <WxFormHeader
+      <FormHeader
         title="Order placement confirmation"
         backNavigationLink={SETTINGS_NOTIFICATION}
       />

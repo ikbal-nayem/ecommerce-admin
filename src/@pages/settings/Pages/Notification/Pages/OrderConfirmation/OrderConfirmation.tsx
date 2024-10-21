@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import WXEditor from "@components/WxEditor/WxEditor";
-import { WxFormHeader } from "@components/WxFormLayout";
+import TextEditor from "@components/TextEditor/Editor";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
@@ -45,7 +45,7 @@ const OrderConfirmation = () => {
 
   return (
 		<WxMainLg className="order_confirmation_sec">
-			<WxFormHeader
+			<FormHeader
 				noMargin
 				title="Order placement confirmation"
 				backNavigationLink={SETTINGS_NOTIFICATION}
@@ -77,7 +77,7 @@ const OrderConfirmation = () => {
 													SMS Body <span>*</span>
 												</p>
 											</div>
-											<WXEditor onEditorChange={(e) => setSmsBody(e)} />
+											<TextEditor onEditorChange={(e) => setSmsBody(e)} />
 										</div>
 									) : (
 										<div className="mt-3">
@@ -94,7 +94,7 @@ const OrderConfirmation = () => {
 													Email Body <span>*</span>
 												</p>
 											</div>
-											<WXEditor onEditorChange={(e) => setEmailBody(e)} />
+											<TextEditor onEditorChange={(e) => setEmailBody(e)} />
 										</div>
 									)}
 								</div>

@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
 import Label from "@components/Label";
 import { MediaInput } from "@components/MediaInput";
@@ -42,7 +42,7 @@ export default function CustomizationGeneral() {
   return (
 		<WxMainLg>
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
-				<WxFormHeader
+				<FormHeader
 					title="General"
 					rightContent={
 						<Button variant="fill" type="submit">

@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -177,7 +177,7 @@ const General = () => {
 
   return (
     <WxMainLg className="setting_general_sec">
-      <WxFormHeader title="General" backNavigationLink={SETTINGS} />
+      <FormHeader title="General" backNavigationLink={SETTINGS} />
 
       {isLoading ? <Preloader /> : null}
 

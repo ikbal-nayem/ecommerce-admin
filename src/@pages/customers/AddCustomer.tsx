@@ -1,9 +1,9 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
-import WxFormContainer from "@components/WxFormLayout/WxFormContainer";
-import WxFormFooter from "@components/WxFormLayout/WxFormFooter";
-import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
+import WxFormContainer from "@components/FormLayout/WxFormContainer";
+import WxFormFooter from "@components/FormLayout/WxFormFooter";
+import FormHeader from "@components/FormLayout/FormHeader";
 import WxHr from "@components/WxHr";
 import Switch from "@components/Switch";
 import { STATUS_CONSTANT } from "config/constants";
@@ -128,7 +128,7 @@ export default function AddCustomer() {
 	return (
 		<WxMainLg>
 			<WxFormContainer>
-				<WxFormHeader
+				<FormHeader
 					noMargin
 					title="Add Customer"
 					backNavigationLink={CUSTOMERS}

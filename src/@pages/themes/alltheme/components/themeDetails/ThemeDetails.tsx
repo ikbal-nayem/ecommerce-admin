@@ -2,7 +2,7 @@ import {Button} from '@components/Button';
 import WxIcon from '@components/Icon';
 import WxMainXl from '@components/MainContentLayout/WxMainXl';
 import WxAccordion from '@components/WxAccordion';
-import { WxFormHeader } from '@components/WxFormLayout';
+import { FormHeader } from '@components/FormLayout';
 import WxTabs from '@components/WxTabs/WxTabs';
 import WxTag from '@components/WxTag';
 import Thumbnail from '@components/Thumbnail';
@@ -118,7 +118,7 @@ const ThemesDetails = () => {
 
 	return (
 		<WxMainXl className='wx__theme_details_page'>
-			<WxFormHeader title='Theme Details' backNavigationLink={THEMES_LIST} />
+			<FormHeader title='Theme Details' backNavigationLink={THEMES_LIST} />
 			<div className='card mt-3 p-3 wx__details_top'>
 				{isLoading ? (
 					<Preloader />

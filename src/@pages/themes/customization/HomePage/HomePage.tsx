@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import WxSlider from "@components/WxSlider";
 import { ISliderItem } from "@interfaces/themeCustomization.interface";
@@ -126,7 +126,7 @@ export default function CustomizationHome() {
 
 	return (
 		<WxMainLg className="homeSection">
-			<WxFormHeader title="Homepage" />
+			<FormHeader title="Homepage" />
 			{isLoading && <Preloader />}
 			<div className="card p-3">
 				<div className="row">

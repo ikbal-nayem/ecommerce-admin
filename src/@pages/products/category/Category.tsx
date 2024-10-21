@@ -1,6 +1,6 @@
 import { Button } from '@components/Button';
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
-import WxMainLg from '@components/MainContentLayout/MainLg';
+import MainLg from '@components/MainContentLayout/MainLg';
 import NotFound from '@components/NotFound/NotFound';
 import CategoryTBSkelton from '@components/WxSkelton/CategoryTBSkelton';
 import { IObject } from '@interfaces/common.interface';
@@ -114,7 +114,7 @@ const Category = () => {
 	};
 
 	return (
-		<WxMainLg>
+		<MainLg>
 			<div className='d-flex justify-content-between align-items-center mb-3'>
 				<h4 className='text_h4 text_semibold mb-0'>Category</h4>
 				<Button disabled={isLoader} variant='fill' onClick={() => setOpen(true)}>
@@ -160,7 +160,7 @@ const Category = () => {
 				onConfirm={onDeleteConfirm}
 				body={`Are your sure you want to delete '${tempItem.current?.name}'? This action wont be reverseable!`}
 			/>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

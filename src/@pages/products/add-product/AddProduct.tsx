@@ -1,19 +1,14 @@
+import { FormHeader, WxFormFooter } from '@components/FormLayout';
 import MainLg from '@components/MainContentLayout/MainLg';
-import { WxFormFooter, WxFormHeader } from '@components/WxFormLayout';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { STATUS_CONSTANT } from 'config/constants';
+import { IObject } from '@interfaces/common.interface';
 import { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { PRODUCT } from 'routes/path-name.route';
-import { ITagBody } from 'services/api/admin/Tag.service';
 import { ICategoryPayload } from 'services/api/products/Category.services';
 import { ICollectionPayload } from 'services/api/products/Collection.services';
-import { ProductService } from 'services/api/products/Product.services';
-import { ToastService } from 'services/utils/toastr.service';
-import { getFirstErrorObj } from 'utils/errors';
 import './AddProduct.scss';
-// import ManageVendor from './components/manage-vendor/ManageVendor';
 import ProductDimension from './products-form/ProductDimension/ProductDimension';
 import ProductInfo from './products-form/ProductInfo/ProductInfo';
 import ProductMedia from './products-form/ProductMedia/ProductMedia';
@@ -21,49 +16,23 @@ import ProductOption from './products-form/ProductOption/ProductOption';
 import ProductPricing from './products-form/ProductPricing/ProductPricing';
 import ProductStock from './products-form/ProductStock/ProductStock';
 import ProductVariants from './products-form/ProductVariants/ProductVariants';
-import SearchEngine from './products-form/SearchEngine/SearchEngine';
 import SaveProducts from './save-product/SaveProduct';
-import schema from './validation';
+import schema, { defaultValues } from './validation';
 
 const AddProducts = () => {
-	const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
 	const [isSaving, setIsSaving] = useState<boolean>(false);
 	const [selectedCategory, setSelectedCategory] = useState<ICategoryPayload>({});
 	const [selectedCollections, setSelectedCollections] = useState<ICollectionPayload[]>([]);
-	const [selectedTags, setSelectedTags] = useState<ITagBody[]>([]);
 	const navigate = useNavigate();
 	const methods = useForm({
 		mode: 'onChange',
 		resolver: yupResolver(schema),
-		defaultValues: {
-			regularPrice: 0,
-			sellingPrice: 0,
-			costPrice: 0,
-			quantity: 0,
-			hasSummary: false,
-			hasDimension: false,
-			heightUnit: 'cm',
-			widthUnit: 'cm',
-			weightUnit: 'gm',
-			hasVariant: false,
-			isTrackQuantity: true,
-			isOverselling: false,
-			status: STATUS_CONSTANT.published,
-			categoryId: '',
-			collections: [],
-			tags: '',
-			images: [],
-		},
+		defaultValues,
 	});
 
 	useEffect(() => {
 		methods.setValue('collections', [...selectedCollections]);
 	}, [selectedCollections]);
-
-	useEffect(() => {
-		const tags = selectedTags?.map((tag) => tag.name)?.join(',');
-		methods.setValue('tags', tags);
-	}, [selectedTags]);
 
 	const categorySetter = (category: ICategoryPayload) => {
 		setSelectedCategory(category);
@@ -83,51 +52,34 @@ const AddProducts = () => {
 		setSelectedCollections(newCollections);
 	};
 
-	const onTagSelect = (tag: ITagBody) => {
-		if (!tag) return;
-		const newTags = [...selectedTags];
-		const idx = newTags.findIndex((val) => val.id === tag.id);
-		if (idx < 0) {
-			newTags.push(tag);
-			setSelectedTags(newTags);
-		}
-	};
+	const onSubmit = (data: IObject) => {
+		console.log(data);
 
-	const onRemoveTag = (idx: number) => {
-		const newTags = [...selectedTags];
-		newTags.splice(idx, 1);
-		setSelectedTags(newTags);
-	};
-
-	const setVendorDrawerOpen = () => setDrawerOpen(true);
-	const handleClose = () => setDrawerOpen(false);
-
-	const onSubmit = (data: any) => {
-		const errorParams = Object.keys(methods.formState.errors);
-		if (errorParams?.length) {
-			const errObj = getFirstErrorObj(methods.formState.errors);
-			methods.setFocus(errObj?.ref?.name);
-			ToastService.error(errObj?.message);
-			return;
-		}
-		setIsSaving(true);
-		const images: any = data?.images;
-		delete data?.images;
-		const formData = new FormData();
-		formData.append('body', JSON.stringify(data));
-		Object.keys(images).forEach((img) => formData.append('files', images[img]));
-		ProductService.createProduct(formData)
-			.then((resp) => {
-				ToastService.success(resp.message);
-				navigate(PRODUCT);
-			})
-			.catch((err) => ToastService.error(err.message))
-			.finally(() => setIsSaving(false));
+		// const errorParams = Object.keys(methods.formState.errors);
+		// if (errorParams?.length) {
+		// 	const errObj = getFirstErrorObj(methods.formState.errors);
+		// 	methods.setFocus(errObj?.ref?.name);
+		// 	ToastService.error(errObj?.message);
+		// 	return;
+		// }
+		// setIsSaving(true);
+		// const images: any = data?.images;
+		// delete data?.images;
+		// const formData = new FormData();
+		// formData.append('body', JSON.stringify(data));
+		// Object.keys(images).forEach((img) => formData.append('files', images[img]));
+		// ProductService.createProduct(formData)
+		// 	.then((resp) => {
+		// 		ToastService.success(resp.message);
+		// 		navigate(PRODUCT);
+		// 	})
+		// 	.catch((err) => ToastService.error(err.message))
+		// 	.finally(() => setIsSaving(false));
 	};
 
 	return (
 		<MainLg>
-			<WxFormHeader noMargin title='Add Product' backNavigationLink={PRODUCT} />
+			<FormHeader noMargin title='Add Product' backNavigationLink={PRODUCT} />
 			<FormProvider {...methods}>
 				<form noValidate onSubmit={methods.handleSubmit(onSubmit)}>
 					<div className='row mb-4'>
@@ -139,19 +91,15 @@ const AddProducts = () => {
 							<ProductStock />
 							<ProductOption />
 							<ProductVariants />
-							<SearchEngine />
+							{/* <SearchEngine /> */}
 						</div>
 						<div className='col-lg-4 col-md-5 col-sm-12'>
 							<SaveProducts
 								selectedCategory={selectedCategory}
 								selectedCollections={selectedCollections}
-								setVendorDrawerOpen={setVendorDrawerOpen}
 								categorySetter={categorySetter}
 								onCollectionSelect={onCollectionSelect}
 								onRemoveCollection={onRemoveCollection}
-								onTagSelect={onTagSelect}
-								selectedTags={selectedTags}
-								onRemoveTag={onRemoveTag}
 								isSaving={isSaving}
 							/>
 						</div>

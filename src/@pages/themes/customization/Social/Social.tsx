@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
 import { ThemeCustomizationService } from "services/api/settings/ThemeCustomization.service";
 import Preloader from "services/utils/preloader.service";
@@ -58,7 +58,7 @@ export default function CustomizationSocial() {
 		<WxMainLg className="social-sec">
 			{isLoading && <Preloader />}
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<WxFormHeader
+				<FormHeader
 					title="Social Media"
 					rightContent={
 						<Button variant="fill" type="submit">

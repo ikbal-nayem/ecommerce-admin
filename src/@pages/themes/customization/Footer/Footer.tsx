@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
 import Label from "@components/Label";
@@ -87,7 +87,7 @@ const SiteFooter = () => {
 	return (
 		<WxMainLg className="footer-sec">
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
-				<WxFormHeader
+				<FormHeader
 					title="Footer"
 					rightContent={
 						<Button variant="fill" type="submit" disabled={isSaving}>

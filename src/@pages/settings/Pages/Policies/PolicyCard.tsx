@@ -1,5 +1,5 @@
 import {Button} from "@components/Button";
-import WXEditor from "@components/WxEditor/WxEditor";
+import TextEditor from "@components/TextEditor/Editor";
 import { IPolicySettings } from "@interfaces/Settings.interface";
 import React, { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -92,7 +92,7 @@ const PolicyCard = ({ item, policies }) => {
 					control={control}
 					name="description"
 					render={({ field: { onChange, value }, fieldState: { error } }) => (
-						<WXEditor
+						<TextEditor
 							onEditorChange={onChange}
 							label="Description"
 							isRequired

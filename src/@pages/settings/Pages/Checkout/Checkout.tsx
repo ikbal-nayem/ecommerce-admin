@@ -1,7 +1,7 @@
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
 import {Button} from "@components/Button";
 import WxCheckbox from "@components/Checkbox";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxRadio from "@components/WxRadio/WxRadio";
 import Switch from "@components/Switch";
@@ -150,7 +150,7 @@ const Checkout = () => {
 			{(isLoadding || isSubmitting) && <Preloader />}
 			<form onSubmit={handleSubmit(onSubmitFun)}>
 				<div className="d-flex justify-content-between align-items-center mb-3">
-					<WxFormHeader title="Checkout" backNavigationLink={SETTINGS} />
+					<FormHeader title="Checkout" backNavigationLink={SETTINGS} />
 					{/* TODO::currently not working */}
 					{/* <Button
             variant="none"

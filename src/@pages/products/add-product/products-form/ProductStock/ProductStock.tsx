@@ -1,32 +1,31 @@
-import WxHr from "@components/WxHr";
-import TextInput from "@components/TextInput";
-import Switch from "@components/Switch";
-import { useFormContext } from "react-hook-form";
-import "./ProductStock.scss";
+import Switch from '@components/Switch';
+import TextInput from '@components/TextInput';
+import WxHr from '@components/WxHr';
+import { useFormContext } from 'react-hook-form';
 
 const ProductStock = () => {
-  const {
-    register,
-    watch,
-    formState: { errors },
-  } = useFormContext();
+	const {
+		register,
+		watch,
+		formState: { errors },
+	} = useFormContext();
 
-  const isTrackQuantity = watch("isTrackQuantity");
+	const trackStock = watch('trackStock');
 
-  return (
-		<div className="card product_stock p-3 mt-4">
-			<h6 className="text_semibold text_h6">Stock</h6>
+	return (
+		<div className='card p-3 my-4'>
+			<h6 className='text_semibold text_h6'>Stock</h6>
 
-			<div style={{ maxWidth: "90%" }}>
-				<div className="mb-4">
+			<div style={{ maxWidth: '90%' }}>
+				<div className='mb-4'>
 					<Switch
-						label="Do you want to track stock?"
-						checkedTitle="Yes"
-						unCheckedTitle="No"
-						registerProperty={{ ...register("isTrackQuantity") }}
+						label='Do you want to track stock?'
+						checkedTitle='Yes'
+						unCheckedTitle='No'
+						registerProperty={{ ...register('trackStock') }}
 					/>
 				</div>
-				{/* {isTrackQuantity ? (
+				{/* {trackStock ? (
           <div className="mb-4">
             <Switch
               label="Do you want to oversell?"
@@ -37,40 +36,40 @@ const ProductStock = () => {
           </div>
         ) : null} */}
 			</div>
-			{isTrackQuantity ? (
-				<div className="row">
-					<div className="col-md-6 col-sm-12">
+			{trackStock ? (
+				<div className='row'>
+					<div className='col-md-6 col-sm-12'>
 						<TextInput
-							type="number"
-							label="Quantity"
+							type='number'
+							label='Quantity'
 							noMargin
 							min={0}
-							placeholder="Stock quantity"
+							placeholder='Stock quantity'
 							registerProperty={{
-								...register("quantity", { valueAsNumber: true }),
+								...register('stock', { valueAsNumber: true }),
 							}}
-							errorMessage={errors.quantity?.message}
-							color={errors.quantity ? "danger" : "secondary"}
+							errorMessage={errors.stock?.message as string}
+							color={errors.stock ? 'danger' : 'secondary'}
 							onFocus={(e) => e.target.select()}
 						/>
 					</div>
 				</div>
 			) : null}
-			<WxHr className=" mt-4 mb-0" />
-			<div className="row">
-				<div className="col-md-6 col-sm-12 mt-3">
+			<WxHr className=' mt-4 mb-0' />
+			<div className='row'>
+				<div className='col-md-6 col-sm-12 mt-3'>
 					<TextInput
-						label="Product SKU"
+						label='Product SKU'
 						noMargin
-						registerProperty={{ ...register("sku") }}
+						registerProperty={{ ...register('sku') }}
 						onFocus={(e) => e.target.select()}
 					/>
 				</div>
-				<div className="col-md-6 col-sm-12 mt-3">
+				<div className='col-md-6 col-sm-12 mt-3'>
 					<TextInput
-						label="Barcode"
+						label='Barcode'
 						noMargin
-						registerProperty={{ ...register("barCode") }}
+						registerProperty={{ ...register('barCode') }}
 						onFocus={(e) => e.target.select()}
 					/>
 				</div>

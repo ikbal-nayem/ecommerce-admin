@@ -1,4 +1,4 @@
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import { ENV } from "config/ENV.config";
 import Preloader from "services/utils/preloader.service";
 import { useState } from "react";
@@ -20,7 +20,7 @@ const AppStore = () => {
 
 	return (
 		<>
-			<WxFormHeader title="App Configuration" />
+			<FormHeader title="App Configuration" />
 			<div className="mt-3 h-100">
 				{isLoading ? <Preloader absolutePosition /> : null}
 				<iframe

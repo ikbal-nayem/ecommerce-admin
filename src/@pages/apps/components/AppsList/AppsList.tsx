@@ -1,7 +1,7 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import WxSelect from "@components/Select/Select";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import { IAppDetails, IInstalledApp } from "@interfaces/app.interface";
@@ -59,7 +59,7 @@ const AppsList = () => {
 
 	return (
 		<WxMainXl className="wx__apps_list_page">
-			<WxFormHeader title="Browse All Apps" backNavigationLink={APPS} />
+			<FormHeader title="Browse All Apps" backNavigationLink={APPS} />
 			<div className="card mt-3 p-4">
 				<div className="row  pb-0 app-list-top">
 					<div className="col-md-8 col-sm-12 mb-3">

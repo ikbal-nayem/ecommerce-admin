@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import Switch from "@components/Switch";
@@ -142,7 +142,7 @@ const Notification = () => {
   return (
     <div>
       <WxMainLg className="notification_sec">
-        <WxFormHeader title="Notfication" backNavigationLink={SETTINGS} />
+        <FormHeader title="Notfication" backNavigationLink={SETTINGS} />
         <div className="row">
           <div className="notification_left col-lg-8 col-md-12 col-sm-12 mt-3">
             <div className="card p-4">

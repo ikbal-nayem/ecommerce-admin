@@ -1,6 +1,6 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import PaymentMethodSkelton from "@components/WxSkelton/Setting/Payment/PaymentMethodSkelton";
 import WxTag from "@components/WxTag";
 import { MASTER_META_KEY } from "config/constants";
@@ -126,7 +126,7 @@ const Payment = () => {
   return (
     <div>
       <WxMainMd className="setting_patment_page">
-        <WxFormHeader title="Payment" backNavigationLink={SETTINGS} />
+        <FormHeader title="Payment" backNavigationLink={SETTINGS} />
         {!configureLoader ? (
           configuredList?.gateway?.length ||
           configuredList?.offlinePayment?.length ? (

@@ -3,7 +3,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxCheckbox from "@components/Checkbox";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -195,7 +195,7 @@ const CreateOrder = () => {
 
 	return (
 		<WxMainLg>
-			<WxFormHeader noMargin title="Create Order" backNavigationLink={ORDER} />
+			<FormHeader noMargin title="Create Order" backNavigationLink={ORDER} />
 			<form onSubmit={handleSubmit(onSubmitting)}>
 				<div className="row ">
 					<div className="col-md-8 col-sm-12 mt-3">

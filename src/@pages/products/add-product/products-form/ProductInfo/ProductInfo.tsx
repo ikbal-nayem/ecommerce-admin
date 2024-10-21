@@ -1,8 +1,6 @@
-import WxEditor from "@components/WxEditor/WxEditor";
-import TextInput from "@components/TextInput";
-import Switch from "@components/Switch";
-import { Controller, useFormContext } from "react-hook-form";
-import "./ProductInfo.scss";
+import TextInput from '@components/TextInput';
+import TextEditor from '@components/TextEditor/Editor';
+import { Controller, useFormContext } from 'react-hook-form';
 
 const ProductInfo = () => {
 	const {
@@ -12,30 +10,29 @@ const ProductInfo = () => {
 		formState: { errors },
 	} = useFormContext();
 
-	const hasSummary = watch("hasSummary");
+	// const hasSummary = watch("hasSummary");
 
 	return (
-		<div className="card p-3 mt-4">
+		<div className='card p-3 mt-4'>
 			<TextInput
-				label="Product Title"
+				label='Product Title'
 				isRequired
-				className=""
-				registerProperty={{ ...register("title") }}
-				errorMessage={errors.title?.message}
-				color={errors.title ? "danger" : "secondary"}
+				registerProperty={{ ...register('name') }}
+				errorMessage={errors.name?.message as string}
+				color={errors.name ? 'danger' : 'secondary'}
 			/>
-			<div className="form_group">
+			<div className='form_group mb-0'>
 				<label>Product Description</label>
 				<Controller
 					control={control}
-					name="description"
+					name='description'
 					render={({ field: { onChange, value } }) => (
-						<WxEditor onEditorChange={onChange} defaultValue={value} />
+						<TextEditor onEditorChange={onChange} defaultValue={value} noMargin />
 					)}
 				/>
 			</div>
 
-			<div className="mt-3" style={{ maxWidth: "90%" }}>
+			{/* <div className="mt-3" style={{ maxWidth: "90%" }}>
 				<Switch
 					label="Add Product Summary"
 					checkedTitle="Yes"
@@ -51,11 +48,11 @@ const ProductInfo = () => {
 						control={control}
 						name="summary"
 						render={({ field: { onChange, value } }) => (
-							<WxEditor onEditorChange={onChange} defaultValue={value} />
+							<TextEditor onEditorChange={onChange} defaultValue={value} />
 						)}
 					/>
 				</div>
-			) : null}
+			) : null} */}
 		</div>
 	);
 };

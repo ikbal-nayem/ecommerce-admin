@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import { IRequestMeta } from "@interfaces/common.interface";
 import { SETTINGS, SETTINGS_ROLES_CREATE } from "routes/path-name.route";
@@ -80,7 +80,7 @@ const Role = () => {
     <div>
       <WxMainLg>
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <WxFormHeader title="User Roles" backNavigationLink={SETTINGS} />
+          <FormHeader title="User Roles" backNavigationLink={SETTINGS} />
           {/* <Button
             variant="fill"
             onClick={() => navigate(SETTINGS_ROLES_CREATE)}

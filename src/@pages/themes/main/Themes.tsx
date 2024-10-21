@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import {
   ITheme,
@@ -38,7 +38,7 @@ const Themes = () => {
 
   return (
     <WxMainLg className="theme_page">
-      <WxFormHeader
+      <FormHeader
         title="Themes"
         noBack
         rightContent={

@@ -3,7 +3,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import CustomerAdresSkelton from "@components/WxSkelton/Customer/CustomerAdresSkelton";
@@ -230,7 +230,7 @@ const CustomerDetails = () => {
     <WxMainLg className="wx__customer_details">
       <div className="wx__customer_header d-flex align-items-center justify-content-between">
         {!isLoading && (
-          <WxFormHeader
+          <FormHeader
             noMargin
             title={customer?.customer ? "Customer Details" : "Back"}
             backNavigationLink={CUSTOMERS}

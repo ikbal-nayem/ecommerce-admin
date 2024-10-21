@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormContainer, WxFormHeader } from "@components/WxFormLayout";
+import { WxFormContainer, FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ORDER_DETAILS } from "routes/path-name.route";
@@ -124,7 +124,7 @@ const RedXOrderPlace = () => {
     <WxMainLg>
       <WxFormContainer>
         <form onSubmit={handleSubmit(orderPlaceFormSubmit)}>
-          <WxFormHeader
+          <FormHeader
             title="Redx Info"
             backNavigationLink={ORDER_DETAILS({ order_id: order_id })}
           />

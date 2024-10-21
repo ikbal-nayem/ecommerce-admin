@@ -1,7 +1,7 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormFooter } from "@components/WxFormLayout";
+import { WxFormFooter } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";

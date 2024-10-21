@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
 import { IProductVariant } from "@interfaces/product.interface";
 import { ORDER_DETAILS } from "routes/path-name.route";
@@ -113,7 +113,7 @@ const OrderReturn = () => {
 
   return (
     <WxMainLg>
-      <WxFormHeader
+      <FormHeader
         title="Return Order"
         backNavigationLink={ORDER_DETAILS({ order_id })}
       />

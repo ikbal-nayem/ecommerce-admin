@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -61,7 +61,7 @@ const SiteOperator = () => {
 	};
 	return (
 		<WxMainLg className="operator_create">
-			<WxFormHeader
+			<FormHeader
 				title="Add Operator "
 				backNavigationLink={SETTINGS_SITE_OPERATOR}
 			/>

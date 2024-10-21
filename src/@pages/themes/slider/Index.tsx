@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import TableLoader from "@components/TableLoader/TableLoader";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import Switch from "@components/Switch";
 import WxThumbnail from "@components/Thumbnail";
@@ -121,7 +121,7 @@ const Slider = () => {
 
 	return (
 		<WxMainLg className="homeSection">
-			<WxFormHeader title="Slider" />
+			<FormHeader title="Slider" />
 			<div className="card p-3">
 				<TableLoader isLoading={isLoading} />
 				<div className="title_section">

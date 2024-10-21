@@ -1,8 +1,8 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import { WxFormFooter } from "@components/WxFormLayout";
-import WxFormContainer from "@components/WxFormLayout/WxFormContainer";
-import WxFormHeader from "@components/WxFormLayout/WxFormHeader";
+import { WxFormFooter } from "@components/FormLayout";
+import WxFormContainer from "@components/FormLayout/WxFormContainer";
+import FormHeader from "@components/FormLayout/FormHeader";
 import TextInput from "@components/TextInput";
 import Label from "@components/Label";
 import MediaInput from "@components/MediaInput/MediaInput";
@@ -92,7 +92,7 @@ const Preferences = () => {
   return (
     <WxMainLg>
       <WxFormContainer>
-        <WxFormHeader title="Preferences" />
+        <FormHeader title="Preferences" />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
           <div className="row">
             <div className="col-lg-9 col-md-8 col-sm-12">

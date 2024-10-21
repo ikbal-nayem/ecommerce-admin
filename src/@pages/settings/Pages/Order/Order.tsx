@@ -1,6 +1,6 @@
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
 import WxCheckbox from "@components/Checkbox";
-import { WxFormFooter, WxFormHeader } from "@components/WxFormLayout";
+import { WxFormFooter, FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
 import { IOrderSettingsResponse } from "@interfaces/order.interface";
@@ -63,7 +63,7 @@ const Order = () => {
 
   return (
     <WxMainMd className="setting_order_page">
-      <WxFormHeader title="Order" backNavigationLink={SETTINGS} />
+      <FormHeader title="Order" backNavigationLink={SETTINGS} />
       <div className="card p-3 mt-4">
         <h6 className="text_heading text_semibold">
           Online Store Nature

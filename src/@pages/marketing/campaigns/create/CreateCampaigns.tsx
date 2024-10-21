@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import { MASTER_META_KEY } from "config/constants";
 import { CAMPAIGNS } from "routes/path-name.route";
 import { useEffect, useState } from "react";
@@ -30,7 +30,7 @@ const CreateCampaigns = () => {
 
   return (
     <WxMainLg>
-      <WxFormHeader
+      <FormHeader
         noMargin
         title={formTitle}
         backNavigationLink={CAMPAIGNS + "?type=" + searchParams.get("campaign")}

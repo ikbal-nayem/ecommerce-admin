@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import { IPortalPaymentMedia } from "@interfaces/portal.interface";
 import { ProfileService } from "services/api/settings/Profile.service";
 import Preloader from "services/utils/preloader.service";
@@ -80,7 +80,7 @@ export default function PaymentInfo() {
 
 	return (
 		<WxMainFull>
-			<WxFormHeader
+			<FormHeader
 				title="Payment info"
 				noBack
 				rightContent={

@@ -5,7 +5,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import Label from "@components/Label";
 import WxTag from "@components/WxTag";
@@ -367,7 +367,7 @@ const OrderDetails = () => {
 
 	return (
 		<WxMainLg>
-			<WxFormHeader
+			<FormHeader
 				title={`${orderDetails?.orderNo}`}
 				backNavigationLink={ORDER}
 				rightContent={

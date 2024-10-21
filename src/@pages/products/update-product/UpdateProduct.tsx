@@ -2,8 +2,8 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import {
 	WxFormContainer,
 	WxFormFooter,
-	WxFormHeader,
-} from "@components/WxFormLayout";
+	FormHeader,
+} from "@components/FormLayout";
 import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "@pages/products/add-product/validation";
 import { PRODUCT } from "routes/path-name.route";
@@ -148,7 +148,7 @@ const UpdateProducts = () => {
 	return (
 		<WxMainLg>
 			{/* <WxFormContainer> */}
-			<WxFormHeader
+			<FormHeader
 				noMargin
 				title="Update Product"
 				backNavigationLink={PRODUCT}

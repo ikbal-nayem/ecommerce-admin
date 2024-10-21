@@ -3,7 +3,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/Thumbnail";
 import { IInstalledApp } from "@interfaces/app.interface";
@@ -71,7 +71,7 @@ const DowngradeApps = () => {
 
 	return (
 		<WxMainXl className="wx__apps-page">
-			<WxFormHeader title="Installed apps" noBack />
+			<FormHeader title="Installed apps" noBack />
 			{!!installedApp?.length && (
 				<WxAlert>You have to uninstall these installed apps.</WxAlert>
 			)}

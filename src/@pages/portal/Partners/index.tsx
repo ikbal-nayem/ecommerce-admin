@@ -1,6 +1,6 @@
 import WxMainFull from "@components/MainContentLayout/WxMainFull";
 import WxNotFound from "@components/NotFound/NotFound";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
@@ -57,7 +57,7 @@ export default function Partners() {
 
   return (
     <WxMainFull>
-      <WxFormHeader title="Partner" />
+      <FormHeader title="Partner" />
       {isLoading ? (
         <div className="rounded w-100 bg-white mt-3">
           <ProductTableSkelton viewBox="0 0 600 230" />

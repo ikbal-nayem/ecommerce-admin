@@ -1,6 +1,6 @@
 import WxMainLg from '@components/MainContentLayout/MainLg';
 import {Button} from '@components/Button';
-import { WxFormHeader } from '@components/WxFormLayout';
+import { FormHeader } from '@components/FormLayout';
 import WxHr from '@components/WxHr';
 import WxIcon from '@components/Icon';
 import TextInput from '@components/TextInput';
@@ -223,7 +223,7 @@ const CreateMenu = () => {
 
 	return (
 		<WxMainLg className='create_menu_sec'>
-			<WxFormHeader title='Update Menu' backNavigationLink={MENU} />
+			<FormHeader title='Update Menu' backNavigationLink={MENU} />
 			<form onSubmit={handleSubmit(onSubmitting)} noValidate>
 				<div className='row m-auto w-100'>
 					<div className='col-lg-8 cards-sec col-md-12 col-sm-12 left'>

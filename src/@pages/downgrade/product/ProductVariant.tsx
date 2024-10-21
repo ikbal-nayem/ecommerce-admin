@@ -4,7 +4,7 @@ import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import WxCheckbox from "@components/Checkbox";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTag from "@components/WxTag";
@@ -97,7 +97,7 @@ const ProductVariant = () => {
 
 	return (
 		<WxMainXl className="downgrade-list-page">
-			<WxFormHeader
+			<FormHeader
 				title="Products with variant"
 				noBack
 				rightContent={

@@ -3,8 +3,8 @@ import {Button} from "@components/Button";
 import {
   WxFormContainer,
   WxFormFooter,
-  WxFormHeader,
-} from "@components/WxFormLayout";
+  FormHeader,
+} from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -137,7 +137,7 @@ const UpdateOrder = () => {
   return (
     <WxMainLg>
       <WxFormContainer>
-        <WxFormHeader
+        <FormHeader
           title="Edit Order"
           backNavigationLink={ORDER_DETAILS({ order_id })}
         />

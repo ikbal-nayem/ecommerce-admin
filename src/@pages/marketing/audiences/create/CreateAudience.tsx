@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import { WxFormFooter, WxFormHeader } from "@components/WxFormLayout";
+import { WxFormFooter, FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import { AUDIENCES } from "routes/path-name.route";
 import { useEffect, useState } from "react";
@@ -32,7 +32,7 @@ const CreateAudience = () => {
 
   return (
     <WxMainLg>
-      <WxFormHeader
+      <FormHeader
         noMargin
         title={formTitle}
         backNavigationLink={AUDIENCES + "?type=" + searchParams.get("audience")}

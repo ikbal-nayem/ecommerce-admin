@@ -1,5 +1,5 @@
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
 import WxTextarea from "@components/WxTextarea";
 import { SETTINGS_ROLES } from "routes/path-name.route";
@@ -57,7 +57,7 @@ const CreateUserRoles = () => {
 
   return (
     <WxMainLg className="create_roles_sec">
-      <WxFormHeader
+      <FormHeader
         title={`${id ? "Update" : "Create"} Role`}
         backNavigationLink={SETTINGS_ROLES}
       />

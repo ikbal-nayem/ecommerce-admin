@@ -3,7 +3,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import { WxFormHeader } from "@components/WxFormLayout";
+import { FormHeader } from "@components/FormLayout";
 import WxIcon from "@components/Icon";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
@@ -111,7 +111,7 @@ const Themes = () => {
 
 	return (
 		<WxMainXl className="downgrade-list-page">
-			<WxFormHeader title="Installed themes" noBack />
+			<FormHeader title="Installed themes" noBack />
 			{/* {!!productList?.length && (
 				<WxAlert>
 					Each product can only have maximum{" "}

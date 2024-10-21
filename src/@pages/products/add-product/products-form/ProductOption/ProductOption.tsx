@@ -1,24 +1,20 @@
-import WxAlert from "@components/Alert/WxAlert";
-import {Button} from "@components/Button";
-import { WxDraggableList } from "@components/WxDraggableList";
-import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
-import TextInput from "@components/TextInput";
-import Label from "@components/Label";
-import Switch from "@components/Switch";
-import WxTag from "@components/WxTag";
-import { SETTINGS_PRICING_PLAN } from "routes/path-name.route";
-import { useEffect, useRef, useState } from "react";
-import { useFormContext } from "react-hook-form";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { generateId } from "utils/random-generate";
-import "./ProductOption.scss";
+import { Button } from '@components/Button';
+import Icon from '@components/Icon';
+import Label from '@components/Label';
+import Switch from '@components/Switch';
+import TextInput from '@components/TextInput';
+import { WxDraggableList } from '@components/WxDraggableList';
+import WxHr from '@components/WxHr';
+import WxTag from '@components/WxTag';
+import { useEffect, useRef, useState } from 'react';
+import { useFormContext } from 'react-hook-form';
+import { generateId } from 'utils/random-generate';
+import './ProductOption.scss';
 
 const dummy_options = [
 	{
 		id: generateId(),
-		name: "",
+		name: '',
 		values: [],
 	},
 ];
@@ -39,10 +35,7 @@ type RenderOptionProps = {
 	index: number;
 	optionDragHandler: any;
 	onAddNewValue: (optionIndex: number, val: any) => void;
-	handleValueOrderChange: (
-		optionId: string | number,
-		updatedOrder: any[]
-	) => void;
+	handleValueOrderChange: (optionId: string | number, updatedOrder: any[]) => void;
 	handleOptionChange: Function;
 	handleOptionValueChange: Function;
 	onDeleteValue: Function;
@@ -64,9 +57,7 @@ const RenderOption = ({
 	focusIndex,
 	hasVariant,
 }: RenderOptionProps) => {
-	const [isEdit, setIsEdit] = useState<boolean>(
-		!hasVariant || optionItem?.values?.length === 0
-	);
+	const [isEdit, setIsEdit] = useState<boolean>(!hasVariant || optionItem?.values?.length === 0);
 
 	const onValueOrderChange = (updatedOrder: any[]) => {
 		handleValueOrderChange(optionItem?.id, updatedOrder);
@@ -75,30 +66,21 @@ const RenderOption = ({
 	if (!isEdit) {
 		return (
 			<>
-				<div className="d-flex align-items-center">
-					<span
-						className="material-icons-round drag_indicator"
-						{...optionDragHandler}
-					>
+				<div className='d-flex align-items-center'>
+					<span className='material-symbols-rounded drag_indicator' {...optionDragHandler}>
 						drag_indicator
 					</span>
-					<div className="d-flex w-100 align-items-center">
-						<div className="me-auto ms-4">
+					<div className='d-flex w-100 align-items-center'>
+						<div className='me-auto ms-4'>
 							<strong>{optionItem?.name}</strong>
-							<div className="d-flex gap-2 mt-1 flex-wrap">
+							<div className='d-flex gap-2 mt-1 flex-wrap'>
 								{optionItem?.values?.map((value: any) =>
-									value?.name ? (
-										<WxTag key={value?.id} label={value?.name} />
-									) : null
+									value?.name ? <WxTag key={value?.id} label={value?.name} /> : null
 								)}
 							</div>
 						</div>
 						<div>
-							<Button
-								variant="outline"
-								color="secondary"
-								onClick={() => setIsEdit(true)}
-							>
+							<Button variant='outline' color='secondary' onClick={() => setIsEdit(true)}>
 								Edit
 							</Button>
 						</div>
@@ -111,88 +93,62 @@ const RenderOption = ({
 
 	return (
 		<>
-			<div className="product_option_name">
+			<div className='product_option_name'>
 				{optionItem?.name && optionItem?.values?.length ? (
-					<span
-						className="material-icons-round drag_indicator"
-						{...optionDragHandler}
-					>
+					<span className='material-symbols-rounded drag_indicator' {...optionDragHandler}>
 						drag_indicator
 					</span>
 				) : null}
 				<TextInput
-					label="Option name"
-					placeholder="For example: Color or size or meterial etc"
+					label='Option name'
+					placeholder='For example: Color or size or meterial etc'
 					value={optionItem?.name}
-					className={
-						!(optionItem?.name && optionItem?.values?.length) ? "ms-5" : ""
-					}
+					className={!(optionItem?.name && optionItem?.values?.length) ? 'ms-5' : ''}
 					onChange={(e: any) => handleOptionChange(index, e.target?.value)}
 				/>
-				<WxIcon
-					icon="delete_outline"
-					className="delete_icon"
-					onClick={() => onDeleteOption(index)}
-				/>
-				{/* <span
-          className="material-icons-round delete_icon"
-          role="button"
-          onClick={() => onDeleteOption(index)}
-        >
-          delete_outline
-        </span> */}
+				<Icon icon='delete_outline' className='mt-2 ms-1' size={25} onClick={() => onDeleteOption(index)} />
 			</div>
-			<div className="product_option_values">
+			<div className='product_option_values'>
 				<Label>Option Values</Label>
 				<WxDraggableList
 					data={optionItem?.values}
-					itemId="id"
+					itemId='id'
 					onOrderChange={onValueOrderChange}
-					renderItem={(
-						valueItem: IValueInterface,
-						valueIndex: number,
-						dragHandler: any
-					) => (
-						<div className="product_option_value">
-							<span
-								className="material-icons-round drag_indicator"
-								{...dragHandler}
-							>
+					renderItem={(valueItem: IValueInterface, valueIndex: number, dragHandler: any) => (
+						<div className='product_option_value'>
+							<span className='material-symbols-rounded drag_indicator' {...dragHandler}>
 								drag_indicator
 							</span>
 							<TextInput
-								placeholder="Add another value"
+								placeholder='Add another value'
 								defaultValue={valueItem?.name}
 								noMargin
-								onChange={(e: any) =>
-									handleOptionValueChange(index, valueIndex, e.target.value)
-								}
+								onChange={(e: any) => handleOptionValueChange(index, valueIndex, e.target.value)}
 								isAutoFocus={focusIndex === valueIndex}
 							/>
-							<span
-								className="material-icons-round delete_icon"
-								role="button"
+							<Icon
+								icon='delete_outline'
+								className='mt-1 ms-1'
+								size={25}
 								onClick={() => onDeleteValue(index, valueIndex)}
-							>
-								delete_outline
-							</span>
+							/>
 						</div>
 					)}
 				/>
 				<TextInput
-					placeholder="Add another value"
+					placeholder='Add another value'
 					onChange={(e: any) => {
 						onAddNewValue(index, e.target.value);
-						e.target.value = "";
+						e.target.value = '';
 					}}
-					className="ms-5"
+					className='ms-5'
 				/>
 			</div>
-			<div className="ms-5">
+			<div className='ms-5'>
 				<Button
-					variant="outline"
+					variant='outline'
 					disabled={!optionItem?.name || optionItem?.values?.length === 0}
-					color="secondary"
+					color='secondary'
 					onClick={() => setIsEdit(false)}
 				>
 					Done
@@ -208,13 +164,11 @@ const ProductOption = () => {
 	const [focusIndex, setFocusIndex] = useState<number>();
 	const isInit = useRef(true);
 
-	const { activePlan } = useSelector((state: any) => state?.user);
-
 	const { register, watch, setValue, getValues } = useFormContext();
 
-	const hasVariant = watch("hasVariant");
+	const hasVariant = watch('hasVariant');
 
-	const defaultOptions = getValues("options");
+	const defaultOptions = getValues('options');
 
 	useEffect(() => {
 		if (isInit.current && defaultOptions) {
@@ -224,17 +178,14 @@ const ProductOption = () => {
 	}, [defaultOptions, isInit.current]);
 
 	useEffect(() => {
-		setValue("options", options || []);
+		setValue('options', options || []);
 	}, [options]);
 
 	const onOrderChange = (updatedOrder: any[]) => {
 		setOptions(updatedOrder);
 	};
 
-	const onValueOrderChange = (
-		optionId: string | number,
-		updatedOrder: any[]
-	) => {
+	const onValueOrderChange = (optionId: string | number, updatedOrder: any[]) => {
 		const idx = options.findIndex((op) => op.id === optionId);
 		setOptions((prev) => {
 			prev[idx].values = updatedOrder;
@@ -248,11 +199,7 @@ const ProductOption = () => {
 		setOptions(optionList);
 	};
 
-	const handleOptionValueChange = (
-		optionIndex: number,
-		valueIndex: number,
-		value: string
-	) => {
+	const handleOptionValueChange = (optionIndex: number, valueIndex: number, value: string) => {
 		let optionList = [...options];
 		optionList[optionIndex].values[valueIndex].name = value;
 		setOptions(optionList);
@@ -266,10 +213,7 @@ const ProductOption = () => {
 	};
 
 	const onAddNewOption = () => {
-		const prevOptionList = [
-			...options,
-			{ id: generateId(), name: "", values: [] },
-		];
+		const prevOptionList = [...options, { id: generateId(), name: '', values: [] }];
 		setOptions(prevOptionList);
 	};
 
@@ -286,25 +230,18 @@ const ProductOption = () => {
 	};
 
 	return (
-		<div className="card product_option p-3 mt-4">
-			<h6 className="text_semibold text_h6">
+		<div className='card product_option p-3 mt-4'>
+			<h6 className='text_semibold text_h6'>
 				Options
-				<WxIcon variants="round" icon="help" role="button" />
+				<Icon variants='round' icon='help' role='button' />
 			</h6>
-			{!activePlan?.hasProductVariant ? (
-				<WxAlert type="warning">
-					Please upgrade your <Link to={SETTINGS_PRICING_PLAN}>plan</Link> to
-					add product options.
-				</WxAlert>
-			) : null}
-			<div style={{ maxWidth: "90%" }}>
-				<div className="mb-2">
+			<div style={{ maxWidth: '90%' }}>
+				<div className='mb-2'>
 					<Switch
-						label="This product has options, like size or color etc."
-						checkedTitle="Yes"
-						unCheckedTitle="No"
-						disabled={!activePlan?.hasProductVariant}
-						registerProperty={{ ...register("hasVariant") }}
+						label='This product has options, like size or color etc.'
+						checkedTitle='Yes'
+						unCheckedTitle='No'
+						registerProperty={{ ...register('hasVariant') }}
 					/>
 				</div>
 			</div>
@@ -312,10 +249,10 @@ const ProductOption = () => {
 			{hasVariant ? (
 				<>
 					<WxHr />
-					<div className="product_option_list">
+					<div className='product_option_list'>
 						<WxDraggableList
 							data={options}
-							itemId="id"
+							itemId='id'
 							renderItem={(optionItem, index, optionDragHandler) => (
 								<RenderOption
 									optionItem={optionItem}
@@ -337,7 +274,7 @@ const ProductOption = () => {
 					{options.length < 3 ? (
 						<div>
 							<Button onClick={onAddNewOption}>
-								<WxIcon icon="add" className="text-primary" />
+								<Icon icon='add' className='text-primary' />
 								&nbsp; Add another option
 							</Button>
 						</div>
