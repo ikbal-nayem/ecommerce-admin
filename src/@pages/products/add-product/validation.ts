@@ -15,7 +15,7 @@ export const defaultValues = {
 	trackStock: true,
 	isOverselling: false,
 	isActive: false,
-	categoryId: '',
+	category: '',
 	collections: [],
 	tags: '',
 	images: [],
@@ -32,8 +32,7 @@ const schema = yup
 			.positive()
 			.required('Please provide product price')
 			.typeError('Must specify a number')
-			.min(0, 'Min value 0')
-			.nullable(true),
+			.min(0, 'Min value 0'),
 		discountPrice: yup
 			.number()
 			.positive()
@@ -50,32 +49,33 @@ const schema = yup
 			.number()
 			.positive()
 			.min(0, 'Min value 0')
-			.nullable(true)
+			.nullable()
 			.transform((_, val) => (val === Number(val) ? val : null)),
 		height: yup
 			.number()
 			.positive()
 			.min(0, '')
-			.nullable(true)
+			.nullable()
 			.transform((_, val) => (val === Number(val) ? val : null)),
 		weight: yup
 			.number()
 			.positive()
 			.min(0, '')
-			.nullable(true)
+			.nullable()
 			.transform((_, val) => (val === Number(val) ? val : null)),
 		width: yup
 			.number()
 			.positive()
 			.min(0, '')
-			.nullable(true)
+			.nullable()
 			.transform((_, val) => (val === Number(val) ? val : null)),
 		quantity: yup
 			.number()
 			.positive()
 			.min(0, 'Set a quantity')
-			.nullable(true)
+			.nullable()
 			.transform((_, val) => (val === Number(val) ? val : null)),
+		sku: yup.string().required(),
 	})
 	.required();
 

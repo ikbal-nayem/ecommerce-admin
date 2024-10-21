@@ -1,16 +1,17 @@
 import { Button } from '@components/Button';
+import Checkbox from '@components/Checkbox';
 import Drawer from '@components/Drawer';
 import DrawerBody from '@components/Drawer/DrawerBody';
 import DrawerFooter from '@components/Drawer/DrawerFooter';
 import DrawerHeader from '@components/Drawer/DrawerHeader';
 import TextInput from '@components/TextInput';
-import WxCheckbox from '@components/Checkbox';
 import React, { useEffect, useState } from 'react';
 import { CollectionService, ICollectionPayload } from 'services/api/products/Collection.services';
 import Preloader from 'services/utils/preloader.service';
 import useDebounce from 'utils/debouncer';
 
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
+import useLoader from 'hooks/useLoader';
 import { ToastService } from 'services/utils/toastr.service';
 import './SelectCollections.scss';
 
@@ -21,7 +22,7 @@ type SelectCollectionProps = {
 
 const SelectCollection = ({ selectedCollections, setCollections }: SelectCollectionProps) => {
 	const [drawer_open, setDrawerOpen] = useState(false);
-	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const [isLoading, setIsLoading] = useLoader(false);
 	const [searchQuery, setSearchQuery] = useState<string>('');
 	const [collectionList, setCollectionList] = useState<ICollectionPayload[]>([]);
 	let search = useDebounce(searchQuery, 500);
@@ -44,7 +45,7 @@ const SelectCollection = ({ selectedCollections, setCollections }: SelectCollect
 		};
 		CollectionService.get(payload)
 			.then((res) => {
-				if (res.body.length) setCollectionList(res.body);
+				if (res.data?.length) setCollectionList(res.data);
 			})
 			.catch((err) => ToastService.error(err.message))
 			.finally(() => setIsLoading(false));
@@ -62,19 +63,26 @@ const SelectCollection = ({ selectedCollections, setCollections }: SelectCollect
 					<DrawerBody>
 						<TextInput
 							type='search'
-							startIcon={<WxIcon icon='search' />}
+							startIcon={<Icon icon='search' />}
 							placeholder='Search categories'
 							onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
 						/>
-						{isLoading ? <Preloader absolutePosition /> : null}
 						<div className='collections'>
-							{!collectionList?.length ? <div className='text-center'>No collections found!</div> : null}
+							<hr />
+							{!collectionList?.length ? (
+								isLoading ? (
+									<Preloader />
+								) : (
+									<div className='text-center'>No collections found!</div>
+								)
+							) : null}
 							<ul>
 								{collectionList?.map((collection) => (
-									<li key={collection._id}>
-										<WxCheckbox
+									<li className='bg-light px-2 py-1 rounded' key={collection._id}>
+										<Checkbox
 											id={collection._id}
 											label={collection.name}
+											noMargin
 											onChange={() => setCollections(collection)}
 											checked={selectedCollections.some((val) => val._id === collection._id)}
 										/>

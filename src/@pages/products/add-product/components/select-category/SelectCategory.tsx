@@ -29,13 +29,13 @@ const SelectCategory = ({ setCategory, selectedCategory }: SelectCategoryProps) 
 	const handleClose = () => setDrawerOpen(false);
 
 	const getCategory = () => {
-		// setIsLoading(true);
-		// CategoryService.categoryGetByStoreId('')
-		// 	.then((res) => {
-		// 		if (res.body.length) setCategories(res.body);
-		// 	})
-		// 	.catch((err) => ToastService.error(err))
-		// 	.finally(() => setIsLoading(false));
+		setIsLoading(true);
+		CategoryService.getTree()
+			.then((res) => {
+				if (res.data.length) setCategories(res.data);
+			})
+			.catch((err) => ToastService.error(err))
+			.finally(() => setIsLoading(false));
 	};
 
 	const onFinalSelect = () => {

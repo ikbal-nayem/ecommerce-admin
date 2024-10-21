@@ -52,7 +52,7 @@
 		"webx-brighten": "^0.0.9",
 		"wx-ckeditor": "github:nhrasal/wx-ckeditor",
 		"xlsx": "^0.18.5",
-		"yup": "^0.32.11"
+		"yup": "^1.4.0"
 	},
 	"devDependencies": {
 		"@hookform/devtools": "^4.1.0",

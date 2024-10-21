@@ -1,6 +1,6 @@
 import DateInput from "@components/DatePicker/DateInput";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -144,7 +144,7 @@ const CouponForm = ({
                   onFocus={(e) => e.target.select()}
                 />
                 <div>
-                  <WxCheckbox
+                  <Checkbox
                     id="typeRadioButton"
                     label="Set maximum discount amount"
                     // checked={watch("maximumDiscount") > 0 ? true : false}
@@ -719,7 +719,7 @@ const CouponForm = ({
                 />
               </div>
             </div>
-            <WxCheckbox
+            <Checkbox
               id="sdf"
               label="Set end date"
               registerProperty={{

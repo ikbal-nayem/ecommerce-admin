@@ -1,5 +1,5 @@
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
@@ -419,7 +419,7 @@ const AddCouponDrawer = forwardRef(
                     ? listContent[drawerContent].map(
                         (item: any, index: number) => {
                           return (
-                            <WxCheckbox
+                            <Checkbox
                               key={item.id}
                               className="py-3 wx__product_list_in_select_product_drawer"
                               onChange={(e) => {

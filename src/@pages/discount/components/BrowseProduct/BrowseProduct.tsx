@@ -1,5 +1,5 @@
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 import WxDrawer from "@components/Drawer";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
@@ -85,14 +85,14 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
           </div>
           <div className="checkbox">
             <div>
-              <WxCheckbox
+              <Checkbox
                 onChange={handleSelectAll}
                 id="xxx"
                 label={productJSX({ name: "N A}" })}
               />
               <div className="children ms-4">
                 {checkList.map(({ id, name }, i) => (
-                  <WxCheckbox
+                  <Checkbox
                     onChange={(e: any) => handleClick(e)}
                     checked={isChecked.includes(id)}
                     key={id}

@@ -3,7 +3,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 import { FormHeader } from "@components/FormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
@@ -127,7 +127,7 @@ const ProductVariant = () => {
 							<thead className="wx__thead">
 								<tr className="wx__tr">
 									<th className="wx__th" style={{ width: 20 }}>
-										<WxCheckbox
+										<Checkbox
 											className="m-0"
 											checked={productList?.length === selectedProduct?.length}
 											onChange={onToggleAll}
@@ -149,7 +149,7 @@ const ProductVariant = () => {
 								{productList?.map((pd: IProductTable) => (
 									<tr className="wx__tr" key={pd?.id}>
 										<td className="wx__td" style={{ width: 20 }}>
-											<WxCheckbox
+											<Checkbox
 												className="m-0"
 												checked={selectedProduct?.some(
 													(val) => val.id === pd.id

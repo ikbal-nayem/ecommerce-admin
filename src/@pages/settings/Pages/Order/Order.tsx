@@ -1,5 +1,5 @@
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 import { WxFormFooter, FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
@@ -167,7 +167,7 @@ const Order = () => {
             {orderSetting?.orderStatusList?.map((orderStatus, index) => (
               <div key={orderStatus?.id}>
                 <div className="d-flex align-items-start">
-                  <WxCheckbox
+                  <Checkbox
                     disabled={!orderStatus?.isEditable}
                     checked={orderStatus?.isChecked}
                     onChange={(e) =>
@@ -231,7 +231,7 @@ const Order = () => {
             {orderSetting?.paymentStatusList?.map((paymentStatus, index) => (
               <div key={paymentStatus?.id}>
                 <div className="d-flex align-items-start">
-                  <WxCheckbox
+                  <Checkbox
                     disabled={!paymentStatus?.isEditable}
                     checked={paymentStatus?.isChecked}
                     onChange={(e) =>

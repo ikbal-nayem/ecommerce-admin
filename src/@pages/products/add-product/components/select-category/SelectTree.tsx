@@ -1,4 +1,4 @@
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 
 type SelectTreeProps = {
   data?: any[];
@@ -18,17 +18,17 @@ const SelectTree = ({
     <ul className={`${isChild ? "child" : "parent"}`}>
       {data.map((sub) => {
         if (!sub?.isActive) return;
-        if (sub.children.length) {
+        if (sub.subcategories?.length) {
           return (
-            <li key={sub.slug}>
-              <WxCheckbox
-                id={sub.id}
+            <li key={sub._id}>
+              <Checkbox
+                id={sub._id}
                 label={sub.name}
                 onChange={() => setCategory(sub)}
-                checked={selectedCategory.id === sub.id}
+                checked={selectedCategory?._id === sub._id}
               />
               <SelectTree
-                data={sub.children}
+                data={sub.subcategories}
                 selectedCategory={selectedCategory}
                 setCategory={setCategory}
                 isChild
@@ -37,12 +37,12 @@ const SelectTree = ({
           );
         }
         return (
-          <li key={sub.slug}>
-            <WxCheckbox
-              id={sub.id}
+          <li key={sub._id}>
+            <Checkbox
+              id={sub._id}
               label={sub.name}
               onChange={() => setCategory(sub)}
-              checked={selectedCategory.id === sub.id}
+              checked={selectedCategory?._id === sub._id}
             />
           </li>
         );

@@ -14,7 +14,7 @@ import { useForm } from "react-hook-form";
 import WxTextarea from "@components/WxTextarea";
 import { ButtonLoader } from "services/utils/preloader.service";
 import WxSelect from "@components/Select/Select";
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 import WxRadio from "@components/WxRadio/WxRadio";
 import Label from "@components/Label";
 
@@ -139,7 +139,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 										/>
 									</div>
 								</div>
-								<WxCheckbox
+								<Checkbox
 									id="has-charge"
 									label="Is service charge applicable?"
 									registerProperty={{

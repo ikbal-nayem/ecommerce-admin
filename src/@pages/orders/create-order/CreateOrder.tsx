@@ -2,7 +2,7 @@ import WxAlert from "@components/Alert/WxAlert";
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
@@ -232,7 +232,7 @@ const CreateOrder = () => {
 								/>
 							</div>
 							<WxHr />
-							<WxCheckbox
+							<Checkbox
 								id="sendEmail"
 								label="Send email to customer"
 								registerProperty={{ ...register("notifyWithEmail") }}

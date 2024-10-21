@@ -3,13 +3,12 @@
 .form-check-input {
 	width: $form-check-input-width;
 	height: $form-check-input-width;
-	margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
-	vertical-align: top;
-	background-color: $form-check-input-bg;
+	// margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
+	// vertical-align: top;
+	background-color: #f1f1f1;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
-	border: $form-check-input-border;
 	border: $form-check-input-border;
 	appearance: none;
 	@include transition($form-check-transition);
@@ -17,7 +16,7 @@
 	&[type='checkbox'] {
 		width: 18px;
 		height: 18px;
-		margin-top: ($line-height-base - $form-check-input-width - 0.1) * 0.5; // line-height minus check height
+		margin-top: 0;
 		@include border-radius($form-check-input-border-radius);
 	}
 
@@ -100,7 +99,7 @@
 		height: 16.67px;
 		border: none;
 		// background-color: $neutral__600;
-		margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
+		// margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
 		position: relative;
 		display: block;
 		cursor: pointer;
@@ -131,16 +130,6 @@
 				@extend .text_regular;
 			}
 		}
-	}
-}
-
-.test-check {
-	&::after {
-		content: 'Hidden';
-		position: absolute;
-		color: $neutral__700;
-		@extend .text_subtitle;
-		@extend .text_regular;
 	}
 }
 

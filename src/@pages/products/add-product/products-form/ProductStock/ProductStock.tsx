@@ -48,9 +48,9 @@ const ProductStock = () => {
 							registerProperty={{
 								...register('stock', { valueAsNumber: true }),
 							}}
-							errorMessage={errors.stock?.message as string}
-							color={errors.stock ? 'danger' : 'secondary'}
 							onFocus={(e) => e.target.select()}
+							isError={!!errors?.stock}
+							errorMessage={errors.stock?.message as string}
 						/>
 					</div>
 				</div>
@@ -61,8 +61,11 @@ const ProductStock = () => {
 					<TextInput
 						label='Product SKU'
 						noMargin
+						isRequired
 						registerProperty={{ ...register('sku') }}
 						onFocus={(e) => e.target.select()}
+						isError={!!errors?.sku}
+						errorMessage={errors.sku?.message as string}
 					/>
 				</div>
 				<div className='col-md-6 col-sm-12 mt-3'>

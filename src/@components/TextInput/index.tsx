@@ -40,6 +40,7 @@ interface IInputProps {
 	ref?: any;
 	onKeyDown?: Function;
 	onKeyPress?: Function;
+	isError?: boolean;
 }
 
 const TextInput = ({
@@ -74,6 +75,7 @@ const TextInput = ({
 	onKeyDown,
 	isReadOnly,
 	onKeyPress,
+	isError,
 }: IInputProps) => {
 	const [inputType, setInputType] = useState<string>(type);
 	const [toggleIcon, setToggleIcon] = useState<string>('visibility_off');
@@ -87,6 +89,8 @@ const TextInput = ({
 			setToggleIcon('visibility_off');
 		}
 	};
+
+	color = isError ? 'danger' : color;
 
 	return (
 		<div

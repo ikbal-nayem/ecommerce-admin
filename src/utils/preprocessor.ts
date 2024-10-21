@@ -10,6 +10,9 @@ export const makeFormData = (data: IObject): Promise<FormData> =>
 					const file = await compressImage(data[key]);
 					fd.append(key, file);
 					return;
+				} else if (data[key] instanceof Array || data[key] instanceof Object) {
+					fd.append(key, JSON.stringify(data[key]));
+					return;
 				}
 				fd.append(key, data[key]);
 			})

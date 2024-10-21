@@ -1,4 +1,4 @@
-import './Checkbox.scss';
+import clsx from 'clsx';
 
 type CheckboxProps = {
 	id?: string;
@@ -28,9 +28,13 @@ const Checkbox = ({
 	return (
 		<div
 			onClick={onClick}
-			className={`${
-				noMargin ? '' : 'mb-3'
-			} form-check form-check-inline d-flex align-items-center ${className}`}
+			className={clsx(
+				'form-check form-check-inline d-flex align-items-center',
+				{
+					'mb-3': !noMargin,
+				},
+				className
+			)}
 		>
 			<input
 				id={id}
@@ -43,7 +47,7 @@ const Checkbox = ({
 				checked={checked}
 				{...registerProperty}
 			/>
-			<label className='ms_2 form-check-label text_body' htmlFor={id}>
+			<label className='ms-2 form-check-label' htmlFor={id}>
 				{label}
 			</label>
 		</div>

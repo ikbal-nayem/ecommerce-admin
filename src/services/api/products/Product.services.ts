@@ -15,6 +15,10 @@ interface IProductsPayload {
 interface IProductsVariantPayload {}
 
 export const ProductService = {
+	addProduct: async (payload: any): Promise<any> => {
+		return await apiIns.post("product/add", payload);
+	},
+
 	getAll: async (payload: IProductsPayload): Promise<any> => {
 		return await apiIns.post(
 			PRODUCT_SERVICE + "products/get-list",
@@ -40,9 +44,6 @@ export const ProductService = {
 	},
 	updateProduct: async (payload: IProductsPayload): Promise<any> => {
 		return await apiIns.put(PRODUCT_SERVICE + "products/update", payload);
-	},
-	createProduct: async (payload: any): Promise<any> => {
-		return await apiIns.post(PRODUCT_SERVICE + "products/create", payload);
 	},
 	getSalesChannel: async (): Promise<any> => {
 		return await apiIns.get(

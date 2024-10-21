@@ -1,7 +1,7 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxSelect from "@components/Select/Select";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 import WxHr from "@components/WxHr";
 import WxIcon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -254,7 +254,7 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
             <div className="wx__audience_list">
               {audienceList.map((item, indx) => {
                 return (
-                  <WxCheckbox
+                  <Checkbox
                     key={item.id}
                     className="wx__product_list_in_select_product_drawer"
                     onChange={(e) => {

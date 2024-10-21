@@ -41,18 +41,9 @@ export const CollectionService = {
 	isSlugAvailable: async (payload: any): Promise<any> =>
 		await apiIns.post(PRODUCT_COLLECTION + 'is-slug-available', mergePayloadWithStoreId(payload)),
 
-	uploadBanner: async (payload: any): Promise<any> =>
-		await apiIns.put(PRODUCT_COLLECTION + 'upload-banner', payload),
-
-	deleteBanner: async (payload: any): Promise<any> =>
-		await apiIns.put(PRODUCT_COLLECTION + 'delete-banner', mergePayloadWithStoreId(payload)),
-
 	get: async (payload: ICollectionReadPayload = defaultRequest): Promise<any> =>
 		await apiIns.get('product-config/collections'),
 
 	collectionGetById: async (id: string): Promise<any> =>
 		await apiIns.get(PRODUCT_COLLECTION + 'get-by-id/' + id),
-
-	// collectionGetByStoreId: async (id: string): Promise<any> =>
-	//   await apiIns.get(PRODUCT_COLLECTION + "get-by-store-id/" + id),
 };

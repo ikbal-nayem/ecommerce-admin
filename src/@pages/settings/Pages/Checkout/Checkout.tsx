@@ -1,6 +1,6 @@
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
 import {Button} from "@components/Button";
-import WxCheckbox from "@components/Checkbox";
+import Checkbox from "@components/Checkbox";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import WxRadio from "@components/WxRadio/WxRadio";
@@ -342,7 +342,7 @@ const Checkout = () => {
 						<div className="w-100">
 							<div className="radio_btn_field d-flex align-items-center justify-content-between ms-5">
 								<div className="d-flex align-items-center">
-									<WxCheckbox checked disabled />
+									<Checkbox checked disabled />
 									<div className="d-flex flex-column">
 										<p className="text_body text_medium mb-0">
 											Full Address <span className="color_red">*</span>
@@ -389,7 +389,7 @@ const Checkout = () => {
 						<div className="w-100">
 							<div className="radio_btn_field d-flex align-items-center justify-content-between ms-5">
 								<div className="d-flex align-items-center">
-									<WxCheckbox
+									<Checkbox
 										checked
 										disabled
 										registerProperty={{ ...register("addressLine1") }}
@@ -415,7 +415,7 @@ const Checkout = () => {
 									htmlFor="addressLine2"
 									className="w-100 h-100 d-flex"
 								>
-									<WxCheckbox
+									<Checkbox
 										id="addressLine2"
 										label="Address Line 2"
 										registerProperty={{ ...register("addressLine2") }}
@@ -437,7 +437,7 @@ const Checkout = () => {
 									htmlFor="city"
 									className="w-100 h-100 d-flex"
 								>
-									<WxCheckbox
+									<Checkbox
 										id="city"
 										label="city"
 										registerProperty={{ ...register("city") }}
@@ -459,7 +459,7 @@ const Checkout = () => {
 									htmlFor="postCode"
 									className="w-100 h-100 d-flex"
 								>
-									<WxCheckbox
+									<Checkbox
 										id="postCode"
 										label="postCode"
 										registerProperty={{ ...register("postCode") }}
@@ -482,7 +482,7 @@ const Checkout = () => {
 									htmlFor="state"
 									className="w-100 h-100 d-flex"
 								>
-									<WxCheckbox
+									<Checkbox
 										id="state"
 										label="Division"
 										registerProperty={{ ...register("state") }}
@@ -504,7 +504,7 @@ const Checkout = () => {
 									htmlFor="country"
 									className="w-100 h-100 d-flex"
 								>
-									<WxCheckbox
+									<Checkbox
 										id="country"
 										label="Country"
 										registerProperty={{ ...register("country") }}
