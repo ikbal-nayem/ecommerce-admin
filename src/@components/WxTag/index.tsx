@@ -1,18 +1,10 @@
-import "./Tag.scss";
+import { IColors } from '@interfaces/common.interface';
+import clsx from 'clsx';
 
-type colors =
-	| "default"
-	| "primary"
-	| "secondary"
-	| "success"
-	| "danger"
-	| "warning"
-	| "info";
-
-type Types = "button" | "reset" | "submit";
+type Types = 'button' | 'reset' | 'submit';
 
 interface ITagProps {
-	color?: colors | string;
+	color?: IColors;
 	label: string;
 	type?: Types;
 	className?: string;
@@ -20,19 +12,10 @@ interface ITagProps {
 	onClick?: () => void;
 }
 
-const WxTag = ({
-	label,
-	className,
-	color = "default",
-	type = "button",
-	style,
-	onClick,
-}: ITagProps) => {
+const Tag = ({ label, className, color, type = 'button', style, onClick }: ITagProps) => {
 	return (
 		<button
-			className={`wx__btn_tags wx__tag ${color === "default" ? "" : color} ${
-				className ? className : ""
-			}`}
+			className={clsx(`wx__btn_tags rounded`, { [`bg-light-${color} text-${color}`]: !!color }, className)}
 			type={type}
 			style={style}
 			onClick={onClick}
@@ -42,4 +25,4 @@ const WxTag = ({
 	);
 };
 
-export default WxTag;
+export default Tag;

@@ -1,8 +1,8 @@
 import Icon from '@components/Icon';
 import { Menu, MenuItem } from '@components/Menu';
 import Thumbnail from '@components/Thumbnail';
+import WxTag from '@components/WxTag';
 import { IProductTable } from '@interfaces/product.interface';
-import clsx from 'clsx';
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { PRODUCT_DETAILS } from 'routes/path-name.route';
@@ -48,9 +48,10 @@ const TableComponent = ({ productsData, handleDelete }: IProductTableProps) => {
 							</td>
 							<td className='wx__td'>{pd?.category.name || '---'}</td>
 							<td className='wx__td text-center'>
-								<div className={clsx('wx__btn_tags', { 'text-success': pd?.isActive })}>
-									{pd?.isActive ? 'Published' : 'Inactive'}
-								</div>
+								<WxTag
+									label={pd?.isActive ? 'Published' : 'Inactive'}
+									color={pd?.isActive ? 'success' : 'danger'}
+								/>
 							</td>
 							<td className='wx__td'>
 								<div className='float-end'>

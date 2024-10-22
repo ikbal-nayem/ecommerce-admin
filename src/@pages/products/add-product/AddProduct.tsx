@@ -38,8 +38,6 @@ const AddProducts = () => {
 		const dataCopy = { ...data };
 		dataCopy.category = data.category?._id;
 		dataCopy.collections = data.collections?.map((item) => item?._id);
-		console.log(dataCopy);
-
 		setIsSaving(true);
 		const fd = await makeRequestFormData(dataCopy);
 		ProductService.addProduct(fd)

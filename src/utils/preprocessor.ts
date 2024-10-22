@@ -19,18 +19,33 @@ export const makeFormData = (data: IObject): Promise<FormData> =>
 		).then(() => resolve(fd));
 	});
 
-export const makeRequestFormData = (reqData: IObject) => {
-	let data = { ...reqData };
-	const fd = new FormData();
-	Object.keys(data).forEach((key) => {
-		if (data[key] instanceof File) {
-			fd.append(key, data[key]);
-			delete data[key];
-		} else if (data[key] instanceof FileList) {
-			for (const f of Object.values(data[key])) fd.append(key, f);
-			delete data[key];
-		}
+export const makeRequestFormData = (reqData: IObject, multiFileKeys?: Array<string>): Promise<FormData> =>
+	new Promise((resolve) => {
+		let data = { ...reqData };
+		const fd = new FormData();
+		Promise.all(
+			Object.keys(data).map(async (key) => {
+				if (multiFileKeys?.includes(key)) {
+					for (const [i, f] of data[key].entries()) {
+						if (!(f instanceof File)) return;
+						const file = await compressImage(f);
+						fd.append(key, file);
+						data[key].splice(i, 1);
+					}
+				} else if (data[key] instanceof File) {
+					const file = await compressImage(data[key]);
+					fd.append(key, file);
+					delete data[key];
+				} else if (data[key] instanceof FileList) {
+					for (const f of Object.values(data[key])) {
+						const file = await compressImage(f);
+						fd.append(key, file);
+					}
+					delete data[key];
+				}
+			})
+		).then(() => {
+			fd.append('data', JSON.stringify(data));
+			resolve(fd);
+		});
 	});
-	fd.append('data', JSON.stringify(data));
-	return fd;
-};
