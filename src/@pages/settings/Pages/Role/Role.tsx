@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import { FormHeader } from "@components/FormLayout";
 import WxPagination from "@components/WxPagination/WxPagination";
@@ -78,7 +78,7 @@ const Role = () => {
 
   return (
     <div>
-      <WxMainLg>
+      <MainLg>
         <div className="d-flex justify-content-between align-items-center mb-3">
           <FormHeader title="User Roles" backNavigationLink={SETTINGS} />
           {/* <Button
@@ -112,7 +112,7 @@ const Role = () => {
             </div>
           </div>
         ) : null}
-      </WxMainLg>
+      </MainLg>
       <ConfirmationModal
         onConfirm={onConfirmDelete}
         isOpen={confirmationModal}

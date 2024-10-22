@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import Icon from "@components/Icon";
 import { SETTINGS_BILLING } from "routes/path-name.route";
@@ -40,7 +40,7 @@ const PaymentInfo = () => {
 	if (isLoading) return <Preloader />;
 
 	return (
-		<WxMainLg>
+		<MainLg>
 			<div className="card p-5 text-center">
 				<Icon
 					icon={params?.status === "success" ? "task_alt" : "cancel"}
@@ -113,7 +113,7 @@ const PaymentInfo = () => {
 					</div>
 				</div>
 			</div>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

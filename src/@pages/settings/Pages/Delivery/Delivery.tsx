@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
@@ -264,7 +264,7 @@ const Delivery = () => {
 
   return (
     <div>
-      <WxMainLg className="delivery_zone_sec">
+      <MainLg className="delivery_zone_sec">
         <FormHeader
           title="Delivery"
           backNavigationLink={SETTINGS}
@@ -303,7 +303,7 @@ const Delivery = () => {
           configureFrom={configureFrom}
           setEditDrawer={setEditDrawer}
         />
-      </WxMainLg>
+      </MainLg>
       {openECourierDrawer && (
         <ConfigureDrawer
           isOpen={openECourierDrawer}

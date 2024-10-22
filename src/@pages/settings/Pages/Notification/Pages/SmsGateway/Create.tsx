@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
@@ -47,7 +47,7 @@ const OrderConfirmation = () => {
   };
 
   return (
-    <WxMainLg className="sms_gateway_sec">
+    <MainLg className="sms_gateway_sec">
       <FormHeader
         title="Order placement confirmation"
         backNavigationLink={SETTINGS_NOTIFICATION}
@@ -143,7 +143,7 @@ const OrderConfirmation = () => {
           </div>
         </div>
       </form>
-    </WxMainLg>
+    </MainLg>
   );
 };
 

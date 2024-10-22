@@ -6,7 +6,7 @@ import { IProductTable } from '@interfaces/product.interface';
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { PRODUCT_DETAILS } from 'routes/path-name.route';
-import { imageURLGenerate } from 'utils/utils';
+import { genetartMediaURL } from 'utils/utils';
 
 interface IProductTableProps {
 	productsData?: any;
@@ -40,7 +40,7 @@ const TableComponent = ({ productsData, handleDelete }: IProductTableProps) => {
 						<tr className='wx__tr' key={pd?._id}>
 							<td className='wx__td'>
 								<div className='wx__table_cell_avatar wx__product_name'>
-									<Thumbnail name={pd?.name} src={imageURLGenerate(pd?.thumbnail || pd?.images)} />
+									<Thumbnail name={pd?.name} src={genetartMediaURL(pd?.images?.[0])} />
 									<div className='wx__table_cell_focus_text'>
 										<Link to={PRODUCT_DETAILS({ product_id: pd?._id })}>{pd?.name}</Link>
 									</div>

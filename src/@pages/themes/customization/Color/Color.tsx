@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import TableLoader from "@components/TableLoader/TableLoader";
 import {Button} from "@components/Button";
 import WxColorPicker from "@components/WxColorPicker";
@@ -31,7 +31,7 @@ export default function CustomizationColor() {
 	};
 
 	return (
-		<WxMainLg className="color-sec">
+		<MainLg className="color-sec">
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
 				<FormHeader
 					title="Color"
@@ -109,6 +109,6 @@ export default function CustomizationColor() {
 					</div>
 				</div>
 			</form>
-		</WxMainLg>
+		</MainLg>
 	);
 }

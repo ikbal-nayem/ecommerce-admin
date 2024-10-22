@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
 import Select from "@components/Select/Select";
 import {
@@ -97,7 +97,7 @@ const CourierForm = () => {
   };
 
   return (
-    <WxMainLg className="delivery_zone_sec">
+    <MainLg className="delivery_zone_sec">
       <WxFormContainer>
         {/* {getValues("pick_district")} */}
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -335,7 +335,7 @@ const CourierForm = () => {
           />
         </form>
       </WxFormContainer>
-    </WxMainLg>
+    </MainLg>
   );
 };
 

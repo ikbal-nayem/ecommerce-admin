@@ -1,7 +1,7 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import GenerateReactPDF from "@components/Invoice/GenerateReactPDF";
 import Invoice from "@components/Invoice/Invoice";
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
@@ -366,7 +366,7 @@ const OrderDetails = () => {
 		);
 
 	return (
-		<WxMainLg>
+		<MainLg>
 			<FormHeader
 				title={`${orderDetails?.orderNo}`}
 				backNavigationLink={ORDER}
@@ -687,7 +687,7 @@ const OrderDetails = () => {
 				handleClose={handlePaymentClose}
 				approveData={paymentApproveData.current}
 			/>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

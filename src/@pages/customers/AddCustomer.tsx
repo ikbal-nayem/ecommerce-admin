@@ -1,8 +1,8 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
-import WxFormContainer from "@components/FormLayout/WxFormContainer";
-import WxFormFooter from "@components/FormLayout/WxFormFooter";
+import WxFormContainer from "@components/FormLayout/FormContainer";
+import WxFormFooter from "@components/FormLayout/FormFooter";
 import FormHeader from "@components/FormLayout/FormHeader";
 import WxHr from "@components/WxHr";
 import Switch from "@components/Switch";
@@ -126,7 +126,7 @@ export default function AddCustomer() {
 	const handleClose = () => setDrawerOpen(false);
 
 	return (
-		<WxMainLg>
+		<MainLg>
 			<WxFormContainer>
 				<FormHeader
 					noMargin
@@ -229,6 +229,6 @@ export default function AddCustomer() {
 				</form>
 				<CustomerGroup drawerOpen={drawerOpen} handleClose={handleClose} />
 			</WxFormContainer>
-		</WxMainLg>
+		</MainLg>
 	);
 }

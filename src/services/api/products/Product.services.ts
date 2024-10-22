@@ -24,13 +24,14 @@ export const ProductService = {
 		return await apiIns.post(PRODUCT_SERVICE + 'products/search', mergeBodyWithStoreId(payload));
 	},
 	getById: async (product_id: string): Promise<any> => {
-		return await apiIns.get(PRODUCT_SERVICE + 'products/get-by-id/' + product_id);
+		return await apiIns.get('product/get/' + product_id);
 	},
+
 	getByIds: async (product_ids: any[]): Promise<any> => {
 		return await apiIns.post(PRODUCT_SERVICE + 'products/get-by-id-set', product_ids);
 	},
-	updateProduct: async (payload: IProductsPayload): Promise<any> => {
-		return await apiIns.put(PRODUCT_SERVICE + 'products/update', payload);
+	updateProduct: async (id: string, payload: IProductsPayload): Promise<any> => {
+		return await apiIns.put('product/' + id, payload);
 	},
 	getSalesChannel: async (): Promise<any> => {
 		return await apiIns.get(ADMIN_SERVICE + 'master-meta/get-by-meta-type/SALES_CHANNEL');

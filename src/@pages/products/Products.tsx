@@ -154,7 +154,7 @@ const Products = () => {
 							/>
 						</div>
 						<div className='row p-4 pb-0'>
-							<div className='col-xl-8 col-lg-6 col-md-6 col-sm-12'>
+							<div className='col-xl-10 col-lg-9 col-md-8 col-sm-8'>
 								<TextInput
 									type='search'
 									placeholder='Search products'
@@ -162,7 +162,7 @@ const Products = () => {
 									onChange={(e: any) => setSearchQuery(e.target.value)}
 								/>
 							</div>
-							<div className='col-xl-2 col-lg-3 col-md-3 col-sm-12'>
+							<div className='col-xl-2 col-lg-3 col-md-4 col-sm-4'>
 								<Select
 									placeholder='Select Category'
 									valuesKey='id'
@@ -172,7 +172,7 @@ const Products = () => {
 									onChange={onChangeCategory}
 								/>
 							</div>
-							<div className='col-xl-2 col-lg-3 col-md-3 col-sm-12'>
+							{/* <div className='col-xl-2 col-lg-3 col-md-3 col-sm-12'>
 								<Select
 									placeholder='Select Status'
 									valuesKey='text'
@@ -181,7 +181,7 @@ const Products = () => {
 									options={PRODUCT_STATUS}
 									onChange={onChangeStatus}
 								/>
-							</div>
+							</div> */}
 							<TableLoader isLoading={isLoader} />
 						</div>
 

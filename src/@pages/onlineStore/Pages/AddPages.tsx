@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import TextEditor from "@components/TextEditor/Editor";
 import FormHeader from "@components/FormLayout/FormHeader";
@@ -86,7 +86,7 @@ const AddPage = () => {
 	if (isLoading) return <Preloader absolutePosition size={50} />;
 
 	return (
-		<WxMainLg>
+		<MainLg>
 			<FormHeader
 				noMargin
 				title={id ? "Update Page" : "Add Page"}
@@ -178,7 +178,7 @@ const AddPage = () => {
 					</div>
 				</div>
 			</form>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

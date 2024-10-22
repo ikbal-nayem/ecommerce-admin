@@ -8,14 +8,16 @@ interface IPreloaderProps {
 	absolutePosition?: boolean;
 	className?: string;
 	show?: boolean;
+	loaderText?: string;
 }
 
 const Preloader = ({
 	size = 30,
-	color = '#26a11c',
+	color = '#a938cf',
 	absolutePosition = false,
 	className,
 	show = true,
+	loaderText,
 }: IPreloaderProps) => {
 	if (!show) return;
 
@@ -24,7 +26,11 @@ const Preloader = ({
 			className={`d-flex align-items-center justify-content-center ${className || ''}`}
 			style={absolutePosition ? { position: 'relative' } : {}}
 		>
-			<div style={absolutePosition ? { position: 'absolute', zIndex: 1, top: 0 } : {}}>
+			<div
+				className='d-flex align-items-center'
+				style={absolutePosition ? { position: 'absolute', zIndex: 1, top: 0 } : {}}
+			>
+				<strong>{loaderText}</strong>&nbsp;&nbsp;
 				<MetroSpinner size={size} color={color} />
 			</div>
 		</div>

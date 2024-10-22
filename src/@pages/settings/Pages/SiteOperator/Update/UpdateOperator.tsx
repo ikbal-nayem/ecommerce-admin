@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
@@ -83,7 +83,7 @@ const SiteOperatorUpdate = () => {
 	// const
 
 	return (
-		<WxMainLg className="operator_update">
+		<MainLg className="operator_update">
 			<FormHeader
 				title="Update Operator "
 				backNavigationLink={SETTINGS_SITE_OPERATOR}
@@ -168,7 +168,7 @@ const SiteOperatorUpdate = () => {
 					</div>
 				</div>
 			</form>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

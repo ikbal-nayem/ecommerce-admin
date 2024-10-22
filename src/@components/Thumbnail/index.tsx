@@ -1,5 +1,4 @@
-import WxImg from '@components/WxImg/WxImg';
-import { DEFAULT_LINKS } from '@constants/common.constant';
+import WxImg from '@components/WxImg/Img';
 import clsx from 'clsx';
 import './Thumbnail.scss';
 
@@ -8,24 +7,18 @@ interface IProps {
 	name?: String;
 	width?: number;
 	height?: number;
-	priority?: 'name' | 'image';
 	noBorder?: boolean;
 	className?: string;
+	rounded?: boolean;
 }
 
-const Thumbnail = ({ src, name, width, height, priority = 'image', noBorder = false, className }: IProps) => {
+const Thumbnail = ({ src, name, width, height, noBorder = false, className, rounded }: IProps) => {
 	var matches = name?.match(/\b(\w)/g);
-	var acronym = matches?.join('').toUpperCase();
+	var acronym = matches?.join('')?.toUpperCase()?.slice(0, 2);
 
 	return (
-		<div className={clsx('thumbnail', { no_border: noBorder }, className)}>
-			{priority === 'name' && name ? (
-				<span>{acronym}</span>
-			) : (
-				priority === 'image' && (
-					<WxImg width={width} height={height} src={src || DEFAULT_LINKS.blank_image} alt='img' />
-				)
-			)}
+		<div className={clsx('thumbnail', { 'rounded-circle': rounded, no_border: noBorder }, className)}>
+			{!!src ? <WxImg width={width} height={height} src={src} alt='img' /> : <span>{acronym}</span>}
 		</div>
 	);
 };

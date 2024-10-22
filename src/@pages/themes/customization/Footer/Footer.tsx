@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
@@ -85,7 +85,7 @@ const SiteFooter = () => {
 	if (isLoading) return <Preloader />;
 
 	return (
-		<WxMainLg className="footer-sec">
+		<MainLg className="footer-sec">
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
 				<FormHeader
 					title="Footer"
@@ -237,7 +237,7 @@ const SiteFooter = () => {
 					)}
 				</div>
 			</form>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

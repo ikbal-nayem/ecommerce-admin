@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
@@ -141,7 +141,7 @@ export default function CustomizationTypography() {
   };
 
   return (
-		<WxMainLg className="typography">
+		<MainLg className="typography">
 			{isLoading && <Preloader />}
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
 				<FormHeader
@@ -241,6 +241,6 @@ export default function CustomizationTypography() {
 					</div>
 				</div>
 			</form>
-		</WxMainLg>
+		</MainLg>
 	);
 }

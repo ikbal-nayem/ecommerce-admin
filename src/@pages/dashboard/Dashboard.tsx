@@ -1,5 +1,5 @@
 import DateInput from '@components/DatePicker/DateInput';
-import WxMainLg from '@components/MainContentLayout/MainLg';
+import MainLg from '@components/MainContentLayout/MainLg';
 import {Button} from '@components/Button';
 import WxDropdown from '@components/WxDropdown/WxDropdown';
 import Icon from '@components/Icon';
@@ -49,7 +49,7 @@ const Dashboard = () => {
 	};
 
 	return (
-		<WxMainLg className='dashboard'>
+		<MainLg className='dashboard'>
 			{!summeryLoader ? (
 				<div className='row dashboard_summery g-3'>
 					<div className='col-md-9'>
@@ -313,7 +313,7 @@ const Dashboard = () => {
 					<DashboardAppSkelton viewBox='0 0 595 205' />
 				</div>
 			)} */}
-		</WxMainLg>
+		</MainLg>
 	);
 };
 export default Dashboard;

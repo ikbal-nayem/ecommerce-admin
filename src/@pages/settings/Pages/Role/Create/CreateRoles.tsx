@@ -9,7 +9,7 @@ import { ToastService } from "services/utils/toastr.service";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 
 const CreateUserRoles = () => {
   const [saving, setSaving] = useState<boolean>(false);
@@ -56,7 +56,7 @@ const CreateUserRoles = () => {
   if (loading) return <Preloader />;
 
   return (
-    <WxMainLg className="create_roles_sec">
+    <MainLg className="create_roles_sec">
       <FormHeader
         title={`${id ? "Update" : "Create"} Role`}
         backNavigationLink={SETTINGS_ROLES}
@@ -96,7 +96,7 @@ const CreateUserRoles = () => {
           </div>
         </div>
       </form>
-    </WxMainLg>
+    </MainLg>
   );
 };
 

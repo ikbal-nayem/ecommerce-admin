@@ -1,7 +1,7 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { WxFormFooter } from "@components/FormLayout";
-import WxFormContainer from "@components/FormLayout/WxFormContainer";
+import WxFormContainer from "@components/FormLayout/FormContainer";
 import FormHeader from "@components/FormLayout/FormHeader";
 import TextInput from "@components/TextInput";
 import Label from "@components/Label";
@@ -90,7 +90,7 @@ const Preferences = () => {
   if (isLoading) return <Preloader absolutePosition size={50} />;
 
   return (
-    <WxMainLg>
+    <MainLg>
       <WxFormContainer>
         <FormHeader title="Preferences" />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
@@ -181,7 +181,7 @@ const Preferences = () => {
           <WxFormFooter saveButtonText="Save" isSaving={isSaving} />
         </form>
       </WxFormContainer>
-    </WxMainLg>
+    </MainLg>
   );
 };
 

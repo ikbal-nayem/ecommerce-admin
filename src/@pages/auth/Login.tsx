@@ -1,10 +1,10 @@
 import Icon from '@components/Icon';
-import { ROUTES } from '@constants/route.constant';
 import clsx from 'clsx';
 import { useAuth } from 'context/auth';
 import useLoader from 'hooks/useLoader';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { DASHBOARD } from 'routes/path-name.route';
 import { AuthService } from 'services/api/Auth.service';
 import { ToastService } from 'services/utils/toastr.service';
 import './login.scss';
@@ -25,7 +25,7 @@ const Login = () => {
 		AuthService.login(data)
 			.then((res) => {
 				makeAuthenticate(res?.token, res?.data);
-				navigate(ROUTES.DASHBOARD);
+				navigate(DASHBOARD);
 			})
 			.catch((err) => {
 				ToastService.error(err?.message);

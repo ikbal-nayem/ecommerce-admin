@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
@@ -30,7 +30,7 @@ const SectionCustomize = () => {
   );
 
   return (
-    <WxMainLg>
+    <MainLg>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <FormHeader
           title={`${section?.label} section`}
@@ -67,7 +67,7 @@ const SectionCustomize = () => {
           ))}
         </div>
       </form>
-    </WxMainLg>
+    </MainLg>
   );
 };
 

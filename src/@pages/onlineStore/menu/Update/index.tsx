@@ -1,4 +1,4 @@
-import WxMainLg from '@components/MainContentLayout/MainLg';
+import MainLg from '@components/MainContentLayout/MainLg';
 import {Button} from '@components/Button';
 import { FormHeader } from '@components/FormLayout';
 import WxHr from '@components/WxHr';
@@ -222,7 +222,7 @@ const CreateMenu = () => {
 	if (loading) return <Preloader />;
 
 	return (
-		<WxMainLg className='create_menu_sec'>
+		<MainLg className='create_menu_sec'>
 			<FormHeader title='Update Menu' backNavigationLink={MENU} />
 			<form onSubmit={handleSubmit(onSubmitting)} noValidate>
 				<div className='row m-auto w-100'>
@@ -308,7 +308,7 @@ const CreateMenu = () => {
 					submitMenuForm={submitMenuForm}
 				/>
 			)}
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

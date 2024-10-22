@@ -1,5 +1,5 @@
 import DateInput from "@components/DatePicker/DateInput";
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { WxFormContainer, FormHeader } from "@components/FormLayout";
@@ -186,7 +186,7 @@ const ECourierOrderPlace = () => {
   };
 
   return (
-    <WxMainLg className="delivery_zone_sec">
+    <MainLg className="delivery_zone_sec">
       <WxFormContainer>
         <form onSubmit={handleSubmit(onsubmit)}>
           <FormHeader
@@ -449,7 +449,7 @@ const ECourierOrderPlace = () => {
           </div>
         </form>
       </WxFormContainer>
-    </WxMainLg>
+    </MainLg>
   );
 };
 

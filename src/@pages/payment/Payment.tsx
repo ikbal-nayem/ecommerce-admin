@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
@@ -165,7 +165,7 @@ const Payment = () => {
 	if (loading) return <Preloader />;
 
 	return (
-		<WxMainLg>
+		<MainLg>
 			<FormHeader title="Payment" />
 			{isError ? (
 				<WxNotFound
@@ -299,7 +299,7 @@ const Payment = () => {
 					</div>
 				</form>
 			)}
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

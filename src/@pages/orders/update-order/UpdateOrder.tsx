@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import {
   WxFormContainer,
@@ -135,7 +135,7 @@ const UpdateOrder = () => {
   if (loading) return <Preloader />;
 
   return (
-    <WxMainLg>
+    <MainLg>
       <WxFormContainer>
         <FormHeader
           title="Edit Order"
@@ -211,7 +211,7 @@ const UpdateOrder = () => {
           addToCart={addToCart}
         />
       </WxFormContainer>
-    </WxMainLg>
+    </MainLg>
   );
 };
 

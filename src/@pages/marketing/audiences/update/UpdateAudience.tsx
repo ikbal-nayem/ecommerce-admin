@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import { WxFormFooter, FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import { MASTER_META_KEY } from "config/constants";
@@ -36,7 +36,7 @@ const UpdateAudience = () => {
   }, [audience]);
 
   return (
-    <WxMainLg>
+    <MainLg>
       <FormHeader
         noMargin
         title={formTitle}
@@ -50,7 +50,7 @@ const UpdateAudience = () => {
         formName={FormName[audience]}
         isSaving={isSaving}
       />
-    </WxMainLg>
+    </MainLg>
   );
 };
 

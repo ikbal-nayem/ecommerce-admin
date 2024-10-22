@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
@@ -128,7 +128,7 @@ const OrderRefund = () => {
 	};
 
 	return (
-		<WxMainLg>
+		<MainLg>
 			<FormHeader
 				title="Refund"
 				backNavigationLink={ORDER_DETAILS({ order_id })}
@@ -194,7 +194,7 @@ const OrderRefund = () => {
 					</div>
 				</div>
 			</form>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

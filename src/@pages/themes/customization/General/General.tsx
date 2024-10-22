@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
@@ -40,7 +40,7 @@ export default function CustomizationGeneral() {
     console.log(siteLogo, favicon);
   };
   return (
-		<WxMainLg>
+		<MainLg>
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
 				<FormHeader
 					title="General"
@@ -86,6 +86,6 @@ export default function CustomizationGeneral() {
 					</div>
 				</div>
 			</form>
-		</WxMainLg>
+		</MainLg>
 	);
 }

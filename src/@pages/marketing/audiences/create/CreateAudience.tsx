@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import { WxFormFooter, FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import { AUDIENCES } from "routes/path-name.route";
@@ -31,7 +31,7 @@ const CreateAudience = () => {
   }, [audience]);
 
   return (
-    <WxMainLg>
+    <MainLg>
       <FormHeader
         noMargin
         title={formTitle}
@@ -48,7 +48,7 @@ const CreateAudience = () => {
         formName={FromName[audience]}
         isSaving={isSaving}
       />
-    </WxMainLg>
+    </MainLg>
   );
 };
 

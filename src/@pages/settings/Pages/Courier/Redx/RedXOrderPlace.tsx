@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { WxFormContainer, FormHeader } from "@components/FormLayout";
@@ -121,7 +121,7 @@ const RedXOrderPlace = () => {
   };
 
   return (
-    <WxMainLg>
+    <MainLg>
       <WxFormContainer>
         <form onSubmit={handleSubmit(orderPlaceFormSubmit)}>
           <FormHeader
@@ -313,7 +313,7 @@ const RedXOrderPlace = () => {
           </div>
         </form>
       </WxFormContainer>
-    </WxMainLg>
+    </MainLg>
   );
 };
 

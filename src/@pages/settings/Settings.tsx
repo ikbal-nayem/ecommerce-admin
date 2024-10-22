@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import Icon from "@components/Icon";
 import {
 	SETTINGS_BILLING,
@@ -19,7 +19,7 @@ import "./Settings.scss";
 
 const Setting = () => {
 	return (
-		<WxMainLg className="setting_page_section">
+		<MainLg className="setting_page_section">
 			<h4 className="wx__h4__medium mb-0">Settings</h4>
 			<div className="card p-3 d-flex flex-row flex-wrap justify-content-center mt-3">
 				<Link to={SETTINGS_GENERAL}>
@@ -184,7 +184,7 @@ const Setting = () => {
 					</div>
 				</Link>
 			</div>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import TextEditor from "@components/TextEditor/Editor";
 import { FormHeader } from "@components/FormLayout";
@@ -44,7 +44,7 @@ const OrderConfirmation = () => {
   };
 
   return (
-		<WxMainLg className="order_confirmation_sec">
+		<MainLg className="order_confirmation_sec">
 			<FormHeader
 				noMargin
 				title="Order placement confirmation"
@@ -131,7 +131,7 @@ const OrderConfirmation = () => {
 					</div>
 				</div>
 			</form>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

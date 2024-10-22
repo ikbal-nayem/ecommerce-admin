@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
@@ -55,7 +55,7 @@ export default function CustomizationSocial() {
 	};
 
 	return (
-		<WxMainLg className="social-sec">
+		<MainLg className="social-sec">
 			{isLoading && <Preloader />}
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<FormHeader
@@ -169,6 +169,6 @@ export default function CustomizationSocial() {
 					</div>
 				</div>
 			</form>
-		</WxMainLg>
+		</MainLg>
 	);
 }

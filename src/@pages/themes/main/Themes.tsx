@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import Icon from "@components/Icon";
@@ -37,7 +37,7 @@ const Themes = () => {
   };
 
   return (
-    <WxMainLg className="theme_page">
+    <MainLg className="theme_page">
       <FormHeader
         title="Themes"
         noBack
@@ -72,7 +72,7 @@ const Themes = () => {
           <h3 className="text-center">No theme found!</h3>
         )}
       </div>
-    </WxMainLg>
+    </MainLg>
   );
 };
 

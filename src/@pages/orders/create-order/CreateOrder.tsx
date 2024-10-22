@@ -1,5 +1,5 @@
 import WxAlert from "@components/Alert/WxAlert";
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import Checkbox from "@components/Checkbox";
@@ -194,7 +194,7 @@ const CreateOrder = () => {
 	if (loading) return <Preloader absolutePosition />;
 
 	return (
-		<WxMainLg>
+		<MainLg>
 			<FormHeader noMargin title="Create Order" backNavigationLink={ORDER} />
 			<form onSubmit={handleSubmit(onSubmitting)}>
 				<div className="row ">
@@ -315,7 +315,7 @@ const CreateOrder = () => {
 				selectedAddress={selectedAddress?.[editAddressType.current]}
 				onAddressChange={onAddressChange}
 			/>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

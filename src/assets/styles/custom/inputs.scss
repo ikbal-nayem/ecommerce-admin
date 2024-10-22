@@ -132,9 +132,6 @@ input {
     background: transparent;
     @include border($border_color: $neutral__400);
   }
-  input[type=search]{
-    padding-left:3.3em !important;
-  }
   &[aria-disabled="true"] {
     background: $neutral__200;
     pointer-events: none;

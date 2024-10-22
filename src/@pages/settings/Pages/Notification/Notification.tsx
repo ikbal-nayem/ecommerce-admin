@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
@@ -141,7 +141,7 @@ const Notification = () => {
 
   return (
     <div>
-      <WxMainLg className="notification_sec">
+      <MainLg className="notification_sec">
         <FormHeader title="Notfication" backNavigationLink={SETTINGS} />
         <div className="row">
           <div className="notification_left col-lg-8 col-md-12 col-sm-12 mt-3">
@@ -359,7 +359,7 @@ const Notification = () => {
             </div>
           </div>
         </div>
-      </WxMainLg>
+      </MainLg>
       <NotificationModal
         isModalOpen={isDialogeOpen}
         rateInfo={rateInfo}

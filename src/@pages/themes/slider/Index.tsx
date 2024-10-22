@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import TableLoader from "@components/TableLoader/TableLoader";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
@@ -120,7 +120,7 @@ const Slider = () => {
 	};
 
 	return (
-		<WxMainLg className="homeSection">
+		<MainLg className="homeSection">
 			<FormHeader title="Slider" />
 			<div className="card p-3">
 				<TableLoader isLoading={isLoading} />
@@ -206,7 +206,7 @@ const Slider = () => {
 				onConfirm={onConfirmDelete}
 				body={`Are your sure you want to delete '${deleteItem.current?.title}'? This action wont be reverseable!`}
 			/>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

@@ -1,6 +1,6 @@
-export {default as WxFormContainer} from './WxFormContainer';
-export {default as WxFormContent} from './WxFormContent';
+export {default as FormContainer} from './FormContainer';
+export {default as FormContent} from './FormContent';
 export {default as FormHeader} from './FormHeader';
-export {default as WxFormLeft} from './WxFormLeft';
-export {default as WxFormRight} from './WxFormRight';
-export {default as WxFormFooter} from './WxFormFooter';
+export {default as FormLeft} from './FormLeft';
+export {default as FormRight} from './FormRight';
+export {default as FormFooter} from './FormFooter';

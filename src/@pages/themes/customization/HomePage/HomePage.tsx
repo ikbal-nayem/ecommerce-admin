@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
@@ -125,7 +125,7 @@ export default function CustomizationHome() {
 	};
 
 	return (
-		<WxMainLg className="homeSection">
+		<MainLg className="homeSection">
 			<FormHeader title="Homepage" />
 			{isLoading && <Preloader />}
 			<div className="card p-3">
@@ -181,6 +181,6 @@ export default function CustomizationHome() {
 					</div>
 				)}
 			</div>
-		</WxMainLg>
+		</MainLg>
 	);
 }

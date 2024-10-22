@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import { FormHeader } from "@components/FormLayout";
 import { MASTER_META_KEY } from "config/constants";
 import { CAMPAIGNS } from "routes/path-name.route";
@@ -29,14 +29,14 @@ const CreateCampaigns = () => {
   }, [campaign]);
 
   return (
-    <WxMainLg>
+    <MainLg>
       <FormHeader
         noMargin
         title={formTitle}
         backNavigationLink={CAMPAIGNS + "?type=" + searchParams.get("campaign")}
       />
       {RenderComponent[campaign]({ isSaving, setIsSaving })}
-    </WxMainLg>
+    </MainLg>
   );
 };
 

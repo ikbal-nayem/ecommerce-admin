@@ -23,6 +23,7 @@ const Img = ({ src, alt, width, height, className, onClick }: IImg) => {
 				currentTarget.onerror = null; // prevents looping
 				currentTarget.src = DEFAULT_LINKS.blank_image;
 			}}
+			loading='lazy'
 		/>
 	);
 };

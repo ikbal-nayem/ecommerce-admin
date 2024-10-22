@@ -1,5 +1,5 @@
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
-import WxMainLg from '@components/MainContentLayout/MainLg';
+import MainLg from '@components/MainContentLayout/MainLg';
 import {Button} from '@components/Button';
 import { WxDraggableList } from '@components/WxDraggableList';
 import { FormHeader } from '@components/FormLayout';
@@ -152,7 +152,7 @@ const SliderDetails = () => {
 	}
 
 	return (
-		<WxMainLg className='homeSection'>
+		<MainLg className='homeSection'>
 			<FormHeader title='Slider Banners' backNavigationLink={THEME_CUSTOMIZATION_SLIDER} />
 			<div className='card p-3 mt-4'>
 				<div className='title_section'>
@@ -224,7 +224,7 @@ const SliderDetails = () => {
 				onConfirm={onConfirmDelete}
 				body={`Are your sure you want to delete '${deleteItem.current?.title}'? This action wont be reverseable!`}
 			/>
-		</WxMainLg>
+		</MainLg>
 	);
 };
 

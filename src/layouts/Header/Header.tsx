@@ -1,22 +1,19 @@
+import Icon from '@components/Icon';
 import WxDropdown from '@components/WxDropdown/WxDropdown';
 import WxHr from '@components/WxHr';
-import Icon from '@components/Icon';
-import WxImg from '@components/WxImg/WxImg';
-import WxTag from '@components/WxTag';
-import { ROUTES } from '@constants/route.constant';
+import WxImg from '@components/WxImg/Img';
 import { ENV } from 'config/ENV.config';
 import { useAuth } from 'context/auth';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { PORTAL_OVERVIEW } from 'routes/path-name.route';
-import { statusColorMapping } from 'utils/colorMap';
+import { DASHBOARD, PORTAL_OVERVIEW } from 'routes/path-name.route';
 import { imageURLGenerate } from 'utils/utils';
 import './Header.scss';
 
 const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 	const [menu, setMenu] = useState<boolean>(false);
-	const { user_data, activePlan } = useSelector((data: any) => data.user);
+	const { user_data } = useSelector((data: any) => data.user);
 	const { logout } = useAuth();
 
 	useEffect(() => {
@@ -34,11 +31,10 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 				{menuIconFlag ? <Icon icon='close' /> : <Icon icon='menu' />}
 			</div>
 			<div className='wx__header__logo d-flex align-items-center'>
-				<Link to={ROUTES.DASHBOARD}>
+				<Link to={DASHBOARD}>
 					<img src='/media/logos/shop-dark.png' alt='logo' width={40} />
 					<span className='text_body text_medium ms-2'>
 						<strong className='me-2'>Omuk Dokan</strong>
-						<WxTag label={activePlan?.title} color={statusColorMapping(activePlan?.title)} />
 					</span>
 				</Link>
 			</div>

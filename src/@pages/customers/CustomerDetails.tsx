@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
@@ -227,7 +227,7 @@ const CustomerDetails = () => {
   };
 
   return (
-    <WxMainLg className="wx__customer_details">
+    <MainLg className="wx__customer_details">
       <div className="wx__customer_header d-flex align-items-center justify-content-between">
         {!isLoading && (
           <FormHeader
@@ -546,7 +546,7 @@ const CustomerDetails = () => {
           btn_link={CUSTOMER_CREATE}
         />
       )}
-    </WxMainLg>
+    </MainLg>
   );
 };
 

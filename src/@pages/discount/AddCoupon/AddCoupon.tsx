@@ -1,4 +1,4 @@
-import WxMainLg from "@components/MainContentLayout/MainLg";
+import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import {
   WxFormContainer,
@@ -114,7 +114,7 @@ const AddCoupon = () => {
   };
 
   return (
-    <WxMainLg>
+    <MainLg>
       <WxFormContainer>
         <FormHeader title="Add Coupon" backNavigationLink={DISCOUNT} />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
@@ -251,7 +251,7 @@ const AddCoupon = () => {
         )}
         {/* <DevTool control={control} /> */}
       </WxFormContainer>
-    </WxMainLg>
+    </MainLg>
   );
 };
 
