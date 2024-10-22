@@ -1,4 +1,4 @@
-import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import { FormHeader } from "@components/FormLayout";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
@@ -25,7 +25,7 @@ export default function ReferrerDetails() {
   }, []);
 
   return (
-    <WxMainFull>
+    <MainFull>
       <FormHeader title="Partner payment details" />
       {isLoading ? (
         <div className="rounded w-100 bg-white mt-3">
@@ -76,6 +76,6 @@ export default function ReferrerDetails() {
           ) : null}
         </div>
       )}
-    </WxMainFull>
+    </MainFull>
   );
 }

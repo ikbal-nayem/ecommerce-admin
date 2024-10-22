@@ -7,7 +7,7 @@ import { useFormContext } from "react-hook-form";
 import makeSlug from "utils/make-slug";
 import {Button} from "@components/Button";
 import useDebounce from "utils/debouncer";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 
 const SearchEngine = () => {
 	const [editSEO, setEditSEO] = useState(false);
@@ -30,7 +30,7 @@ const SearchEngine = () => {
 		<div className="card search_engine p-3 mt-4">
 			<h6 className="text_semibold text_h6">
 				Search Engine Optimization
-				<WxIcon variants="round" icon="help" role="button" />
+				<Icon variants="round" icon="help" role="button" />
 			</h6>
 			<span className="text_regular text_body">
 				Add a title and description to see how this product might appear in a
@@ -43,7 +43,7 @@ const SearchEngine = () => {
 						label={
 							<label className="d-flex align-items-center">
 								Page Title &nbsp;
-								<WxIcon
+								<Icon
 									variants="round"
 									icon="help"
 									className="text-dark"
@@ -57,7 +57,7 @@ const SearchEngine = () => {
 						label={
 							<label className="d-flex align-items-center">
 								Meta Description &nbsp;
-								<WxIcon
+								<Icon
 									variants="round"
 									icon="help"
 									className="text-dark"
@@ -74,7 +74,7 @@ const SearchEngine = () => {
 						label={
 							<label className="d-flex align-items-center">
 								URL Handle &nbsp;
-								<WxIcon
+								<Icon
 									variants="round"
 									icon="help"
 									className="text-dark"

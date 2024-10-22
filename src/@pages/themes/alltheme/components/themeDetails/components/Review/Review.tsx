@@ -1,7 +1,7 @@
 import WxNotFound from "@components/NotFound/NotFound";
 import WxProgressBar from "@components/RatingProgressBar";
 import {Button} from "@components/Button";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { IReview } from "@interfaces/app.interface";
 import { ThemeService } from "services/api/onlineStore/themes/Theme.service";
 import Preloader from "services/utils/preloader.service";
@@ -79,7 +79,7 @@ const Apps = () => {
 					<h5 className="text_semibold mb-3">Ratings</h5>
 					<p className="text_body text_regular">
 						Overall Rating &nbsp;&nbsp;
-						<WxIcon className="small_icon" icon="star" variants="filled" />
+						<Icon className="small_icon" icon="star" variants="filled" />
 						{reviewData.overallRating} ({reviewData.overallReview} Review)
 					</p>
 					<p className=" text_regular w-100">
@@ -123,7 +123,7 @@ const Apps = () => {
 											{Array(Math.round(item?.rating))
 												.fill(null)
 												.map((_, i) => (
-													<WxIcon
+													<Icon
 														className="small_icon"
 														icon="star"
 														variants="filled"
@@ -153,7 +153,7 @@ const Apps = () => {
 									<div className="d-flex align-items-center">
 										<div className="d-flex align-items-center helpful">
 											<Button variant="none">
-												<WxIcon
+												<Icon
 													className="icon "
 													icon="thumb_up_off_alt"
 													variants="round"
@@ -165,7 +165,7 @@ const Apps = () => {
 										</div>
 										<div className="d-flex align-items-center not-helpful">
 											<Button variant="none">
-												<WxIcon
+												<Icon
 													className="icon "
 													icon="thumb_down"
 													variants="outlined"
@@ -200,11 +200,11 @@ const Apps = () => {
 					</div>
 				) : (
 					<div className="wx__user_review_0 text-center">
-						<WxIcon icon="vector" variants="filled" />
+						<Icon icon="vector" variants="filled" />
 						<div>
-							<WxIcon icon="star" variants="filled" />
-							<WxIcon icon="star" variants="filled" />
-							<WxIcon icon="star" variants="filled" />
+							<Icon icon="star" variants="filled" />
+							<Icon icon="star" variants="filled" />
+							<Icon icon="star" variants="filled" />
 						</div>
 						<h3 className="text_regular">No review found!</h3>
 						<p className="text_regular">

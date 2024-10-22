@@ -1,5 +1,5 @@
 import {Button} from "@components/Button";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/Thumbnail";
 import {
@@ -98,7 +98,7 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
                     navigate(THEMES_OVERVIEW({ theme_id: item.id }))
                   }
                 >
-                  <WxIcon icon="visibility" className="me-2 mt-auto" />
+                  <Icon icon="visibility" className="me-2 mt-auto" />
                   <span>Preview</span>
                 </Button>
                 {/* <Button
@@ -108,7 +108,7 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
 								Customize
 							</Button> */}
                 {/* <div>
-									<WxIcon
+									<Icon
 										icon="more_vert"
 										id="triggerId"
 										onClick={() => onShowPopup(index)}
@@ -123,37 +123,37 @@ const Themelibrary = ({ themeList, installedThemes }: IThemeLibraryProps) => {
 											<ul>
 												<li className="text_subtitle">
 													<Link to="" className="text_body">
-														<WxIcon icon="visibility" />
+														<Icon icon="visibility" />
 														View
 													</Link>
 												</li>
 												<li className="text_subtitle">
 													<Link to="" className="text_body">
-														<WxIcon icon="title" />
+														<Icon icon="title" />
 														Rename
 													</Link>
 												</li>
 												<li className="text_subtitle">
 													<Link to="" className="text_body">
-														<WxIcon icon="language" />
+														<Icon icon="language" />
 														Duplicate Site
 													</Link>
 												</li>
 												<li className="text_subtitle">
 													<Link to="" className="text_body">
-														<WxIcon icon="download" />
+														<Icon icon="download" />
 														Download Theme
 													</Link>
 												</li>
 												<li className="text_subtitle">
 													<Link to="" className="text_body">
-														<WxIcon icon="code" />
+														<Icon icon="code" />
 														Edit Code
 													</Link>
 												</li>
 												<li className="text_subtitle">
 													<Link to="" className="text_body">
-														<WxIcon icon="translate" />
+														<Icon icon="translate" />
 														Edit Language
 													</Link>
 												</li>

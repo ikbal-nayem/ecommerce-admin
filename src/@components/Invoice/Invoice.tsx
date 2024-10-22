@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { createRef, useRef } from "react";
 import { generateDateFormat } from "utils/splitDate";
 import { imageURLGenerate } from "utils/utils";
@@ -233,7 +233,7 @@ const Invoice = ({ invoiceData }) => {
                       {orderNote && (
                         <div className="wx__invoice_notes">
                           <p>
-                            <WxIcon icon="info" />
+                            <Icon icon="info" />
                             <span className="text_semibold ms_2">
                               NOTES
                             </span>

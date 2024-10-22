@@ -1,5 +1,5 @@
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";
@@ -128,7 +128,7 @@ const PaymentInfoForm = ({
 							{watch("metaKey") === MASTER_META_KEY.PAYMENT_MEDIA_TYPE_BANK ? (
 								<div className="row">
 									<div className="col-md-6 col-12">
-										<WxSelect
+										<Select
 											key={watch("metaKey")}
 											isRequired
 											label="Bank Name"
@@ -186,7 +186,7 @@ const PaymentInfoForm = ({
 							) : (
 								<div className="row">
 									<div className="col-md-6 col-12">
-										<WxSelect
+										<Select
 											isRequired
 											key={watch("metaKey")}
 											label="Wallet provider"

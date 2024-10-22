@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import { IDomainSettingsItem } from "@interfaces/Settings.interface";
 import { useState } from "react";
@@ -50,14 +50,14 @@ const RoleListTable = ({
                 <p className="text_body">
                   {domain?.domainAddress}
                   {domain?.isFreeSsl || domain?.isOwnSsl ? (
-                    <WxIcon
+                    <Icon
                       icon="lock"
                       color="success"
                       className="ms_2"
                       hoverTitle="Secured"
                     />
                   ) : (
-                    <WxIcon
+                    <Icon
                       icon="lock_open"
                       color="danger"
                       className="ms_2"
@@ -68,9 +68,9 @@ const RoleListTable = ({
               </td>
               <td className="wx__td isConfigured">
                 {domain?.isConfigured ? (
-                  <WxIcon icon="done_all" color="success" />
+                  <Icon icon="done_all" color="success" />
                 ) : (
-                  <WxIcon icon="close" color="danger" />
+                  <Icon icon="close" color="danger" />
                 )}
               </td>
               <td className="wx__td" width="30%">
@@ -89,7 +89,7 @@ const RoleListTable = ({
               </td>
               <td className="wx__td more">
                 <div className="wx__table_cell_more-icon">
-                  <WxIcon onClick={() => onShowPopup(index)} icon="more_vert" />
+                  <Icon onClick={() => onShowPopup(index)} icon="more_vert" />
                   {selectedIndex === index && (
                     <WxDropdown
                       isOpen={showPopup}
@@ -100,7 +100,7 @@ const RoleListTable = ({
                         {!domain?.isPrimary ? (
                           <li className="text_subtitle">
                             <a onClick={() => onMarkAsPrimary(domain)}>
-                              <WxIcon icon="public" />
+                              <Icon icon="public" />
                               Make Primary
                             </a>
                           </li>
@@ -112,7 +112,7 @@ const RoleListTable = ({
                               className="text_body"
                               onClick={() => onDelete(domain)}
                             >
-                              <WxIcon icon="delete" />
+                              <Icon icon="delete" />
                               Delete
                             </Link>
                           </li>

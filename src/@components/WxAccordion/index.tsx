@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { Fragment, useState } from "react";
 import "./WxAccordion.scss";
 

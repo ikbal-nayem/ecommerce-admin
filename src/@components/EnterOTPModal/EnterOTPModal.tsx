@@ -1,6 +1,6 @@
 import {Button} from "@components/Button";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxModal from "@components/Modal";
 import WxModalBody from "@components/Modal/ModalBody";
@@ -247,7 +247,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                       <span className="text-primary">
                         {getValues("sendingThrough")}
                       </span>
-                      <WxIcon
+                      <Icon
                         className="ms-1"
                         onClick={() => setSendOTP(true)}
                         icon="edit"

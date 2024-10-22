@@ -2,7 +2,7 @@ import DateInput from '@components/DatePicker/DateInput';
 import WxMainLg from '@components/MainContentLayout/MainLg';
 import {Button} from '@components/Button';
 import WxDropdown from '@components/WxDropdown/WxDropdown';
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
 import TextInput from '@components/TextInput';
 import NotifyListSkelton from '@components/WxSkelton/Dashboard/NotifyListSkelton';
 import SummerySkelton from '@components/WxSkelton/Dashboard/SummerySkelton';
@@ -112,7 +112,7 @@ const Dashboard = () => {
 							</div>
 							<div className='row'>
 								<div className='col-md-4 col-sm-12 orders_summery'>
-									<WxIcon className='orders_icon' icon='receipt' />
+									<Icon className='orders_icon' icon='receipt' />
 									<div>
 										<span className='text_caption'>Total Orders</span>
 										<h5 className='text_h5 m-0 text_medium'>
@@ -121,7 +121,7 @@ const Dashboard = () => {
 									</div>
 								</div>
 								<div className='col-md-4 col-sm-12 sales_summery'>
-									<WxIcon className='sales_icon' icon='currency_yen' />
+									<Icon className='sales_icon' icon='currency_yen' />
 									<div>
 										<span className='text_caption'>Total Sales</span>
 										<h5 className='text_h5 m-0 text_medium'>
@@ -130,7 +130,7 @@ const Dashboard = () => {
 									</div>
 								</div>
 								<div className='col-md-4 col-sm-12 visitors_summery'>
-									<WxIcon className='visitors_icon' icon='supervisor_account' />
+									<Icon className='visitors_icon' icon='supervisor_account' />
 									<div>
 										<span className='text_caption'>Total Visitors</span>
 										<h5 className='text_h5 m-0 text_medium'>
@@ -165,7 +165,7 @@ const Dashboard = () => {
 						<div className='card p-3 notify_list'>
 							<div className='notify d-flex justify-content-between align-items-center'>
 								<div className='d-flex align-items-center left'>
-									<WxIcon className='me-2' icon='receipt' />
+									<Icon className='me-2' icon='receipt' />
 									<p className='m-0'>
 										<span className='text_semibold'>{orderSummery?.totalPendingOrder} orders</span> to
 										pending
@@ -179,13 +179,13 @@ const Dashboard = () => {
 											navigate(ORDER + '?orderStatus=' + MASTER_META_KEY.ORDER_STATUS_TYPE_PENDING);
 										}}
 									>
-										View More <WxIcon className='ms_2' icon='arrow_forward' />
+										View More <Icon className='ms_2' icon='arrow_forward' />
 									</Button>
 								</div>
 							</div>
 							<div className='notify d-flex justify-content-between align-items-center'>
 								<div className='d-flex align-items-center left'>
-									<WxIcon className='me-2' icon='account_balance_wallet' />
+									<Icon className='me-2' icon='account_balance_wallet' />
 									<p className='m-0'>
 										<span className='text_semibold'>{orderSummery?.totalUnpaidOrder} payments</span> to
 										unpaid
@@ -199,13 +199,13 @@ const Dashboard = () => {
 											navigate('/settings/payment');
 										}}
 									>
-										View More <WxIcon className='ms_2' icon='arrow_forward' />
+										View More <Icon className='ms_2' icon='arrow_forward' />
 									</Button>
 								</div>
 							</div>
 							<div className=' notify d-flex justify-content-between align-items-center'>
 								<div className='d-flex align-items-center left'>
-									<WxIcon className='me-2' icon='production_quantity_limits' />
+									<Icon className='me-2' icon='production_quantity_limits' />
 									<p className='m-0'>
 										<span className='text_semibold'>{orderSummery?.totalRefundRequest} Refunds</span>{' '}
 										request pending
@@ -219,7 +219,7 @@ const Dashboard = () => {
 											navigate(ORDER + '?paymentStatus=' + MASTER_META_KEY.PAYMENT_STATUS_TYPE_REFUNDED);
 										}}
 									>
-										View More <WxIcon className='ms_2' icon='arrow_forward' />
+										View More <Icon className='ms_2' icon='arrow_forward' />
 									</Button>
 								</div>
 							</div>
@@ -236,7 +236,7 @@ const Dashboard = () => {
           <h2 className="m-0">50% off on all packs</h2>
           <Button variant="outline">
             Explore Now
-            <WxIcon className="ms_2" icon="arrow_forward" />
+            <Icon className="ms_2" icon="arrow_forward" />
           </Button>
         </div>
       ) : (
@@ -252,7 +252,7 @@ const Dashboard = () => {
 					</h5>
 					<div className="d-flex align-items-center">
 						<Button size="sm">Explore More</Button>
-						<WxIcon className="ms-3" icon="more_vert" />
+						<Icon className="ms-3" icon="more_vert" />
 					</div>
 				</div>
 				<div className="row">
@@ -282,7 +282,7 @@ const Dashboard = () => {
 				<div className='wx__apps_of_the_week'>
 					<div className='d-flex justify-content-between align-items-center'>
 						<div className='d-flex align-items-center'>
-							<WxIcon className='trophy_icon' size={28} icon='emoji_events' />
+							<Icon className='trophy_icon' size={28} icon='emoji_events' />
 							<div className='ms_2'>
 								<h5 className='m-0 text_h5 text_semibold'>Apps Of The Week</h5>
 								<span className='text_body text_regular'>
@@ -290,7 +290,7 @@ const Dashboard = () => {
 								</span>
 							</div>
 						</div>
-						<WxIcon icon='more_vert' />
+						<Icon icon='more_vert' />
 					</div>
 					<div className='row'>
 						<DashboardApp apps={apps} />
@@ -302,7 +302,7 @@ const Dashboard = () => {
 							<div className='wx__exploreMore_card card '>
 								<h2 className='m-0'>
 									<span>Explore More</span>
-									<WxIcon className='explore_more_icon ms-3' icon='arrow_circle_right' />
+									<Icon className='explore_more_icon ms-3' icon='arrow_circle_right' />
 								</h2>
 							</div>
 						</div>

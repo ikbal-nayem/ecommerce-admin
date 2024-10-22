@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { IRequestMeta } from "@interfaces/common.interface";
 import { memo, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -156,7 +156,7 @@ const WxPagination = ({
 								(currentPage === 0 || totalPageCount === 1) && "disable-page"
 							}`}
 						>
-							<WxIcon icon="first_page" className="span" />
+							<Icon icon="first_page" className="span" />
 						</li>
 						<li
 							onClick={(e) => {
@@ -166,7 +166,7 @@ const WxPagination = ({
 								(currentPage === 0 || totalPageCount === 1) && "disable-page"
 							}`}
 						>
-							<WxIcon icon="chevron_left" className="span" />
+							<Icon icon="chevron_left" className="span" />
 						</li>
 						{/* paginatin left button end */}
 
@@ -222,7 +222,7 @@ const WxPagination = ({
 								"disable-page"
 							}`}
 						>
-							<WxIcon icon="chevron_right" className="span" />
+							<Icon icon="chevron_right" className="span" />
 						</li>
 
 						<li
@@ -236,7 +236,7 @@ const WxPagination = ({
 								"disable-page"
 							}`}
 						>
-							<WxIcon icon="last_page" className="span" />
+							<Icon icon="last_page" className="span" />
 						</li>
 						{/* paginatin left button end */}
 					</ul>

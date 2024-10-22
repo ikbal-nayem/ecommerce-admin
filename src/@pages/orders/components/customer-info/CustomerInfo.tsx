@@ -1,5 +1,5 @@
 import SelectOption from "@components/Select/Autocomplete";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import Label from "@components/Label";
 import { STATUS_CONSTANT } from "config/constants";
 import {
@@ -77,7 +77,7 @@ const CustomerInfo = ({
 				isRequired
 				labelRight={
 					selectedCustomer && onCustomerSelect ? (
-						<WxIcon
+						<Icon
 							variants="round"
 							icon="cancel"
 							role="button"

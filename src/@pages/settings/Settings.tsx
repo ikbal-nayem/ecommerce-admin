@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import {
 	SETTINGS_BILLING,
 	SETTINGS_CHECKOUT,
@@ -24,7 +24,7 @@ const Setting = () => {
 			<div className="card p-3 d-flex flex-row flex-wrap justify-content-center mt-3">
 				<Link to={SETTINGS_GENERAL}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="space_dashboard" className="setting_link_icon" />
+						<Icon icon="space_dashboard" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								General
@@ -37,7 +37,7 @@ const Setting = () => {
 				</Link>
 				<Link to={SETTINGS_PAYMENT}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="payment" className="setting_link_icon" />
+						<Icon icon="payment" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Payment
@@ -50,7 +50,7 @@ const Setting = () => {
 				</Link>
 				<Link to={SETTINGS_BILLING}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="travel_explore" className="setting_link_icon" />
+						<Icon icon="travel_explore" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Billing
@@ -64,7 +64,7 @@ const Setting = () => {
 
 				<Link to={SETTINGS_DOMAIN}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="manage_accounts" className="setting_link_icon" />
+						<Icon icon="manage_accounts" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Manage Domain
@@ -77,7 +77,7 @@ const Setting = () => {
 				</Link>
 				<Link to={SETTINGS_DELIVERY}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="local_shipping" className="setting_link_icon" />
+						<Icon icon="local_shipping" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Delivery
@@ -90,7 +90,7 @@ const Setting = () => {
 				</Link>
 				<Link to={SETTINGS_ORDER}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="receipt" className="setting_link_icon" />
+						<Icon icon="receipt" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Order
@@ -104,7 +104,7 @@ const Setting = () => {
 
 				<Link to={SETTINGS_NOTIFICATION}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="notifications" className="setting_link_icon" />
+						<Icon icon="notifications" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Notification
@@ -117,7 +117,7 @@ const Setting = () => {
 				</Link>
 				<Link to={SETTINGS_CHECKOUT}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="shopping_cart" className="setting_link_icon" />
+						<Icon icon="shopping_cart" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Checkout
@@ -130,7 +130,7 @@ const Setting = () => {
 				</Link>
 				<Link to={SETTINGS_SITE_OPERATOR}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="settings" className="setting_link_icon" />
+						<Icon icon="settings" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Site Operator
@@ -143,7 +143,7 @@ const Setting = () => {
 				</Link>
 				<Link to={SETTINGS_ROLES}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="how_to_reg" className="setting_link_icon" />
+						<Icon icon="how_to_reg" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Roles
@@ -156,7 +156,7 @@ const Setting = () => {
 				</Link>
 				<Link to={SETTINGS_POLICIES}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon icon="gavel" className="setting_link_icon" />
+						<Icon icon="gavel" className="setting_link_icon" />
 						<div className="right-sec">
 							<h6 className="text_heading text_semibold mb-0">
 								Policies
@@ -169,7 +169,7 @@ const Setting = () => {
 				</Link>
 				<Link to={SETTINGS_PRICING_PLAN}>
 					<div className="setting_single_item d-flex flex-row align-items-start">
-						<WxIcon
+						<Icon
 							icon="account_balance_wallet"
 							className="setting_link_icon"
 						/>

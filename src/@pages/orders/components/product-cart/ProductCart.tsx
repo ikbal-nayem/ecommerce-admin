@@ -1,5 +1,5 @@
 import "./ProductCart.scss";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/Thumbnail";
 import { IProductVariant } from "@interfaces/product.interface";
@@ -90,14 +90,14 @@ const ProductCart = ({
 											}
 										/>
 										<div className="d-flex flex-column">
-											<WxIcon
+											<Icon
 												icon="expand_less"
 												className="bg-light"
 												onClick={() =>
 													updateQuantity(idx, product?.quantity + 1)
 												}
 											/>
-											<WxIcon
+											<Icon
 												icon="expand_more"
 												className="bg-light"
 												onClick={() =>
@@ -118,7 +118,7 @@ const ProductCart = ({
 							</td>
 							{isEditable ? (
 								<td className="wx__td cancel">
-									<WxIcon
+									<Icon
 										variants="round"
 										icon="close"
 										onClick={() => removeFromCart(product, idx)}

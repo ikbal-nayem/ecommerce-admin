@@ -1,6 +1,6 @@
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxModal from "@components/Modal";
 import WxModalBody from "@components/Modal/ModalBody";
@@ -43,7 +43,7 @@ const Discount = ({
       <WxModalBody>
         <div className="row">
           <div className="col-md-6">
-            <WxSelect
+            <Select
               label="Discount Type"
               options={dicountTypes}
               textKey="type"
@@ -62,7 +62,7 @@ const Discount = ({
               value={discount.amount}
               endIcon={
                 discount.type === "Percentage" ? (
-                  <WxIcon variants="round" icon="percent" />
+                  <Icon variants="round" icon="percent" />
                 ) : (
                   "BDT"
                 )

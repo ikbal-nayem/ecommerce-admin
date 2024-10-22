@@ -1,6 +1,6 @@
 import GenerateReactPDF from "@components/Invoice/GenerateReactPDF";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { IOrderList } from "@interfaces/order.interface";
 import { pdf } from "@react-pdf/renderer";
 import { ORDER_DETAILS } from "routes/path-name.route";
@@ -128,7 +128,7 @@ const OrderListTable = ({ ordersData, onDelete }: IOrdersTable) => {
               </td>
               <td className="wx__td more">
                 <div className="wx__table_cell_more-icon">
-                  <WxIcon
+                  <Icon
                     icon="more_vert"
                     id="triggerId"
                     onClick={() => onShowPopup(index)}
@@ -145,7 +145,7 @@ const OrderListTable = ({ ordersData, onDelete }: IOrdersTable) => {
                             to={ORDER_DETAILS({ order_id: ord?.orderId })}
                             className="text_body"
                           >
-                            <WxIcon style={{ top: "0" }} icon="edit" /> Edit
+                            <Icon style={{ top: "0" }} icon="edit" /> Edit
                           </Link>
                         </li>
                         {["pending", "delivered"].includes(
@@ -157,7 +157,7 @@ const OrderListTable = ({ ordersData, onDelete }: IOrdersTable) => {
                             style={{ cursor: "pointer" }}
                           >
                             <span className="text_body">
-                              <WxIcon
+                              <Icon
                                 style={{ top: "0" }}
                                 icon="print"
                                 color="primary"
@@ -174,7 +174,7 @@ const OrderListTable = ({ ordersData, onDelete }: IOrdersTable) => {
                             onClick={() => onDelete(ord)}
                           >
                             <a className="text_body">
-                              <WxIcon
+                              <Icon
                                 style={{ top: "0" }}
                                 icon="delete"
                                 color="danger"

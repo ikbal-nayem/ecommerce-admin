@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import WxPagination from "@components/WxPagination/WxPagination";
@@ -162,7 +162,7 @@ const Discount = () => {
   };
 
   return (
-    <WxMainFull>
+    <MainFull>
       <div className="d-flex justify-content-between align-items-center">
         <h4 className="_h4__medium mb-0">Discounts</h4>
         {couponsData.length ? (
@@ -237,7 +237,7 @@ const Discount = () => {
         onConfirmLabel="Yes, Change"
         body={`Do you want to change the status?`}
       />
-    </WxMainFull>
+    </MainFull>
   );
 };
 

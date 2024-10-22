@@ -1,7 +1,7 @@
-import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import TableLoader from "@components/TableLoader/TableLoader";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
@@ -80,7 +80,7 @@ const Inventory = () => {
   };
 
   return (
-    <WxMainFull>
+    <MainFull>
       <div className="d-flex justify-content-between align-items-center">
         <h4 className="mb-0">Inventory List</h4>
       </div>
@@ -96,7 +96,7 @@ const Inventory = () => {
                 className="mb-0"
                 type="search"
                 placeholder="Search by products, SKU"
-                startIcon={<WxIcon icon="search" />}
+                startIcon={<Icon icon="search" />}
                 onChange={(e: any) => setSearchQuery(e.target.value)}
               />
             </div>
@@ -127,7 +127,7 @@ const Inventory = () => {
           ) : null}
         </div>
       )}
-    </WxMainFull>
+    </MainFull>
   );
 };
 

@@ -1,7 +1,7 @@
 import DateInput from "@components/DatePicker/DateInput";
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
 import SelectOption from "@components/Select/Autocomplete";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
 import { useEffect, useState } from "react";
@@ -197,7 +197,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxSelect
+						<Select
 							isRequired
 							label="Division/State"
 							options={divisions}
@@ -217,7 +217,7 @@ export const CustomerFrom = ({
 						/>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6">
-						<WxSelect
+						<Select
 							isRequired
 							label="District/City"
 							options={districts}

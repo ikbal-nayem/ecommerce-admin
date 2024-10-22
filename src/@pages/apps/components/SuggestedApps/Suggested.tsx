@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxThumbnail from "@components/Thumbnail";
 import { IAppDetails, IInstalledApp } from "@interfaces/app.interface";
 import { APP_OVERVIEW } from "routes/path-name.route";
@@ -25,7 +25,7 @@ const SuggestedApp = ({ appListData, installedApps }: ISuggestedAppsProps) => {
                 (installedApp) => installedApp?.appId === item?.id
               ) ? (
                 <small className="installed">
-                  <WxIcon icon="done_all" /> Installed
+                  <Icon icon="done_all" /> Installed
                 </small>
               ) : null}
 

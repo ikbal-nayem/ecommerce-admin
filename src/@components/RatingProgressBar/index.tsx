@@ -1,4 +1,4 @@
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
 import "./RatingProgressBar.scss";
 
 interface IRatingProgressBar {
@@ -14,7 +14,7 @@ const RatingProgressBar = ({
 }: IRatingProgressBar) => (
 	<div className="wx__rating_progress wx__progress_5 d-flex align-items-center">
 		<div className="text_body text_regular progress_left">
-			<WxIcon className="small_icon" icon="star" variants="filled" />
+			<Icon className="small_icon" icon="star" variants="filled" />
 			&nbsp;{star}
 		</div>
 		<div className="wx__bar_bg">

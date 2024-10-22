@@ -1,5 +1,5 @@
 import BlockSection from "@components/BlockSection/BlockSection";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxImg from "@components/WxImg/WxImg";
 import TextInput from "@components/TextInput";
@@ -119,7 +119,7 @@ const MarkAsPaid = ({
 							) : null}
 							<div className="row">
 								<div className="col-md-6">
-									<WxSelect
+									<Select
 										label="Payment method"
 										placeholder="Choose method"
 										options={paymentMethodList}

@@ -4,7 +4,7 @@ import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxThumbnail from "@components/Thumbnail";

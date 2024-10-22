@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {
   WxFormContainer,
   WxFormFooter,
@@ -143,7 +143,7 @@ const CourierForm = () => {
                     field: { onChange, value },
                     fieldState: { error },
                   }) => (
-                    <WxSelect
+                    <Select
                       label="District/City"
                       options={districts}
                       placeholder="Select District/City"
@@ -169,7 +169,7 @@ const CourierForm = () => {
                     field: { onChange, value },
                     fieldState: { error },
                   }) => (
-                    <WxSelect
+                    <Select
                       label="Thana"
                       options={thana}
                       placeholder="Select Thana"
@@ -285,7 +285,7 @@ const CourierForm = () => {
                   errorMessage={errors?.bkash?.message}
                 />
 
-                <WxSelect
+                <Select
                   label="Bkash type"
                   options={mobileBankingType}
                   placeholder="Select type"
@@ -312,7 +312,7 @@ const CourierForm = () => {
                     ...register("withdraw.mobileBank.accountType"),
                   }}
                 /> */}
-                <WxSelect
+                <Select
                   label="Rocket type"
                   options={mobileBankingType}
                   placeholder="Select type"

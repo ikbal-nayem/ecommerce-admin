@@ -2,13 +2,13 @@ import WxAlert from '@components/Alert/WxAlert';
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
 import Invoice from '@components/Invoice/Invoice';
 import InvoiceTable from '@components/Invoice/InvoiceTable';
-import WxMainFull from '@components/MainContentLayout/WxMainFull';
+import MainFull from '@components/MainContentLayout/MainFull';
 import WxNotFound from '@components/NotFound/NotFound';
-import WxSelect from '@components/Select/Select';
+import Select from '@components/Select/Select';
 import TableLoader from '@components/TableLoader/TableLoader';
 import {Button} from '@components/Button';
 import { FormHeader } from '@components/FormLayout';
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
 import TextInput from '@components/TextInput';
 import WxPagination from '@components/WxPagination/WxPagination';
 import ProductTableSkelton from '@components/WxSkelton/ProductTableSkelton';
@@ -180,7 +180,7 @@ const Orders = () => {
 	activeTabIdx = activeTabIdx >= 0 ? activeTabIdx : 0;
 
 	return (
-		<WxMainFull className='order-list-page'>
+		<MainFull className='order-list-page'>
 			<FormHeader
 				title='Order'
 				noBack
@@ -216,12 +216,12 @@ const Orders = () => {
 									type='search'
 									placeholder='Search orders'
 									noMargin
-									startIcon={<WxIcon icon='search' />}
+									startIcon={<Icon icon='search' />}
 									onChange={(e: any) => setSearchQuery(e.target.value)}
 								/>
 							</div>
 							<div className='col-lg-2 col-md-3 col-sm-6 mb-3'>
-								<WxSelect
+								<Select
 									valuesKey='metaKey'
 									textKey='title'
 									noMargin
@@ -232,7 +232,7 @@ const Orders = () => {
 								/>
 							</div>
 							<div className='col-lg-2 col-md-3 col-sm-6 mb-3'>
-								<WxSelect
+								<Select
 									valuesKey='metaKey'
 									textKey='title'
 									noMargin
@@ -302,7 +302,7 @@ const Orders = () => {
 			</div>
 			<Invoice invoiceData={invoiceData} />
 			<InvoiceTable data={invoiceItemData} />
-		</WxMainFull>
+		</MainFull>
 	);
 };
 

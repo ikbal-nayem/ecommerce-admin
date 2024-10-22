@@ -1,6 +1,6 @@
 import WxDrawer from "@components/Drawer";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/Thumbnail";
 import { STATUS_CONSTANT } from "config/constants";
@@ -68,7 +68,7 @@ const BrowseProduct = ({
 					type="search"
 					isAutoFocus
 					placeholder="Search products"
-					startIcon={<WxIcon variants="outlined" icon="search" />}
+					startIcon={<Icon variants="outlined" icon="search" />}
 					onChange={(e: any) => setSearchQuery(e.target.value)}
 				/>
 				{isLoading ? (
@@ -117,7 +117,7 @@ const BrowseProduct = ({
 										{item?.sellingPrice} BDT
 									</td>
 									<td className="wx__td">
-										<WxIcon
+										<Icon
 											variants="round"
 											icon="add_shopping_cart"
 											className="cart-icon"

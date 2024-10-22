@@ -18,3 +18,19 @@ export const makeFormData = (data: IObject): Promise<FormData> =>
 			})
 		).then(() => resolve(fd));
 	});
+
+export const makeRequestFormData = (reqData: IObject) => {
+	let data = { ...reqData };
+	const fd = new FormData();
+	Object.keys(data).forEach((key) => {
+		if (data[key] instanceof File) {
+			fd.append(key, data[key]);
+			delete data[key];
+		} else if (data[key] instanceof FileList) {
+			for (const f of Object.values(data[key])) fd.append(key, f);
+			delete data[key];
+		}
+	});
+	fd.append('data', JSON.stringify(data));
+	return fd;
+};

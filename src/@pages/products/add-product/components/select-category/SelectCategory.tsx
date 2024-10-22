@@ -55,7 +55,7 @@ const SelectCategory = ({ setCategory, selectedCategory }: SelectCategoryProps) 
 					<DrawerBody>
 						{/* <TextInput
 							type="search"
-							startIcon={<WxIcon icon="search" />}
+							startIcon={<Icon icon="search" />}
 							placeholder="Search categories"
 						/> */}
 

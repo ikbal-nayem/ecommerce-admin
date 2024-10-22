@@ -6,7 +6,7 @@ import {
   FormHeader,
 } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import { STATUS_CONSTANT } from "config/constants";
 import { IProductVariant } from "@interfaces/product.interface";
@@ -151,7 +151,7 @@ const UpdateOrder = () => {
                     <TextInput
                       type="search"
                       placeholder="Search products"
-                      startIcon={<WxIcon icon="search" />}
+                      startIcon={<Icon icon="search" />}
                       onFocus={openDrawer}
                     />
                   </div>

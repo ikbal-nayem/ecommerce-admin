@@ -2,7 +2,7 @@ import WxMainLg from '@components/MainContentLayout/MainLg';
 import {Button} from '@components/Button';
 import { FormHeader } from '@components/FormLayout';
 import WxHr from '@components/WxHr';
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
 import TextInput from '@components/TextInput';
 import Switch from '@components/Switch';
 import { MASTER_META_TYPE } from 'config/constants';
@@ -244,7 +244,7 @@ const CreateMenu = () => {
 						<div className='card p-4 mt-3'>
 							<div className='d-flex align-items-center justify-content-between mb-4 add-menu'>
 								<h6 className='mb-0 text_heading text_semibold'>Menu Items</h6>
-								<WxIcon hoverTitle='Add menu' icon='add_circle' onClick={setOpenFormFun} />
+								<Icon hoverTitle='Add menu' icon='add_circle' onClick={setOpenFormFun} />
 							</div>
 
 							{menuList?.length ? (
@@ -265,7 +265,7 @@ const CreateMenu = () => {
 							)}
 
 							<button className='add-menu-btn' type='button' onClick={setOpenFormFun}>
-								<WxIcon icon='add_circle' /> Add menu
+								<Icon icon='add_circle' /> Add menu
 							</button>
 						</div>
 					</div>

@@ -1,9 +1,9 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
 import { SETTINGS_SITE_OPERATOR } from "routes/path-name.route";
@@ -131,7 +131,7 @@ const SiteOperatorUpdate = () => {
 							</Button>
 							<WxHr />
 							<div>
-								<WxSelect
+								<Select
 									label="Choose Role"
 									key={watch("roleId")}
 									defaultValue={watch("roleId")}
@@ -159,7 +159,7 @@ const SiteOperatorUpdate = () => {
 								</div>
 							</div>
 							<div className="d-flex align-items-center status_mxg_warning">
-								<WxIcon icon="info" />
+								<Icon icon="info" />
 								<p className="text_small text_regular ms_2 mb-0">
 									Operator will get password through email
 								</p>

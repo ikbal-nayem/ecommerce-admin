@@ -1,5 +1,5 @@
 import {Button} from "@components/Button";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { MASTER_META_KEY } from "config/constants";
 import "./PricingPlanTable.scss";
 
@@ -95,7 +95,7 @@ const priceingCell = (pricing, operator) =>
 			)
 				renderItem = "Coming soon";
 			else
-				renderItem = value ? <WxIcon icon="done" /> : <WxIcon icon="close" />;
+				renderItem = value ? <Icon icon="done" /> : <Icon icon="close" />;
 		else if (typeof value === "object")
 			renderItem = value?.length
 				? operator.property === "paymentGateways"

@@ -1,8 +1,8 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import {
 	ITheme,
@@ -97,12 +97,12 @@ const AllTheme = () => {
 						<TextInput
 							type="search"
 							placeholder="Search themes"
-							startIcon={<WxIcon icon="search" />}
+							startIcon={<Icon icon="search" />}
 							onChange={(e: any) => setSearchQuery(e.target.value)}
 						/>
 					</div>
 					<div className="col-md-4 col-sm-12">
-						<WxSelect
+						<Select
 							placeholder="Choose category"
 							valuesKey="id"
 							textKey="text"

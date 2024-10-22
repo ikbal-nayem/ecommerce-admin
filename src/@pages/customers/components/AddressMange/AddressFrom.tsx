@@ -1,4 +1,4 @@
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import TextInput from "@components/TextInput";
 import { Controller } from "react-hook-form";
 
@@ -62,7 +62,7 @@ export const AddressForm = ({
 				/>
 			</div>
 			<div className="col-md-6">
-				<WxSelect
+				<Select
 					label="Division/State"
 					options={divisions}
 					placeholder="Select Division"
@@ -85,7 +85,7 @@ export const AddressForm = ({
 						name="cityName"
 						rules={{ required: true }}
 						render={({ field: { onChange, value }, fieldState: { error } }) => (
-							<WxSelect
+							<Select
 								label="District/City"
 								options={districts}
 								placeholder="Select District/City"
@@ -101,7 +101,7 @@ export const AddressForm = ({
 						)}
 					/>
 				) : (
-					<WxSelect
+					<Select
 						label="District/City"
 						options={districts}
 						placeholder="Select District/City"

@@ -4,7 +4,7 @@ import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
 import { MASTER_META_KEY } from "config/constants";
@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import WxTextarea from "@components/WxTextarea";
 import { ButtonLoader } from "services/utils/preloader.service";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import Checkbox from "@components/Checkbox";
 import WxRadio from "@components/WxRadio/WxRadio";
 import Label from "@components/Label";
@@ -102,7 +102,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 									/>
 								</div>
 								<div className="status_msg mb-4 mt-2">
-									<WxIcon icon="info" />
+									<Icon icon="info" />
 									<p className="text_small text_regular">
 										Within sandbox mode only admin can test the payment gateway
 										from the website.
@@ -129,7 +129,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 										/>
 									</div>
 									<div className="col-sm-6 col-12">
-										<WxSelect
+										<Select
 											label="Agent/Personal"
 											isRequired
 											valuesKey="title"
@@ -219,7 +219,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 							/>
 						</div>
 						<div className="status_msg mb-3 mt-2">
-							<WxIcon icon="info" />
+							<Icon icon="info" />
 							<p className="text_small text_regular">
 								Turn off sandbox mode to enable in website
 							</p>

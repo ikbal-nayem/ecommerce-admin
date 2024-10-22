@@ -1,4 +1,4 @@
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
@@ -62,7 +62,7 @@ const ProductDimension = () => {
 									...register("weight", { valueAsNumber: true }),
 								}}
 							/>
-							<WxSelect
+							<Select
 								options={weights}
 								style={{ minWidth: 60 }}
 								valuesKey="text"
@@ -81,7 +81,7 @@ const ProductDimension = () => {
 									...register("width", { valueAsNumber: true }),
 								}}
 							/>
-							<WxSelect
+							<Select
 								options={heights}
 								style={{ minWidth: 60 }}
 								valuesKey="text"
@@ -100,7 +100,7 @@ const ProductDimension = () => {
 									...register("height", { valueAsNumber: true }),
 								}}
 							/>
-							<WxSelect
+							<Select
 								options={heights}
 								style={{ minWidth: 60 }}
 								valuesKey="text"

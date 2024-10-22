@@ -1,7 +1,7 @@
-import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTabs from "@components/WxTabs/WxTabs";
@@ -56,7 +56,7 @@ export default function Partners() {
   };
 
   return (
-    <WxMainFull>
+    <MainFull>
       <FormHeader title="Partner" />
       {isLoading ? (
         <div className="rounded w-100 bg-white mt-3">
@@ -151,7 +151,7 @@ export default function Partners() {
                                 id: partner?.storeId,
                               })}
                             >
-                              <WxIcon icon="preview" size={30} />
+                              <Icon icon="preview" size={30} />
                             </Link>
                           ) : null}
                         </td>
@@ -171,6 +171,6 @@ export default function Partners() {
           ) : null}
         </div>
       )}
-    </WxMainFull>
+    </MainFull>
   );
 }

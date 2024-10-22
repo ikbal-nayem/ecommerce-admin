@@ -32,7 +32,6 @@ const Menu: FC<IMenu> = ({
         className={clsx(triggerClassName)}
         data-bs-toggle="dropdown"
         aria-expanded="false"
-        data-bs-offset="10,20"
         data-bs-auto-close={closeOnClick}
         role="button"
       >

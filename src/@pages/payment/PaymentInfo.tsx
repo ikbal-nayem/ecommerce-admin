@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { SETTINGS_BILLING } from "routes/path-name.route";
 import { AuthService } from "services/api/Auth.service";
 import { InvoiceService } from "services/api/Invoice.service";
@@ -42,7 +42,7 @@ const PaymentInfo = () => {
 	return (
 		<WxMainLg>
 			<div className="card p-5 text-center">
-				<WxIcon
+				<Icon
 					icon={params?.status === "success" ? "task_alt" : "cancel"}
 					size={100}
 					color={params?.status === "success" ? "success" : "danger"}
@@ -92,7 +92,7 @@ const PaymentInfo = () => {
 							variant="outline"
 							onClick={() => navigate(SETTINGS_BILLING)}
 						>
-							<WxIcon icon="keyboard_backspace" className="me-2" />
+							<Icon icon="keyboard_backspace" className="me-2" />
 							Show all invoices
 						</Button>
 					</div>
@@ -106,7 +106,7 @@ const PaymentInfo = () => {
 									InvoiceService.downloadInvoice(params?.invoiceId)
 								}
 							>
-								<WxIcon icon="file_download" className="me-2" />
+								<Icon icon="file_download" className="me-2" />
 								Download Invoice
 							</Button>
 						) : null}

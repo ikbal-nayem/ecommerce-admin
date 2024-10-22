@@ -3,7 +3,7 @@ import WxMainLg from '@components/MainContentLayout/MainLg';
 import {Button} from '@components/Button';
 import { WxDraggableList } from '@components/WxDraggableList';
 import { FormHeader } from '@components/FormLayout';
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
 import Switch from '@components/Switch';
 import WxThumbnail from '@components/Thumbnail';
 import { ISliderItem } from '@interfaces/themeCustomization.interface';
@@ -158,7 +158,7 @@ const SliderDetails = () => {
 				<div className='title_section'>
 					<div className='title' />
 					<Button onClick={() => setIsFormOpen(true)} variant='outline'>
-						<WxIcon icon='add' />
+						<Icon icon='add' />
 						<span>Add Banner</span>
 					</Button>
 				</div>
@@ -189,14 +189,14 @@ const SliderDetails = () => {
 												onChange={(e) => onStatusChange(e.target.checked, index)}
 												disabled={isSaving}
 											/>
-											<WxIcon
+											<Icon
 												icon='delete'
 												size={22}
 												variants='outlined'
 												color='danger'
 												onClick={() => handleDelete(item)}
 											/>
-											<WxIcon icon='edit' size={22} variants='outlined' onClick={() => onEditStart(item)} />
+											<Icon icon='edit' size={22} variants='outlined' onClick={() => onEditStart(item)} />
 										</div>
 									</li>
 								</ul>

@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { WxFormContainer, FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
@@ -160,7 +160,7 @@ const RedXOrderPlace = () => {
                 </div>
                 <div className="row">
                   <div className="col-lg-6 col-md-6 col-sm-12">
-                    <WxSelect
+                    <Select
                       label="Delivery Area"
                       options={deliveryAreaList}
                       placeholder="Select Area"

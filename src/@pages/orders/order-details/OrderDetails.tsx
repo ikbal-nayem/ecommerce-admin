@@ -6,7 +6,7 @@ import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import Label from "@components/Label";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/Thumbnail";
@@ -410,7 +410,7 @@ const OrderDetails = () => {
 							</li>
 							<li>
 								<Button color="secondary" onClick={() => setIsMoreOpen(true)}>
-									More <WxIcon icon="arrow_drop_down" />
+									More <Icon icon="arrow_drop_down" />
 								</Button>
 								<WxDropdown isOpen={isMoreOpen} setIsOpen={setIsMoreOpen}>
 									<ul>
@@ -419,7 +419,7 @@ const OrderDetails = () => {
 											onClick={() => invoicePrint(order_id)}
 										>
 											<a className="text_body">
-												<WxIcon icon="print" /> Print invoice
+												<Icon icon="print" /> Print invoice
 											</a>
 										</li>
 										{orderStatusFind(
@@ -436,7 +436,7 @@ const OrderDetails = () => {
 												}
 											>
 												<a className="text_body text-danger">
-													<WxIcon icon="close" /> Cancel Order
+													<Icon icon="close" /> Cancel Order
 												</a>
 											</li>
 										) : null}
@@ -466,7 +466,7 @@ const OrderDetails = () => {
 								MASTER_META_KEY.ORDER_STATUS_TYPE_DELIVERED
 							) ? (
 								<div className="ms-auto">
-									<WxIcon
+									<Icon
 										variants="round"
 										role="button"
 										icon="more_vert"
@@ -482,7 +482,7 @@ const OrderDetails = () => {
 												className="text_subtitle"
 											>
 												<a className="text_body">
-													<WxIcon icon="print" /> Print invoice
+													<Icon icon="print" /> Print invoice
 												</a>
 											</li>
 											{orderDetails?.orderStatus ===
@@ -502,7 +502,7 @@ const OrderDetails = () => {
 													}}
 												>
 													<a className="text_body text-danger">
-														<WxIcon icon="close" /> Cancel Delivered
+														<Icon icon="close" /> Cancel Delivered
 													</a>
 												</li>
 											) : null}
@@ -529,7 +529,7 @@ const OrderDetails = () => {
 									variant="fill"
 								>
 									Mark as Delivered
-									<WxIcon icon="expand_more" className="ms_2" />
+									<Icon icon="expand_more" className="ms_2" />
 								</Button>
 								<WxDropdown
 									id="triggerPlace"

@@ -69,7 +69,7 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
 					</Button>
 					{/* <Button variant="none" onClick={() => onShowPopup()}>
             More
-            <WxIcon
+            <Icon
               icon="more_vert"
               id="triggerId"
               className="text-primary ms-3"
@@ -82,37 +82,37 @@ const LiveTheme = ({ installedThemes }: ILiveThemeProps) => {
               <ul>
                 <li className="text_subtitle">
                   <Link to="" className="text_body">
-                    <WxIcon icon="visibility" />
+                    <Icon icon="visibility" />
                     View
                   </Link>
                 </li>
                 <li className="text_subtitle">
                   <Link to="" className="text_body">
-                    <WxIcon icon="title" />
+                    <Icon icon="title" />
                     Rename
                   </Link>
                 </li>
                 <li className="text_subtitle">
                   <Link to="" className="text_body">
-                    <WxIcon icon="language" />
+                    <Icon icon="language" />
                     Duplicate Site
                   </Link>
                 </li>
                 <li className="text_subtitle">
                   <Link to="" className="text_body">
-                    <WxIcon icon="download" />
+                    <Icon icon="download" />
                     Download Theme
                   </Link>
                 </li>
                 <li className="text_subtitle">
                   <Link to="" className="text_body">
-                    <WxIcon icon="code" />
+                    <Icon icon="code" />
                     Edit Code
                   </Link>
                 </li>
                 <li className="text_subtitle">
                   <Link to="" className="text_body">
-                    <WxIcon icon="translate" />
+                    <Icon icon="translate" />
                     Edit Language
                   </Link>
                 </li>

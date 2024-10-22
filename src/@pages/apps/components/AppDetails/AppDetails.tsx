@@ -1,7 +1,7 @@
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxTabs from "@components/WxTabs/WxTabs";
 import WxThumbnail from "@components/Thumbnail";
 import { IAppDetails, IAppInfo, IAppPricing } from "@interfaces/app.interface";
@@ -179,7 +179,7 @@ const AppsDetails = () => {
 											onClick={() => navigate(APP_STORE({ appId: id }))}
 											disabled={isLowerLevel}
 										>
-											<WxIcon icon="settings" size={20} />
+											<Icon icon="settings" size={20} />
 										</Button>
 									)}
 								</div>
@@ -189,7 +189,7 @@ const AppsDetails = () => {
 											to={SETTINGS_PRICING_PLAN}
 											className="text-decoration-none text-warning d-flex align-items-center gap-1"
 										>
-											<WxIcon
+											<Icon
 												icon="info"
 												variants="outlined"
 												color="warning"

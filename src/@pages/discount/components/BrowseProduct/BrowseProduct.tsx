@@ -3,7 +3,7 @@ import Checkbox from "@components/Checkbox";
 import WxDrawer from "@components/Drawer";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/Thumbnail";
 import { useState } from "react";
@@ -79,7 +79,7 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
               className="mb-0"
               type="search"
               placeholder="Search products"
-              startIcon={<WxIcon icon="search" />}
+              startIcon={<Icon icon="search" />}
               onChange={(e: any) => setSearchQuery(e.target.value)}
             />
           </div>

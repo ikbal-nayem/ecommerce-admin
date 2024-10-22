@@ -1,6 +1,6 @@
 import WxDropdown from '@components/WxDropdown/WxDropdown';
 import WxHr from '@components/WxHr';
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
 import WxImg from '@components/WxImg/WxImg';
 import WxTag from '@components/WxTag';
 import { ROUTES } from '@constants/route.constant';
@@ -31,7 +31,7 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 	return (
 		<div className='wx__header d-flex justify-content-between align-items-center'>
 			<div className='menu_icon me-2' onClick={onClickMenuBar}>
-				{menuIconFlag ? <WxIcon icon='close' /> : <WxIcon icon='menu' />}
+				{menuIconFlag ? <Icon icon='close' /> : <Icon icon='menu' />}
 			</div>
 			<div className='wx__header__logo d-flex align-items-center'>
 				<Link to={ROUTES.DASHBOARD}>
@@ -47,7 +47,7 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 					{user_data?.profile_img ? (
 						<WxImg src={imageURLGenerate(user_data.profile_img)} alt='' />
 					) : (
-						<WxIcon icon='account_circle' size={30} />
+						<Icon icon='account_circle' size={30} />
 					)}
 				</div>
 				<div>
@@ -61,17 +61,17 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 						<ul>
 							<li>
 								<Link to='account-setting' className='text_body'>
-									<WxIcon icon='person' variants='outlined' size={20} /> Manage Profile
+									<Icon icon='person' variants='outlined' size={20} /> Manage Profile
 								</Link>
 							</li>
 							<li>
 								<a href={ENV.LandingPageURL + 'learning-center'} target='_blank' className='text_body'>
-									<WxIcon icon='menu_book' variants='outlined' size={20} /> Learning Center
+									<Icon icon='menu_book' variants='outlined' size={20} /> Learning Center
 								</a>
 							</li>
 							<li>
 								<Link to={PORTAL_OVERVIEW} className='text_body'>
-									<WxIcon icon='group_work' variants='outlined' size={20} /> Partner Portal
+									<Icon icon='group_work' variants='outlined' size={20} /> Partner Portal
 								</Link>
 							</li>
 							<li>
@@ -79,7 +79,7 @@ const Header = ({ onClickFun, menuIconFlag, setMenuIconFlag }) => {
 							</li>
 							<li>
 								<a className='text_body' onClick={logout}>
-									<WxIcon icon='wifi_protected_setup' variants='outlined' size={20} /> Log out
+									<Icon icon='wifi_protected_setup' variants='outlined' size={20} /> Log out
 								</a>
 							</li>
 						</ul>

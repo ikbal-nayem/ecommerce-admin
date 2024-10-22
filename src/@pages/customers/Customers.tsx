@@ -1,11 +1,11 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import TableLoader from "@components/TableLoader/TableLoader";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxPagination from "@components/WxPagination/WxPagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
@@ -185,7 +185,7 @@ export default function Customer() {
   };
 
   return (
-		<WxMainFull>
+		<MainFull>
 			<FormHeader
 				title="Customers"
 				rightContent={
@@ -207,12 +207,12 @@ export default function Customer() {
 							<TextInput
 								type="search"
 								placeholder="Search Customer"
-								startIcon={<WxIcon icon="search" />}
+								startIcon={<Icon icon="search" />}
 								onChange={(e) => setSearchQuery(e.target.value)}
 							/>
 						</div>
 						<div className="col-lg-2 col-md-3 col-sm-12">
-							<WxSelect
+							<Select
 								placeholder="Select Group"
 								valuesKey="object"
 								textKey="title"
@@ -221,7 +221,7 @@ export default function Customer() {
 							/>
 						</div>
 						<div className="col-lg-2 col-md-3 col-sm-12">
-							<WxSelect
+							<Select
 								placeholder="Select Status"
 								valuesKey="text"
 								textKey="text"
@@ -280,6 +280,6 @@ export default function Customer() {
 				onConfirmLabel="Yes, Change"
 				body="Do you want to change the status?"
 			/>
-		</WxMainFull>
+		</MainFull>
 	);
 }

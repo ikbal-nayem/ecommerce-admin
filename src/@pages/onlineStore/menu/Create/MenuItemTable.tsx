@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { useState } from "react";
 
 type ItemsProps = {
@@ -55,7 +55,7 @@ const TableSubItem = ({
             <span>{sub.name}</span>
           </li>
           <li className="wx__li more">
-            <WxIcon
+            <Icon
               icon="more_vert"
               className="inline left"
               onClick={() => setShowPopup(true)}
@@ -64,14 +64,14 @@ const TableSubItem = ({
               <ul>
                 <li className="text_subtitle">
                   <a className="text_body" onClick={onEdit}>
-                    <WxIcon icon="edit" />
+                    <Icon icon="edit" />
                     Edit
                   </a>
                 </li>
                 {level > 0 && (
                   <li className="text_subtitle">
                     <a className="text_body" onClick={onAddSubcategory}>
-                      <WxIcon icon="add" />
+                      <Icon icon="add" />
                       Add Submenu
                     </a>
                   </li>
@@ -79,7 +79,7 @@ const TableSubItem = ({
 
                 {/* <li className="text_subtitle delete">
                   <a className="text_body" onClick={onDelete}>
-                    <WxIcon icon="delete" />
+                    <Icon icon="delete" />
                     Remove from list
                   </a>
                 </li> */}
@@ -112,7 +112,7 @@ const TableSubItem = ({
         <span>{sub.name}</span>
       </li>
       <li className="wx__td more">
-        <WxIcon
+        <Icon
           icon="more_vert"
           className="inline left"
           onClick={() => setShowPopup(true)}
@@ -121,21 +121,21 @@ const TableSubItem = ({
           <ul>
             <li className="text_subtitle">
               <a className="text_body" onClick={onEdit}>
-                <WxIcon icon="edit" />
+                <Icon icon="edit" />
                 Edit
               </a>
             </li>
             {level > 0 && (
               <li className="text_subtitle">
                 <a className="text_body" onClick={onAddSubcategory}>
-                  <WxIcon icon="add" />
+                  <Icon icon="add" />
                   Add Submenu
                 </a>
               </li>
             )}
             {/* <li className="text_subtitle delete">
               <a className="text_body" onClick={onDelete}>
-                <WxIcon icon="delete" />
+                <Icon icon="delete" />
                 Remove from list
               </a>
             </li> */}

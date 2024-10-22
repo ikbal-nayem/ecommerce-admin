@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import React, { useEffect, useState } from "react";
 import { imageURLGenerate } from "utils/utils";
 import "./WxSlider.scss";
@@ -39,13 +39,13 @@ const WxSlider = ({ srcKey, imageList, timeInterval = 5000, autoPlay = true }: I
     <section className="wx__slider">
       <div className="img-main-section w-100 d-flex align-items-center">
         <div className="left-icon">
-          <WxIcon icon="arrow_back_ios" onClick={() => setCurrentImgFun(-1)} />
+          <Icon icon="arrow_back_ios" onClick={() => setCurrentImgFun(-1)} />
         </div>
         <div className="img-section w-100">
           <img src={currentImg instanceof Object ? imageURLGenerate(currentImg) : currentImg} className="w-100" alt={'Image #'+ currentImgIdx} />
         </div>
         <div className="right-icon">
-          <WxIcon
+          <Icon
             icon="arrow_forward_ios"
             onClick={() => setCurrentImgFun(1)}
           />

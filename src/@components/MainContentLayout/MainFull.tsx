@@ -1,11 +1,11 @@
 import "./MainContentLayout.scss";
 
-interface IWxMainFull {
+interface IMainFull {
   className?: string;
   children: JSX.Element | JSX.Element[] | any;
 }
 
-const WxMainFull = ({ className, children }: IWxMainFull) => {
+const MainFull = ({ className, children }: IMainFull) => {
   return (
     <section
       className={`w-100 d-flex justify-content-center wx__main_full ${
@@ -19,4 +19,4 @@ const WxMainFull = ({ className, children }: IWxMainFull) => {
   );
 };
 
-export default WxMainFull;
+export default MainFull;

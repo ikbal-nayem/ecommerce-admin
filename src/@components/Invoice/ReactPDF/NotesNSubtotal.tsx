@@ -105,7 +105,7 @@ const NotesNSubtotal = ({ notesNSubtotalData }: IPdfNotesNSubtotal) => {
       {/* {orderNote && ( */}
       <View style={notesNSubtotal.notes}>
         <Text style={notesNSubtotal.notesText}>
-          {/* <WxIcon icon="info" /> */}
+          {/* <Icon icon="info" /> */}
           NOTES
         </Text>
         <Text style={notesNSubtotal.specificNoteText}>

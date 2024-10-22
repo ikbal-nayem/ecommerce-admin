@@ -1,9 +1,9 @@
 import DateInput from "@components/DatePicker/DateInput";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import Checkbox from "@components/Checkbox";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import Label from "@components/Label";
 import WxTextarea from "@components/WxTextarea";
@@ -177,7 +177,7 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
                     field: { onChange, value },
                     fieldState: { error },
                   }) => (
-                    <WxSelect
+                    <Select
                       label="Set campaigns status"
                       options={campaignStatusList}
                       placeholder="status"
@@ -202,7 +202,7 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
                   registerProperty={{
                     ...register("deliveryTime"),
                   }}
-                  endIcon={<WxIcon variants="round" icon="calendartoday" />}
+                  endIcon={<Icon variants="round" icon="calendartoday" />}
                   errorMessage={errors.deliveryTime?.message}
                   color={errors.deliveryTime ? "danger" : "secondary"}
                   // minDate={

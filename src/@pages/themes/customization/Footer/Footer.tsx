@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
@@ -150,7 +150,7 @@ const SiteFooter = () => {
 								</div>
 								<div className="row">
 									<div className="col-md-6 mt-3">
-										<WxSelect
+										<Select
 											label="Choose menu set"
 											options={menuSetList}
 											placeholder="Select"

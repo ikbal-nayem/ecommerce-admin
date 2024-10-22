@@ -5,7 +5,7 @@ import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import CustomerAdresSkelton from "@components/WxSkelton/Customer/CustomerAdresSkelton";
 import CustomerContactDtls from "@components/WxSkelton/Customer/CustomerContactDtls";
 import CustomerDtlInfoSkelton from "@components/WxSkelton/Customer/CustomerDtlInfoSkelton";
@@ -359,14 +359,14 @@ const CustomerDetails = () => {
                   <div className="text_body text_medium">
                     CONTACT DETAILS
                   </div>
-                  <WxIcon
+                  <Icon
                     onClick={() => setIsEditCustomerInfo(true)}
                     icon="edit"
                   />
                 </div>
                 {customer?.customer?.email && (
                   <div className="d-flex align-items-center contact-email mt-3">
-                    <WxIcon icon="email" />
+                    <Icon icon="email" />
                     <span className="text ms_2">
                       {customer?.customer?.email || ""}
                     </span>
@@ -374,7 +374,7 @@ const CustomerDetails = () => {
                 )}
                 {customer?.customer?.phoneNumber && (
                   <div className="d-flex align-items-center customer-phone mt-1">
-                    <WxIcon icon="phone" />
+                    <Icon icon="phone" />
                     <span className="text ms_2">
                       {customer?.customer?.phoneNumber || ""}
                     </span>
@@ -392,14 +392,14 @@ const CustomerDetails = () => {
                   <div className="text_body text_medium">
                     CUSTOMER GROUP
                   </div>
-                  <WxIcon
+                  <Icon
                     icon={isEditGroup ? "close" : "edit"}
                     onClick={() => setIsEditGroup(!isEditGroup)}
                   />
                 </div>
                 {!!customer?.groups.length && (
                   <div className="d-flex align-items-center customer-group mt-3">
-                    <WxIcon icon="groups" />
+                    <Icon icon="groups" />
                     <span className="text ms_2">
                       {customer?.groups
                         ?.map((group) => group?.title)
@@ -458,13 +458,13 @@ const CustomerDetails = () => {
                   <div className="text_body text_medium">
                     CUSTOMER ADDRESS
                   </div>
-                  <WxIcon onClick={() => onAddressManage()} icon="edit" />
+                  <Icon onClick={() => onAddressManage()} icon="edit" />
                 </div>
                 <div>
                   {customerAddresses.map((address) => (
                     <div className="mb-4" key={address.id}>
                       <div className="d-flex customer-location mt-3">
-                        <WxIcon icon="location_on" />
+                        <Icon icon="location_on" />
                         <span className="text ms_2">
                           {address?.title || ""}
                         </span>

@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
@@ -58,7 +58,7 @@ const OrderConfirmation = () => {
             <div className="card p-4">
               <div className="row">
                 <div className="col-md-12 col-sm-12">
-                  <WxSelect
+                  <Select
                     isRequired
                     label="Select SMS Gateway"
                     valuesKey="id"

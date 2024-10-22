@@ -164,10 +164,24 @@ const ProductVariants = ({ isEditForm }: { isEditForm?: boolean }) => {
 
 	useEffect(() => {
 		if (options?.length === 1 && !options?.[0]?.values?.length) return;
-		let [prevVariantList, parentPrice, parentDiscount] = getValues(['variants', 'discountPrice', 'price']);
+		let [prevVariantList, parentPrice, parentDiscount, sku, stock] = getValues([
+			'variants',
+			'discountPrice',
+			'price',
+			'sku',
+			'stock',
+		]);
 		prevVariantList = prevVariantList?.length ? [...prevVariantList] : [];
 		let isTyping = checkTyping(options, prevOption.current);
-		const newVariantList = makeVariantList(options, prevVariantList, parentPrice, parentDiscount, isTyping);
+		const newVariantList = makeVariantList(
+			options,
+			prevVariantList,
+			parentPrice,
+			parentDiscount,
+			sku,
+			stock,
+			isTyping
+		);
 		setValue('variants', [...newVariantList]);
 		setVariantList([...newVariantList]);
 		prevOption.current = options?.length ? [...options] : [];
@@ -260,7 +274,15 @@ const checkTyping = (options = [], prevOption) => {
 	return isTyping;
 };
 
-const makeVariantList = (options = [], prevVariantList, parentPrice, parentDiscount, isTyping = false) => {
+const makeVariantList = (
+	options = [],
+	prevVariantList,
+	parentPrice,
+	parentDiscount,
+	parentSKU,
+	parentStock,
+	isTyping = false
+) => {
 	prevVariantList = [...prevVariantList];
 	return generateVariants(options).map((op, opIdx) => {
 		if (isTyping) {
@@ -283,9 +305,11 @@ const makeVariantList = (options = [], prevVariantList, parentPrice, parentDisco
 			prevVariantList.splice(prevVariantIdx, 1);
 			return newVariant;
 		}
+
 		return {
 			options: op,
-			stock: 0,
+			stock: parentStock || 0,
+			sku: parentSKU ? `${parentSKU}-${op?.map((o) => o.value).join('-')}` : '',
 			discountPrice: parentPrice,
 			price: parentDiscount,
 		};

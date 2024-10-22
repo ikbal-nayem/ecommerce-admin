@@ -1,7 +1,7 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import {
   ITheme,
   IThemeInstalled,
@@ -47,7 +47,7 @@ const Themes = () => {
             color="secondary"
             onClick={() => window.open(ENV.STORE_DOMAIN, "_blank")}
           >
-            <WxIcon icon="visibility" className="me-2" />
+            <Icon icon="visibility" className="me-2" />
             view your store
           </Button>
         }

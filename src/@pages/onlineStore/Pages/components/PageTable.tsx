@@ -1,5 +1,5 @@
 import WxDropdown from '@components/WxDropdown/WxDropdown';
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
 import WxTag from '@components/WxTag';
 import { IPagesSettings } from '@interfaces/Settings.interface';
 import { ENV } from 'config/ENV.config';
@@ -52,7 +52,7 @@ const PageTable = ({ pages, onDelete }: IPageTableProps) => {
 									{p?.isActive ? <WxTag label='Published' color='success' /> : <WxTag label='Unpublished' />}
 								</td>
 								<td className='wx__td' width={80}>
-									<WxIcon
+									<Icon
 										icon='visibility'
 										onClick={() =>
 											window.open(
@@ -63,19 +63,19 @@ const PageTable = ({ pages, onDelete }: IPageTableProps) => {
 								</td>
 								<td className='wx__td text-center' width={80}>
 									<div className='wx__table_cell_more-icon'>
-										<WxIcon icon='more_vert' onClick={() => onShowPopup(index)} id='triggerId' />
+										<Icon icon='more_vert' onClick={() => onShowPopup(index)} id='triggerId' />
 										{selectedIndex === index && (
 											<WxDropdown isOpen={showPopup} setIsOpen={setShowPopup} drop>
 												<ul>
 													<li className='text_subtitle'>
 														<Link to={PAGES_EDIT({ id: p?.id })} className='text_body'>
-															<WxIcon icon='edit' />
+															<Icon icon='edit' />
 															Edit
 														</Link>
 													</li>
 													<li className='text_subtitle delete'>
 														<a className='text_body' onClick={() => onDelete(p)}>
-															<WxIcon icon='delete' />
+															<Icon icon='delete' />
 															Delete
 														</a>
 													</li>

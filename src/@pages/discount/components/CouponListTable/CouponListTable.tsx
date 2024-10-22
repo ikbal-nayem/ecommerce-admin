@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import Switch from "@components/Switch";
 import { DISCOUNT_EDIT } from "routes/path-name.route";
 import { useState } from "react";
@@ -92,7 +92,7 @@ const CouponListTable = ({
 
               <td className="wx__td more">
                 <div className="wx__table_cell_more-icon">
-                  <WxIcon
+                  <Icon
                     icon="more_vert"
                     id="triggerId"
                     onClick={() => onShowPopup(index)}
@@ -106,7 +106,7 @@ const CouponListTable = ({
                             to={DISCOUNT_EDIT({ id: coupon.id })}
                             className="text_body"
                           >
-                            <WxIcon icon="edit" />
+                            <Icon icon="edit" />
                             Edit
                           </Link>
                         </li>
@@ -116,7 +116,7 @@ const CouponListTable = ({
                             className="text_body"
                             onClick={() => deleteFun(coupon)}
                           >
-                            <WxIcon icon="delete" />
+                            <Icon icon="delete" />
                             Delete
                           </Link>
                         </li>

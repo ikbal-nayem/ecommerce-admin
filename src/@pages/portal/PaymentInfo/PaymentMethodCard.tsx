@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { MASTER_META_KEY } from "config/constants";
 import { IPortalPaymentMedia } from "@interfaces/portal.interface";
 import { useState } from "react";
@@ -22,31 +22,31 @@ const PaymentMethodCard = ({
       <div className="d-flex justify-content-between">
         {info?.paymentMedia?.type ===
         MASTER_META_KEY.PAYMENT_MEDIA_TYPE_BANK ? (
-          <WxIcon
+          <Icon
             icon="account_balance"
             color="primary"
             className="icon icon__bank"
           />
         ) : (
-          <WxIcon
+          <Icon
             icon="account_balance_wallet"
             color="warning"
             className="icon icon__mobile"
           />
         )}
         <div>
-          <WxIcon icon="more_horiz" onClick={() => setShowPopup(true)} />
+          <Icon icon="more_horiz" onClick={() => setShowPopup(true)} />
           <WxDropdown isOpen={showPopup} setIsOpen={setShowPopup} drop>
             <ul>
               <li className="text_subtitle">
                 <span className="text_body" onClick={() => onUpdate(info)}>
-                  <WxIcon icon="edit" />
+                  <Icon icon="edit" />
                   Edit
                 </span>
               </li>
               <li className="text_subtitle" style={{ cursor: "pointer" }}>
                 <span className="text_body" onClick={() => onDelete(info)}>
-                  <WxIcon icon="delete" color="danger" />
+                  <Icon icon="delete" color="danger" />
                   Delete
                 </span>
               </li>

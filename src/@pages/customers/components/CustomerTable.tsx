@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import Switch from "@components/Switch";
 import { ICustomerPayload } from "@interfaces/Customer.interface";
 import { CUSTOMERS } from "routes/path-name.route";
@@ -84,7 +84,7 @@ const CustomerTable = ({
 								</td>
 								<td className="wx__td text-center">
 									<div className="wx__table_cell_more-icon ms_2">
-										<WxIcon
+										<Icon
 											icon="more_vert"
 											onClick={() => onShowPopup(index)}
 											id="triggerId"
@@ -101,7 +101,7 @@ const CustomerTable = ({
 															to={`${CUSTOMERS}/${customer.customerId}`}
 															className="text_body"
 														>
-															<WxIcon icon="info" />
+															<Icon icon="info" />
 															Details
 														</Link>
 													</li>
@@ -110,7 +110,7 @@ const CustomerTable = ({
 															to={`${CUSTOMERS}/${customer.customerId}`}
 															className="text_body"
 														>
-															<WxIcon icon="edit" />
+															<Icon icon="edit" />
 															Edit
 														</Link>
 													</li>
@@ -120,7 +120,7 @@ const CustomerTable = ({
 															className="text_body"
 															onClick={() => onDelete(customer)}
 														>
-															<WxIcon icon="delete" />
+															<Icon icon="delete" />
 															Delete
 														</Link>
 													</li>

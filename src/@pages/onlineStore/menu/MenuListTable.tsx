@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import Switch from "@components/Switch";
 import { ROLE_KEY } from "config/constants";
 import { MENU_EDIT } from "routes/path-name.route";
@@ -69,7 +69,7 @@ const MenuListTable = ({
 						</td>
 						<td className="wx__td" width={50}>
 							<div className="wx__table_cell_more-icon">
-								<WxIcon
+								<Icon
 									role="button"
 									icon="more_vert"
 									id="triggerId"
@@ -89,7 +89,7 @@ const MenuListTable = ({
 													})}
 													className="text_body"
 												>
-													<WxIcon icon="edit" />
+													<Icon icon="edit" />
 													Edit
 												</Link>
 											</li>
@@ -100,7 +100,7 @@ const MenuListTable = ({
 														className="text_body"
 														onClick={() => deleteFun(menuItem)}
 													>
-														<WxIcon icon="delete" />
+														<Icon icon="delete" />
 														Delete
 													</Link>
 												</li>

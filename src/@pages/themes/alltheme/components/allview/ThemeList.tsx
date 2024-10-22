@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxThumbnail from "@components/Thumbnail";
 import {
   ITheme,
@@ -32,10 +32,10 @@ const ThemeList = ({ themeList, installedThemes }: IAllThemeProps) => {
                   <small className="installed">
                     {installed?.isActive && (
                       <>
-                        <WxIcon icon="cloud_done" /> Publihsed&nbsp;&nbsp;
+                        <Icon icon="cloud_done" /> Publihsed&nbsp;&nbsp;
                       </>
                     )}
-                    <WxIcon icon="done_all" /> Installed
+                    <Icon icon="done_all" /> Installed
                   </small>
                 ) : null}
 
@@ -61,7 +61,7 @@ const ThemeList = ({ themeList, installedThemes }: IAllThemeProps) => {
                   )}
                   {!!item?.avgRating && !!item?.totalReview && (
                     <div className="theme-rating ms-auto">
-                      <WxIcon icon="star" className="star-color" />
+                      <Icon icon="star" className="star-color" />
                       <p className="text_small m-0">
                         {item?.avgRating}/5 ({item?.totalReview})
                       </p>

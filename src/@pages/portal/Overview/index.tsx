@@ -1,6 +1,6 @@
-import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import MainFull from "@components/MainContentLayout/MainFull";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { IPortalOverview } from "@interfaces/portal.interface";
 import { PORTAL_PARTNERS } from "routes/path-name.route";
 import { ProfileService } from "services/api/settings/Profile.service";
@@ -25,7 +25,7 @@ export default function Overview() {
 	}, []);
 
 	return (
-		<WxMainFull>
+		<MainFull>
 			<FormHeader title="Overview" noBack />
 			<div className="portal_overview">
 				<h6>Referred users</h6>
@@ -36,7 +36,7 @@ export default function Overview() {
 						<div className="row card_info">
 							<div className="col-md-4">
 								<div className="d-flex align-items-center gap-3">
-									<WxIcon icon="groups" className="groups" />
+									<Icon icon="groups" className="groups" />
 									<p>
 										Total partner
 										<h5 className="text_h5 text_semibold m-0">
@@ -47,7 +47,7 @@ export default function Overview() {
 							</div>
 							<div className="col-md-4">
 								<div className="d-flex align-items-center gap-3">
-									<WxIcon
+									<Icon
 										icon="group"
 										className="group"
 										onClick={() => navigate(PORTAL_PARTNERS + "?tabIndex=1")}
@@ -62,7 +62,7 @@ export default function Overview() {
 							</div>
 							<div className="col-md-4">
 								<div className="d-flex align-items-center gap-3">
-									<WxIcon
+									<Icon
 										icon="group"
 										className="group"
 										onClick={() => navigate(PORTAL_PARTNERS + "?tabIndex=0")}
@@ -92,7 +92,7 @@ export default function Overview() {
 						<div className="row card_info">
 							<div className="col-md-4">
 								<div className="d-flex align-items-center gap-3">
-									<WxIcon
+									<Icon
 										icon="analytics"
 										className="bank_total"
 										variants="outlined"
@@ -107,7 +107,7 @@ export default function Overview() {
 							</div>
 							<div className="col-md-4">
 								<div className="d-flex align-items-center gap-3">
-									<WxIcon icon="account_balance" className="bank_info" />
+									<Icon icon="account_balance" className="bank_info" />
 									<p>
 										Bank
 										<h5 className="text_h5 text_semibold m-0">
@@ -118,7 +118,7 @@ export default function Overview() {
 							</div>
 							<div className="col-md-4">
 								<div className="d-flex align-items-center gap-3">
-									<WxIcon icon="account_balance_wallet" className="bank_info" />
+									<Icon icon="account_balance_wallet" className="bank_info" />
 									<p>
 										Mobile (MFS)
 										<h5 className="text_h5 text_semibold m-0">
@@ -132,7 +132,7 @@ export default function Overview() {
 						<div className="row card_info mt-5">
 							<div className="col-md-4">
 								<div className="d-flex align-items-center gap-3">
-									<WxIcon icon="payments" className="payments" />
+									<Icon icon="payments" className="payments" />
 									<p>
 										Total Income
 										<h5 className="text_h5 text_semibold m-0">
@@ -143,7 +143,7 @@ export default function Overview() {
 							</div>
 							<div className="col-md-4">
 								<div className="d-flex align-items-center gap-3">
-									<WxIcon icon="money" className="money" />
+									<Icon icon="money" className="money" />
 									<p>
 										Last Withdraw
 										<h5 className="text_h5 text_semibold m-0">
@@ -154,7 +154,7 @@ export default function Overview() {
 							</div>
 							<div className="col-md-4">
 								<div className="d-flex align-items-center gap-3">
-									<WxIcon icon="event_available" className="event_available" />
+									<Icon icon="event_available" className="event_available" />
 									<p>
 										Available Withdraw
 										<h5 className="text_h5 text_semibold m-0">
@@ -167,6 +167,6 @@ export default function Overview() {
 					</div>
 				)}
 			</div>
-		</WxMainFull>
+		</MainFull>
 	);
 }

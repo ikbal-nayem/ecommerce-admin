@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/Thumbnail";
 import { Fragment } from "react";
@@ -38,7 +38,7 @@ const ProductRefundCart = ({
 						/>
 					</div>
 				) : null}
-				{/* <WxIcon
+				{/* <Icon
 					variants="round"
 					className="ms-auto"
 					role="button"
@@ -78,9 +78,9 @@ const ProductRefundCart = ({
 								</td>
 								<td className="wx__td" width={108}>
 									<div className="unit">
-										<WxIcon icon="remove" onClick={() => handleDecrease(idx)} />
+										<Icon icon="remove" onClick={() => handleDecrease(idx)} />
 										{refundItems?.[idx]?.quantity}/{product?.quantity}
-										<WxIcon icon="add" onClick={() => handleIncrease(idx)} />
+										<Icon icon="add" onClick={() => handleIncrease(idx)} />
 									</div>
 								</td>
 								<td className="wx__td" align="right">

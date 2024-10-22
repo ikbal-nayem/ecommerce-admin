@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/Thumbnail";
 import { IInstalledApp } from "@interfaces/app.interface";
@@ -48,7 +48,7 @@ const InstallApp = ({ installAppsData }: IIinstallAppsProps) => {
 						</div>
 					</Link>
 					<div className="ms-auto me-2">
-						<WxIcon
+						<Icon
 							onClick={() => onShowPopup(index)}
 							id="triggerId"
 							icon="more_vert"
@@ -61,7 +61,7 @@ const InstallApp = ({ installAppsData }: IIinstallAppsProps) => {
 											to={APP_OVERVIEW({ id: item?.appId })}
 											className="text_body"
 										>
-											<WxIcon icon="preview" />
+											<Icon icon="preview" />
 											Preview
 										</Link>
 									</li>
@@ -70,7 +70,7 @@ const InstallApp = ({ installAppsData }: IIinstallAppsProps) => {
 											to={APP_STORE({ appId: item?.appId })}
 											className="text_body"
 										>
-											<WxIcon icon="settings" />
+											<Icon icon="settings" />
 											Configure
 										</Link>
 									</li>

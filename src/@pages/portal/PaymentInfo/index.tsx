@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
@@ -79,7 +79,7 @@ export default function PaymentInfo() {
 	};
 
 	return (
-		<WxMainFull>
+		<MainFull>
 			<FormHeader
 				title="Payment info"
 				noBack
@@ -125,6 +125,6 @@ export default function PaymentInfo() {
 					</p>
 				}
 			/>
-		</WxMainFull>
+		</MainFull>
 	);
 }

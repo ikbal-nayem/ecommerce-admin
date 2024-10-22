@@ -3,7 +3,7 @@ import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
 import { MASTER_META_KEY } from "config/constants";
@@ -172,7 +172,7 @@ const Create = ({
 
 								{isCustom && (
 									<div className="custom-close">
-										<WxIcon icon="close" onClick={setCustomFun} />
+										<Icon icon="close" onClick={setCustomFun} />
 									</div>
 								)}
 
@@ -193,7 +193,7 @@ const Create = ({
 																<span>({getCountaaa(item.metaKey)})</span>
 															) : null}
 														</p>
-														<WxIcon icon="chevron_right" />
+														<Icon icon="chevron_right" />
 													</button>
 												);
 											})
@@ -204,7 +204,7 @@ const Create = ({
 														className="d-flex align-items-center ps-2"
 														onClick={() => setShowSubItem("-1")}
 													>
-														<WxIcon icon="chevron_left" />
+														<Icon icon="chevron_left" />
 														<p className="text_body text_medium mb-1 ms_2">
 															{subDropdownList.title}
 														</p>

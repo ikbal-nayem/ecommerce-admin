@@ -1,6 +1,6 @@
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/Thumbnail";
 import { ProductService } from "services/api/products/Product.services";
@@ -253,7 +253,7 @@ const InventoryTable = ({
                           <p className="my-3 text_small quantity_text">
                             Original Quantity: {pd?.initialQuantity}
                           </p>
-                          <WxSelect
+                          <Select
                             valuesKey="object"
                             textKey="title"
                             options={reasonList}
@@ -268,7 +268,7 @@ const InventoryTable = ({
                   )}
                   <div className="action-section">
                     <div className="inventory-action d-flex align-items-center">
-                      <WxIcon
+                      <Icon
                         icon="tune"
                         variants="round"
                         onClick={(e: any) => {
@@ -302,7 +302,7 @@ const InventoryTable = ({
                               selectQuantityIndex === index) ? (
                               <Preloader absolutePosition />
                             ) : null}
-                            <WxIcon icon="checked" disabled={isSaving} />
+                            <Icon icon="checked" disabled={isSaving} />
                           </div>
                         )}
 
@@ -311,7 +311,7 @@ const InventoryTable = ({
                             onClick={(e: any) => handleClose(index)}
                             className="action-btn close"
                           >
-                            <WxIcon icon="close" />
+                            <Icon icon="close" />
                           </div>
                         )}
                       </div>

@@ -2,7 +2,7 @@ import DateInput from "@components/DatePicker/DateInput";
 import {Button} from "@components/Button";
 import Checkbox from "@components/Checkbox";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxRadio from "@components/WxRadio/WxRadio";
 import WxThumbnail from "@components/Thumbnail";
@@ -129,7 +129,7 @@ const CouponForm = ({
               <div className="w-md-50 my-3">
                 <TextInput
                   placeholder="Type value here"
-                  endIcon={<WxIcon variants="round" icon="percent" />}
+                  endIcon={<Icon variants="round" icon="percent" />}
                   isRequired
                   registerProperty={{
                     ...register("percentage"),
@@ -331,7 +331,7 @@ const CouponForm = ({
                         </div>
                       </div>
                       <div>
-                        {/* <WxIcon
+                        {/* <Icon
                           onClick={() => {
                             setDrawer(true);
                             setDrawerContent("products");
@@ -340,7 +340,7 @@ const CouponForm = ({
                           icon="edit"
                           className="text-primary"
                         /> */}
-                        <WxIcon
+                        <Icon
                           onClick={() => {
                             handleDelete("products", pd?.id);
                           }}
@@ -397,7 +397,7 @@ const CouponForm = ({
                           </div>
                         </div>
                         <div>
-                          {/* <WxIcon
+                          {/* <Icon
                             onClick={() => {
                               setDrawer(true);
                               setDrawerContent("categories");
@@ -406,7 +406,7 @@ const CouponForm = ({
                             icon="edit"
                             className="text-primary"
                           /> */}
-                          <WxIcon
+                          <Icon
                             onClick={() => {
                               handleDelete("categories", categories?.id);
                             }}
@@ -477,7 +477,7 @@ const CouponForm = ({
                         </div>
                       </div>
                       <div>
-                        {/* <WxIcon
+                        {/* <Icon
                           onClick={() => {
                             setDrawer(true);
                             setDrawerContent("customerGroups");
@@ -486,7 +486,7 @@ const CouponForm = ({
                           icon="edit"
                           className="text-primary"
                         /> */}
-                        <WxIcon
+                        <Icon
                           onClick={() => {
                             handleDelete("customerGroups", group.id);
                           }}
@@ -540,7 +540,7 @@ const CouponForm = ({
                         </div>
                       </div>
                       <div>
-                        {/* <WxIcon
+                        {/* <Icon
                           onClick={() => {
                             setDrawer(true);
                             setDrawerContent("customers");
@@ -549,7 +549,7 @@ const CouponForm = ({
                           variants="round"
                           className="text-primary"
                         /> */}
-                        <WxIcon
+                        <Icon
                           onClick={() => {
                             handleDelete("customers", customer.id);
                             // setListContent({
@@ -686,7 +686,7 @@ const CouponForm = ({
                   registerProperty={{
                     ...register("startDate"),
                   }}
-                  endIcon={<WxIcon variants="round" icon="calendartoday" />}
+                  endIcon={<Icon variants="round" icon="calendartoday" />}
                   errorMessage={errors.startDate?.message}
                   color={errors.startDate ? "danger" : "secondary"}
                 />
@@ -708,7 +708,7 @@ const CouponForm = ({
                     );
                     setValue("startTime", time);
                   }}
-                  startIcon={<WxIcon variants="round" icon="schedule" />}
+                  startIcon={<Icon variants="round" icon="schedule" />}
                   // time={startDate.toString()}
                   // onChange={(date) => setStartDate(date)}
                   registerProperty={{
@@ -743,7 +743,7 @@ const CouponForm = ({
                     registerProperty={{
                       ...register("endDate"),
                     }}
-                    endIcon={<WxIcon variants="round" icon="calendartoday" />}
+                    endIcon={<Icon variants="round" icon="calendartoday" />}
                     errorMessage={errors.endDate?.message}
                     color={errors.endDate ? "danger" : "secondary"}
                   />
@@ -765,7 +765,7 @@ const CouponForm = ({
                     timeCaption="Time"
                     timeFormate="h:mm aa"
                     timeIntervals={15}
-                    startIcon={<WxIcon variants="round" icon="schedule" />}
+                    startIcon={<Icon variants="round" icon="schedule" />}
                     registerProperty={{
                       ...register("endTime"),
                     }}

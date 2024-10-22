@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
@@ -95,7 +95,7 @@ const Pages = () => {
   };
 
   return (
-		<WxMainFull>
+		<MainFull>
 			<FormHeader
 				title="Pages"
 				rightContent={
@@ -142,7 +142,7 @@ const Pages = () => {
 					</p>
 				}
 			/>
-		</WxMainFull>
+		</MainFull>
 	);
 };
 export default Pages;

@@ -1,11 +1,11 @@
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
-import WxMainFull from '@components/MainContentLayout/WxMainFull';
+import MainFull from '@components/MainContentLayout/MainFull';
 import WxNotFound from '@components/NotFound/NotFound';
-import WxSelect from '@components/Select/Select';
+import Select from '@components/Select/Select';
 import TableLoader from '@components/TableLoader/TableLoader';
 import {Button} from '@components/Button';
 import { FormHeader } from '@components/FormLayout';
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
 import TextInput from '@components/TextInput';
 import WxPagination from '@components/WxPagination/WxPagination';
 import ProductTableSkelton from '@components/WxSkelton/ProductTableSkelton';
@@ -152,7 +152,7 @@ const Audiences: FC = () => {
 	const onConfirmDelete = () => {};
 
 	return (
-		<WxMainFull className='campaign-list-page'>
+		<MainFull className='campaign-list-page'>
 			<FormHeader
 				title='Audiences'
 				noBack
@@ -185,12 +185,12 @@ const Audiences: FC = () => {
 									type='search'
 									placeholder='Search Audience Title'
 									noMargin
-									startIcon={<WxIcon icon='search' />}
+									startIcon={<Icon icon='search' />}
 									onChange={(e: any) => setSearchQuery(e.target.value)}
 								/>
 							</div>
 							<div className='col-lg-3 col-md-3 col-sm-6 mb-3'>
-								<WxSelect
+								<Select
 									valuesKey='metaKey'
 									textKey='title'
 									noMargin
@@ -260,7 +260,7 @@ const Audiences: FC = () => {
 					}
 				/>
 			</div>
-		</WxMainFull>
+		</MainFull>
 	);
 };
 export default Audiences;

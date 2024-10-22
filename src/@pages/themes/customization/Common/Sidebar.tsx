@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import {
 	THEME_CUSTOMIZATION_GENERAL,
 	THEME_CUSTOMIZATION_HOMEPAGE,
@@ -14,19 +14,19 @@ const Sidebar = () => {
             <ul className="customizer-menu">
                 <li>
                     <Link to={THEME_CUSTOMIZATION_GENERAL}>
-                        <WxIcon icon='widgets' />
+                        <Icon icon='widgets' />
                         <span>General</span>
                     </Link>
                 </li>
                 <li>
                     <Link className="selected" to={THEME_CUSTOMIZATION_HOMEPAGE}>
-                        <WxIcon icon='home' />
+                        <Icon icon='home' />
                         <span>Home Page</span>
                     </Link>
                 </li>
                 <li>
                     <Link to={THEME_CUSTOMIZATION_SOCIAL}>
-                        <WxIcon icon='language' />
+                        <Icon icon='language' />
                         <span>Social Media</span>
                     </Link>
                 </li>

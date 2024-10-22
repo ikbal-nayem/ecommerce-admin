@@ -1,4 +1,4 @@
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";
@@ -92,7 +92,7 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 								System will auto detect “0” as free delivery
 							</p>
 							<div className="col-md-12 col-sm-12 mt-2">
-								<WxSelect
+								<Select
 									label="Country"
 									isRequired
 									isDisabled

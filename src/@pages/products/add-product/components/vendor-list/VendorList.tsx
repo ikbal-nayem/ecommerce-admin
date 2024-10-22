@@ -1,5 +1,5 @@
 import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxList from "@components/WxList";
 import WxListItem from "@components/WxList/WxListItem";
@@ -26,7 +26,7 @@ function VendorList({
     <WxDrawerBody>
       <TextInput
         type="search"
-        startIcon={<WxIcon icon="search" />}
+        startIcon={<Icon icon="search" />}
         placeholder="Search vendors"
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setSearchQuery(e.target.value)

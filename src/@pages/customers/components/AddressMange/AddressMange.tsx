@@ -4,7 +4,7 @@ import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxRadio from "@components/WxRadio/WxRadio";
 import { IAddressesPayload } from "@interfaces/Customer.interface";
 import { CustomerService } from "services/api/Customer.service";
@@ -223,7 +223,7 @@ const AddressManage = ({
                             ) : null}
                             <div style={{ width: "100%" }}>
                               <div className="d-flex align-items-center mt-2 customer-location">
-                                <WxIcon variants="round" icon="location_on" />
+                                <Icon variants="round" icon="location_on" />
                                 <span className="text ms_2">
                                   {address?.title || "---"}
                                 </span>

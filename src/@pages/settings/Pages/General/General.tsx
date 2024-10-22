@@ -1,9 +1,9 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import AddressNcontactSkelton from "@components/WxSkelton/Setting/General/AddressNcontactSkelton";
 import BasicInfoSkelton from "@components/WxSkelton/Setting/General/BasicInfoSkelton";
@@ -234,7 +234,7 @@ const General = () => {
                   />
                 </div>
                 <div className="col-md-6 col-sm-12 mt-2">
-                  <WxSelect
+                  <Select
                     label="Store Industry"
                     noMargin
                     options={storeTypes}
@@ -335,7 +335,7 @@ const General = () => {
                   />
                 </div>
                 <div className="col-md-4 col-sm-12 mt-2">
-                  <WxSelect
+                  <Select
                     label="Division/State"
                     noMargin
                     options={divisions}
@@ -359,7 +359,7 @@ const General = () => {
                 </div>
                 <div className="col-md-4 col-sm-12 mt-2">
                   {/* {getValues("city")} */}
-                  <WxSelect
+                  <Select
                     label="District/City"
                     options={districts}
                     placeholder="Select District/City"
@@ -413,7 +413,7 @@ const General = () => {
                       <div>
                         <div className="row">
                           <div className="text_body text_strong d-flex align-items-center">
-                            <WxIcon icon="location_on" />
+                            <Icon icon="location_on" />
                             <span>
                               {storeAddress?.addressLine1
                                 ? storeAddress?.addressLine1 + ", "
@@ -438,7 +438,7 @@ const General = () => {
                         <div className="d-flex">
                           {storeAddress?.email && (
                             <div className="text_body text_strong d-flex align-items-center  my-2">
-                              <WxIcon icon="email" />
+                              <Icon icon="email" />
                               <div className="d-flex flex-column">
                                 <span> {storeAddress?.email || ""}</span>
                               </div>
@@ -446,13 +446,13 @@ const General = () => {
                           )}
                           {storeAddress?.phone && (
                             <div className=" text_body text_strong d-flex align-items-center ms-3">
-                              <WxIcon icon="phone" />
+                              <Icon icon="phone" />
                               <span> {storeAddress?.phone || ""}</span>
                             </div>
                           )}
                         </div>
                       </div>
-                      <WxIcon
+                      <Icon
                         onClick={() => setAddressFlag(true)}
                         icon="edit"
                       />
@@ -482,11 +482,11 @@ const General = () => {
 
           <div className="row">
             <div className="text_body text_strong d-flex align-items-center mb-3">
-              <WxIcon icon="phone" />
+              <Icon icon="phone" />
               <span> {storeAddress?.phone || ""}</span>
             </div>
             <div className="text_body text_strong d-flex align-items-center mb-3">
-              <WxIcon icon="email" />
+              <Icon icon="email" />
               <div className="d-flex flex-column">
                 <span> {storeAddress?.email || ""}</span>
                 <span className="text_small text_regular">
@@ -503,7 +503,7 @@ const General = () => {
           <div className="col-md-12 col-sm-12 d-flex justify-content-between align-items-center text__small">
             <h5 className="mb-0">Store currency</h5>
             <div className="d-flex align-items-center">
-              <WxIcon icon="info" variants="outlined" />
+              <Icon icon="info" variants="outlined" />
               <p className="ms-1 mb-0">
                 More currencies are coming soon
               </p>
@@ -524,7 +524,7 @@ const General = () => {
             <div className="col-md-12 col-sm-12 d-flex justify-content-between align-items-center">
               <h5 className="mb-0">Time Zone</h5>
               <div className="d-flex align-items-center text-secondary">
-                <WxIcon
+                <Icon
                   icon="info"
                   variants="outlined"
                   className="mt-auto"

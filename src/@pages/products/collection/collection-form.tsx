@@ -1,7 +1,7 @@
 import { Button } from '@components/Button';
-import WxDrawer from '@components/Drawer';
-import WxDrawerBody from '@components/Drawer/DrawerBody';
-import WxDrawerFooter from '@components/Drawer/DrawerFooter';
+import Drawer from '@components/Drawer';
+import DrawerBody from '@components/Drawer/DrawerBody';
+import DrawerFooter from '@components/Drawer/DrawerFooter';
 import DrawerHeader from '@components/Drawer/DrawerHeader';
 import MediaInput from '@components/MediaInput/MediaInput';
 import TextInput from '@components/TextInput';
@@ -83,14 +83,14 @@ const AddCollection = ({
 	}, [editData]);
 
 	return (
-		<WxDrawer show={isOpen} handleClose={handleClose}>
+		<Drawer show={isOpen} handleClose={handleClose}>
 			<div className='collection_form'>
 				<DrawerHeader
 					title={isEditForm ? 'Update Collection' : 'Add Collection'}
 					onClickClose={handleClose}
 				/>
 				<form onSubmit={handleSubmit(onSubmit)} noValidate>
-					<WxDrawerBody>
+					<DrawerBody>
 						<TextInput
 							label='Collection name'
 							isRequired
@@ -130,8 +130,8 @@ const AddCollection = ({
 							<Label>Collection Image</Label>
 							<MediaInput name='image' control={control} multiple={false} />
 						</div>
-					</WxDrawerBody>
-					<WxDrawerFooter>
+					</DrawerBody>
+					<DrawerFooter>
 						<div className='d-flex'>
 							{isEditForm ? (
 								<div className='me-auto'>
@@ -160,10 +160,10 @@ const AddCollection = ({
 								</Button>
 							</div>
 						</div>
-					</WxDrawerFooter>
+					</DrawerFooter>
 				</form>
 			</div>
-		</WxDrawer>
+		</Drawer>
 	);
 };
 

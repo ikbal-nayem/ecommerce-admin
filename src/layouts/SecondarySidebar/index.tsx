@@ -1,5 +1,5 @@
 import {Button} from "@components/Button";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { MASTER_META_KEY } from "config/constants";
 import {
 	DASHBOARD,
@@ -110,7 +110,7 @@ const SecondarySidebar = ({
 			<div className="menu-top">
 				<li>
 					<Link to={DASHBOARD} onClick={() => onClickFun(false)}>
-						<WxIcon icon="logout" />
+						<Icon icon="logout" />
 						<span className="menu__text">Exit</span>
 					</Link>
 				</li>
@@ -141,15 +141,15 @@ const SecondarySidebar = ({
 							onClick={() => onClickFun(false)}
 							className={pathname.includes(item.link) ? "selected" : ""}
 						>
-							<WxIcon icon={item?.icon} />
+							<Icon icon={item?.icon} />
 							<span className="menu__text">{item.label}</span>
 						</Link>
 						{isDowngrade ? (
 							<div className="right-icon">
 								{isDone(item?.link) ? (
-									<WxIcon icon="done" color="success" />
+									<Icon icon="done" color="success" />
 								) : (
-									<WxIcon icon="info" color="warning" variants="outlined" />
+									<Icon icon="info" color="warning" variants="outlined" />
 								)}
 							</div>
 						) : null}
@@ -166,7 +166,7 @@ const SecondarySidebar = ({
 							onClick={() => onClickFun(false)}
 							className={pathname.includes(item.link) ? "selected" : ""}
 						>
-							<WxIcon icon={item?.icon} />
+							<Icon icon={item?.icon} />
 							<span className="menu__text">{item.label}</span>
 						</Link>
 					</li>

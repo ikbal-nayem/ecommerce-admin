@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import { MediaInput } from "@components/MediaInput";
 import WxRadio from "@components/WxRadio/WxRadio";
@@ -180,7 +180,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                       {dataLimitExceed && (
                         <div className="col-md-12 col-lg-12 mt-3 ">
                           <div className="d-flex align-items-center rounded wx__warn_alert">
-                            <WxIcon icon="info" />
+                            <Icon icon="info" />
                             <div>
                               <p className="mb-0 text_body d-block">
                                 You exceed file size limit. Please upload less
@@ -192,14 +192,14 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                       )}
                       <div className="col-md-12 col-lg-12 mt-3 ">
                         <div className="d-flex align-items-center rounded wx__demo_file">
-                          <WxIcon icon="file_download" />
+                          <Icon icon="file_download" />
                           <div>
                             <div className="w-100 d-flex align-items-center justify-content-between">
                               <a href="#" className="text_body">
                                 Download file type
                               </a>
                               <div className="d-flex align-items-center text_small text-secondary">
-                                <WxIcon
+                                <Icon
                                   style={{ fontSize: "8px" }}
                                   icon="info"
                                   className="ms_2"
@@ -221,7 +221,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                   ) : (
                     <div className="col-md-12 col-lg-12 mt-3 ">
                       <div className="d-flex align-items-center rounded wx__file_present">
-                        <WxIcon className="text-success" icon="task" />
+                        <Icon className="text-success" icon="task" />
                         <div>
                           {fileDetails.fileName && (
                             <p className="mb-0 text_body d-block">
@@ -253,7 +253,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                             </p>
                           )}
                         </div>
-                        <WxIcon
+                        <Icon
                           className="text-danger ms-auto"
                           icon="close"
                           onClick={() => {

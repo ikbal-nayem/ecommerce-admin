@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import { generateDateFormat } from "utils/splitDate";
 
@@ -61,7 +61,7 @@ const AppInfoAndSupport = ({ appInfo }) => (
       {appInfo ? (
         <>
           <div className="d-flex align-items-center mb-3">
-            <WxIcon
+            <Icon
               icon="apartment"
               variants="filled"
               className="email__icon"
@@ -73,7 +73,7 @@ const AppInfoAndSupport = ({ appInfo }) => (
             href={"tel:" + appInfo?.developer?.supportPhone}
             className="phone d-flex align-items-center"
           >
-            <WxIcon icon="phone" variants="filled" />
+            <Icon icon="phone" variants="filled" />
             &nbsp;
             <span>{appInfo?.developer?.supportPhone}</span>
           </a>
@@ -82,7 +82,7 @@ const AppInfoAndSupport = ({ appInfo }) => (
             target="_blank"
             className="privacy_policy d-flex align-items-center"
           >
-            <WxIcon icon="privacy_tip" variants="filled" />
+            <Icon icon="privacy_tip" variants="filled" />
             &nbsp;
             <span>Privacy Policy</span>
           </a>
@@ -90,7 +90,7 @@ const AppInfoAndSupport = ({ appInfo }) => (
             href={"mailto:" + appInfo?.developer?.supportEmail}
             className="mail d-flex align-items-center"
           >
-            <WxIcon
+            <Icon
               icon="markunread"
               variants="filled"
               className="email__icon"

@@ -1,9 +1,9 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { WxFormContainer, FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ORDER_DETAILS } from "routes/path-name.route";
@@ -211,7 +211,7 @@ const ECourierOrderPlace = () => {
                     />
                   </div>
                   {/* <div className="col-lg-6 col-md-12 col-sm-6">
-                    <WxSelect
+                    <Select
                       label="Branch List"
                       options={branchList}
                       placeholder="Select Branch"
@@ -229,7 +229,7 @@ const ECourierOrderPlace = () => {
                     />
                   </div> */}
                   <div className="col-lg-6 col-md-12 col-sm-6">
-                    <WxSelect
+                    <Select
                       label="Package List"
                       options={packageList}
                       placeholder="Select Package"
@@ -259,7 +259,7 @@ const ECourierOrderPlace = () => {
                         field: { onChange, value },
                         fieldState: { error },
                       }) => (
-                        <WxSelect
+                        <Select
                           label="District/City"
                           options={districts}
                           placeholder="Select District/City"
@@ -284,7 +284,7 @@ const ECourierOrderPlace = () => {
                         field: { onChange, value },
                         fieldState: { error },
                       }) => (
-                        <WxSelect
+                        <Select
                           label="Customer Thana"
                           options={thana}
                           placeholder="Select thana"
@@ -309,7 +309,7 @@ const ECourierOrderPlace = () => {
                         field: { onChange, value },
                         fieldState: { error },
                       }) => (
-                        <WxSelect
+                        <Select
                           label="Post Code List"
                           options={postCodeList}
                           placeholder="Select postcode"
@@ -334,7 +334,7 @@ const ECourierOrderPlace = () => {
                         field: { onChange, value },
                         fieldState: { error },
                       }) => (
-                        <WxSelect
+                        <Select
                           label="Customer Area"
                           options={areaList}
                           placeholder="Select area"
@@ -362,7 +362,7 @@ const ECourierOrderPlace = () => {
                       registerProperty={{
                         ...register("requested_delivery_time"),
                       }}
-                      endIcon={<WxIcon variants="round" icon="calendartoday" />}
+                      endIcon={<Icon variants="round" icon="calendartoday" />}
                       errorMessage={errors?.requested_delivery_time?.message}
                       color={
                         errors?.requested_delivery_time ? "danger" : "secondary"

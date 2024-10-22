@@ -1,6 +1,6 @@
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { notification } from "@components/WxNotificaton/index";
 import RatingProgressBar from "@components/RatingProgressBar";
 import { IAppRatingCount, IRatingPreview } from "@interfaces/app.interface";
@@ -134,7 +134,7 @@ const AppReview = ({ appId }: IReview) => {
 					<h5 className="text_semibold mb-3">Ratings</h5>
 					<p className="text_body text_regular">
 						Overall Rating &nbsp;&nbsp;
-						<WxIcon className="small_icon" icon="star" variants="filled" />
+						<Icon className="small_icon" icon="star" variants="filled" />
 						{(reviewData.length && reviewData[0]?.appRegisterDTO?.avgRating) ||
 							0}
 						/5 (
@@ -167,7 +167,7 @@ const AppReview = ({ appId }: IReview) => {
 									{/* Sort {data?.length} Reviews By */}
 								</p>
 								<div className="col-md-6 col-sm-12">
-									<WxSelect
+									<Select
 										defaultValue="Payment Status"
 										valuesKey="id"
 										textKey="text"
@@ -191,7 +191,7 @@ const AppReview = ({ appId }: IReview) => {
 											<div>
 												{/* {item?.ratingMax?.map((rating, idx) => {
                           return (
-                            <WxIcon
+                            <Icon
                               className="small_icon"
                               icon="star"
                               variants="filled"
@@ -199,22 +199,22 @@ const AppReview = ({ appId }: IReview) => {
                           );
                         })} */}
 
-												<WxIcon
+												<Icon
 													className="small_icon"
 													icon="star"
 													variants="filled"
 												/>
-												<WxIcon
+												<Icon
 													className="small_icon"
 													icon="star"
 													variants="filled"
 												/>
-												<WxIcon
+												<Icon
 													className="small_icon"
 													icon="star"
 													variants="filled"
 												/>
-												<WxIcon
+												<Icon
 													className="small_icon"
 													icon="star"
 													variants="filled"
@@ -248,7 +248,7 @@ const AppReview = ({ appId }: IReview) => {
 														onReactionSubmit(index, item.id, "isLiked")
 													}
 												>
-													<WxIcon
+													<Icon
 														className="icon "
 														icon="thumb_up_off_alt"
 														variants="round"
@@ -271,7 +271,7 @@ const AppReview = ({ appId }: IReview) => {
 														onReactionSubmit(index, item.id, "isunLiked")
 													}
 												>
-													<WxIcon
+													<Icon
 														className="icon "
 														icon="thumb_down"
 														variants="outlined"
@@ -314,11 +314,11 @@ const AppReview = ({ appId }: IReview) => {
 					</div>
 				) : (
 					<div className="wx__user_review_0 text-center">
-						<WxIcon icon="vector" variants="filled" />
+						<Icon icon="vector" variants="filled" />
 						<div>
-							<WxIcon icon="star" variants="filled" />
-							<WxIcon icon="star" variants="filled" />
-							<WxIcon icon="star" variants="filled" />
+							<Icon icon="star" variants="filled" />
+							<Icon icon="star" variants="filled" />
+							<Icon icon="star" variants="filled" />
 						</div>
 						<h3 className="text_regular">No review found!</h3>
 						<p className="text_regular">

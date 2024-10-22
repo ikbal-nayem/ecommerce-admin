@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { ISiteOperator } from "@interfaces/Settings.interface";
 import { useState } from "react";
 import "./SiteOperator.scss";
@@ -32,7 +32,7 @@ const SiteOperatorListTable = ({
 							<td className="wx__td">{operator?.email || "---"}</td>
 							<td className="wx__td">{operator?.phone || "---"}</td>
 							<td className="wx__td" align="right">
-								<WxIcon
+								<Icon
 									variants="outlined"
 									icon="delete"
 									onClick={() => onDelete(operator)}

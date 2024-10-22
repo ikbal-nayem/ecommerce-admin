@@ -1,6 +1,6 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
@@ -195,7 +195,7 @@ const Payment = () => {
 							<div className="card border-0 p-3">
 								<div className="d-flex justify-content-between align-items-center">
 									<h6 className="m-0">Billing address</h6>
-									<WxSelect
+									<Select
 										id="address-selector"
 										options={userAddressList}
 										textKey="title"
@@ -219,7 +219,7 @@ const Payment = () => {
 								/>
 								<div className="row">
 									<div className="col-sm-6 col-12">
-										<WxSelect
+										<Select
 											label="Division"
 											isRequired
 											options={divisions}
@@ -237,7 +237,7 @@ const Payment = () => {
 										/>
 									</div>
 									<div className="col-6">
-										<WxSelect
+										<Select
 											key={districts?.length}
 											label="District"
 											isRequired

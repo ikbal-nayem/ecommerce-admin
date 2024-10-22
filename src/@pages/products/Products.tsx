@@ -1,9 +1,9 @@
 import { Button } from '@components/Button';
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
-import WxIcon from '@components/Icon';
-import WxMainFull from '@components/MainContentLayout/WxMainFull';
-import WxNotFound from '@components/NotFound/NotFound';
-import WxSelect from '@components/Select/Select';
+import Icon from '@components/Icon';
+import MainFull from '@components/MainContentLayout/MainFull';
+import NotFound from '@components/NotFound/NotFound';
+import Select from '@components/Select/Select';
 import TableLoader from '@components/TableLoader/TableLoader';
 import TextInput from '@components/TextInput';
 import WxPagination from '@components/WxPagination/WxPagination';
@@ -21,7 +21,7 @@ import { parentTreeToLinear } from 'utils/categoryTreeOperation';
 import { searchParamsToObject } from 'utils/makeObject';
 import useDebounce from '../../utils/debouncer';
 import './Products.scss';
-import TableComponent from './ProductTable';
+import ProductTable from './ProductTable';
 
 const Products = () => {
 	const [productList, setProductList] = useState<IProductTable[]>([]);
@@ -55,7 +55,7 @@ const Products = () => {
 
 	const getProducts = () => {
 		setIsLoader(true);
-		ProductService.search({
+		ProductService.get({
 			body: {
 				status: searchParams.get('status') || null,
 				categoryId: searchParams.get('category') || null,
@@ -68,7 +68,7 @@ const Products = () => {
 			},
 		})
 			.then((res: any) => {
-				setProductList(res.body);
+				setProductList(res.data);
 				setProductMeta(res.meta || {});
 			})
 			.catch((err) => ToastService.error(err))
@@ -131,7 +131,7 @@ const Products = () => {
 
 	return (
 		<>
-			<WxMainFull>
+			<MainFull>
 				<div className='d-flex justify-content-between align-items-center'>
 					<h4 className='text_h4 text_medium mb-0'>Products List</h4>
 					<Button disabled={isLoader} variant='fill' onClick={() => navigate(PRODUCT_CREATE)}>
@@ -158,12 +158,12 @@ const Products = () => {
 								<TextInput
 									type='search'
 									placeholder='Search products'
-									startIcon={<WxIcon icon='search' />}
+									startIcon={<Icon icon='search' />}
 									onChange={(e: any) => setSearchQuery(e.target.value)}
 								/>
 							</div>
 							<div className='col-xl-2 col-lg-3 col-md-3 col-sm-12'>
-								<WxSelect
+								<Select
 									placeholder='Select Category'
 									valuesKey='id'
 									textKey='name'
@@ -173,7 +173,7 @@ const Products = () => {
 								/>
 							</div>
 							<div className='col-xl-2 col-lg-3 col-md-3 col-sm-12'>
-								<WxSelect
+								<Select
 									placeholder='Select Status'
 									valuesKey='text'
 									textKey='title'
@@ -187,8 +187,8 @@ const Products = () => {
 
 						{productList.length && productMeta ? (
 							<>
-								<TableComponent productsData={productList} handleDelete={handleDelete} />
-								<div className='pagination_div'>
+								<ProductTable productsData={productList} handleDelete={handleDelete} />
+								<div className='p-2'>
 									<WxPagination
 										meta={productMeta}
 										currentPage={currentPage}
@@ -200,7 +200,7 @@ const Products = () => {
 							</>
 						) : (
 							<div className='mt-3'>
-								<WxNotFound title='No Products Found' btn_link={PRODUCT_CREATE} btn_text='Add Product' />
+								<NotFound title='No Products Found' btn_link={PRODUCT_CREATE} btn_text='Add Product' />
 							</div>
 						)}
 					</div>
@@ -212,7 +212,7 @@ const Products = () => {
 					onConfirm={onConfirmDelete}
 					body={`Are your sure you want to delete '${deleteItem.current?.title}'? This action wont be reverseable!`}
 				/>
-			</WxMainFull>
+			</MainFull>
 		</>
 	);
 };

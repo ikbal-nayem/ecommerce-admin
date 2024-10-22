@@ -2,7 +2,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
 import { MASTER_META_TYPE } from "config/constants";
@@ -232,7 +232,7 @@ const CreateMenu = () => {
 								type="button"
 								onClick={setOpenFormFun}
 							>
-								<WxIcon hoverTitle="Add menu" icon="add_circle" /> Add menu
+								<Icon hoverTitle="Add menu" icon="add_circle" /> Add menu
 							</button>
 						</div>
 					</div>

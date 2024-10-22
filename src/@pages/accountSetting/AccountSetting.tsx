@@ -1,6 +1,6 @@
 import {Button} from "@components/Button";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import { ENV } from "config/ENV.config";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,7 +14,7 @@ import * as yup from "yup";
 import avatar from "../../assets/images/avatar.png";
 
 import EnterOTPModal from "@components/EnterOTPModal/EnterOTPModal";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import { LocationService } from "services/api/Location.service";
 import { ProfileService } from "services/api/settings/Profile.service";
 import { useSearchParams } from "react-router-dom";
@@ -24,7 +24,7 @@ import { useDispatch } from "react-redux";
 import { setUserInfo } from "store/reducers/userReducer";
 import { compressImage, imageURLGenerate } from "utils/utils";
 import "./AccountSetting.scss";
-// import WxMainFull from "@components/MainContentLayout/WxMainFull";
+// import MainFull from "@components/MainContentLayout/MainFull";
 
 const changePasswordSchema = yup.object({
   old_password: yup.string().required("Please type current password"),
@@ -491,7 +491,7 @@ const AccountSetting = () => {
                         />
                       </div>
                       <label htmlFor="profileImage" className="icon_wrapper">
-                        <WxIcon icon="photo_camera" />
+                        <Icon icon="photo_camera" />
                       </label>
                       {!!watch("file") || !!watch("image") ? (
                         <p
@@ -559,11 +559,11 @@ const AccountSetting = () => {
                     </p>
                     {!isAccountVerified[0]?.active ? (
                       <span className="text-primary d-flex align-items-center">
-                        Verified <WxIcon icon="verified_user" />{" "}
+                        Verified <Icon icon="verified_user" />{" "}
                       </span>
                     ) : (
                       <span className="text-danger d-flex align-items-center">
-                        Unverified <WxIcon icon="gpp_maybe" />{" "}
+                        Unverified <Icon icon="gpp_maybe" />{" "}
                       </span>
                     )}
                   </div>
@@ -573,7 +573,7 @@ const AccountSetting = () => {
             {!isAccountVerified[0]?.active || (
               <div className="verify_alert d-flex justify-content-between  p-3 ">
                 <div className="d-flex align-items-center">
-                  <WxIcon icon="info" variants="outlined" />
+                  <Icon icon="info" variants="outlined" />
                   <p className="my-0 ms_2 text_body text_medium">
                     Please verify your Phone Number to enjoy the complete WebX
                     experience .
@@ -622,7 +622,7 @@ const AccountSetting = () => {
                       "No Partner Code"
                     )}
                     {userBasicInfo?.partnerUrl ? (
-                      <WxIcon
+                      <Icon
                         className="ms_2 material-icons text-dark"
                         icon="content_copy"
                         onClick={() => {
@@ -716,7 +716,7 @@ const AccountSetting = () => {
                   />
                 </div>
                 <div className="col-md-4 col-sm-12 mt-2">
-                  <WxSelect
+                  <Select
                     label="Division/State"
                     noMargin
                     options={divisions}
@@ -731,7 +731,7 @@ const AccountSetting = () => {
                   />
                 </div>
                 <div className="col-md-4 col-sm-12 mt-2">
-                  <WxSelect
+                  <Select
                     label="District/City"
                     options={districts}
                     placeholder="Select District/City"
@@ -807,20 +807,20 @@ const AccountSetting = () => {
                         <div>
                           <div className="d-flex justify-content-between align-items-center">
                             <div className="d-flex align-items-center mb-2">
-                              <WxIcon icon="contact_mail" />
+                              <Icon icon="contact_mail" />
                               <p className="mb-0 ms-1 text_h6 text_strong">
                                 {user?.title}
                               </p>
                             </div>
                             <div className="d-flex justify-content-between">
-                              <WxIcon
+                              <Icon
                                 onClick={() => {
                                   getUserAddressById(user?.id);
                                   setUserAddressEdit(true);
                                 }}
                                 icon="edit"
                               />
-                              <WxIcon
+                              <Icon
                                 onClick={() => deleteUserAddressById(user?.id)}
                                 icon="delete"
                                 className="text-danger"
@@ -830,7 +830,7 @@ const AccountSetting = () => {
 
                           <div className="row">
                             <div className="text_body d-flex align-items-center mb-2">
-                              <WxIcon icon="location_on" />
+                              <Icon icon="location_on" />
                               <span className="text-secondary ms_2">
                                 {user?.addressLine1
                                   ? user?.addressLine1 + ", "
@@ -850,7 +850,7 @@ const AccountSetting = () => {
                           <div className="d-flex">
                             {user?.email && (
                               <div className="text_body d-flex align-items-center my-1">
-                                <WxIcon icon="email" />
+                                <Icon icon="email" />
                                 <div className="d-flex flex-column">
                                   <span className="text-secondary ms_2">
                                     {" "}
@@ -861,7 +861,7 @@ const AccountSetting = () => {
                             )}
                             {user?.phone && (
                               <div className=" text_body d-flex align-items-center ms-3">
-                                <WxIcon icon="phone" />
+                                <Icon icon="phone" />
                                 <span className="text-secondary ms_2">
                                   {" "}
                                   {user?.phone || ""}

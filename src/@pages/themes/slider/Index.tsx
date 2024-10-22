@@ -3,7 +3,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import TableLoader from "@components/TableLoader/TableLoader";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import Switch from "@components/Switch";
 import WxThumbnail from "@components/Thumbnail";
 import { ISlider } from "@interfaces/themeCustomization.interface";
@@ -127,7 +127,7 @@ const Slider = () => {
 				<div className="title_section">
 					<div className="title" />
 					<Button onClick={() => setIsFormOpen(true)} variant="outline">
-						<WxIcon icon="add" />
+						<Icon icon="add" />
 						<span>Add Slider</span>
 					</Button>
 				</div>
@@ -167,7 +167,7 @@ const Slider = () => {
 											}
 											isChecked={item?.isActive}
 										/>
-										<WxIcon
+										<Icon
 											variants="outlined"
 											icon="delete"
 											color="danger"
@@ -175,7 +175,7 @@ const Slider = () => {
 											onClick={() => handleDelete(item)}
 											className="edit-icon"
 										/>
-										<WxIcon
+										<Icon
 											variants="outlined"
 											icon="edit"
 											size={22}

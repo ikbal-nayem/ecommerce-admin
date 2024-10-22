@@ -1,4 +1,4 @@
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import Label from "@components/Label";
 import WxModal from "@components/Modal";
@@ -37,7 +37,7 @@ const ShippingModal = ({
       <WxModalBody>
         <div className="row">
           <div className="col-md-6">
-            <WxSelect
+            <Select
               label="Delivery Zone"
               options={zoneList}
               textKey="name"

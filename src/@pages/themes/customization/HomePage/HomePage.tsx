@@ -2,7 +2,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxSlider from "@components/WxSlider";
 import { ISliderItem } from "@interfaces/themeCustomization.interface";
 import { ThemeCustomizationService } from "services/api/settings/ThemeCustomization.service";
@@ -162,9 +162,9 @@ export default function CustomizationHome() {
 									className="wx__btn_sm"
 								>
 									{previewFlag ? (
-										<WxIcon icon="visibility_off" />
+										<Icon icon="visibility_off" />
 									) : (
-										<WxIcon icon="remove_red_eye" />
+										<Icon icon="remove_red_eye" />
 									)}
 								</Button>
 							)}

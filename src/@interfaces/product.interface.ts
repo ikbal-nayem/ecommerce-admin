@@ -1,10 +1,5 @@
-import { IFilePayload } from "./common.interface";
-
-export interface ISalesChannel {
-	id?: string;
-	title: string;
-	metaType: string;
-}
+import { ICategoryPayload } from 'services/api/products/Category.services';
+import { IFilePayload } from './common.interface';
 
 export interface IProductOption {
 	value: string;
@@ -18,8 +13,8 @@ export interface IProductVariant {
 	options: IProductOption[];
 	thumbnail: string;
 	quantity: number;
-	regularPrice: number;
-	sellingPrice: number;
+	price: number;
+	discountPrice: number;
 	sku: string;
 	status: string;
 	title: string;
@@ -28,13 +23,12 @@ export interface IProductVariant {
 }
 
 export interface IProductTable {
-	id: string;
-	title: string;
-	images: IFilePayload[];
+	_id: string;
+	name: string;
+	images: string;
 	thumbnail: string;
-	regularPrice: number;
-	sellingPrice: number;
-	status: string;
-	categoryName: string;
-	vendorName: string;
+	price: number;
+	discountPrice: number;
+	isActive: boolean;
+	category: ICategoryPayload;
 }

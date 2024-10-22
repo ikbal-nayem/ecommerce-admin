@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 
 type IAlertProps = {
 	children: any;
@@ -19,7 +19,7 @@ const WxAlert = ({
 				noMargin ? "m-0" : ""
 			} ${className}`}
 		>
-			<WxIcon icon="info" color={type} size={25} />
+			<Icon icon="info" color={type} size={25} />
 			<span>{children}</span>
 		</div>
 	);

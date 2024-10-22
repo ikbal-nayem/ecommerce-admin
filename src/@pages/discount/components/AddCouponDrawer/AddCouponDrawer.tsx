@@ -4,7 +4,7 @@ import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/Thumbnail";
 import { CustomerService } from "services/api/Customer.service";
@@ -404,7 +404,7 @@ const AddCouponDrawer = forwardRef(
                     setSearchQuery(e.target.value);
                     e.target.value.trim().length && setLoader(true);
                   }}
-                  startIcon={<WxIcon variants="round" icon="search" />}
+                  startIcon={<Icon variants="round" icon="search" />}
                   placeholder="search ..."
                 />
                 {/* <Button>00 {drawerContent} selected</Button> */}

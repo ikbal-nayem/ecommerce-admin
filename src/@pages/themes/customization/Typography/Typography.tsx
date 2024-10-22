@@ -1,5 +1,5 @@
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
@@ -156,7 +156,7 @@ export default function CustomizationTypography() {
 					<div className="row">
 						<strong>Title</strong>
 						<div className="col-md-4 col-sm-6 mt-2">
-							<WxSelect
+							<Select
 								label="Font Family"
 								noMargin
 								options={fontFamily}
@@ -169,7 +169,7 @@ export default function CustomizationTypography() {
 							/>
 						</div>
 						<div className="col-md-4 col-sm-6 mt-2">
-							<WxSelect
+							<Select
 								label="Font Style"
 								noMargin
 								options={fontStyle}
@@ -182,7 +182,7 @@ export default function CustomizationTypography() {
 							/>
 						</div>
 						<div className="col-md-4 col-sm-6 mt-2">
-							<WxSelect
+							<Select
 								label="Font Weight"
 								noMargin
 								options={fontWeight}
@@ -199,7 +199,7 @@ export default function CustomizationTypography() {
 							<strong>Body</strong>
 						</div>
 						<div className="col-md-4 col-sm-6 mt-2">
-							<WxSelect
+							<Select
 								label="Font Family"
 								noMargin
 								options={fontFamily}
@@ -212,7 +212,7 @@ export default function CustomizationTypography() {
 							/>
 						</div>
 						<div className="col-md-4 col-sm-6 mt-2">
-							<WxSelect
+							<Select
 								label="Font Style"
 								noMargin
 								options={fontStyle}
@@ -226,7 +226,7 @@ export default function CustomizationTypography() {
 						</div>
 
 						<div className="col-md-4 col-sm-6 mt-2">
-							<WxSelect
+							<Select
 								label="Font Weight"
 								noMargin
 								options={fontWeight}

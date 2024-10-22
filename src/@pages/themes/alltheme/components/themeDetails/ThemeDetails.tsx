@@ -1,5 +1,5 @@
 import {Button} from '@components/Button';
-import WxIcon from '@components/Icon';
+import Icon from '@components/Icon';
 import WxMainXl from '@components/MainContentLayout/WxMainXl';
 import WxAccordion from '@components/WxAccordion';
 import { FormHeader } from '@components/FormLayout';
@@ -164,7 +164,7 @@ const ThemesDetails = () => {
 											to={SETTINGS_PRICING_PLAN}
 											className='text-decoration-none text-warning d-flex align-items-center gap-1 mt-2'
 										>
-											<WxIcon icon='info' variants='outlined' color='warning' size={15} />
+											<Icon icon='info' variants='outlined' color='warning' size={15} />
 											Please upgrade your plan to install the theme.
 										</Link>
 									</small>
@@ -273,7 +273,7 @@ const ThemesDetails = () => {
 					<div className='card wx__details_mid_right p-3 mt-3'>
 						<h5>Support</h5>
 						<div className='d-flex align-items-center mb-2'>
-							<WxIcon icon='apartment' variants='filled' />
+							<Icon icon='apartment' variants='filled' />
 							&nbsp;
 							<span>{themeReleaseInfo?.developer?.companyName}</span>
 						</div>
@@ -281,7 +281,7 @@ const ThemesDetails = () => {
 							href={'tel:' + themeReleaseInfo?.developer?.supportPhone}
 							className='phone d-flex align-items-center'
 						>
-							<WxIcon icon='phone' variants='filled' />
+							<Icon icon='phone' variants='filled' />
 							&nbsp;
 							<span>{themeReleaseInfo?.developer?.supportPhone}</span>
 						</a>
@@ -290,7 +290,7 @@ const ThemesDetails = () => {
 							target='_blank'
 							className='privacy_policy d-flex align-items-center'
 						>
-							<WxIcon icon='privacy_tip' variants='filled' />
+							<Icon icon='privacy_tip' variants='filled' />
 							&nbsp;
 							<span>Privacy Policy</span>
 						</a>
@@ -298,7 +298,7 @@ const ThemesDetails = () => {
 							href={'mailto:' + themeReleaseInfo?.developer?.supportEmail}
 							className='mail d-flex align-items-center'
 						>
-							<WxIcon icon='markunread' variants='filled' className='email__icon' />
+							<Icon icon='markunread' variants='filled' className='email__icon' />
 							&nbsp;
 							<span>{themeReleaseInfo?.developer?.supportEmail}</span>
 						</a>

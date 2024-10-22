@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
-import WxMainFull from "@components/MainContentLayout/WxMainFull";
+import MainFull from "@components/MainContentLayout/MainFull";
 import { FormHeader } from "@components/FormLayout";
 import WxRadio from "@components/WxRadio/WxRadio";
 import { MASTER_META_KEY } from "config/constants";
@@ -174,7 +174,7 @@ const PricingPlan = () => {
 	if (isLoading) return <Preloader absolutePosition />;
 
 	return (
-		<WxMainFull className="pricing_plan_sec">
+		<MainFull className="pricing_plan_sec">
 			<div className="w-100 d-flex justify-content-between align-items-center">
 				<FormHeader title="Pricing Plan" backNavigationLink={SETTINGS} />
 				<div className="__switch d-flex align-items-center text_heading text_medium">
@@ -230,7 +230,7 @@ const PricingPlan = () => {
 					</span>
 				}
 			/>
-		</WxMainFull>
+		</MainFull>
 	);
 };
 

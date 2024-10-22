@@ -3,7 +3,7 @@ import WxMainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import Switch from "@components/Switch";
 import { MASTER_META_KEY } from "config/constants";
 import { ISenderEmail } from "@interfaces/common.interface";
@@ -287,7 +287,7 @@ const Notification = () => {
                       navigate(SETTINGS_NOTIFICATION_ORDER, { state: 2 })
                     }
                   >
-                    <WxIcon icon="sms" />
+                    <Icon icon="sms" />
                   </Button>
                 </div>
               </div>
@@ -321,7 +321,7 @@ const Notification = () => {
                       navigate(SETTINGS_NOTIFICATION_ORDER, { state: 1 })
                     }
                   >
-                    <WxIcon icon="email" />
+                    <Icon icon="email" />
                   </Button>
                 </div>
               </div>

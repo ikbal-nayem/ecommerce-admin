@@ -1,11 +1,11 @@
 import WxAlert from "@components/Alert/WxAlert";
 import WxMainLg from "@components/MainContentLayout/MainLg";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import Checkbox from "@components/Checkbox";
 import { FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import { MASTER_META_KEY } from "config/constants";
 import { IStatus } from "@interfaces/common.interface";
@@ -206,7 +206,7 @@ const CreateOrder = () => {
 									<TextInput
 										type="search"
 										placeholder="Search products"
-										startIcon={<WxIcon icon="search" />}
+										startIcon={<Icon icon="search" />}
 										onFocus={openDrawer}
 									/>
 								</div>
@@ -264,7 +264,7 @@ const CreateOrder = () => {
 							)}
 							<WxHr className="" />
 							<div className="w-100">
-								<WxSelect
+								<Select
 									label="Set order status"
 									key={getValues("orderStatus")}
 									valuesKey="metaKey"
@@ -272,7 +272,7 @@ const CreateOrder = () => {
 									options={orderStatus}
 									registerProperty={{ ...register("orderStatus") }}
 								/>
-								<WxSelect
+								<Select
 									label="Set payment status"
 									noMargin
 									key={getValues("paymentStatus")}

@@ -1,7 +1,7 @@
 import DateInput from "@components/DatePicker/DateInput";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import ChartBoxHeader from "@components/WxSkelton/Analytics/ChartBoxHeader";
 import ConversionRate from "@components/WxSkelton/Analytics/ConverstionRate";
@@ -306,7 +306,7 @@ const Analytics = () => {
                     </h3>
                   </div>
                   <div>
-                    <WxIcon icon="connected_tv" className="total_sales_icon" />
+                    <Icon icon="connected_tv" className="total_sales_icon" />
                   </div>
                 </div>
                 <WxHr />
@@ -350,7 +350,7 @@ const Analytics = () => {
                     </h3>
                   </div>
                   <div>
-                    <WxIcon
+                    <Icon
                       className="online_session_icon"
                       icon="connected_tv"
                     />
@@ -389,7 +389,7 @@ const Analytics = () => {
                     </h3>
                   </div>
                   <div>
-                    <WxIcon className="total_orders_icon" icon="connected_tv" />
+                    <Icon className="total_orders_icon" icon="connected_tv" />
                   </div>
                 </div>
                 <WxHr />
@@ -433,7 +433,7 @@ const Analytics = () => {
                     </h3>
                   </div>
                   <div>
-                    <WxIcon icon="connected_tv" className="avg_order_icon" />
+                    <Icon icon="connected_tv" className="avg_order_icon" />
                   </div>
                 </div>
                 <WxHr />
@@ -466,7 +466,7 @@ const Analytics = () => {
                   <h3 className="m-0 text_h3 text_semibold">0</h3>
                 </div>
                 <div>
-                  <WxIcon className="avg_count_icon" icon="connected_tv" />
+                  <Icon className="avg_count_icon" icon="connected_tv" />
                 </div>
               </div>
               <WxHr />
@@ -492,7 +492,7 @@ const Analytics = () => {
                   </h3>
                 </div>
                 <div>
-                  <WxIcon
+                  <Icon
                     className="onlinestore_conversion_icon"
                     icon="social_distance"
                   />

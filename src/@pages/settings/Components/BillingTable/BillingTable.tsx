@@ -1,5 +1,5 @@
 import {Button} from "@components/Button";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import WxTag from "@components/WxTag";
 import { STATUS_CONSTANT } from "config/constants";
 import { PAYMENT } from "routes/path-name.route";
@@ -59,7 +59,7 @@ export const BillingTable = ({ tableData }: IBillingTable) => {
                     InvoiceService.downloadInvoice(bill?.invoiceId)
                   }
                 >
-                  <WxIcon style={{ top: "0" }} icon="download" /> Download
+                  <Icon style={{ top: "0" }} icon="download" /> Download
                 </Button>
                 {bill?.invoicePaymentStatus !== STATUS_CONSTANT.paid ? (
                   <div>

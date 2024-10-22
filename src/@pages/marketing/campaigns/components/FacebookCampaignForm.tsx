@@ -1,9 +1,9 @@
 import DateInput from "@components/DatePicker/DateInput";
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import { WxFormFooter } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import Label from "@components/Label";
 import { MediaInput } from "@components/MediaInput";
@@ -131,7 +131,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                 Budget & Schedule
               </h6>
               <div className="col-md-6 col-lg-6 col-sm-12">
-                <WxSelect
+                <Select
                   label="Budget"
                   isRequired
                   options={genderOpt}
@@ -146,7 +146,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
               <div className="col-md-6 col-lg-6 col-sm-12">
                 <TextInput
                   label="Amount"
-                  startIcon={<WxIcon icon="attach_money" />}
+                  startIcon={<Icon icon="attach_money" />}
                   registerProperty={{
                     ...register("amount"),
                   }}
@@ -168,7 +168,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   registerProperty={{
                     ...register("startDate"),
                   }}
-                  endIcon={<WxIcon variants="round" icon="calendartoday" />}
+                  endIcon={<Icon variants="round" icon="calendartoday" />}
                   errorMessage={errors.startDate?.message}
                   color={errors.startDate ? "danger" : "secondary"}
                 />
@@ -189,7 +189,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                   timeCaption="Time"
                   timeFormate="h:mm aa"
                   timeIntervals={15}
-                  startIcon={<WxIcon variants="round" icon="schedule" />}
+                  startIcon={<Icon variants="round" icon="schedule" />}
                   registerProperty={{
                     ...register("startTime"),
                   }}
@@ -213,7 +213,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                 />
               </div>
               <div className="col-md-6 col-lg-6 col-sm-12">
-                <WxSelect
+                <Select
                   registerProperty={{
                     ...register("gender"),
                   }}
@@ -225,7 +225,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                 />
               </div>
               <div className="col-md-3 col-lg-3 col-sm-12">
-                <WxSelect
+                <Select
                   label="Age Range"
                   isRequired
                   options={ageOption}
@@ -235,7 +235,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                 />
               </div>
               <div className="col-md-3 col-lg-3 col-sm-12 mt-4">
-                <WxSelect
+                <Select
                   options={ageOption}
                   textKey="title"
                   placeholder="End to"

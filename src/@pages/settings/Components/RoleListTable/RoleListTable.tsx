@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { SETTINGS_ROLES_EDIT } from "routes/path-name.route";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -50,7 +50,7 @@ const RoleListTable = ({ roleList, onDelete }: IRoleTable) => {
               </td>
               <td className="wx__td more">
                 <div className="wx__table_cell_more-icon">
-                  <WxIcon
+                  <Icon
                     icon="more_vert"
                     onClick={() =>
                       role?.hasPermission ? onShowPopup(index) : null
@@ -65,7 +65,7 @@ const RoleListTable = ({ roleList, onDelete }: IRoleTable) => {
                             to={SETTINGS_ROLES_EDIT({ id: role?.id })}
                             className="text_body"
                           >
-                            <WxIcon icon="edit" />
+                            <Icon icon="edit" />
                             Edit
                           </Link>
                         </li>
@@ -74,7 +74,7 @@ const RoleListTable = ({ roleList, onDelete }: IRoleTable) => {
                             className="text_body"
                             onClick={() => handleDelete(role)}
                           >
-                            <WxIcon icon="delete" />
+                            <Icon icon="delete" />
                             Delete
                           </a>
                         </li>

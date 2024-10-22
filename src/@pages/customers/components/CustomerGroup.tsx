@@ -4,7 +4,7 @@ import WxDrawer from "@components/Drawer";
 import WxDrawerBody from "@components/Drawer/DrawerBody";
 import WxDrawerFooter from "@components/Drawer/DrawerFooter";
 import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxList from "@components/WxList";
 import WxListItem from "@components/WxList/WxListItem";
@@ -147,7 +147,7 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
                 <>
                   <TextInput
                     type="search"
-                    startIcon={<WxIcon icon="search" />}
+                    startIcon={<Icon icon="search" />}
                     placeholder="Search Group"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       setSearchQuery(e.target.value)

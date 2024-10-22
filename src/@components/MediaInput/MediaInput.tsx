@@ -14,12 +14,9 @@ interface IMediaInputProps {
 	maxSelect?: number;
 	dragNDropFor?: string;
 	dragNDropText?: string;
-	recommendedText?: string;
+	recommendedHeightWidth?: string;
 	accept?: string;
 	onChange?: (file: File | FileList | null | string | string[], name?: string) => void;
-	// onOrderChange?: (fileList: IFilePayload[] | File[]) => void;
-	// onRemove?: (fileObject?: IFilePayload | File, idx?: number) => void;
-	// onSelect?: (imgObj: IFilePayload | File, idx?: number) => void;
 }
 
 const MediaInput = ({
@@ -29,39 +26,25 @@ const MediaInput = ({
 	maxSelect,
 	dragNDropFor = 'image',
 	dragNDropText = 'images',
-	recommendedText = '1000px X 1000px',
+	recommendedHeightWidth = '1000px X 1000px',
 	accept = 'image/png, image/jpg, image/jpeg',
 	onChange,
-}: // onOrderChange,
-// onRemove,
-// onSelect,
-IMediaInputProps) => {
+}: IMediaInputProps) => {
 	const [fileItems, setFileItems] = useState<any[]>(fileList || []);
 	const [draggedItem, setDraggedItem] = useState<any>(null);
 	const [isLimitExceeded, setIsLimitExceeded] = useState<boolean>(false);
 	const shouldResetNext = useRef(true);
+	const isInit = useRef(true);
 
 	useEffect(() => {
-		setFileItems(fileList);
-	}, [fileList]);
+		if (isInit.current) {
+			setFileItems(fileList);
+			isInit.current = false;
+		}
+	}, [fileList, isInit.current]);
 
 	// maximum image can select
 	maxSelect = !multiple ? 1 : maxSelect === -1 ? 999 : maxSelect;
-
-	// useEffect(() => {
-	// 	if (fileList.length) {
-	// 		// Object.keys(fileList).forEach((_, i) => {
-	// 		// 	if (fileList[i] instanceof File) {
-	// 		// 		fileList[i] = URL.createObjectURL(fileList[i]);
-	// 		// 	}
-	// 		// });
-	// 		setFileItems(fileList);
-	// 		shouldResetNext.current = true;
-	// 	} else if (shouldResetNext.current) {
-	// 		setFileItems([]);
-	// 		shouldResetNext.current = false;
-	// 	}
-	// }, [fileList]);
 
 	const onDragStart = (e, index: number, id: any) => {
 		const moveElement = document.getElementById(id);
@@ -92,8 +75,6 @@ IMediaInputProps) => {
 	const onRemove = (idx: number) => {
 		setFileItems((prev) => {
 			prev.splice(idx, 1);
-			console.log(prev);
-
 			onChange(multiple ? prev : prev?.length ? prev[0] : null, name);
 			return prev;
 		});
@@ -104,81 +85,24 @@ IMediaInputProps) => {
 	const onFileSelect = (file: FileList) => {
 		if (!file) return;
 
+		// if (dragNDropFor === 'image') {
+		// 	if (maxSelect && file?.length + fileItems?.length > maxSelect) {
+		// 		setIsLimitExceeded(true);
+		// 		file = Array.prototype.slice.call(
+		// 			file,
+		// 			0,
+		// 			maxSelect - fileItems?.length < 0 ? 0 : maxSelect - fileItems?.length
+		// 		);
+		// 	}
+		// }
+
 		if (!multiple) {
 			setFileItems([file[0]]);
 			onChange(file[0], name);
 			return;
 		}
-
-		if (dragNDropFor === 'image') {
-			if (maxSelect && file?.length + fileItems?.length > maxSelect) {
-				setIsLimitExceeded(true);
-				file = Array.prototype.slice.call(
-					file,
-					0,
-					maxSelect - fileItems?.length < 0 ? 0 : maxSelect - fileItems?.length
-				);
-			}
-		}
-
-		// if (['csv', 'xls', 'xlsx'].includes(dragNDropFor)) {
-		// 	var file = file[0];
-
-		// 	if (!file) return;
-
-		// 	const fileSize = file.size / 1024 / 1024;
-
-		// 	if (fileSize > 1) {
-		// 		// setDataLimitExceed(true);
-		// 		const requireObj = {
-		// 			dataLimitExceed: true,
-		// 			rawFile: file,
-		// 		};
-
-		// 		onChange(requireObj, name);
-
-		// 		return;
-		// 	}
-		// 	setFileDetails({
-		// 		fileName: file.name.split('.')[0],
-		// 		fileExtension: file.name.split('.')[1],
-		// 		fileSize: fileSize,
-		// 	});
-
-		// 	var FR = new FileReader();
-		// 	FR.onload = function (e: any) {
-		// 		var data = new Uint8Array(e.target.result);
-		// 		var workbook = read(data, { type: 'array', sheetStubs: true });
-		// 		var firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-
-		// 		// header: 1 instructs xlsx to create an 'array of arrays'
-		// 		var result = utils.sheet_to_json(firstSheet, {
-		// 			raw: true,
-		// 		});
-
-		// 		console.log(result);
-		// 		setFileDetails((state) => ({
-		// 			...state,
-		// 			fileDataLength: result.length,
-		// 		}));
-		// 		// setValue("audienceContact", result);
-		// 		// setDataLimitExceed(false);
-
-		// 		const requireObj = {
-		// 			details: {
-		// 				fileName: file.name.split('.')[0],
-		// 				fileExtension: file.name.split('.')[1],
-		// 				fileSize: fileSize,
-		// 			},
-		// 			data: result,
-		// 			dataLimitExceed: false,
-		// 			rawFile: file,
-		// 		};
-
-		// 		onChange(requireObj, name);
-		// 	};
-		// 	FR.readAsArrayBuffer(file);
-		// }
+		setFileItems((prev) => [...prev, ...Object.values(file)]);
+		onChange(file, name);
 	};
 
 	return (
@@ -188,13 +112,13 @@ IMediaInputProps) => {
 					<div className='file-dummy'>
 						<div className='success'>Great, your files are selected. Keep on.</div>
 						<div className='default d-flex align-items-center justify-content-center'>
-							<Icon icon='image' className='img_icon' size={50} />
+							<Icon icon='add_photo_alternate' className='img_icon' size={50} />
 							<div className='upload_info d-flex flex-column'>
 								<p>
 									Drag and Drop {dragNDropText} here or{' '}
 									<label htmlFor='upload-files'>Browse on your computer</label>
 								</p>
-								<span>Recommended size:{recommendedText}</span>
+								<span>Recommended size:{recommendedHeightWidth}</span>
 							</div>
 						</div>
 					</div>
@@ -225,15 +149,15 @@ IMediaInputProps) => {
 								key={id}
 								id={id}
 								className='image-container'
-								onDragOver={(e) => onDragOver(e, idx)}
-								draggable={onOrderChange ? true : false}
-								onDragStart={(e) => onDragStart(e, idx, id)}
-								onDragEnd={() => onDragEnd(id)}
+								// onDragOver={(e) => onDragOver(e, idx)}
+								// draggable={onOrderChange ? true : false}
+								// onDragStart={(e) => onDragStart(e, idx, id)}
+								// onDragEnd={() => onDragEnd(id)}
 								// onClick={() => onSelect && onSelect(fileItems[idx])}
 							>
 								<img className='image' src={item} alt={item} />
 								<div className='image_hover'>
-									{multiple ? <Icon icon='drag_indicator' className='image_drag' /> : null}
+									{/* {multiple ? <Icon icon='drag_indicator' className='image_drag' /> : null} */}
 									<Icon icon='close' className='image_remove' onClick={() => onRemove(idx)} />
 								</div>
 							</div>

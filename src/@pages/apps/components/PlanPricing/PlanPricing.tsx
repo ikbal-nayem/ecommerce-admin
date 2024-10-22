@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { STATUS_CONSTANT } from "config/constants";
 import { IAppPricing } from "@interfaces/app.interface";
 import "./PlanPricing.scss";
@@ -15,7 +15,7 @@ const PlanPricing = ({ PlanPricingData }: IPlanPricingProps) => (
 				key={index}
 			>
 				<div className="card p-3">
-					<WxIcon icon="workspace_premium" hoverTitle={item?.title} size={30} />
+					<Icon icon="workspace_premium" hoverTitle={item?.title} size={30} />
 					<p className="text_small text_regular my-2">
 						{item?.title}
 					</p>

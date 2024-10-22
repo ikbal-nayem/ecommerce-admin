@@ -1,5 +1,5 @@
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import Switch from "@components/Switch";
 import { IDeliveryZoneItem } from "@interfaces/Settings.interface";
 import { useState } from "react";
@@ -83,7 +83,7 @@ const DeliveryZoneListTable = ({
                 </td>
                 <td className="wx__td more">
                   <div className="wx__table_cell_more-icon">
-                    <WxIcon
+                    <Icon
                       icon="more_vert"
                       onClick={() => onShowPopup(index)}
                     />

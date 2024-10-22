@@ -1,4 +1,4 @@
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import { IOrderDetails } from "@interfaces/order.interface";
 import { memo } from "react";
 import { generateDateFormat } from "utils/splitDate";
@@ -28,7 +28,7 @@ const OrderPlacedInfo = ({ orderDetails }: OrderPlacedInfoProps) => {
 				</span>
 				<br />
 				<div className="text_body text_regular d-flex align-items-center gap-2">
-					<WxIcon variants="outlined" icon="storefront" />
+					<Icon variants="outlined" icon="storefront" />
 					<span>{orderDetails?.saleChannel}</span>
 				</div>
 			</section>

@@ -1,7 +1,7 @@
-import WxSelect from "@components/Select/Select";
+import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
 import WxDropdown from "@components/WxDropdown/WxDropdown";
-import WxIcon from "@components/Icon";
+import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/Thumbnail";
 import { memo, useState } from "react";
@@ -164,7 +164,7 @@ const InventoryTable = ({
                             <p className="my-3 text_small quantity_text">
                               Original Quantity: {pd?.quantity}
                             </p>
-                            <WxSelect
+                            <Select
                               defaultValue="All groups"
                               valuesKey="object"
                               textKey="title"
@@ -192,7 +192,7 @@ const InventoryTable = ({
                       commit
                     </span> */}
 
-                    <WxIcon
+                    <Icon
                       icon="commit"
                       variants="round"
                       onClick={(e: any) => {

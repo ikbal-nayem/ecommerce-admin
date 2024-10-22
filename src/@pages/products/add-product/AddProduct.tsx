@@ -9,7 +9,7 @@ import { PRODUCT } from 'routes/path-name.route';
 import { ProductService } from 'services/api/products/Product.services';
 import { ToastService } from 'services/utils/toastr.service';
 import { isNull } from 'utils/check-validity';
-import { makeFormData } from 'utils/preprocessor';
+import { makeRequestFormData } from 'utils/preprocessor';
 import './AddProduct.scss';
 import ProductDimension from './products-form/ProductDimension/ProductDimension';
 import ProductInfo from './products-form/ProductInfo/ProductInfo';
@@ -41,12 +41,7 @@ const AddProducts = () => {
 		console.log(dataCopy);
 
 		setIsSaving(true);
-		const fd = await makeFormData(dataCopy);
-		// const images: any = data?.images;
-		// delete data?.images;
-		// const formData = new FormData();
-		// formData.append('body', JSON.stringify(data));
-		// Object.keys(images).forEach((img) => formData.append('files', images[img]));
+		const fd = await makeRequestFormData(dataCopy);
 		ProductService.addProduct(fd)
 			.then((resp) => {
 				ToastService.success(resp.message);
