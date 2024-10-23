@@ -1,3 +1,4 @@
+import { IObject } from '@interfaces/common.interface';
 import { ADMIN_SERVICE, PRODUCT_SERVICE } from 'config/api-constant';
 import { apiIns } from 'config/api.config';
 import { mergeBodyWithStoreId, mergePayloadWithStoreId } from 'services/utils/localStorageData.service';
@@ -30,7 +31,7 @@ export const ProductService = {
 	getByIds: async (product_ids: any[]): Promise<any> => {
 		return await apiIns.post(PRODUCT_SERVICE + 'products/get-by-id-set', product_ids);
 	},
-	updateProduct: async (id: string, payload: IProductsPayload): Promise<any> => {
+	updateProduct: async (id: string, payload: IObject): Promise<any> => {
 		return await apiIns.put('product/' + id, payload);
 	},
 	getSalesChannel: async (): Promise<any> => {

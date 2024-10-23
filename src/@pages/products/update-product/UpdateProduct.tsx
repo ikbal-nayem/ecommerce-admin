@@ -1,7 +1,7 @@
 import { FormFooter, FormHeader } from '@components/FormLayout';
 import MainLg from '@components/MainContentLayout/MainLg';
 import { yupResolver } from '@hookform/resolvers/yup';
-import schema from '@pages/products/add-product/validation';
+import schema, { getProductdefaultValues } from '@pages/products/add-product/validation';
 import { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -9,7 +9,8 @@ import { PRODUCT } from 'routes/path-name.route';
 import { ProductService } from 'services/api/products/Product.services';
 import Preloader from 'services/utils/preloader.service';
 import { ToastService } from 'services/utils/toastr.service';
-import { getFirstErrorObj } from 'utils/errors';
+import { isNull } from 'utils/check-validity';
+import { makeRequestFormData } from 'utils/preprocessor';
 import '../add-product/AddProduct.scss';
 import ProductDimension from '../add-product/products-form/ProductDimension/ProductDimension';
 import ProductInfo from '../add-product/products-form/ProductInfo/ProductInfo';
@@ -35,7 +36,7 @@ const UpdateProducts = () => {
 		if (!product_id) return;
 		setIsLoading(true);
 		ProductService.getById(product_id)
-			.then((res) => methods.reset(res.data))
+			.then((res) => methods.reset(getProductdefaultValues(res.data)))
 			.catch((err) => {
 				ToastService.error(err.message);
 				navigate(PRODUCT);
@@ -43,26 +44,23 @@ const UpdateProducts = () => {
 			.finally(() => setIsLoading(false));
 	}, [product_id]);
 
-	const onSubmit = (data: any) => {
-		const errorParams = Object.keys(methods.formState.errors);
-		if (errorParams?.length) {
-			const errObj = getFirstErrorObj(methods.formState.errors);
-			methods.setFocus(errObj?.ref?.name);
-			ToastService.error(errObj?.message);
-		} else {
-			setIsSaving(true);
-			data?.images?.forEach((_, idx) => {
-				data.images[idx].serial = idx + 1;
-			});
-
-			ProductService.updateProduct(product_id, data)
-				.then((resp) => {
-					ToastService.success(resp.message);
-					navigate(PRODUCT);
-				})
-				.catch((err) => ToastService.error(err.message))
-				.finally(() => setIsSaving(false));
+	const onSubmit = async (data: any) => {
+		if (isNull(data.category)) {
+			ToastService.error('Please select a category');
+			return;
 		}
+		const dataCopy = { ...data };
+		dataCopy.category = data.category?._id;
+		dataCopy.collections = data.collections?.map((item) => item?._id);
+		setIsSaving(true);
+		const fd = await makeRequestFormData(dataCopy);
+		ProductService.updateProduct(product_id, fd)
+			.then((resp) => {
+				ToastService.success(resp.message);
+				navigate(PRODUCT);
+			})
+			.catch((err) => ToastService.error(err.message))
+			.finally(() => setIsSaving(false));
 	};
 
 	if (isLoading) return <Preloader absolutePosition loaderText='Getting product data...' />;

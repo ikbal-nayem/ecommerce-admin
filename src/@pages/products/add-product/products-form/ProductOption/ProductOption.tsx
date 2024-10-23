@@ -41,7 +41,7 @@ type RenderOptionProps = {
 	onDeleteValue: Function;
 	onDeleteOption: (index: number) => void;
 	focusIndex: number;
-	hasVariant?: boolean;
+	hasVariants?: boolean;
 };
 
 const RenderOption = ({
@@ -55,9 +55,9 @@ const RenderOption = ({
 	onDeleteValue,
 	onDeleteOption,
 	focusIndex,
-	hasVariant,
+	hasVariants,
 }: RenderOptionProps) => {
-	const [isEdit, setIsEdit] = useState<boolean>(!hasVariant || optionItem?.values?.length === 0);
+	const [isEdit, setIsEdit] = useState<boolean>(!hasVariants || optionItem?.values?.length === 0);
 
 	const onValueOrderChange = (updatedOrder: any[]) => {
 		handleValueOrderChange(optionItem?.id, updatedOrder);
@@ -166,7 +166,8 @@ const ProductOption = () => {
 
 	const { register, watch, setValue, getValues } = useFormContext();
 
-	const hasVariant = watch('hasVariant');
+	const hasVariants = watch('hasVariants');
+
 
 	const defaultOptions = getValues('options');
 
@@ -241,12 +242,12 @@ const ProductOption = () => {
 						label='This product has options, like size or color etc.'
 						checkedTitle='Yes'
 						unCheckedTitle='No'
-						registerProperty={{ ...register('hasVariant') }}
+						registerProperty={{ ...register('hasVariants') }}
 					/>
 				</div>
 			</div>
 
-			{hasVariant ? (
+			{hasVariants ? (
 				<>
 					<WxHr />
 					<div className='product_option_list'>
@@ -265,7 +266,7 @@ const ProductOption = () => {
 									onDeleteValue={onDeleteValue}
 									onDeleteOption={onDeleteOption}
 									focusIndex={focusIndex}
-									hasVariant={hasVariant}
+									hasVariants={hasVariants}
 								/>
 							)}
 							onOrderChange={onOrderChange}

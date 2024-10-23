@@ -1,25 +1,31 @@
+import { IObject } from '@interfaces/common.interface';
+import { isNull } from 'utils/check-validity';
 import * as yup from 'yup';
 
-export const defaultValues = {
-	name: '',
-	price: 0,
-	discountPrice: 0,
-	costPrice: 0,
-	stock: 0,
-	// hasSummary: false,
-	hasDimension: false,
-	heightUnit: 'cm',
-	widthUnit: 'cm',
-	weightUnit: 'gm',
-	hasVariant: false,
-	trackStock: true,
-	isOverselling: false,
-	isActive: false,
-	category: '',
-	collections: [],
-	tags: '',
-	images: [],
-};
+export const getProductdefaultValues = (val?: IObject) => ({
+	name: val?.name || '',
+	description: val?.description || '',
+	hasVariants: !isNull(val?.hasVariants) ? val?.hasVariants : false,
+	price: val?.price || 0,
+	discountPrice: val?.discountPrice || 0,
+	costPrice: val?.costPrice || 0,
+	height: val?.height || 0,
+	heightUnit: val?.heightUnit || 'cm',
+	width: val?.width || 0,
+	widthUnit: val?.widthUnit || 'cm',
+	weight: val?.weight || 0,
+	weightUnit: val?.weightUnit || 'gm',
+	options: val?.options || [],
+	variants: val?.variants || [],
+	sku: val?.sku || '',
+	trackStock: !isNull(val?.trackStock) ? val?.trackStock : true,
+	stock: val?.stock || 0,
+	category: val?.category || {},
+	collections: val?.collections || [],
+	tags: val?.tags || [''],
+	images: val?.images || [],
+	isActive: val?.isActive || false,
+});
 
 const schema = yup
 	.object({

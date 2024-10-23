@@ -61,6 +61,7 @@ const ProductDimension = () => {
 								registerProperty={{
 									...register("weight", { valueAsNumber: true }),
 								}}
+								onFocus={(e) => e.target.select()}
 							/>
 							<Select
 								options={weights}
@@ -80,6 +81,7 @@ const ProductDimension = () => {
 								registerProperty={{
 									...register("width", { valueAsNumber: true }),
 								}}
+								onFocus={(e) => e.target.select()}
 							/>
 							<Select
 								options={heights}
@@ -99,6 +101,7 @@ const ProductDimension = () => {
 								registerProperty={{
 									...register("height", { valueAsNumber: true }),
 								}}
+								onFocus={(e) => e.target.select()}
 							/>
 							<Select
 								options={heights}

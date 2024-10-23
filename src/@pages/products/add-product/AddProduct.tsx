@@ -1,4 +1,4 @@
-import { FormHeader, WxFormFooter } from '@components/FormLayout';
+import { FormHeader, FormFooter } from '@components/FormLayout';
 import MainLg from '@components/MainContentLayout/MainLg';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { IObject } from '@interfaces/common.interface';
@@ -19,7 +19,7 @@ import ProductPricing from './products-form/ProductPricing/ProductPricing';
 import ProductStock from './products-form/ProductStock/ProductStock';
 import ProductVariants from './products-form/ProductVariants/ProductVariants';
 import SaveProducts from './save-product/SaveProduct';
-import schema, { defaultValues } from './validation';
+import schema, { getProductdefaultValues } from './validation';
 
 const AddProducts = () => {
 	const [isSaving, setIsSaving] = useLoader(false);
@@ -27,12 +27,12 @@ const AddProducts = () => {
 	const methods = useForm({
 		mode: 'onChange',
 		resolver: yupResolver(schema),
-		defaultValues,
+		defaultValues: getProductdefaultValues(),
 	});
 
 	const onSubmit = async (data: IObject) => {
 		if (isNull(data.category)) {
-			ToastService.error('Please select a category');
+			ToastService.warning('Please select a category');
 			return;
 		}
 		const dataCopy = { ...data };
@@ -69,7 +69,7 @@ const AddProducts = () => {
 							<SaveProducts isSaving={isSaving} />
 						</div>
 					</div>
-					<WxFormFooter title='Unsaved Changes' saveButtonText='Save product' isSaving={isSaving} />
+					<FormFooter title='Unsaved Changes' saveButtonText='Save product' isSaving={isSaving} />
 				</form>
 			</FormProvider>
 			{/* <ManageVendor drawerOpen={drawerOpen} handleClose={handleClose} /> */}
