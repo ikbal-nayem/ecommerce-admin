@@ -24,15 +24,14 @@ const TableComponent = ({ productsData, handleDelete }: IProductTableProps) => {
 				<thead className='wx__thead'>
 					<tr className='wx__tr'>
 						<th className='wx__th'>
-							<div className='text_subtitle text_semibold'>Name</div>
+							<div className='text-muted fw-bolder'>Name</div>
 						</th>
 						<th className='wx__th'>
-							<div className='text_subtitle text_semibold'>Category</div>
+							<div className='text-muted fw-bolder'>Category</div>
 						</th>
 						<th className='wx__th text-center'>
-							<div className='text_subtitle text_semibold'>Status</div>
+							<div className='text-muted fw-bolder'>Status</div>
 						</th>
-						<th className='wx__th' />
 					</tr>
 				</thead>
 				<tbody className='wx__tbody'>

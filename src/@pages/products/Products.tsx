@@ -4,13 +4,13 @@ import Icon from '@components/Icon';
 import MainFull from '@components/MainContentLayout/MainFull';
 import NotFound from '@components/NotFound/NotFound';
 import Select from '@components/Select/Select';
-import TableLoader from '@components/TableLoader/TableLoader';
 import TextInput from '@components/TextInput';
 import WxPagination from '@components/WxPagination/WxPagination';
 import ProductTableSkelton from '@components/WxSkelton/ProductTableSkelton';
 import Tabs from '@components/WxTabs/WxTabs';
 import { IProductTable } from '@interfaces/product.interface';
 import { PRODUCT_STATUS } from 'config/constants';
+import useLoader from 'hooks/useLoader';
 import { memo, useEffect, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { PRODUCT_CREATE } from 'routes/path-name.route';
@@ -28,7 +28,7 @@ const Products = () => {
 	const [productMeta, setProductMeta] = useState<any>();
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [isConfirmOpen, setIsConfirmOpen] = useState(false);
-	const [isSaving, setIsSaving] = useState<boolean>(false);
+	const [isSaving, setIsSaving] = useLoader(false);
 	const [isLoader, setIsLoader] = useState<boolean>(true);
 	const [searchQuery, setSearchQuery] = useState<string>(null);
 	const [paginationLimit, setPaginationLimit] = useState(10);
@@ -92,17 +92,17 @@ const Products = () => {
 
 	// This function will be called when user click on comfirm delete button
 	const onConfirmDelete = () => {
-		const { id } = deleteItem.current;
-		if (!id) {
+		const { _id } = deleteItem.current;
+		if (!_id) {
 			setIsConfirmOpen(false);
 			return;
 		}
 		setIsSaving(true);
-		ProductService.deleteAll({ ids: [id] })
+		ProductService.deleteById(_id)
 			.then((res) => {
-				deleteItem.current = null;
+				ToastService.success(res.message);
 				getProducts();
-				setIsConfirmOpen(false);
+				onConfirmClose();
 			})
 			.catch((err) => ToastService.error(err.message))
 			.finally(() => setIsSaving(false));
@@ -182,7 +182,6 @@ const Products = () => {
 									onChange={onChangeStatus}
 								/>
 							</div> */}
-							<TableLoader isLoading={isLoader} />
 						</div>
 
 						{productList.length && productMeta ? (
@@ -210,7 +209,7 @@ const Products = () => {
 					isOpen={isConfirmOpen}
 					onClose={onConfirmClose}
 					onConfirm={onConfirmDelete}
-					body={`Are your sure you want to delete '${deleteItem.current?.title}'? This action wont be reverseable!`}
+					body={`Are your sure you want to delete '${deleteItem.current?.name}'? This action wont be reverseable!`}
 				/>
 			</MainFull>
 		</>

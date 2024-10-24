@@ -1,5 +1,5 @@
 import { IObject } from '@interfaces/common.interface';
-import { ADMIN_SERVICE, PRODUCT_SERVICE } from 'config/api-constant';
+import { PRODUCT_SERVICE } from 'config/api-constant';
 import { apiIns } from 'config/api.config';
 import { mergeBodyWithStoreId, mergePayloadWithStoreId } from 'services/utils/localStorageData.service';
 
@@ -24,8 +24,13 @@ export const ProductService = {
 	search: async (payload: IProductsPayload): Promise<any> => {
 		return await apiIns.post(PRODUCT_SERVICE + 'products/search', mergeBodyWithStoreId(payload));
 	},
+
 	getById: async (product_id: string): Promise<any> => {
 		return await apiIns.get('product/get/' + product_id);
+	},
+
+	deleteById: async (product_id: string): Promise<any> => {
+		return await apiIns.delete('product/' + product_id);
 	},
 
 	getByIds: async (product_ids: any[]): Promise<any> => {
@@ -33,18 +38,6 @@ export const ProductService = {
 	},
 	updateProduct: async (id: string, payload: IObject): Promise<any> => {
 		return await apiIns.put('product/' + id, payload);
-	},
-	getSalesChannel: async (): Promise<any> => {
-		return await apiIns.get(ADMIN_SERVICE + 'master-meta/get-by-meta-type/SALES_CHANNEL');
-	},
-	uploadImages: async (payload: any): Promise<any> =>
-		await apiIns.put(PRODUCT_SERVICE + 'products/upload-images', payload),
-
-	deleteImages: async (payload: any): Promise<any> =>
-		await apiIns.put(PRODUCT_SERVICE + 'products/delete-image', mergePayloadWithStoreId(payload)),
-
-	deleteAll: async (payload: { ids: string[] }): Promise<any> => {
-		return await apiIns.put(PRODUCT_SERVICE + 'products/delete-all', mergePayloadWithStoreId(payload));
 	},
 
 	getProductVariant: async (payload: IProductsVariantPayload): Promise<any> => {

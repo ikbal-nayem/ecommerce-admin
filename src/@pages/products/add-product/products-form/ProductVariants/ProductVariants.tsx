@@ -4,7 +4,6 @@ import { IFilePayload } from '@interfaces/common.interface';
 import { useEffect, useRef, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import generateVariants from 'utils/generateVariantList';
-import { imageURLGenerate } from 'utils/utils';
 import './ProductVariants.scss';
 import VariantImage from './VariantImage';
 
@@ -38,8 +37,6 @@ const VariantRow = ({ index, variant, isEditForm, hanleChooseImage }) => {
 	const [dPrice, rPrice] = watch([dPriceLabel, rPriceLabel]);
 
 	useEffect(() => {
-		console.log(dPrice, rPrice);
-		
 		if (+dPrice > 0 && +dPrice >= +rPrice) {
 			setError(dPriceLabel, {
 				message: 'Discount Price must be less than price',
@@ -54,11 +51,11 @@ const VariantRow = ({ index, variant, isEditForm, hanleChooseImage }) => {
 		clearErrors([dPriceLabel, rPriceLabel]);
 	}, [dPrice, rPrice, errors]);
 
-	const image = getValues(`variants.${index}.image`);
+	// const image = getValues(`variants.${index}.image`);
 
 	return (
 		<tr className='wx__tr'>
-			<td className='image-td'>
+			{/* <td className='image-td'>
 				<div
 					className='image-box'
 					role='button'
@@ -72,8 +69,8 @@ const VariantRow = ({ index, variant, isEditForm, hanleChooseImage }) => {
 						</div>
 					)}
 				</div>
-			</td>
-			<td className='variant-name'>
+			</td> */}
+			<td className='variant-name py-2'>
 				<p className='mb-0 d-flex align-items-center'>
 					{variant?.options?.map((val: any) => val?.value)?.join(' / ') || 'N/A'}
 				</p>
@@ -82,6 +79,7 @@ const VariantRow = ({ index, variant, isEditForm, hanleChooseImage }) => {
 				<TextInput
 					placeholder='Qty.'
 					type='number'
+					noMargin
 					min={0}
 					registerProperty={{
 						...register(`variants.${index}.stock`, { valueAsNumber: true }),
@@ -95,6 +93,7 @@ const VariantRow = ({ index, variant, isEditForm, hanleChooseImage }) => {
 				<div>
 					<TextInput
 						type='number'
+						noMargin
 						placeholder='Price'
 						min={0}
 						registerProperty={{
@@ -111,6 +110,7 @@ const VariantRow = ({ index, variant, isEditForm, hanleChooseImage }) => {
 			<td className='price'>
 				<TextInput
 					type='number'
+					noMargin
 					placeholder='Price'
 					min={0}
 					registerProperty={{
@@ -125,16 +125,18 @@ const VariantRow = ({ index, variant, isEditForm, hanleChooseImage }) => {
 			</td>
 			<td className='sku'>
 				<TextInput
+					noMargin
+					color={errors.variants?.[index]?.sku ? 'danger' : 'secondary'}
 					registerProperty={{
 						...register(`variants.${index}.sku`),
 					}}
 					errorMessage={errors.variants?.[index]?.sku?.message}
-					color={errors.variants?.[index]?.sku ? 'danger' : 'secondary'}
 					onFocus={(e) => e.target.select()}
 				/>
 			</td>
 			<td className='barcode'>
 				<TextInput
+					noMargin
 					registerProperty={{ ...register(`variants.${index}.barCode`) }}
 					onFocus={(e) => e.target.select()}
 				/>
@@ -208,7 +210,7 @@ const ProductVariants = ({ isEditForm }: { isEditForm?: boolean }) => {
 				<table className='wx__table'>
 					<thead className='wx__thead'>
 						<tr>
-							<th />
+							{/* <th /> */}
 							<th className='text-muted variant-name'>Variant</th>
 							<th className='text-muted quentity'>Quantity</th>
 							<th className='text-muted price'>Price</th>
