@@ -8,18 +8,15 @@ import { imageURLGenerate } from 'utils/utils';
 import './ProductVariants.scss';
 import VariantImage from './VariantImage';
 
-const VariantRow = ({
-	index,
-	variant,
-	isEditForm,
-	getValues,
-	register,
-	errors,
-	setError,
-	clearErrors,
-	watch,
-	hanleChooseImage,
-}) => {
+const VariantRow = ({ index, variant, isEditForm, hanleChooseImage }) => {
+	const {
+		getValues,
+		register,
+		watch,
+		formState: { errors },
+		clearErrors,
+		setError,
+	} = useFormContext();
 	const sku = watch(`variants.${index}.sku`);
 
 	useEffect(() => {
@@ -38,22 +35,24 @@ const VariantRow = ({
 	const rPriceLabel = `variants.${index}.price`;
 	const dPriceLabel = `variants.${index}.discountPrice`;
 
-	const [sPrice, rPrice] = watch([dPriceLabel, rPriceLabel]);
+	const [dPrice, rPrice] = watch([dPriceLabel, rPriceLabel]);
 
 	useEffect(() => {
-		if (+rPrice > 0 && +sPrice >= +rPrice) {
+		console.log(dPrice, rPrice);
+		
+		if (+dPrice > 0 && +dPrice >= +rPrice) {
 			setError(dPriceLabel, {
-				message: "'Selling Price' must be less than 'Compare at price'",
+				message: 'Discount Price must be less than price',
 				type: 'invalid',
 			});
 			setError(rPriceLabel, {
-				message: "'Selling Price' must be less than 'Compare at price'",
+				message: 'Price must be less than Discount price',
 				type: 'invalid',
 			});
 			return;
 		}
 		clearErrors([dPriceLabel, rPriceLabel]);
-	}, [sPrice, rPrice, errors]);
+	}, [dPrice, rPrice, errors]);
 
 	const image = getValues(`variants.${index}.image`);
 
@@ -87,7 +86,7 @@ const VariantRow = ({
 					registerProperty={{
 						...register(`variants.${index}.stock`, { valueAsNumber: true }),
 					}}
-					errorMessage={errors.stock?.message}
+					errorMessage={errors.stock?.message as string}
 					color={errors.stock ? 'danger' : 'secondary'}
 					onFocus={(e) => e.target.select()}
 				/>
@@ -99,7 +98,7 @@ const VariantRow = ({
 						placeholder='Price'
 						min={0}
 						registerProperty={{
-							...register(dPriceLabel, {
+							...register(rPriceLabel, {
 								valueAsNumber: true,
 							}),
 						}}
@@ -115,7 +114,7 @@ const VariantRow = ({
 					placeholder='Price'
 					min={0}
 					registerProperty={{
-						...register(rPriceLabel, {
+						...register(dPriceLabel, {
 							valueAsNumber: true,
 						}),
 					}}
@@ -149,18 +148,9 @@ const ProductVariants = ({ isEditForm }: { isEditForm?: boolean }) => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const prevOption = useRef<any[]>([]);
 	const variantIndex = useRef<number | null>(null);
-	const {
-		register,
-		watch,
-		setValue,
-		getValues,
-		setError,
-		clearErrors,
-		formState: { errors },
-	} = useFormContext();
+	const { watch, setValue, getValues } = useFormContext();
 
-	const hasVariant = watch('hasVariant');
-	const options = watch('options');
+	const [hasVariants, options] = watch(['hasVariants', 'options']);
 
 	useEffect(() => {
 		if (options?.length === 1 && !options?.[0]?.values?.length) return;
@@ -207,11 +197,11 @@ const ProductVariants = ({ isEditForm }: { isEditForm?: boolean }) => {
 		onModalClose();
 	};
 
-	if (!hasVariant || variantList?.length === 0) return null;
+	if (!hasVariants || variantList?.length === 0) return null;
 
 	return (
 		<div className='card product_variants p-3 mt-4'>
-			<h6 className='text_semibold text_h6'>
+			<h6 className='d-flex align-items-center gap-3'>
 				Variants <Icon icon='help' />
 			</h6>
 			<div className='variants_body'>
@@ -234,12 +224,6 @@ const ProductVariants = ({ isEditForm }: { isEditForm?: boolean }) => {
 								index={idx}
 								isEditForm={isEditForm}
 								variant={variant}
-								getValues={getValues}
-								register={register}
-								watch={watch}
-								errors={errors}
-								setError={setError}
-								clearErrors={clearErrors}
 								hanleChooseImage={hanleChooseImage}
 							/>
 						))}

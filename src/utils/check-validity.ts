@@ -21,7 +21,7 @@ export const isNull = (val: string | null | undefined | Array<any> | IObject) =>
 		val === '' ||
 		val === 'null' ||
 		val === 'undefined' ||
-		Object.keys(val || {}).length === 0 ||
+		(val instanceof Object && Object.keys(val || {}).length === 0) ||
 		(Array.isArray(val) && val?.length === 0)
 	);
 };

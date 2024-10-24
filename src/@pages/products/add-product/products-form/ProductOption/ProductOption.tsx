@@ -168,15 +168,13 @@ const ProductOption = () => {
 
 	const hasVariants = watch('hasVariants');
 
-
-	const defaultOptions = getValues('options');
-
 	useEffect(() => {
+		const defaultOptions = getValues('options');
 		if (isInit.current && defaultOptions) {
 			setOptions(defaultOptions);
 			isInit.current = false;
 		}
-	}, [defaultOptions, isInit.current]);
+	}, [isInit.current]);
 
 	useEffect(() => {
 		setValue('options', options || []);
