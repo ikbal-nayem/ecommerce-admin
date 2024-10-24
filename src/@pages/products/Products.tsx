@@ -30,9 +30,9 @@ const Products = () => {
 	const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 	const [isSaving, setIsSaving] = useLoader(false);
 	const [isLoader, setIsLoader] = useState<boolean>(true);
-	const [searchQuery, setSearchQuery] = useState<string>(null);
 	const [paginationLimit, setPaginationLimit] = useState(10);
 	const [categories, setCategories] = useState<ICategoryPayload[]>([]);
+	const [searchQuery, setSearchQuery] = useState<string>(null);
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [currentPage, setCurrentPage] = useState<number>(+searchParams.get('page') || 0);
 	const deleteItem = useRef(null);
@@ -115,13 +115,6 @@ const Products = () => {
 		setSearchParams({ ...params });
 	};
 
-	const onChangeStatus = (e: any) => {
-		const val = e.target.value;
-		const params: any = searchParamsToObject(searchParams);
-		val ? (params.status = val) : delete params.status;
-		setSearchParams({ ...params });
-	};
-
 	const onStatusChangeFromTab = (activeTab) => {
 		const tabItem: any = PRODUCT_STATUS.find((itm) => itm.id === activeTab);
 		const params: any = searchParamsToObject(searchParams);
@@ -172,16 +165,6 @@ const Products = () => {
 									onChange={onChangeCategory}
 								/>
 							</div>
-							{/* <div className='col-xl-2 col-lg-3 col-md-3 col-sm-12'>
-								<Select
-									placeholder='Select Status'
-									valuesKey='text'
-									textKey='title'
-									value={searchParams.get('status') || ''}
-									options={PRODUCT_STATUS}
-									onChange={onChangeStatus}
-								/>
-							</div> */}
 						</div>
 
 						{productList.length && productMeta ? (

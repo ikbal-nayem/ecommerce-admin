@@ -14,10 +14,6 @@ interface IProductTableProps {
 }
 
 const TableComponent = ({ productsData, handleDelete }: IProductTableProps) => {
-	const onDelete = (item: any) => {
-		handleDelete(item);
-	};
-
 	return (
 		<div className='wx__responsive_table'>
 			<table className='wx__table'>
@@ -59,7 +55,7 @@ const TableComponent = ({ productsData, handleDelete }: IProductTableProps) => {
 											<Icon icon='edit' />
 											<small>Edit</small>
 										</MenuItem>
-										<MenuItem className='text-danger' onClick={() => onDelete(pd)}>
+										<MenuItem className='text-danger' onClick={() => handleDelete(pd)}>
 											<Icon icon='delete' color='danger' />
 											<small>Delete</small>
 										</MenuItem>

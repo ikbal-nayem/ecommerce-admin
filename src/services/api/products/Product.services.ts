@@ -21,8 +21,8 @@ export const ProductService = {
 		return await apiIns.get('product/get');
 	},
 
-	search: async (payload: IProductsPayload): Promise<any> => {
-		return await apiIns.post(PRODUCT_SERVICE + 'products/search', mergeBodyWithStoreId(payload));
+	search: async (payload: IObject): Promise<any> => {
+		return await apiIns.post('product/search', payload);
 	},
 
 	getById: async (product_id: string): Promise<any> => {
