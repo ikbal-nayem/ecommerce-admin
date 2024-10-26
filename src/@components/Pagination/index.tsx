@@ -8,7 +8,7 @@ import { isNull } from 'utils/check-validity';
 import { searchParamsToObject } from 'utils/makeObject';
 import './pagination.scss';
 
-const limitList = [2, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+const limitList = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 interface ITablePagination {
 	meta?: IMeta;

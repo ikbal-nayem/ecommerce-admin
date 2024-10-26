@@ -14,21 +14,20 @@ const CollectionTable = ({ data, handleEdit, onDelete }: CollectionTableProps) =
 		<table className='collection_table'>
 			<thead>
 				<tr>
-					<th colSpan={2}>Collection Name</th>
-					{/* <th></th> */}
+					<th className='w-100 text-muted' colSpan={2}>
+						Image, Collection Name
+					</th>
 				</tr>
 			</thead>
 			<tbody>
 				{data.map((sub) => (
 					<tr key={sub._id}>
-						<td className='collection_image'>
+						<td className='d-flex align-items-center gap-3'>
 							<Thumbnail name={sub.name} src={genetartMediaURL(sub?.image)} />
+							<strong>{sub.name}</strong>
 						</td>
-						<th>
-							<span>{sub.name}</span>
-						</th>
-						<td className='more'>
-							<div className='d-flex gap-2'>
+						<td className='text-end'>
+							<div className='d-inline-flex gap-2'>
 								<IconButton iconName='edit' iconColor='primary' onClick={() => handleEdit(sub)} />
 								<IconButton iconName='delete' iconColor='danger' onClick={() => onDelete(sub)} />
 							</div>

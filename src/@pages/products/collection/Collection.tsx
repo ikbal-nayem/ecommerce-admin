@@ -1,31 +1,29 @@
 import { Button } from '@components/Button';
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
+import Icon from '@components/Icon';
 import MainLg from '@components/MainContentLayout/MainLg';
 import NotFound from '@components/NotFound/NotFound';
 import Pagination from '@components/Pagination';
+import TextInput from '@components/TextInput';
 import CollectionTBSkelton from '@components/WxSkelton/CollectionTBSkelton';
+import { IMeta, IRequestPayload } from '@interfaces/common.interface';
 import useLoader from 'hooks/useLoader';
 import { useEffect, useRef, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { CollectionService, ICollectionPayload } from 'services/api/products/Collection.services';
 import { ToastService } from 'services/utils/toastr.service';
 import { isNull } from 'utils/check-validity';
+import { debounce } from 'utils/debouncer';
 import { makeFormData } from 'utils/preprocessor';
 import skeltonLoader from 'utils/skeltonLoader';
 import CollectionAdd from './collection-form';
 import CollectionTable from './collection-table';
 import './Collection.scss';
 
-const meta = {
+const reqBody = {
+	filter: { searchKey: '' },
 	meta: {
 		page: 0,
 		limit: 10,
-		sort: [
-			{
-				order: 'desc',
-				field: 'createdOn',
-			},
-		],
 	},
 };
 
@@ -38,12 +36,8 @@ const Collection = () => {
 	const [collections, setCollections] = useState<ICollectionPayload[]>();
 	const [collectionMeta, setCollectionMeta] = useState<any>();
 	const deleteItem = useRef(null);
-	const [searchParams, setSearchParams] = useSearchParams();
-	const [currentPage, setCurrentPage] = useState<number>(
-		Number(searchParams.get('page')) ? Number(searchParams.get('page')) - 1 : 0
-	);
-	const [paginationLimit, setPaginationLimit] = useState(10);
 	const editData = useRef<ICollectionPayload>();
+	const requestPayload = useRef<IRequestPayload>(reqBody);
 
 	const handleClose = () => {
 		setOpen(false);
@@ -53,14 +47,14 @@ const Collection = () => {
 	};
 
 	useEffect(() => {
-		if (currentPage || paginationLimit) getCollection();
-	}, [currentPage, paginationLimit]);
+		getCollection();
+	}, []);
 
 	const getCollection = () => {
 		setIsLoading(true);
-		CollectionService.get()
+		CollectionService.search(requestPayload.current)
 			.then((res) => {
-				setCollections(res?.data || []);
+				setCollections(res?.data);
 				setCollectionMeta(res.meta || {});
 			})
 			.catch((err) => ToastService.error(err))
@@ -69,6 +63,17 @@ const Collection = () => {
 				skeltonLoader(setIsLoader);
 			});
 	};
+
+	const onPaginationChange = (meta: IMeta) => {
+		requestPayload.current.meta = meta;
+		getCollection();
+	};
+
+	const onSearch = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
+		requestPayload.current.filter.searchKey = e.target.value;
+		requestPayload.current.meta.page = 1;
+		getCollection();
+	}, 500);
 
 	const handleEdit = (data: ICollectionPayload) => {
 		editData.current = data;
@@ -147,24 +152,30 @@ const Collection = () => {
 					handleDelete={handleDelete}
 				/>
 			</div>
-			{!isLoader && !isLoading && !collections?.length ? (
-				<div className='mt-3'>
-					<NotFound title='No collection found!' />
-				</div>
-			) : null}
 			{isLoader ? (
 				<div className='bg-white mt-3 rounded'>
 					<CollectionTBSkelton viewBox='0 0 600 310' />
 				</div>
 			) : (
-				<div className='collection_table_content card'>
+				<div className='card mt-3'>
+					<div className='p-3'>
+						<TextInput
+							noMargin
+							startIcon={<Icon icon='search' />}
+							onChange={onSearch}
+							placeholder='Search collection...'
+						/>
+					</div>
+					{!isLoader && !isLoading && !collections?.length ? (
+						<div className='mt-3'>
+							<NotFound title='No collection found!' />
+						</div>
+					) : null}
 					{collections?.length ? (
 						<>
 							<CollectionTable data={collections} handleEdit={handleEdit} onDelete={handleDelete} />
 							<div className='p-4'>
-								<Pagination
-									meta={collectionMeta}
-								/>
+								<Pagination meta={collectionMeta} onPaginationChange={onPaginationChange} />
 							</div>
 						</>
 					) : null}
