@@ -138,7 +138,7 @@ export default function CustomizationHome() {
 								<SelectOption
 									options={sliders}
 									onChange={onChangeSlider}
-									getOptionValue={(option) => option}
+									getOptionValue={(option) => option.name}
 									getOptionLabel={(option) => option?.title}
 									value={selectedSlider}
 								/>

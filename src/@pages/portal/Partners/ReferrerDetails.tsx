@@ -64,7 +64,7 @@ export default function ReferrerDetails() {
                         <td className="wx__td">
                           <WxTag
                             label={payment?.planTitle}
-                            color={statusColorMapping(payment?.planTitle)}
+                            // color={statusColorMapping(payment?.planTitle)}
                           />
                         </td>
                       </tr>

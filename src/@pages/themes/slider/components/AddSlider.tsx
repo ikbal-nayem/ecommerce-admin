@@ -1,8 +1,8 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
 import { ButtonLoader } from "services/utils/preloader.service";
@@ -30,14 +30,14 @@ const SliderDrawer = ({
 	}, [isEditForm, editedData, isOpen]);
 
 	return (
-		<WxDrawer show={isOpen} handleClose={handleFormClose}>
+		<Drawer show={isOpen} handleClose={handleFormClose}>
 			<div className="manage_slider_sec">
-				<WxDrawerHeader
+				<DrawerHeader
 					title={`${isEditForm ? "Edit" : "Add"} Slider`}
 					onClickClose={handleFormClose}
 				/>
 				<form onSubmit={handleSubmit(onSubmitting)}>
-					<WxDrawerBody>
+					<DrawerBody>
 						<div className="row">
 							<div className="col-md-12">
 								<TextInput
@@ -63,8 +63,8 @@ const SliderDrawer = ({
 								/>
 							</div>
 						</div>
-					</WxDrawerBody>
-					<WxDrawerFooter>
+					</DrawerBody>
+					<DrawerFooter>
 						<div className="delivery_create_sec__footer">
 							<div className="d-flex align-items-center justify-content-between">
 								<div>
@@ -104,10 +104,10 @@ const SliderDrawer = ({
 								</div>
 							</div>
 						</div>
-					</WxDrawerFooter>
+					</DrawerFooter>
 				</form>
 			</div>
-		</WxDrawer>
+		</Drawer>
 	);
 };
 export default SliderDrawer;

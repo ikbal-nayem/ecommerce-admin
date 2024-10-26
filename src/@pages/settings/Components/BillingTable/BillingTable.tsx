@@ -43,13 +43,13 @@ export const BillingTable = ({ tableData }: IBillingTable) => {
               </td>
               <td className="wx__td">
                 <WxTag
-                  color={statusColorMapping(bill?.invoiceOrderStatus)}
+                  // color={statusColorMapping(bill?.invoiceOrderStatus)}
                   label={bill?.invoiceOrderStatus}
                 />
               </td>
               <td className="wx__td">
                 <WxTag
-                  color={statusColorMapping(bill?.merchantPaymentStatus)}
+                  // color={statusColorMapping(bill?.merchantPaymentStatus)}
                   label={bill?.merchantPaymentStatus}
                 />
               </td>

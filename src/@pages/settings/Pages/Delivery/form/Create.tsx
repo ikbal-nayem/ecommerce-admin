@@ -1,9 +1,9 @@
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
 import { IDeliveryZoneItem } from "@interfaces/Settings.interface";
@@ -53,14 +53,14 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
   };
 
   return (
-		<WxDrawer show={isOpen} handleClose={handleFormClose}>
+		<Drawer show={isOpen} handleClose={handleFormClose}>
 			<div className="delivery_create_sec">
-				<WxDrawerHeader
+				<DrawerHeader
 					title={`${editedData ? "Edit" : "Add"} Delivery Zone`}
 					onClickClose={handleFormClose}
 				/>
 				<form onSubmit={handleSubmit(onSubmitting)} noValidate>
-					<WxDrawerBody>
+					<DrawerBody>
 						<div className="row">
 							<div className="col-md-12 col-sm-12">
 								<TextInput
@@ -137,8 +137,8 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 								/>
 							</div>
 						</div>
-					</WxDrawerBody>
-					<WxDrawerFooter>
+					</DrawerBody>
+					<DrawerFooter>
 						<div className="delivery_create_sec__footer">
 							{editedData ? (
 								<Button
@@ -165,10 +165,10 @@ const Create = ({ isOpen, handleFormClose, editedData, onDelete }) => {
 								</Button>
 							</div>
 						</div>
-					</WxDrawerFooter>
+					</DrawerFooter>
 				</form>
 			</div>
-		</WxDrawer>
+		</Drawer>
 	);
 };
 export default Create;

@@ -1,9 +1,9 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import Icon from "@components/Icon";
 import WxRadio from "@components/WxRadio/WxRadio";
 import { IAddressesPayload } from "@interfaces/Customer.interface";
@@ -185,10 +185,10 @@ const AddressManage = ({
   }, [isEditorOpen]);
   return (
     <>
-      <WxDrawer show={drawerOpen} handleClose={handleFormClose}>
+      <Drawer show={drawerOpen} handleClose={handleFormClose}>
         <div className="wx__manage_customer_group">
           {/* {deletedId} */}
-          <WxDrawerHeader
+          <DrawerHeader
             title={
               isEditorOpen
                 ? `${editData?.id ? "Edit" : "Add"} Address`
@@ -198,7 +198,7 @@ const AddressManage = ({
             onClickClose={handleFormClose}
           />
           <form onSubmit={handleSubmit(handleSave)}>
-            <WxDrawerBody>
+            <DrawerBody>
               {isEditorOpen || isNewAddress ? (
                 <AddressForm
                   errors={errors}
@@ -250,8 +250,8 @@ const AddressManage = ({
                     : null}
                 </div>
               )}
-            </WxDrawerBody>
-            <WxDrawerFooter>
+            </DrawerBody>
+            <DrawerFooter>
               <div className="wx__manage_customer_group__footer">
                 {editData?.id ? (
                   <div className="me-auto">
@@ -288,7 +288,7 @@ const AddressManage = ({
                   {isEditorOpen || isNewAddress ? "Save" : "Add Address"}
                 </Button>
               </div>
-            </WxDrawerFooter>
+            </DrawerFooter>
           </form>
           <ConfirmationModal
             onConfirm={() => onConfirmAddress()}
@@ -297,7 +297,7 @@ const AddressManage = ({
             title="Delete Address"
           />
         </div>
-      </WxDrawer>
+      </Drawer>
     </>
   );
 };

@@ -1,8 +1,8 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import { IAddressesPayload } from "@interfaces/Customer.interface";
 import { AddressForm } from "@pages/customers/components/AddressMange/AddressFrom";
 import { CustomerService } from "services/api/Customer.service";
@@ -97,11 +97,11 @@ const OrderAddress = ({
 	};
 
 	return (
-		<WxDrawer show={drawerOpen} handleClose={handleClose}>
+		<Drawer show={drawerOpen} handleClose={handleClose}>
 			<div className="wx__order_address">
-				<WxDrawerHeader title="Order Address" onClickClose={handleClose} />
+				<DrawerHeader title="Order Address" onClickClose={handleClose} />
 				<form onSubmit={handleSubmit(handleSave)} noValidate>
-					<WxDrawerBody>
+					<DrawerBody>
 						<AddressForm
 							errors={errors}
 							register={register}
@@ -110,8 +110,8 @@ const OrderAddress = ({
 							onChangeDivision={onChangeDivision}
 							control={control}
 						/>
-					</WxDrawerBody>
-					<WxDrawerFooter>
+					</DrawerBody>
+					<DrawerFooter>
 						<div className="wx__order_address__footer">
 							<Button
 								type="button"
@@ -127,10 +127,10 @@ const OrderAddress = ({
 								{isUpdating ? <Preloader /> : "Save"}
 							</Button>
 						</div>
-					</WxDrawerFooter>
+					</DrawerFooter>
 				</form>
 			</div>
-		</WxDrawer>
+		</Drawer>
 	);
 };
 

@@ -1,9 +1,9 @@
 import "./Configure.scss";
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
@@ -53,14 +53,14 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 	};
 
 	return (
-		<WxDrawer show={isOpen} handleClose={handleClose}>
+		<Drawer show={isOpen} handleClose={handleClose}>
 			<div className="payment_create_sec">
-				<WxDrawerHeader
+				<DrawerHeader
 					title={`Configure ${editItem?.title}`}
 					onClickClose={handleClose}
 				/>
 				<form onSubmit={handleSubmit(onSubmitting)} noValidate>
-					<WxDrawerBody>
+					<DrawerBody>
 						{editItem?.gatewayProvider !==
 							MASTER_META_KEY.PAYMENT_GATEWAY_TYPE_COD &&
 						!editItem?.isOffline ? (
@@ -74,7 +74,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 										}),
 									}}
 									color={errors.secretKey ? "danger" : "secondary"}
-									errorMessage={errors?.secretKey?.message}
+									errorMessage={errors?.secretKey?.message as string}
 								/>
 								<TextInput
 									isRequired
@@ -125,7 +125,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 												}),
 											}}
 											color={errors.accountNumber ? "danger" : "secondary"}
-											errorMessage={errors?.accountNumber?.message}
+											errorMessage={errors?.accountNumber?.message as string}
 										/>
 									</div>
 									<div className="col-sm-6 col-12">
@@ -155,7 +155,7 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 										}),
 									}}
 									color={errors.instructions ? "danger" : "secondary"}
-									errorMessage={errors?.instructions?.message}
+									errorMessage={errors?.instructions?.message as string}
 								/>
 								<div className="mb-2">
 									<Label>Take customer account number?</Label>
@@ -224,8 +224,8 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 								Turn off sandbox mode to enable in website
 							</p>
 						</div>
-					</WxDrawerBody>
-					<WxDrawerFooter>
+					</DrawerBody>
+					<DrawerFooter>
 						<div className="d-flex justify-content-end">
 							<Button
 								color="secondary"
@@ -241,10 +241,10 @@ const CreatePayment = ({ isOpen, handleClose, editItem, onSubmit, saving }) => {
 								{saving ? <ButtonLoader /> : "Save"}
 							</Button>
 						</div>
-					</WxDrawerFooter>
+					</DrawerFooter>
 				</form>
 			</div>
-		</WxDrawer>
+		</Drawer>
 	);
 };
 export default CreatePayment;

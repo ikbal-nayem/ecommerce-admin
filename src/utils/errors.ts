@@ -37,10 +37,6 @@ export const errorMessage = (code: number): string => {
   return errorList[code] || "Unknown Error";
 };
 
-export const errorMessageWithToast = (code: number): void => {
-  return ToastService.error(errorMessage(code) || "Unknown Error");
-};
-
 // Find first error object of "react-hook-form" 
 export const getFirstErrorObj = (errors) => {
   if (errors?.ref) return errors;

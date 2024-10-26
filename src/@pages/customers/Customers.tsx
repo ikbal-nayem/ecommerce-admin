@@ -7,7 +7,7 @@ import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import { STATUS_CONSTANT } from "config/constants";
 import { ICustomerPayload } from "@interfaces/Customer.interface";
@@ -46,8 +46,6 @@ export default function Customer() {
 
   const [currentPage, setCurrentPage] = useState<number>(
     Number(searchParams.get("page"))
-      ? Number(searchParams.get("page")) - 1
-      : null || 0
   );
   const [paginationLimit, setPaginationLimit] = useState(10);
 
@@ -247,10 +245,8 @@ export default function Customer() {
 								onDelete={onDelete}
 							/>
 							<div className="p-4">
-								<WxPagination
+								<Pagination
 									meta={customerMeta}
-									setCurrentPage={setCurrentPage}
-									setPaginationLimit={setPaginationLimit}
 								/>
 							</div>
 						</>

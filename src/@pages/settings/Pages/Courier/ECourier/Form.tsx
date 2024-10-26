@@ -2,8 +2,8 @@ import MainLg from "@components/MainContentLayout/MainLg";
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
 import Select from "@components/Select/Select";
 import {
-  WxFormContainer,
-  WxFormFooter,
+  FormContainer,
+  FormFooter,
   FormHeader,
 } from "@components/FormLayout";
 import TextInput from "@components/TextInput";
@@ -98,7 +98,7 @@ const CourierForm = () => {
 
   return (
     <MainLg className="delivery_zone_sec">
-      <WxFormContainer>
+      <FormContainer>
         {/* {getValues("pick_district")} */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormHeader
@@ -116,7 +116,7 @@ const CourierForm = () => {
                   isRequired
                   placeholder="Enter name"
                   color={errors?.pick_contact_person ? "danger" : "secondary"}
-                  errorMessage={errors?.pick_contact_person?.message}
+                  errorMessage={errors?.pick_contact_person?.message as string}
                 />
               </div>
               <div className="col-lg-6 col-md-12 col-sm-6">
@@ -195,7 +195,7 @@ const CourierForm = () => {
                   placeholder="Enter Post code"
                   isRequired
                   color={errors?.pick_union ? "danger" : "secondary"}
-                  errorMessage={errors?.pick_union?.message}
+                  errorMessage={errors?.pick_union?.message as string}
                 />
               </div>
 
@@ -208,7 +208,7 @@ const CourierForm = () => {
                   isRequired
                   placeholder="Enter Address"
                   color={errors?.pick_address ? "danger" : "secondary"}
-                  errorMessage={errors?.pick_address?.message}
+                  errorMessage={errors?.pick_address?.message as string}
                 />
               </div>
               {/* <div className="col-lg-6 col-md-12 col-sm-6">
@@ -246,7 +246,7 @@ const CourierForm = () => {
                     ...register("accountHolderName"),
                   }}
                   color={errors?.accountHolderName ? "danger" : "secondary"}
-                  errorMessage={errors?.accountHolderName?.message}
+                  errorMessage={errors?.accountHolderName?.message as string}
                 />
                 <TextInput
                   label="Bank name"
@@ -254,7 +254,7 @@ const CourierForm = () => {
                     ...register("bankName"),
                   }}
                   color={errors?.bankName ? "danger" : "secondary"}
-                  errorMessage={errors?.bankName?.message}
+                  errorMessage={errors?.bankName?.message as string}
                 />
                 <TextInput
                   label="Branch name"
@@ -262,7 +262,7 @@ const CourierForm = () => {
                     ...register("bankBranch"),
                   }}
                   color={errors?.bankBranch ? "danger" : "secondary"}
-                  errorMessage={errors?.bankBranch?.message}
+                  errorMessage={errors?.bankBranch?.message as string}
                 />
                 <TextInput
                   label="Account number"
@@ -271,7 +271,7 @@ const CourierForm = () => {
                     ...register("accountNo"),
                   }}
                   color={errors?.accountNo ? "danger" : "secondary"}
-                  errorMessage={errors?.accountNo?.message}
+                  errorMessage={errors?.accountNo?.message as string}
                 />
               </div>
               <div className="col-md-6 col-12">
@@ -282,7 +282,7 @@ const CourierForm = () => {
                     ...register("bkash"),
                   }}
                   color={errors?.bkash ? "danger" : "secondary"}
-                  errorMessage={errors?.bkash?.message}
+                  errorMessage={errors?.bkash?.message as string}
                 />
 
                 <Select
@@ -304,7 +304,7 @@ const CourierForm = () => {
                     ...register("rocket"),
                   }}
                   color={errors?.rocket ? "danger" : "secondary"}
-                  errorMessage={errors?.rocket?.message}
+                  errorMessage={errors?.rocket?.message as string}
                 />
                 {/* <TextInput
                   label="Rocket type"
@@ -328,13 +328,13 @@ const CourierForm = () => {
               </div>
             </div>
           </div>
-          <WxFormFooter
+          <FormFooter
             title="Unsaved Changes"
             saveButtonText="Save"
             isSaving={isSaving}
           />
         </form>
-      </WxFormContainer>
+      </FormContainer>
     </MainLg>
   );
 };

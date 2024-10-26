@@ -160,8 +160,6 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                     <>
                       <div className="col-md-12 col-lg-12">
                         <MediaInput
-                          icon="file_present"
-                          recommendedText=" 1MB"
                           dragNDropFor="csv"
                           dragNDropText="file"
                           accept=".xlsx,.xls,.csv"
@@ -170,7 +168,7 @@ const SMSAudienceForm = ({ isSaving, setIsSaving }: ISMSAudienceForm) => {
                         />
                         {!watch("audienceContact") ? (
                           <span className="note_text text-danger text_body">
-                            {errors?.audienceContact?.message}
+                            {errors?.audienceContact?.message as string}
                           </span>
                         ) : null}
                       </div>

@@ -33,7 +33,7 @@ import ProductCart from "../components/product-cart/ProductCart";
 const calculateSubtotal = (productInfo: IProductVariant) => {
 	return (
 		(productInfo?.quantity || 0) *
-		(productInfo?.sellingPrice || productInfo?.regularPrice)
+		(productInfo?.discountPrice || productInfo?.price)
 	);
 };
 

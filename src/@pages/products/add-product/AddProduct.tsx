@@ -73,7 +73,7 @@ const AddProducts = () => {
 				</form>
 			</FormProvider>
 			{/* <ManageVendor drawerOpen={drawerOpen} handleClose={handleClose} /> */}
-			{/* </WxFormContainer> */}
+			{/* </FormContainer> */}
 		</MainLg>
 	);
 };

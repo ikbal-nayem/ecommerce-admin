@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import MainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import { FormHeader } from "@components/FormLayout";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import { IRequestMeta } from "@interfaces/common.interface";
 import { SETTINGS, SETTINGS_ROLES_CREATE } from "routes/path-name.route";
 import { AdminService } from "services/api/admin/Admin.service";
@@ -19,8 +19,6 @@ const Role = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState<number>(
     Number(searchParams.get("page"))
-      ? Number(searchParams.get("page")) - 1
-      : null || 0
   );
   const [paginationLimit, setPaginationLimit] = useState(10);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -102,11 +100,7 @@ const Role = () => {
           <div className="card">
             <RoleListTable onDelete={onDelete} roleList={roleList} />
             <div className="px-4 py-3">
-              <WxPagination
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                paginationLimit={paginationLimit}
-                setPaginationLimit={setPaginationLimit}
+              <Pagination
                 meta={roleMeta}
               />
             </div>

@@ -1,12 +1,12 @@
 import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import {
-  WxFormContainer,
-  WxFormContent,
-  WxFormFooter,
+  FormContainer,
+  FormContent,
+  FormFooter,
   FormHeader,
-  WxFormLeft,
-  WxFormRight,
+  FormLeft,
+  FormRight,
 } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -261,11 +261,11 @@ const EditCoupon = () => {
 
   return (
     <MainLg>
-      <WxFormContainer>
+      <FormContainer>
         <FormHeader title="Update Coupon" backNavigationLink={DISCOUNT} />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
-          <WxFormContent>
-            <WxFormLeft>
+          <FormContent>
+            <FormLeft>
               <CouponForm
                 register={register}
                 errors={errors}
@@ -280,8 +280,8 @@ const EditCoupon = () => {
                 setCheckedData={setCheckedData}
                 filterByCheck={filterByCheck}
               />
-            </WxFormLeft>
-            <WxFormRight>
+            </FormLeft>
+            <FormRight>
               <div className="card wx__form_right">
                 <Button disabled={isSaving} type="submit" variant="fill">
                   Update Coupon
@@ -366,9 +366,9 @@ const EditCoupon = () => {
                   <span className="text_small">Remaining Time</span>
                 </div>
               </div>
-            </WxFormRight>
-          </WxFormContent>
-          <WxFormFooter
+            </FormRight>
+          </FormContent>
+          <FormFooter
             title="Unsaved Changes"
             // onCancel={onCancel}
             saveButtonText="Update Coupon"
@@ -397,7 +397,7 @@ const EditCoupon = () => {
             />
           </div>
         )}
-      </WxFormContainer>
+      </FormContainer>
     </MainLg>
   );
 };

@@ -1,8 +1,8 @@
 import MainLg from "@components/MainContentLayout/MainLg";
 import SelectOption from "@components/Select/Autocomplete";
 import {Button} from "@components/Button";
-import WxFormContainer from "@components/FormLayout/FormContainer";
-import WxFormFooter from "@components/FormLayout/FormFooter";
+import FormContainer from "@components/FormLayout/FormContainer";
+import FormFooter from "@components/FormLayout/FormFooter";
 import FormHeader from "@components/FormLayout/FormHeader";
 import WxHr from "@components/WxHr";
 import Switch from "@components/Switch";
@@ -127,7 +127,7 @@ export default function AddCustomer() {
 
 	return (
 		<MainLg>
-			<WxFormContainer>
+			<FormContainer>
 				<FormHeader
 					noMargin
 					title="Add Customer"
@@ -211,7 +211,7 @@ export default function AddCustomer() {
 														setSelectedGroups(values)
 													}
 													getOptionLabel={(op: IGroup) => op?.title}
-													getOptionValue={(op: IGroup[]) => op}
+													getOptionValue={(op: IGroup) => op.id}
 												/>
 											</div>
 										) : null}
@@ -220,7 +220,7 @@ export default function AddCustomer() {
 							</div>
 						</div>
 					</div>
-					<WxFormFooter
+					<FormFooter
 						title="Unsaved Changes"
 						// onCancel={onCancel}
 						saveButtonText="Save Customer"
@@ -228,7 +228,7 @@ export default function AddCustomer() {
 					/>
 				</form>
 				<CustomerGroup drawerOpen={drawerOpen} handleClose={handleClose} />
-			</WxFormContainer>
+			</FormContainer>
 		</MainLg>
 	);
 }

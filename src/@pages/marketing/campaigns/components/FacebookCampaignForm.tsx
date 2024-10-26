@@ -1,7 +1,7 @@
 import DateInput from "@components/DatePicker/DateInput";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
-import { WxFormFooter } from "@components/FormLayout";
+import { FormFooter } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
@@ -169,7 +169,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
                     ...register("startDate"),
                   }}
                   endIcon={<Icon variants="round" icon="calendartoday" />}
-                  errorMessage={errors.startDate?.message}
+                  errorMessage={errors.startDate?.message as string}
                   color={errors.startDate ? "danger" : "secondary"}
                 />
               </div>
@@ -262,9 +262,6 @@ const FacebookCampaignForm = ({ isSaving }) => {
                       <MediaInput
                         multiple
                         fileList={imageList}
-                        onChange={setImageList}
-                        onOrderChange={handleImageOrderChange}
-                        onRemove={handleRemove}
                       />
                     </div>
                   )}
@@ -283,12 +280,8 @@ const FacebookCampaignForm = ({ isSaving }) => {
                       <MediaInput
                         dragNDropFor="video"
                         dragNDropText="Video"
-                        recommendedText=" 100MB"
                         accept="video/mp4,video/x-m4v,video/*"
                         fileList={videoFile}
-                        onChange={setVideoFile}
-                        icon="smart_display"
-                        // onOrderChange={handleImageOrderChange}
                       />
                     </div>
                   )}
@@ -346,7 +339,7 @@ const FacebookCampaignForm = ({ isSaving }) => {
         </div>
       </div>
       <WxHr />
-      <WxFormFooter
+      <FormFooter
         saveButtonText="Launch Campaign"
         title="unsaved changes"
         formName="smsCampaignForm"

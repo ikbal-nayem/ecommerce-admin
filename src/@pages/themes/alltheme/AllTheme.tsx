@@ -58,8 +58,6 @@ const AllTheme = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [currentPage, setCurrentPage] = useState<number>(
 		Number(searchParams.get("page"))
-			? Number(searchParams.get("page")) - 1
-			: null || 0
 	);
 	const [paginationLimit, setPaginationLimit] = useState(10);
 

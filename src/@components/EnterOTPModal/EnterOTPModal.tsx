@@ -190,7 +190,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                       disabled={btnDisable || otpSent}
                       type="submit"
                       variant="fill"
-                      w={100}
+                      width={100}
                     >
                       Send OTP
                     </Button>
@@ -198,7 +198,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                       <Button
                         className="mt-2"
                         variant="fill"
-                        w={100}
+                        width={100}
                         onClick={() => setSendOTP(false)}
                       >
                         Back to Submit OTP
@@ -228,7 +228,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                       disabled={btnDisable}
                       type="submit"
                       variant="fill"
-                      w={100}
+                      width={100}
                     >
                       Confirm OTP
                     </Button>
@@ -236,7 +236,7 @@ const EnterOTPModal = ({ show, setShow }: IModal) => {
                     className="mt-2"
                     color="secondary"
                     variant="fill"
-                    w={100}
+                    width={100}
                     onClick={() => setSendOTP(true)}
                   >
                     Back to Edit Number

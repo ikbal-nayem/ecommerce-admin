@@ -22,7 +22,7 @@ const PaymentDetailsInfo = ({
 				<div>
 					<WxTag
 						label={orderDetails?.paymentStatus}
-						color={statusColorMapping(orderDetails?.paymentStatus)}
+						// color={statusColorMapping(orderDetails?.paymentStatus)}
 					/>
 				</div>
 			</div>

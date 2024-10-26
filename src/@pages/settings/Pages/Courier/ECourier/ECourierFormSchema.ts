@@ -16,17 +16,17 @@ export const ECourierSchema = yup.object().shape(
     pick_district: yup
       .string()
       .required("Please provide a pickup district name"),
-    pick_thana: yup.string().when("pick_district", {
-      is: (value) => value,
-      then: yup.string().required("please select a thana"),
-    }),
-    pick_union: yup.string().when("pick_thana", {
-      is: (value) => value,
-      then: yup
-        .string()
-        .required("please enter a postcode")
-        .matches(/^[0-9]*$/g, "This field can contain only number"),
-    }),
+    // pick_thana: yup.string().when("pick_district", {
+    //   is: (value) => value,
+    //   then: yup.string().required("please select a thana"),
+    // }),
+    // pick_union: yup.string().when("pick_thana", {
+    //   is: (value) => value,
+    //   then: yup
+    //     .string()
+    //     .required("please enter a postcode")
+    //     .matches(/^[0-9]*$/g, "This field can contain only number"),
+    // }),
     pick_address: yup.string().required("please fill address"),
     // pick_mobile: yup.number().required("please enter phone number"),
     // .nullable()
@@ -40,17 +40,17 @@ export const ECourierSchema = yup.object().shape(
     bkash: yup
       .string()
       .matches(/^[0-9]*$/g, "This field can contain only number"),
-    bkashType: yup.string().when("bkash", {
-      is: (value) => value,
-      then: yup.string().required("please enter bkash type"),
-    }),
+    // bkashType: yup.string().when("bkash", {
+    //   is: (value) => value,
+    //   then: yup.string().required("please enter bkash type"),
+    // }),
     rocket: yup
       .string()
       .matches(/^[0-9]*$/g, "This field can contain only number"),
-    rocketType: yup.string().when("rocket", {
-      is: (value) => value,
-      then: yup.string().required("please enter rocket type"),
-    }),
+    // rocketType: yup.string().when("rocket", {
+    //   is: (value) => value,
+    //   then: yup.string().required("please enter rocket type"),
+    // }),
   },
   [["bkash", "bkash"]]
 );

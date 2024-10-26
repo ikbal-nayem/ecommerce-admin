@@ -6,7 +6,6 @@ import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxRadio from "@components/WxRadio/WxRadio";
 import WxThumbnail from "@components/Thumbnail";
-import { ReactComponent as TakaSign } from "assets/svg/taka.svg";
 import { useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import useDebounce from "utils/debouncer";
@@ -155,7 +154,7 @@ const CouponForm = ({
                   {watch("maximumDiscountCheck") && (
                     <TextInput
                       placeholder="Set Max Amount"
-                      endIcon={<TakaSign />}
+                      endIcon={'৳'}
                       isRequired
                       registerProperty={{
                         ...register("maximumDiscount"),
@@ -184,7 +183,7 @@ const CouponForm = ({
               <div className="w-md-50  my-3">
                 <TextInput
                   placeholder="Type value here"
-                  endIcon={<TakaSign />}
+                  endIcon={'৳'}
                   isRequired
                   defaultValue={0}
                   registerProperty={{
@@ -238,7 +237,7 @@ const CouponForm = ({
               <div className="w-md-50 my-3">
                 <TextInput
                   placeholder="Type value here"
-                  endIcon={<TakaSign />}
+                  endIcon={'৳'}
                   isRequired
                   defaultValue={0}
                   registerProperty={{

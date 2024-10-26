@@ -54,11 +54,10 @@ const CreateMenu = () => {
 		setLoading(true);
 		const menuReq = MenuSetService.getById(id);
 		const dropReq = AdminService.getByMetaType(MASTER_META_TYPE.STORE_MENU_TYPE);
-		const categoryReq = CategoryService.categoryGetByStoreId('storeId');
 		const collectionReq = CollectionService.get();
 		const pageReq = PagesSettingService.getList({ meta: {}, body: {} });
-		Promise.all([menuReq, dropReq, categoryReq, collectionReq, pageReq])
-			.then(([menuResp, dropResp, categoryResp, collectionResp, pageResp]) => {
+		Promise.all([menuReq, dropReq, collectionReq, pageReq])
+			.then(([menuResp, dropResp, collectionResp, pageResp]) => {
 				if (menuResp.status == 200) {
 					reset({});
 					if (menuResp.body.menu) setMenuList(menuResp.body.menu);
@@ -66,9 +65,6 @@ const CreateMenu = () => {
 				}
 				if (dropResp.body.length) {
 					setDropdownList(dropResp.body);
-				}
-				if (categoryResp.body.length) {
-					setCategoriesDD(getLinearCategories(categoryResp.body));
 				}
 				if (collectionResp.body.length) {
 					setCollectionDD(collectionResp.body);

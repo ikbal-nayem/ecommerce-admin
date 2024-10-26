@@ -149,7 +149,6 @@ const Payment = () => {
                     <div>
                       <WxTag
                         label={item?.isActive ? "Active" : "Inactive"}
-                        color={item?.isActive ? "success" : "default"}
                       />
                       {item?.isSandbox ? (
                         <WxTag label="Sandbox" color="warning" />
@@ -173,7 +172,6 @@ const Payment = () => {
                     <div>
                       <WxTag
                         label={item?.isActive ? "Active" : "Inactive"}
-                        color={item?.isActive ? "success" : "default"}
                       />
                       {item?.isSandbox ? (
                         <WxTag label="Sandbox" color="warning" />

@@ -34,7 +34,7 @@ const ProductRefundCart = ({
 					<div>
 						<WxTag
 							label={orderStatus}
-							color={statusColorMapping(orderStatus)}
+							// color={statusColorMapping(orderStatus)}
 						/>
 					</div>
 				) : null}

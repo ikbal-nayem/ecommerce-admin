@@ -54,16 +54,12 @@ const CreateMenu = () => {
   useEffect(() => {
     setLoading(true)
     const dropReq = AdminService.getByMetaType(MASTER_META_TYPE.STORE_MENU_TYPE)
-    const categoryReq = CategoryService.categoryGetByStoreId('storeId')
     const collectionReq = CollectionService.get()
     const pageReq = PagesSettingService.getList({ meta: {}, body: {} })
-    Promise.all([dropReq, categoryReq, collectionReq, pageReq])
-    .then(([dropResp, categoryResp, collectionResp, pageResp]) => {
+    Promise.all([dropReq, collectionReq, pageReq])
+    .then(([dropResp, collectionResp, pageResp]) => {
       if (dropResp.body.length) {
         setDropdownList(dropResp.body);
-      }
-      if (categoryResp.body.length) {
-        setCategoriesDD(getLinearCategories(categoryResp.body));
       }
       if (collectionResp.body.length) {
         setCollectionDD(collectionResp.body);

@@ -1,5 +1,5 @@
-import WxDrawer from "@components/Drawer";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/Thumbnail";
@@ -56,9 +56,9 @@ const BrowseProduct = ({
 	};
 
 	return (
-		<WxDrawer show={drawerOpen} handleClose={handleClose}>
+		<Drawer show={drawerOpen} handleClose={handleClose}>
 			<div className="wx__browse_product">
-				<WxDrawerHeader
+				<DrawerHeader
 					title="Browse Product"
 					//   backIconAction={isEditorOpen ? handleEditorClose : null}
 					onClickClose={onClose}
@@ -114,7 +114,7 @@ const BrowseProduct = ({
 										{item?.quantity} Available
 									</td>
 									<td className="wx__td price" align="right">
-										{item?.sellingPrice} BDT
+										{item?.price} BDT
 									</td>
 									<td className="wx__td">
 										<Icon
@@ -130,7 +130,7 @@ const BrowseProduct = ({
 					</table>
 				</div>
 			</div>
-		</WxDrawer>
+		</Drawer>
 	);
 };
 

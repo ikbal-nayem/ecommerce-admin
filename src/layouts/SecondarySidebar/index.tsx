@@ -177,7 +177,7 @@ const SecondarySidebar = ({
 						<Button
 							color="primary"
 							variant="fill"
-							w={100}
+							width={100}
 							disabled={!downgradeStatus?.isOverallPassed || isPurchesing}
 							onClick={onDowngrade}
 						>
@@ -191,7 +191,7 @@ const SecondarySidebar = ({
 					<Button
 						color="primary"
 						variant="fill"
-						w={100}
+						width={100}
 						disabled={!downgradeStatus?.isOverallPassed || isPurchesing}
 						onClick={onDowngrade}
 					>

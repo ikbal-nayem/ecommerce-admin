@@ -28,13 +28,13 @@ const NotesNSubtotal = ({ notesNSubtotalData }: IPdfNotesNSubtotal) => {
       marginRight: "5px",
     },
     notesText: {
-      fontFamily: "SolaimanLipi" || "Inter",
+      fontFamily: "Inter",
       fontSize: "11px",
       fontWeight: 600,
       color: "#8c8c8c",
     },
     specificNoteText: {
-      fontFamily: "SolaimanLipi" || "Inter",
+      fontFamily: "Inter",
       fontSize: "11px",
       fontWeight: 400,
       color: "#595959",
@@ -44,7 +44,7 @@ const NotesNSubtotal = ({ notesNSubtotalData }: IPdfNotesNSubtotal) => {
     subTotal: { width: "50%", justifySelf: "end" },
     subTotalWrapper: {
       fontSize: "10px",
-      fontFamily: "SolaimanLipi" || "Inter",
+      fontFamily: "Inter",
       width: "100%",
       fontWeight: 400,
       backgroundColor: "#F5F6F7",

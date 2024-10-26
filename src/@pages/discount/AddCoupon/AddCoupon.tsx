@@ -1,8 +1,8 @@
 import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import {
-  WxFormContainer,
-  WxFormFooter,
+  FormContainer,
+  FormFooter,
   FormHeader,
 } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
@@ -115,7 +115,7 @@ const AddCoupon = () => {
 
   return (
     <MainLg>
-      <WxFormContainer>
+      <FormContainer>
         <FormHeader title="Add Coupon" backNavigationLink={DISCOUNT} />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
           <div className="row">
@@ -227,7 +227,7 @@ const AddCoupon = () => {
               </div>
             </div>
           </div>
-          <WxFormFooter
+          <FormFooter
             title="Unsaved Changes"
             saveButtonText="Add Coupon"
             isSaving={isSaving}
@@ -250,7 +250,7 @@ const AddCoupon = () => {
           </div>
         )}
         {/* <DevTool control={control} /> */}
-      </WxFormContainer>
+      </FormContainer>
     </MainLg>
   );
 };

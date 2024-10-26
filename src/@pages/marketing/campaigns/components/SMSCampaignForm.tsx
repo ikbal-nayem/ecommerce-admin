@@ -50,8 +50,6 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
 
   const [currentPage, setCurrentPage] = useState<number>(
     Number(searchParams.get("page"))
-      ? Number(searchParams.get("page")) - 1
-      : null || 0
   );
 
   const {
@@ -92,14 +90,6 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
   const getAudienceList = () => {
     MarketingService.getAudienceList({
       body: {},
-      meta: {
-        sort: [
-          {
-            order: "desc",
-            field: "createdOn",
-          },
-        ],
-      },
     }).then((res) => {
       // setCheckedData()
       setAudienceList(res.body);
@@ -246,11 +236,6 @@ const SMSCampaignForm = ({ isSaving, setIsSaving }) => {
               Launch Campaign
             </Button>
             <WxHr />
-            {!watch("audienceIds") && errors.audienceIds ? (
-              <span className="text-danger my-2">
-                {errors?.audienceIds?.message}
-              </span>
-            ) : null}
             <div className="wx__audience_list">
               {audienceList.map((item, indx) => {
                 return (

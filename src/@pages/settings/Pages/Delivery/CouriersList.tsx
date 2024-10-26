@@ -58,7 +58,7 @@ const CouriersList = ({
                     <div className="d-flex align-items-center">
                       <WxTag
                         label={item?.isActive ? "Active" : "Inactive"}
-                        color={item?.isActive ? "success" : "default"}
+                        // color={item?.isActive ? "success" : "default"}
                       />
                     </div>
                   </div>

@@ -69,8 +69,8 @@ export default function CustomizationGeneral() {
 							<Label>Website Logo</Label>
 							<MediaInput
 								fileList={siteLogo}
-								onChange={(image) => handleImageAdd(image, 0)}
-								onRemove={() => onImageRemove(0)}
+								// onChange={(image) => handleImageAdd(image, 0)}
+								// onRemove={() => onImageRemove(0)}
 								multiple={false}
 							/>
 						</div>
@@ -78,8 +78,8 @@ export default function CustomizationGeneral() {
 							<Label>Fav Icon</Label>
 							<MediaInput
 								fileList={favicon}
-								onChange={(image) => handleImageAdd(image, 1)}
-								onRemove={() => onImageRemove(1)}
+								// onChange={(image) => handleImageAdd(image, 1)}
+								// onRemove={() => onImageRemove(1)}
 								multiple={false}
 							/>
 						</div>

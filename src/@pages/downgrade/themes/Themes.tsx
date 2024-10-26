@@ -5,7 +5,7 @@ import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import Icon from "@components/Icon";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxThumbnail from "@components/Thumbnail";
 import { IFilePayload, IRequestMeta } from "@interfaces/common.interface";
@@ -157,7 +157,7 @@ const Themes = () => {
 						</table>
 					</div>
 					<div className="pagination_div p-4">
-						<WxPagination
+						<Pagination
 							meta={productMeta}
 							currentPage={currentPage}
 							setCurrentPage={setCurrentPage}

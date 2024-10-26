@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
+import DrawerBody from "@components/Drawer/DrawerBody";
 import TextInput from "@components/TextInput";
 import "./VendorEditor.scss";
 
@@ -9,7 +9,7 @@ type VendorEditorProps = {
 
 const VendorEditor = ({ registerProps }: VendorEditorProps) => {
   return (
-    <WxDrawerBody>
+    <DrawerBody>
       <TextInput
         type="text"
         label="Vendor Name"
@@ -17,7 +17,7 @@ const VendorEditor = ({ registerProps }: VendorEditorProps) => {
         isRequired
         registerProperty={{...registerProps('name', {required: true})}}
       />
-    </WxDrawerBody>
+    </DrawerBody>
   );
 };
 

@@ -194,10 +194,8 @@ const CustomerInfo = ({
 				</>
 			) : !loading ? (
 				<SelectOption
-					isAsyncList
-					cacheOptions
 					placeholder="Search Customer"
-					loadAsyncOptions={getCustomerList}
+					loadOptions={getCustomerList}
 					onChange={handleCustomerChoose}
 					getOptionLabel={(op: ICustomerPayload) =>
 						op.customerId ? (
@@ -210,8 +208,8 @@ const CustomerInfo = ({
 							"Create customer"
 						)
 					}
+					getOptionValue={(op: ICustomerPayload) => op.name}
 					onCreateOption={() => navigate(CUSTOMER_CREATE)}
-					getOptionValue={(op: ICustomerPayload) => op}
 				/>
 			) : (
 				<Preloader />

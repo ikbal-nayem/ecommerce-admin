@@ -73,11 +73,11 @@ const VariantImage = ({
 			<WxModalBody>
 				<MediaInput
 					multiple
-					fileList={images}
-					onChange={handleImageAdd}
-					onSelect={onImageSelect}
-					selectedImages={selectedImages}
-					isUploading={uploading}
+					// fileList={images}
+					// onChange={handleImageAdd}
+					// onSelect={onImageSelect}
+					// selectedImages={selectedImages}
+					// isUploading={uploading}
 				/>
 			</WxModalBody>
 			<WxModalFooter>

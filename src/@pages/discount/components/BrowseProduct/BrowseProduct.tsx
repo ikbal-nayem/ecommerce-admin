@@ -1,8 +1,8 @@
 import {Button} from "@components/Button";
 import Checkbox from "@components/Checkbox";
-import WxDrawer from "@components/Drawer";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/Thumbnail";
@@ -70,9 +70,9 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
   };
 
   return (
-    <WxDrawer show={drawerOpen}>
+    <Drawer show={drawerOpen}>
       <div className="wx__browse_product">
-        <WxDrawerHeader title="Add Product" onClickClose={handleClose} />
+        <DrawerHeader title="Add Product" onClickClose={handleClose} />
         <div className="wx__drawer_body">
           <div className="input_div">
             <TextInput
@@ -104,7 +104,7 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
             </div>
           </div>
         </div>
-        <WxDrawerFooter>
+        <DrawerFooter>
           <div className="d-flex">
             <Button className="me-3" variant="outline" color="secondary">
               Cancel
@@ -117,9 +117,9 @@ const BrowseProduct = ({ drawerOpen, handleClose }) => {
               {isEditorOpen ? "Save" : "Add Vendor"}
             </Button>
           </div>
-        </WxDrawerFooter>
+        </DrawerFooter>
       </div>
-    </WxDrawer>
+    </Drawer>
   );
 };
 

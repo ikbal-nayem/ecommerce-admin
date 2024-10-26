@@ -3,7 +3,7 @@ import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import { IPagesSettings } from "@interfaces/Settings.interface";
 import { PAGES_CREATE } from "routes/path-name.route";
 import { PagesSettingService } from "services/api/settings/Pages.service";
@@ -25,8 +25,6 @@ const Pages = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState<number>(
     Number(searchParams.get("page"))
-      ? Number(searchParams.get("page")) - 1
-      : null || 0
   );
   const [paginationLimit, setPaginationLimit] = useState(10);
 
@@ -118,12 +116,8 @@ const Pages = () => {
 					<>
 						<PageTable pages={pages} onDelete={onDelete} />
 						<div className="p-4">
-							<WxPagination
+							<Pagination
 								meta={pageMeta}
-								currentPage={currentPage}
-								setCurrentPage={setCurrentPage}
-								paginationLimit={paginationLimit}
-								setPaginationLimit={setPaginationLimit}
 							/>
 						</div>
 					</>

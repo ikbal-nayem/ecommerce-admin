@@ -4,9 +4,7 @@ import { generateDateFormat } from "utils/splitDate";
 import { imageURLGenerate } from "utils/utils";
 import Address from "./ReactPDF/Address";
 import NotesNSubtotal from "./ReactPDF/NotesNSubtotal";
-import PDFFooter from "./ReactPDF/PDFFooter";
 import PDFHeader from "./ReactPDF/PDFHeader";
-import PDFTable from "./ReactPDF/Table/PDFTable";
 
 const GenerateReactPDF = ({ data }) => {
   const { invoiceData, invoiceItemData } = data;
@@ -192,9 +190,9 @@ const GenerateReactPDF = ({ data }) => {
       <Page wrap style={styles.body}>
         <PDFHeader headerData={headerData} />
         <Address addressData={addressData} />
-        <PDFTable tableData={tableData} />
+        {/* <PDFTable tableData={tableData} /> */}
         <NotesNSubtotal notesNSubtotalData={notesNSubtotalData} />
-        <PDFFooter />
+        {/* <PDFFooter /> */}
       </Page>
     </Document>
     // </PDFViewer>

@@ -27,7 +27,7 @@ const address = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     fontSize: "10px",
-    fontFamily: "SolaimanLipi" || "Inter",
+    fontFamily: "Inter",
   },
   billForm: {
     lineHeight: "1.5px",

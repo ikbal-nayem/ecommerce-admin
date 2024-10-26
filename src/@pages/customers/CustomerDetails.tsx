@@ -277,7 +277,7 @@ const CustomerDetails = () => {
                     {lastOrder?.orderStatus ? (
                       <WxTag
                         label={lastOrder?.orderStatus}
-                        color={statusColorMapping(lastOrder?.orderStatus)}
+                        // color={statusColorMapping(lastOrder?.orderStatus)}
                         className="ms_2"
                       />
                     ) : null}
@@ -423,9 +423,8 @@ const CustomerDetails = () => {
                       {groups.length ? (
                         <div style={{ width: "100%" }}>
                           <SelectOption
-                            defaultSelected={selectedGroups}
                             options={groups}
-                            getOptionValue={(option) => option}
+                            getOptionValue={(option) => option.name}
                             getOptionLabel={(option) => option?.title}
                             isMulti
                             onChange={(values: any[]) =>
@@ -492,7 +491,7 @@ const CustomerDetails = () => {
               <Button
                 variant="outline"
                 color="danger"
-                w={100}
+                width={100}
                 onClick={onDeleteCustomer}
               >
                 Delete Customer

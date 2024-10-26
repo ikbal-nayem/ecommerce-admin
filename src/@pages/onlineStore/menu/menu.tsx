@@ -3,7 +3,7 @@ import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import { IMenuset } from "@interfaces/OnlineStore.interface";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
@@ -21,8 +21,6 @@ const Menu = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState<number>(
     Number(searchParams.get("page"))
-      ? Number(searchParams.get("page")) - 1
-      : null || 0
   );
   const [paginationLimit, setPaginationLimit] = useState(10);
   //
@@ -147,12 +145,8 @@ const Menu = () => {
                 onChangeStatus={onConfirmStatusUpdate}
               />
               <div className="p-4">
-                <WxPagination
+                <Pagination
                   meta={metaData}
-                  currentPage={currentPage}
-                  setCurrentPage={setCurrentPage}
-                  paginationLimit={paginationLimit}
-                  setPaginationLimit={setPaginationLimit}
                 />
               </div>
             </div>

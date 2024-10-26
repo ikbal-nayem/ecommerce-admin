@@ -159,7 +159,7 @@ const MarkAsPaid = ({
 													required: "Pay amount is required",
 												}),
 											}}
-											errorMessage={errors?.payAmount?.message}
+											errorMessage={errors?.payAmount?.message as string}
 											color={errors?.payAmount ? "danger" : "secondary"}
 										/>
 									</div>

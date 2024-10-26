@@ -1,5 +1,5 @@
 import MainLg from "@components/MainContentLayout/MainLg";
-import { WxFormFooter, FormHeader } from "@components/FormLayout";
+import { FormFooter, FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import { AUDIENCES } from "routes/path-name.route";
 import { useEffect, useState } from "react";
@@ -42,7 +42,7 @@ const CreateAudience = () => {
       {RenderComponent[audience]({ isSaving, setIsSaving })}
 
       <WxHr />
-      <WxFormFooter
+      <FormFooter
         saveButtonText="Create Audience"
         title="unsaved changes"
         formName={FromName[audience]}

@@ -40,7 +40,7 @@ const CustomerInfo = ({ customer, statistics }: CustomerInfoProps) => {
                 {customer?.customer?.name || ""}
                 <WxTag
                   label={customer?.customer?.status || ""}
-                  color={statusColorMapping(customer?.customer?.status)}
+                  // color={statusColorMapping(customer?.customer?.status)}
                 />
               </h6>
               <p className="customer_activity">

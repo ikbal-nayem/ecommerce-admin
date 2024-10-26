@@ -1,7 +1,7 @@
 import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
-import { WxFormFooter } from "@components/FormLayout";
-import WxFormContainer from "@components/FormLayout/FormContainer";
+import { FormFooter } from "@components/FormLayout";
+import FormContainer from "@components/FormLayout/FormContainer";
 import FormHeader from "@components/FormLayout/FormHeader";
 import TextInput from "@components/TextInput";
 import Label from "@components/Label";
@@ -91,7 +91,7 @@ const Preferences = () => {
 
   return (
     <MainLg>
-      <WxFormContainer>
+      <FormContainer>
         <FormHeader title="Preferences" />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
           <div className="row">
@@ -99,28 +99,28 @@ const Preferences = () => {
               <div className="card p-3">
                 <Label>Site logo Preview</Label>
                 <MediaInput
-                  fileList={siteLogo}
-                  onChange={(image) => handleImageAdd(image, 0)}
-                  onRemove={() => onImageRemove(0)}
-                  multiple={false}
+                  // fileList={siteLogo}
+                  // onChange={(image) => handleImageAdd(image, 0)}
+                  // onRemove={() => onImageRemove(0)}
+                  // multiple={false}
                 />
               </div>
               <div className="card p-3">
                 <Label>Site favicon Preview</Label>
                 <MediaInput
-                  fileList={favicon}
-                  onChange={(image) => handleImageAdd(image, 1)}
-                  onRemove={() => onImageRemove(1)}
-                  multiple={false}
+                  // fileList={favicon}
+                  // onChange={(image) => handleImageAdd(image, 1)}
+                  // onRemove={() => onImageRemove(1)}
+                  // multiple={false}
                 />
               </div>
               <div className="card p-3">
                 <Label>Social media Image Preview</Label>
                 <MediaInput
-                  fileList={socialMediaImage}
-                  onChange={(image) => handleImageAdd(image, 2)}
-                  onRemove={() => onImageRemove(2)}
-                  multiple={false}
+                  // fileList={socialMediaImage}
+                  // onChange={(image) => handleImageAdd(image, 2)}
+                  // onRemove={() => onImageRemove(2)}
+                  // multiple={false}
                 />
               </div>
               <div className="card p-4">
@@ -178,9 +178,9 @@ const Preferences = () => {
               </div>
             </div>
           </div>
-          <WxFormFooter saveButtonText="Save" isSaving={isSaving} />
+          <FormFooter saveButtonText="Save" isSaving={isSaving} />
         </form>
-      </WxFormContainer>
+      </FormContainer>
     </MainLg>
   );
 };

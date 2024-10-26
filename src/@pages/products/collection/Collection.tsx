@@ -164,10 +164,6 @@ const Collection = () => {
 							<div className='p-4'>
 								<Pagination
 									meta={collectionMeta}
-									currentPage={currentPage}
-									setCurrentPage={setCurrentPage}
-									paginationLimit={paginationLimit}
-									setPaginationLimit={setPaginationLimit}
 								/>
 							</div>
 						</>

@@ -11,7 +11,7 @@ import { Font, StyleSheet, View } from "@react-pdf/renderer";
 const PDFTable = ({ tableData }) => {
   const table = StyleSheet.create({
     main: {
-      fontFamily: "SolaimanLipi" || "Inter",
+      fontFamily: "Inter",
       marginTop: "50px",
     },
     textCenter: {
@@ -51,7 +51,7 @@ const PDFTable = ({ tableData }) => {
 
   return (
     <View style={table.main}>
-      <Table data={tableData}>
+      {/* <Table data={tableData}>
         <TableHeader
           includeTopBorder={false}
           includeBottomBorder={false}
@@ -142,7 +142,7 @@ const PDFTable = ({ tableData }) => {
             getContent={(r) => r?.subTotal + " BDT"}
           />
         </TableBody>
-      </Table>
+      </Table> */}
     </View>
   );
 };

@@ -1,8 +1,8 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
 import { useState } from "react";
@@ -47,14 +47,14 @@ const ConfigureDrawer = ({
 
   return (
     <>
-      <WxDrawer show={isOpen} handleClose={handleFormClose}>
+      <Drawer show={isOpen} handleClose={handleFormClose}>
         <div className="delivery_create_sec">
-          <WxDrawerHeader
+          <DrawerHeader
             title={`${editDrawer ? "Edit" : "Configure"} Delivery Zone`}
             onClickClose={handleFormClose}
           />
           <form onSubmit={handleSubmit(makeCourierConfigure)} noValidate>
-            <WxDrawerBody>
+            <DrawerBody>
               {getValues("courierProvider") === "COURIER_TYPE_ECOURIER" && (
                 <div className="row">
                   <div className="col-md-12 col-sm-12">
@@ -147,8 +147,8 @@ const ConfigureDrawer = ({
                   </div>
                 </div>
               )}
-            </WxDrawerBody>
-            <WxDrawerFooter>
+            </DrawerBody>
+            <DrawerFooter>
               <div className="delivery_create_sec__footer">
                 {editDrawer ? (
                   <Button
@@ -178,10 +178,10 @@ const ConfigureDrawer = ({
                   </Button>
                 </div>
               </div>
-            </WxDrawerFooter>
+            </DrawerFooter>
           </form>
         </div>
-      </WxDrawer>
+      </Drawer>
     </>
   );
 };

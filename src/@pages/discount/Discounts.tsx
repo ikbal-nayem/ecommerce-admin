@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import { DISCOUNT_CREATE } from "routes/path-name.route";
 import { DiscountService } from "services/api/Discount.service";
@@ -45,8 +45,6 @@ const Discount = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState<number>(
     Number(searchParams.get("page"))
-      ? Number(searchParams.get("page")) - 1
-      : null || 0
   );
   const [paginationLimit, setPaginationLimit] = useState(10);
   //
@@ -200,12 +198,8 @@ const Discount = () => {
                 onChangeStatus={onCouponStatusUpdate}
               />
               <div className="pagination_div p-4">
-                <WxPagination
+                <Pagination
                   meta={metaData}
-                  currentPage={currentPage}
-                  setCurrentPage={setCurrentPage}
-                  paginationLimit={paginationLimit}
-                  setPaginationLimit={setPaginationLimit}
                 />
               </div>
             </div>

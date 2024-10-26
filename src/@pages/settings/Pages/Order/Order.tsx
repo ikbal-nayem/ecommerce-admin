@@ -1,6 +1,6 @@
 import WxMainMd from "@components/MainContentLayout/WxMainMd";
 import Checkbox from "@components/Checkbox";
-import { WxFormFooter, FormHeader } from "@components/FormLayout";
+import { FormFooter, FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import TextInput from "@components/TextInput";
 import { IOrderSettingsResponse } from "@interfaces/order.interface";
@@ -260,7 +260,7 @@ const Order = () => {
         </>
       ) : null}
       <div className="mt-3">
-        <WxFormFooter
+        <FormFooter
           saveButtonText="Save Changes"
           onClickSave={handleSubmit}
           isSaving={saving}

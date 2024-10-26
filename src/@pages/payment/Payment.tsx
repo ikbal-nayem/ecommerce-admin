@@ -214,8 +214,8 @@ const Payment = () => {
 											required: "Address is required",
 										}),
 									}}
-									color={errors?.address?.addressLine1 ? "danger" : "secondary"}
-									errorMessage={errors?.address?.addressLine1?.message}
+									// color={errors?.address?.addressLine1 ? "danger" : "secondary"}
+									// errorMessage={errors?.address?.addressLine1?.message}
 								/>
 								<div className="row">
 									<div className="col-sm-6 col-12">
@@ -232,8 +232,8 @@ const Payment = () => {
 													onChange: (e) => onDivisionSelect(e.target.value),
 												}),
 											}}
-											color={errors?.address?.state ? "danger" : "secondary"}
-											errorMessage={errors?.address?.state?.message}
+											// color={errors?.address?.state ? "danger" : "secondary"}
+											// errorMessage={errors?.address?.state?.message}
 										/>
 									</div>
 									<div className="col-6">
@@ -250,8 +250,8 @@ const Payment = () => {
 													required: "Please select a division",
 												}),
 											}}
-											color={errors?.address?.cityName ? "danger" : "secondary"}
-											errorMessage={errors?.address?.cityName?.message}
+											// color={errors?.address?.cityName ? "danger" : "secondary"}
+											// errorMessage={errors?.address?.cityName?.message as string}
 										/>
 									</div>
 									<div className="col-6">
@@ -271,7 +271,7 @@ const Payment = () => {
 												}),
 											}}
 											color={errors?.email ? "danger" : "secondary"}
-											errorMessage={errors?.email?.message}
+											errorMessage={errors?.email?.message as string}
 										/>
 									</div>
 								</div>

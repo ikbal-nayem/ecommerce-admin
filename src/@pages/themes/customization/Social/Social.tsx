@@ -8,12 +8,12 @@ import { ToastService } from "services/utils/toastr.service";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
-import FB from "../../../../assets/images/social/fb.svg";
-import Instagram from "../../../../assets/images/social/instagram.svg";
-import Linkedin from "../../../../assets/images/social/linkedin.svg";
-import Tiktok from "../../../../assets/images/social/tiktok.svg";
-import Twitter from "../../../../assets/images/social/twitter.svg";
-import Youtube from "../../../../assets/images/social/youtube.svg";
+// import FB from "../../../../assets/images/social/fb.svg";
+// import Instagram from "../../../../assets/images/social/instagram.svg";
+// import Linkedin from "../../../../assets/images/social/linkedin.svg";
+// import Tiktok from "../../../../assets/images/social/tiktok.svg";
+// import Twitter from "../../../../assets/images/social/twitter.svg";
+// import Youtube from "../../../../assets/images/social/youtube.svg";
 
 interface ISocial {
   facebook: string | null;
@@ -73,9 +73,9 @@ export default function CustomizationSocial() {
 								label="Facebook Link"
 								type="url"
 								noMargin
-								startIcon={
-									<img className="input-start-image" src={FB} alt="fb" />
-								}
+								// startIcon={
+								// 	<img className="input-start-image" src={FB} alt="fb" />
+								// }
 								registerProperty={{
 									...register("facebook", { required: false }),
 								}}
@@ -86,13 +86,13 @@ export default function CustomizationSocial() {
 								label="Instagram Link"
 								type="url"
 								noMargin
-								startIcon={
-									<img
-										className="input-start-image"
-										src={Instagram}
-										alt="instagram"
-									/>
-								}
+								// startIcon={
+								// 	<img
+								// 		className="input-start-image"
+								// 		src={Instagram}
+								// 		alt="instagram"
+								// 	/>
+								// }
 								registerProperty={{
 									...register("instagram", { required: false }),
 								}}
@@ -103,13 +103,13 @@ export default function CustomizationSocial() {
 								label="Youtube Link"
 								type="url"
 								noMargin
-								startIcon={
-									<img
-										className="input-start-image"
-										src={Youtube}
-										alt="youtube"
-									/>
-								}
+								// startIcon={
+								// 	<img
+								// 		className="input-start-image"
+								// 		src={Youtube}
+								// 		alt="youtube"
+								// 	/>
+								// }
 								registerProperty={{
 									...register("youtube", { required: false }),
 								}}
@@ -120,13 +120,13 @@ export default function CustomizationSocial() {
 								label="Tiktok Link"
 								type="url"
 								noMargin
-								startIcon={
-									<img
-										className="input-start-image"
-										src={Tiktok}
-										alt="tiktok"
-									/>
-								}
+								// startIcon={
+								// 	<img
+								// 		className="input-start-image"
+								// 		src={Tiktok}
+								// 		alt="tiktok"
+								// 	/>
+								// }
 								registerProperty={{
 									...register("tiktok", { required: false }),
 								}}
@@ -137,13 +137,13 @@ export default function CustomizationSocial() {
 								label="Linkedin Link"
 								type="url"
 								noMargin
-								startIcon={
-									<img
-										className="input-start-image"
-										src={Linkedin}
-										alt="linkedin"
-									/>
-								}
+								// startIcon={
+								// 	<img
+								// 		className="input-start-image"
+								// 		src={Linkedin}
+								// 		alt="linkedin"
+								// 	/>
+								// }
 								registerProperty={{
 									...register("linkedin", { required: false }),
 								}}
@@ -154,13 +154,13 @@ export default function CustomizationSocial() {
 								label="Twitter Link"
 								type="url"
 								noMargin
-								startIcon={
-									<img
-										className="input-start-image"
-										src={Twitter}
-										alt="twitter"
-									/>
-								}
+								// startIcon={
+								// 	<img
+								// 		className="input-start-image"
+								// 		src={Twitter}
+								// 		alt="twitter"
+								// 	/>
+								// }
 								registerProperty={{
 									...register("twitter", { required: false }),
 								}}

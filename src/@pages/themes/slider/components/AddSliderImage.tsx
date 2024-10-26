@@ -1,8 +1,8 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import TextInput from "@components/TextInput";
 import Label from "@components/Label";
 import { MediaInput } from "@components/MediaInput";
@@ -52,22 +52,22 @@ const AddSliderImage = ({
 	}, [isEditForm, editedData]);
 
 	return (
-		<WxDrawer show={isOpen} handleClose={handleFormClose}>
+		<Drawer show={isOpen} handleClose={handleFormClose}>
 			<div className="manage_slider_sec">
-				<WxDrawerHeader
+				<DrawerHeader
 					title={`${isEditForm ? "Edit" : "Add"} Slider Banner`}
 					onClickClose={handleFormClose}
 				/>
 				<form onSubmit={handleSubmit(submitForm)}>
-					<WxDrawerBody>
+					<DrawerBody>
 						<div className="row">
 							<div className="col-md-12">
 								<Label>Slider Image</Label>
 								<MediaInput
 									fileList={images}
-									onChange={handleImageAdd}
-									onRemove={onImageRemove}
-									multiple={false}
+									// onChange={handleImageAdd}
+									// onRemove={onImageRemove}
+									// multiple={false}
 								/>
 							</div>
 							<div className="my-4" style={{ maxWidth: "90%" }}>
@@ -94,7 +94,7 @@ const AddSliderImage = ({
 												}),
 											}}
 											color={errors?.buttonTitle ? "danger" : "secondary"}
-											errorMessage={errors?.buttonTitle?.message}
+											errorMessage={errors?.buttonTitle?.message as string}
 										/>
 									</div>
 
@@ -108,7 +108,7 @@ const AddSliderImage = ({
 												}),
 											}}
 											color={errors?.buttonUrl ? "danger" : "secondary"}
-											errorMessage={errors?.buttonUrl?.message}
+											errorMessage={errors?.buttonUrl?.message as string}
 										/>
 									</div>
 								</>
@@ -144,8 +144,8 @@ const AddSliderImage = ({
 								/>
 							</div>
 						</div>
-					</WxDrawerBody>
-					<WxDrawerFooter>
+					</DrawerBody>
+					<DrawerFooter>
 						<div className="delivery_create_sec__footer">
 							<div className="d-flex align-items-center justify-content-between">
 								<div>
@@ -184,10 +184,10 @@ const AddSliderImage = ({
 								</div>
 							</div>
 						</div>
-					</WxDrawerFooter>
+					</DrawerFooter>
 				</form>
 			</div>
-		</WxDrawer>
+		</Drawer>
 	);
 };
 export default AddSliderImage;

@@ -2,7 +2,7 @@ import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import { FormHeader } from "@components/FormLayout";
 import Icon from "@components/Icon";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTabs from "@components/WxTabs/WxTabs";
 import WxTag from "@components/WxTag";
@@ -127,7 +127,7 @@ export default function Partners() {
                         <td className="wx__td">
                           <WxTag
                             label={partner?.currentPlan}
-                            color={statusColorMapping(partner.currentPlan)}
+                            // color={statusColorMapping(partner.currentPlan)}
                           />
                         </td>
                         <td className="wx__td">
@@ -161,10 +161,8 @@ export default function Partners() {
                 </table>
               </div>
               <div className="p-4">
-                <WxPagination
+                <Pagination
                   meta={partnersMeta}
-                  setCurrentPage={setCurrentPage}
-                  setPaginationLimit={setPaginationLimit}
                 />
               </div>
             </>

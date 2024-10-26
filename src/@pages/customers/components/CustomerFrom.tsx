@@ -113,7 +113,7 @@ export const CustomerFrom = ({
 							</span>
 						</div>
 						<div className={`wx__input_group_secondary mt-2`}>
-							{groups.length ? (
+							{/* {groups.length ? (
 								<div style={{ width: "100%" }}>
 									<SelectOption
 										options={groups}
@@ -121,7 +121,7 @@ export const CustomerFrom = ({
 										onChange={(values: any[]) => setSelectedGroups(values)}
 									/>
 								</div>
-							) : null}
+							) : null} */}
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-12 col-sm-6 pe-5 show-mobile-view d-md-none">

@@ -458,7 +458,7 @@ const OrderDetails = () => {
 							<div className="ms-3">
 								<WxTag
 									label={orderDetails?.orderStatus}
-									color={statusColorMapping(orderDetails?.orderStatus)}
+									// color={statusColorMapping(orderDetails?.orderStatus)}
 								/>
 							</div>
 							{orderStatusFind(

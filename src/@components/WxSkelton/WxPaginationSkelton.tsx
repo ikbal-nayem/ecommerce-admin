@@ -1,6 +1,6 @@
 import ContentLoader from "react-content-loader";
 
-const WxPaginationSkelton = (props) => {
+const PaginationSkelton = (props) => {
   return (
     <ContentLoader
       speed={2}
@@ -22,4 +22,4 @@ const WxPaginationSkelton = (props) => {
   );
 };
 
-export default WxPaginationSkelton;
+export default PaginationSkelton;

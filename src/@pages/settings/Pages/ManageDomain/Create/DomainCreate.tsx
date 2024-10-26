@@ -63,7 +63,7 @@ const DomainCreate = () => {
 									}),
 								}}
 								color={errors?.domainAddress ? "danger" : "secondary"}
-								errorMessage={errors?.domainAddress?.message}
+								errorMessage={errors?.domainAddress?.message as string}
 							/>
 						</div>
 						<p className="text_subtitle mt-3">
@@ -79,7 +79,7 @@ const DomainCreate = () => {
 						</p>
 						{!domain?.id ? (
 							<div>
-								<Button type="submit" variant="fill" w={25} disabled={saving}>
+								<Button type="submit" variant="fill" width={25} disabled={saving}>
 									Save
 								</Button>
 							</div>

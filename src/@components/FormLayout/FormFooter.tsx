@@ -11,7 +11,7 @@ type IFormFooterProps = {
   formName?: string;
 };
 
-const WxFormFooter = ({
+const FormFooter = ({
   children,
   title,
   onCancel,
@@ -58,4 +58,4 @@ const WxFormFooter = ({
   );
 };
 
-export default WxFormFooter;
+export default FormFooter;

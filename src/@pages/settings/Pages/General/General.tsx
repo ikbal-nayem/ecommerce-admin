@@ -348,13 +348,13 @@ const General = () => {
                         onChange: (e) => onChangeDivision(e.target.value),
                       }),
                     }}
-                    color={
-                      addressErrors?.address?.state ? "danger" : "secondary"
-                    }
-                    errorMessage={
-                      addressErrors?.address?.state &&
-                      "Division/State is required!"
-                    }
+                    // color={
+                    //   addressErrors?.address?.state ? "danger" : "secondary"
+                    // }
+                    // errorMessage={
+                    //   addressErrors?.address?.state &&
+                    //   "Division/State is required!"
+                    // }
                   />
                 </div>
                 <div className="col-md-4 col-sm-12 mt-2">
@@ -370,13 +370,13 @@ const General = () => {
                       ...addressRegister("city", { required: true }),
                     }}
                     isDisabled={!districts?.length}
-                    color={
-                      addressErrors?.address?.city ? "danger" : "secondary"
-                    }
-                    errorMessage={
-                      addressErrors?.address?.city &&
-                      "District/City is required!"
-                    }
+                    // color={
+                    //   addressErrors?.address?.city ? "danger" : "secondary"
+                    // }
+                    // errorMessage={
+                    //   addressErrors?.address?.city &&
+                    //   "District/City is required!"
+                    // }
                   />
                 </div>
                 <div className="col-md-4 col-sm-12 mt-2">
@@ -385,10 +385,10 @@ const General = () => {
                       ...addressRegister("zip", { required: true }),
                     }}
                     label="Post code"
-                    color={addressErrors?.address?.zip ? "danger" : "secondary"}
-                    errorMessage={
-                      addressErrors?.address?.zip && "Post Code is required!"
-                    }
+                    // color={addressErrors?.address?.zip ? "danger" : "secondary"}
+                    // errorMessage={
+                    //   addressErrors?.address?.zip && "Post Code is required!"
+                    // }
                   />
                 </div>
                 <div className="col-md-6 col-sm-12 mt-2">

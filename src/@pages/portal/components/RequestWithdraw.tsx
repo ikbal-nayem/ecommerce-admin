@@ -1,8 +1,8 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import { useState } from "react";
 import "./RequestWithdraw.scss";
 
@@ -20,18 +20,18 @@ function RequestWithdraw() {
 			>
 				Request for withdraw
 			</Button>
-			<WxDrawer show={drawer_open} handleClose={handleClose}>
+			<Drawer show={drawer_open} handleClose={handleClose}>
 				<div className="withdraw_request">
-					<WxDrawerHeader
+					<DrawerHeader
 						title="Withdraw request"
 						onClickClose={handleClose}
 					/>
 
-					<WxDrawerBody>
+					<DrawerBody>
 						<h3>Comming soon...</h3>
-					</WxDrawerBody>
+					</DrawerBody>
 
-					<WxDrawerFooter>
+					<DrawerFooter>
 						<div className="withdraw_request__footer">
 							<Button
 								className="me-3"
@@ -43,9 +43,9 @@ function RequestWithdraw() {
 							</Button>
 							<Button variant="fill">Save</Button>
 						</div>
-					</WxDrawerFooter>
+					</DrawerFooter>
 				</div>
-			</WxDrawer>
+			</Drawer>
 		</div>
 	);
 }

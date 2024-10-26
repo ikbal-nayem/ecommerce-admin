@@ -73,11 +73,6 @@ const AccountSetting = () => {
   const { phone }: any = LocalStorageService.get("user_data");
   // const { isAccountVerified }: any = LocalStorageService.get("todo") || {};
 
-  const [isAccountVerified] = useState(
-    LocalStorageService.get("todo").filter(
-      (item) => item["isAccountVerified"]
-    ) || []
-  );
 
   const { key }: any = LocalStorageService.get("activePlan") || {};
 
@@ -162,11 +157,9 @@ const AccountSetting = () => {
     AccountSettingService.getBasicInfo(userId)
       .then((res) => {
         res.body.partnerUrl =
-          process.env.REACT_APP_LANDING_PAGE +
           "register" +
           res.body?.partnerUrl;
         setUserBasicInfo(res.body);
-        // const image =;
         reset({ ...res.body });
         LocalStorageService.set("user_data", {
           ...userData,
@@ -557,33 +550,10 @@ const AccountSetting = () => {
                         : "My Account"}
                       {/* {watch("firstName") || "No Name"} */}
                     </p>
-                    {!isAccountVerified[0]?.active ? (
-                      <span className="text-primary d-flex align-items-center">
-                        Verified <Icon icon="verified_user" />{" "}
-                      </span>
-                    ) : (
-                      <span className="text-danger d-flex align-items-center">
-                        Unverified <Icon icon="gpp_maybe" />{" "}
-                      </span>
-                    )}
                   </div>
                 </div>
               )}
             </form>
-            {!isAccountVerified[0]?.active || (
-              <div className="verify_alert d-flex justify-content-between  p-3 ">
-                <div className="d-flex align-items-center">
-                  <Icon icon="info" variants="outlined" />
-                  <p className="my-0 ms_2 text_body text_medium">
-                    Please verify your Phone Number to enjoy the complete WebX
-                    experience .
-                  </p>
-                </div>
-                <Button onClick={() => setOtpModal(true)} variant="fill">
-                  Verify Phone Number
-                </Button>
-              </div>
-            )}
           </div>
           {key !== "PPB_TRIAL" ? (
             <div className="bg-white rounded mt-3 p-4">

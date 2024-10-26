@@ -1,9 +1,9 @@
 import {Button} from "@components/Button";
 import Checkbox from "@components/Checkbox";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxThumbnail from "@components/Thumbnail";
@@ -15,7 +15,6 @@ import Preloader from "services/utils/preloader.service";
 import { ToastService } from "services/utils/toastr.service";
 import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import {
-  setGlobCategoriesList,
   setGlobCustomerGroupList,
   setGlobCustomerList,
   setGlobProductList,
@@ -134,13 +133,12 @@ const AddCouponDrawer = forwardRef(
     // products
     const getProducts = () => {
       ProductService.search({
-        body: {
+        filter: {
           searchKey: search || null,
         },
         meta: {
-          offset: search ? 0 : page.products,
+          page: search ? 0 : page.products,
           limit: 20,
-          sort: [{ order: "desc", field: "createdOn" }],
         },
       })
         .then((res: any) => {
@@ -227,7 +225,6 @@ const AddCouponDrawer = forwardRef(
             }));
           }
 
-          dispatch(setGlobCategoriesList(res.body));
         })
         .catch((err) => {
           ToastService.error(err);
@@ -390,14 +387,14 @@ const AddCouponDrawer = forwardRef(
     }, [listContent[drawerContent]]);
 
     return (
-      <WxDrawer show={drawer} handleClose={onDrawerClose}>
+      <Drawer show={drawer} handleClose={onDrawerClose}>
         <div className="wx__coupon_drawer">
-          <WxDrawerHeader
+          <DrawerHeader
             title={`Select ${drawerContent}`}
             onClickClose={onDrawerClose}
           />
           <form noValidate>
-            <WxDrawerBody>
+            <DrawerBody>
               <div id="testDiv">
                 <TextInput
                   onChange={(e: any) => {
@@ -458,8 +455,8 @@ const AddCouponDrawer = forwardRef(
                   )}
                 </div>
               </div>
-            </WxDrawerBody>
-            <WxDrawerFooter>
+            </DrawerBody>
+            <DrawerFooter>
               <div className="collection_form__footer">
                 <div className="ms-auto d-flex">
                   <Button
@@ -477,10 +474,10 @@ const AddCouponDrawer = forwardRef(
                   )}
                 </div>
               </div>
-            </WxDrawerFooter>
+            </DrawerFooter>
           </form>
         </div>
-      </WxDrawer>
+      </Drawer>
     );
   }
 );

@@ -5,14 +5,14 @@ export const ECourierPlaceOrderSchema = yup.object().shape({
     .string()
     .required("Please provide a recipient address"),
   recipient_city: yup.string().required("Please select a city"),
-  recipient_thana: yup.string().when("recipient_city", {
-    is: (value) => value,
-    then: yup.string().required("please select a thana"),
-  }),
-  recipient_zip: yup.string().when("recipient_thana", {
-    is: (value) => value,
-    then: yup.string().required("please select a postcode"),
-  }),
+  // recipient_thana: yup.string().when("recipient_city", {
+  //   is: (value) => value,
+  //   then: yup.string().required("please select a thana"),
+  // }),
+  // recipient_zip: yup.string().when("recipient_thana", {
+  //   is: (value) => value,
+  //   then: yup.string().required("please select a postcode"),
+  // }),
   recipient_area: yup.string().required("please select area"),
   // pick_mobile: yup.number().required("please enter phone number"),
   // .nullable()

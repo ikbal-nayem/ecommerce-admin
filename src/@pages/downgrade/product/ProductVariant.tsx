@@ -5,7 +5,7 @@ import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import Checkbox from "@components/Checkbox";
 import { FormHeader } from "@components/FormLayout";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/Thumbnail";
@@ -65,11 +65,11 @@ const ProductVariant = () => {
 	};
 
 	const onSelectProduct = (product: IProductTable) => {
-		const idx = selectedProduct.findIndex((pro) => pro.id === product.id);
+		const idx = selectedProduct.findIndex((pro) => pro._id === product._id);
 		if (idx === -1) {
 			setSelectedProduct((pre) => [...pre, product]);
 		} else {
-			setSelectedProduct((pre) => pre.filter((p) => p.id !== product?.id));
+			setSelectedProduct((pre) => pre.filter((p) => p._id !== product?._id));
 		}
 	};
 
@@ -82,7 +82,7 @@ const ProductVariant = () => {
 	const onConfirmDelete = () => {
 		if (!selectedProduct?.length) return;
 		setIsSubmitting(true);
-		const reqData = { ids: selectedProduct.map((pro) => pro?.id) };
+		const reqData = { ids: selectedProduct.map((pro) => pro?._id) };
 		DowngradeService.removeProductVariants(reqData)
 			.then((resp) => {
 				ToastService.success(resp.message);
@@ -147,12 +147,12 @@ const ProductVariant = () => {
 							</thead>
 							<tbody className="wx__tbody">
 								{productList?.map((pd: IProductTable) => (
-									<tr className="wx__tr" key={pd?.id}>
+									<tr className="wx__tr" key={pd?._id}>
 										<td className="wx__td" style={{ width: 20 }}>
 											<Checkbox
 												className="m-0"
 												checked={selectedProduct?.some(
-													(val) => val.id === pd.id
+													(val) => val._id === pd._id
 												)}
 												onChange={() => onSelectProduct(pd)}
 											/>
@@ -160,20 +160,20 @@ const ProductVariant = () => {
 										<td className="wx__td">
 											<div className="wx__table_cell_avatar wx__product_name">
 												<WxThumbnail
-													name={pd?.title}
+													name={pd?.name}
 													src={imageURLGenerate(pd?.thumbnail || pd?.images)}
 												/>
 												<div className="wx__table_cell_focus_text">
-													<Link to={PRODUCT_DETAILS({ product_id: pd?.id })}>
-														{pd?.title}
+													<Link to={PRODUCT_DETAILS({ product_id: pd?._id })}>
+														{pd?.name}
 													</Link>
 												</div>
 											</div>
 										</td>
 										<td className="wx__td">
 											<WxTag
-												label={pd?.status}
-												color={statusColorMapping(pd?.status)}
+												label={pd?.isActive?'Published': 'Inactive'}
+												// color={statusColorMapping(pd?.status)}
 											/>
 										</td>
 									</tr>
@@ -182,11 +182,8 @@ const ProductVariant = () => {
 						</table>
 					</div>
 					<div className="pagination_div p-4">
-						<WxPagination
+						<Pagination
 							meta={productMeta}
-							currentPage={currentPage}
-							setCurrentPage={setCurrentPage}
-							setPaginationLimit={setPaginationLimit}
 						/>
 					</div>
 				</div>

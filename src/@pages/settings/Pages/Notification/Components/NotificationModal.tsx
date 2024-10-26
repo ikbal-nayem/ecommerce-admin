@@ -113,7 +113,7 @@ const NotificationModal = ({
 									),
 								}}
 								color={errors.inputValue ? "danger" : "secondary"}
-								errorMessage={errors.inputValue?.message}
+								errorMessage={errors.inputValue?.message as string}
 							/>
 							{data?.task === "BUY" ? (
 								<p className="text_subtitle text_regular">

@@ -1,8 +1,8 @@
 import MainLg from "@components/MainContentLayout/MainLg";
 import {Button} from "@components/Button";
 import {
-  WxFormContainer,
-  WxFormFooter,
+  FormContainer,
+  FormFooter,
   FormHeader,
 } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
@@ -111,8 +111,8 @@ const UpdateOrder = () => {
     newProductList[productIndex].quantity = qty;
     newProductList[productIndex].subTotal =
       qty *
-        (newProductList[productIndex].sellingPrice ||
-          newProductList[productIndex].regularPrice) || 0;
+        (newProductList[productIndex].discountPrice ||
+          newProductList[productIndex].price) || 0;
     // console.log(newProductList);
     setSelectedProduct([...newProductList]);
   };
@@ -136,7 +136,7 @@ const UpdateOrder = () => {
 
   return (
     <MainLg>
-      <WxFormContainer>
+      <FormContainer>
         <FormHeader
           title="Edit Order"
           backNavigationLink={ORDER_DETAILS({ order_id })}
@@ -198,7 +198,7 @@ const UpdateOrder = () => {
               </div>
             </div>
           </div>
-          <WxFormFooter
+          <FormFooter
             title="Unsaved Changes"
             saveButtonText="Update order"
             onCancel={() => navigate(ORDER_DETAILS({ order_id }))}
@@ -210,7 +210,7 @@ const UpdateOrder = () => {
           handleClose={handleClose}
           addToCart={addToCart}
         />
-      </WxFormContainer>
+      </FormContainer>
     </MainLg>
   );
 };

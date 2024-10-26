@@ -1,9 +1,9 @@
 import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationModal";
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import WxList from "@components/WxList";
@@ -120,9 +120,9 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
 
   return (
     <>
-      <WxDrawer show={drawerOpen} handleClose={handleClose}>
+      <Drawer show={drawerOpen} handleClose={handleClose}>
         <div className="wx__manage_customer_group">
-          <WxDrawerHeader
+          <DrawerHeader
             title={
               isEditorOpen
                 ? `${editData?.id ? "Edit" : "Add"} Group`
@@ -132,7 +132,7 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
             onClickClose={handleClose}
           />
           <form noValidate onSubmit={handleSubmit(handleSave)}>
-            <WxDrawerBody>
+            <DrawerBody>
               {isEditorOpen ? (
                 <TextInput
                   type="text"
@@ -170,8 +170,8 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
                   </WxList>
                 </>
               )}
-            </WxDrawerBody>
-            <WxDrawerFooter>
+            </DrawerBody>
+            <DrawerFooter>
               <div className="wx__manage_customer_group__footer">
                 {editData?.id ? (
                   <div className="me-auto">
@@ -209,10 +209,10 @@ const CustomerGroup = ({ drawerOpen, handleClose }: CustomerGroupProps) => {
                   body={`Are you sure you want to delete ${deletedData?.title}?`}
                 />
               </div>
-            </WxDrawerFooter>
+            </DrawerFooter>
           </form>
         </div>
-      </WxDrawer>
+      </Drawer>
     </>
   );
 };

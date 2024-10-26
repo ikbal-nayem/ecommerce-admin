@@ -1,4 +1,3 @@
-import flatMap from "array.prototype.flatmap";
 // import * as d3 from "d3";
 import * as d3 from 'd3'
 import { useEffect, useRef } from "react";
@@ -7,7 +6,7 @@ import "./FunnelChart.scss";
 
 const FunnelChart = () => {
   const d3ref = useRef();
-  const dataRef = useRef(flatMap(data, (e) => e));
+  const dataRef = useRef(data.flatMap((e) => e));
   useEffect(() => {
     const width = 400;
     const height = 100;
@@ -44,7 +43,7 @@ const FunnelChart = () => {
       .attr("height", height + margin * 2)
       .append("g")
       .attr("transform", `translate(${margin}, ${margin})`);
-    svg.append("path").datum(dataset).attr("class", "line").attr("d", line);
+    // svg.append("path").datum(dataset).attr("class", "line").attr("d", line);
   }, []);
   return (
     <div>

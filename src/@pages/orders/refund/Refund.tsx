@@ -7,7 +7,6 @@ import { ORDER_DETAILS } from "routes/path-name.route";
 import { OrderService } from "services/api/Order.service";
 import { ButtonLoader } from "services/utils/preloader.service";
 import { ToastService } from "services/utils/toastr.service";
-import { ReactComponent as TKSign } from "assets/svg/taka.svg";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
@@ -48,7 +47,7 @@ const OrderRefund = () => {
 			let refundAmount = 0;
 			refundItems.map((item: IProductVariant) => {
 				refundQuantity += item.quantity;
-				refundAmount += item.sellingPrice * item.quantity;
+				refundAmount += item.price * item.quantity;
 			});
 			setRefundableInfo({
 				quantity: refundQuantity,
@@ -167,7 +166,6 @@ const OrderRefund = () => {
 							<h6 className="text_h6 text_semibold">Refund Amount</h6>
 							<TextInput
 								type="number"
-								startIcon={<TKSign />}
 								placeholder="00.00"
 								min={0}
 								helpText={`BDT ${refundableInfo.amount} is avialable for refund`}
@@ -180,7 +178,7 @@ const OrderRefund = () => {
 								}}
 								onFocus={(e) => e.target.select()}
 								color={errors?.refundAmount ? "danger" : "secondary"}
-								errorMessage={errors.refundAmount?.message}
+								errorMessage={errors.refundAmount?.message as string}
 							/>
 							<Button
 								color="primary"

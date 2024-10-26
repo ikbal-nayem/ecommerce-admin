@@ -10,7 +10,7 @@ import {Button} from '@components/Button';
 import { FormHeader } from '@components/FormLayout';
 import Icon from '@components/Icon';
 import TextInput from '@components/TextInput';
-import WxPagination from '@components/Pagination';
+import Pagination from '@components/Pagination';
 import ProductTableSkelton from '@components/WxSkelton/ProductTableSkelton';
 import Tabs from '@components/WxTabs/WxTabs';
 import { IRequestMeta, IStatus } from '@interfaces/common.interface';
@@ -50,7 +50,7 @@ const Orders = () => {
 	const [metaData, setMetaData] = useState<IRequestMeta>();
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [currentPage, setCurrentPage] = useState<number>(
-		Number(searchParams.get('page')) ? Number(searchParams.get('page')) - 1 : null || 0
+		Number(searchParams.get('page'))
 	);
 	const [paginationLimit, setPaginationLimit] = useState(10);
 	const [searchQuery, setSearchQuery] = useState<string>(null);
@@ -273,12 +273,8 @@ const Orders = () => {
 								<>
 									<OrderListTable ordersData={ordersData} onDelete={onDelete} />
 									<div className='pagination_div p-4'>
-										<WxPagination
+										<Pagination
 											meta={metaData}
-											currentPage={currentPage}
-											setCurrentPage={setCurrentPage}
-											paginationLimit={paginationLimit}
-											setPaginationLimit={setPaginationLimit}
 										/>
 									</div>
 								</>

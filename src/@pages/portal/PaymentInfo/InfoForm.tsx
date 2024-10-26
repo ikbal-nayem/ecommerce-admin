@@ -1,10 +1,10 @@
 import PhoneNumberInput from "@components/PhoneWithCountryCode";
 import Select from "@components/Select/Select";
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import TextInput from "@components/TextInput";
 import Label from "@components/Label";
 import WxRadio from "@components/WxRadio/WxRadio";
@@ -102,9 +102,9 @@ const PaymentInfoForm = ({
 	
 
 	return (
-		<WxDrawer show={isDrawerOpen} handleClose={handleClose}>
+		<Drawer show={isDrawerOpen} handleClose={handleClose}>
 			<div className="portal_payment_info">
-				<WxDrawerHeader
+				<DrawerHeader
 					title={`${!!updateItem ? "Update" : "Add"} payment method`}
 					onClickClose={handleClose}
 				/>
@@ -112,7 +112,7 @@ const PaymentInfoForm = ({
 					<Preferences />
 				) : (
 					<form onSubmit={handleSubmit(onSubmit)}>
-						<WxDrawerBody>
+						<DrawerBody>
 							<Label>Method</Label>
 							<div className="d-flex mb-3">
 								{paymentTypes?.map((pType) => (
@@ -145,7 +145,7 @@ const PaymentInfoForm = ({
 												}),
 											}}
 											color={errors?.paymentMediaId ? "danger" : "secondary"}
-											errorMessage={errors?.paymentMediaId?.message}
+											errorMessage={errors?.paymentMediaId?.message as string}
 										/>
 									</div>
 									<div className="col-md-6 col-12">
@@ -157,7 +157,7 @@ const PaymentInfoForm = ({
 												...register("branchName", { required: true }),
 											}}
 											color={errors?.branchName ? "danger" : "secondary"}
-											errorMessage={errors?.branchName?.message}
+											errorMessage={errors?.branchName?.message as string}
 										/>
 									</div>
 									<div className="col-md-6 col-12">
@@ -168,7 +168,7 @@ const PaymentInfoForm = ({
 												...register("accountNumber", { required: true }),
 											}}
 											color={errors?.accountNumber ? "danger" : "secondary"}
-											errorMessage={errors?.accountNumber?.message}
+											errorMessage={errors?.accountNumber?.message as string}
 										/>
 									</div>
 									<div className="col-md-6 col-12">
@@ -179,7 +179,7 @@ const PaymentInfoForm = ({
 												...register("accountName", { required: true }),
 											}}
 											color={errors?.accountName ? "danger" : "secondary"}
-											errorMessage={errors?.accountName?.message}
+											errorMessage={errors?.accountName?.message as string}
 										/>
 									</div>
 								</div>
@@ -225,9 +225,9 @@ const PaymentInfoForm = ({
 									</div>
 								</div>
 							)}
-						</WxDrawerBody>
+						</DrawerBody>
 
-						<WxDrawerFooter>
+						<DrawerFooter>
 							<div className="portal_payment_info__footer">
 								<Button
 									className="me-3"
@@ -242,11 +242,11 @@ const PaymentInfoForm = ({
 									{isSaving ? <Preloader /> : "Save"}
 								</Button>
 							</div>
-						</WxDrawerFooter>
+						</DrawerFooter>
 					</form>
 				)}
 			</div>
-		</WxDrawer>
+		</Drawer>
 	);
 };
 

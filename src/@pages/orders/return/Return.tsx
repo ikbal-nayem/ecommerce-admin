@@ -40,7 +40,7 @@ const OrderReturn = () => {
       let amount = 0.0;
       let quantity = 0;
       returnItems.map((item: IProductVariant) => {
-        amount = amount + item.sellingPrice * item.quantity;
+        amount = amount + item.price * item.quantity;
         quantity = quantity + item.quantity;
       });
       setReturnInfo({

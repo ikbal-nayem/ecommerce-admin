@@ -5,7 +5,7 @@ import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import Icon from "@components/Icon";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxThumbnail from "@components/Thumbnail";
 import { IFilePayload, IRequestMeta } from "@interfaces/common.interface";
@@ -153,8 +153,8 @@ const ProductImages = () => {
 							</thead>
 							<tbody className="wx__tbody">
 								{productList?.map((pd: IProductTable) => (
-									<tr className="wx__tr" key={pd?.id}>
-										<td className="wx__td wx__td-title">{pd?.title}</td>
+									<tr className="wx__tr" key={pd?._id}>
+										<td className="wx__td wx__td-title">{pd?.name}</td>
 										<td className="wx__td">
 											<Images
 												product={pd}
@@ -168,12 +168,8 @@ const ProductImages = () => {
 						</table>
 					</div>
 					<div className="pagination_div p-4">
-						<WxPagination
+						<Pagination
 							meta={productMeta}
-							currentPage={currentPage}
-							setCurrentPage={setCurrentPage}
-							paginationLimit={paginationLimit}
-							setPaginationLimit={setPaginationLimit}
 						/>
 					</div>
 				</div>

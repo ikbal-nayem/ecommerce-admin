@@ -1,5 +1,5 @@
 import MainLg from "@components/MainContentLayout/MainLg";
-import { WxFormFooter, FormHeader } from "@components/FormLayout";
+import { FormFooter, FormHeader } from "@components/FormLayout";
 import WxHr from "@components/WxHr";
 import { MASTER_META_KEY } from "config/constants";
 import { AUDIENCES } from "routes/path-name.route";
@@ -44,7 +44,7 @@ const UpdateAudience = () => {
       />
       {RenderComponent[audience]({ isSaving, setIsSaving })}
       <WxHr />
-      <WxFormFooter
+      <FormFooter
         saveButtonText="Update Audience"
         title="unsaved changes"
         formName={FormName[audience]}

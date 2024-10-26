@@ -3,7 +3,7 @@ import WxNotFound from "@components/NotFound/NotFound";
 import TableLoader from "@components/TableLoader/TableLoader";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxPagination from "@components/Pagination";
+import Pagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import { IRequestMeta } from "@interfaces/common.interface";
 import { AdminService } from "services/api/admin/Admin.service";
@@ -29,8 +29,6 @@ const Inventory = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState<number>(
     Number(searchParams.get("page"))
-      ? Number(searchParams.get("page")) - 1
-      : null || 0
   );
   const [paginationLimit, setPaginationLimit] = useState(10);
 
@@ -111,12 +109,8 @@ const Inventory = () => {
               />
 
               <div className="p-3">
-                <WxPagination
+                <Pagination
                   meta={productMeta}
-                  currentPage={currentPage}
-                  setCurrentPage={setCurrentPage}
-                  paginationLimit={paginationLimit}
-                  setPaginationLimit={setPaginationLimit}
                 />
               </div>
             </>

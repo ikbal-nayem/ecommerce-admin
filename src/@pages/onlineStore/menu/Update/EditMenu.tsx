@@ -1,8 +1,8 @@
 import {Button} from "@components/Button";
-import WxDrawer from "@components/Drawer";
-import WxDrawerBody from "@components/Drawer/DrawerBody";
-import WxDrawerFooter from "@components/Drawer/DrawerFooter";
-import WxDrawerHeader from "@components/WxDrawer/WxDrawerHeader";
+import Drawer from "@components/Drawer";
+import DrawerBody from "@components/Drawer/DrawerBody";
+import DrawerFooter from "@components/Drawer/DrawerFooter";
+import DrawerHeader from "@components/Drawer/DrawerHeader";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
 import Switch from "@components/Switch";
@@ -122,14 +122,14 @@ const Create = ({
   };
 
   return (
-    <WxDrawer show={isOpen} handleClose={handleFormClose}>
+    <Drawer show={isOpen} handleClose={handleFormClose}>
       <div className="menu_create_sec">
-        <WxDrawerHeader
+        <DrawerHeader
           title={`${editedData ? "Edit" : "Add"} Menu Item`}
           onClickClose={handleFormClose}
         />
         <form onSubmit={handleSubmit(onSubmitting)} noValidate>
-          <WxDrawerBody>
+          <DrawerBody>
             <div className="row">
               {/* {formData?.name ? (
                 <div className="col-md-12 col-sm-12">
@@ -163,7 +163,7 @@ const Create = ({
                   }}
                   isAutoFocus={true}
                   color={errors?.url ? "danger" : "secondary"}
-                  errorMessage={errors?.url && errors?.url?.message}
+                  errorMessage={errors?.url && errors?.url?.message as string}
                   onClick={() => setShowDropdown(true)}
                   className="mb-0"
                 />
@@ -241,8 +241,8 @@ const Create = ({
                 />
               </div>
             </div>
-          </WxDrawerBody>
-          <WxDrawerFooter>
+          </DrawerBody>
+          <DrawerFooter>
             <div className="delivery_create_sec__footer">
               <div className="d-flex justify-content-end">
                 <Button
@@ -259,10 +259,10 @@ const Create = ({
                 </Button>
               </div>
             </div>
-          </WxDrawerFooter>
+          </DrawerFooter>
         </form>
       </div>
-    </WxDrawer>
+    </Drawer>
   );
 };
 export default Create;
