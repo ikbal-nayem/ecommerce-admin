@@ -3,7 +3,7 @@ import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxPagination from "@components/WxPagination/WxPagination";
+import WxPagination from "@components/Pagination";
 import { IPagesSettings } from "@interfaces/Settings.interface";
 import { PAGES_CREATE } from "routes/path-name.route";
 import { PagesSettingService } from "services/api/settings/Pages.service";

@@ -1,4 +1,4 @@
-import { IObject } from '@interfaces/common.interface';
+import { IObject, IRequestPayload } from '@interfaces/common.interface';
 import { PRODUCT_SERVICE } from 'config/api-constant';
 import { apiIns } from 'config/api.config';
 import { mergeBodyWithStoreId, mergePayloadWithStoreId } from 'services/utils/localStorageData.service';
@@ -21,7 +21,7 @@ export const ProductService = {
 		return await apiIns.get('product/get');
 	},
 
-	search: async (payload: IObject): Promise<any> => {
+	search: async (payload: IRequestPayload): Promise<any> => {
 		return await apiIns.post('product/search', payload);
 	},
 

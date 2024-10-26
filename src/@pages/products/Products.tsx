@@ -3,9 +3,9 @@ import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationMod
 import Icon from '@components/Icon';
 import MainFull from '@components/MainContentLayout/MainFull';
 import NotFound from '@components/NotFound/NotFound';
+import Pagination from '@components/Pagination';
 import Select from '@components/Select/Select';
 import TextInput from '@components/TextInput';
-import WxPagination from '@components/WxPagination/WxPagination';
 import ProductTableSkelton from '@components/WxSkelton/ProductTableSkelton';
 import Tabs from '@components/WxTabs/WxTabs';
 import { IProductTable } from '@interfaces/product.interface';
@@ -18,8 +18,8 @@ import { CategoryService, ICategoryPayload } from 'services/api/products/Categor
 import { ProductService } from 'services/api/products/Product.services';
 import { ToastService } from 'services/utils/toastr.service';
 import { parentTreeToLinear } from 'utils/categoryTreeOperation';
-import { searchParamsToObject } from 'utils/makeObject';
-import useDebounce from '../../utils/debouncer';
+import { searchParamsToObject, searchParamsToReqbody } from 'utils/makeObject';
+import { debounce } from '../../utils/debouncer';
 import './Products.scss';
 import ProductTable from './ProductTable';
 
@@ -30,16 +30,11 @@ const Products = () => {
 	const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 	const [isSaving, setIsSaving] = useLoader(false);
 	const [isLoader, setIsLoader] = useState<boolean>(true);
-	const [paginationLimit, setPaginationLimit] = useState(10);
 	const [categories, setCategories] = useState<ICategoryPayload[]>([]);
-	const [searchQuery, setSearchQuery] = useState<string>(null);
 	const [searchParams, setSearchParams] = useSearchParams();
-	const [currentPage, setCurrentPage] = useState<number>(+searchParams.get('page') || 0);
 	const deleteItem = useRef(null);
 
 	const navigate = useNavigate();
-
-	let search: string = useDebounce(searchQuery, 500);
 
 	useEffect(() => {
 		CategoryService.getTree()
@@ -51,25 +46,14 @@ const Products = () => {
 
 	useEffect(() => {
 		getProducts();
-	}, [search, currentPage, paginationLimit, searchParams]);
+	}, [searchParams]);
 
 	const getProducts = () => {
 		setIsLoader(true);
-		ProductService.get({
-			body: {
-				status: searchParams.get('status') || null,
-				categoryId: searchParams.get('category') || null,
-				searchKey: search || null,
-			},
-			meta: {
-				offset: currentPage,
-				limit: paginationLimit,
-				sort: [{ order: 'desc', field: 'createdOn' }],
-			},
-		})
+		ProductService.search(searchParamsToReqbody(searchParams))
 			.then((res: any) => {
 				setProductList(res.data);
-				setProductMeta(res.meta || {});
+				setProductMeta(res.meta);
 			})
 			.catch((err) => ToastService.error(err))
 			.finally(() => {
@@ -112,14 +96,14 @@ const Products = () => {
 		const val = e.target.value;
 		const params: any = searchParamsToObject(searchParams);
 		val ? (params.category = val) : delete params.category;
-		setSearchParams({ ...params });
+		setSearchParams({ ...params, page: 1 });
 	};
 
 	const onStatusChangeFromTab = (activeTab) => {
 		const tabItem: any = PRODUCT_STATUS.find((itm) => itm.id === activeTab);
 		const params: any = searchParamsToObject(searchParams);
-		tabItem?.id ? (params.status = tabItem?.title) : delete params.status;
-		setSearchParams({ ...params });
+		tabItem?.id ? (params.isActive = tabItem?.value) : delete params.isActive;
+		setSearchParams({ ...params, page: 1 });
 	};
 
 	return (
@@ -142,20 +126,31 @@ const Products = () => {
 							<Tabs
 								option={[{ id: 0, title: 'All' }, ...PRODUCT_STATUS]}
 								renderTab={(item) => item?.title}
-								currentIndex={PRODUCT_STATUS.find((pro) => pro.title === searchParams.get('status'))?.id || 0}
+								currentIndex={
+									PRODUCT_STATUS.find((pro) => pro.title === searchParams.get('isActive'))?.id || 0
+								}
 								setCurrentIndex={onStatusChangeFromTab}
 							/>
 						</div>
 						<div className='row p-4 pb-0'>
-							<div className='col-xl-10 col-lg-9 col-md-8 col-sm-8'>
+							<div className='col-lg-9 col-md-8 col-sm-8'>
 								<TextInput
 									type='search'
 									placeholder='Search products'
 									startIcon={<Icon icon='search' />}
-									onChange={(e: any) => setSearchQuery(e.target.value)}
+									defaultValue={searchParams.get('searchKey') || ''}
+									onChange={debounce(
+										(e: any) =>
+											setSearchParams({
+												...searchParamsToObject(searchParams),
+												searchKey: e.target.value,
+												page: '1',
+											}),
+										500
+									)}
 								/>
 							</div>
-							<div className='col-xl-2 col-lg-3 col-md-4 col-sm-4'>
+							<div className='col-lg-3 col-md-4 col-sm-4'>
 								<Select
 									placeholder='Select Category'
 									valuesKey='id'
@@ -171,13 +166,7 @@ const Products = () => {
 							<>
 								<ProductTable productsData={productList} handleDelete={handleDelete} />
 								<div className='p-2'>
-									<WxPagination
-										meta={productMeta}
-										currentPage={currentPage}
-										setCurrentPage={setCurrentPage}
-										paginationLimit={paginationLimit}
-										setPaginationLimit={setPaginationLimit}
-									/>
+									<Pagination meta={productMeta} setSearchParams />
 								</div>
 							</>
 						) : (

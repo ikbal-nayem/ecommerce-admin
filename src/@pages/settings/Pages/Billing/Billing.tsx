@@ -1,7 +1,7 @@
 import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import { FormHeader } from "@components/FormLayout";
-import WxPagination from "@components/WxPagination/WxPagination";
+import WxPagination from "@components/Pagination";
 import BillingTableSkelton from "@components/WxSkelton/Setting/Billing/BillingTableSkelton";
 import UserPlanNInfoSkelton from "@components/WxSkelton/Setting/Billing/UserPlanNInfoSkelton";
 import { ACCOUNT_SETTING, SETTINGS } from "routes/path-name.route";

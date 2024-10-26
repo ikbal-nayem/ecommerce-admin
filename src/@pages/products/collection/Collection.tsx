@@ -2,7 +2,7 @@ import { Button } from '@components/Button';
 import { ConfirmationModal } from '@components/ConfirmationModal/ConfirmationModal';
 import MainLg from '@components/MainContentLayout/MainLg';
 import NotFound from '@components/NotFound/NotFound';
-import Pagination from '@components/WxPagination/WxPagination';
+import Pagination from '@components/Pagination';
 import CollectionTBSkelton from '@components/WxSkelton/CollectionTBSkelton';
 import useLoader from 'hooks/useLoader';
 import { useEffect, useRef, useState } from 'react';

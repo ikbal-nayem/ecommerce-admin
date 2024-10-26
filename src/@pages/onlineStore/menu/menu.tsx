@@ -3,7 +3,7 @@ import WxMainXl from "@components/MainContentLayout/WxMainXl";
 import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
-import WxPagination from "@components/WxPagination/WxPagination";
+import WxPagination from "@components/Pagination";
 import { IMenuset } from "@interfaces/OnlineStore.interface";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";

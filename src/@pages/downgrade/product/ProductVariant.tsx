@@ -5,7 +5,7 @@ import WxNotFound from "@components/NotFound/NotFound";
 import {Button} from "@components/Button";
 import Checkbox from "@components/Checkbox";
 import { FormHeader } from "@components/FormLayout";
-import WxPagination from "@components/WxPagination/WxPagination";
+import WxPagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTag from "@components/WxTag";
 import WxThumbnail from "@components/Thumbnail";

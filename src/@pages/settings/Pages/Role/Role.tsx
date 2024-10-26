@@ -2,7 +2,7 @@ import { ConfirmationModal } from "@components/ConfirmationModal/ConfirmationMod
 import MainLg from "@components/MainContentLayout/MainLg";
 import WxNotFound from "@components/NotFound/NotFound";
 import { FormHeader } from "@components/FormLayout";
-import WxPagination from "@components/WxPagination/WxPagination";
+import WxPagination from "@components/Pagination";
 import { IRequestMeta } from "@interfaces/common.interface";
 import { SETTINGS, SETTINGS_ROLES_CREATE } from "routes/path-name.route";
 import { AdminService } from "services/api/admin/Admin.service";

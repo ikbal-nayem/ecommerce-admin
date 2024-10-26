@@ -46,7 +46,7 @@ const Select = ({
 			{label ? <Label isRequired={isRequired}>{label}</Label> : null}
 			<select
 				id={id}
-				className={`form-select bg-white wx__input_${color} m-0`}
+				className={`bg-white wx__input_${color} m-0`}
 				style={{ ...style, padding: '0px 10px' }}
 				defaultValue={defaultValue}
 				value={value}
@@ -59,11 +59,11 @@ const Select = ({
 
 				{options?.map((option: any, index: number) => (
 					<option
-						value={valuesKey === 'object' ? JSON.stringify(options[index]) : option[valuesKey]}
+						value={valuesKey === 'object' ? JSON.stringify(option) : option[valuesKey]}
 						key={index}
 						disabled={option?.disable}
 					>
-						{option[textKey]}
+						{typeof option != 'object' ? option : option[textKey]}
 					</option>
 				))}
 			</select>

@@ -27,6 +27,21 @@ export interface IDistrict {
 	zilla_name_bng: string;
 }
 
+export interface IMeta {
+	currentPageTotal?: number;
+	totalRecords?: number;
+	totalPages?: number;
+	nextPage?: number;
+	prevPage?: number;
+	page?: number;
+	limit?: number;
+}
+
+export interface IRequestPayload {
+	meta: IMeta;
+	filter: IObject;
+}
+
 export interface IRequestMeta {
 	offset?: number;
 	prevOffset?: number;
@@ -97,23 +112,4 @@ export interface IDeveloper {
 	supportEmail: string;
 	supportPhone: string;
 	privacyPolicy: string;
-}
-
-// for extends with other interface
-export interface IMeta {
-	meta: {
-		offset?: number;
-		prevOffset?: number;
-		nextOffset?: number;
-		limit?: number;
-		totalRecords?: number;
-		resultCount?: number;
-		totalPageCount?: number;
-		sort: [
-			{
-				order: string;
-				field: string;
-			}
-		];
-	};
 }

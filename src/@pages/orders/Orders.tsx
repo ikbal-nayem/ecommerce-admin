@@ -10,7 +10,7 @@ import {Button} from '@components/Button';
 import { FormHeader } from '@components/FormLayout';
 import Icon from '@components/Icon';
 import TextInput from '@components/TextInput';
-import WxPagination from '@components/WxPagination/WxPagination';
+import WxPagination from '@components/Pagination';
 import ProductTableSkelton from '@components/WxSkelton/ProductTableSkelton';
 import Tabs from '@components/WxTabs/WxTabs';
 import { IRequestMeta, IStatus } from '@interfaces/common.interface';

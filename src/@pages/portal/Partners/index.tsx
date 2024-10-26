@@ -2,7 +2,7 @@ import MainFull from "@components/MainContentLayout/MainFull";
 import WxNotFound from "@components/NotFound/NotFound";
 import { FormHeader } from "@components/FormLayout";
 import Icon from "@components/Icon";
-import WxPagination from "@components/WxPagination/WxPagination";
+import WxPagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import WxTabs from "@components/WxTabs/WxTabs";
 import WxTag from "@components/WxTag";

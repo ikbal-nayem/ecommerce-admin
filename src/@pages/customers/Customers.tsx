@@ -7,7 +7,7 @@ import {Button} from "@components/Button";
 import { FormHeader } from "@components/FormLayout";
 import Icon from "@components/Icon";
 import TextInput from "@components/TextInput";
-import WxPagination from "@components/WxPagination/WxPagination";
+import WxPagination from "@components/Pagination";
 import ProductTableSkelton from "@components/WxSkelton/ProductTableSkelton";
 import { STATUS_CONSTANT } from "config/constants";
 import { ICustomerPayload } from "@interfaces/Customer.interface";
