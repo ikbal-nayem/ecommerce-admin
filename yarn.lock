@@ -5539,7 +5539,7 @@ ws@~8.17.1:
 
 "wx-ckeditor@github:nhrasal/wx-ckeditor":
   version "0.0.1"
-  resolved "git+ssh://git@github.com/nhrasal/wx-ckeditor.git#e5e726fcb6cc72a3c8c007889889f00ab11c3b19"
+  resolved "git+https://git@github.com/nhrasal/wx-ckeditor.git#e5e726fcb6cc72a3c8c007889889f00ab11c3b19"
 
 xdg-basedir@^4.0.0:
   version "4.0.0"
