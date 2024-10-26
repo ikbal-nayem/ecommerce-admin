@@ -5,12 +5,13 @@ import DrawerBody from '@components/Drawer/DrawerBody';
 import DrawerFooter from '@components/Drawer/DrawerFooter';
 import DrawerHeader from '@components/Drawer/DrawerHeader';
 import TextInput from '@components/TextInput';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CollectionService, ICollectionPayload } from 'services/api/products/Collection.services';
 import Preloader from 'services/utils/preloader.service';
-import useDebounce from 'utils/debouncer';
+import { debounce } from 'utils/debouncer';
 
 import Icon from '@components/Icon';
+import { IRequestPayload } from '@interfaces/common.interface';
 import useLoader from 'hooks/useLoader';
 import { ToastService } from 'services/utils/toastr.service';
 import './SelectCollections.scss';
@@ -23,9 +24,14 @@ type SelectCollectionProps = {
 const SelectCollection = ({ selectedCollections, setCollections }: SelectCollectionProps) => {
 	const [drawer_open, setDrawerOpen] = useState(false);
 	const [isLoading, setIsLoading] = useLoader(false);
-	const [searchQuery, setSearchQuery] = useState<string>('');
 	const [collectionList, setCollectionList] = useState<ICollectionPayload[]>([]);
-	let search = useDebounce(searchQuery, 500);
+	const requestPayload = useRef<IRequestPayload>({
+		filter: { searchKey: '' },
+		meta: {
+			page: 0,
+			limit: 10,
+		},
+	});
 
 	const handleClose = () => setDrawerOpen(false);
 
@@ -33,23 +39,21 @@ const SelectCollection = ({ selectedCollections, setCollections }: SelectCollect
 		drawer_open && getCollectionList();
 	}, [drawer_open]);
 
-	useEffect(() => {
-		search && getCollectionList(search);
-	}, [search]);
-
-	const getCollectionList = (searchString: string = null) => {
+	const getCollectionList = () => {
 		setIsLoading(true);
-		const payload = {
-			body: { name: searchString },
-			meta: { offset: 0, limit: 20 },
-		};
-		CollectionService.get(payload)
+		CollectionService.search(requestPayload.current)
 			.then((res) => {
 				if (res.data?.length) setCollectionList(res.data);
 			})
 			.catch((err) => ToastService.error(err.message))
 			.finally(() => setIsLoading(false));
 	};
+
+	const onSearch = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
+		requestPayload.current.filter.searchKey = e.target.value;
+		requestPayload.current.meta.page = 1;
+		getCollectionList();
+	}, 500);
 
 	return (
 		<>
@@ -64,8 +68,8 @@ const SelectCollection = ({ selectedCollections, setCollections }: SelectCollect
 						<TextInput
 							type='search'
 							startIcon={<Icon icon='search' />}
-							placeholder='Search categories'
-							onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
+							placeholder='Search collections...'
+							onChange={onSearch}
 						/>
 						<div className='collections'>
 							<hr />
