@@ -14,7 +14,7 @@ const isValidUrl = (url: string) => {
 	return !!pattern.test(url);
 };
 
-export const isNull = (val: number | string | null | undefined | Array<any> | IObject) => {
+export const isNull = (val: number | string | boolean | null | undefined | Array<any> | IObject) => {
 	return (
 		val === null ||
 		val === undefined ||

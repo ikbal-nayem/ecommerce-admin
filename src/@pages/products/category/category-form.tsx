@@ -26,7 +26,7 @@ const generateDefaultValues = (defaultValues?: ICategoryPayload) => ({
 	parent: defaultValues?.parent || '',
 	description: defaultValues?.description || '',
 	image: defaultValues?.image || '',
-	isActive: defaultValues?.isActive || '',
+	isActive: !isNull(defaultValues?.isActive) ? defaultValues?.isActive : true,
 });
 
 type AddCategoryProps = {
@@ -82,7 +82,7 @@ const AddCategory = ({
 						types: { validate: false },
 				  });
 		});
-	}, 500);
+	}, 800);
 
 	const getLinearCategories = (id = null) => {
 		let categoryCopy = [...categories];
@@ -126,6 +126,7 @@ const AddCategory = ({
 							label='Slug'
 							isRequired
 							isDisabled={editData?.isEditMode}
+							isReadOnly={editData?.isEditMode}
 							endIcon={slug && !errors?.slug && <Icon icon='done' color='success' />}
 							helpText={
 								<div className='text_regular text_subtitle'>
@@ -134,7 +135,7 @@ const AddCategory = ({
 								</div>
 							}
 							registerProperty={{
-								...register('slug', { required: true, onChange: checkSlug, disabled: editData?.isEditMode }),
+								...register('slug', { required: true, onChange: checkSlug }),
 							}}
 							color={errors?.slug ? 'danger' : 'secondary'}
 							errorMessage={errors?.slug?.message as string}

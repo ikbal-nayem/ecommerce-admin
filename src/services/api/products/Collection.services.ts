@@ -21,8 +21,8 @@ export const CollectionService = {
 
 	delete: async (id: string): Promise<any> => await apiIns.delete('product-config/collection/' + id),
 
-	isSlugAvailable: async (payload: any): Promise<any> =>
-		await apiIns.post(PRODUCT_COLLECTION + 'is-slug-available', mergePayloadWithStoreId(payload)),
+	isSlugUnique: async (slug: string): Promise<any> =>
+		await apiIns.get('product-config/collection/is-slug-unique?slug=' + slug),
 
 	get: async (): Promise<any> => await apiIns.get('product-config/collections'),
 
