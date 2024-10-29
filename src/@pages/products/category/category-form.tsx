@@ -3,17 +3,22 @@ import Drawer from '@components/Drawer';
 import DrawerBody from '@components/Drawer/DrawerBody';
 import DrawerFooter from '@components/Drawer/DrawerFooter';
 import DrawerHeader from '@components/Drawer/DrawerHeader';
+import Icon from '@components/Icon';
+import Label from '@components/Label';
 import MediaInput from '@components/MediaInput/MediaInput';
 import Select from '@components/Select/Select';
-import TextInput from '@components/TextInput';
-import TextEditor from '@components/TextEditor/Editor';
-import Label from '@components/Label';
 import Switch from '@components/Switch';
+import TextEditor from '@components/TextEditor/Editor';
+import TextInput from '@components/TextInput';
 import { IObject } from '@interfaces/common.interface';
+import { ENV } from 'config/ENV.config';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { ICategoryPayload } from 'services/api/products/Category.services';
+import { CategoryService, ICategoryPayload } from 'services/api/products/Category.services';
 import { parentTreeToLinear } from 'utils/categoryTreeOperation';
+import { isNull } from 'utils/check-validity';
+import { debounce } from 'utils/debouncer';
+import makeSlug from 'utils/make-slug';
 
 const generateDefaultValues = (defaultValues?: ICategoryPayload) => ({
 	name: defaultValues?.name || '',
@@ -49,25 +54,12 @@ const AddCategory = ({
 		handleSubmit,
 		control,
 		reset,
+		watch,
+		setValue,
+		clearErrors,
+		setError,
 		formState: { errors },
 	} = useForm();
-
-	// const watch_name = watch('name');
-	// const slug = useDebounce(watch_name, 500);
-
-	// useEffect(() => {
-	// 	if (!editData?.isEditMode) {
-	// 		setValue('slug', makeSlug(slug));
-	// 		slug &&
-	// 			CategoryService.isSlugAvailable({ slug }).then((res) => {
-	// 				if (res.body) {
-	// 					clearErrors('slug');
-	// 					return;
-	// 				}
-	// 				setError('slug', { message: res.message });
-	// 			});
-	// 	}
-	// }, [slug]);
 
 	useEffect(() => {
 		if (isOpen) {
@@ -75,6 +67,22 @@ const AddCategory = ({
 			reset(generateDefaultValues(editData?.data));
 		}
 	}, [isOpen, editData]);
+
+	const checkSlug = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
+		if (editData?.isEditMode) return;
+		if (!e.target.value) return clearErrors('slug');
+		const slug = makeSlug(e.target.value);
+		setValue('slug', slug);
+		CategoryService.isSlugUnique(slug).then((res) => {
+			res.data
+				? clearErrors('slug')
+				: setError('slug', {
+						message: 'This slug is already used',
+						type: 'invalid',
+						types: { validate: false },
+				  });
+		});
+	}, 500);
 
 	const getLinearCategories = (id = null) => {
 		let categoryCopy = [...categories];
@@ -92,6 +100,8 @@ const AddCategory = ({
 		setLinearCategories(linearData);
 	};
 
+	const slug = watch('slug');
+
 	return (
 		<Drawer show={isOpen} handleClose={handleClose}>
 			<div className='category_form'>
@@ -107,27 +117,28 @@ const AddCategory = ({
 							isRequired
 							isAutoFocus
 							registerProperty={{
-								...register('name', { required: true }),
+								...register('name', { required: true, onChange: checkSlug }),
 							}}
 							color={errors?.name ? 'danger' : 'secondary'}
 							errorMessage={errors?.name && 'Name is required!'}
 						/>
-						{/* <TextInput
+						<TextInput
 							label='Slug'
 							isRequired
 							isDisabled={editData?.isEditMode}
+							endIcon={slug && !errors?.slug && <Icon icon='done' color='success' />}
 							helpText={
 								<div className='text_regular text_subtitle'>
-									{ENV.STORE_DOMAIN}/products/category/&nbsp;
+									{ENV.STORE_DOMAIN}/category/
 									<span className='text_strong'>{slug}</span>
 								</div>
 							}
 							registerProperty={{
-								...register('slug', { required: true }),
+								...register('slug', { required: true, onChange: checkSlug, disabled: editData?.isEditMode }),
 							}}
 							color={errors?.slug ? 'danger' : 'secondary'}
 							errorMessage={errors?.slug?.message as string}
-						/> */}
+						/>
 						<Select
 							label='Parent category'
 							valuesKey='id'
@@ -186,7 +197,7 @@ const AddCategory = ({
 								>
 									Cancel
 								</Button>
-								<Button variant='fill' type='submit' isLoading={isSaving}>
+								<Button variant='fill' type='submit' isLoading={isSaving} disabled={!isNull(errors)}>
 									{editData?.isEditMode ? 'Update' : 'Add'} Category
 								</Button>
 							</div>

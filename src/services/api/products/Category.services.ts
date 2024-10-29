@@ -62,8 +62,8 @@ export const CategoryService = {
 
 	delete: async (id: string): Promise<any> => await apiIns.delete('product-config/category/' + id),
 
-	isSlugAvailable: async (payload: any): Promise<any> =>
-		await apiIns.post(PRODUCT_CATEGORY + 'is-slug-available', mergePayloadWithStoreId(payload)),
+	isSlugUnique: async (slug: string): Promise<any> =>
+		await apiIns.get('product-config/category/is-slug-unique?slug=' + slug),
 
 	get: async (payload: ICategoryLinearPayload = defaultRequest): Promise<any> =>
 		await apiIns.post(PRODUCT_CATEGORY + 'get-list', mergeBodyWithStoreId(payload)),
