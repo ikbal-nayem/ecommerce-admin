@@ -1,12 +1,12 @@
-import TextInput from '@components/TextInput';
 import TextEditor from '@components/TextEditor/Editor';
+import TextInput from '@components/TextInput';
 import { Controller, useFormContext } from 'react-hook-form';
 
 const ProductInfo = () => {
 	const {
 		register,
 		control,
-		watch,
+		// watch,
 		formState: { errors },
 	} = useFormContext();
 
@@ -39,20 +39,20 @@ const ProductInfo = () => {
 					unCheckedTitle="No"
 					registerProperty={{ ...register("hasSummary") }}
 				/>
-			</div>
+			</div> */}
 
-			{hasSummary ? (
-				<div className="form_group mt-4">
-					<label>Product Summary</label>
-					<Controller
-						control={control}
-						name="summary"
-						render={({ field: { onChange, value } }) => (
-							<TextEditor onEditorChange={onChange} defaultValue={value} />
-						)}
-					/>
-				</div>
+			{/* {hasSummary ? (
 			) : null} */}
+			<div className='form_group mt-4'>
+				<label>Product Summary</label>
+				<Controller
+					control={control}
+					name='summary'
+					render={({ field: { onChange, value } }) => (
+						<TextEditor onEditorChange={onChange} defaultValue={value} />
+					)}
+				/>
+			</div>
 		</div>
 	);
 };
