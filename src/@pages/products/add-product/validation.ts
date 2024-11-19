@@ -5,6 +5,7 @@ import * as yup from 'yup';
 export const getProductdefaultValues = (val?: IObject) => ({
 	name: val?.name || '',
 	description: val?.description || '',
+	summary: val?.summary || '',
 	hasVariants: !isNull(val?.hasVariants) ? val?.hasVariants : false,
 	price: val?.price || 0,
 	discountPrice: val?.discountPrice || 0,

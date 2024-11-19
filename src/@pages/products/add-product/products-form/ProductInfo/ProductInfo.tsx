@@ -6,12 +6,15 @@ const ProductInfo = () => {
 	const {
 		register,
 		control,
-		// watch,
+		watch,
 		formState: { errors },
 	} = useFormContext();
 
 	// const hasSummary = watch("hasSummary");
 
+	console.log(watch());
+	
+	
 	return (
 		<div className='card p-3 mt-4'>
 			<TextInput
