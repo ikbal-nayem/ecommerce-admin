@@ -44,13 +44,11 @@ const ProductInfo = () => {
 			{/* {hasSummary ? (
 			) : null} */}
 			<div className='form_group mt-4'>
-				<label>Product Summary</label>
-				<Controller
-					control={control}
-					name='summary'
-					render={({ field: { onChange, value } }) => (
-						<TextEditor onEditorChange={onChange} defaultValue={value} />
-					)}
+				<TextInput
+					label='Product Summary'
+					registerProperty={{
+						...register('summary'),
+					}}
 				/>
 			</div>
 		</div>
